@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toriiUrl: https://api.cartridge.gg/x/liyard-dojo-starter/torii
   rpcUrl: https://api.cartridge.gg/x/liyard-dojo-starter/katana
-  relayUrl: /ip4/209.38.248.37/tcp/9090/p2p/12D3KooWSUdEj6sVm3r3EsfZynpARiapePChRsREnsaDfvbMcWss
-  relayWebrtcUrl: /ip4/209.38.248.37/udp/9091/webrtc-direct/certhash/uEiALlUEzVfX7ijWQhdBIjr0_8LgCuRyXphMBr_JeKvmA1g/p2p/12D3KooWSUdEj6sVm3r3EsfZynpARiapePChRsREnsaDfvbMcWss
+  relayUrl: /ip4/127.0.0.1/tcp/9090
+  relayWebrtcUrl: /ip4/127.0.0.1/tcp/9091
   worldAddress:
     hex: 0x0190386ce184452b6fed8ff0b17b4d42ea47cdf8a2d1f0a98be083f53b41662f
   query:

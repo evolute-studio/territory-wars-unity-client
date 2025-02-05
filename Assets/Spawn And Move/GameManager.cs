@@ -15,6 +15,8 @@ using Random = UnityEngine.Random;
 
 // Fix to use Records in Unity ref. https://stackoverflow.com/a/73100830
 using System.ComponentModel;
+using System.Threading.Tasks;
+
 namespace System.Runtime.CompilerServices
 {
     [EditorBrowsable(EditorBrowsableState.Never)]
@@ -138,8 +140,9 @@ public class GameManager : MonoBehaviour
         await actions.move(burnerManager.CurrentBurner ?? masterAccount, direction);
     }
 
-    private void InitEntity(GameObject entity)
+    private async void InitEntity(GameObject entity)
     {
+        await Task.Delay(1000);
         // check if entity has position component
         Debug.Log("InitEntity. Position: " + entity.GetComponent<dojo_starter_Position>());
         if (!entity.TryGetComponent(out dojo_starter_Position position)) return;
@@ -148,6 +151,7 @@ public class GameManager : MonoBehaviour
         // change color of capsule to a random color
         capsule.GetComponent<Renderer>().material.color = Random.ColorHSV();
         capsule.transform.parent = entity.transform;
+        capsule.transform.localPosition = Vector3.zero;
 
         foreach (var account in spawnedAccounts)
         {

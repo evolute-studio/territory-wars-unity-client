@@ -31,7 +31,7 @@ public class dojo_starter_Position : ModelInstance {
 
     // Update is called once per frame
     void Update() {
-        transform.position = new Vector3(vec.x, 0, vec.y);
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3(vec.x, vec.y, 0), 0.1f);
     }
 }
 
