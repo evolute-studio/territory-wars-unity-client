@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
 using TerritoryWars.ScriptablesObjects;
-using TerritoryWars.TileGeneration;
 using UnityEngine;
 
-namespace TerritoryWars
+namespace TerritoryWars.Tile
 {
     public class TileGenerator : MonoBehaviour
     {

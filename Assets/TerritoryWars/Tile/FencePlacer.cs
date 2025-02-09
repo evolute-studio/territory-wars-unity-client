@@ -1,7 +1,7 @@
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
 
-namespace TerritoryWars.TileGeneration
+namespace TerritoryWars.Tile
 {
     [RequireComponent(typeof(LineRenderer))]
     public class FencePlacer : MonoBehaviour

@@ -1,10 +1,11 @@
+using TerritoryWars.Tile;
 using UnityEditor;
 using UnityEngine;
 
-namespace TerritoryWars.TileGeneration.Editor
+namespace TerritoryWars.Editor
 {
-    [CustomEditor(typeof(FencePlacer))]
-    public class FencePlacerEditor : UnityEditor.Editor
+    [CustomEditor(typeof(TileRotator))]
+    public class TileRotatorEditor : UnityEditor.Editor
     {
         public override void OnInspectorGUI()
         {
@@ -18,14 +19,15 @@ namespace TerritoryWars.TileGeneration.Editor
             EditorGUILayout.BeginVertical(EditorStyles.helpBox);
 
             // Заголовок боксу
-            EditorGUILayout.LabelField("Fence Placement", EditorStyles.boldLabel);
+            EditorGUILayout.LabelField("Rotation Control", EditorStyles.boldLabel);
 
-            FencePlacer fencePlacer = (FencePlacer)target;
+            TileRotator tileRotator = (TileRotator)target;
 
-            // Кнопка для розміщення забору
-            if (GUILayout.Button("Place Fence"))
+            // Кнопка для повороту за годинниковою стрілкою
+            if (GUILayout.Button("Rotate Clockwise"))
             {
-                fencePlacer.PlaceFence();
+                tileRotator.RotateClockwise();
+                EditorUtility.SetDirty(target);
             }
 
             // Закінчуємо бокс

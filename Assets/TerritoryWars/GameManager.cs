@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using TerritoryWars.Tile;
+using TerritoryWars.UI;
 
 namespace TerritoryWars
 {

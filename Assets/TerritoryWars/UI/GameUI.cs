@@ -1,8 +1,9 @@
+using TerritoryWars.Tile;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
-namespace TerritoryWars
+namespace TerritoryWars.UI
 {
     public class GameUI : MonoBehaviour
     {

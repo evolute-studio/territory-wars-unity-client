@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace TerritoryWars
+namespace TerritoryWars.Tile
 {
     public class TileConnector : MonoBehaviour
     {

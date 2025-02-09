@@ -1,7 +1,7 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
-namespace TerritoryWars.TileGeneration
+namespace TerritoryWars.Tile
 {
     public class Territory : MonoBehaviour
     {
