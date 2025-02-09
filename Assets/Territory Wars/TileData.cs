@@ -49,7 +49,19 @@ namespace TerritoryWars
             return CharToLandscape(sides[index]);
         }
 
-        private LandscapeType CharToLandscape(char c)
+        public static string GetRotatedConfig(string config)
+        {
+            char[] sides = config.ToCharArray();
+            char[] rotatedSides = new char[4];
+            for (int i = 0; i < 4; i++)
+            {
+                int sourceIndex = (i + 1) % 4;
+                rotatedSides[i] = sides[sourceIndex];
+            }
+            return new string(rotatedSides);
+        }
+
+        public static LandscapeType CharToLandscape(char c)
         {
             return c switch
             {

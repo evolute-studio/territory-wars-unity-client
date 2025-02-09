@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace TerritoryWars
 {
@@ -12,10 +13,17 @@ namespace TerritoryWars
         [SerializeField] private Material highlightMaterial;
         [SerializeField] private DeckManager deckManager;
         [SerializeField] private LayerMask backgroundLayer;
+        [SerializeField] private Color normalHighlightColor = new Color(1f, 1f, 0f, 0.3f); // Жовтий
+        [SerializeField] private Color selectedHighlightColor = new Color(0f, 1f, 0f, 0.3f); // Зелений
+        [SerializeField] private Color invalidHighlightColor = new Color(1f, 0f, 0f, 0.3f); // Червоний
+        [SerializeField] private Sprite highlightSprite;
 
         private TileData currentTile;
         private bool isPlacingTile = false;
         private GameObject highlightedTiles;
+        private List<ValidPlacement> currentValidPlacements;
+        private List<int> currentValidRotations;
+        private Vector2Int? selectedPosition = null;
 
         public TileData CurrentTile => currentTile;
 
@@ -95,6 +103,7 @@ namespace TerritoryWars
 
         private void StartNewTurn()
         {
+            selectedPosition = null;
             if (!deckManager.HasTiles)
             {
                 Debug.Log("Гра закінчена - тайли закінчились!");
@@ -106,8 +115,18 @@ namespace TerritoryWars
             currentTile = deckManager.DrawTile();
             isPlacingTile = true;
 
+            // Отримуємо всі можливі позиції для розміщення
+            currentValidPlacements = board.GetValidPlacements(currentTile);
+
+            if (currentValidPlacements.Count == 0)
+            {
+                Debug.LogWarning("Немає можливих позицій для розміщення тайлу!");
+                EndTurn();
+                return;
+            }
+
             gameUI.SetEndTurnButtonActive(false);
-            gameUI.SetRotateButtonActive(true);
+            gameUI.SetRotateButtonActive(false);
             gameUI.UpdateUI();
 
             ShowPossiblePlacements();
@@ -115,92 +134,144 @@ namespace TerritoryWars
 
         private void ShowPossiblePlacements()
         {
-            // Очищаємо попередні підсвічування
-            foreach (Transform child in highlightedTiles.transform)
+            ClearHighlights();
+
+            foreach (var placement in currentValidPlacements)
             {
-                Destroy(child.gameObject);
+                CreateHighlight(placement.X, placement.Y);
             }
 
-            if (!isPlacingTile || currentTile == null) return;
-
-            Debug.Log($"Showing possible placements for tile {currentTile.id}");
-
-            // Перевіряємо кожну клітинку на дошці
-            for (int x = 0; x < board.Width; x++)
-            {
-                for (int y = 0; y < board.Height; y++)
-                {
-                    if (board.CanPlaceTile(currentTile, x, y))
-                    {
-                        CreateHighlight(x, y);
-                    }
-                }
-            }
+            // Встановлюємо нормальний колір для всіх підсвічувань
+            SetHighlightColor(normalHighlightColor);
         }
 
         private void CreateHighlight(int x, int y)
         {
             Vector3 position = board.GetTilePosition(x, y);
-            GameObject highlight = GameObject.CreatePrimitive(PrimitiveType.Quad);
+            GameObject highlight = new GameObject($"Highlight_{x}_{y}");
             highlight.transform.parent = highlightedTiles.transform;
-            highlight.transform.position = position + Vector3.back * 0.1f; // Трохи позаду тайлів
-            highlight.transform.rotation = Quaternion.Euler(90, 0, 0);
-            highlight.GetComponent<MeshRenderer>().material = highlightMaterial;
+            highlight.transform.position = position + Vector3.back * 0.1f;
 
-            // Додаємо компонент для кліку
+            // Додаємо SpriteRenderer замість MeshRenderer
+            var spriteRenderer = highlight.AddComponent<SpriteRenderer>();
+            spriteRenderer.sprite = highlightSprite; // Потрібно створити SerializeField для спрайту
+            spriteRenderer.material = highlightMaterial;
+            spriteRenderer.sortingOrder = -1;
+
             TileClickHandler clickHandler = highlight.AddComponent<TileClickHandler>();
             clickHandler.Initialize(this, x, y);
         }
 
         public void OnTileClicked(int x, int y)
         {
-            Debug.Log($"OnTileClicked called with coordinates: ({x}, {y})");
+            if (!isPlacingTile) return;
 
-            if (!isPlacingTile)
+            // Якщо позиція вже вибрана і користувач клікнув на неї знову
+            if (selectedPosition.HasValue && selectedPosition.Value.x == x && selectedPosition.Value.y == y)
             {
-                Debug.LogWarning("Not in tile placing mode");
+                PlaceTileAtPosition(x, y);
                 return;
             }
 
-            Debug.Log($"Current tile: {currentTile?.id ?? "null"}");
-            if (board.PlaceTile(currentTile, x, y))
-            {
-                Debug.Log($"Successfully placed tile {currentTile.id} at ({x}, {y})");
-                isPlacingTile = false;
-                gameUI.SetEndTurnButtonActive(true);
-                gameUI.SetRotateButtonActive(false);
+            currentValidRotations = board.GetValidRotations(currentTile, x, y);
 
-                // Очищаємо підсвічування
-                foreach (Transform child in highlightedTiles.transform)
+            if (currentValidRotations.Count == 0)
+            {
+                // Показуємо червоним, що позиція неправильна
+                SetHighlightColor(invalidHighlightColor);
+                selectedPosition = null;
+                return;
+            }
+
+            // Оновлюємо підсвічування
+            ShowPossiblePlacements();
+
+            // Підсвічуємо тільки вибрану позицію зеленим
+            foreach (Transform child in highlightedTiles.transform)
+            {
+                if (child.name == $"Highlight_{x}_{y}")
                 {
-                    Destroy(child.gameObject);
+                    child.GetComponent<SpriteRenderer>().color = selectedHighlightColor;
                 }
+                else
+                {
+                    child.GetComponent<SpriteRenderer>().color = normalHighlightColor;
+                }
+            }
+
+            selectedPosition = new Vector2Int(x, y);
+
+            // Якщо є тільки один можливий поворот, відразу розміщуємо тайл
+            if (currentValidRotations.Count == 1)
+            {
+                while (currentTile.rotationIndex != currentValidRotations[0])
+                {
+                    currentTile.Rotate();
+                }
+                PlaceTileAtPosition(x, y);
             }
             else
             {
-                Debug.LogWarning($"Failed to place tile at ({x}, {y})");
+                // Якщо є кілька можливих поворотів, дозволяємо гравцю вибрати
+                // Повертаємо тайл до першого валідного повороту
+                while (currentTile.rotationIndex != currentValidRotations[0])
+                {
+                    currentTile.Rotate();
+                }
+                gameUI.SetRotateButtonActive(true);
             }
         }
 
         public void RotateCurrentTile()
         {
-            if (currentTile != null)
+            if (currentTile == null || currentValidRotations == null || currentValidRotations.Count == 0)
+                return;
+
+            // Знаходимо наступний валідний поворот
+            int currentIndex = currentValidRotations.IndexOf(currentTile.rotationIndex);
+            int nextIndex = (currentIndex + 1) % currentValidRotations.Count;
+
+            // Повертаємо тайл до наступного валідного повороту
+            while (currentTile.rotationIndex != currentValidRotations[nextIndex])
             {
-                Debug.Log($"Rotating tile {currentTile.id}");
                 currentTile.Rotate();
-                Debug.Log($"Rotated to {currentTile.id}");
+            }
 
-                // Оновлюємо UI
-                gameUI.UpdateUI();
+            gameUI.UpdateUI();
+        }
 
-                // Оновлюємо можливі позиції для розміщення
-                ShowPossiblePlacements();
+        private void PlaceTileAtPosition(int x, int y)
+        {
+            if (board.PlaceTile(currentTile, x, y))
+            {
+                isPlacingTile = false;
+                selectedPosition = null;
+                gameUI.SetEndTurnButtonActive(true);
+                gameUI.SetRotateButtonActive(false);
+                ClearHighlights();
+            }
+        }
+
+        private void ClearHighlights()
+        {
+            foreach (Transform child in highlightedTiles.transform)
+            {
+                Destroy(child.gameObject);
             }
         }
 
         public void EndTurn()
         {
             StartNewTurn();
+        }
+
+        // Додайте метод для зміни кольору підсвічування
+        public void SetHighlightColor(Color color)
+        {
+            if (highlightMaterial != null)
+            {
+                highlightMaterial.color = color;
+            }
         }
     }
 }

@@ -19,22 +19,21 @@ namespace TerritoryWars
         {
             tileConfig = new Dictionary<string, int>
             {
-                { "CCRF", 4 },  // Місто-Місто-Дорога-Поле
-                { "CCFR", 4 },  // Місто-Місто-Поле-Дорога
-                { "CFRF", 11 }, // Місто-Поле-Дорога-Поле
-                { "CRRF", 9 },  // Місто-Дорога-Дорога-Поле
-                { "CRFF", 9 },  // Місто-Дорога-Поле-Поле
-                { "FFCR", 4 },  // Поле-Поле-Місто-Дорога
-                { "FFRF", 4 },  // Поле-Поле-Дорога-Поле
-                { "FRRF", 9 },  // Поле-Дорога-Дорога-Поле
-                { "FFCC", 4 },  // Поле-Поле-Місто-Місто
-                { "RRFF", 6 }   // Дорога-Дорога-Поле-Поле
+                { "CCRF", 4 },  
+                { "CCFR", 4 },  
+                { "CFRF", 11 }, 
+                { "CRRF", 9 },  
+                { "CRFF", 9 },  
+                { "FFCR", 4 },  
+                { "FFRF", 4 },  
+                { "FRRF", 9 },  
+                { "FFCC", 4 },  
+                { "RRFF", 6 }   
             };
         }
 
         private void ShuffleDeck()
         {
-            // Створюємо список всіх тайлів
             List<TileData> allTiles = new List<TileData>();
 
             foreach (var tileType in tileConfig)

@@ -5,6 +5,13 @@ using System.Linq;
 
 namespace TerritoryWars
 {
+    public class ValidPlacement
+    {
+        public int X { get; set; }
+        public int Y { get; set; }
+        public int Rotation { get; set; }
+    }
+
     public class Board : MonoBehaviour
     {
         [SerializeField] private int width = 10;
@@ -298,6 +305,64 @@ namespace TerritoryWars
             float xPosition = (x - y) * 0.5f;
             float yPosition = (x + y) * 0.25f;
             return new Vector3(xPosition, yPosition, 0);
+        }
+
+        public List<ValidPlacement> GetValidPlacements(TileData tile)
+        {
+            List<ValidPlacement> validPlacements = new List<ValidPlacement>();
+
+            // Перевіряємо всі позиції на дошці
+            for (int x = 0; x < width; x++)
+            {
+                for (int y = 0; y < height; y++)
+                {
+                    // Для кожної позиції перевіряємо всі можливі повороти
+                    for (int rotation = 0; rotation < 4; rotation++)
+                    {
+                        if (CanPlaceTile(tile, x, y))
+                        {
+                            validPlacements.Add(new ValidPlacement
+                            {
+                                X = x,
+                                Y = y,
+                                Rotation = rotation
+                            });
+                        }
+                        tile.Rotate();
+                    }
+                    // Повертаємо тайл в початкове положення
+                    tile.Rotate(4 - (tile.rotationIndex % 4));
+                }
+            }
+
+            return validPlacements;
+        }
+
+        public List<int> GetValidRotations(TileData tile, int x, int y)
+        {
+            List<int> validRotations = new List<int>();
+
+            // Зберігаємо початковий поворот
+            int initialRotation = tile.rotationIndex;
+
+            // Перевіряємо всі можливі повороти
+            for (int rotation = 0; rotation < 4; rotation++)
+            {
+                if (CanPlaceTile(tile, x, y))
+                {
+                    validRotations.Add(rotation);
+                }
+                tile.Rotate();
+            }
+
+            // Повертаємо тайл в початкове положення
+            tile.Rotate(4 - (tile.rotationIndex % 4));
+            while (tile.rotationIndex != initialRotation)
+            {
+                tile.Rotate();
+            }
+
+            return validRotations;
         }
     }
 }

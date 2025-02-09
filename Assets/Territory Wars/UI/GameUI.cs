@@ -50,7 +50,7 @@ namespace TerritoryWars
             // Оновлюємо текст з кількістю тайлів
             if (remainingTilesText != null)
             {
-                remainingTilesText.text = $"Залишилось тайлів: {deckManager.RemainingTiles}";
+                remainingTilesText.text = $"Tiles count: {deckManager.RemainingTiles}";
             }
 
             // Оновлюємо превью поточного тайлу
