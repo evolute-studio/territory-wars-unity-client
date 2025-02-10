@@ -14,6 +14,7 @@ namespace TerritoryWars.UI
         [SerializeField] private TextMeshProUGUI remainingTilesText;
 
         [Header("Tile Preview")]
+        [SerializeField] private TileGenerator tileGenerator;
         [SerializeField] private TileView previewTileView;
 
         private GameManager gameManager;
@@ -58,6 +59,7 @@ namespace TerritoryWars.UI
             if (previewTileView != null && gameManager.CurrentTile != null)
             {
                 previewTileView.gameObject.SetActive(true);
+                tileGenerator.Generate(gameManager.CurrentTile);
                 previewTileView.UpdateView(gameManager.CurrentTile);
             }
             else if (previewTileView != null)

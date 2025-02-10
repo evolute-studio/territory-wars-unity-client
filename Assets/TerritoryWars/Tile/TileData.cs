@@ -49,13 +49,23 @@ namespace TerritoryWars.Tile
             return CharToLandscape(sides[index]);
         }
 
+        public string GetConfig()
+        {
+            string result = "";
+            for (int i = 0; i < 4; i++)
+            {
+                result += sides[(i + rotationIndex) % 4];
+            }
+            return result;
+        }
+
         public static string GetRotatedConfig(string config)
         {
             char[] sides = config.ToCharArray();
             char[] rotatedSides = new char[4];
             for (int i = 0; i < 4; i++)
             {
-                int sourceIndex = (i + 1) % 4;
+                int sourceIndex = (i - 1 + 4) % 4;
                 rotatedSides[i] = sides[sourceIndex];
             }
             return new string(rotatedSides);

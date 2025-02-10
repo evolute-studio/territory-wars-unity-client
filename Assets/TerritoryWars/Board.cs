@@ -18,12 +18,14 @@ namespace TerritoryWars
         [SerializeField] private int width = 10;
         [SerializeField] private int height = 10;
         [SerializeField] private GameObject tilePrefab;
+        [SerializeField] private float tileSpacing = 0.5f;
 
         private GameObject[,] tileObjects;
         private TileData[,] tileData;
 
         private void Awake()
         {
+            Random.InitState(1);
             InitializeBoard();
             CreateRandomBorder();
         }
@@ -32,22 +34,6 @@ namespace TerritoryWars
         {
             tileObjects = new GameObject[width, height];
             tileData = new TileData[width, height];
-
-            // Створюємо сітку тайлів
-            for (int x = 0; x < width; x++)
-            {
-                for (int y = 0; y < height; y++)
-                {
-                    float xPosition = (x - y) * 0.5f;
-                    float yPosition = (x + y) * 0.25f;
-                    Vector3 position = new Vector3(xPosition, yPosition, 0);
-
-                    GameObject tile = Instantiate(tilePrefab, position, Quaternion.identity, transform);
-                    tile.name = $"Tile_{x}_{y}";
-                    tileObjects[x, y] = tile;
-                    tile.SetActive(false);
-                }
-            }
         }
 
         private void CreateRandomBorder()
@@ -55,8 +41,8 @@ namespace TerritoryWars
             // Список всіх можливих тайлів
             string[] possibleTiles = new string[]
             {
-                "CFFR", "CFRF", "CRFF", "CFFF",
-                "RFFR", "RFRF", "RRFF", "RFFF",
+                "CFFF", "CFRR", "CRRF", "FFFF",
+                "RFFR", "RFRF", "RRFF", "RFRF",
                 "FFFF" // Просте поле
             };
 
@@ -115,39 +101,23 @@ namespace TerritoryWars
             PlaceTile(new TileData("FFFF"), x, y);
         }
 
-        public bool PlaceTile(TileData tile, int x, int y)
+        public bool PlaceTile(TileData data, int x, int y)
         {
-            Debug.Log($"Attempting to place tile {tile.id} at position ({x}, {y})");
+            Debug.Log($"Attempting to place tile {data.id} at position ({x}, {y})");
 
-            if (!CanPlaceTile(tile, x, y))
+            if (!CanPlaceTile(data, x, y))
             {
                 Debug.LogWarning($"Cannot place tile: position check failed");
                 return false;
             }
 
             Debug.Log($"Position check passed, placing tile");
-            tileData[x, y] = tile;
-            GameObject tileObject = tileObjects[x, y];
-
-            if (tileObject == null)
-            {
-                Debug.LogError($"Tile object at ({x}, {y}) is null!");
-                return false;
-            }
-
-            tileObject.SetActive(true);
-
-            // Оновлюємо візуальне відображення
-            TileView tileView = tileObject.GetComponent<TileView>();
-            if (tileView != null)
-            {
-                tileView.UpdateView(tile);
-                Debug.Log($"Updated tile view for {tile.id}");
-            }
-            else
-            {
-                Debug.LogError($"TileView component missing on tile at ({x}, {y})");
-            }
+            tileData[x, y] = data;
+            GameObject tile = Instantiate(tilePrefab, GetTilePosition(x, y), Quaternion.identity, transform);
+            tile.name += $"_{x}_{y}";
+            tile.GetComponent<TileGenerator>().Generate(data);
+            tile.GetComponent<TileView>().UpdateView(data);
+            tileObjects[x, y] = tile;
 
             return true;
         }
@@ -303,8 +273,8 @@ namespace TerritoryWars
 
         public Vector3 GetTilePosition(int x, int y)
         {
-            float xPosition = (x - y) * 0.5f;
-            float yPosition = (x + y) * 0.25f;
+            float xPosition = (x - y) * tileSpacing;
+            float yPosition = (x + y) * (tileSpacing / 2);
             return new Vector3(xPosition, yPosition, 0);
         }
 

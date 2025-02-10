@@ -37,6 +37,12 @@ namespace TerritoryWars.Tile
             }
         }
 
+        public void Generate(TileData data)
+        {
+            TileConfig = data.id;
+            Generate();
+        }
+
         public void Generate()
         {
             foreach (var city in cities)
@@ -73,18 +79,21 @@ namespace TerritoryWars.Tile
             }
             id = id.Replace('C', 'X');
             id = id.Replace('F', 'X');
+            RoadRenderer.flipX = false;
+            RoadRenderer.flipY = false;
+            
             foreach (var roadPair in RoadPairs)
             {
                 if (roadPair.MainConfig == id)
                 {
                     RoadRenderer.sprite = roadPair.Sprite;
-                    RoadRenderer.flipX = false;
                     return;
                 }
                 if (roadPair.MirroredConfig == id)
                 {
                     RoadRenderer.sprite = roadPair.Sprite;
-                    RoadRenderer.flipX = true;
+                    RoadRenderer.flipX = roadPair.FlipX;
+                    RoadRenderer.flipY = roadPair.FlipY;
                     return;
                 }
             }
@@ -144,5 +153,7 @@ namespace TerritoryWars.Tile
         public string MainConfig;
         public string MirroredConfig;
         public Sprite Sprite;
+        public bool FlipX;
+        public bool FlipY;
     }
 }

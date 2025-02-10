@@ -20,16 +20,16 @@ namespace TerritoryWars
         {
             tileConfig = new Dictionary<string, int>
             {
-                { "CCRF", 4 },  
-                { "CCFR", 4 },  
-                { "CFRF", 11 }, 
+                { "CCFF", 4 },  
+                { "CCRR", 4 },  
+                { "CRFR", 11 }, 
                 { "CRRF", 9 },  
                 { "CRFF", 9 },  
-                { "FFCR", 4 },  
-                { "FFRF", 4 },  
+                //{ "FFCR", 4 },  
+                { "RFRF", 4 },  
                 { "FRRF", 9 },  
-                { "FFCC", 4 },  
-                { "RRFF", 6 }   
+                { "CRcR", 4 },  
+                { "RRRF", 6 }   
             };
         }
 
