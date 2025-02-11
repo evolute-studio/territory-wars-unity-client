@@ -1,10 +1,31 @@
 fileFormatVersion: 2
-guid: d16e34be4bd4bbb42bb1a9014073225f
+guid: 18b419f3b5bc20342b521f10a024e474
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5110921100122375961
-    second: CLOUDS 1_0
+      213: 1954381830469734688
+    second: Bandcoot mage-HIT_0
+  - first:
+      213: 8947515348877981040
+    second: Bandcoot mage-HIT_1
+  - first:
+      213: -8623476579441061914
+    second: Bandcoot mage-HIT_2
+  - first:
+      213: 6312289360088536185
+    second: Bandcoot mage-HIT_3
+  - first:
+      213: -1275791352653629626
+    second: Bandcoot mage-HIT_4
+  - first:
+      213: 2831847971102746365
+    second: Bandcoot mage-HIT_5
+  - first:
+      213: 866264534818758976
+    second: Bandcoot mage-HIT_6
+  - first:
+      213: 327415074277036887
+    second: Bandcoot mage-HIT_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +58,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +72,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,10 +93,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -124,10 +145,10 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: WebGL
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -139,13 +160,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CLOUDS 1_0
+      name: Bandcoot mage-HIT_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 863
-        height: 471
+        width: 172
+        height: 172
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +175,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 917c7d769a3ade640800000000000000
-      internalID: 5110921100122375961
+      spriteID: 02150a88beb5f1b10800000000000000
+      internalID: 1954381830469734688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bandcoot mage-HIT_1
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 0
+        width: 172
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0753a38cdc5fb2c70800000000000000
+      internalID: 8947515348877981040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bandcoot mage-HIT_2
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 0
+        width: 172
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6efc3897db1435880800000000000000
+      internalID: -8623476579441061914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bandcoot mage-HIT_3
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 0
+        width: 172
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9741e83aab1c99750800000000000000
+      internalID: 6312289360088536185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bandcoot mage-HIT_4
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 0
+        width: 172
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 647b091368a7b4ee0800000000000000
+      internalID: -1275791352653629626
       vertices: []
       indices: 
       edges: []
@@ -164,7 +273,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d6c865b85cb23f24b81b0082b0b0b32d
     internalID: 0
     vertices: []
     indices: 
@@ -174,7 +283,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      CLOUDS 1_0: 5110921100122375961
+      Bandcoot mage-HIT_0: 1954381830469734688
+      Bandcoot mage-HIT_1: 8947515348877981040
+      Bandcoot mage-HIT_2: -8623476579441061914
+      Bandcoot mage-HIT_3: 6312289360088536185
+      Bandcoot mage-HIT_4: -1275791352653629626
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
