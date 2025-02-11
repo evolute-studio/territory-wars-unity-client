@@ -19,6 +19,7 @@ namespace TerritoryWars.Tile
         {
             this.lineRenderer = lineRenderer;
         }
+        
         // private void OnDrawGizmos()
         // {
         //     if (lineRenderer == null || lineRenderer.positionCount < 3) return;
@@ -50,8 +51,9 @@ namespace TerritoryWars.Tile
                 return;
             }
 
+            int pointCount = lineRenderer.positionCount;
             // Отримуємо точки з LineRenderer
-            Vector3[] worldPoints = new Vector3[lineRenderer.positionCount];
+            Vector3[] worldPoints = new Vector3[pointCount];
             lineRenderer.GetPositions(worldPoints);
 
             // Конвертуємо в локальні координати

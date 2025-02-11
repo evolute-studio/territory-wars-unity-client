@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using TerritoryWars.ScriptablesObjects;
 using UnityEngine;
 
@@ -10,14 +11,16 @@ namespace TerritoryWars.Tile
         public TileConnector[] connectors;
         public SpriteRenderer RoadRenderer;
         public TileAssetsObject TileAssetsObject;
-        public Transform CityPrefab;
         
         public TileRotator TileRotator;
-        private List<GameObject> cities = new List<GameObject>();
+        private GameObject city;
 
 
         [Header("Roads")]
         public List<RoadPair> RoadPairs;
+        
+        [Header("Cities")]
+        public List<CityData> CityData;
 
         [HideInInspector]
         public string TileConfig;
@@ -45,11 +48,8 @@ namespace TerritoryWars.Tile
 
         public void Generate()
         {
-            foreach (var city in cities)
-            {
-                Destroy(city);
-            }
-            cities.Clear();
+            Destroy(city);
+            city = null;
             
             TileRotator.ClearLists();
             
@@ -77,7 +77,7 @@ namespace TerritoryWars.Tile
                 RoadRenderer.sprite = null;
                 return;
             }
-            id = id.Replace('C', 'X');
+            id = id.Replace('C', 'R');
             id = id.Replace('F', 'X');
             RoadRenderer.flipX = false;
             RoadRenderer.flipY = false;
@@ -108,37 +108,52 @@ namespace TerritoryWars.Tile
             }
             id = id.Replace('R', 'X');
             id = id.Replace('F', 'X');
-
-            if (cities.Count > 0) return;
-            for (int i = 0; i < id.Length; i++)
+            
+            if (city != null)
             {
-                if (id[i] == 'C')
-                {
-                    Transform city = Instantiate(CityPrefab, transform.position, Quaternion.identity, transform);
-                    InitCity(city.gameObject, i);
-                    cities.Add(city.gameObject);
-                }
+                return;
             }
 
-            
+            foreach (var cityData in CityData)
+            {
+                if (cityData.Config == id)
+                {
+                    city = Instantiate(cityData.CityPrefab, transform);
+                    InitCity(city, cityData.Rotation);
+                    
+                    return;
+                }
+            }
         }
         
         public void InitCity(GameObject city, int index)
         {
-            SpriteRenderer[] cityRenderers = city.GetComponentsInChildren<SpriteRenderer>();
-            foreach (var cityRenderer in cityRenderers)
+            // find in children game objects with sprite renderer and name House
+            List<SpriteRenderer> houseRenderers = city.GetComponentsInChildren<SpriteRenderer>()
+                .ToList().Where(x => x.name == "House").ToList();
+            Transform arc = city.transform.Find("Arc");
+            FencePlacer fencePlacer = city.GetComponentInChildren<FencePlacer>();
+
+            foreach (var house in houseRenderers)
             {
-                cityRenderer.sprite = TileAssetsObject.GetRandomHouse();
-                TileRotator.SimpleRotation(cityRenderer.transform, index);
-                TileRotator.SimpleRotationObjects.Add(cityRenderer.transform);
+                house.sprite = TileAssetsObject.GetNextHouse();
+                TileRotator.SimpleRotation(house.transform, index);
+                TileRotator.SimpleRotationObjects.Add(house.transform);
             }
+            
+            if (arc != null)
+            {
+                TileRotator.MirrorRotation(arc, index);
+                TileRotator.MirrorRotationObjects.Add(arc);
+            }
+            
             LineRenderer lineRenderer = city.GetComponentInChildren<LineRenderer>();
             if (lineRenderer != null)
             {
                 TileRotator.LineRotation(lineRenderer, index);
                 TileRotator.LineRenderers.Add(lineRenderer);
             }
-            FencePlacer fencePlacer = city.GetComponentInChildren<FencePlacer>();
+            
             fencePlacer.PlaceFence();
             TileRotator.OnRotation.AddListener(fencePlacer.PlaceFence);
         }
@@ -155,5 +170,13 @@ namespace TerritoryWars.Tile
         public Sprite Sprite;
         public bool FlipX;
         public bool FlipY;
+    }
+    
+    [Serializable]
+    public class CityData
+    {
+        public string Config;
+        public int Rotation;
+        public GameObject CityPrefab;
     }
 }

@@ -18,18 +18,36 @@ namespace TerritoryWars
 
         private void InitializeTileConfig()
         {
+            // СССС	1
+            // ССFС	4
+            // ССRС	3
+            // СFFС	7
+            // СRRС	6
+            // FСFС	6
+            // СFFF	4
+            // СFRR	4
+            // СRRF	3
+            // СRFR	4
+            // RFRF	8
+            // FFRR	9
+            // FRRR	4
+            // FFFF 1
             tileConfig = new Dictionary<string, int>
             {
-                { "CCFF", 4 },  
-                { "CCRR", 4 },  
-                { "CRFR", 11 }, 
-                { "CRRF", 9 },  
-                { "CRFF", 9 },  
-                //{ "FFCR", 4 },  
-                { "RFRF", 4 },  
-                { "FRRF", 9 },  
-                { "CRcR", 4 },  
-                { "RRRF", 6 }   
+                { "CCCC", 1 },
+                { "CCFC", 4 },
+                { "CCRC", 3 },
+                { "CFFC", 7 },
+                { "CRRC", 6 },
+                { "CFCF", 6 },
+                { "CFFF", 4 },
+                { "CFRR", 4 },
+                { "CRRF", 3 },
+                { "CRFR", 4 },
+                { "RFRF", 8 },
+                { "FFRR", 9 },
+                { "FRRR", 4 },
+                { "FFFF", 1 }
             };
         }
 

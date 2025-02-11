@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace TerritoryWars.Tile
@@ -15,11 +16,14 @@ namespace TerritoryWars.Tile
         [SerializeField] private Sprite fenceBottomLeft; // ╲
         [SerializeField] private Sprite fenceLeft;       // │
         [SerializeField] private Sprite fenceTopLeft;    // ╱
+        [SerializeField] private Sprite arcSprite;       // Спрайт арки
 
         [Header("Settings")]
         [SerializeField] private GameObject fencePrefab;
         [SerializeField] private float spacing = 0.5f;
         [SerializeField] private float fenceWidth = 1f; // Ширина одного забору
+        [SerializeField] private int arcIndex = 2;       // Індекс для розміщення арки
+        [SerializeField] private List<int> skipVertices; // Масив індексів вершин, які треба пропустити
 
         [Header("Animation")]
         [SerializeField] private float spawnDelay = 0.5f; // Затримка між спавном заборів
@@ -30,6 +34,7 @@ namespace TerritoryWars.Tile
         private Territory currentTerritory;
 
         public LineRenderer lineRenderer;
+        private bool isArcSpawned = false;
 
         [ContextMenu("Place Fence")]
         public void PlaceFence()
@@ -62,7 +67,7 @@ namespace TerritoryWars.Tile
                 Debug.Log($"Point {i}: {points[i]}");
             }
 
-            // Створюємо нову територію
+            // Створюємо нову територію з усіма точками
             if (currentTerritory != null)
             {
                 Debug.Log("Destroying old territory");
@@ -80,11 +85,40 @@ namespace TerritoryWars.Tile
             currentTerritory.SetLineRenderer(lineRenderer);
             currentTerritory.GenerateMask();
 
+            // Створюємо арку
+            if (arcIndex >= 0 && arcIndex < points.Length - 1 && !isArcSpawned)
+            {
+                Vector3 arcPosition = Vector3.Lerp(points[arcIndex], points[arcIndex + 1], 0.5f);
+                GameObject arc = Instantiate(fencePrefab, transform.parent);
+                arc.name = "Arc";
+                arc.transform.localPosition = arcPosition;
+                arc.transform.position += transform.position;
+
+                var spriteRenderer = arc.GetComponent<SpriteRenderer>();
+                if (spriteRenderer != null)
+                {
+                    spriteRenderer.sprite = arcSprite;
+                }
+                isArcSpawned = true;
+                //transform.parent.GetComponentInParent<TileRotator>().MirrorRotationObjects.Add(arc.transform);
+            }
+
             // Проходимо всі точки по порядку
             for (int i = 0; i < points.Length - 1; i++)
             {
-                Debug.Log($"Processing segment {i} -> {i + 1}");
-                yield return StartCoroutine(PlaceFenceSegmentRoutine(points[i], points[i + 1]));
+                // Пропускаємо вершини, які вказані в skipVertices
+                if (skipVertices != null && skipVertices.Contains(i))
+                {
+                    Debug.Log($"Skipping vertex {i}");
+                    continue;
+                }
+
+                // Пропускаємо спавн заборів на місці арки
+                if (i != arcIndex)
+                {
+                    Debug.Log($"Processing segment {i} -> {i + 1}");
+                    yield return StartCoroutine(PlaceFenceSegmentRoutine(points[i], points[i + 1]));
+                }
             }
         }
 
@@ -113,7 +147,7 @@ namespace TerritoryWars.Tile
                 Vector3 localPosition = Vector3.Lerp(start, end, t);
 
                 GameObject fence = Instantiate(fencePrefab, transform);
-                fence.transform.localPosition = localPosition;
+                fence.transform.localPosition = new Vector3(localPosition.x, localPosition.y, 0);
                 fence.transform.position += transform.position;
 
                 var spriteRenderer = fence.GetComponent<SpriteRenderer>();
@@ -222,6 +256,22 @@ namespace TerritoryWars.Tile
             float angle = Mathf.Atan2(isoDirection.y, isoDirection.x) * Mathf.Rad2Deg;
             if (angle < 0) angle += 360;
             return angle;
+        }
+
+        private void OnValidate()
+        {
+            // Перевіряємо валідність індексів у skipVertices
+            if (skipVertices != null)
+            {
+                for (int i = 0; i < skipVertices.Count; i++)
+                {
+                    if (skipVertices[i] < 0)
+                    {
+                        Debug.LogWarning($"Skip vertex index {skipVertices[i]} is negative, setting to 0");
+                        skipVertices[i] = 0;
+                    }
+                }
+            }
         }
     }
 }
