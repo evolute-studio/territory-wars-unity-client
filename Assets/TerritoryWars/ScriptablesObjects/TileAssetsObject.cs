@@ -6,6 +6,7 @@ namespace TerritoryWars.ScriptablesObjects
     public class TileAssetsObject : ScriptableObject
     {
         public Sprite[] Houses;
+        public Sprite[] Mountains;
         
         private int currentIndex = 0;
         
@@ -21,6 +22,13 @@ namespace TerritoryWars.ScriptablesObjects
             currentIndex = (currentIndex + 1) % Houses.Length;
             Sprite nextHouse = Houses[currentIndex];
             return nextHouse;
+        }
+        
+        public Sprite GetRandomMountain()
+        {
+            int randomIndex = Random.Range(0, Mountains.Length);
+            Sprite randomMountain = Mountains[randomIndex];
+            return randomMountain;
         }
         
     }

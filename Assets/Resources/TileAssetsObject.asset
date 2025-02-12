@@ -16,3 +16,10 @@ MonoBehaviour:
   - {fileID: 8413740145958120682, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
   - {fileID: 2912985593240855013, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
   - {fileID: 7088043999203090994, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
+  Mountains:
+  - {fileID: -741998552, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
+  - {fileID: -304526517, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
+  - {fileID: -1933483832, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
+  - {fileID: -1068921282, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
+  - {fileID: 902211640, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
+  - {fileID: 272867803, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}

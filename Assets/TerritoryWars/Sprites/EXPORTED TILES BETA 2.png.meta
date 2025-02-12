@@ -2057,6 +2057,138 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: EXPORTED TILES BETA 2_80
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 1241
+        width: 87
+        height: 70
+      alignment: 9
+      pivot: {x: 0.50044477, y: 0.30624652}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58cb4b3aaf0314e92914ff5d12388008
+      internalID: -741998552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EXPORTED TILES BETA 2_81
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 1234
+        width: 105
+        height: 75
+      alignment: 9
+      pivot: {x: 0.4978667, y: 0.3681234}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70801c8a6b68b4f75a7adfa67f7e91e8
+      internalID: -304526517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EXPORTED TILES BETA 2_82
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 1243
+        width: 85
+        height: 62
+      alignment: 9
+      pivot: {x: 0.4969296, y: 0.32699683}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fc7f576b434b4424bbb03827c7b62af
+      internalID: -1933483832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EXPORTED TILES BETA 2_83
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 1130
+        width: 87
+        height: 70
+      alignment: 9
+      pivot: {x: 0.49999928, y: 0.3062465}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24499d76b3abf48b0936ca557678938d
+      internalID: -1068921282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EXPORTED TILES BETA 2_84
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 1123
+        width: 105
+        height: 75
+      alignment: 9
+      pivot: {x: 0.49999884, y: 0.3681234}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ceb29708df4f4c1392ea37371c8bed9
+      internalID: 902211640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EXPORTED TILES BETA 2_85
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 1132
+        width: 85
+        height: 62
+      alignment: 9
+      pivot: {x: 0.49999857, y: 0.3269968}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c546bcc9c640413c9d291cd6e275ea7
+      internalID: 272867803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -2150,6 +2282,12 @@ TextureImporter:
       EXPORTED TILES BETA 2_78: -908576872
       EXPORTED TILES BETA 2_79: -1188243888
       EXPORTED TILES BETA 2_8: 1039611981507402544
+      EXPORTED TILES BETA 2_80: -741998552
+      EXPORTED TILES BETA 2_81: -304526517
+      EXPORTED TILES BETA 2_82: -1933483832
+      EXPORTED TILES BETA 2_83: -1068921282
+      EXPORTED TILES BETA 2_84: 902211640
+      EXPORTED TILES BETA 2_85: 272867803
       EXPORTED TILES BETA 2_9: 143857204813065492
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

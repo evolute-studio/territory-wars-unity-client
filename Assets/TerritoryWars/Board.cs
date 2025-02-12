@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TerritoryWars.ScriptablesObjects;
 using TerritoryWars.Tile;
 
 namespace TerritoryWars
@@ -15,6 +16,8 @@ namespace TerritoryWars
 
     public class Board : MonoBehaviour
     {
+        public TileAssetsObject tileAssets;
+        
         [SerializeField] private int width = 10;
         [SerializeField] private int height = 10;
         [SerializeField] private GameObject tilePrefab;
@@ -38,67 +41,112 @@ namespace TerritoryWars
 
         private void CreateRandomBorder()
         {
-            // Список всіх можливих тайлів
-            string[] possibleTiles = new string[]
-            {
-                "CFFF", "CFRR", "CRRF", "FFFF",
-                "RFFR", "RFRF", "RRFF", "RFRF",
-                "FFFF" // Просте поле
-            };
+            GenerateBorderSide(new Vector2Int(9, 0), new Vector2Int(9, 9), 0, true);
+            GenerateBorderSide(new Vector2Int(0, 0), new Vector2Int(9, 0), 1, false);
+            GenerateBorderSide(new Vector2Int(0, 0), new Vector2Int(0, 9), 2, true);
+            GenerateBorderSide(new Vector2Int(0, 9), new Vector2Int(9, 9), 3, false);
 
-            // Проходимо по контуру за годинниковою стрілкою
-            // Верхня сторона (зліва направо)
-            for (int x = 0; x < width; x++)
-            {
-                TryPlaceRandomTile(possibleTiles, x, 0);
-            }
 
-            // Права сторона (зверху вниз)
-            for (int y = 1; y < height; y++)
-            {
-                TryPlaceRandomTile(possibleTiles, width - 1, y);
-            }
 
-            // Нижня сторона (справа наліво)
-            for (int x = width - 2; x >= 0; x--)
-            {
-                TryPlaceRandomTile(possibleTiles, x, height - 1);
-            }
-
-            // Ліва сторона (знизу вгору)
-            for (int y = height - 2; y > 0; y--)
-            {
-                TryPlaceRandomTile(possibleTiles, 0, y);
-            }
         }
 
-        private void TryPlaceRandomTile(string[] possibleTiles, int x, int y)
+        public void GenerateBorderSide(Vector2Int startPos, Vector2Int endPos, int rotationTimes, bool isHorizontal)
         {
-            Debug.Log($"Trying to place border tile at ({x}, {y})");
+            string roadTile = "RFRF";
+            string cityTile = "FFCF";
+            string fieldTile = "FFFF";
+            // наприклад start (9, 9) end (9, 0)
 
-            // Перебираємо всі можливі тайли в випадковому порядку
-            var shuffledTiles = possibleTiles.OrderBy(t => Random.value).ToList();
+            roadTile = TileData.GetRotatedConfig(roadTile, rotationTimes);
+            cityTile = TileData.GetRotatedConfig(cityTile, rotationTimes);
 
-            foreach (string tileCode in shuffledTiles)
+            string[] tilesToSpawn = new string[] { roadTile, fieldTile, fieldTile,  cityTile,  fieldTile, fieldTile, roadTile, fieldTile };
+
+            List<Vector2Int> availablePositions = new List<Vector2Int>();
+            if (isHorizontal)
             {
-                TileData tile = new TileData(tileCode);
-
-                // Пробуємо всі можливі повороти
-                for (int rotation = 0; rotation < 4; rotation++)
+                for (int i = startPos.y + 1; i < endPos.y; i++)
                 {
-                    if (CanPlaceTile(tile, x, y))
-                    {
-                        Debug.Log($"Successfully placed tile {tile.id} at ({x}, {y}) with rotation {rotation}");
-                        PlaceTile(tile, x, y);
-                        return;
-                    }
-                    tile.Rotate();
+                    availablePositions.Add(new Vector2Int(startPos.x, i));
                 }
             }
+            else
+            {
+                for (int i = startPos.x + 1; i < endPos.x; i++)
+                {
+                    availablePositions.Add(new Vector2Int(i, startPos.y));
+                }
 
-            // Якщо не вдалося розмістити жоден тайл, розміщуємо просте поле
-            Debug.LogWarning($"Failed to place matching tile at ({x}, {y}), placing field");
-            PlaceTile(new TileData("FFFF"), x, y);
+            }
+            // shuffle availablePositions
+            availablePositions = availablePositions.OrderBy(x => Random.Range(0, int.MaxValue)).ToList();
+
+            PlaceTile(new TileData(fieldTile), startPos.x, startPos.y);
+            PlaceTile(new TileData(fieldTile), endPos.x, endPos.y);
+            tileObjects[startPos.x, startPos.y].transform.Find("RoadRenderer").GetComponent<SpriteRenderer>().sprite = tileAssets.GetRandomMountain();
+            tileObjects[endPos.x, endPos.y].transform.Find("RoadRenderer").GetComponent<SpriteRenderer>().sprite = tileAssets.GetRandomMountain();
+            // place 3 tiles
+            for (int i = 0; i < availablePositions.Count; i++)
+            {
+                PlaceTile(new TileData(tilesToSpawn[i]), availablePositions[i].x, availablePositions[i].y);
+                if (tilesToSpawn[i] == fieldTile)
+                {
+                    tileObjects[availablePositions[i].x, availablePositions[i].y].transform.Find("RoadRenderer").GetComponent<SpriteRenderer>().sprite = tileAssets.GetRandomMountain();
+                }
+                
+            }
+
+        }
+
+        private void PlaceBorderSide(int start, int pos, int length, string[] roadTile, string[] cityTile, int baseRotation, bool isHorizontal)
+        {
+            // Створюємо список доступних позицій (без крайніх позицій)
+            List<int> availablePositions = new List<int>();
+            for (int i = 1; i < length - 1; i++)
+            {
+                availablePositions.Add(i);
+            }
+
+            // Вибираємо 3 випадкові позиції для тайлів
+            List<int> selectedPositions = new List<int>();
+            for (int i = 0; i < 3; i++)
+            {
+                int randomIndex = Random.Range(0, availablePositions.Count);
+                selectedPositions.Add(availablePositions[randomIndex]);
+                availablePositions.RemoveAt(randomIndex);
+            }
+            selectedPositions.Sort(); // Сортуємо для послідовного розміщення
+
+            // Випадково вибираємо позицію для міста серед трьох вибраних
+            int cityIndex = Random.Range(0, 3);
+
+            // Розміщуємо тайли
+            for (int i = 0; i < 3; i++)
+            {
+                int position = selectedPositions[i];
+                int x = isHorizontal ? start + position : start;
+                int y = isHorizontal ? pos : start + position;
+
+                TileData tile;
+                if (i == cityIndex)
+                {
+                    // Розміщуємо місто
+                    tile = new TileData(cityTile[0]);
+                }
+                else
+                {
+                    // Розміщуємо дорогу
+                    tile = new TileData(roadTile[0]);
+                }
+
+                // Повертаємо тайл потрібною стороною до центру
+                for (int r = 0; r < baseRotation; r++)
+                {
+                    tile.Rotate();
+                }
+
+                PlaceTile(tile, x, y);
+            }
         }
 
         public bool PlaceTile(TileData data, int x, int y)
@@ -140,23 +188,21 @@ namespace TerritoryWars
                 return false;
             }
 
-            // Перевіряємо чи це перший тайл на полі
-            bool isFirstTile = true;
+            // Підраховуємо кількість розміщених тайлів
+            int placedTiles = 0;
             for (int i = 0; i < width; i++)
             {
                 for (int j = 0; j < height; j++)
                 {
                     if (tileData[i, j] != null)
                     {
-                        isFirstTile = false;
-                        break;
+                        placedTiles++;
                     }
                 }
-                if (!isFirstTile) break;
             }
 
-            // Для першого тайлу в контурі
-            if (isFirstTile && (x == 0 || x == width - 1 || y == 0 || y == height - 1))
+            // Якщо на карті менше 36 тайлів, дозволяємо розміщення в будь-якій позиції
+            if (placedTiles < 36)
             {
                 return true;
             }
