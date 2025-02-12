@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace TerritoryWars.Editor
 {
-    [CustomEditor(typeof(FencePlacer))]
-    public class FencePlacerEditor : UnityEditor.Editor
+    [CustomEditor(typeof(TerritoryFiller))]
+    public class TerritoryFillerEditor : UnityEditor.Editor
     {
         public override void OnInspectorGUI()
         {
@@ -21,12 +21,12 @@ namespace TerritoryWars.Editor
             // Заголовок боксу
             EditorGUILayout.LabelField("Fence Placement", EditorStyles.boldLabel);
 
-            FencePlacer fencePlacer = (FencePlacer)target;
+            TerritoryFiller territoryFiller = (TerritoryFiller)target;
 
             // Кнопка для розміщення забору
-            if (GUILayout.Button("Place Fence"))
+            if (GUILayout.Button("Fill Territory"))
             {
-                fencePlacer.PlaceFence();
+                territoryFiller.PlaceTerritory();
             }
 
             // Закінчуємо бокс

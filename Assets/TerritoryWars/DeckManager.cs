@@ -49,6 +49,13 @@ namespace TerritoryWars
                 { "FRRR", 4 },
                 { "FFFF", 1 }
             };
+            tileConfig = new Dictionary<string, int>
+            {
+                { "RRFF", 8},
+                { "RRRF", 8},
+                { "RFRF", 8},
+                
+            };
         }
 
         private void ShuffleDeck()

@@ -132,13 +132,21 @@ namespace TerritoryWars.Tile
             List<SpriteRenderer> houseRenderers = city.GetComponentsInChildren<SpriteRenderer>()
                 .ToList().Where(x => x.name == "House").ToList();
             Transform arc = city.transform.Find("Arc");
+            TerritoryFiller territoryFiller = city.GetComponentInChildren<TerritoryFiller>();
             FencePlacer fencePlacer = city.GetComponentInChildren<FencePlacer>();
+            List<Transform> pillars = fencePlacer.pillars;
 
             foreach (var house in houseRenderers)
             {
                 house.sprite = TileAssetsObject.GetNextHouse();
                 TileRotator.SimpleRotation(house.transform, index);
                 TileRotator.SimpleRotationObjects.Add(house.transform);
+            }
+
+            foreach (var pillar in pillars)
+            {
+                TileRotator.SimpleRotation(pillar, index);
+                TileRotator.SimpleRotationObjects.Add(pillar);
             }
             
             if (arc != null)
@@ -147,14 +155,16 @@ namespace TerritoryWars.Tile
                 TileRotator.MirrorRotationObjects.Add(arc);
             }
             
-            LineRenderer lineRenderer = city.GetComponentInChildren<LineRenderer>();
-            if (lineRenderer != null)
+            LineRenderer territoryLineRenderer = territoryFiller.GetComponent<LineRenderer>();
+            if (territoryLineRenderer != null)
             {
-                TileRotator.LineRotation(lineRenderer, index);
-                TileRotator.LineRenderers.Add(lineRenderer);
+                TileRotator.LineRotation(territoryLineRenderer, index);
+                TileRotator.LineRenderers.Add(territoryLineRenderer);
             }
             
+            territoryFiller.PlaceTerritory();
             fencePlacer.PlaceFence();
+            TileRotator.OnRotation.AddListener(territoryFiller.PlaceTerritory);
             TileRotator.OnRotation.AddListener(fencePlacer.PlaceFence);
         }
 
