@@ -1,0 +1,719 @@
+fileFormatVersion: 2
+guid: 4e104551dd1b04f4199864d7ecb527ed
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6375095830879776291
+    second: CLIFFS FLOATING 2.0_0
+  - first:
+      213: -8779193422122692159
+    second: CLIFFS FLOATING 2.0_1
+  - first:
+      213: -5599131942673164907
+    second: CLIFFS FLOATING 2.0_2
+  - first:
+      213: 6362591263310709413
+    second: CLIFFS FLOATING 2.0_3
+  - first:
+      213: -7781914662976974198
+    second: CLIFFS FLOATING 2.0_4
+  - first:
+      213: -7865215453240807632
+    second: CLIFFS FLOATING 2.0_5
+  - first:
+      213: 5876433297043640477
+    second: CLIFFS FLOATING 2.0_6
+  - first:
+      213: -215355630262695860
+    second: CLIFFS FLOATING 2.0_7
+  - first:
+      213: 4282328308110623125
+    second: CLIFFS FLOATING 2.0_8
+  - first:
+      213: -6524170899262865215
+    second: CLIFFS FLOATING 2.0_9
+  - first:
+      213: 3967432851590640358
+    second: CLIFFS FLOATING 2.0_10
+  - first:
+      213: 8272792484232692629
+    second: CLIFFS FLOATING 2.0_11
+  - first:
+      213: 329192959147136738
+    second: CLIFFS FLOATING 2.0_12
+  - first:
+      213: 3910666783914876699
+    second: CLIFFS FLOATING 2.0_13
+  - first:
+      213: -4595076652430160796
+    second: CLIFFS FLOATING 2.0_14
+  - first:
+      213: 7623916308288402692
+    second: CLIFFS FLOATING 2.0_15
+  - first:
+      213: -6009093767179790012
+    second: CLIFFS FLOATING 2.0_16
+  - first:
+      213: 4411662236684437710
+    second: CLIFFS FLOATING 2.0_17
+  - first:
+      213: -7023992540742141482
+    second: CLIFFS FLOATING 2.0_18
+  - first:
+      213: -1453197463758918150
+    second: CLIFFS FLOATING 2.0_19
+  - first:
+      213: 1427803208391582854
+    second: CLIFFS FLOATING 2.0_20
+  - first:
+      213: -1296798356560485481
+    second: CLIFFS FLOATING 2.0_21
+  - first:
+      213: -1194603051194052528
+    second: CLIFFS FLOATING 2.0_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CLIFFS FLOATING 2.0_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1446
+        width: 461
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32ea9a8a1e3e87850800000000000000
+      internalID: 6375095830879776291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLIFFS FLOATING 2.0_1
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 1418
+        width: 825
+        height: 358
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c15ee3c81a0a2680800000000000000
+      internalID: -8779193422122692159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLIFFS FLOATING 2.0_3
+      rect:
+        serializedVersion: 2
+        x: 1447
+        y: 1459
+        width: 359
+        height: 307
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a283a42b077c4850800000000000000
+      internalID: 6362591263310709413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLIFFS FLOATING 2.0_4
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 1113
+        width: 182
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a829ad828d5110490800000000000000
+      internalID: -7781914662976974198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLIFFS FLOATING 2.0_5
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 1160
+        width: 258
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03f2bab873429d290800000000000000
+      internalID: -7865215453240807632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLIFFS FLOATING 2.0_6
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 1117
+        width: 210
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d905090f2f84d8150800000000000000
+      internalID: 5876433297043640477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLIFFS FLOATING 2.0_7
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 1113
+        width: 228
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c48cfcdf137e20df0800000000000000
+      internalID: -215355630262695860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLIFFS FLOATING 2.0_8
+      rect:
+        serializedVersion: 2
+        x: 1187
+        y: 1137
+        width: 211
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 591888058e2ed6b30800000000000000
+      internalID: 4282328308110623125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLIFFS FLOATING 2.0_9
+      rect:
+        serializedVersion: 2
+        x: 1522
+        y: 1146
+        width: 276
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c00f77322d7575a0800000000000000
+      internalID: -6524170899262865215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLIFFS FLOATING 2.0_10
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 856
+        width: 170
+        height: 229
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e2764d78272f0730800000000000000
+      internalID: 3967432851590640358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLIFFS FLOATING 2.0_11
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 899
+        width: 284
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 593063beeecdec270800000000000000
+      internalID: 8272792484232692629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLIFFS FLOATING 2.0_12
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 789
+        width: 242
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e656809047819400800000000000000
+      internalID: 329192959147136738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLIFFS FLOATING 2.0_13
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 893
+        width: 243
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1f5a2a68ba754630800000000000000
+      internalID: 3910666783914876699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLIFFS FLOATING 2.0_14
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 899
+        width: 217
+        height: 127
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46c853061220b30c0800000000000000
+      internalID: -4595076652430160796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLIFFS FLOATING 2.0_15
+      rect:
+        serializedVersion: 2
+        x: 1475
+        y: 913
+        width: 350
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40576d83d779dc960800000000000000
+      internalID: 7623916308288402692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLIFFS FLOATING 2.0_16
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 618
+        width: 108
+        height: 153
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4491c396e096b9ca0800000000000000
+      internalID: -6009093767179790012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLIFFS FLOATING 2.0_17
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 615
+        width: 89
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec8c4962e6f593d30800000000000000
+      internalID: 4411662236684437710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLIFFS FLOATING 2.0_18
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 625
+        width: 74
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d93218bff3c58e90800000000000000
+      internalID: -7023992540742141482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLIFFS FLOATING 2.0_19
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 663
+        width: 65
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afda6282b9435dbe0800000000000000
+      internalID: -1453197463758918150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLIFFS FLOATING 2.0_20
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 671
+        width: 69
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 684e755047390d310800000000000000
+      internalID: 1427803208391582854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLIFFS FLOATING 2.0_21
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 0
+        width: 665
+        height: 555
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 793e6e3f3c8d00ee0800000000000000
+      internalID: -1296798356560485481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLIFFS FLOATING 2.0_22
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 77
+        width: 739
+        height: 509
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0501bfdaadaeb6fe0800000000000000
+      internalID: -1194603051194052528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 3c5bd00ac6eb3d54f8dc62f05e063e63
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CLIFFS FLOATING 2.0_0: 6375095830879776291
+      CLIFFS FLOATING 2.0_1: -8779193422122692159
+      CLIFFS FLOATING 2.0_10: 3967432851590640358
+      CLIFFS FLOATING 2.0_11: 8272792484232692629
+      CLIFFS FLOATING 2.0_12: 329192959147136738
+      CLIFFS FLOATING 2.0_13: 3910666783914876699
+      CLIFFS FLOATING 2.0_14: -4595076652430160796
+      CLIFFS FLOATING 2.0_15: 7623916308288402692
+      CLIFFS FLOATING 2.0_16: -6009093767179790012
+      CLIFFS FLOATING 2.0_17: 4411662236684437710
+      CLIFFS FLOATING 2.0_18: -7023992540742141482
+      CLIFFS FLOATING 2.0_19: -1453197463758918150
+      CLIFFS FLOATING 2.0_2: -5599131942673164907
+      CLIFFS FLOATING 2.0_20: 1427803208391582854
+      CLIFFS FLOATING 2.0_21: -1296798356560485481
+      CLIFFS FLOATING 2.0_22: -1194603051194052528
+      CLIFFS FLOATING 2.0_3: 6362591263310709413
+      CLIFFS FLOATING 2.0_4: -7781914662976974198
+      CLIFFS FLOATING 2.0_5: -7865215453240807632
+      CLIFFS FLOATING 2.0_6: 5876433297043640477
+      CLIFFS FLOATING 2.0_7: -215355630262695860
+      CLIFFS FLOATING 2.0_8: 4282328308110623125
+      CLIFFS FLOATING 2.0_9: -6524170899262865215
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

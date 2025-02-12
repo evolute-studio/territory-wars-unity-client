@@ -1,0 +1,1762 @@
+fileFormatVersion: 2
+guid: 7bef83afa789f6c4e93798de8ad5ddbb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1291404879975149935
+    second: Sun Mage_0
+  - first:
+      213: -8851675190244076053
+    second: Sun Mage_1
+  - first:
+      213: 9024115502849083016
+    second: Sun Mage_2
+  - first:
+      213: 2595288398952929157
+    second: Sun Mage_3
+  - first:
+      213: 5861418633174218397
+    second: Sun Mage_4
+  - first:
+      213: -7664453727727186677
+    second: Sun Mage_5
+  - first:
+      213: 567913388676996712
+    second: Sun Mage_6
+  - first:
+      213: 7516337135548963849
+    second: Sun Mage_7
+  - first:
+      213: 7596046764148541189
+    second: Sun Mage_8
+  - first:
+      213: 6051643613538098083
+    second: Sun Mage_9
+  - first:
+      213: -6476929598473565597
+    second: Sun Mage_10
+  - first:
+      213: 6088525945395861274
+    second: Sun Mage_11
+  - first:
+      213: -7871437259295029350
+    second: Sun Mage_12
+  - first:
+      213: -7965687403771972432
+    second: Sun Mage_13
+  - first:
+      213: 2874433525260898121
+    second: Sun Mage_14
+  - first:
+      213: -3418119673784368751
+    second: Sun Mage_15
+  - first:
+      213: 9104915613030031129
+    second: Sun Mage_16
+  - first:
+      213: 269734519438417208
+    second: Sun Mage_17
+  - first:
+      213: -7244589549716353255
+    second: Sun Mage_18
+  - first:
+      213: -6770655510122953099
+    second: Sun Mage_19
+  - first:
+      213: -6930283978999978272
+    second: Sun Mage_20
+  - first:
+      213: -1453950477203329199
+    second: Sun Mage_21
+  - first:
+      213: 178854201327751997
+    second: Sun Mage_22
+  - first:
+      213: -6951791861480035673
+    second: Sun Mage_23
+  - first:
+      213: -777665180302537236
+    second: Sun Mage_24
+  - first:
+      213: -7730647694749383539
+    second: Sun Mage_25
+  - first:
+      213: 6286719084493821157
+    second: Sun Mage_26
+  - first:
+      213: -3825116926700160244
+    second: Sun Mage_27
+  - first:
+      213: -476243004046035704
+    second: Sun Mage_28
+  - first:
+      213: 2357476086384326658
+    second: Sun Mage_29
+  - first:
+      213: 5465491550015734040
+    second: Sun Mage_30
+  - first:
+      213: 2931738902751386583
+    second: Sun Mage_31
+  - first:
+      213: 993582496466924942
+    second: Sun Mage_32
+  - first:
+      213: 1105014462263276116
+    second: Sun Mage_33
+  - first:
+      213: 6089953021926298932
+    second: Sun Mage_34
+  - first:
+      213: 4760897365982670728
+    second: Sun Mage_35
+  - first:
+      213: 8356753263664536906
+    second: Sun Mage_36
+  - first:
+      213: -3400258631235093161
+    second: Sun Mage_37
+  - first:
+      213: -2257569568220415683
+    second: Sun Mage_38
+  - first:
+      213: -3576364388818693922
+    second: Sun Mage_39
+  - first:
+      213: 2530890738737089746
+    second: Sun Mage_40
+  - first:
+      213: -1250894834969248562
+    second: Sun Mage_41
+  - first:
+      213: -7081680828718971151
+    second: Sun Mage_42
+  - first:
+      213: 2906246404770637624
+    second: Sun Mage_43
+  - first:
+      213: -1954406671936456481
+    second: Sun Mage_44
+  - first:
+      213: -4668219206280899332
+    second: Sun Mage_45
+  - first:
+      213: 1140476187321564412
+    second: Sun Mage_46
+  - first:
+      213: 6383778377032786318
+    second: Sun Mage_47
+  - first:
+      213: -6142846456308718165
+    second: Sun Mage_48
+  - first:
+      213: 1790332638962882489
+    second: Sun Mage_49
+  - first:
+      213: 2032363021970978058
+    second: Sun Mage_50
+  - first:
+      213: 3420242492278231175
+    second: Sun Mage_51
+  - first:
+      213: -5423958091456827596
+    second: Sun Mage_52
+  - first:
+      213: 5274913377452366688
+    second: Sun Mage_53
+  - first:
+      213: 7035103397825586438
+    second: Sun Mage_54
+  - first:
+      213: 9088481568963461363
+    second: Sun Mage_55
+  - first:
+      213: -2267581325989313490
+    second: Sun Mage_56
+  - first:
+      213: -5570220020336682028
+    second: Sun Mage_57
+  - first:
+      213: 2256827912608961118
+    second: Sun Mage_58
+  - first:
+      213: -5442874946385442884
+    second: Sun Mage_59
+  - first:
+      213: -3110171333313282294
+    second: Sun Mage_60
+  - first:
+      213: -4127494084976687263
+    second: Sun Mage_61
+  - first:
+      213: -7841456660823936719
+    second: Sun Mage_62
+  - first:
+      213: 6222609788278298090
+    second: Sun Mage_63
+  - first:
+      213: 5753333581362384966
+    second: Sun Mage_64
+  - first:
+      213: 5390936582704870062
+    second: Sun Mage_65
+  - first:
+      213: -3011401786876028852
+    second: Sun Mage_66
+  - first:
+      213: 8654657699049484114
+    second: Sun Mage_67
+  - first:
+      213: 1082374613351669362
+    second: Sun Mage_68
+  - first:
+      213: -6346361126383111663
+    second: Sun Mage_69
+  - first:
+      213: 8067605931700105684
+    second: Sun Mage_70
+  - first:
+      213: -8529399360804390300
+    second: Sun Mage_71
+  - first:
+      213: 8411789451228381887
+    second: Sun Mage_72
+  - first:
+      213: -2896542852955332194
+    second: Sun Mage_73
+  - first:
+      213: 6178199122281229427
+    second: Sun Mage_74
+  - first:
+      213: -5135154008874612690
+    second: Sun Mage_75
+  - first:
+      213: 5675981623895455075
+    second: Sun Mage_76
+  - first:
+      213: 7434711448675987178
+    second: Sun Mage_77
+  - first:
+      213: -6813472150867306558
+    second: Sun Mage_78
+  - first:
+      213: -4774376920714216953
+    second: Sun Mage_79
+  - first:
+      213: -1339242576983310293
+    second: Sun Mage_80
+  - first:
+      213: -5597178976043854260
+    second: Sun Mage_81
+  - first:
+      213: -9203472372476690289
+    second: Sun Mage_82
+  - first:
+      213: 449131027168006332
+    second: Sun Mage_83
+  - first:
+      213: -2584009036876709816
+    second: Sun Mage_84
+  - first:
+      213: -2450790412775040341
+    second: Sun Mage_85
+  - first:
+      213: 5648798500065461836
+    second: Sun Mage_86
+  - first:
+      213: 1973525593990150049
+    second: Sun Mage_87
+  - first:
+      213: -7510296979499284555
+    second: Sun Mage_88
+  - first:
+      213: 5302697716250249004
+    second: Sun Mage_89
+  - first:
+      213: -7795650627506928395
+    second: Sun Mage_90
+  - first:
+      213: 4454949642339033308
+    second: Sun Mage_91
+  - first:
+      213: 3346867755318945745
+    second: Sun Mage_92
+  - first:
+      213: -7336064800030291957
+    second: Sun Mage_93
+  - first:
+      213: 3672931790727243690
+    second: Sun Mage_94
+  - first:
+      213: -3937375592302154778
+    second: Sun Mage_95
+  - first:
+      213: 2596802170396199181
+    second: Sun Mage_96
+  - first:
+      213: 2891648743262270607
+    second: Sun Mage_97
+  - first:
+      213: 1220716962990682987
+    second: Sun Mage_98
+  - first:
+      213: -8217046298983613841
+    second: Sun Mage_99
+  - first:
+      213: -6400509850526790703
+    second: Sun Mage_100
+  - first:
+      213: -7317482913431995790
+    second: Sun Mage_101
+  - first:
+      213: -8389992791280869195
+    second: Sun Mage_102
+  - first:
+      213: -1465294922210383553
+    second: Sun Mage_103
+  - first:
+      213: 2786756712509264131
+    second: Sun Mage_104
+  - first:
+      213: 684694118743322487
+    second: Sun Mage_105
+  - first:
+      213: -6670674963110397820
+    second: Sun Mage_106
+  - first:
+      213: 860964425170404721
+    second: Sun Mage_107
+  - first:
+      213: 4628673419441736002
+    second: Sun Mage_108
+  - first:
+      213: 608500919561520995
+    second: Sun Mage_109
+  - first:
+      213: 3534466442718451469
+    second: Sun Mage_110
+  - first:
+      213: 157498114567511707
+    second: Sun Mage_111
+  - first:
+      213: 8485922782326822095
+    second: Sun Mage_112
+  - first:
+      213: 2181373432576390067
+    second: Sun Mage_113
+  - first:
+      213: 3692144898967569130
+    second: Sun Mage_114
+  - first:
+      213: 7566518152109720648
+    second: Sun Mage_115
+  - first:
+      213: -282216251256951727
+    second: Sun Mage_116
+  - first:
+      213: 8222145656020673313
+    second: Sun Mage_117
+  - first:
+      213: -8283884141990061877
+    second: Sun Mage_118
+  - first:
+      213: 173954849904005351
+    second: Sun Mage_119
+  - first:
+      213: -652915130413595596
+    second: Sun Mage_120
+  - first:
+      213: -7412076175821744566
+    second: Sun Mage_121
+  - first:
+      213: -3822958203493746768
+    second: Sun Mage_122
+  - first:
+      213: -6780250034558601949
+    second: Sun Mage_123
+  - first:
+      213: 791261578218896093
+    second: Sun Mage_124
+  - first:
+      213: 482157760171905164
+    second: Sun Mage_125
+  - first:
+      213: -6178187480001511392
+    second: Sun Mage_126
+  - first:
+      213: -8682837449533120401
+    second: Sun Mage_127
+  - first:
+      213: 5771614143150365688
+    second: Sun Mage_128
+  - first:
+      213: 2864822019214392094
+    second: Sun Mage_129
+  - first:
+      213: 1026835527029608327
+    second: Sun Mage_130
+  - first:
+      213: -4779761391870730392
+    second: Sun Mage_131
+  - first:
+      213: -3326064893249914524
+    second: Sun Mage_132
+  - first:
+      213: 3212294132478251164
+    second: Sun Mage_133
+  - first:
+      213: 2710380180669358786
+    second: Sun Mage_134
+  - first:
+      213: -2709320335065947457
+    second: Sun Mage_135
+  - first:
+      213: 1326775412939882725
+    second: Sun Mage_136
+  - first:
+      213: 108529778509563973
+    second: Sun Mage_137
+  - first:
+      213: 9087793454266805011
+    second: Sun Mage_138
+  - first:
+      213: -6947914100236008835
+    second: Sun Mage_139
+  - first:
+      213: -7564916102104891014
+    second: Sun Mage_140
+  - first:
+      213: -3098544181029652420
+    second: Sun Mage_141
+  - first:
+      213: -7001562516084996781
+    second: Sun Mage_142
+  - first:
+      213: 8009677186827146945
+    second: Sun Mage_143
+  - first:
+      213: -69254462983530131
+    second: Sun Mage_144
+  - first:
+      213: 7519113737731027198
+    second: Sun Mage_145
+  - first:
+      213: 7050751936367359716
+    second: Sun Mage_146
+  - first:
+      213: 4779886392632880265
+    second: Sun Mage_147
+  - first:
+      213: 8533909423987766878
+    second: Sun Mage_148
+  - first:
+      213: 7482605240620630312
+    second: Sun Mage_149
+  - first:
+      213: 8184344591007807902
+    second: Sun Mage_150
+  - first:
+      213: 5956308854454123033
+    second: Sun Mage_151
+  - first:
+      213: -2122295244419780951
+    second: Sun Mage_152
+  - first:
+      213: 8151647755009371114
+    second: Sun Mage_153
+  - first:
+      213: 1936102667965518834
+    second: Sun Mage_154
+  - first:
+      213: 1381853577180092449
+    second: Sun Mage_155
+  - first:
+      213: 5218512141497720492
+    second: Sun Mage_156
+  - first:
+      213: 4972172398683296849
+    second: Sun Mage_157
+  - first:
+      213: -2411759772016376432
+    second: Sun Mage_158
+  - first:
+      213: -4514075035723175558
+    second: Sun Mage_159
+  - first:
+      213: 1551456129510640219
+    second: Sun Mage_160
+  - first:
+      213: -509934478128532709
+    second: Sun Mage_161
+  - first:
+      213: -4703601897751243626
+    second: Sun Mage_162
+  - first:
+      213: 847953981940195635
+    second: Sun Mage_163
+  - first:
+      213: -9187763998574722377
+    second: Sun Mage_164
+  - first:
+      213: -6131659080783143403
+    second: Sun Mage_165
+  - first:
+      213: -3508899112561196920
+    second: Sun Mage_166
+  - first:
+      213: -5954249519346116849
+    second: Sun Mage_167
+  - first:
+      213: 2806628444114186942
+    second: Sun Mage_168
+  - first:
+      213: -5896303997215017182
+    second: Sun Mage_169
+  - first:
+      213: -8027662770684022844
+    second: Sun Mage_170
+  - first:
+      213: -4511370238768823099
+    second: Sun Mage_171
+  - first:
+      213: -4907430941776119540
+    second: Sun Mage_172
+  - first:
+      213: 6320979398366598640
+    second: Sun Mage_173
+  - first:
+      213: -4341321286799543415
+    second: Sun Mage_174
+  - first:
+      213: -8554264508580561019
+    second: Sun Mage_175
+  - first:
+      213: 2143944332384154024
+    second: Sun Mage_176
+  - first:
+      213: -8452938390813652886
+    second: Sun Mage_177
+  - first:
+      213: 421326088932350605
+    second: Sun Mage_178
+  - first:
+      213: 2818608693713427870
+    second: Sun Mage_179
+  - first:
+      213: -4856288546947547256
+    second: Sun Mage_180
+  - first:
+      213: 4440544827455335541
+    second: Sun Mage_181
+  - first:
+      213: -7911082350910883986
+    second: Sun Mage_182
+  - first:
+      213: 6663041601256029903
+    second: Sun Mage_183
+  - first:
+      213: 4245001047421136865
+    second: Sun Mage_184
+  - first:
+      213: 3219045180114654604
+    second: Sun Mage_185
+  - first:
+      213: -1304635585730510313
+    second: Sun Mage_186
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sun Mage_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 704
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f61ff1c65edfbe110800000000000000
+      internalID: 1291404879975149935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_1
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 704
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be51d5a0058882580800000000000000
+      internalID: -8851675190244076053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_2
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 704
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8864a6fec391c3d70800000000000000
+      internalID: 9024115502849083016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_3
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 704
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58718456c01540420800000000000000
+      internalID: 2595288398952929157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_4
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 704
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9674361131f75150800000000000000
+      internalID: 5861418633174218397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_5
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 704
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0d076151f362a590800000000000000
+      internalID: -7664453727727186677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_6
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 704
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86ed743d732a1e700800000000000000
+      internalID: 567913388676996712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_7
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 704
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90c19703dc46f4860800000000000000
+      internalID: 7516337135548963849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 528
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 507445259449a6960800000000000000
+      internalID: 7596046764148541189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_9
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 528
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ab1334bdc1cbf350800000000000000
+      internalID: 6051643613538098083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_10
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 528
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36a05cfa8d25d16a0800000000000000
+      internalID: -6476929598473565597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_11
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 528
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a17d115c61ace7450800000000000000
+      internalID: 6088525945395861274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_12
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 528
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9702ff648903c290800000000000000
+      internalID: -7871437259295029350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_13
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 528
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b43e52a281347190800000000000000
+      internalID: -7965687403771972432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 352
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94f46a3df0a04e720800000000000000
+      internalID: 2874433525260898121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_15
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 352
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1910f4444466090d0800000000000000
+      internalID: -3418119673784368751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_16
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 352
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91f109892882b5e70800000000000000
+      internalID: 9104915613030031129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_17
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 352
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83d99c6cd1a4eb300800000000000000
+      internalID: 269734519438417208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_18
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 352
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91f46a1203c067b90800000000000000
+      internalID: -7244589549716353255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 176
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 576849e9facc902a0800000000000000
+      internalID: -6770655510122953099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_20
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 176
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e62027707fa2df90800000000000000
+      internalID: -6930283978999978272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_21
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 176
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15f294d8eb782dbe0800000000000000
+      internalID: -1453950477203329199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_22
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 176
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d331ab0d2fa6b7200800000000000000
+      internalID: 178854201327751997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_23
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 176
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7aae7085226468f90800000000000000
+      internalID: -6951791861480035673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_24
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 176
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ced80e583ad2535f0800000000000000
+      internalID: -777665180302537236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_25
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 176
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8445ce51e837b490800000000000000
+      internalID: -7730647694749383539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_26
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 176
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e45ce9e2b9ee3750800000000000000
+      internalID: 6286719084493821157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0bf3b7eb647aeac0800000000000000
+      internalID: -3825116926700160244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_28
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8053215d28b0469f0800000000000000
+      internalID: -476243004046035704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_29
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2087a67920077b020800000000000000
+      internalID: 2357476086384326658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_30
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81146997b9359db40800000000000000
+      internalID: 5465491550015734040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_31
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7db90b0cff0afa820800000000000000
+      internalID: 2931738902751386583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_32
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e85f4fc240ae9cd00800000000000000
+      internalID: 993582496466924942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_33
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4523fde7cccc55f00800000000000000
+      internalID: 1105014462263276116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_34
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 435dbbae10cd38450800000000000000
+      internalID: 6089953021926298932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_35
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88f6d771eea121240800000000000000
+      internalID: 4760897365982670728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_36
+      rect:
+        serializedVersion: 2
+        x: 1584
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4d9f4c31d629f370800000000000000
+      internalID: 8356753263664536906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_37
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75db6cc4acadfc0d0800000000000000
+      internalID: -3400258631235093161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_38
+      rect:
+        serializedVersion: 2
+        x: 1936
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d397d7650708ba0e0800000000000000
+      internalID: -2257569568220415683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_39
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed0da1969833e5ec0800000000000000
+      internalID: -3576364388818693922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_40
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dc00c7b7b78f1320800000000000000
+      internalID: 2530890738737089746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_41
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecc794e66cde3aee0800000000000000
+      internalID: -1250894834969248562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_42
+      rect:
+        serializedVersion: 2
+        x: 2640
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f6038f7ec0d8bd90800000000000000
+      internalID: -7081680828718971151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_43
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8372c1a05bf055820800000000000000
+      internalID: 2906246404770637624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_44
+      rect:
+        serializedVersion: 2
+        x: 2992
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd8f29c9c7d80e4e0800000000000000
+      internalID: -1954406671936456481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun Mage_45
+      rect:
+        serializedVersion: 2
+        x: 3168
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf498fb7d57273fb0800000000000000
+      internalID: -4668219206280899332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 822a1befc87830a4c9e7ce2a1026a62b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Sun Mage_0: 1291404879975149935
+      Sun Mage_1: -8851675190244076053
+      Sun Mage_10: -6476929598473565597
+      Sun Mage_11: 6088525945395861274
+      Sun Mage_12: -7871437259295029350
+      Sun Mage_13: -7965687403771972432
+      Sun Mage_14: 2874433525260898121
+      Sun Mage_15: -3418119673784368751
+      Sun Mage_16: 9104915613030031129
+      Sun Mage_17: 269734519438417208
+      Sun Mage_18: -7244589549716353255
+      Sun Mage_19: -6770655510122953099
+      Sun Mage_2: 9024115502849083016
+      Sun Mage_20: -6930283978999978272
+      Sun Mage_21: -1453950477203329199
+      Sun Mage_22: 178854201327751997
+      Sun Mage_23: -6951791861480035673
+      Sun Mage_24: -777665180302537236
+      Sun Mage_25: -7730647694749383539
+      Sun Mage_26: 6286719084493821157
+      Sun Mage_27: -3825116926700160244
+      Sun Mage_28: -476243004046035704
+      Sun Mage_29: 2357476086384326658
+      Sun Mage_3: 2595288398952929157
+      Sun Mage_30: 5465491550015734040
+      Sun Mage_31: 2931738902751386583
+      Sun Mage_32: 993582496466924942
+      Sun Mage_33: 1105014462263276116
+      Sun Mage_34: 6089953021926298932
+      Sun Mage_35: 4760897365982670728
+      Sun Mage_36: 8356753263664536906
+      Sun Mage_37: -3400258631235093161
+      Sun Mage_38: -2257569568220415683
+      Sun Mage_39: -3576364388818693922
+      Sun Mage_4: 5861418633174218397
+      Sun Mage_40: 2530890738737089746
+      Sun Mage_41: -1250894834969248562
+      Sun Mage_42: -7081680828718971151
+      Sun Mage_43: 2906246404770637624
+      Sun Mage_44: -1954406671936456481
+      Sun Mage_45: -4668219206280899332
+      Sun Mage_5: -7664453727727186677
+      Sun Mage_6: 567913388676996712
+      Sun Mage_7: 7516337135548963849
+      Sun Mage_8: 7596046764148541189
+      Sun Mage_9: 6051643613538098083
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
