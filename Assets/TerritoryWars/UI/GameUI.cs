@@ -1,3 +1,4 @@
+using TerritoryWars.General;
 using TerritoryWars.Tile;
 using TMPro;
 using UnityEngine;
@@ -17,12 +18,12 @@ namespace TerritoryWars.UI
         [SerializeField] private TileGenerator tileGenerator;
         [SerializeField] private TileView previewTileView;
 
-        private GameManager gameManager;
+        private General.GameManager gameManager;
         private DeckManager deckManager;
 
         private void Start()
         {
-            gameManager = FindObjectOfType<GameManager>();
+            gameManager = FindObjectOfType<General.GameManager>();
             deckManager = FindObjectOfType<DeckManager>();
 
             SetupButtons();

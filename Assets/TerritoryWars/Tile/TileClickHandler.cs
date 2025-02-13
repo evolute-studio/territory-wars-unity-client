@@ -4,10 +4,10 @@ namespace TerritoryWars.Tile
 {
     public class TileClickHandler : MonoBehaviour
     {
-        private GameManager gameManager;
+        private General.GameManager gameManager;
         private int x, y;
 
-        public void Initialize(GameManager manager, int xPos, int yPos)
+        public void Initialize(General.GameManager manager, int xPos, int yPos)
         {
             gameManager = manager;
             x = xPos;
