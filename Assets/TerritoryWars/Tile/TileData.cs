@@ -39,7 +39,6 @@ namespace TerritoryWars.Tile
             // Додаємо поворот за годинниковою стрілкою
             rotationIndex = (rotationIndex + times) % 4;
             UpdateId();
-            Debug.Log($"Rotated tile. New rotation index: {rotationIndex}, New ID: {id}");
         }
 
         public LandscapeType GetSide(Side side)

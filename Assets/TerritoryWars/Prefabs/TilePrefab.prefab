@@ -367,31 +367,37 @@ MonoBehaviour:
     Sprite: {fileID: 8044837882678929092, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
     FlipX: 1
     FlipY: 0
+    RoadPath: {fileID: 5505607829167185695, guid: 7a985042e14754c1b85bb551570083bf, type: 3}
   - MainConfig: XXRR
     MirroredConfig: RRXX
     Sprite: {fileID: 862869666472089368, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
     FlipX: 1
     FlipY: 0
+    RoadPath: {fileID: 5630751692621974893, guid: d2427d6eab86c4d2e8e44c3c295441e4, type: 3}
   - MainConfig: XRRX
     MirroredConfig: RXXR
     Sprite: {fileID: 1542361981, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
     FlipX: 0
     FlipY: 1
+    RoadPath: {fileID: 1963201984722855525, guid: 97f581e29b72548009efd9233bf4b6ed, type: 3}
   - MainConfig: XRRR
     MirroredConfig: RRRX
     Sprite: {fileID: -6760966323078112466, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
     FlipX: 1
     FlipY: 0
+    RoadPath: {fileID: 8429365658333632004, guid: 6ae685b3595d84b0cb30af92a1869fa9, type: 3}
   - MainConfig: RRXR
     MirroredConfig: RXRR
     Sprite: {fileID: -6863655716293156264, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
     FlipX: 1
     FlipY: 0
+    RoadPath: {fileID: 6211012658780872074, guid: 1c80a27cca6884ddd9162dd284bb875b, type: 3}
   - MainConfig: RRRR
     MirroredConfig: RRRR
     Sprite: {fileID: 6022516873501006996, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
     FlipX: 0
     FlipY: 0
+    RoadPath: {fileID: 6900528842834008853, guid: 3fd808e53a6444629bd82824b1465c6d, type: 3}
   CityData:
   - Config: CXXX
     Rotation: 0
@@ -439,6 +445,7 @@ MonoBehaviour:
     Rotation: 1
     CityPrefab: {fileID: 960592573413856705, guid: a9123233ce1fa46d5ad5e9efbec80695, type: 3}
   TileConfig: CRRC
+  RoadPath: {fileID: 0}
 --- !u!114 &2757118565399566220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -485,7 +492,7 @@ Transform:
   m_GameObject: {fileID: 2373883306116039529}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.30400085, y: -0.25099993, z: 0}
+  m_LocalPosition: {x: 0.3245, y: -0.2448, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -535,7 +542,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -3
-  m_Sprite: {fileID: 4659058961299537422, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
+  m_Sprite: {fileID: 1814093783, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -659,7 +666,7 @@ Transform:
   m_GameObject: {fileID: 2789809172933933645}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.31299973, y: -0.25099993, z: 0}
+  m_LocalPosition: {x: -0.3113, y: -0.2353, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -709,7 +716,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -3
-  m_Sprite: {fileID: 5037322919488133084, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
+  m_Sprite: {fileID: 1764718703, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

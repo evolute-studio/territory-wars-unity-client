@@ -2189,6 +2189,50 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: EXPORTED TILES BETA 2_86
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 536
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 601dad38929f24cdaa9675fc2318132b
+      internalID: 1764718703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EXPORTED TILES BETA 2_87
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 536
+        width: 63
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4507d400181db48ffa30b09518919825
+      internalID: 1814093783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -2288,6 +2332,8 @@ TextureImporter:
       EXPORTED TILES BETA 2_83: -1068921282
       EXPORTED TILES BETA 2_84: 902211640
       EXPORTED TILES BETA 2_85: 272867803
+      EXPORTED TILES BETA 2_86: 1764718703
+      EXPORTED TILES BETA 2_87: 1814093783
       EXPORTED TILES BETA 2_9: 143857204813065492
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

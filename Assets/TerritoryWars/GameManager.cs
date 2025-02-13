@@ -31,15 +31,11 @@ namespace TerritoryWars
 
         private void Start()
         {
-            Debug.Log($"Background layer mask value: {backgroundLayer.value}");
-            Debug.Log($"BackgroundBoard layer index: {LayerMask.NameToLayer("BackgroundBoard")}");
-
             highlightedTiles = new GameObject("HighlightedTiles");
             highlightedTiles.transform.parent = transform;
 
             // Перевірка наявності колайдерів на тайлах
             var backgroundTiles = GameObject.FindGameObjectsWithTag("BackgroundTile"); // Додайте цей тег до префабу
-            Debug.Log($"Found {backgroundTiles.Length} background tiles");
             foreach (var tile in backgroundTiles)
             {
                 var collider = tile.GetComponent<PolygonCollider2D>();
@@ -47,7 +43,6 @@ namespace TerritoryWars
                 {
                     Debug.LogError($"Missing BoxCollider2D on tile: {tile.name}");
                 }
-                Debug.Log($"Tile {tile.name} is on layer: {LayerMask.LayerToName(tile.layer)}");
             }
 
             StartNewTurn();
@@ -66,23 +61,18 @@ namespace TerritoryWars
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity, backgroundLayer);
 
-            Debug.Log($"Trying raycast. Mouse position: {Input.mousePosition}, Layer mask: {backgroundLayer.value}");
-
             if (hit.collider != null)
             {
-                Debug.Log($"Hit object: {hit.collider.gameObject.name} on layer: {LayerMask.LayerToName(hit.collider.gameObject.layer)}");
 
                 string tileName = hit.collider.gameObject.name;
                 if (tileName.StartsWith("Tile_"))
                 {
                     string[] coordinates = tileName.Split('_');
-                    Debug.Log($"Parsed tile name: {tileName}, coordinates length: {coordinates.Length}");
 
                     if (coordinates.Length == 3 &&
                         int.TryParse(coordinates[1], out int x) &&
                         int.TryParse(coordinates[2], out int y))
                     {
-                        Debug.Log($"Attempting to place tile at position: ({x}, {y})");
                         OnTileClicked(x, y);
                     }
                     else
@@ -99,7 +89,6 @@ namespace TerritoryWars
             {
                 Debug.LogWarning("Raycast didn't hit anything");
                 // Додаткова інформація про рейкаст
-                Debug.Log($"Ray origin: {ray.origin}, direction: {ray.direction}");
             }
         }
 
@@ -108,7 +97,6 @@ namespace TerritoryWars
             selectedPosition = null;
             if (!deckManager.HasTiles)
             {
-                Debug.Log("Гра закінчена - тайли закінчились!");
                 gameUI.SetEndTurnButtonActive(false);
                 gameUI.SetRotateButtonActive(false);
                 return;

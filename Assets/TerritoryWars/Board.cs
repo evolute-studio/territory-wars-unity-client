@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TerritoryWars.ScriptablesObjects;
 using TerritoryWars.Tile;
+using UnityEngine.Events;
 
 namespace TerritoryWars
 {
@@ -25,6 +26,9 @@ namespace TerritoryWars
 
         private GameObject[,] tileObjects;
         private TileData[,] tileData;
+        
+        public delegate void TilePlaced(TileData tile, int x, int y);
+        public event TilePlaced OnTilePlaced;
 
         private void Awake()
         {
@@ -97,87 +101,31 @@ namespace TerritoryWars
             }
 
         }
-
-        private void PlaceBorderSide(int start, int pos, int length, string[] roadTile, string[] cityTile, int baseRotation, bool isHorizontal)
-        {
-            // Створюємо список доступних позицій (без крайніх позицій)
-            List<int> availablePositions = new List<int>();
-            for (int i = 1; i < length - 1; i++)
-            {
-                availablePositions.Add(i);
-            }
-
-            // Вибираємо 3 випадкові позиції для тайлів
-            List<int> selectedPositions = new List<int>();
-            for (int i = 0; i < 3; i++)
-            {
-                int randomIndex = Random.Range(0, availablePositions.Count);
-                selectedPositions.Add(availablePositions[randomIndex]);
-                availablePositions.RemoveAt(randomIndex);
-            }
-            selectedPositions.Sort(); // Сортуємо для послідовного розміщення
-
-            // Випадково вибираємо позицію для міста серед трьох вибраних
-            int cityIndex = Random.Range(0, 3);
-
-            // Розміщуємо тайли
-            for (int i = 0; i < 3; i++)
-            {
-                int position = selectedPositions[i];
-                int x = isHorizontal ? start + position : start;
-                int y = isHorizontal ? pos : start + position;
-
-                TileData tile;
-                if (i == cityIndex)
-                {
-                    // Розміщуємо місто
-                    tile = new TileData(cityTile[0]);
-                }
-                else
-                {
-                    // Розміщуємо дорогу
-                    tile = new TileData(roadTile[0]);
-                }
-
-                // Повертаємо тайл потрібною стороною до центру
-                for (int r = 0; r < baseRotation; r++)
-                {
-                    tile.Rotate();
-                }
-
-                PlaceTile(tile, x, y);
-            }
-        }
-
+        
         public bool PlaceTile(TileData data, int x, int y)
         {
-            Debug.Log($"Attempting to place tile {data.id} at position ({x}, {y})");
-
             if (!CanPlaceTile(data, x, y))
             {
                 Debug.LogWarning($"Cannot place tile: position check failed");
                 return false;
             }
-
-            Debug.Log($"Position check passed, placing tile");
+            
             tileData[x, y] = data;
             GameObject tile = Instantiate(tilePrefab, GetTilePosition(x, y), Quaternion.identity, transform);
             tile.name += $"_{x}_{y}";
             tile.GetComponent<TileGenerator>().Generate(data);
             tile.GetComponent<TileView>().UpdateView(data);
             tileObjects[x, y] = tile;
+            OnTilePlaced?.Invoke(data, x, y);
 
             return true;
         }
 
         public bool CanPlaceTile(TileData tile, int x, int y)
         {
-            Debug.Log($"Checking if can place tile {tile.id} at position ({x}, {y})");
-
             // Перевірка границь поля
             if (x < 0 || x >= width || y < 0 || y >= height)
             {
-                Debug.LogWarning("Position out of bounds");
                 return false;
             }
 
@@ -239,9 +187,7 @@ namespace TerritoryWars
                 // Отримуємо типи ландшафтів, які повинні з'єднатися
                 LandscapeType currentSide = tile.GetSide(side);
                 LandscapeType adjacentSide = adjacentTile.GetSide(GetOppositeSide(side));
-
-                Debug.Log($"Checking {side} side: Current tile {currentSide} vs Adjacent tile {adjacentSide}");
-
+                
                 // Якщо типи не співпадають, тайл не можна розмістити
                 if (!IsMatchingLandscape(currentSide, adjacentSide))
                 {
@@ -249,15 +195,12 @@ namespace TerritoryWars
                     return false;
                 }
             }
-
-            // Якщо всі перевірки пройдені успішно, тайл можна розмістити
-            Debug.Log("All connections valid - tile can be placed");
+            
             return true;
         }
 
         private bool IsMatchingLandscape(LandscapeType type1, LandscapeType type2)
         {
-            Debug.Log($"Comparing landscapes: {type1} with {type2}");
 
             bool matches = (type1, type2) switch
             {
@@ -266,8 +209,7 @@ namespace TerritoryWars
                 (LandscapeType.Field, LandscapeType.Field) => true,
                 _ => false
             };
-
-            Debug.Log($"Landscapes {(matches ? "match" : "don't match")}");
+            
             return matches;
         }
 
@@ -380,6 +322,11 @@ namespace TerritoryWars
             }
 
             return validRotations;
+        }
+        
+        public GameObject GetTileObject(int x, int y)
+        {
+            return tileObjects[x, y];
         }
     }
 }

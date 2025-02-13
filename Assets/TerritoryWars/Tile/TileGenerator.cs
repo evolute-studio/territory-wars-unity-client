@@ -25,6 +25,9 @@ namespace TerritoryWars.Tile
         [HideInInspector]
         public string TileConfig;
         
+        public GameObject RoadPath;
+        
+        
         public void Start() => Initialize();
 
         public void Initialize()
@@ -87,6 +90,7 @@ namespace TerritoryWars.Tile
                 if (roadPair.MainConfig == id)
                 {
                     RoadRenderer.sprite = roadPair.Sprite;
+                    RoadPath = Instantiate(roadPair.RoadPath, transform);
                     return;
                 }
                 if (roadPair.MirroredConfig == id)
@@ -94,6 +98,7 @@ namespace TerritoryWars.Tile
                     RoadRenderer.sprite = roadPair.Sprite;
                     RoadRenderer.flipX = roadPair.FlipX;
                     RoadRenderer.flipY = roadPair.FlipY;
+                    RoadPath = Instantiate(roadPair.RoadPath, transform);
                     return;
                 }
             }
@@ -180,6 +185,7 @@ namespace TerritoryWars.Tile
         public Sprite Sprite;
         public bool FlipX;
         public bool FlipY;
+        public GameObject RoadPath;
     }
     
     [Serializable]
