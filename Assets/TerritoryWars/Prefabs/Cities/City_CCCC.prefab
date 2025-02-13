@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 4234787230879067162}
   - component: {fileID: 8708559087405362800}
   m_Layer: 0
-  m_Name: FencePlacer
+  m_Name: TerritoryPlacer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

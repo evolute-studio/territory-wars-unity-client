@@ -2,97 +2,39 @@ using System.Collections.Generic;
 using TerritoryWars.Tile;
 using TerritoryWars.UI;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace TerritoryWars.General
 {
-
     public class GameManager : MonoBehaviour
     {
-        [SerializeField] private Board board;
-        [SerializeField] private GameUI gameUI;
-        [SerializeField] private Material highlightMaterial;
-        [SerializeField] private DeckManager deckManager;
-        [SerializeField] private LayerMask backgroundLayer;
-        [SerializeField] private Color normalHighlightColor = new Color(1f, 1f, 0f, 0.3f); // Жовтий
-        [SerializeField] private Color selectedHighlightColor = new Color(0f, 1f, 0f, 0.3f); // Зелений
-        [SerializeField] private Color invalidHighlightColor = new Color(1f, 0f, 0f, 0.3f); // Червоний
-        [SerializeField] private Sprite highlightSprite;
+        public static GameManager Instance { get; private set; }
 
-        private TileData currentTile;
-        private bool isPlacingTile = false;
-        private GameObject highlightedTiles;
-        private List<ValidPlacement> currentValidPlacements;
-        private List<int> currentValidRotations;
-        private Vector2Int? selectedPosition = null;
-
-        public TileData CurrentTile => currentTile;
-
-        private void Start()
+        public void Awake()
         {
-            highlightedTiles = new GameObject("HighlightedTiles");
-            highlightedTiles.transform.parent = transform;
-
-            // Перевірка наявності колайдерів на тайлах
-            var backgroundTiles = GameObject.FindGameObjectsWithTag("BackgroundTile"); // Додайте цей тег до префабу
-            foreach (var tile in backgroundTiles)
+            if (Instance == null)
             {
-                var collider = tile.GetComponent<PolygonCollider2D>();
-                if (collider == null)
-                {
-                    Debug.LogError($"Missing BoxCollider2D on tile: {tile.name}");
-                }
-            }
-
-            StartNewTurn();
-        }
-
-        private void Update()
-        {
-            if (isPlacingTile && Input.GetMouseButtonDown(0))
-            {
-                HandleTilePlacement();
-            }
-        }
-
-        private void HandleTilePlacement()
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity, backgroundLayer);
-
-            if (hit.collider != null)
-            {
-
-                string tileName = hit.collider.gameObject.name;
-                if (tileName.StartsWith("Tile_"))
-                {
-                    string[] coordinates = tileName.Split('_');
-
-                    if (coordinates.Length == 3 &&
-                        int.TryParse(coordinates[1], out int x) &&
-                        int.TryParse(coordinates[2], out int y))
-                    {
-                        OnTileClicked(x, y);
-                    }
-                    else
-                    {
-                        Debug.LogWarning("Failed to parse coordinates from tile name");
-                    }
-                }
-                else
-                {
-                    Debug.LogWarning($"Hit object doesn't start with 'Tile_': {tileName}");
-                }
+                Instance = this;
             }
             else
             {
-                Debug.LogWarning("Raycast didn't hit anything");
-                // Додаткова інформація про рейкаст
+                Destroy(gameObject);
             }
+        }
+
+
+        public Board Board;
+        [SerializeField] private GameUI gameUI;
+        [SerializeField] private DeckManager deckManager;
+        public TileSelector TileSelector;
+
+        private void Start()
+        {
+            StartNewTurn();
         }
 
         private void StartNewTurn()
         {
-            selectedPosition = null;
             if (!deckManager.HasTiles)
             {
                 gameUI.SetEndTurnButtonActive(false);
@@ -100,166 +42,26 @@ namespace TerritoryWars.General
                 return;
             }
 
-            currentTile = deckManager.DrawTile();
-            isPlacingTile = true;
-
-            // Отримуємо всі можливі позиції для розміщення
-            currentValidPlacements = board.GetValidPlacements(currentTile);
-
-            if (currentValidPlacements.Count == 0)
-            {
-                Debug.LogWarning("Немає можливих позицій для розміщення тайлу!");
-                EndTurn();
-                return;
-            }
-
-            gameUI.SetEndTurnButtonActive(false);
-            gameUI.SetRotateButtonActive(false);
-            gameUI.UpdateUI();
-
-            ShowPossiblePlacements();
-        }
-
-        private void ShowPossiblePlacements()
-        {
-            ClearHighlights();
-
-            foreach (var placement in currentValidPlacements)
-            {
-                CreateHighlight(placement.X, placement.Y);
-            }
-
-            // Встановлюємо нормальний колір для всіх підсвічувань
-            SetHighlightColor(normalHighlightColor);
-        }
-
-        private void CreateHighlight(int x, int y)
-        {
-            Vector3 position = board.GetTilePosition(x, y);
-            GameObject highlight = new GameObject($"Highlight_{x}_{y}");
-            highlight.transform.parent = highlightedTiles.transform;
-            highlight.transform.position = position + Vector3.back * 0.1f;
-
-            // Додаємо SpriteRenderer замість MeshRenderer
-            var spriteRenderer = highlight.AddComponent<SpriteRenderer>();
-            spriteRenderer.sprite = highlightSprite; // Потрібно створити SerializeField для спрайту
-            spriteRenderer.material = highlightMaterial;
-            spriteRenderer.sortingOrder = -1;
-
-            TileClickHandler clickHandler = highlight.AddComponent<TileClickHandler>();
-            clickHandler.Initialize(this, x, y);
-        }
-
-        public void OnTileClicked(int x, int y)
-        {
-            if (!isPlacingTile) return;
-
-            // Якщо позиція вже вибрана і користувач клікнув на неї знову
-            if (selectedPosition.HasValue && selectedPosition.Value.x == x && selectedPosition.Value.y == y)
-            {
-                PlaceTileAtPosition(x, y);
-                return;
-            }
-
-            currentValidRotations = board.GetValidRotations(currentTile, x, y);
-
-            if (currentValidRotations.Count == 0)
-            {
-                // Показуємо червоним, що позиція неправильна
-                SetHighlightColor(invalidHighlightColor);
-                selectedPosition = null;
-                return;
-            }
-
-            // Оновлюємо підсвічування
-            ShowPossiblePlacements();
-
-            // Підсвічуємо тільки вибрану позицію зеленим
-            foreach (Transform child in highlightedTiles.transform)
-            {
-                if (child.name == $"Highlight_{x}_{y}")
-                {
-                    child.GetComponent<SpriteRenderer>().color = selectedHighlightColor;
-                }
-                else
-                {
-                    child.GetComponent<SpriteRenderer>().color = normalHighlightColor;
-                }
-            }
-
-            selectedPosition = new Vector2Int(x, y);
-
-            // Якщо є тільки один можливий поворот, відразу розміщуємо тайл
-            if (currentValidRotations.Count == 1)
-            {
-                while (currentTile.rotationIndex != currentValidRotations[0])
-                {
-                    currentTile.Rotate();
-                }
-                PlaceTileAtPosition(x, y);
-            }
-            else
-            {
-                // Якщо є кілька можливих поворотів, дозволяємо гравцю вибрати
-                // Повертаємо тайл до першого валідного повороту
-                while (currentTile.rotationIndex != currentValidRotations[0])
-                {
-                    currentTile.Rotate();
-                }
-                gameUI.SetRotateButtonActive(true);
-            }
+            TileData currentTile = deckManager.DrawTile();
+            TileSelector.StartTilePlacement(currentTile);
         }
 
         public void RotateCurrentTile()
         {
-            if (currentTile == null || currentValidRotations == null || currentValidRotations.Count == 0)
-                return;
-
-            // Знаходимо наступний валідний поворот
-            int currentIndex = currentValidRotations.IndexOf(currentTile.rotationIndex);
-            int nextIndex = (currentIndex + 1) % currentValidRotations.Count;
-
-            // Повертаємо тайл до наступного валідного повороту
-            while (currentTile.rotationIndex != currentValidRotations[nextIndex])
-            {
-                currentTile.Rotate();
-            }
-
-            gameUI.UpdateUI();
-        }
-
-        private void PlaceTileAtPosition(int x, int y)
-        {
-            if (board.PlaceTile(currentTile, x, y))
-            {
-                isPlacingTile = false;
-                selectedPosition = null;
-                gameUI.SetEndTurnButtonActive(true);
-                gameUI.SetRotateButtonActive(false);
-                ClearHighlights();
-            }
-        }
-
-        private void ClearHighlights()
-        {
-            foreach (Transform child in highlightedTiles.transform)
-            {
-                Destroy(child.gameObject);
-            }
+            TileSelector.RotateCurrentTile();
         }
 
         public void EndTurn()
         {
-            StartNewTurn();
+            if (TileSelector.CurrentTile != null)
+            {
+                TileSelector.PlaceCurrentTile();
+            }
         }
 
-        // Додайте метод для зміни кольору підсвічування
-        public void SetHighlightColor(Color color)
+        public void CompleteEndTurn()
         {
-            if (highlightMaterial != null)
-            {
-                highlightMaterial.color = color;
-            }
+            StartNewTurn();
         }
     }
 }

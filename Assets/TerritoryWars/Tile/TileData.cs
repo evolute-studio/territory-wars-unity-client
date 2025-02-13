@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace TerritoryWars.Tile
@@ -50,12 +51,17 @@ namespace TerritoryWars.Tile
 
         public string GetConfig()
         {
-            string result = "";
-            for (int i = 0; i < 4; i++)
+            return id + ":" + rotationIndex;
+        }
+
+        public void SetConfig(string config)
+        {
+            string[] parts = config.Split(':');
+            if (parts.Length == 2)
             {
-                result += sides[(i + rotationIndex) % 4];
+                id = parts[0];
+                rotationIndex = int.Parse(parts[1]);
             }
-            return result;
         }
 
         public static string GetRotatedConfig(string config, int times = 1)

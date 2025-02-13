@@ -1,22 +1,23 @@
+using TerritoryWars.General;
 using UnityEngine;
 
 namespace TerritoryWars.Tile
 {
     public class TileClickHandler : MonoBehaviour
     {
-        private General.GameManager gameManager;
+        private TileSelector selector;
         private int x, y;
 
-        public void Initialize(General.GameManager manager, int xPos, int yPos)
+        public void Initialize(TileSelector selector, int xPos, int yPos)
         {
-            gameManager = manager;
+            this.selector = selector;
             x = xPos;
             y = yPos;
         }
 
         private void OnMouseDown()
         {
-            gameManager.OnTileClicked(x, y);
+            selector.OnTileClicked(x, y);
         }
     }
 }

@@ -609,7 +609,7 @@ GameObject:
   - component: {fileID: 8914803208447954703}
   - component: {fileID: 4571520881633954222}
   m_Layer: 0
-  m_Name: TerritoryFiller
+  m_Name: TerritoryPlacer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

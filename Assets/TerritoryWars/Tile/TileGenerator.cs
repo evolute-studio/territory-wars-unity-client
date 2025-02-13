@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TerritoryWars.ScriptablesObjects;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace TerritoryWars.Tile
 {
@@ -13,7 +14,7 @@ namespace TerritoryWars.Tile
         public TileAssetsObject TileAssetsObject;
 
         public TileRotator TileRotator;
-        private GameObject city;
+        public GameObject City { get; private set; }
 
 
         [Header("Roads")]
@@ -51,8 +52,8 @@ namespace TerritoryWars.Tile
 
         public void Generate()
         {
-            Destroy(city);
-            city = null;
+            Destroy(City);
+            City = null;
 
             TileRotator.ClearLists();
 
@@ -116,7 +117,7 @@ namespace TerritoryWars.Tile
             id = id.Replace('R', 'X');
             id = id.Replace('F', 'X');
 
-            if (city != null)
+            if (City != null)
             {
                 return;
             }
@@ -125,8 +126,8 @@ namespace TerritoryWars.Tile
             {
                 if (cityData.Config == id)
                 {
-                    city = Instantiate(cityData.CityPrefab, transform);
-                    InitCity(city, cityData.Rotation);
+                    City = Instantiate(cityData.CityPrefab, transform);
+                    InitCity(City, cityData.Rotation);
 
                     return;
                 }
@@ -173,6 +174,19 @@ namespace TerritoryWars.Tile
             fencePlacer.PlaceFence();
             TileRotator.OnRotation.AddListener(territoryFiller.PlaceTerritory);
             TileRotator.OnRotation.AddListener(fencePlacer.PlaceFence);
+        }
+        
+        public void SetHouseSprites(List<Sprite> houseSprites)
+        {
+            if (City == null)
+            {
+                return;
+            }
+            SpriteRenderer[] houseRenderers = City.GetComponentsInChildren<SpriteRenderer>();
+            for (int i = 0; i < houseRenderers.Length; i++)
+            {
+                houseRenderers[i].sprite = houseSprites[i];
+            }
         }
 
 
