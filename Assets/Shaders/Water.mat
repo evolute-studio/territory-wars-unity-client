@@ -64,9 +64,9 @@ Material:
     - _FoamContrast: 0.15
     - _FoamIntensity: 2.37
     - _FoamNoise1Scale: 6.7
-    - _FoamNoise1Speed: 0.05
+    - _FoamNoise1Speed: 0.16
     - _FoamNoise2Scale: 5.4
-    - _FoamNoise2Speed: 1.15
+    - _FoamNoise2Speed: 0.7
     - _FoamScale: 7.1
     - _FoamSpeed: 0
     - _FoamStretch: 0.2
@@ -103,7 +103,7 @@ Material:
     - _WaveSpeed: 1.33
     - _WaveThreshold: 0.7
     m_Colors:
-    - _Color: {r: 0.31065124, g: 0.449768, b: 0.60754704, a: 0.46666667}
+    - _Color: {r: 0.047184017, g: 0.27686936, b: 0.5320754, a: 0.67058825}
     - _FoamColor: {r: 1, g: 1, b: 1, a: 0.29411766}
     - _HighlightColor: {r: 1, g: 1, b: 1, a: 1}
     - _HighlightColor1: {r: 1, g: 0, b: 0, a: 1}
