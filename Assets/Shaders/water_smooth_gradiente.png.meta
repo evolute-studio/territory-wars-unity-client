@@ -1,64 +1,46 @@
 fileFormatVersion: 2
-guid: 56645ae76334a4d108f34202027048b4
+guid: c9d77a28239e8154b98b19b9660aa20f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2559235654017407220
-    second: Footer_0
+      213: -8264096245537270655
+    second: water_smooth_gradiente_0
   - first:
-      213: -680129646643233233
-    second: Footer_1
+      213: -8265730865561032351
+    second: water_smooth_gradiente_1
   - first:
-      213: 5007157740615038115
-    second: Footer_2
+      213: -5653135026324466923
+    second: water_smooth_gradiente_2
   - first:
-      213: 4620909827663755279
-    second: Footer_3
+      213: -6557464089456741811
+    second: water_smooth_gradiente_3
   - first:
-      213: -5468083499440798980
-    second: Footer_4
+      213: -1569995240241113067
+    second: water_smooth_gradiente_4
   - first:
-      213: -5622306805170866334
-    second: Footer_5
+      213: 2032936801736650281
+    second: water_smooth_gradiente_5
   - first:
-      213: 47375797805477168
-    second: Footer_6
+      213: -7175665117844977620
+    second: water_smooth_gradiente_6
   - first:
-      213: -4072740820715282667
-    second: Footer_7
+      213: -8358289773095037383
+    second: water_smooth_gradiente_7
   - first:
-      213: -7478623468023728000
-    second: Footer_8
+      213: -2645045728052161437
+    second: water_smooth_gradiente_8
   - first:
-      213: 8395558135472564649
-    second: Footer_9
+      213: -8188086501524554787
+    second: water_smooth_gradiente_9
   - first:
-      213: -5416112325901880403
-    second: Footer_10
+      213: 5109107117713933143
+    second: water_smooth_gradiente_10
   - first:
-      213: -6653326710239211420
-    second: Footer_11
+      213: 1372215428030723536
+    second: water_smooth_gradiente_11
   - first:
-      213: 3548348153534259199
-    second: Footer_12
-  - first:
-      213: -6022340478760318123
-    second: Footer_13
-  - first:
-      213: 2818344344889456476
-    second: Footer_14
-  - first:
-      213: -8927555338665278468
-    second: Footer_15
-  - first:
-      213: 448724807491227562
-    second: Footer_16
-  - first:
-      213: 1431812790390797381
-    second: Footer_17
-  - first:
-      213: -2624750982367211773
-    second: Footer_18
+      213: 3226946736639814143
+    second: water_smooth_gradiente_12
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -91,7 +73,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -126,10 +108,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -164,19 +146,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -193,277 +162,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Footer_0
-      rect:
-        serializedVersion: 2
-        x: 14
-        y: 13
-        width: 8
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c0727c96bb4cb7cd0800000000000000
-      internalID: -2559235654017407220
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Footer_1
-      rect:
-        serializedVersion: 2
-        x: 21
-        y: 13
-        width: 25
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f2e3e9a90b1bf86f0800000000000000
-      internalID: -680129646643233233
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Footer_2
-      rect:
-        serializedVersion: 2
-        x: 45
-        y: 13
-        width: 9
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3a4f4bf9f6ffc7540800000000000000
-      internalID: 5007157740615038115
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Footer_3
-      rect:
-        serializedVersion: 2
-        x: 53
-        y: 11
-        width: 8
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f0872017105c02040800000000000000
-      internalID: 4620909827663755279
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Footer_4
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 13
-        width: 16
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cf208a547077d14b0800000000000000
-      internalID: -5468083499440798980
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Footer_5
-      rect:
-        serializedVersion: 2
-        x: 78
-        y: 11
-        width: 16
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 267778bbfbd89f1b0800000000000000
-      internalID: -5622306805170866334
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Footer_6
-      rect:
-        serializedVersion: 2
-        x: 97
-        y: 0
-        width: 18
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 03d652f790058a000800000000000000
-      internalID: 47375797805477168
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Footer_7
-      rect:
-        serializedVersion: 2
-        x: 115
-        y: 0
-        width: 11
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 51f58074dc7ba77c0800000000000000
-      internalID: -4072740820715282667
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Footer_8
-      rect:
-        serializedVersion: 2
-        x: 125
-        y: 0
-        width: 24
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 088bb8b4497963890800000000000000
-      internalID: -7478623468023728000
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Footer_9
-      rect:
-        serializedVersion: 2
-        x: 149
-        y: 0
-        width: 12
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9a9abf384a3038470800000000000000
-      internalID: 8395558135472564649
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Footer_10
-      rect:
-        serializedVersion: 2
-        x: 161
-        y: 0
-        width: 15
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: da3f00f098a16d4b0800000000000000
-      internalID: -5416112325901880403
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Footer_11
-      rect:
-        serializedVersion: 2
-        x: 175
-        y: 0
-        width: 19
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 460d29d9b92aaa3a0800000000000000
-      internalID: -6653326710239211420
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Footer_12
+      name: water_smooth_gradiente_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 9
-        height: 11
+        y: 325
+        width: 130
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -472,20 +177,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fff92de78d34e3130800000000000000
-      internalID: 3548348153534259199
+      spriteID: 1849c1fef38005d80800000000000000
+      internalID: -8264096245537270655
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Footer_13
+      name: water_smooth_gradiente_1
       rect:
         serializedVersion: 2
-        x: 8
-        y: 0
-        width: 16
-        height: 9
+        x: 63
+        y: 260
+        width: 67
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -494,20 +199,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 55b09070e395c6ca0800000000000000
-      internalID: -6022340478760318123
+      spriteID: 169a04d42993a4d80800000000000000
+      internalID: -8265730865561032351
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Footer_14
+      name: water_smooth_gradiente_2
       rect:
         serializedVersion: 2
-        x: 23
-        y: 0
-        width: 11
-        height: 11
+        x: 130
+        y: 325
+        width: 130
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -516,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c57fddbdf35cc1720800000000000000
-      internalID: 2818344344889456476
+      spriteID: 5139c9825a70c81b0800000000000000
+      internalID: -5653135026324466923
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Footer_15
+      name: water_smooth_gradiente_3
       rect:
         serializedVersion: 2
-        x: 33
-        y: 0
-        width: 12
-        height: 11
+        x: 130
+        y: 260
+        width: 130
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -538,20 +243,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cf3c63e38b3fa1480800000000000000
-      internalID: -8927555338665278468
+      spriteID: d42fc8057253ff4a0800000000000000
+      internalID: -6557464089456741811
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Footer_16
+      name: water_smooth_gradiente_4
       rect:
         serializedVersion: 2
-        x: 47
-        y: 0
-        width: 14
-        height: 11
+        x: 260
+        y: 325
+        width: 130
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -560,20 +265,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: aaf8b60c5d03a3600800000000000000
-      internalID: 448724807491227562
+      spriteID: 518df5ea5a1463ae0800000000000000
+      internalID: -1569995240241113067
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Footer_17
+      name: water_smooth_gradiente_5
       rect:
         serializedVersion: 2
-        x: 60
-        y: 0
-        width: 23
-        height: 11
+        x: 260
+        y: 260
+        width: 67
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -582,20 +287,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 544ba149522ded310800000000000000
-      internalID: 1431812790390797381
+      spriteID: 92ee45e0041763c10800000000000000
+      internalID: 2032936801736650281
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Footer_18
+      name: water_smooth_gradiente_6
       rect:
         serializedVersion: 2
-        x: 82
-        y: 0
-        width: 11
-        height: 11
+        x: 0
+        y: 195
+        width: 130
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -604,8 +309,140 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 30f052853e2039bd0800000000000000
-      internalID: -2624750982367211773
+      spriteID: c2840b7f79aea6c90800000000000000
+      internalID: -7175665117844977620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_smooth_gradiente_7
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 225
+        width: 130
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 936d3e84cb3610c80800000000000000
+      internalID: -8358289773095037383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_smooth_gradiente_8
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 195
+        width: 130
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36459c4ace8ea4bd0800000000000000
+      internalID: -2645045728052161437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_smooth_gradiente_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 65
+        width: 130
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddb357e85b21e5e80800000000000000
+      internalID: -8188086501524554787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_smooth_gradiente_10
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 130
+        width: 130
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75342c6bad137e640800000000000000
+      internalID: 5109107117713933143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_smooth_gradiente_11
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 65
+        width: 130
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d5f41759a61b0310800000000000000
+      internalID: 1372215428030723536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_smooth_gradiente_12
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 0
+        width: 130
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff9a58ab5fa68cc20800000000000000
+      internalID: 3226946736639814143
       vertices: []
       indices: 
       edges: []
@@ -624,25 +461,19 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Footer_0: -2559235654017407220
-      Footer_1: -680129646643233233
-      Footer_10: -5416112325901880403
-      Footer_11: -6653326710239211420
-      Footer_12: 3548348153534259199
-      Footer_13: -6022340478760318123
-      Footer_14: 2818344344889456476
-      Footer_15: -8927555338665278468
-      Footer_16: 448724807491227562
-      Footer_17: 1431812790390797381
-      Footer_18: -2624750982367211773
-      Footer_2: 5007157740615038115
-      Footer_3: 4620909827663755279
-      Footer_4: -5468083499440798980
-      Footer_5: -5622306805170866334
-      Footer_6: 47375797805477168
-      Footer_7: -4072740820715282667
-      Footer_8: -7478623468023728000
-      Footer_9: 8395558135472564649
+      water_smooth_gradiente_0: -8264096245537270655
+      water_smooth_gradiente_1: -8265730865561032351
+      water_smooth_gradiente_10: 5109107117713933143
+      water_smooth_gradiente_11: 1372215428030723536
+      water_smooth_gradiente_12: 3226946736639814143
+      water_smooth_gradiente_2: -5653135026324466923
+      water_smooth_gradiente_3: -6557464089456741811
+      water_smooth_gradiente_4: -1569995240241113067
+      water_smooth_gradiente_5: 2032936801736650281
+      water_smooth_gradiente_6: -7175665117844977620
+      water_smooth_gradiente_7: -8358289773095037383
+      water_smooth_gradiente_8: -2645045728052161437
+      water_smooth_gradiente_9: -8188086501524554787
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

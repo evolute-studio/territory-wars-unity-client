@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: a92dc991aa2944fdab1a49f78ecdf5ff
+guid: 3cadb1bcee545ba40b58d40b90c1e594
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3691463601059337291
-    second: DOTweenMiniIcon_0
+      213: 9083573448374521975
+    second: 3465587_architecture_beijing_building_china_city_icon_0
+  - first:
+      213: -2222853755479500074
+    second: 3465587_architecture_beijing_building_china_city_icon_1
+  - first:
+      213: 6993205445604092249
+    second: 3465587_architecture_beijing_building_china_city_icon_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,10 +78,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,19 +116,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -139,13 +132,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DOTweenMiniIcon_0
+      name: 3465587_architecture_beijing_building_china_city_icon_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 9
-        height: 9
+        x: 35
+        y: 33
+        width: 477
+        height: 378
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +147,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b441d624696ba3330800000000000000
-      internalID: 3691463601059337291
+      spriteID: 7709889ace55f0e70800000000000000
+      internalID: 9083573448374521975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3465587_architecture_beijing_building_china_city_icon_1
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 369
+        width: 364
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6da500d5946d621e0800000000000000
+      internalID: -2222853755479500074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3465587_architecture_beijing_building_china_city_icon_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 33
+        width: 23
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9592f8a1d4bdc0160800000000000000
+      internalID: 6993205445604092249
       vertices: []
       indices: 
       edges: []
@@ -174,7 +211,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      DOTweenMiniIcon_0: 3691463601059337291
+      3465587_architecture_beijing_building_china_city_icon_0: 9083573448374521975
+      3465587_architecture_beijing_building_china_city_icon_1: -2222853755479500074
+      3465587_architecture_beijing_building_china_city_icon_2: 6993205445604092249
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
