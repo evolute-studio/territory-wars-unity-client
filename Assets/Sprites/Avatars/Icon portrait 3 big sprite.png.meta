@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b7eb1a4f2d0faef4495287e3008b6738
+guid: 709542d32f434684db53fd9698722b91
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2622792233002307274
-    second: WaterTexture_0
+      213: -1179122024263161874
+    second: Icon portrait 3 big sprite_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,10 +72,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WaterTexture_0
+      name: Icon portrait 3 big sprite_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 512
-        height: 512
+        width: 288
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ace81c7c3a7066420800000000000000
-      internalID: 2622792233002307274
+      spriteID: ee764f424cae2afe0800000000000000
+      internalID: -1179122024263161874
       vertices: []
       indices: 
       edges: []
@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Icon portrait 3 big sprite_0: -1179122024263161874
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

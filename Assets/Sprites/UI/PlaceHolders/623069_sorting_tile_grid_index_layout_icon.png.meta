@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 356cb63a9bb69c14d9330c66c0c32603
+guid: 98d2a29e8f750bc45b10b70aaea638b3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6106333315337926023
-    second: NoiseTexture_0
+      213: -1473606776335512642
+    second: 623069_sorting_tile_grid_index_layout_icon_0
+  - first:
+      213: 4258991074754299897
+    second: 623069_sorting_tile_grid_index_layout_icon_1
+  - first:
+      213: -1252931966729162493
+    second: 623069_sorting_tile_grid_index_layout_icon_2
+  - first:
+      213: 8090233784235881239
+    second: 623069_sorting_tile_grid_index_layout_icon_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -72,10 +81,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,13 +135,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NoiseTexture_0
+      name: 623069_sorting_tile_grid_index_layout_icon_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 512
-        height: 512
+        x: 71
+        y: 281
+        width: 159
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +150,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 97a4623d332f14ba0800000000000000
-      internalID: -6106333315337926023
+      spriteID: ebbc9e5c172bc8be0800000000000000
+      internalID: -1473606776335512642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 623069_sorting_tile_grid_index_layout_icon_1
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 281
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f70a4041d9fa1b30800000000000000
+      internalID: 4258991074754299897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 623069_sorting_tile_grid_index_layout_icon_2
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 71
+        width: 159
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 301706bb301bc9ee0800000000000000
+      internalID: -1252931966729162493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 623069_sorting_tile_grid_index_layout_icon_3
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 71
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7137e3b43c8464070800000000000000
+      internalID: 8090233784235881239
       vertices: []
       indices: 
       edges: []
@@ -151,7 +226,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -160,7 +235,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      623069_sorting_tile_grid_index_layout_icon_0: -1473606776335512642
+      623069_sorting_tile_grid_index_layout_icon_1: 4258991074754299897
+      623069_sorting_tile_grid_index_layout_icon_2: -1252931966729162493
+      623069_sorting_tile_grid_index_layout_icon_3: 8090233784235881239
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

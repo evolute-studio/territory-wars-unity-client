@@ -41,22 +41,22 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _HardLight: 1.18
-    - _Pixelization: 300
-    - _RippleOpacity: 0
-    - _RippleSpeed: 1
-    - _RippleVisibility: 1
-    - _Shadow: 1
-    - _Size: 8
-    - _WaterBrightness: 1
-    - _WaterOpacity: 1
-    - _WaveSpeed: 0.1
+    - _HardLight: 1.2
+    - _Pixelization: 32
+    - _RippleOpacity: 1.36
+    - _RippleSpeed: 1.82
+    - _RippleVisibility: 0.98
+    - _Shadow: 1.44
+    - _Size: 4
+    - _WaterBrightness: 0.82
+    - _WaterOpacity: 0.45
+    - _WaveSpeed: 0.18
     m_Colors:
-    - _GlareColor: {r: 1, g: 1, b: 1, a: 0}
-    - _OutlineColor: {r: 1, g: 1, b: 1, a: 0}
-    - _RippleColor: {r: 0.6851646, g: 0.9378349, b: 1, a: 0}
-    - _ShadowColor: {r: 0, g: 0.11477517, b: 0.54555005, a: 0}
-    - _WaterColor: {r: 0.22633445, g: 0.5537505, b: 1, a: 0}
+    - _GlareColor: {r: 0, g: 1, b: 0.6784314, a: 0.47843137}
+    - _OutlineColor: {r: 0.058823504, g: 0.882353, b: 1, a: 0.14901961}
+    - _RippleColor: {r: 0.55294114, g: 0.9490196, b: 1, a: 0.13725491}
+    - _ShadowColor: {r: 0, g: 0.654902, b: 0.18039216, a: 0}
+    - _WaterColor: {r: 0, g: 0.7607844, b: 0.92549026, a: 0.14117648}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &6698483797992982777
