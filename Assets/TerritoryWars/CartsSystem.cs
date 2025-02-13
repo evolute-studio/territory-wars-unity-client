@@ -247,8 +247,25 @@ namespace TerritoryWars
         public void AcceptCart(Cart cart)
         {
             carts.Add(cart);
-            currentTargetIndices.Add(0);
-            cart.gameObject.transform.position = path[0];
+            int startIndex = GetClosestPathIndex(cart.gameObject.transform.position);
+            currentTargetIndices.Add(startIndex);
+            cart.gameObject.transform.position = path[startIndex];
+            Debug.Log($"Cart accepted at position {cart.gameObject.transform.position}, starting at index {startIndex}");
+        }
+
+        private int GetClosestPathIndex(Vector3 position)
+        {
+            float distanceToStart = Vector3.Distance(position, path[0]);
+            float distanceToEnd = Vector3.Distance(position, path[path.Length - 1]);
+
+            if (distanceToStart < distanceToEnd)
+            {
+                return 0; // Починаємо з першої точки
+            }
+            else
+            {
+                return path.Length - 1; // Починаємо з останньої точки
+            }
         }
 
         public void MoveCarts()
@@ -315,8 +332,10 @@ namespace TerritoryWars
                 }
                 else
                 {
-                    cart.gameObject.transform.position = path[0];
+                    // Переміщуємо карт на початок стартового тайла
+                    cart.gameObject.transform.position = startingTile.path[0];
                     currentTargetIndices[cartIndex] = 0;
+                    Debug.Log($"Cart transferred to start position {cart.gameObject.transform.position}, starting at index 0");
                 }
             }
         }
