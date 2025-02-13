@@ -2343,6 +2343,7 @@ GameObject:
   - component: {fileID: 5973684924702542619}
   - component: {fileID: 8405329765709005866}
   - component: {fileID: 2147761107695413608}
+  - component: {fileID: 6656283264602794713}
   m_Layer: 5
   m_Name: SessionUI
   m_TagString: Untagged
@@ -2433,6 +2434,26 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &6656283264602794713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7360462220280506035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8efc85e6f8aa58645b1243b01ad8b782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cityScoreTextPlayer1: {fileID: 7685826107342464605}
+  tileScoreTextPlayer1: {fileID: 3496856661060877760}
+  cityScoreTextPlayer2: {fileID: 1689394939577581423}
+  tileScoreTextPlayer2: {fileID: 6642373832326604823}
+  timeTextPlayer1: {fileID: 3812285364233049244}
+  timeTextPlayer2: {fileID: 8356960734557848491}
+  player1Image: {fileID: 2543729634224635564}
+  player2Image: {fileID: 890493864892234645}
 --- !u!1 &7568029393583829697
 GameObject:
   m_ObjectHideFlags: 0
@@ -2520,6 +2541,7 @@ GameObject:
   - component: {fileID: 8783129042205286545}
   - component: {fileID: 1272547358747340521}
   - component: {fileID: 7473721199843710404}
+  - component: {fileID: 7293699756337803836}
   m_Layer: 5
   m_Name: QuitButton
   m_TagString: Untagged
@@ -2584,6 +2606,62 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7293699756337803836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7932155472596637087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 7473721199843710404}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6656283264602794713}
+        m_TargetAssemblyTypeName: SessionUI, Assembly-CSharp
+        m_MethodName: SessionExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8350474168786060158
 GameObject:
   m_ObjectHideFlags: 0
