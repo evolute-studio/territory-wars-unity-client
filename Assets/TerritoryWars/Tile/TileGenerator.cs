@@ -4,6 +4,7 @@ using System.Linq;
 using TerritoryWars.ScriptablesObjects;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 namespace TerritoryWars.Tile
 {
@@ -27,6 +28,8 @@ namespace TerritoryWars.Tile
         public string TileConfig;
 
         public GameObject RoadPath;
+        
+        private int _currentHouseIndex = 0;
 
 
         public void Start() => Initialize();
@@ -146,7 +149,17 @@ namespace TerritoryWars.Tile
 
             foreach (var house in houseRenderers)
             {
-                house.sprite = TileAssetsObject.GetNextHouse();
+                int playerId = 0;
+                General.GameManager gameManager = General.GameManager.Instance;
+                if (gameManager == null || gameManager.CurrentCharacter == null)
+                {
+                   playerId = Random.Range(0, 2);
+                }
+                else
+                {
+                    playerId = gameManager.CurrentCharacter.Id;
+                }
+                house.sprite = TileAssetsObject.GetNextHouse(playerId);
                 TileRotator.SimpleRotation(house.transform, index);
                 TileRotator.SimpleRotationObjects.Add(house.transform);
             }

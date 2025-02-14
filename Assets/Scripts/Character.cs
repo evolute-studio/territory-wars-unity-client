@@ -4,7 +4,7 @@ public class Character : MonoBehaviour
 {
     private Animator _animator;
     private CharacterAnimator _characterAnimator;
-    private int _id;
+    public int Id;
     
     public void Start() => Initialize();
     

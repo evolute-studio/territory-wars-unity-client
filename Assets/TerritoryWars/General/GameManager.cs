@@ -34,7 +34,7 @@ namespace TerritoryWars.General
         public Vector3[] SpawnPoints;
 
         public Character[] Characters;
-        private Character _currentCharacter;
+        public Character CurrentCharacter { get; private set; }
 
         private void Start()
         {
@@ -51,7 +51,9 @@ namespace TerritoryWars.General
             Characters[0] = player1.GetComponent<Character>();
             Characters[1] = player2.GetComponent<Character>();
             Characters[0].transform.localScale = new Vector3(-1, 1, 1);
-            _currentCharacter = Characters[0];
+            CurrentCharacter = Characters[0];
+            Characters[0].Id = 0;
+            Characters[1].Id = 1;
 
             // анімація спуску персонажів до SpawnPoints
             Characters[0].transform.DOMove(SpawnPoints[0], 1f).SetEase(Ease.InOutExpo);
@@ -67,14 +69,14 @@ namespace TerritoryWars.General
         private void OnTurnStarted()
         {
             // Активуємо поточного персонажа
-            _currentCharacter.StartSelecting();
+            CurrentCharacter.StartSelecting();
 
         }
 
         private void OnTurnEnding()
         {
             // Деактивуємо поточного персонажа
-            _currentCharacter.EndTurn();
+            CurrentCharacter.EndTurn();
 
         }
         
@@ -112,7 +114,7 @@ namespace TerritoryWars.General
         public void CompleteEndTurn()
         {
             // Змінюємо поточного персонажа
-            _currentCharacter = _currentCharacter == Characters[0] ? Characters[1] : Characters[0];
+            CurrentCharacter = CurrentCharacter == Characters[0] ? Characters[1] : Characters[0];
 
             StartNewTurn();
         }

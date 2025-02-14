@@ -12,10 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8efe8e322f6b4e958c8d500a45565d1d, type: 3}
   m_Name: TileAssetsObject
   m_EditorClassIdentifier: 
-  Houses:
+  FirstPlayerHouses:
   - {fileID: 8413740145958120682, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
   - {fileID: 2912985593240855013, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
   - {fileID: 7088043999203090994, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
+  SecondPlayerHouses:
+  - {fileID: -2059984849334355576, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
+  - {fileID: -1702935629377491628, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
+  - {fileID: 7191902322616396018, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
   Mountains:
   - {fileID: -741998552, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
   - {fileID: -304526517, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
