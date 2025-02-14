@@ -53,6 +53,11 @@ namespace TerritoryWars.Tile
         {
             return id + ":" + rotationIndex;
         }
+        
+        public string GetConfigWithoutRotation()
+        {
+            return id;
+        }
 
         public void SetConfig(string config)
         {

@@ -77,6 +77,11 @@ namespace TerritoryWars.General
             _currentCharacter.EndTurn();
 
         }
+        
+        public int GetCurrentCharacter()
+        {
+            return _currentCharacter == Characters[0] ? 0 : 1;
+        }
 
         private void StartNewTurn()
         {
