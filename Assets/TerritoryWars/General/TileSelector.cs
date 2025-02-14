@@ -130,11 +130,6 @@ namespace TerritoryWars.General
                 return;
             }
 
-            if (!selectedPosition.HasValue)
-            {
-                OnTurnStarted.Invoke();
-            }
-
             if (selectedPosition.HasValue)
             {
                 currentTile.SetConfig(initialTileConfig);
@@ -144,6 +139,15 @@ namespace TerritoryWars.General
             }
 
             currentValidRotations = board.GetValidRotations(currentTile, x, y);
+            if (currentValidRotations.Count == 0)
+            {
+                return;
+            }
+
+            if (!selectedPosition.HasValue)
+            {
+                OnTurnStarted.Invoke();
+            }
 
             if (currentValidRotations.Count > 1)
             {
@@ -170,15 +174,6 @@ namespace TerritoryWars.General
                 }
 
                 currentValidRotations = uniqueRotations;
-            }
-
-            if (currentValidRotations.Count == 0)
-            {
-                SetHighlightColor(invalidHighlightColor);
-                selectedPosition = null;
-                gameUI.SetEndTurnButtonActive(false);
-                gameUI.SetRotateButtonActive(false);
-                return;
             }
 
             UpdateHighlights(x, y);
