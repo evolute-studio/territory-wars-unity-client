@@ -54,8 +54,8 @@ namespace TerritoryWars.General
             _currentCharacter = Characters[0];
 
             // анімація спуску персонажів до SpawnPoints
-            Characters[0].transform.DOMove(SpawnPoints[0], 1f);
-            Characters[1].transform.DOMove(SpawnPoints[1], 1f);
+            Characters[0].transform.DOMove(SpawnPoints[0], 1f).SetEase(Ease.InOutExpo);
+            Characters[1].transform.DOMove(SpawnPoints[1], 1f).SetEase(Ease.InOutExpo);
 
             // Підписуємось на події ходу
             TileSelector.OnTurnStarted.AddListener(OnTurnStarted);

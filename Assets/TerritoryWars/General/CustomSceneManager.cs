@@ -20,7 +20,6 @@ namespace TerritoryWars.General
             else
             {
                 Instance = this;
-                DontDestroyOnLoad(gameObject);
             }
         }
         #endregion

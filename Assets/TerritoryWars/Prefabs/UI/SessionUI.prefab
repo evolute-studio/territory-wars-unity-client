@@ -1167,8 +1167,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -22, y: -128.5}
-  m_SizeDelta: {x: -1444, y: 257}
+  m_AnchoredPosition: {x: 0, y: -128.5}
+  m_SizeDelta: {x: -2264.06, y: 257}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6885441903160772122
 CanvasRenderer:
@@ -1390,7 +1390,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -9.06}
+  m_AnchoredPosition: {x: 0, y: -9.059998}
   m_SizeDelta: {x: 154.098, y: 57.9442}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &4931305289537380079
@@ -1772,7 +1772,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4300033564707643664}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10.512519}
+  m_LocalPosition: {x: 0, y: 0, z: 10.512346}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1782,11 +1782,11 @@ RectTransform:
   - {fileID: 691309065672496953}
   m_Father: {fileID: 181319668804946582}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -350, y: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 700, y: 510}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 1}
 --- !u!1 &4601103599272962644
 GameObject:
   m_ObjectHideFlags: 0
@@ -2001,7 +2001,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5195970865845931523}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10.512519}
+  m_LocalPosition: {x: 0, y: 0, z: 10.512346}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2011,11 +2011,11 @@ RectTransform:
   - {fileID: 4654722435839202276}
   m_Father: {fileID: 181319668804946582}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 350, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 700, y: 510}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 1}
 --- !u!1 &5407910456569900137
 GameObject:
   m_ObjectHideFlags: 0
@@ -2321,7 +2321,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: -270, y: 30}
-  m_SizeDelta: {x: 400, y: 360}
+  m_SizeDelta: {x: 350, y: 360}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3228316793882252013
 CanvasRenderer:
@@ -2391,7 +2391,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -628261759
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &8405329765709005866
@@ -2408,7 +2408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
+  m_ScaleFactor: 0.7
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
@@ -2446,14 +2446,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8efc85e6f8aa58645b1243b01ad8b782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cityScoreTextPlayer1: {fileID: 7685826107342464605}
-  tileScoreTextPlayer1: {fileID: 3496856661060877760}
-  cityScoreTextPlayer2: {fileID: 1689394939577581423}
-  tileScoreTextPlayer2: {fileID: 6642373832326604823}
-  timeTextPlayer1: {fileID: 3812285364233049244}
-  timeTextPlayer2: {fileID: 8356960734557848491}
-  player1Image: {fileID: 2543729634224635564}
-  player2Image: {fileID: 890493864892234645}
+  JokerNotAvailableColor: {r: 0, g: 0, b: 0, a: 0}
+  JokerAvailableColor: {r: 0, g: 0, b: 0, a: 0}
+  cityScoreTextPlayers: []
+  tileScoreTextPlayers: []
+  timeTextPlayers: []
+  imagePlayers: []
+  players: []
 --- !u!1 &7568029393583829697
 GameObject:
   m_ObjectHideFlags: 0
@@ -2650,10 +2649,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6656283264602794713}
-        m_TargetAssemblyTypeName: SessionUI, Assembly-CSharp
-        m_MethodName: SessionExit
-        m_Mode: 1
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: TerritoryWars.General.CustomSceneManager, Assembly-CSharp
+        m_MethodName: LoadLobby
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
