@@ -4,11 +4,6 @@ using UnityEngine;
 public class CharacterAnimator
 {
     private Animator _animator;
-    public AnimationClip IdleAnimation;
-    public AnimationClip WinAnimation;
-    public AnimationClip LoseAnimation;
-    public AnimationClip HitAnimation;
-    public AnimationClip CastAnimation;
 
     public CharacterAnimator(Animator animator)
     {
