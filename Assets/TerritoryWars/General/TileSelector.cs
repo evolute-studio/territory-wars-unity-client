@@ -33,6 +33,8 @@ namespace TerritoryWars.General
         public delegate void TileSelected(int x, int y);
         public event TileSelected OnTileSelected;
         public UnityEvent OnTilePlaced = new UnityEvent();
+        public UnityEvent OnTurnStarted = new UnityEvent();
+        public UnityEvent OnTurnEnding = new UnityEvent();
 
         private void Awake()
         {
@@ -113,7 +115,7 @@ namespace TerritoryWars.General
             var spriteRenderer = highlight.AddComponent<SpriteRenderer>();
             spriteRenderer.sprite = highlightSprite;
             spriteRenderer.material = highlightMaterial;
-            spriteRenderer.sortingOrder = -1;
+            spriteRenderer.sortingOrder = 9;
 
             var clickHandler = highlight.AddComponent<TileClickHandler>();
             clickHandler.Initialize(this, x, y);
@@ -126,6 +128,11 @@ namespace TerritoryWars.General
             if (selectedPosition.HasValue && selectedPosition.Value == new Vector2Int(x, y))
             {
                 return;
+            }
+
+            if (!selectedPosition.HasValue)
+            {
+                OnTurnStarted.Invoke();
             }
 
             if (selectedPosition.HasValue)
@@ -255,14 +262,13 @@ namespace TerritoryWars.General
         {
             if (!selectedPosition.HasValue) return;
 
-            // Вимикаємо кнопку повороту перед початком анімації
+            OnTurnEnding.Invoke();
+
             gameUI.SetRotateButtonActive(false);
 
-            // Запускаємо анімацію спуску превью
             tilePreview.PlaceTile();
         }
 
-        // Цей метод буде викликаний після завершення анімації
         public void CompleteTilePlacement(List<Sprite> houses = default)
         {
             if (!selectedPosition.HasValue) return;
@@ -276,7 +282,6 @@ namespace TerritoryWars.General
                 gameUI.SetEndTurnButtonActive(false);
                 gameUI.SetRotateButtonActive(false);
 
-                // Викликаємо завершення ходу після розміщення тайла
                 GameManager.Instance.CompleteEndTurn();
             }
         }

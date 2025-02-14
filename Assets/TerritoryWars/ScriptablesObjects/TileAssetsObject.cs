@@ -7,6 +7,7 @@ namespace TerritoryWars.ScriptablesObjects
     {
         public Sprite[] Houses;
         public Sprite[] Mountains;
+        public GameObject ForestPrefab;
         
         private int currentIndex = 0;
         

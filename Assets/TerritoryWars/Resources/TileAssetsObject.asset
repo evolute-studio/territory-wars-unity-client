@@ -23,3 +23,4 @@ MonoBehaviour:
   - {fileID: -1068921282, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
   - {fileID: 902211640, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
   - {fileID: 272867803, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
+  ForestPrefab: {fileID: 7438903187752395731, guid: 6864943972b7f4f56b6bfa8909333cc2, type: 3}

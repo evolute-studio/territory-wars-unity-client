@@ -3,6 +3,10 @@ using UnityEngine;
 
 public class CharacterAnimator
 {
+    private static readonly int Win = Animator.StringToHash("Win");
+    private static readonly int Lose = Animator.StringToHash("Lose");
+    private static readonly int Hit = Animator.StringToHash("Hit");
+    private static readonly int Cast = Animator.StringToHash("Cast");
     private Animator _animator;
 
     public CharacterAnimator(Animator animator)
@@ -10,28 +14,28 @@ public class CharacterAnimator
         _animator = animator;
     }
     
-    public void Idle()
+    public void PlayIdle()
     {
         
     }
     
-    public void Win()
+    public void PlayWin(bool value)
     {
-        _animator.SetTrigger("Win");
+        _animator.SetBool(Win, value);
     }
     
-    public void Lose()
+    public void PlayLose(bool value)
     {
-        _animator.SetTrigger("Lose");
+        _animator.SetBool(Lose, value);
     }
     
-    public void Hit()
+    public void PlayHit()
     {
-        _animator.SetTrigger("Hit");
+        _animator.SetTrigger(Hit);
     }
     
-    public void Cast()
+    public void PlayCast(bool value)
     {
-        _animator.SetTrigger("Cast");
+        _animator.SetBool(Cast, value);
     }
 }
