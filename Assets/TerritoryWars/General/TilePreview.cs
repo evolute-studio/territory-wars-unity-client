@@ -17,7 +17,7 @@ namespace TerritoryWars.General
 
         private Vector3 _initialPosition;
         private Tween currentTween;
-        
+
         private List<Sprite> _houseSprites = new List<Sprite>();
 
         public void Start()
@@ -50,7 +50,7 @@ namespace TerritoryWars.General
                     Transform territoryPlacer = tileGenerator.City.transform.Find("TerritoryPlacer");
                     if (territoryPlacer != null)
                     {
-                        territoryPlacer.GetComponentInChildren<SpriteMask>().frontSortingLayerID 
+                        territoryPlacer.GetComponentInChildren<SpriteMask>().frontSortingLayerID
                             = SortingLayer.NameToID("Preview");
                     }
                     _houseSprites.Clear();
@@ -62,7 +62,7 @@ namespace TerritoryWars.General
                     }
 
                 }
-                
+
                 previewTileView.UpdateView(currentTile);
             }
             else if (previewTileView != null)
@@ -111,12 +111,15 @@ namespace TerritoryWars.General
                     GameManager.Instance.TileSelector.CompleteTilePlacement();
                     // ResetPosition буде викликано через OnTilePlaced event
                 });
+
+            previewTileView.transform.DOScale(1, 0.5f).SetEase(Ease.OutQuint);
         }
 
         public void ResetPosition()
         {
             currentTween?.Kill();
             transform.position = _initialPosition;
+            transform.localScale = Vector3.one * 2f;
         }
 
         private void OnDestroy()
