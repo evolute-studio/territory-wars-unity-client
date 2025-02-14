@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using TerritoryWars.Tile;
@@ -12,11 +13,12 @@ namespace TerritoryWars.General
         [SerializeField] private TileView previewTileView;
         [SerializeField] private float tilePreviewSetHeight = 0.5f;
 
-        [Header("Preview Position")]
-        [SerializeField] private Vector2 screenOffset = new Vector2(100f, 100f); // Відступ від правого нижнього кута
+        [Header("Preview Position")] [SerializeField]
+        private Vector2 screenOffset = new Vector2(100f, 100f); // Відступ від правого нижнього кута
 
-        [Header("Animation Settings")]
-        [SerializeField] private float moveDuration = 0.3f;
+        [Header("Animation Settings")] [SerializeField]
+        private float moveDuration = 0.3f;
+
         [SerializeField] private Ease moveEase = Ease.OutQuint;
 
         private Vector3 _initialPosition;
@@ -100,6 +102,7 @@ namespace TerritoryWars.General
                         territoryPlacer.GetComponentInChildren<SpriteMask>().frontSortingLayerID
                             = SortingLayer.NameToID("Preview");
                     }
+
                     _houseSprites.Clear();
                     SpriteRenderer[] houseRenderers = tileGenerator.City.GetComponentsInChildren<SpriteRenderer>();
                     foreach (SpriteRenderer houseRenderer in houseRenderers)
@@ -122,6 +125,7 @@ namespace TerritoryWars.General
             {
                 spriteRenderer.sortingLayerName = "Preview";
             }
+
             LineRenderer[] lineRenderers = previewTileView.GetComponentsInChildren<LineRenderer>();
             foreach (LineRenderer lineRenderer in lineRenderers)
             {
@@ -142,13 +146,27 @@ namespace TerritoryWars.General
             //previewTileView.transform.DOScale(1, 0.5f).SetEase(Ease.OutQuint);
         }
 
-        public async void PlaceTile()
+        public void PlaceTile()
         {
-            if (!gameObject.activeSelf) return;
+            StartCoroutine(PlaceTileCoroutine());
+        }
+
+        private IEnumerator PlaceTileCoroutine()
+        {
+            if (!gameObject.activeSelf) yield break;
             // shake animation Y
             previewTileView.transform.DOShakePosition(0.5f, 0.1f, 18, 45, false, true);
+
+            yield return new WaitForSeconds(0.5f);
+
+            SpriteRenderer[] grounds =
+                previewTileView.transform.Find("Ground").GetComponentsInChildren<SpriteRenderer>();
             
-            await Task.Delay(500);
+            foreach (SpriteRenderer ground in grounds)
+            {
+                ground.sortingLayerName = "Default";
+            }
+            
             currentTween?.Kill();
             Vector3 currentPosition = previewTileView.transform.position;
             Vector3 targetPosition = currentPosition;
@@ -162,11 +180,9 @@ namespace TerritoryWars.General
                     GameManager.Instance.TileSelector.CompleteTilePlacement();
                     // ResetPosition буде викликано через OnTilePlaced event
                 });
-
-
         }
 
-        public void ResetPosition()
+    public void ResetPosition()
         {
             currentTween?.Kill();
             currentTween = transform

@@ -32,6 +32,7 @@ namespace TerritoryWars.General
         public TileSelector TileSelector;
 
         public Vector3[] SpawnPoints;
+        public AnimationCurve spawnCurve;
 
         public Character[] Characters;
         public Character CurrentCharacter { get; private set; }
@@ -44,25 +45,42 @@ namespace TerritoryWars.General
         public void StartGame()
         {
             Characters = new Character[2];
-            Vector3 spawnPosition = new Vector3(SpawnPoints[0].x, SpawnPoints[0].y + 15, 0);
-            GameObject player1 = Instantiate(PrefabsManager.Instance.GetNextPlayer(), spawnPosition, Quaternion.identity);
-            spawnPosition = new Vector3(SpawnPoints[1].x, SpawnPoints[1].y + 15, 0);
-            GameObject player2 = Instantiate(PrefabsManager.Instance.GetNextPlayer(), spawnPosition, Quaternion.identity);
+
+            // Створюємо точки для дугової траєкторії для першого персонажа
+            Vector3[] path1 = new Vector3[3];
+            path1[0] = new Vector3(SpawnPoints[0].x, SpawnPoints[0].y + 15, 0); // Початкова точка
+            path1[1] = new Vector3(SpawnPoints[0].x - 5, SpawnPoints[0].y + 7, 0); // Контрольна точка дуги
+            path1[2] = SpawnPoints[0]; // Кінцева точка
+
+            // Створюємо точки для дугової траєкторії для другого персонажа
+            Vector3[] path2 = new Vector3[3];
+            path2[0] = new Vector3(SpawnPoints[1].x, SpawnPoints[1].y + 15, 0);
+            path2[1] = new Vector3(SpawnPoints[1].x + 5, SpawnPoints[1].y + 7, 0);
+            path2[2] = SpawnPoints[1];
+
+            GameObject player1 = Instantiate(PrefabsManager.Instance.GetNextPlayer(), path1[0], Quaternion.identity);
+            GameObject player2 = Instantiate(PrefabsManager.Instance.GetNextPlayer(), path2[0], Quaternion.identity);
+
             Characters[0] = player1.GetComponent<Character>();
             Characters[1] = player2.GetComponent<Character>();
-            Characters[0].transform.localScale = new Vector3(-1, 1, 1);
+            Characters[0].transform.localScale = new Vector3(-0.7f, 0.7f, 1f);
             CurrentCharacter = Characters[0];
             Characters[0].Id = 0;
             Characters[1].Id = 1;
 
-            // анімація спуску персонажів до SpawnPoints
-            Characters[0].transform.DOMove(SpawnPoints[0], 1f).SetEase(Ease.InOutExpo);
-            Characters[1].transform.DOMove(SpawnPoints[1], 1f).SetEase(Ease.InOutExpo);
+            // Анімація спуску персонажів по дузі
+            Characters[0].transform
+                .DOPath(path1, 2.5f, PathType.CatmullRom)
+                .SetEase(Ease.OutQuad);
+
+            Characters[1].transform
+                .DOPath(path2, 2.5f, PathType.CatmullRom)
+                .SetEase(Ease.OutQuad);
 
             // Підписуємось на події ходу
             TileSelector.OnTurnStarted.AddListener(OnTurnStarted);
             TileSelector.OnTurnEnding.AddListener(OnTurnEnding);
-            
+
             Invoke(nameof(StartNewTurn), 2f);
         }
 
