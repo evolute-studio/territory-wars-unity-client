@@ -40,14 +40,14 @@ public class SessionUI : MonoBehaviour
                 joker.color = JokerAvailableColor;
             }
         }
-        
+
         _board.OnTilePlaced += AddScore;
     }
 
-    private void AddScore(TileData tile, int x, int y )
+    private void AddScore(TileData tile, int x, int y)
     {
         string config = tile.GetConfigWithoutRotation();
-        
+
         int currentCharacter = TerritoryWars.General.GameManager.Instance.GetCurrentCharacter();
 
         foreach (var side in config)
@@ -62,12 +62,21 @@ public class SessionUI : MonoBehaviour
             }
         }
     }
-       
+
+    public void UpdateTime()
+    {
+        int currentCharacter = TerritoryWars.General.GameManager.Instance.GetCurrentCharacter();
+        players[currentCharacter].UpdateTimer();
+        timeTextPlayers[currentCharacter].text = string.Format("{0:00}:{1:00}",
+            Mathf.Floor(players[currentCharacter].time / 60),
+            Mathf.Floor(players[currentCharacter].time % 60));
+    }
+
 
 
     public void UseJoker(int player)
     {
-        if(players[player].jokerCount == 0)
+        if (players[player].jokerCount == 0)
             return;
 
         players[player].jokerCount--;
@@ -76,11 +85,11 @@ public class SessionUI : MonoBehaviour
 
     public void SessionExit()
     {
-        
+
     }
 
-    
-    
+
+
     [Serializable]
     public class PlayerInfo
     {
@@ -90,5 +99,14 @@ public class SessionUI : MonoBehaviour
         public int tileScore = 0;
         public float time = 600f;
         public List<Image> jokersImage;
+
+        public void UpdateTimer()
+        {
+            time -= Time.deltaTime;
+            if (time <= 0)
+            {
+                time = 0;
+            }
+        }
     }
 }

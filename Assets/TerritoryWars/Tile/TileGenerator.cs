@@ -146,7 +146,9 @@ namespace TerritoryWars.Tile
             TerritoryFiller territoryFiller = city.GetComponentInChildren<TerritoryFiller>();
             FencePlacer fencePlacer = city.GetComponentInChildren<FencePlacer>();
             List<Transform> pillars = fencePlacer.pillars;
-
+            
+            TileAssetsObject.BackIndex(houseRenderers.Count);
+            
             foreach (var house in houseRenderers)
             {
                 int playerId = 0;

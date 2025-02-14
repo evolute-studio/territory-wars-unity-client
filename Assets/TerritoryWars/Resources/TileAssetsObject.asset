@@ -16,10 +16,16 @@ MonoBehaviour:
   - {fileID: 8413740145958120682, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
   - {fileID: 2912985593240855013, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
   - {fileID: 7088043999203090994, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
+  - {fileID: 4323759710514417277, guid: a92961e747a6c41889e9d889471a73cb, type: 3}
+  - {fileID: 6862363052645781871, guid: a92961e747a6c41889e9d889471a73cb, type: 3}
+  - {fileID: 5136009905638925935, guid: a92961e747a6c41889e9d889471a73cb, type: 3}
   SecondPlayerHouses:
   - {fileID: -2059984849334355576, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
   - {fileID: -1702935629377491628, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
   - {fileID: 7191902322616396018, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
+  - {fileID: 4500187480589423747, guid: a92961e747a6c41889e9d889471a73cb, type: 3}
+  - {fileID: 1092234185613066999, guid: a92961e747a6c41889e9d889471a73cb, type: 3}
+  - {fileID: 6399064941696225175, guid: a92961e747a6c41889e9d889471a73cb, type: 3}
   Mountains:
   - {fileID: -741998552, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
   - {fileID: -304526517, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}

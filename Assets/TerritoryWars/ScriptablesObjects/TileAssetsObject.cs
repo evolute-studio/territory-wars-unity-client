@@ -9,31 +9,39 @@ namespace TerritoryWars.ScriptablesObjects
         public Sprite[] SecondPlayerHouses;
         public Sprite[] Mountains;
         public GameObject ForestPrefab;
-        
-        private int currentIndex = 0;
-        
+
+        public int CurrentIndex { get; private set; } = 0;
+        public int CurrentHouseIndex { get; private set; } = 0;
+
         public Sprite GetRandomHouse(int playerIndex)
         {
-            Sprite[][] Houses = {FirstPlayerHouses, SecondPlayerHouses};
+            Sprite[][] Houses = { FirstPlayerHouses, SecondPlayerHouses };
             int randomIndex = Random.Range(0, Houses[playerIndex].Length);
             Sprite randomHouse = Houses[playerIndex][randomIndex];
             return randomHouse;
         }
-        
+
         public Sprite GetNextHouse(int playerIndex)
         {
-            Sprite[][] Houses = {FirstPlayerHouses, SecondPlayerHouses};
-            currentIndex = (currentIndex + 1) % Houses.Length;
-            Sprite nextHouse = Houses[playerIndex][currentIndex];
+            Sprite[][] Houses = { FirstPlayerHouses, SecondPlayerHouses };
+            CurrentHouseIndex = (CurrentHouseIndex + 1) % Houses[playerIndex].Length;
+            Sprite nextHouse = Houses[playerIndex][CurrentHouseIndex];
             return nextHouse;
         }
-        
+
+        public void BackIndex(int times)
+        {
+            CurrentHouseIndex = (CurrentHouseIndex - times) % FirstPlayerHouses.Length;
+            if (CurrentHouseIndex < 0)
+                CurrentHouseIndex += FirstPlayerHouses.Length;
+        }
+
         public Sprite GetRandomMountain()
         {
             int randomIndex = Random.Range(0, Mountains.Length);
             Sprite randomMountain = Mountains[randomIndex];
             return randomMountain;
         }
-        
+
     }
 }
