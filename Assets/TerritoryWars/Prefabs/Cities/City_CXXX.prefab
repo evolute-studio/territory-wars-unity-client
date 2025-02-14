@@ -168,8 +168,6 @@ LineRenderer:
   - {x: 0.599, y: 0.058000162, z: 0}
   - {x: 0.43700027, y: 0.040000036, z: 0}
   - {x: 0.299, y: 0.016999997, z: 0}
-  - {x: 0.289, y: 0.016999997, z: -150}
-  - {x: 0.058, y: 0.129, z: -150}
   - {x: 0.048, y: 0.129, z: 0}
   - {x: -0.020999908, y: 0.20599993, z: 0}
   - {x: -0.09300041, y: 0.2908426, z: 0}
@@ -767,7 +765,7 @@ MonoBehaviour:
   - {fileID: 6211040902863031268}
   fenceYOffset: 0.08
   lineRenderer: {fileID: 8829798952012790119}
-  skipIndices: 02000000
+  skipIndices: 
 --- !u!1 &5571957602231712010
 GameObject:
   m_ObjectHideFlags: 0
@@ -986,7 +984,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7421528473417515623}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1

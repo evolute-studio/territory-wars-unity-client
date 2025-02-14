@@ -1,8 +1,11 @@
 using System;
 using System.Collections.Generic;
+using TerritoryWars.General;
+using TerritoryWars.Tile;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Serialization;
 
 public class SessionUI : MonoBehaviour
 {
@@ -11,6 +14,7 @@ public class SessionUI : MonoBehaviour
     public List<TextMeshProUGUI> cityScoreTextPlayers;
     public List<TextMeshProUGUI> tileScoreTextPlayers;
     public List<TextMeshProUGUI> timeTextPlayers;
+    [SerializeField] private Board _board;
 
     public List<Image> imagePlayers;
 
@@ -36,7 +40,30 @@ public class SessionUI : MonoBehaviour
                 joker.color = JokerAvailableColor;
             }
         }
+        
+        _board.OnTilePlaced += AddScore;
     }
+
+    private void AddScore(TileData tile, int x, int y )
+    {
+        string config = tile.GetConfigWithoutRotation();
+        
+        int currentCharacter = TerritoryWars.General.GameManager.Instance.GetCurrentCharacter();
+
+        foreach (var side in config)
+        {
+            if (side == 'C')
+            {
+                cityScoreTextPlayers[currentCharacter].text = (int.Parse(cityScoreTextPlayers[currentCharacter].text) + 1).ToString();
+            }
+            else if (side == 'R')
+            {
+                tileScoreTextPlayers[currentCharacter].text = (int.Parse(tileScoreTextPlayers[currentCharacter].text) + 1).ToString();
+            }
+        }
+    }
+       
+
 
     public void UseJoker(int player)
     {
@@ -51,6 +78,8 @@ public class SessionUI : MonoBehaviour
     {
         
     }
+
+    
     
     [Serializable]
     public class PlayerInfo
