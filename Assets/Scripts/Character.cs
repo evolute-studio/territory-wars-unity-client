@@ -1,8 +1,4 @@
-using System;
-using Unity.VisualScripting;
-using UnityEditor.Animations;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class Character : MonoBehaviour
 {
