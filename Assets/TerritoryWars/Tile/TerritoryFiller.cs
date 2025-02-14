@@ -192,7 +192,8 @@ namespace TerritoryWars.Tile
                 _ => fenceTop // За замовчуванням
             };
         }
-
+        
+        #if UNITY_EDITOR
         private void OnDrawGizmosSelected()
         {
             if (lineRenderer == null || lineRenderer.positionCount < 2) return;
@@ -248,6 +249,7 @@ namespace TerritoryWars.Tile
                 }
             }
         }
+        #endif
 
         private float GetAngleFromDirection(Vector2 direction)
         {
