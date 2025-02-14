@@ -46601,7 +46601,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   board: {fileID: 989829360}
-  CartPrefab: {fileID: 2677042728232836196, guid: 911a3485f108f415588224ee8885357e, type: 3}
+  PlayerCartPrefab: {fileID: 2677042728232836196, guid: 911a3485f108f415588224ee8885357e, type: 3}
+  FirstPlayerCartSprite: {fileID: 3492903663844026529, guid: 12e85435d43164485958a005984eb099, type: 3}
+  SecondPlayerCartSprite: {fileID: 192428449396693894, guid: e68c60b50adb2bb469eab49fea4115d6, type: 3}
 --- !u!4 &1724246506
 Transform:
   m_ObjectHideFlags: 0

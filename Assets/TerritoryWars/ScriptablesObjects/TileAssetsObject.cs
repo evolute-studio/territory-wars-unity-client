@@ -5,23 +5,26 @@ namespace TerritoryWars.ScriptablesObjects
     [CreateAssetMenu(fileName = "TileAssetsObject", menuName = "TileAssetsObject", order = 0)]
     public class TileAssetsObject : ScriptableObject
     {
-        public Sprite[] Houses;
+        public Sprite[] FirstPlayerHouses;
+        public Sprite[] SecondPlayerHouses;
         public Sprite[] Mountains;
         public GameObject ForestPrefab;
         
         private int currentIndex = 0;
         
-        public Sprite GetRandomHouse()
+        public Sprite GetRandomHouse(int playerIndex)
         {
-            int randomIndex = Random.Range(0, Houses.Length);
-            Sprite randomHouse = Houses[randomIndex];
+            Sprite[][] Houses = {FirstPlayerHouses, SecondPlayerHouses};
+            int randomIndex = Random.Range(0, Houses[playerIndex].Length);
+            Sprite randomHouse = Houses[playerIndex][randomIndex];
             return randomHouse;
         }
         
-        public Sprite GetNextHouse()
+        public Sprite GetNextHouse(int playerIndex)
         {
+            Sprite[][] Houses = {FirstPlayerHouses, SecondPlayerHouses};
             currentIndex = (currentIndex + 1) % Houses.Length;
-            Sprite nextHouse = Houses[currentIndex];
+            Sprite nextHouse = Houses[playerIndex][currentIndex];
             return nextHouse;
         }
         

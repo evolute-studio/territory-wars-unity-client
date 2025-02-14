@@ -3,6 +3,7 @@ using System.Linq;
 using TerritoryWars.General;
 using TerritoryWars.Tile;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace TerritoryWars.Carts
 {
@@ -11,7 +12,13 @@ namespace TerritoryWars.Carts
         public Board board;
 
         public static float CartsSpeed = 0.1f;
-        public GameObject CartPrefab;
+        public GameObject PlayerCartPrefab;
+        
+        public Sprite FirstPlayerCartSprite;
+        public Sprite SecondPlayerCartSprite;
+
+        public static Sprite FirstPlayerCartSpriteStatic;
+        public static Sprite SecondPlayerCartSpriteStatic;
 
         // Змінюємо на Dictionary для швидкого доступу по координатах
         private Dictionary<Vector2Int, RoadTile> roadTiles = new Dictionary<Vector2Int, RoadTile>();
@@ -20,6 +27,8 @@ namespace TerritoryWars.Carts
 
         public void Initialize()
         {
+            FirstPlayerCartSpriteStatic = FirstPlayerCartSprite;
+            SecondPlayerCartSpriteStatic = SecondPlayerCartSprite;
             board.OnTilePlaced += OnTilePlaced;
         }
 
@@ -32,14 +41,15 @@ namespace TerritoryWars.Carts
 
             GameObject tileObject = board.GetTileObject(x, y);
             Transform cartsPath = tileObject.GetComponent<TileGenerator>().RoadPath.transform;
-            RoadTile roadTile = new RoadTile(tileObject, tileData, cartsPath);
+            int playerId = General.GameManager.Instance.CurrentCharacter.Id;
+            RoadTile roadTile = new RoadTile(playerId, tileObject, tileData, cartsPath);
             
             //int cartsCount = tileData.id.Count(c => c == 'R');
             int cartsCount = 1;
             Cart[] carts = new Cart[cartsCount];
             for (int i = 0; i < cartsCount; i++)
             {
-                GameObject cartObject = Instantiate(CartPrefab, tileObject.transform);
+                GameObject cartObject = Instantiate(PlayerCartPrefab, tileObject.transform);
                 cartObject.SetActive(false);
                 carts[i] = new Cart(cartObject);
             }
@@ -111,6 +121,7 @@ namespace TerritoryWars.Carts
 
     public class RoadTile
     {
+        public int OwnerId;
         public GameObject gameObject;
         public TileData tileData;
         public List<Cart> carts;
@@ -126,7 +137,7 @@ namespace TerritoryWars.Carts
         private bool isReadyToSpawnCarts = false;
         private bool isCartsSpawned = false;
 
-        public RoadTile(GameObject gameObject, TileData tileData, Transform pathParent)
+        public RoadTile(int ownerId, GameObject gameObject, TileData tileData, Transform pathParent)
         {
             this.gameObject = gameObject;
             this.tileData = tileData;
@@ -137,6 +148,7 @@ namespace TerritoryWars.Carts
             }
             carts = new List<Cart>();
             currentTargetIndices = new List<int>();
+            OwnerId = ownerId;
         }
 
         public void AddCart(Cart[] newCarts)
@@ -195,7 +207,7 @@ namespace TerritoryWars.Carts
                     continue;
 
                 Vector3 position = Vector3.zero;
-
+                carts[i].spriteRenderer.sprite = OwnerId == 0 ? CartsSystem.FirstPlayerCartSpriteStatic : CartsSystem.SecondPlayerCartSpriteStatic;
                 if (i == 0)
                 {
                     position = path[0];
@@ -251,6 +263,7 @@ namespace TerritoryWars.Carts
             int startIndex = GetClosestPathIndex(cart.gameObject.transform.position);
             currentTargetIndices.Add(startIndex);
             cart.gameObject.transform.position = path[startIndex];
+            cart.spriteRenderer.sprite = OwnerId == 0 ? CartsSystem.FirstPlayerCartSpriteStatic : CartsSystem.SecondPlayerCartSpriteStatic;
             Debug.Log($"Cart accepted at position {cart.gameObject.transform.position}, starting at index {startIndex}");
         }
 
