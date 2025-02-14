@@ -33,9 +33,9 @@ namespace TerritoryWars.Carts
             GameObject tileObject = board.GetTileObject(x, y);
             Transform cartsPath = tileObject.GetComponent<TileGenerator>().RoadPath.transform;
             RoadTile roadTile = new RoadTile(tileObject, tileData, cartsPath);
-
-            // Створюємо картини
-            int cartsCount = tileData.id.Count(c => c == 'R');
+            
+            //int cartsCount = tileData.id.Count(c => c == 'R');
+            int cartsCount = 1;
             Cart[] carts = new Cart[cartsCount];
             for (int i = 0; i < cartsCount; i++)
             {

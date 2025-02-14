@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using TerritoryWars.Tile;
 using UnityEngine;
 using DG.Tweening;
@@ -141,10 +142,13 @@ namespace TerritoryWars.General
             //previewTileView.transform.DOScale(1, 0.5f).SetEase(Ease.OutQuint);
         }
 
-        public void PlaceTile()
+        public async void PlaceTile()
         {
             if (!gameObject.activeSelf) return;
-
+            // shake animation Y
+            previewTileView.transform.DOShakePosition(0.5f, 0.1f, 18, 45, false, true);
+            
+            await Task.Delay(500);
             currentTween?.Kill();
             Vector3 currentPosition = previewTileView.transform.position;
             Vector3 targetPosition = currentPosition;
