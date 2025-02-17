@@ -1,108 +1,120 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using TerritoryWars.General;
 using TerritoryWars.Tile;
 using UnityEngine;
 
-public class StructureChecker : MonoBehaviour
+public class StructureChecker
 {
-    // Клас для представлення набору міст
-    private class CitySet
-    {
-        public HashSet<Vector2Int> positions = new HashSet<Vector2Int>(); // Позиції тайлів, що містять це місто
-        public int openEdges = 0; // Кількість відкритих країв міста
-    }
-
-    private Dictionary<Vector2Int, CitySet> citySetsByPosition = new Dictionary<Vector2Int, CitySet>();
-    private List<CitySet> citySets = new List<CitySet>();
-    // list for completed cities
-    private List<CitySet> completedCities = new List<CitySet>();
+    public Dictionary<Vector2Int, Structure> CityMap = new Dictionary<Vector2Int, Structure>();
+    public Dictionary<Vector2Int, Structure> RoadMap = new Dictionary<Vector2Int, Structure>();
     
 
-    public void CheckAndUnionCities(Vector2Int position, TileData tileData, Dictionary<Vector2Int, TileData> placedTiles)
+    public StructureChecker(Board board)
     {
-        CitySet newCitySet = new CitySet();
-        newCitySet.positions.Add(position);
+        board.OnTilePlaced += CreateStructures;
+    }
+    
 
-        // Підрахунок відкритих країв для нового тайлу
-        int cityEdgesCount = 0;
-        for (int i = 0; i < 4; i++)
+    public void CreateStructures(TileData tileData, int x, int y)
+    {
+        string config = tileData.id;
+        int cityCount = config.Count(c => c == 'C');
+        int roadCount = config.Count(c => c == 'R');
+        Structure city = null;
+        Structure road = null;
+        if (cityCount > 0 && tileData.CityStructure == null)
         {
-            if (tileData.GetSide((Side)i) == LandscapeType.City)
-            {
-                cityEdgesCount++;
-            }
+            city = new Structure(null, new Vector2Int(x, y), cityCount);
+            CityMap.Add(new Vector2Int(x, y), city);
+            tileData.SetCityStructure(city);
         }
-        newCitySet.openEdges = cityEdgesCount;
-
-        // Перевірка сусідніх тайлів
-        Vector2Int[] adjacentPositions = new Vector2Int[]
+        if (roadCount > 0 && tileData.RoadStructure == null)
         {
-            new Vector2Int(position.x, position.y + 1), // Top
-            new Vector2Int(position.x + 1, position.y), // Right
-            new Vector2Int(position.x, position.y - 1), // Bottom
-            new Vector2Int(position.x - 1, position.y)  // Left
-        };
-
-        HashSet<CitySet> connectedSets = new HashSet<CitySet>();
-
-        for (int i = 0; i < 4; i++)
-        {
-            if (tileData.GetSide((Side)i) != LandscapeType.City)
-                continue;
-
-            Vector2Int adjPos = adjacentPositions[i];
-            if (!placedTiles.TryGetValue(adjPos, out TileData adjTile))
-                continue;
-
-            // Перевіряємо, чи має сусідній тайл місто на протилежній стороні
-            Side oppositeSize = (Side)(((int)i + 2) % 4);
-            if (adjTile.GetSide(oppositeSize) == LandscapeType.City)
-            {
-                if (citySetsByPosition.TryGetValue(adjPos, out CitySet adjacentSet))
-                {
-                    connectedSets.Add(adjacentSet);
-                    newCitySet.openEdges--; // Зменшуємо кількість відкритих країв
-                }
-            }
+            road = new Structure(null, new Vector2Int(x, y), roadCount);
+            RoadMap.Add(new Vector2Int(x, y), road);
+            tileData.SetRoadStructure(road);
         }
-
-        // Об'єднуємо всі з'єднані набори
-        if (connectedSets.Count > 0)
+    }
+    
+    public void UnionStructures(Structure city1, Structure city2)
+    {
+        Structure root1 = FindRoot(city1);
+        Structure root2 = FindRoot(city2);
+        if (root1 != root2)
         {
-            CitySet mergedSet = new CitySet();
-            foreach (var set in connectedSets)
-            {
-                mergedSet.openEdges += set.openEdges;
-                foreach (var pos in set.positions)
-                {
-                    mergedSet.positions.Add(pos);
-                    citySetsByPosition[pos] = mergedSet;
-                }
-                citySets.Remove(set);
-            }
+            root1.Root = root2;
+            city2.Children.Add(city1);
             
-            mergedSet.positions.Add(position);
-            mergedSet.openEdges += newCitySet.openEdges;
-            citySetsByPosition[position] = mergedSet;
-            citySets.Add(mergedSet);
         }
-        else
+        city1.OpenEdges--;
+        city2.OpenEdges--;
+        if (city1.OpenEdges < 0) city1.OpenEdges = 0;
+        if (city2.OpenEdges < 0) city2.OpenEdges = 0;
+        
+        Debug.Log("UnionStructures. Structure1: " + city1.Position + " Structure2: " + city2.Position);
+        
+        if (CheckCityCompletion(root1))
         {
-            // Якщо немає з'єднань, створюємо новий набір
-            citySets.Add(newCitySet);
-            citySetsByPosition[position] = newCitySet;
+            Debug.Log("City completed: " + root1.Position);
         }
+    }
+    
+    public Structure FindRoot(Structure structure)
+    {
+        if (structure.Root == null)
+        {
+            return structure;
+        }
+        return FindRoot(structure.Root);
+    }
+    
 
-        // Перевіряємо завершеність міста
-        CheckCityCompletion(citySetsByPosition[position]);
+    public bool CheckCityCompletion(Structure structure)
+    {
+        Structure root = FindRoot(structure);
+        int generalOpenEdges = GetOpenEdges(root);
+        Debug.Log("CheckCityCompletion. Structure: " + structure.Position + " GeneralOpenEdges: " + generalOpenEdges);
+        if (generalOpenEdges == 0)
+        {
+            return true;
+        }
+        return false;
     }
 
-    private void CheckCityCompletion(CitySet citySet)
+    private int GetOpenEdges(Structure structure)
     {
-        if (citySet.openEdges == 0)
+        Debug.Log("GetOpenEdges. Structure: " + structure.Position + " OpenEdges: " + structure.OpenEdges);
+        int result = structure.OpenEdges;
+        Structure current = structure;
+        foreach (var child in current.Children)
         {
-            Debug.Log($"Місто завершено! Розмір: {citySet.positions.Count} тайлів");
-            // Тут можна додати логіку підрахунку очок
+            result += GetOpenEdges(child);
         }
+        return result;
+    }
+    
+}
+
+[Serializable]
+public class Structure
+{
+    public Structure Root;
+    public List<Structure> Children = new List<Structure>();
+    public Vector2Int Position;
+    public int OpenEdges;
+    
+    public Structure(Structure root, Vector2Int position, int openEdges)
+    {
+        Root = root;
+        OpenEdges = openEdges;
+        Position = position;
+    }
+
+    public override string ToString()
+    {
+        return $"Structure at {Position}";
     }
 }
 

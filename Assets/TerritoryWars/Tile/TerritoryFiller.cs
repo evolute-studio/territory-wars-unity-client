@@ -61,19 +61,15 @@ namespace TerritoryWars.Tile
             Vector3[] points = new Vector3[lineRenderer.positionCount];
             lineRenderer.GetPositions(points);
 
-            Debug.Log($"Got {points.Length} points from LineRenderer");
-
             // Конвертуємо в локальні координати
             for (int i = 0; i < points.Length; i++)
             {
                 points[i] = transform.InverseTransformPoint(points[i]);
-                Debug.Log($"Point {i}: {points[i]}");
             }
 
             // Створюємо нову територію з усіма точками
             if (currentTerritory != null)
             {
-                Debug.Log("Destroying old territory");
                 DestroyImmediate(currentTerritory.gameObject);
             }
 
@@ -82,8 +78,7 @@ namespace TerritoryWars.Tile
                 Debug.LogError("Territory prefab is not assigned!");
                 yield break;
             }
-
-            Debug.Log("Creating new territory");
+            
             currentTerritory = Instantiate(territoryPrefab, transform).GetComponent<Territory>();
             currentTerritory.SetLineRenderer(lineRenderer);
             currentTerritory.GenerateMask();
@@ -134,8 +129,7 @@ namespace TerritoryWars.Tile
                 Debug.LogError($"Invalid direction: {direction}, start: {start}, end: {end}");
                 yield break;
             }
-
-            Debug.Log($"Placing fence from {start} to {end}, direction: {direction}");
+            
             int spriteIndex = GetIsometricDirectionIndex(direction);
             float distance = Vector2.Distance(start, end);
 
