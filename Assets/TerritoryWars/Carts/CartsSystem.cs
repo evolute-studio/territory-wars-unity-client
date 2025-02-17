@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using TerritoryWars.General;
 using TerritoryWars.Tile;
+using TerritoryWars.Tools;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -20,6 +22,14 @@ namespace TerritoryWars.Carts
         public static Sprite FirstPlayerCartSpriteStatic;
         public static Sprite SecondPlayerCartSpriteStatic;
 
+        public List<CartAnimator> FirstPlayerCartSprites;
+        public List<CartAnimator> SecondPlayerCartSprites;
+        
+        public static List<CartAnimator> FirstPlayerCartSpritesStatic;
+        public static List<CartAnimator> SecondPlayerCartSpritesStatic;
+
+
+
         // Змінюємо на Dictionary для швидкого доступу по координатах
         private Dictionary<Vector2Int, RoadTile> roadTiles = new Dictionary<Vector2Int, RoadTile>();
 
@@ -29,7 +39,17 @@ namespace TerritoryWars.Carts
         {
             FirstPlayerCartSpriteStatic = FirstPlayerCartSprite;
             SecondPlayerCartSpriteStatic = SecondPlayerCartSprite;
+            FirstPlayerCartSpritesStatic = FirstPlayerCartSprites;
+            SecondPlayerCartSpritesStatic = SecondPlayerCartSprites;
             board.OnTilePlaced += OnTilePlaced;
+        }
+        
+        [Serializable]
+        public class CartAnimator
+        {
+            public List<Sprite> CartSprites;
+            public Vector3 Direction;
+            public bool IsMirrored;
         }
 
         public void OnTilePlaced(TileData tileData, int x, int y)
@@ -105,6 +125,7 @@ namespace TerritoryWars.Carts
             {
                 roadTile.TrySpawnCarts();
                 roadTile.MoveCarts();
+                roadTile.RefreshCartDirection();
             }
         }
 
@@ -263,7 +284,7 @@ namespace TerritoryWars.Carts
             int startIndex = GetClosestPathIndex(cart.gameObject.transform.position);
             currentTargetIndices.Add(startIndex);
             if(PreviousTile == null) cart.gameObject.transform.position = path[startIndex];
-            cart.spriteRenderer.sprite = OwnerId == 0 ? CartsSystem.FirstPlayerCartSpriteStatic : CartsSystem.SecondPlayerCartSpriteStatic;
+            // cart.spriteRenderer.sprite = OwnerId == 0 ? CartsSystem.FirstPlayerCartSpriteStatic : CartsSystem.SecondPlayerCartSpriteStatic;
             Debug.Log($"Cart accepted at position {cart.gameObject.transform.position}, starting at index {startIndex}");
         }
 
@@ -314,6 +335,61 @@ namespace TerritoryWars.Carts
             }
         }
 
+        public void RefreshCartDirection()
+        {
+            for (int i = 0; i < carts.Count; i++)
+            {
+                Vector3 target = GetNextTargetPoint(i);
+                Vector3 direction = (target - carts[i].gameObject.transform.position).normalized;
+                
+                float maxDotProduct = float.MinValue;
+                Vector3 closestDirection = Vector3.zero;
+                
+                foreach (var cartAnimator in OwnerId == 0 ? CartsSystem.FirstPlayerCartSpritesStatic : CartsSystem.SecondPlayerCartSpritesStatic)
+                {
+                    float dotProduct = Vector3.Dot(direction, cartAnimator.Direction);
+                    
+                    if (dotProduct > maxDotProduct)
+                    {
+                       maxDotProduct = dotProduct;
+                       closestDirection = cartAnimator.Direction;
+                    }
+                }
+
+                if (carts[i].Direction != (Vector2)closestDirection)
+                {
+                    carts[i].Direction = closestDirection;
+                    
+                    foreach (var cartAnimator in OwnerId == 0
+                                 ? CartsSystem.FirstPlayerCartSpritesStatic
+                                 : CartsSystem.SecondPlayerCartSpritesStatic)
+                    {
+                        if (cartAnimator.Direction == closestDirection)
+                        {
+                            if (carts[i].gameObject.GetComponent<SpriteAnimator>().sprites == null)
+                            {
+                                carts[i].gameObject.GetComponent<SpriteAnimator>()
+                                    .Play(cartAnimator.CartSprites.ToArray());
+                            }
+
+                            carts[i].gameObject.GetComponent<SpriteAnimator>()
+                                .ChangeSprites(cartAnimator.CartSprites.ToArray());
+
+                            if (cartAnimator.IsMirrored)
+                            {
+                                carts[i].gameObject.transform.localScale = new Vector3(-1, 1, 1);
+                            }
+                            else
+                            {
+                                carts[i].gameObject.transform.localScale = new Vector3(1, 1, 1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        
         private Vector3 GetNextTargetPoint(int cartIndex)
         {
             if (currentTargetIndices[cartIndex] >= path.Length)

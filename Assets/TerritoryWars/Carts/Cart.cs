@@ -6,7 +6,7 @@ namespace TerritoryWars.Carts
     {
         public GameObject gameObject;
         public SpriteRenderer spriteRenderer;
-        private Vector2 Direction;
+        public Vector2 Direction;
         public bool IsMoving = false;
         
         public Cart(GameObject gameObject)

@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6280934136011622835
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7487748037592928390}
+  - component: {fileID: 1844170757386111384}
+  m_Layer: 0
+  m_Name: CartSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7487748037592928390
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6280934136011622835}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -23.111187, y: 5.065191, z: -0.014593834}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1844170757386111384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6280934136011622835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f51b4b8c7154a3faab6165f17ec2b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 0}
+  PlayerCartPrefab: {fileID: 2677042728232836196, guid: 911a3485f108f415588224ee8885357e, type: 3}
+  FirstPlayerCartSprite: {fileID: 8321945553035663732, guid: 8cf93c819cc944145bea53af74e07993, type: 3}
+  SecondPlayerCartSprite: {fileID: 6167362534978976947, guid: 279d68a5b91f64679888afc0950bb481, type: 3}
+  FirstPlayerCartSprites:
+  - CartSprites:
+    - {fileID: 808322050, guid: 0f916d5d15e914c61affe5e3652ee221, type: 3}
+    - {fileID: 95328791, guid: 0f916d5d15e914c61affe5e3652ee221, type: 3}
+    - {fileID: -1443109531, guid: 0f916d5d15e914c61affe5e3652ee221, type: 3}
+    - {fileID: 1456217496, guid: 0f916d5d15e914c61affe5e3652ee221, type: 3}
+    Direction: {x: 1, y: 1, z: 0}
+    IsMirrored: 0
+  - CartSprites:
+    - {fileID: 749698359, guid: 0f916d5d15e914c61affe5e3652ee221, type: 3}
+    - {fileID: -902248965, guid: 0f916d5d15e914c61affe5e3652ee221, type: 3}
+    - {fileID: 1943693434, guid: 0f916d5d15e914c61affe5e3652ee221, type: 3}
+    - {fileID: -1293279246, guid: 0f916d5d15e914c61affe5e3652ee221, type: 3}
+    Direction: {x: -1, y: -1, z: 0}
+    IsMirrored: 0
+  - CartSprites:
+    - {fileID: 808322050, guid: 0f916d5d15e914c61affe5e3652ee221, type: 3}
+    - {fileID: 95328791, guid: 0f916d5d15e914c61affe5e3652ee221, type: 3}
+    - {fileID: -1443109531, guid: 0f916d5d15e914c61affe5e3652ee221, type: 3}
+    - {fileID: 1456217496, guid: 0f916d5d15e914c61affe5e3652ee221, type: 3}
+    Direction: {x: -1, y: 1, z: 0}
+    IsMirrored: 1
+  - CartSprites:
+    - {fileID: 749698359, guid: 0f916d5d15e914c61affe5e3652ee221, type: 3}
+    - {fileID: -902248965, guid: 0f916d5d15e914c61affe5e3652ee221, type: 3}
+    - {fileID: 1943693434, guid: 0f916d5d15e914c61affe5e3652ee221, type: 3}
+    - {fileID: -1293279246, guid: 0f916d5d15e914c61affe5e3652ee221, type: 3}
+    Direction: {x: 1, y: -1, z: 0}
+    IsMirrored: 1
+  SecondPlayerCartSprites:
+  - CartSprites:
+    - {fileID: -6241455710672525579, guid: 12e85435d43164485958a005984eb099, type: 3}
+    - {fileID: 7396658501975289077, guid: 12e85435d43164485958a005984eb099, type: 3}
+    - {fileID: 3078326620134775300, guid: 12e85435d43164485958a005984eb099, type: 3}
+    - {fileID: 5740662230882737739, guid: 12e85435d43164485958a005984eb099, type: 3}
+    Direction: {x: 1, y: 1, z: 0}
+    IsMirrored: 0
+  - CartSprites:
+    - {fileID: 3492903663844026529, guid: 12e85435d43164485958a005984eb099, type: 3}
+    - {fileID: 275939259385569130, guid: 12e85435d43164485958a005984eb099, type: 3}
+    - {fileID: 9189893500132836231, guid: 12e85435d43164485958a005984eb099, type: 3}
+    - {fileID: -1744106591290614480, guid: 12e85435d43164485958a005984eb099, type: 3}
+    Direction: {x: -1, y: -1, z: 0}
+    IsMirrored: 0
+  - CartSprites:
+    - {fileID: -6241455710672525579, guid: 12e85435d43164485958a005984eb099, type: 3}
+    - {fileID: 7396658501975289077, guid: 12e85435d43164485958a005984eb099, type: 3}
+    - {fileID: 3078326620134775300, guid: 12e85435d43164485958a005984eb099, type: 3}
+    - {fileID: 5740662230882737739, guid: 12e85435d43164485958a005984eb099, type: 3}
+    Direction: {x: -1, y: 1, z: 0}
+    IsMirrored: 1
+  - CartSprites:
+    - {fileID: 3492903663844026529, guid: 12e85435d43164485958a005984eb099, type: 3}
+    - {fileID: 275939259385569130, guid: 12e85435d43164485958a005984eb099, type: 3}
+    - {fileID: 9189893500132836231, guid: 12e85435d43164485958a005984eb099, type: 3}
+    - {fileID: -1744106591290614480, guid: 12e85435d43164485958a005984eb099, type: 3}
+    Direction: {x: 1, y: -1, z: 0}
+    IsMirrored: 1

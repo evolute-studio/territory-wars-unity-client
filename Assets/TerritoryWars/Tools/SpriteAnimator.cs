@@ -32,6 +32,11 @@ namespace TerritoryWars.Tools
             _spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
+        public void ChangeSprites(Sprite[] AnimationSprites)
+        {
+            sprites = AnimationSprites;
+        }
+
         public void Play()
         {
             Stop();

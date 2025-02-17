@@ -92,5 +92,28 @@ namespace TerritoryWars.Tile
             lineRenderer.positionCount = points.Count;
             lineRenderer.SetPositions(points.ToArray());
         }
+
+        private void PlacePoles()
+        {
+            // ... existing code ...
+
+            // Розраховуємо загальну довжину паркану
+            float fenceLength = Vector3.Distance(polePositions[0], polePositions[polePositions.Count - 1]);
+
+            // Розраховуємо кількість проміжків між стовпчиками
+            int gapCount = polePositions.Count - 1;
+
+            // Розраховуємо довжину одного проміжку
+            float gapLength = fenceLength / gapCount;
+
+            // Розміщуємо проміжні стовпчики на рівній відстані
+            for (int i = 1; i < polePositions.Count - 1; i++)
+            {
+                Vector3 direction = (polePositions[polePositions.Count - 1] - polePositions[0]).normalized;
+                polePositions[i] = polePositions[0] + direction * (gapLength * i);
+            }
+
+            // ... existing code ...
+        }
     }
 }
