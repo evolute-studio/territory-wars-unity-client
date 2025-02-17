@@ -262,7 +262,7 @@ namespace TerritoryWars.Carts
             carts.Add(cart);
             int startIndex = GetClosestPathIndex(cart.gameObject.transform.position);
             currentTargetIndices.Add(startIndex);
-            cart.gameObject.transform.position = path[startIndex];
+            if(PreviousTile == null) cart.gameObject.transform.position = path[startIndex];
             cart.spriteRenderer.sprite = OwnerId == 0 ? CartsSystem.FirstPlayerCartSpriteStatic : CartsSystem.SecondPlayerCartSpriteStatic;
             Debug.Log($"Cart accepted at position {cart.gameObject.transform.position}, starting at index {startIndex}");
         }
