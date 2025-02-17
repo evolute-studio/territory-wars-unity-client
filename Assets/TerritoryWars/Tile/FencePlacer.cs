@@ -93,27 +93,58 @@ namespace TerritoryWars.Tile
             lineRenderer.SetPositions(points.ToArray());
         }
 
+        [ContextMenu("Place Poles")]
         private void PlacePoles()
         {
-            // ... existing code ...
+            if (pillars == null || pillars.Count < 3) return;
 
-            // Розраховуємо загальну довжину паркану
-            float fenceLength = Vector3.Distance(polePositions[0], polePositions[polePositions.Count - 1]);
-
-            // Розраховуємо кількість проміжків між стовпчиками
-            int gapCount = polePositions.Count - 1;
-
-            // Розраховуємо довжину одного проміжку
-            float gapLength = fenceLength / gapCount;
-
-            // Розміщуємо проміжні стовпчики на рівній відстані
-            for (int i = 1; i < polePositions.Count - 1; i++)
+            // Розраховуємо довжину лінії LineRenderer
+            float lineLength = 0f;
+            Vector3[] linePoints = new Vector3[lineRenderer.positionCount];
+            lineRenderer.GetPositions(linePoints);
+            for (int i = 0; i < linePoints.Length - 1; i++)
             {
-                Vector3 direction = (polePositions[polePositions.Count - 1] - polePositions[0]).normalized;
-                polePositions[i] = polePositions[0] + direction * (gapLength * i);
+                lineLength += Vector3.Distance(linePoints[i], linePoints[i + 1]);
             }
 
-            // ... existing code ...
+            // Розраховуємо кількість проміжків між проміжними стовпчиками
+            int gapCount = pillars.Count - 2;
+
+            // Розраховуємо довжину одного проміжку
+            float gapLength = lineLength / (gapCount + 1);
+
+            // Розміщуємо проміжні стовпчики на рівній відстані вздовж лінії
+            float currentLength = gapLength;
+            int lineIndex = 0;
+            for (int i = 1; i < pillars.Count - 1; i++)
+            {
+                while (lineIndex < linePoints.Length - 1 && currentLength >= Vector3.Distance(linePoints[lineIndex], linePoints[lineIndex + 1]))
+                {
+                    currentLength -= Vector3.Distance(linePoints[lineIndex], linePoints[lineIndex + 1]);
+                    lineIndex++;
+                }
+
+                if (lineIndex >= linePoints.Length - 1)
+                {
+                    pillars[i].position = linePoints[linePoints.Length - 1];
+                }
+                else
+                {
+                    Vector3 direction = (linePoints[lineIndex + 1] - linePoints[lineIndex]).normalized;
+                    Vector3 polePosition = linePoints[lineIndex] + direction * currentLength;
+
+                    // Враховуємо якір знизу стовпчика
+                    float poleHeight = pillars[i].localScale.y;
+                    polePosition.y -= poleHeight / 2f;
+
+                    // Переміщуємо стовпчик на відстань 0.05 вгору по осі Y
+                    polePosition += Vector3.up * 0.05f;
+
+                    pillars[i].position = polePosition;
+                }
+
+                currentLength += gapLength;
+            }
         }
     }
 }
