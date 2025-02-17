@@ -23,7 +23,7 @@ namespace System.Runtime.CompilerServices
     internal class IsExternalInit { }
 }
 
-public class GameManager : MonoBehaviour
+public class GameManagerDojo : MonoBehaviour
 {
     [SerializeField] WorldManager worldManager;
 

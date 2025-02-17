@@ -108,15 +108,15 @@ namespace TerritoryWars.Carts
             }
         }
 
-        private void OnDrawGizmos()
-        {
-            if (!Application.isPlaying) return;
-
-            foreach (var roadTile in roadTiles.Values)
-            {
-                roadTile.DrawCartsInfo();
-            }
-        }
+        // private void OnDrawGizmos()
+        // {
+        //     if (!Application.isPlaying) return;
+        //
+        //     foreach (var roadTile in roadTiles.Values)
+        //     {
+        //         roadTile.DrawCartsInfo();
+        //     }
+        // }
     }
 
     public class RoadTile
@@ -212,7 +212,6 @@ namespace TerritoryWars.Carts
                 {
                     position = path[0];
                     currentTargetIndices[i] = 1; // Починаємо з другої точки
-                    Debug.Log($"Cart {i}: Placing at start position {position}, Target index {currentTargetIndices[i]}");
                 }
                 else
                 {
@@ -223,7 +222,6 @@ namespace TerritoryWars.Carts
                     }
 
                     float targetDistance = (totalLength * i) / carts.Count;
-                    Debug.Log($"Cart {i}: Total path length {totalLength}, Target distance {targetDistance}");
 
                     float currentDistance = 0;
                     for (int j = 0; j < path.Length - 1; j++)
@@ -234,7 +232,6 @@ namespace TerritoryWars.Carts
                             float t = (targetDistance - currentDistance) / segmentLength;
                             position = Vector3.Lerp(path[j], path[j + 1], t);
                             currentTargetIndices[i] = j + 1; // Встановлюємо індекс наступної точки
-                            Debug.Log($"Cart {i}: Placing between path[{j}] and path[{j + 1}] at position {position}, Target index {currentTargetIndices[i]}");
                             break;
                         }
                         currentDistance += segmentLength;
@@ -243,7 +240,6 @@ namespace TerritoryWars.Carts
 
                 carts[i].gameObject.transform.position = position;
                 carts[i].gameObject.SetActive(true);
-                Debug.Log($"Cart {i}: Final position {position}, Target index {currentTargetIndices[i]}");
             }
         }
 
@@ -264,7 +260,6 @@ namespace TerritoryWars.Carts
             currentTargetIndices.Add(startIndex);
             if(PreviousTile == null) cart.gameObject.transform.position = path[startIndex];
             cart.spriteRenderer.sprite = OwnerId == 0 ? CartsSystem.FirstPlayerCartSpriteStatic : CartsSystem.SecondPlayerCartSpriteStatic;
-            Debug.Log($"Cart accepted at position {cart.gameObject.transform.position}, starting at index {startIndex}");
         }
 
         private int GetClosestPathIndex(Vector3 position)
@@ -296,8 +291,6 @@ namespace TerritoryWars.Carts
                 Vector3 currentPosition = carts[i].gameObject.transform.position;
                 Vector3 targetPoint = GetNextTargetPoint(i);
 
-                Debug.Log($"Cart {i}: Current position {currentPosition}, Target point {targetPoint}");
-
                 if (currentTargetIndices[i] == path.Length - 1 && Vector3.Distance(currentPosition, targetPoint) < 0.01f)
                 {
                     TransferCartToNextTile(carts[i], i);
@@ -309,7 +302,6 @@ namespace TerritoryWars.Carts
                 if (Vector3.Distance(currentPosition, targetPoint) < 0.01f)
                 {
                     currentTargetIndices[i]++;
-                    Debug.Log($"Cart {i}: Reached target point, moving to next index {currentTargetIndices[i]}");
                 }
             }
         }
@@ -323,7 +315,7 @@ namespace TerritoryWars.Carts
             }
 
             Vector3 nextTarget = path[currentTargetIndices[cartIndex]];
-            Debug.Log($"Cart {cartIndex}: Next target point {nextTarget}");
+            
             return nextTarget;
         }
 
@@ -349,7 +341,6 @@ namespace TerritoryWars.Carts
                     // Переміщуємо карт на початок стартового тайла
                     cart.gameObject.transform.position = startingTile.path[0];
                     currentTargetIndices[cartIndex] = 0;
-                    Debug.Log($"Cart transferred to start position {cart.gameObject.transform.position}, starting at index 0");
                 }
             }
         }

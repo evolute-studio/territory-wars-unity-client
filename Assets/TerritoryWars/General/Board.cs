@@ -16,6 +16,7 @@ namespace TerritoryWars.General
     public class Board : MonoBehaviour
     {
         public TileAssetsObject tileAssets;
+        private StructureChecker structureChecker;
 
         [SerializeField] private int width = 10;
         [SerializeField] private int height = 10;
@@ -24,15 +25,21 @@ namespace TerritoryWars.General
 
         private GameObject[,] tileObjects;
         private TileData[,] tileData;
+        
+        public Dictionary<Vector2Int, TileData> PlacedTiles = new Dictionary<Vector2Int, TileData>();
 
         public delegate void TilePlaced(TileData tile, int x, int y);
         public event TilePlaced OnTilePlaced;
 
         private void Awake()
         {
+            structureChecker = new StructureChecker(this);
+            var debugger = gameObject.AddComponent<StructureDebugger>();
+            debugger.Initialize(structureChecker, this);
             Random.InitState(4);
             InitializeBoard();
             CreateRandomBorder();
+            
         }
 
         private void InitializeBoard()
@@ -135,7 +142,9 @@ namespace TerritoryWars.General
             tile.GetComponent<TileGenerator>().Generate(data);
             tile.GetComponent<TileView>().UpdateView(data);
             tileObjects[x, y] = tile;
+            PlacedTiles[new Vector2Int(x, y)] = data;
             OnTilePlaced?.Invoke(data, x, y);
+            CheckConnections(data, x, y);
 
             return true;
         }
@@ -230,6 +239,81 @@ namespace TerritoryWars.General
 
             return true;
         }
+
+        public void CheckConnections(TileData tile, int x, int y)
+        {
+            // Checking the boundaries of the field
+            if (x < 0 || x >= width || y < 0 || y >= height)
+            {
+                return;
+            }
+
+            // Знаходимо всі сусідні тайли
+            Dictionary<Side, TileData> neighbors = new Dictionary<Side, TileData>();
+            bool hasAnyNeighbor = false;
+            bool hasNonBorderNeighbor = false;
+
+            foreach (Side side in System.Enum.GetValues(typeof(Side)))
+            {
+                int newX = x + GetXOffset(side);
+                int newY = y + GetYOffset(side);
+
+                if (IsValidPosition(newX, newY) && tileData[newX, newY] != null)
+                {
+                    neighbors[side] = tileData[newX, newY];
+                    hasAnyNeighbor = true;
+
+                    // Перевіряємо чи це не граничний тайл
+                    if (!IsBorderTile(newX, newY))
+                    {
+                        hasNonBorderNeighbor = true;
+                    }
+                }
+            }
+
+            // Якщо немає сусідів взагалі
+            if (!hasAnyNeighbor)
+            {
+                return;
+            }
+
+            // Якщо є тільки один сусід і це граничний тайл
+            if (neighbors.Count == 1 && !hasNonBorderNeighbor)
+            {
+                var neighbor = neighbors.First();
+                // Перевіряємо, чи сторона граничного тайла - поле
+                if (neighbor.Value.GetSide(GetOppositeSide(neighbor.Key)) == LandscapeType.Field)
+                {
+                    return;
+                }
+            }
+
+            // Перевіряємо кожну сторону тайлу на відповідність
+            foreach (var neighbor in neighbors)
+            {
+                Side side = neighbor.Key;
+                TileData adjacentTile = neighbor.Value;
+
+                LandscapeType currentSide = tile.GetSide(side);
+                LandscapeType adjacentSide = adjacentTile.GetSide(GetOppositeSide(side));
+                if (!IsMatchingLandscape(currentSide, adjacentSide))
+                {
+                    continue;
+                }
+                structureChecker.CreateStructures(tile, x, y);
+                structureChecker.CreateStructures(adjacentTile, x + GetXOffset(side), y + GetYOffset(side));
+                if (currentSide == LandscapeType.City && adjacentSide == LandscapeType.City)
+                {
+                    structureChecker.UnionStructures(tile.CityStructure, adjacentTile.CityStructure);
+                }
+
+                if (currentSide == LandscapeType.Road && adjacentSide == LandscapeType.Road)
+                {
+                    structureChecker.UnionStructures(tile.RoadStructure, adjacentTile.RoadStructure);
+                }
+            }
+        }
+        
 
         private bool IsMatchingLandscape(LandscapeType type1, LandscapeType type2)
         {

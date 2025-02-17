@@ -80,8 +80,6 @@ namespace TerritoryWars.Tile
             float maxSize = Mathf.Max(bounds.size.x, bounds.size.y);
             Vector2 center = bounds.center;
 
-            Debug.Log($"Bounds: min={bounds.min}, max={bounds.max}, center={center}, size={bounds.size}");
-
             // Конвертуємо в координати текстури
             Vector2[] texturePoints = new Vector2[localPoints.Length];
             for (int i = 0; i < localPoints.Length; i++)
@@ -91,7 +89,6 @@ namespace TerritoryWars.Tile
                     (localPoints[i].x - center.x) * (textureSize / maxSize) + (textureSize / 2),
                     (localPoints[i].y - center.y) * (textureSize / maxSize) + (textureSize / 2)
                 );
-                Debug.Log($"Point {i}: world={worldPoints[i]}, local={localPoints[i]}, texture={texturePoints[i]}");
             }
 
             // Малюємо лінії

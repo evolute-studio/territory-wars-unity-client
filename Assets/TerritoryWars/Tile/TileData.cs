@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace TerritoryWars.Tile
 {
@@ -7,6 +8,8 @@ namespace TerritoryWars.Tile
     [System.Serializable]
     public class TileData
     {
+        public Structure CityStructure;
+        public Structure RoadStructure;
         public string id;
         private char[] sides;
         public int rotationIndex = 0;
@@ -47,6 +50,16 @@ namespace TerritoryWars.Tile
             // Враховуємо поворот при отриманні типу сторони
             int index = ((int)side - rotationIndex + 4) % 4;
             return CharToLandscape(sides[index]);
+        }
+        
+        public void SetCityStructure(Structure structure)
+        {
+            this.CityStructure = structure;
+        }
+        
+        public void SetRoadStructure(Structure structure)
+        {
+            this.RoadStructure = structure;
         }
 
         public string GetConfig()
@@ -90,6 +103,17 @@ namespace TerritoryWars.Tile
                 'F' => LandscapeType.Field,
                 _ => throw new System.ArgumentException($"Invalid landscape type: {c}")
             };
+        }
+
+        public bool IsCity()
+        {
+            // check in Id if there is C
+            return id.Contains('C');
+        }
+
+        public bool IsRoad()
+        {
+            return id.Contains('R');
         }
     }
 }
