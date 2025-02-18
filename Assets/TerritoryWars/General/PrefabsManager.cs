@@ -20,6 +20,7 @@ namespace TerritoryWars.General
         }
         
         public GameObject[] Players;
+        public GameObject MillPrefab;
         private int _currentPlayerIndex = 0;
         
         public GameObject GetNextPlayer()

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using TerritoryWars.General;
 using TerritoryWars.ScriptablesObjects;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -16,6 +17,7 @@ namespace TerritoryWars.Tile
 
         public TileRotator TileRotator;
         public GameObject City { get; private set; }
+        public GameObject Mill { get; private set; }
 
 
         [Header("Roads")]
@@ -95,7 +97,7 @@ namespace TerritoryWars.Tile
                 {
                     RoadRenderer.sprite = roadPair.Sprite;
                     RoadPath = Instantiate(roadPair.RoadPath, RoadRenderer.transform);
-                    return;
+                    break;
                 }
                 if (roadPair.MirroredConfig == id)
                 {
@@ -106,8 +108,21 @@ namespace TerritoryWars.Tile
                     RoadRenderer.transform.localScale = scale;
 
                     RoadPath = Instantiate(roadPair.RoadPath, RoadRenderer.transform);
-                    return;
+                    break;
                 }
+            }
+            int roadCount = id.Count(c => c == 'R');
+            if (roadCount == 3)
+            {
+                if(Mill != null)
+                    Destroy(Mill);
+                Mill = Instantiate(PrefabsManager.Instance.MillPrefab, transform);
+                Mill.transform.localPosition = Vector3.zero;
+            }
+            else
+            {
+                if(Mill != null)
+                    Destroy(Mill);
             }
         }
 
