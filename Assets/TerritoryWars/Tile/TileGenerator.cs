@@ -84,7 +84,8 @@ namespace TerritoryWars.Tile
                 RoadRenderer.sprite = null;
                 return;
             }
-            id = id.Replace('C', 'R');
+            
+            id = id.Replace('C', 'X');
             id = id.Replace('F', 'X');
             RoadRenderer.transform.localScale = Vector3.one;
 

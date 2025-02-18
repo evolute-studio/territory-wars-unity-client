@@ -184,10 +184,12 @@ namespace TerritoryWars.General
 
     public void ResetPosition()
         {
-            currentTween?.Kill();
-            currentTween = transform
-                .DOMove(_initialPosition, moveDuration)
-                .SetEase(moveEase);
+            // currentTween?.Kill();
+            // currentTween = transform
+            //     .DOMove(_initialPosition, moveDuration)
+            //     .SetEase(moveEase);
+            
+            transform.position = _initialPosition;
         }
 
         private void OnDestroy()
