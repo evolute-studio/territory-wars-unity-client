@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TerritoryWars.General;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -13,6 +14,7 @@ namespace TerritoryWars.Tile
         public string id;
         private char[] sides;
         public int rotationIndex = 0;
+        public int OwnerId = -1;
 
         public TileData(string tileCode)
         {
@@ -55,11 +57,23 @@ namespace TerritoryWars.Tile
         public void SetCityStructure(Structure structure)
         {
             this.CityStructure = structure;
+            CityStructure.OwnerId = structure.OwnerId;
         }
         
         public void SetRoadStructure(Structure structure)
         {
             this.RoadStructure = structure;
+        }
+        
+        public void SetCityOwner(int playerId)
+        {
+            RecolorCityStructures();
+        }
+        
+        private void RecolorCityStructures()
+        {
+            GameObject city = GameManager.Instance.Board.GetTileObject(CityStructure.Position.x, CityStructure.Position.y);
+            city.GetComponent<TileGenerator>().RecolorHouses(CityStructure.OwnerId);
         }
 
         public string GetConfig()

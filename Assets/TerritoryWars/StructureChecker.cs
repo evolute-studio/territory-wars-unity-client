@@ -26,13 +26,13 @@ public class StructureChecker
         Structure road = null;
         if (cityCount > 0 && tileData.CityStructure == null)
         {
-            city = new Structure(null, new Vector2Int(x, y), cityCount);
+            city = new Structure(null, new Vector2Int(x, y), cityCount, tileData);
             CityMap.Add(new Vector2Int(x, y), city);
             tileData.SetCityStructure(city);
         }
         if (roadCount > 0 && tileData.RoadStructure == null)
         {
-            road = new Structure(null, new Vector2Int(x, y), roadCount);
+            road = new Structure(null, new Vector2Int(x, y), roadCount, tileData);
             RoadMap.Add(new Vector2Int(x, y), road);
             tileData.SetRoadStructure(road);
         }
@@ -57,8 +57,45 @@ public class StructureChecker
         
         if (CheckCityCompletion(root1))
         {
-            Debug.Log("City completed: " + root1.Position);
+            Contest(root1);
         }
+    }
+    
+    public void Contest(Structure root)
+    {
+        root = FindRoot(root);
+        int[] points = GetPoints(root);
+        int winner = points[0] > points[1] ? 0 : 1;
+        Debug.Log($"Player {winner} wins. Points: {points[0]} - {points[1]}");
+        
+        ChangeOwner(root, winner);
+        
+    }
+    
+    public void ChangeOwner(Structure structure, int newOwner)
+    {
+        structure.OwnerId = newOwner;
+        structure.TileData.SetCityOwner(newOwner);
+        foreach (var child in structure.Children)
+        {
+            ChangeOwner(child, newOwner);
+        }
+    }
+    
+    public int[] GetPoints(Structure root)
+    {
+        int[] points = new int[2];
+        if (root.OwnerId >= 0)
+        {
+            points[root.OwnerId] = root.InitialOpenEdges;
+        }
+        foreach (var child in root.Children)
+        {
+            int[] childPoints = GetPoints(child);
+            points[0] += childPoints[0];
+            points[1] += childPoints[1];
+        }
+        return points;
     }
     
     public Structure FindRoot(Structure structure)
@@ -75,7 +112,6 @@ public class StructureChecker
     {
         Structure root = FindRoot(structure);
         int generalOpenEdges = GetOpenEdges(root);
-        Debug.Log("CheckCityCompletion. Structure: " + structure.Position + " GeneralOpenEdges: " + generalOpenEdges);
         if (generalOpenEdges == 0)
         {
             return true;
@@ -85,7 +121,6 @@ public class StructureChecker
 
     private int GetOpenEdges(Structure structure)
     {
-        Debug.Log("GetOpenEdges. Structure: " + structure.Position + " OpenEdges: " + structure.OpenEdges);
         int result = structure.OpenEdges;
         Structure current = structure;
         foreach (var child in current.Children)
@@ -104,13 +139,20 @@ public class Structure
     public List<Structure> Children = new List<Structure>();
     public Vector2Int Position;
     public int OpenEdges;
+    public int OwnerId = -1;
+    public TileData TileData;
+    public int InitialOpenEdges;
     
-    public Structure(Structure root, Vector2Int position, int openEdges)
+    public Structure(Structure root, Vector2Int position, int openEdges, TileData tileData)
     {
         Root = root;
         OpenEdges = openEdges;
         Position = position;
+        TileData = tileData;
+        OwnerId = tileData.OwnerId;
+        InitialOpenEdges = openEdges;
     }
+    
 
     public override string ToString()
     {

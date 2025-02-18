@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace TerritoryWars.ScriptablesObjects
 {
@@ -27,6 +29,33 @@ namespace TerritoryWars.ScriptablesObjects
             CurrentHouseIndex = (CurrentHouseIndex + 1) % Houses[playerIndex].Length;
             Sprite nextHouse = Houses[playerIndex][CurrentHouseIndex];
             return nextHouse;
+        }
+        
+        public Sprite GetHouseByReference(Sprite sprite, int playerIndex)
+        {
+            foreach (var house in FirstPlayerHouses)
+            {
+                if (house == sprite)
+                {
+                    if (playerIndex == 0)
+                        return house;
+                    else
+                        return SecondPlayerHouses[Array.IndexOf(FirstPlayerHouses, house)];
+                }
+            }
+            
+            foreach (var house in SecondPlayerHouses)
+            {
+                if (house == sprite)
+                {
+                    if (playerIndex == 1)
+                        return house;
+                    else
+                        return FirstPlayerHouses[Array.IndexOf(SecondPlayerHouses, house)];
+                }
+            }
+            
+            return null;
         }
 
         public void BackIndex(int times)

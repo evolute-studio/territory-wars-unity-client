@@ -268,7 +268,7 @@ namespace TerritoryWars.General
         {
             if (!selectedPosition.HasValue) return;
 
-            if (board.PlaceTile(currentTile, selectedPosition.Value.x, selectedPosition.Value.y))
+            if (board.PlaceTile(currentTile, selectedPosition.Value.x, selectedPosition.Value.y, GameManager.Instance.CurrentCharacter.Id))
             {
                 isPlacingTile = false;
                 selectedPosition = null;

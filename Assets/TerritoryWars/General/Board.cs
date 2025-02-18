@@ -89,7 +89,7 @@ namespace TerritoryWars.General
             // Place forests only at (0,9) and (9,0), mountains at other corners
             if (startPos.x == 0 && startPos.y == 9)
             {
-                PlaceTile(new TileData(fieldTile), 0, 9);
+                PlaceTile(new TileData(fieldTile), 0, 9, -1);
                 GameObject forest = Instantiate(tileAssets.ForestPrefab, transform.position, Quaternion.identity, tileObjects[0, 9].transform);
                 forest.transform.localPosition = Vector3.zero;
                 GameObject spawnedTile = tileObjects[0, 9];
@@ -97,7 +97,7 @@ namespace TerritoryWars.General
             }
             else if (startPos.x == 9 && startPos.y == 0)
             {
-                PlaceTile(new TileData(fieldTile), 9, 0);
+                PlaceTile(new TileData(fieldTile), 9, 0, -1);
                 GameObject forest = Instantiate(tileAssets.ForestPrefab, transform.position, Quaternion.identity, tileObjects[9, 0].transform);
                 forest.transform.localPosition = Vector3.zero;
                 forest.transform.localScale = new Vector3(-1, 1, 1);
@@ -107,20 +107,21 @@ namespace TerritoryWars.General
             else
             {
                 // Place mountains at start and end positions
-                PlaceTile(new TileData(fieldTile), startPos.x, startPos.y);
+                PlaceTile(new TileData(fieldTile), startPos.x, startPos.y, -1);
                 // Don't place forests, only mountains at other corners
                 tileObjects[startPos.x, startPos.y].transform.Find("RoadRenderer").GetComponent<SpriteRenderer>().sprite = tileAssets.GetRandomMountain();
             }
 
             if (endPos != new Vector2Int(9, 0) && endPos != new Vector2Int(0, 9))
             {
-                PlaceTile(new TileData(fieldTile), endPos.x, endPos.y);
+                PlaceTile(new TileData(fieldTile), endPos.x, endPos.y, -1);
                 tileObjects[endPos.x, endPos.y].transform.Find("RoadRenderer").GetComponent<SpriteRenderer>().sprite = tileAssets.GetRandomMountain();
             }
 
             for (int i = 0; i < availablePositions.Count; i++)
             {
-                PlaceTile(new TileData(tilesToSpawn[i]), availablePositions[i].x, availablePositions[i].y);
+                TileData tile = new TileData(tilesToSpawn[i]);
+                PlaceTile(tile, availablePositions[i].x, availablePositions[i].y, -1);
                 if (tilesToSpawn[i] == fieldTile)
                 {
                     tileObjects[availablePositions[i].x, availablePositions[i].y].transform.Find("RoadRenderer").GetComponent<SpriteRenderer>().sprite = tileAssets.GetRandomMountain();
@@ -128,7 +129,7 @@ namespace TerritoryWars.General
             }
         }
 
-        public bool PlaceTile(TileData data, int x, int y)
+        public bool PlaceTile(TileData data, int x, int y, int ownerId)
         {
             if (!CanPlaceTile(data, x, y))
             {
@@ -137,6 +138,7 @@ namespace TerritoryWars.General
             }
 
             tileData[x, y] = data;
+            data.OwnerId = ownerId;
             GameObject tile = Instantiate(tilePrefab, GetTilePosition(x, y), Quaternion.identity, transform);
             tile.name += $"_{x}_{y}";
             tile.GetComponent<TileGenerator>().Generate(data);

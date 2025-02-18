@@ -191,16 +191,18 @@ namespace TerritoryWars.Tile
             TileRotator.OnRotation.AddListener(fencePlacer.PlaceFence);
         }
         
-        public void SetHouseSprites(List<Sprite> houseSprites)
+        public void RecolorHouses(int playerId)
         {
             if (City == null)
             {
                 return;
             }
-            SpriteRenderer[] houseRenderers = City.GetComponentsInChildren<SpriteRenderer>();
+            Debug.Log("Recoloring houses. PlayerId: " + playerId);
+            SpriteRenderer[] houseRenderers = City.GetComponentsInChildren<SpriteRenderer>()
+                .ToList().Where(x => x.name == "House").ToArray();
             for (int i = 0; i < houseRenderers.Length; i++)
             {
-                houseRenderers[i].sprite = houseSprites[i];
+                houseRenderers[i].sprite = TileAssetsObject.GetHouseByReference(houseRenderers[i].sprite, playerId);
             }
         }
 
