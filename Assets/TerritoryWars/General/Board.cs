@@ -34,8 +34,8 @@ namespace TerritoryWars.General
         private void Awake()
         {
             structureChecker = new StructureChecker(this);
-            var debugger = gameObject.AddComponent<StructureDebugger>();
-            debugger.Initialize(structureChecker, this);
+            //var debugger = gameObject.AddComponent<StructureDebugger>();
+            //debugger.Initialize(structureChecker, this);
             Random.InitState(4);
             InitializeBoard();
             CreateRandomBorder();
