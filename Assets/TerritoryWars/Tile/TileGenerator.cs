@@ -86,6 +86,18 @@ namespace TerritoryWars.Tile
                 RoadRenderer.sprite = null;
                 return;
             }
+            int roadCount = id.Count(c => c == 'R');
+
+            if (roadCount == 1)
+            {
+                int roadIndex = id.IndexOf('R');
+                int oppositeIndex = (roadIndex + 2) % 4;
+                char[] idChars = id.ToCharArray();
+                idChars[oppositeIndex] = 'R';
+                id = new string(idChars);
+                roadCount = 2;
+            }
+            
             
             id = id.Replace('C', 'X');
             id = id.Replace('F', 'X');
@@ -111,7 +123,7 @@ namespace TerritoryWars.Tile
                     break;
                 }
             }
-            int roadCount = id.Count(c => c == 'R');
+            
             if (roadCount == 3)
             {
                 if(Mill != null)
