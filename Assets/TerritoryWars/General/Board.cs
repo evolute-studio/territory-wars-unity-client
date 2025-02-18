@@ -330,7 +330,7 @@ namespace TerritoryWars.General
             return matches;
         }
 
-        private Side GetOppositeSide(Side side)
+        public Side GetOppositeSide(Side side)
         {
             return side switch
             {
@@ -342,7 +342,7 @@ namespace TerritoryWars.General
             };
         }
 
-        private int GetXOffset(Side dir)
+        public int GetXOffset(Side dir)
         {
             // В ізометричній проекції:
             // x збільшується при русі вгору (Top)
@@ -355,7 +355,7 @@ namespace TerritoryWars.General
             };
         }
 
-        private int GetYOffset(Side dir)
+        public int GetYOffset(Side dir)
         {
             // В ізометричній проекції:
             // y збільшується при русі вліво (Left)
@@ -368,12 +368,12 @@ namespace TerritoryWars.General
             };
         }
 
-        private bool IsValidPosition(int x, int y)
+        public bool IsValidPosition(int x, int y)
         {
             return x >= 0 && x < width && y >= 0 && y < height;
         }
 
-        private bool IsBorderTile(int x, int y)
+        public bool IsBorderTile(int x, int y)
         {
             // Перевіряємо чи тайл знаходиться на границі поля
             return x == 0 || x == width - 1 || y == 0 || y == height - 1;
@@ -448,6 +448,12 @@ namespace TerritoryWars.General
         public GameObject GetTileObject(int x, int y)
         {
             return tileObjects[x, y];
+        }
+
+        public TileData GetTileData(int x, int y)
+        {
+            if (!IsValidPosition(x, y)) return null;
+            return tileData[x, y];
         }
     }
 }

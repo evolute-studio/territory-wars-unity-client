@@ -28,6 +28,8 @@ namespace TerritoryWars.General
         private Vector2Int? selectedPosition;
         private bool isPlacingTile;
         private string initialTileConfig;
+        private bool isJokerMode = false;
+        private Vector2Int? jokerPosition;
 
         public TileData CurrentTile => currentTile;
         public delegate void TileSelected(int x, int y);
@@ -48,14 +50,23 @@ namespace TerritoryWars.General
 
         private void Update()
         {
-            if (isPlacingTile && Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0))
             {
                 if (EventSystem.current.IsPointerOverGameObject())
                 {
-
                     return;
                 }
-                HandleTilePlacement();
+
+                if (isJokerMode && selectedPosition.HasValue)
+                {
+                    RegenerateJokerTile();
+                    return;
+                }
+
+                if (isPlacingTile)
+                {
+                    HandleTilePlacement();
+                }
             }
         }
 
@@ -123,6 +134,15 @@ namespace TerritoryWars.General
 
         public void OnTileClicked(int x, int y)
         {
+            if (isJokerMode)
+            {
+                if (IsValidJokerPosition(x, y))
+                {
+                    GameManager.Instance.GenerateJokerTile(x, y);
+                }
+                return;
+            }
+
             if (!isPlacingTile) return;
 
             if (selectedPosition.HasValue && selectedPosition.Value == new Vector2Int(x, y))
@@ -266,18 +286,27 @@ namespace TerritoryWars.General
 
         public void CompleteTilePlacement(List<Sprite> houses = default)
         {
-            if (!selectedPosition.HasValue) return;
-
-            if (board.PlaceTile(currentTile, selectedPosition.Value.x, selectedPosition.Value.y, GameManager.Instance.CurrentCharacter.Id))
+            try
             {
-                isPlacingTile = false;
-                selectedPosition = null;
-                ClearHighlights();
-                OnTilePlaced.Invoke();
-                gameUI.SetEndTurnButtonActive(false);
-                gameUI.SetRotateButtonActive(false);
+                if (!selectedPosition.HasValue) return;
 
-                GameManager.Instance.CompleteEndTurn();
+                if (board.PlaceTile(currentTile, selectedPosition.Value.x, selectedPosition.Value.y, GameManager.Instance.CurrentCharacter.Id))
+                {
+                    isPlacingTile = false;
+                    isJokerMode = false;
+                    selectedPosition = null;
+                    ClearHighlights();
+                    OnTilePlaced.Invoke();
+                    gameUI.SetEndTurnButtonActive(false);
+                    gameUI.SetRotateButtonActive(false);
+
+                    GameManager.Instance.CompleteJokerPlacement();
+                    GameManager.Instance.CompleteEndTurn();
+                }
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogError($"Error in CompleteTilePlacement: {e}");
             }
         }
 
@@ -302,6 +331,95 @@ namespace TerritoryWars.General
             if (highlightMaterial != null)
             {
                 highlightMaterial.color = color;
+            }
+        }
+
+        public void StartJokerPlacement()
+        {
+            isJokerMode = true;
+            jokerPosition = null;
+            
+            // Показуємо можливі позиції для джокера
+            ShowJokerPlacements();
+        }
+        
+        private void ShowJokerPlacements()
+        {
+            ClearHighlights();
+            for (int x = 0; x < board.Width; x++)
+            {
+                for (int y = 0; y < board.Height; y++)
+                {
+                    if (IsValidJokerPosition(x, y))
+                    {
+                        CreateHighlight(x, y);
+                    }
+                }
+            }
+            SetHighlightColor(normalHighlightColor);
+        }
+        
+        private bool IsValidJokerPosition(int x, int y)
+        {
+            if (board.GetTileData(x, y) != null) return false;
+            
+            bool hasNonBorderNeighbor = false;
+            foreach (Side side in System.Enum.GetValues(typeof(Side)))
+            {
+                int newX = x + board.GetXOffset(side);
+                int newY = y + board.GetYOffset(side);
+                
+                if (board.IsValidPosition(newX, newY) && board.GetTileData(newX, newY) != null)
+                {
+                    if (!board.IsBorderTile(newX, newY))
+                    {
+                        hasNonBorderNeighbor = true;
+                        break;
+                    }
+                }
+            }
+            
+            return hasNonBorderNeighbor;
+        }
+        
+        public void StartJokerTilePlacement(TileData tile, int x, int y)
+        {
+            try
+            {
+                currentTile = tile;
+                selectedPosition = new Vector2Int(x, y);
+                isPlacingTile = true;
+                
+                // Показуємо превью тайлу
+                gameUI.UpdateUI();
+                gameUI.SetEndTurnButtonActive(true);
+                
+                // Оновлюємо підсвічування
+                ClearHighlights();
+                CreateHighlight(x, y);
+                SetHighlightColor(selectedHighlightColor);
+                
+                // Переміщуємо превью на вибрану позицію
+                tilePreview.SetPosition(x, y);
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogError($"Error in StartJokerTilePlacement: {e}");
+            }
+        }
+
+        // Додамо новий метод для обробки кліку по тайлу в режимі джокера
+        public void RegenerateJokerTile()
+        {
+            if (!isJokerMode || !selectedPosition.HasValue) return;
+            
+            try
+            {
+                GameManager.Instance.GenerateJokerTile(selectedPosition.Value.x, selectedPosition.Value.y);
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogError($"Error in RegenerateJokerTile: {e}");
             }
         }
     }

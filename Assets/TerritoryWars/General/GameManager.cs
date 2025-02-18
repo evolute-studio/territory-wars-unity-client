@@ -37,6 +37,78 @@ namespace TerritoryWars.General
         public Character[] Characters;
         public Character CurrentCharacter { get; private set; }
 
+        private int[] jokerCount = new int[] { 3, 3 }; // Джокери для кожного гравця
+        private bool isJokerActive = false;
+        
+        public bool IsJokerActive => isJokerActive;
+        
+        public void ActivateJoker()
+        {
+            if (jokerCount[CurrentCharacter.Id] > 0)
+            {
+                isJokerActive = true;
+                jokerCount[CurrentCharacter.Id]--;
+                TileSelector.StartJokerPlacement();
+            }
+        }
+        
+        public void GenerateJokerTile(int x, int y)
+        {
+            // Отримуємо інформацію про сусідні тайли
+            Dictionary<Side, LandscapeType> neighborSides = new Dictionary<Side, LandscapeType>();
+            foreach (Side side in System.Enum.GetValues(typeof(Side)))
+            {
+                int newX = x + Board.GetXOffset(side);
+                int newY = y + Board.GetYOffset(side);
+                
+                if (Board.IsValidPosition(newX, newY) && Board.GetTileData(newX, newY) != null)
+                {
+                    var neighborTile = Board.GetTileData(newX, newY);
+                    neighborSides[side] = neighborTile.GetSide(Board.GetOppositeSide(side));
+                }
+            }
+            
+            // Генеруємо новий тайл
+            char[] sides = new char[4];
+            for (int i = 0; i < 4; i++)
+            {
+                Side side = (Side)i;
+                if (neighborSides.ContainsKey(side))
+                {
+                    // Встановлюємо відповідну сторону
+                    sides[i] = LandscapeToChar(neighborSides[side]);
+                }
+                else
+                {
+                    // Генеруємо випадкову сторону
+                    sides[i] = GetRandomLandscape();
+                }
+            }
+            
+            string tileConfig = new string(sides);
+            TileData jokerTile = new TileData(tileConfig);
+            TileSelector.StartJokerTilePlacement(jokerTile, x, y);
+        }
+        
+        private char GetRandomLandscape()
+        {
+            float random = Random.value;
+            if (random < 0.4f) return 'F';      // 40% шанс поля
+            else if (random < 0.7f) return 'R';  // 30% шанс дороги
+            else return 'C';                     // 30% шанс міста
+        }
+        
+        private char LandscapeToChar(LandscapeType type)
+        {
+            return type switch
+            {
+                LandscapeType.City => 'C',
+                LandscapeType.Road => 'R',
+                LandscapeType.Field => 'F',
+                _ => 'F'
+            };
+        }
+
         private void Start()
         {
             StartGame();
@@ -145,6 +217,23 @@ namespace TerritoryWars.General
                 TileSelector.OnTurnStarted.RemoveListener(OnTurnStarted);
                 TileSelector.OnTurnEnding.RemoveListener(OnTurnEnding);
             }
+        }
+
+        public int GetJokerCount(int playerId)
+        {
+            return jokerCount[playerId];
+        }
+
+        public bool CanUseJoker()
+        {
+            int characterId = CurrentCharacter == null ? 0 : CurrentCharacter.Id;
+            return !isJokerActive && jokerCount[characterId] > 0;
+        }
+
+        public void CompleteJokerPlacement()
+        {
+            isJokerActive = false;
+            gameUI.UpdateUI();
         }
     }
 }

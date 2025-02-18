@@ -13,6 +13,10 @@ namespace TerritoryWars.UI
         [SerializeField] private Button rotateTileButton;
         [SerializeField] private Image currentTilePreview;
         [SerializeField] private TextMeshProUGUI remainingTilesText;
+        [SerializeField] private Button jokerButton;
+        [SerializeField] private TextMeshProUGUI player1JokersText;
+        [SerializeField] private TextMeshProUGUI player2JokersText;
+        [SerializeField] private GameObject jokerModeIndicator;
 
         [Header("Tile Preview")]
         [SerializeField] private TilePreview tilePreview;
@@ -27,6 +31,12 @@ namespace TerritoryWars.UI
 
             SetupButtons();
             UpdateUI();
+            
+            // Початково ховаємо індикатор режиму джокера
+            if (jokerModeIndicator != null)
+            {
+                jokerModeIndicator.SetActive(false);
+            }
         }
 
         private void SetupButtons()
@@ -45,6 +55,11 @@ namespace TerritoryWars.UI
             {
                 endTurnButton.onClick.AddListener(OnEndTurnClicked);
             }
+
+            if (jokerButton != null)
+            {
+                jokerButton.onClick.AddListener(OnJokerButtonClicked);
+            }
         }
 
         public void UpdateUI()
@@ -60,6 +75,28 @@ namespace TerritoryWars.UI
             {
                 tilePreview.UpdatePreview(gameManager.TileSelector.CurrentTile);
             }
+
+            // Оновлюємо текст кількості джокерів для кожного гравця
+            if (player1JokersText != null)
+            {
+                player1JokersText.text = $"Jokers: {gameManager.GetJokerCount(0)}";
+            }
+            if (player2JokersText != null)
+            {
+                player2JokersText.text = $"Jokers: {gameManager.GetJokerCount(1)}";
+            }
+
+            // Оновлюємо стан кнопки джокера
+            if (jokerButton != null)
+            {
+                jokerButton.interactable = gameManager.CanUseJoker();
+            }
+
+            // Оновлюємо індикатор режиму джокера
+            if (jokerModeIndicator != null)
+            {
+                jokerModeIndicator.SetActive(gameManager.IsJokerActive);
+            }
         }
 
         private void OnEndTurnClicked()
@@ -72,6 +109,12 @@ namespace TerritoryWars.UI
         {
             Debug.Log("Rotate button clicked");
             gameManager.RotateCurrentTile();
+        }
+
+        private void OnJokerButtonClicked()
+        {
+            gameManager.ActivateJoker();
+            UpdateUI();
         }
 
         public void SetEndTurnButtonActive(bool active)
@@ -87,6 +130,14 @@ namespace TerritoryWars.UI
             if (rotateTileButton != null)
             {
                 rotateTileButton.gameObject.SetActive(active);
+            }
+        }
+
+        public void SetJokerButtonActive(bool active)
+        {
+            if (jokerButton != null)
+            {
+                jokerButton.gameObject.SetActive(active);
             }
         }
     }
