@@ -14,6 +14,8 @@ namespace TerritoryWars.Tile
         public TileConnector[] connectors;
         public SpriteRenderer RoadRenderer;
         public TileAssetsObject TileAssetsObject;
+        
+        public TileJokerAnimator TileJokerAnimator;
 
         public TileRotator TileRotator;
         public GameObject City { get; private set; }
@@ -171,6 +173,7 @@ namespace TerritoryWars.Tile
             List<SpriteRenderer> houseRenderers = city.GetComponentsInChildren<SpriteRenderer>()
                 .ToList().Where(x => x.name == "House").ToList();
             Transform arc = city.transform.Find("Arc");
+            List<SpriteRenderer> arcRenderers = city.GetComponentsInChildren<SpriteRenderer>().ToList().Where(x => x.name == "Arc").ToList();
             TerritoryFiller territoryFiller = city.GetComponentInChildren<TerritoryFiller>();
             FencePlacer fencePlacer = city.GetComponentInChildren<FencePlacer>();
             List<Transform> pillars = fencePlacer.pillars;
@@ -192,6 +195,16 @@ namespace TerritoryWars.Tile
                 house.sprite = TileAssetsObject.GetNextHouse(playerId);
                 TileRotator.SimpleRotation(house.transform, index);
                 TileRotator.SimpleRotationObjects.Add(house.transform);
+            }
+
+            foreach (var arcs in arcRenderers)
+            {
+                int roadCount = TileConfig.Count(c => c == 'R');
+                if (arcs != null && roadCount % 2 != 0)
+                {
+                    TileRotator.SimpleRotation(arcs.transform, index);
+                    TileRotator.SimpleRotationObjects.Add(arcs.transform);
+                }
             }
 
             foreach (var pillar in pillars)

@@ -12,6 +12,7 @@ namespace TerritoryWars.General
         [SerializeField] private TileGenerator tileGenerator;
         [SerializeField] private TileView previewTileView;
         [SerializeField] private float tilePreviewSetHeight = 0.5f;
+        public TileJokerAnimator _tileJokerAnimator;
         
         [SerializeField] private TileGenerator tileGeneratorForUI;
         [SerializeField] private LayerMask previewLayerMask;
@@ -206,6 +207,7 @@ namespace TerritoryWars.General
             // currentTween = transform
             //     .DOMove(_initialPosition, moveDuration)
             //     .SetEase(moveEase);
+            _tileJokerAnimator.SetOffAllAnimationObjects();
             
             transform.position = _initialPosition;
         }

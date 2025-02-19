@@ -20,6 +20,7 @@ namespace TerritoryWars.UI
 
         [Header("Tile Preview")]
         [SerializeField] private TilePreview tilePreview;
+        [SerializeField] private TileJokerAnimator tilePreviewUITileJokerAnimator;
 
         private General.GameManager gameManager;
         private DeckManager deckManager;
@@ -67,7 +68,7 @@ namespace TerritoryWars.UI
             // Оновлюємо текст з кількістю тайлів
             if (remainingTilesText != null)
             {
-                remainingTilesText.text = $"Tiles count: {deckManager.RemainingTiles}";
+                remainingTilesText.text = $"{deckManager.RemainingTiles}";
             }
 
             // Оновлюємо превью поточного тайлу
@@ -114,6 +115,8 @@ namespace TerritoryWars.UI
         private void OnJokerButtonClicked()
         {
             gameManager.ActivateJoker();
+            tilePreview._tileJokerAnimator.ShowIdleJokerAnimation();
+            tilePreviewUITileJokerAnimator.ShowIdleJokerAnimation();
             UpdateUI();
         }
 

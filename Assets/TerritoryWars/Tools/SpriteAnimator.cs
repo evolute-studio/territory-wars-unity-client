@@ -15,6 +15,7 @@ namespace TerritoryWars.Tools
         public float maxRandomDelay = 0.5f;
         public float waitBetweenLoops = 0f;
         public bool playOnAwake = true;
+        public Action OnAnimationEnd;
 
         private SpriteRenderer _spriteRenderer;
 
@@ -84,11 +85,15 @@ namespace TerritoryWars.Tools
                     _spriteRenderer.sprite = sprite;
                     yield return new WaitForSeconds(duration / sprites.Length);
                 }
+                
+                OnAnimationEnd?.Invoke();
 
                 if (!loop)
                 {
                     break;
                 }
+                
+                
 
                 if (waitBetweenLoops > 0)
                 {
