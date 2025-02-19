@@ -1,70 +1,151 @@
 fileFormatVersion: 2
-guid: 3dae0958f1ac0549391072eb7f19b02e
+guid: 0e8e5dcd94eb3a14ba3cdb57b5625d15
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8294138935437018668
-    second: correct_font_interface_large_0
+      213: -191625236607379417
+    second: small lighting vfx_0
   - first:
-      213: -2476986093110567132
-    second: correct_font_interface_large_1
+      213: -5674831129622847550
+    second: small lighting vfx_1
   - first:
-      213: 1163886714219875561
-    second: correct_font_interface_large_2
+      213: 3318093529947120843
+    second: small lighting vfx_2
   - first:
-      213: -2697148496602149746
-    second: correct_font_interface_large_3
+      213: 5156497133465397502
+    second: small lighting vfx_3
   - first:
-      213: -1710757913133827290
-    second: correct_font_interface_large_4
+      213: 737203769953536250
+    second: small lighting vfx_4
   - first:
-      213: -5679804208808318756
-    second: correct_font_interface_large_5
+      213: -2654486717372744595
+    second: small lighting vfx_5
   - first:
-      213: 5949626162025479769
-    second: correct_font_interface_large_6
+      213: -7172919923779387962
+    second: small lighting vfx_6
   - first:
-      213: -1044356832227603636
-    second: correct_font_interface_large_7
+      213: -8487142051184217528
+    second: small lighting vfx_7
   - first:
-      213: -7387974823664849641
-    second: correct_font_interface_large_8
+      213: -3538025468748975535
+    second: small lighting vfx_8
   - first:
-      213: 6544064114722310717
-    second: correct_font_interface_large_9
+      213: 879957164034669950
+    second: small lighting vfx_9
   - first:
-      213: 3318543505672495264
-    second: correct_font_interface_large_10
+      213: -2682297172732718814
+    second: small lighting vfx_10
   - first:
-      213: 2823230990908006308
-    second: correct_font_interface_large_11
+      213: -5136059829795753298
+    second: small lighting vfx_11
   - first:
-      213: -4876302500347611464
-    second: correct_font_interface_large_12
+      213: -6921185653027714526
+    second: small lighting vfx_12
   - first:
-      213: 6649214701945179077
-    second: correct_font_interface_large_13
+      213: -6427733857740772078
+    second: small lighting vfx_13
   - first:
-      213: 8455643497348339260
-    second: correct_font_interface_large_14
+      213: 1107722309956509980
+    second: small lighting vfx_14
   - first:
-      213: -2421252385546144907
-    second: correct_font_interface_large_15
+      213: -6488431303405946297
+    second: small lighting vfx_15
   - first:
-      213: -5488970453940793694
-    second: correct_font_interface_large_16
+      213: -5072639218917151607
+    second: small lighting vfx_16
   - first:
-      213: -6968422298416041662
-    second: correct_font_interface_large_17
+      213: 292069754812928617
+    second: small lighting vfx_17
   - first:
-      213: -2331054525144094506
-    second: correct_font_interface_large_18
+      213: -3868007294560767699
+    second: small lighting vfx_18
   - first:
-      213: -5466864725409534904
-    second: correct_font_interface_large_19
+      213: -4981547714974159634
+    second: small lighting vfx_19
   - first:
-      213: -2817754578403591401
-    second: correct_font_interface_large_20
+      213: 5456309373471479754
+    second: small lighting vfx_20
+  - first:
+      213: 7223154435326764564
+    second: small lighting vfx_21
+  - first:
+      213: -5556801408846705839
+    second: small lighting vfx_22
+  - first:
+      213: -5058685451133584226
+    second: small lighting vfx_23
+  - first:
+      213: 3588062658215608650
+    second: small lighting vfx_24
+  - first:
+      213: -8736927432055000417
+    second: small lighting vfx_25
+  - first:
+      213: 2449926513066906182
+    second: small lighting vfx_26
+  - first:
+      213: 2974930808073300950
+    second: small lighting vfx_27
+  - first:
+      213: -4361491968312154797
+    second: small lighting vfx_28
+  - first:
+      213: -3762162195159256023
+    second: small lighting vfx_29
+  - first:
+      213: -300822707475221187
+    second: small lighting vfx_30
+  - first:
+      213: -173067291733012379
+    second: small lighting vfx_31
+  - first:
+      213: -1351946362738081619
+    second: small lighting vfx_32
+  - first:
+      213: -6079614805362500019
+    second: small lighting vfx_33
+  - first:
+      213: -2425294901312485339
+    second: small lighting vfx_34
+  - first:
+      213: 4685933696068214444
+    second: small lighting vfx_35
+  - first:
+      213: 3100241231600204548
+    second: small lighting vfx_36
+  - first:
+      213: 7183028881432031190
+    second: small lighting vfx_37
+  - first:
+      213: 497314387626298660
+    second: small lighting vfx_38
+  - first:
+      213: 4649240592560120261
+    second: small lighting vfx_39
+  - first:
+      213: 2417784909126722262
+    second: small lighting vfx_40
+  - first:
+      213: 6431624539305467425
+    second: small lighting vfx_41
+  - first:
+      213: 7972091814156543724
+    second: small lighting vfx_42
+  - first:
+      213: 6726287582147405349
+    second: small lighting vfx_43
+  - first:
+      213: -3526996572707467377
+    second: small lighting vfx_44
+  - first:
+      213: -3366121646919023746
+    second: small lighting vfx_45
+  - first:
+      213: 8703661470006553221
+    second: small lighting vfx_46
+  - first:
+      213: -791367978799527861
+    second: small lighting vfx_47
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -157,7 +238,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -170,7 +251,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -199,123 +280,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: correct_font_interface_large_0
+      name: small lighting vfx_0
       rect:
         serializedVersion: 2
-        x: 453
-        y: 1058
-        width: 310
-        height: 104
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c26c574ea63ba1370800000000000000
-      internalID: 8294138935437018668
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: correct_font_interface_large_1
-      rect:
-        serializedVersion: 2
-        x: 778
-        y: 1063
-        width: 78
-        height: 74
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 42fdf8e954aff9dd0800000000000000
-      internalID: -2476986093110567132
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: correct_font_interface_large_2
-      rect:
-        serializedVersion: 2
-        x: 914
-        y: 1058
-        width: 426
-        height: 142
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9ec4fdfccc4f62010800000000000000
-      internalID: 1163886714219875561
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: correct_font_interface_large_3
-      rect:
-        serializedVersion: 2
-        x: 152
-        y: 444
-        width: 63
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e8ccc818bbdc19ad0800000000000000
-      internalID: -2697148496602149746
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: correct_font_interface_large_4
-      rect:
-        serializedVersion: 2
-        x: 226
-        y: 449
-        width: 63
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 62b38f2fdba2248e0800000000000000
-      internalID: -1710757913133827290
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: correct_font_interface_large_5
-      rect:
-        serializedVersion: 2
-        x: 322
+        x: 0
         y: 192
-        width: 1476
-        height: 800
+        width: 80
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -324,20 +295,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cd8263c3a284d21b0800000000000000
-      internalID: -5679804208808318756
+      spriteID: 7285402dcd5375df0800000000000000
+      internalID: -191625236607379417
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: correct_font_interface_large_6
+      name: small lighting vfx_1
       rect:
         serializedVersion: 2
-        x: 162
-        y: 360
-        width: 40
-        height: 43
+        x: 80
+        y: 192
+        width: 80
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -346,20 +317,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 95e36edc871519250800000000000000
-      internalID: 5949626162025479769
+      spriteID: 2cf50867723fe31b0800000000000000
+      internalID: -5674831129622847550
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: correct_font_interface_large_7
+      name: small lighting vfx_2
       rect:
         serializedVersion: 2
-        x: 212
-        y: 362
-        width: 40
-        height: 41
+        x: 160
+        y: 192
+        width: 80
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -368,20 +339,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c4b425c8ef2b181f0800000000000000
-      internalID: -1044356832227603636
+      spriteID: bc425084c7c3c0e20800000000000000
+      internalID: 3318093529947120843
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: correct_font_interface_large_8
+      name: small lighting vfx_3
       rect:
         serializedVersion: 2
-        x: 162
-        y: 306
-        width: 40
-        height: 43
+        x: 240
+        y: 192
+        width: 80
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -390,20 +361,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 71d6de18a04a87990800000000000000
-      internalID: -7387974823664849641
+      spriteID: ef8668592de8f8740800000000000000
+      internalID: 5156497133465397502
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: correct_font_interface_large_9
+      name: small lighting vfx_4
       rect:
         serializedVersion: 2
-        x: 212
-        y: 308
-        width: 40
-        height: 41
+        x: 320
+        y: 192
+        width: 80
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -412,20 +383,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d3a8761f3af21da50800000000000000
-      internalID: 6544064114722310717
+      spriteID: af8c8234ce21b3a00800000000000000
+      internalID: 737203769953536250
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: correct_font_interface_large_10
+      name: small lighting vfx_5
       rect:
         serializedVersion: 2
-        x: 224
-        y: 266
-        width: 22
-        height: 16
+        x: 0
+        y: 128
+        width: 80
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -434,20 +405,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0a0e94b6cb5dd0e20800000000000000
-      internalID: 3318543505672495264
+      spriteID: d6c3106056e592bd0800000000000000
+      internalID: -2654486717372744595
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: correct_font_interface_large_11
+      name: small lighting vfx_6
       rect:
         serializedVersion: 2
-        x: 36
-        y: 52
-        width: 126
-        height: 112
+        x: 80
+        y: 128
+        width: 80
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -456,20 +427,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4af12fbc0a12e2720800000000000000
-      internalID: 2823230990908006308
+      spriteID: 6cdbec4455ba47c90800000000000000
+      internalID: -7172919923779387962
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: correct_font_interface_large_12
+      name: small lighting vfx_7
       rect:
         serializedVersion: 2
-        x: 203
-        y: 52
-        width: 126
-        height: 112
+        x: 160
+        y: 128
+        width: 80
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -478,20 +449,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8b67e6136b4e35cb0800000000000000
-      internalID: -4876302500347611464
+      spriteID: 84272e0754d973a80800000000000000
+      internalID: -8487142051184217528
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: correct_font_interface_large_13
+      name: small lighting vfx_8
       rect:
         serializedVersion: 2
-        x: 347
-        y: 50
-        width: 414
-        height: 112
+        x: 240
+        y: 128
+        width: 80
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -500,20 +471,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5cb4fb8da81c64c50800000000000000
-      internalID: 6649214701945179077
+      spriteID: 152bee8d49866eec0800000000000000
+      internalID: -3538025468748975535
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: correct_font_interface_large_14
+      name: small lighting vfx_9
       rect:
         serializedVersion: 2
-        x: 785
-        y: 72
-        width: 78
-        height: 84
+        x: 320
+        y: 128
+        width: 80
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -522,140 +493,228 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c361acef5fa785570800000000000000
-      internalID: 8455643497348339260
+      spriteID: e7db8d3e06c363c00800000000000000
+      internalID: 879957164034669950
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: correct_font_interface_large_15
+      name: small lighting vfx_10
       rect:
         serializedVersion: 2
-        x: 885
-        y: 76
-        width: 78
-        height: 80
+        x: 0
+        y: 64
+        width: 80
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 57374ff98cbf56ed0800000000000000
-      internalID: -2421252385546144907
+      spriteID: 4461c3fa5b1379040af9e1ad109b1d2e
+      internalID: -2133502840
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: correct_font_interface_large_16
+      name: small lighting vfx_11
       rect:
         serializedVersion: 2
-        x: 992
-        y: 73
-        width: 78
-        height: 84
+        x: 80
+        y: 64
+        width: 80
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2ae8e36347243d3b0800000000000000
-      internalID: -5488970453940793694
+      spriteID: f1f292f19b695574b8280f340bc9d8b2
+      internalID: 444734757
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: correct_font_interface_large_17
+      name: small lighting vfx_12
       rect:
         serializedVersion: 2
-        x: 1092
-        y: 77
-        width: 78
-        height: 80
+        x: 160
+        y: 64
+        width: 80
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 241300207d03b4f90800000000000000
-      internalID: -6968422298416041662
+      spriteID: 2ff62c099fb76514ca96acf2faea7cc5
+      internalID: 635757776
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: correct_font_interface_large_18
+      name: small lighting vfx_13
       rect:
         serializedVersion: 2
-        x: 1234
-        y: 99
-        width: 42
-        height: 30
+        x: 240
+        y: 64
+        width: 80
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6d828b4824e66afd0800000000000000
-      internalID: -2331054525144094506
+      spriteID: 8c8005a42a66956488886552458c1ee7
+      internalID: -2016588714
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: correct_font_interface_large_19
+      name: small lighting vfx_14
       rect:
         serializedVersion: 2
-        x: 1861
-        y: 84
-        width: 72
-        height: 80
+        x: 320
+        y: 64
+        width: 80
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 84ce9d63f7bc124b0800000000000000
-      internalID: -5466864725409534904
+      spriteID: dae254bafba35b94bb6adf0e831e3bc9
+      internalID: 1471809977
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: correct_font_interface_large_20
+      name: small lighting vfx_15
       rect:
         serializedVersion: 2
-        x: 1976
-        y: 84
-        width: 72
-        height: 80
+        x: 0
+        y: 0
+        width: 80
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 71bf50ad32355e8d0800000000000000
-      internalID: -2817754578403591401
+      spriteID: 9b900eb69fb25fb4a86d9b92cbbdffc0
+      internalID: -1117491694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small lighting vfx_16
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecb0942c5186c764f858b621661231f7
+      internalID: -1657600242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small lighting vfx_17
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a19a04ec44240b45a0a508d419f7f05
+      internalID: 1865434300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small lighting vfx_18
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0ac24a9b0f969c4494c1be641f79ad6
+      internalID: 2019880441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small lighting vfx_19
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b95871e71a93fe41ad7d65e85b9490f
+      internalID: -1884659354
       vertices: []
       indices: 
       edges: []
@@ -664,7 +723,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e8d63075a527992478b055a2ea74ee6e
     internalID: 0
     vertices: []
     indices: 
@@ -674,27 +733,26 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      correct_font_interface_large_0: 8294138935437018668
-      correct_font_interface_large_1: -2476986093110567132
-      correct_font_interface_large_10: 3318543505672495264
-      correct_font_interface_large_11: 2823230990908006308
-      correct_font_interface_large_12: -4876302500347611464
-      correct_font_interface_large_13: 6649214701945179077
-      correct_font_interface_large_14: 8455643497348339260
-      correct_font_interface_large_15: -2421252385546144907
-      correct_font_interface_large_16: -5488970453940793694
-      correct_font_interface_large_17: -6968422298416041662
-      correct_font_interface_large_18: -2331054525144094506
-      correct_font_interface_large_19: -5466864725409534904
-      correct_font_interface_large_2: 1163886714219875561
-      correct_font_interface_large_20: -2817754578403591401
-      correct_font_interface_large_3: -2697148496602149746
-      correct_font_interface_large_4: -1710757913133827290
-      correct_font_interface_large_5: -5679804208808318756
-      correct_font_interface_large_6: 5949626162025479769
-      correct_font_interface_large_7: -1044356832227603636
-      correct_font_interface_large_8: -7387974823664849641
-      correct_font_interface_large_9: 6544064114722310717
+      small lighting vfx_0: -191625236607379417
+      small lighting vfx_1: -5674831129622847550
+      small lighting vfx_10: -2133502840
+      small lighting vfx_11: 444734757
+      small lighting vfx_12: 635757776
+      small lighting vfx_13: -2016588714
+      small lighting vfx_14: 1471809977
+      small lighting vfx_15: -1117491694
+      small lighting vfx_16: -1657600242
+      small lighting vfx_17: 1865434300
+      small lighting vfx_18: 2019880441
+      small lighting vfx_19: -1884659354
+      small lighting vfx_2: 3318093529947120843
+      small lighting vfx_3: 5156497133465397502
+      small lighting vfx_4: 737203769953536250
+      small lighting vfx_5: -2654486717372744595
+      small lighting vfx_6: -7172919923779387962
+      small lighting vfx_7: -8487142051184217528
+      small lighting vfx_8: -3538025468748975535
+      small lighting vfx_9: 879957164034669950
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

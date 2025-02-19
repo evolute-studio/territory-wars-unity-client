@@ -48,7 +48,7 @@ namespace TerritoryWars.General
             {
                 isJokerActive = true;
                 jokerCount[CurrentCharacter.Id]--;
-                TileSelector.StartJokerPlacement();
+                // TileSelector.StartJokerPlacement();
             }
         }
         

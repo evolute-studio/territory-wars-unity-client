@@ -66,7 +66,7 @@ namespace TerritoryWars.General
             roadTile = TileData.GetRotatedConfig(roadTile, rotationTimes);
             cityTile = TileData.GetRotatedConfig(cityTile, rotationTimes);
 
-            string[] tilesToSpawn = new string[] { roadTile, fieldTile, fieldTile, cityTile, fieldTile, fieldTile, roadTile, fieldTile };
+            string[] tilesToSpawn = new string[] { fieldTile, fieldTile, fieldTile, cityTile, fieldTile, fieldTile, roadTile, fieldTile };
 
             List<Vector2Int> availablePositions = new List<Vector2Int>();
             if (isHorizontal)

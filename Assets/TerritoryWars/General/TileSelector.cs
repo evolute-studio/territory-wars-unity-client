@@ -16,6 +16,7 @@ namespace TerritoryWars.General
         [SerializeField] private LayerMask backgroundLayer;
         [SerializeField] private Sprite highlightSprite;
         [SerializeField] private TilePreview tilePreview;
+       
 
         [Header("Colors")]
         [SerializeField] private Color normalHighlightColor = new Color(1f, 1f, 0f, 0.3f);
@@ -340,7 +341,9 @@ namespace TerritoryWars.General
         {
             isJokerMode = true;
             jokerPosition = null;
-            
+
+
+
             // Показуємо можливі позиції для джокера
             ShowJokerPlacements();
         }
