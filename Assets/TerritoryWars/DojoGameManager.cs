@@ -9,6 +9,7 @@ using UnityEngine;
 
 // Fix to use Records in Unity ref. https://stackoverflow.com/a/73100830
 using System.ComponentModel;
+using UnityEngine.Serialization;
 
 namespace System.Runtime.CompilerServices
 {
@@ -20,10 +21,19 @@ namespace TerritoryWars
 {
     public class DojoGameManager : MonoBehaviour
     {
-        [SerializeField] WorldManager worldManager;
+        public static DojoGameManager Instance { get; private set; }
+
+        void Awake()
+        {
+            Instance = this;
+        }
+        
+        public WorldManager WorldManager;
 
         [SerializeField] WorldManagerData dojoConfig;
         [SerializeField] GameManagerData gameManagerData;
+        
+        public Game GameSystem;
 
         public BurnerManager burnerManager;
 
@@ -33,20 +43,16 @@ namespace TerritoryWars
         public Account LocalBurnerAccount { get; private set; }
 
 
-        void Start()
+        public void Initialize()
         {
             provider = new JsonRpcClient(dojoConfig.rpcUrl);
             masterAccount = new Account(provider, new SigningKey(gameManagerData.masterPrivateKey),
                 new FieldElement(gameManagerData.masterAddress));
             burnerManager = new BurnerManager(provider, masterAccount);
 
-            worldManager.synchronizationMaster.OnEventMessage.AddListener(OnDojoEventReceived);
-            worldManager.synchronizationMaster.OnSynchronized.AddListener(OnSynchronized);
-            worldManager.synchronizationMaster.OnEntitySpawned.AddListener(SpawnEntity);
-            worldManager.synchronizationMaster.OnModelUpdated.AddListener(modelInstance =>
-            {
-                 Debug.Log($"Model updated: {modelInstance.Model.Name}");
-            });
+            WorldManager.synchronizationMaster.OnEventMessage.AddListener(OnDojoEventReceived);
+            WorldManager.synchronizationMaster.OnSynchronized.AddListener(OnSynchronized);
+            WorldManager.synchronizationMaster.OnEntitySpawned.AddListener(SpawnEntity);
             
             CreateAccount();
         }
@@ -56,6 +62,34 @@ namespace TerritoryWars
             try
             {
                 LocalBurnerAccount = await burnerManager.DeployBurner();
+            }
+            catch (Exception e)
+            {
+                Debug.LogError(e);
+            }
+        }
+
+        public GameObject[] GetGames() => WorldManager.Entities<evolute_duel_Game>();
+        
+        public async void CreateGame()
+        {
+            try
+            {
+                var txHash = await GameSystem.create_game(LocalBurnerAccount);
+                Debug.Log($"Create Game: {txHash}");
+            }
+            catch (Exception e)
+            {
+                Debug.LogError(e);
+            }
+        }
+        
+        public async void JoinGame(FieldElement hostPlayer)
+        {
+            try
+            {
+                var txHash = await GameSystem.join_game(LocalBurnerAccount, hostPlayer);
+                Debug.Log($"Join Game: {txHash}");
             }
             catch (Exception e)
             {
@@ -171,9 +205,9 @@ namespace TerritoryWars
         
         void OnDestroy()
         {
-            if (worldManager.synchronizationMaster != null)
+            if (WorldManager.synchronizationMaster != null)
             {
-                worldManager.synchronizationMaster.OnEventMessage.RemoveListener(OnDojoEventReceived);
+                WorldManager.synchronizationMaster.OnEventMessage.RemoveListener(OnDojoEventReceived);
             }
         }
     }
