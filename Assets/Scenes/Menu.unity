@@ -570,7 +570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb53232f67c4c74a3019b9862a69724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contractAddress: 0x011f5030f5642dc63e705958fcb33ef32fc5589fed0f87fcc7b6972ccb81f938
+  contractAddress: 0x0454f2ecf204d397d9441616efe7985b8a685d318b4dda3f8ed53814c1f12de6
 --- !u!114 &209425368
 MonoBehaviour:
   m_ObjectHideFlags: 0

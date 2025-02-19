@@ -16,12 +16,7 @@ namespace Dojo
         public string relayWebrtcUrl;
         [Header("World")]
         public FieldElement worldAddress;
-        public Query query = new Query(new CompositeClause(dojo_bindings.dojo.LogicalOperator.Or, new Clause[] {
-            new MemberClause("dojo_starter-Position", "vec.x", dojo_bindings.dojo.ComparisonOperator.In, new MemberValue(new MemberValue[] { new Primitive {
-                U32 = 10
-            }, new Primitive {
-                U32 = 13
-            } }))
-        }));
+
+        public Query query;
     }
 }
