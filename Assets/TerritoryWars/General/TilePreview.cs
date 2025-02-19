@@ -12,6 +12,9 @@ namespace TerritoryWars.General
         [SerializeField] private TileGenerator tileGenerator;
         [SerializeField] private TileView previewTileView;
         [SerializeField] private float tilePreviewSetHeight = 0.5f;
+        
+        [SerializeField] private TileGenerator tileGeneratorForUI;
+        [SerializeField] private LayerMask previewLayerMask;
 
         [Header("Preview Position")] [SerializeField]
         private Vector2 screenOffset = new Vector2(100f, 100f); // Відступ від правого нижнього кута
@@ -94,6 +97,7 @@ namespace TerritoryWars.General
             {
                 previewTileView.gameObject.SetActive(true);
                 tileGenerator.Generate(currentTile);
+                tileGeneratorForUI.Generate(currentTile);
                 if (tileGenerator.City != null)
                 {
                     Transform territoryPlacer = tileGenerator.City.transform.Find("TerritoryPlacer");
@@ -110,7 +114,21 @@ namespace TerritoryWars.General
                         houseRenderer.sortingLayerName = "Preview";
                         _houseSprites.Add(houseRenderer.sprite);
                     }
+                }
 
+                if (tileGeneratorForUI.City != null)
+                {
+                    void SetLayerRecursively(Transform root)
+                    {
+                        root.gameObject.layer = LayerMask.NameToLayer("TilePreview");
+                        foreach(Transform child in root)
+                        {
+                            SetLayerRecursively(child);
+                        }
+                    }
+                    
+                    SetLayerRecursively(tileGeneratorForUI.City.transform);
+                    
                 }
 
                 previewTileView.UpdateView(currentTile);
@@ -184,10 +202,12 @@ namespace TerritoryWars.General
 
     public void ResetPosition()
         {
-            currentTween?.Kill();
-            currentTween = transform
-                .DOMove(_initialPosition, moveDuration)
-                .SetEase(moveEase);
+            // currentTween?.Kill();
+            // currentTween = transform
+            //     .DOMove(_initialPosition, moveDuration)
+            //     .SetEase(moveEase);
+            
+            transform.position = _initialPosition;
         }
 
         private void OnDestroy()

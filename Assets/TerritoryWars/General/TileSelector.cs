@@ -37,6 +37,8 @@ namespace TerritoryWars.General
         public UnityEvent OnTilePlaced = new UnityEvent();
         public UnityEvent OnTurnStarted = new UnityEvent();
         public UnityEvent OnTurnEnding = new UnityEvent();
+        
+        [SerializeField] private float highlightYOffset = -0.08f;
 
         private void Awake()
         {
@@ -121,7 +123,7 @@ namespace TerritoryWars.General
         {
             var highlight = new GameObject($"Highlight_{x}_{y}");
             highlight.transform.SetParent(highlightedTiles.transform);
-            highlight.transform.position = board.GetTilePosition(x, y) + Vector3.back * 0.1f;
+            highlight.transform.position = board.GetTilePosition(x, y) + new Vector3(0f, highlightYOffset, 0f);
 
             var spriteRenderer = highlight.AddComponent<SpriteRenderer>();
             spriteRenderer.sprite = highlightSprite;

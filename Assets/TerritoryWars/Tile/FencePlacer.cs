@@ -10,6 +10,7 @@ namespace TerritoryWars.Tile
         public float fenceYOffset;
         public LineRenderer lineRenderer;
         public int[] skipIndices;
+        public float poleYOffset = 0f;
 
         [ContextMenu("PlaceFence")]
         public void PlaceFence()
@@ -98,53 +99,99 @@ namespace TerritoryWars.Tile
         {
             if (pillars == null || pillars.Count < 3) return;
 
-            // Розраховуємо довжину лінії LineRenderer
-            float lineLength = 0f;
+            // Отримуємо всі позиції точок з LineRenderer
             Vector3[] linePoints = new Vector3[lineRenderer.positionCount];
             lineRenderer.GetPositions(linePoints);
-            for (int i = 0; i < linePoints.Length - 1; i++)
+
+            // Знаходимо індекси розривів у масиві точок
+            List<int> breakIndices = new List<int>();
+            for (int i = 1; i < linePoints.Length - 1; i++)
             {
-                lineLength += Vector3.Distance(linePoints[i], linePoints[i + 1]);
+                if (linePoints[i].z < -100f)
+                {
+                    breakIndices.Add(i);
+                }
             }
 
-            // Розраховуємо кількість проміжків між проміжними стовпчиками
-            int gapCount = pillars.Count - 2;
-
-            // Розраховуємо довжину одного проміжку
-            float gapLength = lineLength / (gapCount + 1);
-
-            // Розміщуємо проміжні стовпчики на рівній відстані вздовж лінії
-            float currentLength = gapLength;
-            int lineIndex = 0;
-            for (int i = 1; i < pillars.Count - 1; i++)
+            // Розбиваємо масив точок на окремі сегменти за індексами розривів
+            List<Vector3[]> segments = new List<Vector3[]>();
+            int startIndex = 0;
+            foreach (int breakIndex in breakIndices)
             {
-                while (lineIndex < linePoints.Length - 1 && currentLength >= Vector3.Distance(linePoints[lineIndex], linePoints[lineIndex + 1]))
-                {
-                    currentLength -= Vector3.Distance(linePoints[lineIndex], linePoints[lineIndex + 1]);
-                    lineIndex++;
-                }
-
-                if (lineIndex >= linePoints.Length - 1)
-                {
-                    pillars[i].position = linePoints[linePoints.Length - 1];
-                }
-                else
-                {
-                    Vector3 direction = (linePoints[lineIndex + 1] - linePoints[lineIndex]).normalized;
-                    Vector3 polePosition = linePoints[lineIndex] + direction * currentLength;
-
-                    // Враховуємо якір знизу стовпчика
-                    float poleHeight = pillars[i].localScale.y;
-                    polePosition.y -= poleHeight / 2f;
-
-                    // Переміщуємо стовпчик на відстань 0.05 вгору по осі Y
-                    polePosition += Vector3.up * 0.05f;
-
-                    pillars[i].position = polePosition;
-                }
-
-                currentLength += gapLength;
+                int segmentLength = breakIndex - startIndex + 1;
+                Vector3[] segment = new Vector3[segmentLength];
+                System.Array.Copy(linePoints, startIndex, segment, 0, segmentLength);
+                segments.Add(segment);
+                startIndex = breakIndex + 1;
             }
+            // Додаємо останній сегмент
+            int lastSegmentLength = linePoints.Length - startIndex;
+            Vector3[] lastSegment = new Vector3[lastSegmentLength];
+            System.Array.Copy(linePoints, startIndex, lastSegment, 0, lastSegmentLength);
+            segments.Add(lastSegment);
+
+            // Розміщуємо стовпчики на кожному сегменті окремо
+            int pillarIndex = 1;
+            foreach (Vector3[] segment in segments)
+            {
+                float segmentLength = CalculateSegmentLength(segment);
+                int segmentPoleCount = CountPolesInSegment(segment, pillarIndex);
+                float gapLength = segmentLength / (segmentPoleCount + 1);
+
+                float currentLength = gapLength;
+                int segmentIndex = 0;
+                while (pillarIndex < pillars.Count - 1 && segmentIndex < segment.Length - 1)
+                {
+                    Vector3 point1 = segment[segmentIndex];
+                    Vector3 point2 = segment[segmentIndex + 1];
+                    float dx = point2.x - point1.x;
+                    float dy = (point2.y - point1.y) * 2f;
+                    float distance = Mathf.Sqrt(dx * dx + dy * dy);
+
+                    if (currentLength <= distance)
+                    {
+                        float t = currentLength / distance;
+                        Vector3 polePosition = Vector3.Lerp(point1, point2, t);
+                        polePosition.y += poleYOffset;
+                        pillars[pillarIndex].position = polePosition;
+                        pillarIndex++;
+                        currentLength += gapLength;
+                    }
+                    else
+                    {
+                        currentLength -= distance;
+                        segmentIndex++;
+                    }
+                }
+            }
+        }
+
+        private float CalculateSegmentLength(Vector3[] segment)
+        {
+            float length = 0f;
+            for (int i = 0; i < segment.Length - 1; i++)
+            {
+                Vector3 point1 = segment[i];
+                Vector3 point2 = segment[i + 1];
+                float dx = point2.x - point1.x;
+                float dy = (point2.y - point1.y) * 2f;
+                float distance = Mathf.Sqrt(dx * dx + dy * dy);
+                length += distance;
+            }
+            return length;
+        }
+
+        private int CountPolesInSegment(Vector3[] segment, int startIndex)
+        {
+            int count = 0;
+            for (int i = startIndex; i < pillars.Count - 1; i++)
+            {
+                if (pillars[i].position.z > segment[0].z && pillars[i].position.z < segment[segment.Length - 1].z)
+                {
+                    count++;
+                }
+            }
+            return count;
         }
     }
 }
