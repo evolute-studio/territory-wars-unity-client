@@ -647,7 +647,28 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      correct_font_interface_large_0: 8294138935437018668
+      correct_font_interface_large_1: -2476986093110567132
+      correct_font_interface_large_10: 3318543505672495264
+      correct_font_interface_large_11: 2823230990908006308
+      correct_font_interface_large_12: -4876302500347611464
+      correct_font_interface_large_13: 6649214701945179077
+      correct_font_interface_large_14: 8455643497348339260
+      correct_font_interface_large_15: -2421252385546144907
+      correct_font_interface_large_16: -5488970453940793694
+      correct_font_interface_large_17: -6968422298416041662
+      correct_font_interface_large_18: -2331054525144094506
+      correct_font_interface_large_19: -5466864725409534904
+      correct_font_interface_large_2: 1163886714219875561
+      correct_font_interface_large_20: -2817754578403591401
+      correct_font_interface_large_3: -2697148496602149746
+      correct_font_interface_large_4: -1710757913133827290
+      correct_font_interface_large_5: -5679804208808318756
+      correct_font_interface_large_6: 5949626162025479769
+      correct_font_interface_large_7: -1044356832227603636
+      correct_font_interface_large_8: -7387974823664849641
+      correct_font_interface_large_9: 6544064114722310717
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

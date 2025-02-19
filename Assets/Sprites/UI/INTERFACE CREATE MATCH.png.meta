@@ -1,0 +1,442 @@
+fileFormatVersion: 2
+guid: 17e881f1090fa3019ab3ae2ace2ad3da
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 236194182385459216
+    second: INTERFACE CREATE MATCH_0
+  - first:
+      213: 9132285519773185197
+    second: INTERFACE CREATE MATCH_1
+  - first:
+      213: 4224099020293508805
+    second: INTERFACE CREATE MATCH_2
+  - first:
+      213: -4282794545592861512
+    second: INTERFACE CREATE MATCH_3
+  - first:
+      213: 7775221020730914464
+    second: INTERFACE CREATE MATCH_4
+  - first:
+      213: 710304393668469049
+    second: INTERFACE CREATE MATCH_5
+  - first:
+      213: 1316885287373916762
+    second: INTERFACE CREATE MATCH_6
+  - first:
+      213: 514882983208043884
+    second: INTERFACE CREATE MATCH_7
+  - first:
+      213: 7818810672477681470
+    second: INTERFACE CREATE MATCH_8
+  - first:
+      213: -7109888358342586961
+    second: INTERFACE CREATE MATCH_9
+  - first:
+      213: -4159887203613179974
+    second: INTERFACE CREATE MATCH_10
+  - first:
+      213: 2879143012670625621
+    second: INTERFACE CREATE MATCH_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: INTERFACE CREATE MATCH_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 414
+        width: 571
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 19, y: 19, z: 19, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01069138b51274300800000000000000
+      internalID: 236194182385459216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE CREATE MATCH_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 69
+        width: 634
+        height: 325
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 228, y: 28, z: 228, w: 26}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da436899b456cbe70800000000000000
+      internalID: 9132285519773185197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE CREATE MATCH_2
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 322
+        width: 70
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ce8ba0cda30f9a30800000000000000
+      internalID: 4224099020293508805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE CREATE MATCH_3
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 323
+        width: 68
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bcf4ff4d057094c0800000000000000
+      internalID: -4282794545592861512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE CREATE MATCH_4
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 281
+        width: 70
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a6f0dec25227eb60800000000000000
+      internalID: 7775221020730914464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE CREATE MATCH_5
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 282
+        width: 68
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 931220b25128bd900800000000000000
+      internalID: 710304393668469049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE CREATE MATCH_6
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 239
+        width: 70
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5a4cd31134864210800000000000000
+      internalID: 1316885287373916762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE CREATE MATCH_7
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 240
+        width: 68
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c654203685b352700800000000000000
+      internalID: 514882983208043884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE CREATE MATCH_8
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 184
+        width: 119
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e37b01b71eef18c60800000000000000
+      internalID: 7818810672477681470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE CREATE MATCH_9
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 185
+        width: 7
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fad0e48353a945d90800000000000000
+      internalID: -7109888358342586961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE CREATE MATCH_10
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 132
+        width: 121
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abf71fad0ac1546c0800000000000000
+      internalID: -4159887203613179974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE CREATE MATCH_11
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 42
+        width: 239
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 557d7cfc055c4f720800000000000000
+      internalID: 2879143012670625621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 9683f8b4adc61a8a8ad67a3152d3b7df
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      INTERFACE CREATE MATCH_0: 236194182385459216
+      INTERFACE CREATE MATCH_1: 9132285519773185197
+      INTERFACE CREATE MATCH_10: -4159887203613179974
+      INTERFACE CREATE MATCH_11: 2879143012670625621
+      INTERFACE CREATE MATCH_2: 4224099020293508805
+      INTERFACE CREATE MATCH_3: -4282794545592861512
+      INTERFACE CREATE MATCH_4: 7775221020730914464
+      INTERFACE CREATE MATCH_5: 710304393668469049
+      INTERFACE CREATE MATCH_6: 1316885287373916762
+      INTERFACE CREATE MATCH_7: 514882983208043884
+      INTERFACE CREATE MATCH_8: 7818810672477681470
+      INTERFACE CREATE MATCH_9: -7109888358342586961
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
