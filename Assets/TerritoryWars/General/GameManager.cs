@@ -153,7 +153,8 @@ namespace TerritoryWars.General
             TileSelector.OnTurnStarted.AddListener(OnTurnStarted);
             TileSelector.OnTurnEnding.AddListener(OnTurnEnding);
 
-            Invoke(nameof(StartNewTurn), 2f);
+            if (DojoGameManager.Instance.IsLocalPlayer)
+                Invoke(nameof(StartNewTurn), 2f);
         }
 
         private void OnTurnStarted()
