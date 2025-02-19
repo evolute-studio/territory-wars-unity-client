@@ -125,7 +125,16 @@ namespace TerritoryWars
                 }
             }
             
+            if(localPlayer != null)
+            {
+                GUILayout.Label($"Local Player: {localPlayer.Address.Hex()}", buttonStyle);
+                GUILayout.TextField(localPlayer.Address.Hex(), textFieldStyle);
+            }
+            
             GUILayout.EndArea();
+            
+            
+            
             
             // Область для логів
             GUILayout.BeginArea(new Rect(10, 220, 500, 400));
