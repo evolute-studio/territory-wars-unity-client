@@ -28,7 +28,7 @@ namespace TerritoryWars.General
         private TileData currentTile;
         private GameObject highlightedTiles;
         private List<int> currentValidRotations;
-        private Vector2Int? selectedPosition;
+        public Vector2Int? selectedPosition;
         private bool isPlacingTile;
         private string initialTileConfig;
         private bool isJokerMode = false;
@@ -61,9 +61,10 @@ namespace TerritoryWars.General
                 {
                     return;
                 }
-
+                Debug.Log($"Mouse click. IsJokerMode: {isJokerMode}, SelectedPosition: {selectedPosition}");
                 if (isJokerMode && selectedPosition.HasValue)
                 {
+                    Debug.Log("Joker mode");
                     RegenerateJokerTile();
                     return;
                 }
@@ -430,8 +431,9 @@ namespace TerritoryWars.General
         // Додамо новий метод для обробки кліку по тайлу в режимі джокера
         public void RegenerateJokerTile()
         {
+            Debug.Log("RegenerateJokerTile");
             if (!isJokerMode || !selectedPosition.HasValue) return;
-            
+            Debug.Log("RegenerateJokerTile 2");
             TileJokerAnimator.OnDisappearAnimationComplete += () =>
             {
                 GameManager.Instance.GenerateJokerTile(selectedPosition.Value.x, selectedPosition.Value.y);
@@ -440,6 +442,12 @@ namespace TerritoryWars.General
             };
             TileJokerAnimator.ShardsDisappear();
             TileJokerAnimatorUI.ShardsDisappear();
+            
+            
+            
+            
+            gameUI.SetRotateButtonActive(currentValidRotations.Count > 1);
+            gameUI.SetEndTurnButtonActive(true);
             
         }
     }

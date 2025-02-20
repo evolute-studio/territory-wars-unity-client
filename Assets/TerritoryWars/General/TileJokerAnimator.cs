@@ -97,7 +97,7 @@ namespace TerritoryWars.General
                 ShardAppearAnimation();
             };
             _evoluteTile.SetActive(false);
-            _JokerGroundTile.SetActive(false);
+            //_JokerGroundTile.SetActive(false);
             _evoluteTileDisappear.SetActive(true);
             
             OnDisappearAnimationComplete?.Invoke();
@@ -127,7 +127,7 @@ namespace TerritoryWars.General
         public void SetOffAllAnimationObjects()
         {
             _evoluteTile.SetActive(false);
-            _JokerGroundTile.SetActive(false);
+            //_JokerGroundTile.SetActive(false);
             foreach (var obj in _tileObjects)
             {
                 obj.SetActive(true);
@@ -150,8 +150,9 @@ namespace TerritoryWars.General
             _evoluteShards.transform.localPosition = _shardsStartPosition;
             _evoluteShards.SetActive(true);
             // shard move from start point small up 
-           _evoluteShards.transform.DOLocalMove(_shardsStartPosition + new Vector3(0f, 0.2f, 0f), 1f)
-                .SetEase(Ease.OutSine)
+            Vector3 targetPosition = new Vector3(_shardsStartPosition.x, -0.15f, _shardsStartPosition.z);
+           _evoluteShards.transform.DOLocalMove(targetPosition, 0.8f)
+                .SetEase(Ease.OutQuint)
                 .OnComplete(() =>
                 {
                     StartCoroutine(ShardAnimationCoroutine());
