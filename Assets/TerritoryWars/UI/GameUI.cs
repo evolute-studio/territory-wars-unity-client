@@ -108,16 +108,8 @@ namespace TerritoryWars.UI
 
         private void OnEndTurnClicked()
         {
-            if (gameManager.IsJokerActive)
-            {
-                tilePreview._tileJokerAnimator.EvoluteTileDisappear();
-                tilePreviewUITileJokerAnimator.EvoluteTileDisappear();
-            }
-            else // ATTENTION "ELSE" ONLY FOR TEST
-            {
-                gameManager.EndTurn();
-                UpdateUI();
-            }
+            gameManager.EndTurn();
+            UpdateUI();
         }
 
         private void OnRotateButtonClicked()

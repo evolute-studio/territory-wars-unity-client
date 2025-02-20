@@ -298,7 +298,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Idle Magic_0: 79794061604683446
+      Idle Magic_1: -5676358036240662576
+      Idle Magic_2: 7753081277068597870
+      Idle Magic_3: -5251941773842256815
+      Idle Magic_4: -7648801133490383200
+      Idle Magic_5: 8545577524300382176
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
