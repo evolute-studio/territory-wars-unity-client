@@ -52,6 +52,8 @@ namespace TerritoryWars
         public Account LocalBurnerAccount { get; private set; }
 
         public bool IsLocalPlayer;
+        
+        public DojoSessionManager SessionManager;
 
 
         public void Initialize()
@@ -111,7 +113,9 @@ namespace TerritoryWars
             {
                 var txHash = await GameSystem.join_game(LocalBurnerAccount, hostPlayer);
                 Debug.Log($"Join Game: {txHash}");
+                SessionManager = new DojoSessionManager(this);
                 CustomSceneManager.Instance.LoadSession();
+                
             }
             catch (Exception e)
             {
@@ -139,7 +143,7 @@ namespace TerritoryWars
             {
                 if (game.TryGetComponent(out evolute_duel_Game gameModel))
                 {
-                    if (gameModel.host_player.Hex() == LocalBurnerAccount.Address.Hex())
+                    if (gameModel.player.Hex() == LocalBurnerAccount.Address.Hex())
                     {
                         hostedGame = gameModel;
                         break;
@@ -148,7 +152,7 @@ namespace TerritoryWars
             }
             if (hostedGame == null) return;
             
-            var hostPlayer = hostedGame.host_player;
+            var hostPlayer = hostedGame.player;
             Debug.Log("Host player: " + hostPlayer.Hex());
             Debug.Log("Local player: " + LocalBurnerAccount.Address);
             Debug.Log("Host player is local: " + (hostPlayer == LocalBurnerAccount.Address));
@@ -161,6 +165,7 @@ namespace TerritoryWars
             if (!inProgress) return;
             
             // Start session
+            SessionManager = new DojoSessionManager(this);
             CustomSceneManager.Instance.LoadSession();
             
         }

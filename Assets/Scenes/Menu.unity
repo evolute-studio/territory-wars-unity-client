@@ -536,6 +536,7 @@ GameObject:
   - component: {fileID: 209425368}
   - component: {fileID: 209425367}
   - component: {fileID: 209425366}
+  - component: {fileID: 209425371}
   m_Layer: 0
   m_Name: WorldManager
   m_TagString: Untagged
@@ -572,7 +573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb53232f67c4c74a3019b9862a69724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contractAddress: 0x0454f2ecf204d397d9441616efe7985b8a685d318b4dda3f8ed53814c1f12de6
+  contractAddress: 0x004d9f0e45858c8c25af85e11cf2986ebb6875369f74cd41094317b7d2b84a4f
 --- !u!114 &209425368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -628,6 +629,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &209425371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209425365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e6e0e5e92900cb385659b57ed36e8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contractAddress: 0x0231578ae06610bbffba207e59e26a47e6fbd658d08e5106f867dfaaa299c27d
 --- !u!1 &346118383
 GameObject:
   m_ObjectHideFlags: 0

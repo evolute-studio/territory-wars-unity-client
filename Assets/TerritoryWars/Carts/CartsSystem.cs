@@ -61,7 +61,7 @@ namespace TerritoryWars.Carts
 
             GameObject tileObject = board.GetTileObject(x, y);
             Transform cartsPath = tileObject.GetComponent<TileGenerator>().RoadPath.transform;
-            int playerId = General.GameManager.Instance.CurrentCharacter.Id;
+            int playerId = General.SessionManager.Instance.CurrentCharacter.Id;
             RoadTile roadTile = new RoadTile(playerId, tileObject, tileData, cartsPath);
             
             //int cartsCount = tileData.id.Count(c => c == 'R');

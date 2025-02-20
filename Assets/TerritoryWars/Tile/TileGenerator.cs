@@ -183,14 +183,14 @@ namespace TerritoryWars.Tile
             foreach (var house in houseRenderers)
             {
                 int playerId = 0;
-                General.GameManager gameManager = General.GameManager.Instance;
-                if (gameManager == null || gameManager.CurrentCharacter == null)
+                General.SessionManager sessionManager = General.SessionManager.Instance;
+                if (sessionManager == null || sessionManager.CurrentCharacter == null)
                 {
                    playerId = Random.Range(0, 2);
                 }
                 else
                 {
-                    playerId = gameManager.CurrentCharacter.Id;
+                    playerId = sessionManager.CurrentCharacter.Id;
                 }
                 house.sprite = TileAssetsObject.GetNextHouse(playerId);
                 TileRotator.SimpleRotation(house.transform, index);

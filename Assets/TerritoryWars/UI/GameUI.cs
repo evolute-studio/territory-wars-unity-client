@@ -22,12 +22,12 @@ namespace TerritoryWars.UI
         [SerializeField] private TilePreview tilePreview;
         [SerializeField] private TileJokerAnimator tilePreviewUITileJokerAnimator;
 
-        private General.GameManager gameManager;
+        private General.SessionManager _sessionManager;
         private DeckManager deckManager;
 
         private void Start()
         {
-            gameManager = FindObjectOfType<General.GameManager>();
+            _sessionManager = FindObjectOfType<General.SessionManager>();
             deckManager = FindObjectOfType<DeckManager>();
 
             SetupButtons();
@@ -74,47 +74,47 @@ namespace TerritoryWars.UI
             // Оновлюємо превью поточного тайлу
             if (tilePreview != null)
             {
-                tilePreview.UpdatePreview(gameManager.TileSelector.CurrentTile);
+                tilePreview.UpdatePreview(_sessionManager.TileSelector.CurrentTile);
             }
 
             // Оновлюємо текст кількості джокерів для кожного гравця
             if (player1JokersText != null)
             {
-                player1JokersText.text = $"Jokers: {gameManager.GetJokerCount(0)}";
+                player1JokersText.text = $"Jokers: {_sessionManager.GetJokerCount(0)}";
             }
             if (player2JokersText != null)
             {
-                player2JokersText.text = $"Jokers: {gameManager.GetJokerCount(1)}";
+                player2JokersText.text = $"Jokers: {_sessionManager.GetJokerCount(1)}";
             }
 
             // Оновлюємо стан кнопки джокера
             if (jokerButton != null)
             {
-                jokerButton.interactable = gameManager.CanUseJoker();
+                jokerButton.interactable = _sessionManager.CanUseJoker();
             }
 
             // Оновлюємо індикатор режиму джокера
             if (jokerModeIndicator != null)
             {
-                jokerModeIndicator.SetActive(gameManager.IsJokerActive);
+                jokerModeIndicator.SetActive(_sessionManager.IsJokerActive);
             }
         }
 
         private void OnEndTurnClicked()
         {
-            gameManager.EndTurn();
+            _sessionManager.EndTurn();
             UpdateUI();
         }
 
         private void OnRotateButtonClicked()
         {
             Debug.Log("Rotate button clicked");
-            gameManager.RotateCurrentTile();
+            _sessionManager.RotateCurrentTile();
         }
 
         private void OnJokerButtonClicked()
         {
-            gameManager.ActivateJoker();
+            _sessionManager.ActivateJoker();
             tilePreview._tileJokerAnimator.ShowIdleJokerAnimation();
             tilePreviewUITileJokerAnimator.ShowIdleJokerAnimation();
             UpdateUI();

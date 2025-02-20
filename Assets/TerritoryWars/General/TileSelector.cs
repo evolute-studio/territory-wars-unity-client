@@ -141,7 +141,7 @@ namespace TerritoryWars.General
             {
                 if (IsValidJokerPosition(x, y))
                 {
-                    GameManager.Instance.GenerateJokerTile(x, y);
+                    SessionManager.Instance.GenerateJokerTile(x, y);
                 }
                 return;
             }
@@ -293,7 +293,7 @@ namespace TerritoryWars.General
             {
                 if (!selectedPosition.HasValue) return;
 
-                if (board.PlaceTile(currentTile, selectedPosition.Value.x, selectedPosition.Value.y, GameManager.Instance.CurrentCharacter.Id))
+                if (board.PlaceTile(currentTile, selectedPosition.Value.x, selectedPosition.Value.y, SessionManager.Instance.CurrentCharacter.Id))
                 {
                     isPlacingTile = false;
                     isJokerMode = false;
@@ -303,8 +303,8 @@ namespace TerritoryWars.General
                     gameUI.SetEndTurnButtonActive(false);
                     gameUI.SetRotateButtonActive(false);
 
-                    GameManager.Instance.CompleteJokerPlacement();
-                    GameManager.Instance.CompleteEndTurn();
+                    SessionManager.Instance.CompleteJokerPlacement();
+                    SessionManager.Instance.CompleteEndTurn();
                 }
             }
             catch (System.Exception e)
@@ -420,7 +420,7 @@ namespace TerritoryWars.General
             
             try
             {
-                GameManager.Instance.GenerateJokerTile(selectedPosition.Value.x, selectedPosition.Value.y);
+                SessionManager.Instance.GenerateJokerTile(selectedPosition.Value.x, selectedPosition.Value.y);
             }
             catch (System.Exception e)
             {

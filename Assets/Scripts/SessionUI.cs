@@ -48,7 +48,7 @@ public class SessionUI : MonoBehaviour
     {
         string config = tile.GetConfigWithoutRotation();
 
-        int currentCharacter = TerritoryWars.General.GameManager.Instance.GetCurrentCharacter();
+        int currentCharacter = TerritoryWars.General.SessionManager.Instance.GetCurrentCharacter();
 
         foreach (var side in config)
         {
@@ -65,7 +65,7 @@ public class SessionUI : MonoBehaviour
 
     public void UpdateTime()
     {
-        int currentCharacter = TerritoryWars.General.GameManager.Instance.GetCurrentCharacter();
+        int currentCharacter = TerritoryWars.General.SessionManager.Instance.GetCurrentCharacter();
         players[currentCharacter].UpdateTimer();
         timeTextPlayers[currentCharacter].text = string.Format("{0:00}:{1:00}",
             Mathf.Floor(players[currentCharacter].time / 60),

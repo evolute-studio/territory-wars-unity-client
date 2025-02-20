@@ -17,6 +17,7 @@ namespace TerritoryWars.General
 
         public void Start()
         {
+            CustomSceneManager.Instance.OnLoadScene += SceneLoaded;
             switch (GameMode)
             {
                 case GameMode.Offline:
@@ -38,6 +39,24 @@ namespace TerritoryWars.General
             DojoGameManager.Initialize();
             DojoGameGUIController.enabled = UseDojoGUIController;
             
+        }
+        
+        private void SceneLoaded(string name)
+        {
+            if (name == CustomSceneManager.Instance.Menu)
+            {
+                
+            }
+            else if (name == CustomSceneManager.Instance.Session)
+            {
+                //SessionManager.Instance.Initialize();
+
+            }
+        }
+        
+        private void OnDestroy()
+        {
+            CustomSceneManager.Instance.OnLoadScene -= SceneLoaded;
         }
     }
 

@@ -1,20 +1,19 @@
 using System.Collections.Generic;
 using System.Linq;
-using TerritoryWars.ModelsDataConverters;
 using TerritoryWars.ScriptablesObjects;
 using TerritoryWars.Tile;
 using UnityEngine;
 
 namespace TerritoryWars.General
 {
-    public class ValidPlacement
-    {
-        public int X { get; set; }
-        public int Y { get; set; }
-        public int Rotation { get; set; }
-    }
+    // public class ValidPlacement
+    // {
+    //     public int X { get; set; }
+    //     public int Y { get; set; }
+    //     public int Rotation { get; set; }
+    // }
 
-    public class Board : MonoBehaviour
+    public class BoardOffline : MonoBehaviour
     {
         public TileAssetsObject tileAssets;
         private StructureChecker structureChecker;
@@ -34,15 +33,13 @@ namespace TerritoryWars.General
 
         public void Initialize()
         {
-            structureChecker = new StructureChecker(this);
+            //structureChecker = new StructureChecker(this);
             //var debugger = gameObject.AddComponent<StructureDebugger>();
             //debugger.Initialize(structureChecker, this);
             //Random.InitState(4);
             InitializeBoard();
-            var onChainBoard = DojoGameManager.Instance.SessionManager.LocalPlayerBoard;
-            char[] edgeTiles = OnChainBoardDataConverter.GetInitialEdgeState(onChainBoard.initial_edge_state);
-            CreateBorder(edgeTiles);
-
+            //CreateRandomBorder();
+            
         }
 
         private void InitializeBoard()
@@ -50,48 +47,34 @@ namespace TerritoryWars.General
             tileObjects = new GameObject[width, height];
             tileData = new TileData[width, height];
         }
-        
-        private void CreateBorder(char[] border)
+
+        private void CreateRandomBorder()
         {
-            GenerateBorderSide(new Vector2Int(0, 0), new Vector2Int(9, 0), 0, border[0..8]);
-            GenerateBorderSide(new Vector2Int(9, 0), new Vector2Int(9, 9), 3, border[8..16]);
-            GenerateBorderSide(new Vector2Int(9, 9), new Vector2Int(0, 9), 2, border[16..24]);
-            GenerateBorderSide(new Vector2Int(0, 9), new Vector2Int(0, 0), 1, border[24..32]);
+            GenerateBorderSide(new Vector2Int(9, 0), new Vector2Int(9, 9), 0, true);
+            GenerateBorderSide(new Vector2Int(0, 0), new Vector2Int(9, 0), 1, false);
+            GenerateBorderSide(new Vector2Int(0, 0), new Vector2Int(0, 9), 2, true);
+            GenerateBorderSide(new Vector2Int(0, 9), new Vector2Int(9, 9), 3, false);
         }
-        
-        public void GenerateBorderSide(Vector2Int startPos, Vector2Int endPos, int rotationTimes, char[] border)
+
+        public void GenerateBorderSide(Vector2Int startPos, Vector2Int endPos, int rotationTimes, bool isHorizontal)
         {
-            string roadTile = "FFFR";
-            string cityTile = "FFFC";
+            string roadTile = "RFRF";
+            string cityTile = "FFCF";
             string fieldTile = "FFFF";
             // наприклад start (9, 9) end (9, 0)
 
             roadTile = TileData.GetRotatedConfig(roadTile, rotationTimes);
             cityTile = TileData.GetRotatedConfig(cityTile, rotationTimes);
 
-            string[] tilesToSpawn = new string[8];
-            for (int i = 0; i < tilesToSpawn.Length; i++)
-            {
-                tilesToSpawn[i] = border[i] switch {
-                    'R' => roadTile,
-                    'C' => cityTile,
-                    'F' => fieldTile,
-                    _ => fieldTile
-                };
-            }
+            string[] tilesToSpawn = new string[] { fieldTile, fieldTile, fieldTile, cityTile, fieldTile, fieldTile, roadTile, fieldTile };
 
             List<Vector2Int> availablePositions = new List<Vector2Int>();
-            if (endPos.y != startPos.y)
+            if (isHorizontal)
             {
                 for (int i = startPos.y + 1; i < endPos.y; i++)
                 {
                     availablePositions.Add(new Vector2Int(startPos.x, i));
                 }
-                for (int i = startPos.y - 1; i > endPos.y; i--)
-                {
-                    availablePositions.Add(new Vector2Int(startPos.x, i));
-                }
-                
             }
             else
             {
@@ -99,12 +82,9 @@ namespace TerritoryWars.General
                 {
                     availablePositions.Add(new Vector2Int(i, startPos.y));
                 }
-                for (int i = startPos.x - 1; i > endPos.x; i--)
-                {
-                    availablePositions.Add(new Vector2Int(i, startPos.y));
-                }
-                
             }
+            // shuffle availablePositions
+            availablePositions = availablePositions.OrderBy(x => Random.Range(0, int.MaxValue)).ToList();
 
             // Place forests only at (0,9) and (9,0), mountains at other corners
             if (startPos.x == 0 && startPos.y == 9)
@@ -148,7 +128,7 @@ namespace TerritoryWars.General
                 }
             }
         }
-        
+
         public bool PlaceTile(TileData data, int x, int y, int ownerId)
         {
             if (!CanPlaceTile(data, x, y))

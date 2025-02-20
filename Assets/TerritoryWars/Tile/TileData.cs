@@ -72,7 +72,7 @@ namespace TerritoryWars.Tile
         
         private void RecolorCityStructures()
         {
-            GameObject city = GameManager.Instance.Board.GetTileObject(CityStructure.Position.x, CityStructure.Position.y);
+            GameObject city = SessionManager.Instance.Board.GetTileObject(CityStructure.Position.x, CityStructure.Position.y);
             city.GetComponent<TileGenerator>().RecolorHouses(CityStructure.OwnerId);
         }
 

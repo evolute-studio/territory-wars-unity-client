@@ -7,9 +7,9 @@ using UnityEngine.Serialization;
 
 namespace TerritoryWars.General
 {
-    public class GameManager : MonoBehaviour
+    public class SessionManager : MonoBehaviour
     {
-        public static GameManager Instance { get; private set; }
+        public static SessionManager Instance { get; private set; }
 
         public float StartDuration = 5f;
 
@@ -109,12 +109,19 @@ namespace TerritoryWars.General
             };
         }
 
-        private void Start()
+        public void Start()
         {
+            Invoke(nameof(Initialize), 5f);
+        }
+
+        public void Initialize()
+        {
+            InitializePlayers();
+            Board.Initialize();
             StartGame();
         }
 
-        public void StartGame()
+        private void InitializePlayers()
         {
             Characters = new Character[2];
 
@@ -148,13 +155,18 @@ namespace TerritoryWars.General
             Characters[1].transform
                 .DOPath(path2, 2.5f, PathType.CatmullRom)
                 .SetEase(Ease.OutQuad);
+        }
+
+        public void StartGame()
+        {
+           
 
             // Підписуємось на події ходу
             TileSelector.OnTurnStarted.AddListener(OnTurnStarted);
             TileSelector.OnTurnEnding.AddListener(OnTurnEnding);
 
             if (DojoGameManager.Instance.IsLocalPlayer)
-                Invoke(nameof(StartNewTurn), 2f);
+                Invoke(nameof(StartNewTurn), 7f);
         }
 
         private void OnTurnStarted()

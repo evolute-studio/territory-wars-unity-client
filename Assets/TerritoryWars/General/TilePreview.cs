@@ -62,8 +62,8 @@ namespace TerritoryWars.General
 
         public void Start()
         {
-            GameManager.Instance.TileSelector.OnTileSelected += SetPosition;
-            GameManager.Instance.TileSelector.OnTilePlaced.AddListener(ResetPosition);
+            SessionManager.Instance.TileSelector.OnTileSelected += SetPosition;
+            SessionManager.Instance.TileSelector.OnTilePlaced.AddListener(ResetPosition);
 
             SetupSortingLayers();
         }
@@ -156,7 +156,7 @@ namespace TerritoryWars.General
         {
             currentTween?.Kill();
 
-            Vector3 targetPosition = GameManager.Instance.Board.GetTilePosition(x, y);
+            Vector3 targetPosition = SessionManager.Instance.Board.GetTilePosition(x, y);
             targetPosition.y += tilePreviewSetHeight;
 
             currentTween = previewTileView.transform
@@ -196,7 +196,7 @@ namespace TerritoryWars.General
                 .SetEase(moveEase)
                 .OnComplete(() =>
                 {
-                    GameManager.Instance.TileSelector.CompleteTilePlacement();
+                    SessionManager.Instance.TileSelector.CompleteTilePlacement();
                     // ResetPosition буде викликано через OnTilePlaced event
                 });
         }

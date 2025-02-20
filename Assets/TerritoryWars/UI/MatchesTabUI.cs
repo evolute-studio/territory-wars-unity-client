@@ -63,7 +63,7 @@ namespace TerritoryWars.UI
                 if (!game.TryGetComponent(out evolute_duel_Game gameModel)) return;
                 MatchListItem matchListItem = CreateListItem();
 
-                string playerName = gameModel.host_player.Hex();
+                string playerName = gameModel.player.Hex();
                 string gameId = gameModel.board_id switch
                 {
                     Option<FieldElement>.Some some => some.value.Hex(),
@@ -80,7 +80,7 @@ namespace TerritoryWars.UI
                 
                 matchListItem.UpdateItem(playerName, gameId, status, () =>
                 {
-                    DojoGameManager.Instance.JoinGame(gameModel.host_player);
+                    DojoGameManager.Instance.JoinGame(gameModel.player);
                 });
                 
                 if (playerName == DojoGameManager.Instance.LocalBurnerAccount.Address.Hex())
