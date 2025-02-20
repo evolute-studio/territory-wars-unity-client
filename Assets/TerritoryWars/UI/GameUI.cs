@@ -30,6 +30,8 @@ namespace TerritoryWars.UI
 
         private General.GameManager gameManager;
         private DeckManager deckManager;
+        
+        [SerializeField] private ArrowAnimations arrowAnimations;
 
         private void Start()
         {
@@ -115,6 +117,7 @@ namespace TerritoryWars.UI
         private void OnRotateButtonClicked()
         {
             Debug.Log("Rotate button clicked");
+            arrowAnimations.PlayRotationAnimation();
             gameManager.RotateCurrentTile();
         }
 
