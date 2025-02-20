@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using Dojo;
 using Dojo.Starknet;
@@ -81,6 +82,11 @@ namespace TerritoryWars.UI
                 {
                     DojoGameManager.Instance.JoinGame(gameModel.host_player);
                 });
+                
+                if (playerName == DojoGameManager.Instance.LocalBurnerAccount.Address.Hex())
+                {
+                    matchListItem.SetAwaiting(true);
+                }
             }
 
             SortByStatus();
@@ -147,26 +153,30 @@ namespace TerritoryWars.UI
         public string Status;
 
         private TextMeshProUGUI _playerNameText;
-        private TextMeshProUGUI _gameIdText;
+        //private TextMeshProUGUI _gameIdText;
         private TextMeshProUGUI _statusText;
+        private TextMeshProUGUI _awaitText;
         private Button _playButton;
 
         public MatchListItem(GameObject listItem)
         {
             ListItem = listItem;
             _playerNameText = listItem.transform.Find("Content/PlayerNameText").GetComponent<TextMeshProUGUI>();
-            _gameIdText = listItem.transform.Find("Content/GameIdText").GetComponent<TextMeshProUGUI>();
+            //_gameIdText = listItem.transform.Find("Content/GameIdText").GetComponent<TextMeshProUGUI>();
             _statusText = listItem.transform.Find("Content/StatusText").GetComponent<TextMeshProUGUI>();
+            _awaitText = listItem.transform.Find("Content/AwaitText").GetComponent<TextMeshProUGUI>();
             _playButton = listItem.transform.Find("Content/PlayButton").GetComponent<Button>();
+            _awaitText.gameObject.SetActive(false);
+            _awaitText.text = "Await...";
         }
         public void UpdateItem(string playerName, string gameId, string status, UnityAction onJoin = null)
         {
             PlayerName = playerName;
-            GameId = gameId;
+            //GameId = gameId;
             Status = status;
             
             _playerNameText.text = PlayerName;
-            _gameIdText.text = GameId;
+            //_gameIdText.text = GameId;
             _statusText.text = Status;
             
             _playButton.onClick.RemoveAllListeners();
@@ -183,7 +193,15 @@ namespace TerritoryWars.UI
                     _playButton.onClick.AddListener(onJoin);
                 }
             }
-
         }
+        
+        public void SetAwaiting(bool isAwaiting)
+        {
+            _playButton.gameObject.SetActive(!isAwaiting);
+            _awaitText.gameObject.SetActive(isAwaiting);
+            _awaitText.text = "Awaiting...";
+        }
+        
+        
     }
 }
