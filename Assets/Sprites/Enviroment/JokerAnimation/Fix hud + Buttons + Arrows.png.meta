@@ -1,0 +1,910 @@
+fileFormatVersion: 2
+guid: ebd723c738926984eaab5bf039d53692
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4904957342729464358
+    second: Fix hud + Buttons + Arrows_0
+  - first:
+      213: -8516677762768588534
+    second: Fix hud + Buttons + Arrows_1
+  - first:
+      213: -2041972231322783156
+    second: Fix hud + Buttons + Arrows_2
+  - first:
+      213: 7242541594234297434
+    second: Fix hud + Buttons + Arrows_3
+  - first:
+      213: -8975183859656605054
+    second: Fix hud + Buttons + Arrows_4
+  - first:
+      213: -9025455367088127208
+    second: Fix hud + Buttons + Arrows_5
+  - first:
+      213: -4519532281157170489
+    second: Fix hud + Buttons + Arrows_6
+  - first:
+      213: -5155921462108692679
+    second: Fix hud + Buttons + Arrows_7
+  - first:
+      213: 4697238557957722387
+    second: Fix hud + Buttons + Arrows_8
+  - first:
+      213: 7980336499050931038
+    second: Fix hud + Buttons + Arrows_9
+  - first:
+      213: 8331709443948052443
+    second: Fix hud + Buttons + Arrows_10
+  - first:
+      213: -7222619766264168792
+    second: Fix hud + Buttons + Arrows_11
+  - first:
+      213: 9024747848407677474
+    second: Fix hud + Buttons + Arrows_12
+  - first:
+      213: 8338365321806151633
+    second: Fix hud + Buttons + Arrows_13
+  - first:
+      213: -853662568199754533
+    second: Fix hud + Buttons + Arrows_14
+  - first:
+      213: -4323948150586287985
+    second: Fix hud + Buttons + Arrows_15
+  - first:
+      213: 8296393334725068162
+    second: Fix hud + Buttons + Arrows_16
+  - first:
+      213: 5679972922659635909
+    second: Fix hud + Buttons + Arrows_17
+  - first:
+      213: 1490648170475728813
+    second: Fix hud + Buttons + Arrows_18
+  - first:
+      213: 8979831638894202109
+    second: Fix hud + Buttons + Arrows_19
+  - first:
+      213: -8503507514885985170
+    second: Fix hud + Buttons + Arrows_20
+  - first:
+      213: 16385630005826828
+    second: Fix hud + Buttons + Arrows_21
+  - first:
+      213: -7959355647525303723
+    second: Fix hud + Buttons + Arrows_22
+  - first:
+      213: 7342817771757296024
+    second: Fix hud + Buttons + Arrows_23
+  - first:
+      213: 5289263423733732430
+    second: Fix hud + Buttons + Arrows_24
+  - first:
+      213: -806469819218583998
+    second: Fix hud + Buttons + Arrows_25
+  - first:
+      213: 721114479356863822
+    second: Fix hud + Buttons + Arrows_26
+  - first:
+      213: 5582487877411402589
+    second: Fix hud + Buttons + Arrows_27
+  - first:
+      213: 439041779988809677
+    second: Fix hud + Buttons + Arrows_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Fix hud + Buttons + Arrows_0
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 967
+        width: 174
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad59a2cc8471eebb0800000000000000
+      internalID: -4904957342729464358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fix hud + Buttons + Arrows_1
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 1064
+        width: 97
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a01b5b3b2beaec980800000000000000
+      internalID: -8516677762768588534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fix hud + Buttons + Arrows_2
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 973
+        width: 97
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c423bce031579a3e0800000000000000
+      internalID: -2041972231322783156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fix hud + Buttons + Arrows_3
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 1040
+        width: 232
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5c9353153da28460800000000000000
+      internalID: 7242541594234297434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fix hud + Buttons + Arrows_4
+      rect:
+        serializedVersion: 2
+        x: 956
+        y: 1040
+        width: 232
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 282495b05ddb17380800000000000000
+      internalID: -8975183859656605054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fix hud + Buttons + Arrows_5
+      rect:
+        serializedVersion: 2
+        x: 1279
+        y: 1067
+        width: 62
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 813c19c99242fb280800000000000000
+      internalID: -9025455367088127208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fix hud + Buttons + Arrows_6
+      rect:
+        serializedVersion: 2
+        x: 1396
+        y: 1067
+        width: 70
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ca47b6f5556741c0800000000000000
+      internalID: -4519532281157170489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fix hud + Buttons + Arrows_7
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 1034
+        width: 148
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93fd2395fbc7278b0800000000000000
+      internalID: -5155921462108692679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fix hud + Buttons + Arrows_8
+      rect:
+        serializedVersion: 2
+        x: 1746
+        y: 1034
+        width: 148
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3119658d491ff2140800000000000000
+      internalID: 4697238557957722387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fix hud + Buttons + Arrows_9
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 892
+        width: 66
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e53e306a3c9dfbe60800000000000000
+      internalID: 7980336499050931038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fix hud + Buttons + Arrows_10
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 892
+        width: 66
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdf7a42989d20a370800000000000000
+      internalID: 8331709443948052443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fix hud + Buttons + Arrows_11
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 892
+        width: 66
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8aefb14f69914cb90800000000000000
+      internalID: -7222619766264168792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fix hud + Buttons + Arrows_12
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 858
+        width: 232
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22a7fcb5a585e3d70800000000000000
+      internalID: 9024747848407677474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fix hud + Buttons + Arrows_13
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 858
+        width: 232
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dff0b5e413d7b370800000000000000
+      internalID: 8338365321806151633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fix hud + Buttons + Arrows_14
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 924
+        width: 78
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdce768ca6e2724f0800000000000000
+      internalID: -853662568199754533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fix hud + Buttons + Arrows_15
+      rect:
+        serializedVersion: 2
+        x: 1402
+        y: 932
+        width: 92
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f88d819f0104ef3c0800000000000000
+      internalID: -4323948150586287985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fix hud + Buttons + Arrows_16
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 854
+        width: 148
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 285c43128c5b22370800000000000000
+      internalID: 8296393334725068162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fix hud + Buttons + Arrows_17
+      rect:
+        serializedVersion: 2
+        x: 1748
+        y: 856
+        width: 148
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c207f4874153de40800000000000000
+      internalID: 5679972922659635909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fix hud + Buttons + Arrows_18
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 789
+        width: 48
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dafaa4efc98dfa410800000000000000
+      internalID: 1490648170475728813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fix hud + Buttons + Arrows_19
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 789
+        width: 48
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfc4a136c45ce9c70800000000000000
+      internalID: 8979831638894202109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fix hud + Buttons + Arrows_20
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 789
+        width: 48
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6c2b5ef7f87df980800000000000000
+      internalID: -8503507514885985170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fix hud + Buttons + Arrows_21
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 662
+        width: 132
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c051be7c4a63a3000800000000000000
+      internalID: 16385630005826828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fix hud + Buttons + Arrows_22
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 665
+        width: 132
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55a41448530ba8190800000000000000
+      internalID: -7959355647525303723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fix hud + Buttons + Arrows_23
+      rect:
+        serializedVersion: 2
+        x: 1004
+        y: 667
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 899d4080cdde6e560800000000000000
+      internalID: 7342817771757296024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fix hud + Buttons + Arrows_24
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 788
+        width: 74
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e449d176f0d376940800000000000000
+      internalID: 5289263423733732430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fix hud + Buttons + Arrows_25
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 788
+        width: 74
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24e1767e8f7dec4f0800000000000000
+      internalID: -806469819218583998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fix hud + Buttons + Arrows_26
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 667
+        width: 56
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e45e4706cc9e10a00800000000000000
+      internalID: 721114479356863822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fix hud + Buttons + Arrows_27
+      rect:
+        serializedVersion: 2
+        x: 1424
+        y: 679
+        width: 62
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d53f700b52bf87d40800000000000000
+      internalID: 5582487877411402589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fix hud + Buttons + Arrows_28
+      rect:
+        serializedVersion: 2
+        x: 1625
+        y: 637
+        width: 234
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc7c9c93c2ac71600800000000000000
+      internalID: 439041779988809677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Fix hud + Buttons + Arrows_0: -4904957342729464358
+      Fix hud + Buttons + Arrows_1: -8516677762768588534
+      Fix hud + Buttons + Arrows_10: 8331709443948052443
+      Fix hud + Buttons + Arrows_11: -7222619766264168792
+      Fix hud + Buttons + Arrows_12: 9024747848407677474
+      Fix hud + Buttons + Arrows_13: 8338365321806151633
+      Fix hud + Buttons + Arrows_14: -853662568199754533
+      Fix hud + Buttons + Arrows_15: -4323948150586287985
+      Fix hud + Buttons + Arrows_16: 8296393334725068162
+      Fix hud + Buttons + Arrows_17: 5679972922659635909
+      Fix hud + Buttons + Arrows_18: 1490648170475728813
+      Fix hud + Buttons + Arrows_19: 8979831638894202109
+      Fix hud + Buttons + Arrows_2: -2041972231322783156
+      Fix hud + Buttons + Arrows_20: -8503507514885985170
+      Fix hud + Buttons + Arrows_21: 16385630005826828
+      Fix hud + Buttons + Arrows_22: -7959355647525303723
+      Fix hud + Buttons + Arrows_23: 7342817771757296024
+      Fix hud + Buttons + Arrows_24: 5289263423733732430
+      Fix hud + Buttons + Arrows_25: -806469819218583998
+      Fix hud + Buttons + Arrows_26: 721114479356863822
+      Fix hud + Buttons + Arrows_27: 5582487877411402589
+      Fix hud + Buttons + Arrows_28: 439041779988809677
+      Fix hud + Buttons + Arrows_3: 7242541594234297434
+      Fix hud + Buttons + Arrows_4: -8975183859656605054
+      Fix hud + Buttons + Arrows_5: -9025455367088127208
+      Fix hud + Buttons + Arrows_6: -4519532281157170489
+      Fix hud + Buttons + Arrows_7: -5155921462108692679
+      Fix hud + Buttons + Arrows_8: 4697238557957722387
+      Fix hud + Buttons + Arrows_9: 7980336499050931038
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

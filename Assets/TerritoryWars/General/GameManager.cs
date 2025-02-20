@@ -37,7 +37,7 @@ namespace TerritoryWars.General
         public Character[] Characters;
         public Character CurrentCharacter { get; private set; }
 
-        private int[] jokerCount = new int[] { 3, 3 }; // Джокери для кожного гравця
+        private int[] jokerCount = new int[] { 3, 3 }; 
         private bool isJokerActive = false;
         
         public bool IsJokerActive => isJokerActive;
@@ -48,13 +48,12 @@ namespace TerritoryWars.General
             {
                 isJokerActive = true;
                 jokerCount[CurrentCharacter.Id]--;
-                // TileSelector.StartJokerPlacement();
+                TileSelector.StartJokerPlacement();
             }
         }
         
         public void GenerateJokerTile(int x, int y)
         {
-            // Отримуємо інформацію про сусідні тайли
             Dictionary<Side, LandscapeType> neighborSides = new Dictionary<Side, LandscapeType>();
             foreach (Side side in System.Enum.GetValues(typeof(Side)))
             {
@@ -68,19 +67,19 @@ namespace TerritoryWars.General
                 }
             }
             
-            // Генеруємо новий тайл
+            
             char[] sides = new char[4];
             for (int i = 0; i < 4; i++)
             {
                 Side side = (Side)i;
                 if (neighborSides.ContainsKey(side))
                 {
-                    // Встановлюємо відповідну сторону
+                    
                     sides[i] = LandscapeToChar(neighborSides[side]);
                 }
                 else
                 {
-                    // Генеруємо випадкову сторону
+                    
                     sides[i] = GetRandomLandscape();
                 }
             }
@@ -193,7 +192,7 @@ namespace TerritoryWars.General
             TileSelector.RotateCurrentTile();
         }
 
-        public void EndTurn()
+        public void EndTurn() 
         {
             if (TileSelector.CurrentTile != null)
             {

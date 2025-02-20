@@ -11,19 +11,33 @@ namespace TerritoryWars.General
 {
     public class TileJokerAnimator : MonoBehaviour
     {
-        [Header("Tile Objects")]
+        [Header("Tile Objects")] 
+        [SerializeField] private GameObject MainObject;
         [SerializeField] private GameObject[] _tileObjects;
-        [SerializeField]private TileGenerator _tileGenerator;
+        [SerializeField] private TileGenerator _tileGenerator;
         [SerializeField] private GameObject _evoluteTile;
+        [SerializeField] private GameObject _evoluteTileDisappear;
         [SerializeField] private GameObject _explosionEffectGO;
         [SerializeField] private GameObject _JokerGroundTile;
         [SerializeField] private GameObject VFX;
         [SerializeField] private GameObject[] _lightingGO;
-        [SerializeField] private Sprite[] _evoluteTileIdleAnimationSprites;
-        [SerializeField] private Sprite[] _evoluteTileDisappearAnimationSprites;
+        [SerializeField] private GameObject _evoluteShards;
+        [SerializeField] private GameObject[] _shardsEffects;
+        [SerializeField] private Vector3 _shardsStartPosition;
+        [SerializeField] private GameObject tileForLightning;
+        public event Action OnDisappearAnimationComplete;
+        public event Action OnShardsDisappearAnimationComplete;
+
+        private Coroutine ShardEffectCoroutine;
+
+        [Header("Settings")] 
+        [SerializeField] private bool _activeStaticMember;
 
         private SpriteAnimator _evoluteTileSpriteAnimator;
+        private static event Action CanCalculateHints;
         private SpriteRenderer _evoluteTileSpriteRenderer;
+        
+        
         
         private Action OnLightningEnd; 
         
@@ -42,55 +56,73 @@ namespace TerritoryWars.General
         // when click on joker button
         public void ShowIdleJokerAnimation()
         {
-            SpriteAnimator _explosionEffectSpriteAnimator = _explosionEffectGO.GetComponent<SpriteAnimator>();
-            _explosionEffectGO.SetActive(true);
-            _explosionEffectSpriteAnimator.Validate();
-            _explosionEffectSpriteAnimator.OnAnimationEnd = () =>
+            // SpriteAnimator _explosionEffectSpriteAnimator = _explosionEffectGO.GetComponent<SpriteAnimator>();
+            // _explosionEffectGO.SetActive(true);
+            // _explosionEffectSpriteAnimator.Validate();
+            // _explosionEffectSpriteAnimator.OnAnimationEnd = () =>
+            // {
+            //     _explosionEffectSpriteAnimator.Stop();
+            //     _explosionEffectGO.SetActive(false);
+            //     _evoluteTile.SetActive(true);
+            //     _evoluteTileSpriteAnimator.Play(_evoluteTileIdleAnimationSprites);
+            // };
+            // _explosionEffectSpriteAnimator.Play();
+            
+            
+            foreach (var obj in _tileObjects)   
             {
-                _explosionEffectSpriteAnimator.Stop();
-                _explosionEffectGO.SetActive(false);
-                _evoluteTile.SetActive(true);
-                _evoluteTileSpriteAnimator.Play(_evoluteTileIdleAnimationSprites);
-            };
-            _explosionEffectSpriteAnimator.Play();
+                obj.SetActive(false);
+            }
+                
+            _evoluteTile.SetActive(true);
+            _JokerGroundTile.SetActive(true);
+            FindCityAndRoadsToDisable();
+                
+            if(_activeStaticMember)
+                CanCalculateHints?.Invoke();
+            
         }
         
         // when player place joker tile
-        public void FirstTransition()
+        public void EvoluteTileDisappear()
         {
             VFX.SetActive(false);
-            OnLightningEnd = SecondTransition;
-            
-            _evoluteTileSpriteAnimator.OnAnimationEnd = () =>
+
+            _evoluteTileDisappear.GetComponent<SpriteAnimator>().OnAnimationEnd = () =>
             {
-                _evoluteTile.SetActive(false);
+                _evoluteTileDisappear.GetComponent<SpriteAnimator>().Stop();
+                _evoluteTileDisappear.SetActive(false);
                 _JokerGroundTile.SetActive(true);
-                foreach (var obj in _tileObjects)
-                {
-                    obj.SetActive(false);
-                }
-                
-                StartCoroutine(LightningAnimation());
+                // _JokerGroundTile.gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1f);
+                ShardAppearAnimation();
             };
-            _evoluteTileSpriteAnimator.ChangeSprites(_evoluteTileDisappearAnimationSprites);
+            _evoluteTile.SetActive(false);
+            _JokerGroundTile.SetActive(false);
+            _evoluteTileDisappear.SetActive(true);
             
+            OnDisappearAnimationComplete?.Invoke();
         }
 
-        private IEnumerator LightningAnimation()
-        {
-            for(int i = 0; i < _lightingGO.Length; i++)
-            {
-                _lightingGO[i].GetComponent<SpriteAnimator>().OnAnimationEnd = () =>
-                {
-                    _lightingGO[i].SetActive(false);
-                };
-                _lightingGO[i].SetActive(true);
-                yield return new WaitForSeconds(0.3f);
-            }
-
-            yield return new WaitForSeconds(0.2f);
-            OnLightningEnd?.Invoke();
-        }
+        // private IEnumerator LightningAnimation()
+        // {
+        //     Debug.Log("LightningAnimation");
+        //     tileForLightning.SetActive(true);
+        //     foreach (var lightning in _lightingGO)
+        //     {
+        //         lightning.GetComponent<SpriteAnimator>().OnAnimationEnd = () =>
+        //         {
+        //             lightning.GetComponent<SpriteAnimator>().Stop();
+        //             lightning.SetActive(false);
+        //         };
+        //         lightning.SetActive(true);
+        //         yield return new WaitForSeconds(0.2f);
+        //     }
+        //     
+        //     tileForLightning.SetActive(false);
+        //     yield return new WaitForSeconds(0.2f);
+        //     OnLightningEnd?.Invoke();
+        //      yield break;
+        // }
         
         public void SetOffAllAnimationObjects()
         {
@@ -102,29 +134,77 @@ namespace TerritoryWars.General
             }
         }
         
-        public void SecondTransition()
+        public void ShowJokerTile()
         {
-            _JokerGroundTile.GetComponent<SpriteRenderer>().DOColor(new Color(255, 255, 255, 0.2f),0.5f).OnComplete(
-                () =>
+            _JokerGroundTile.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.2f);
+            foreach (var obj in _tileObjects)
+            {
+                obj.SetActive(true);
+            }
+            
+            ShardAppearAnimation();
+        }
+
+        public void ShardAppearAnimation()
+        {
+            _evoluteShards.transform.localPosition = _shardsStartPosition;
+            _evoluteShards.SetActive(true);
+            // shard move from start point small up 
+           _evoluteShards.transform.DOLocalMove(_shardsStartPosition + new Vector3(0f, 0.2f, 0f), 1f)
+                .SetEase(Ease.OutSine)
+                .OnComplete(() =>
                 {
-                    char[] sides = new char[4];
-                    for (int i = 0; i < 4; i++)
-                    {
-                        sides[i] = GetRandomLandscape();
-                    }
-                    string tileConfig = new string(sides);
-                    TileData jokerTile = new TileData(tileConfig);
-                    
-                    _tileGenerator.Generate(jokerTile);
+                    StartCoroutine(ShardAnimationCoroutine());
+                    ShardEffectCoroutine = StartCoroutine(ShardEffectAnimation());
                 });
         }
         
-        private char GetRandomLandscape()
+        private IEnumerator ShardAnimationCoroutine()
         {
-            float random = Random.value;
-            if (random < 0.4f) return 'F';      // 40% шанс поля
-            else if (random < 0.7f) return 'R';  // 30% шанс дороги
-            else return 'C';                     // 30% шанс міста
+            while (true)
+            {
+                Vector3 startPosition = _evoluteShards.transform.localPosition; 
+                Vector3 endPosition = startPosition + new Vector3(0, 0.05f, 0);
+                float duration = 0.8f;
+
+                Tween shardTween = _evoluteShards.transform.DOLocalMove(endPosition, duration).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo);
+
+                yield return new WaitForSeconds(duration * 2);
+            }
+        }
+
+        private IEnumerator ShardEffectAnimation()
+        {
+            while (true)
+            {
+                foreach (var shardEffect in _shardsEffects)
+                {
+                    shardEffect.SetActive(true);
+                    yield return new WaitForSeconds(0.5f);
+                    shardEffect.SetActive(false);
+                }
+            }
+        }
+        
+        public void ShardsDisappear()
+        {
+            StopCoroutine(ShardEffectCoroutine);
+            _evoluteShards.transform.DOLocalMove(_shardsStartPosition, 0.2f).OnComplete(() =>
+            {
+                _evoluteShards.SetActive(false);
+                OnShardsDisappearAnimationComplete?.Invoke();
+            });
+        }
+
+        public void FindCityAndRoadsToDisable()
+        {
+            foreach (Transform child in MainObject.transform)
+            {
+                if (child.name.Contains("City_"))
+                {
+                    child.gameObject.SetActive(false);
+                }
+            }
         }
     }
 }

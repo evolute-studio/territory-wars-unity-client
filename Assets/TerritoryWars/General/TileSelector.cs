@@ -16,6 +16,8 @@ namespace TerritoryWars.General
         [SerializeField] private LayerMask backgroundLayer;
         [SerializeField] private Sprite highlightSprite;
         [SerializeField] private TilePreview tilePreview;
+        [SerializeField] private TileJokerAnimator TileJokerAnimator;
+        [SerializeField] private TileJokerAnimator TileJokerAnimatorUI;
        
 
         [Header("Colors")]
@@ -139,9 +141,15 @@ namespace TerritoryWars.General
         {
             if (isJokerMode)
             {
-                if (IsValidJokerPosition(x, y))
+                if (IsValidJokerPosition(x, y))// this needs to change for animation
                 {
-                    GameManager.Instance.GenerateJokerTile(x, y);
+                    tilePreview.SetPosition(x, y);
+                    TileJokerAnimator.EvoluteTileDisappear();
+                    TileJokerAnimatorUI.EvoluteTileDisappear();
+                    TileJokerAnimator.OnDisappearAnimationComplete += () =>
+                    {
+                        GameManager.Instance.GenerateJokerTile(x, y);
+                    };
                 }
                 return;
             }
@@ -312,6 +320,11 @@ namespace TerritoryWars.General
                 Debug.LogError($"Error in CompleteTilePlacement: {e}");
             }
         }
+        
+        public void SetCurrentTile(TileData tileData)
+        {
+            currentTile = tileData;
+        }
 
         private void ClearHighlights()
         {
@@ -395,6 +408,7 @@ namespace TerritoryWars.General
                 selectedPosition = new Vector2Int(x, y);
                 isPlacingTile = true;
                 
+                
                 // Показуємо превью тайлу
                 gameUI.UpdateUI();
                 gameUI.SetEndTurnButtonActive(true);
@@ -418,14 +432,15 @@ namespace TerritoryWars.General
         {
             if (!isJokerMode || !selectedPosition.HasValue) return;
             
-            try
+            TileJokerAnimator.OnDisappearAnimationComplete += () =>
             {
                 GameManager.Instance.GenerateJokerTile(selectedPosition.Value.x, selectedPosition.Value.y);
-            }
-            catch (System.Exception e)
-            {
-                Debug.LogError($"Error in RegenerateJokerTile: {e}");
-            }
+                TileJokerAnimator.ShardAppearAnimation();
+                TileJokerAnimatorUI.ShardAppearAnimation();
+            };
+            TileJokerAnimator.ShardsDisappear();
+            TileJokerAnimatorUI.ShardsDisappear();
+            
         }
     }
 }

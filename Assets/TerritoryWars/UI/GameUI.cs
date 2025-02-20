@@ -1,6 +1,8 @@
+using System;
 using TerritoryWars.General;
 using TerritoryWars.Tile;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +19,10 @@ namespace TerritoryWars.UI
         [SerializeField] private TextMeshProUGUI player1JokersText;
         [SerializeField] private TextMeshProUGUI player2JokersText;
         [SerializeField] private GameObject jokerModeIndicator;
+        [SerializeField] private Sprite[] _toggleMods;
+        [SerializeField] private Image _toggleSpriteRenderer;
+        
+        public static event Action OnJokerButtonClickedEvent;
 
         [Header("Tile Preview")]
         [SerializeField] private TilePreview tilePreview;
@@ -102,8 +108,16 @@ namespace TerritoryWars.UI
 
         private void OnEndTurnClicked()
         {
-            gameManager.EndTurn();
-            UpdateUI();
+            if (gameManager.IsJokerActive)
+            {
+                tilePreview._tileJokerAnimator.EvoluteTileDisappear();
+                tilePreviewUITileJokerAnimator.EvoluteTileDisappear();
+            }
+            else // ATTENTION "ELSE" ONLY FOR TEST
+            {
+                gameManager.EndTurn();
+                UpdateUI();
+            }
         }
 
         private void OnRotateButtonClicked()
@@ -114,7 +128,9 @@ namespace TerritoryWars.UI
 
         private void OnJokerButtonClicked()
         {
+            OnJokerButtonClickedEvent?.Invoke();
             gameManager.ActivateJoker();
+            SwitchToggle();
             tilePreview._tileJokerAnimator.ShowIdleJokerAnimation();
             tilePreviewUITileJokerAnimator.ShowIdleJokerAnimation();
             UpdateUI();
@@ -134,6 +150,11 @@ namespace TerritoryWars.UI
             {
                 rotateTileButton.gameObject.SetActive(active);
             }
+        }
+
+        private void SwitchToggle()
+        {
+            _toggleSpriteRenderer.sprite = _toggleMods[0] ? _toggleMods[1] : _toggleMods[0];
         }
 
         public void SetJokerButtonActive(bool active)

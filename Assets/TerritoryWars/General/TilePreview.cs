@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using TerritoryWars.Tile;
 using UnityEngine;
 using DG.Tweening;
+using TerritoryWars.UI;
 
 namespace TerritoryWars.General
 {
@@ -13,6 +14,7 @@ namespace TerritoryWars.General
         [SerializeField] private TileView previewTileView;
         [SerializeField] private float tilePreviewSetHeight = 0.5f;
         public TileJokerAnimator _tileJokerAnimator;
+        public TileJokerAnimator _tileJokerAnimatorPreview;
         
         [SerializeField] private TileGenerator tileGeneratorForUI;
         [SerializeField] private LayerMask previewLayerMask;
@@ -64,6 +66,7 @@ namespace TerritoryWars.General
         {
             GameManager.Instance.TileSelector.OnTileSelected += SetPosition;
             GameManager.Instance.TileSelector.OnTilePlaced.AddListener(ResetPosition);
+            GameUI.OnJokerButtonClickedEvent += GenerateFFFFTile;
 
             SetupSortingLayers();
         }
@@ -91,6 +94,8 @@ namespace TerritoryWars.General
                 SetInitialPosition();
             }
         }
+
+       
 
         public void UpdatePreview(TileData currentTile)
         {
@@ -152,6 +157,13 @@ namespace TerritoryWars.General
             }
         }
 
+        private void GenerateFFFFTile()
+        {
+            GameManager.Instance.TileSelector.SetCurrentTile(new TileData("FFFF"));
+            tileGenerator.Generate(new TileData("FFFF"));
+            tileGeneratorForUI.Generate(new TileData("FFFF"));
+        }
+
         public void SetPosition(int x, int y)
         {
             currentTween?.Kill();
@@ -162,6 +174,9 @@ namespace TerritoryWars.General
             currentTween = previewTileView.transform
                 .DOMove(targetPosition, moveDuration)
                 .SetEase(moveEase);
+            
+            
+            
             //previewTileView.transform.DOScale(1, 0.5f).SetEase(Ease.OutQuint);
         }
 
@@ -201,13 +216,14 @@ namespace TerritoryWars.General
                 });
         }
 
-    public void ResetPosition()
+        public void ResetPosition()
         {
             // currentTween?.Kill();
             // currentTween = transform
             //     .DOMove(_initialPosition, moveDuration)
             //     .SetEase(moveEase);
             _tileJokerAnimator.SetOffAllAnimationObjects();
+            _tileJokerAnimatorPreview.SetOffAllAnimationObjects();
             
             transform.position = _initialPosition;
         }
