@@ -1,5 +1,7 @@
 using Dojo;
 using Dojo.Starknet;
+using TerritoryWars.ModelsDataConverters;
+using TerritoryWars.Tile;
 using UnityEngine;
 
 namespace TerritoryWars
@@ -8,7 +10,20 @@ namespace TerritoryWars
     {
         private DojoGameManager _dojoGameManager;
         
-        public evolute_duel_Board LocalPlayerBoard => GetLocalPlayerBoard();
+        private evolute_duel_Board _localPlayerBoard;
+
+        public evolute_duel_Board LocalPlayerBoard
+        {
+            get
+            {
+                if (_localPlayerBoard == null)
+                {
+                    _localPlayerBoard = GetLocalPlayerBoard();
+                }
+                return _localPlayerBoard;
+            }
+            private set => _localPlayerBoard = value;
+        }
 
         public DojoSessionManager(DojoGameManager dojoGameManager)
         {
@@ -47,6 +62,12 @@ namespace TerritoryWars
                 }
             }
             return null;
+        }
+        
+        public TileData GetTopTile()
+        {
+            if (LocalPlayerBoard == null) return null;
+            return new TileData(OnChainBoardDataConverter.GetTopTile(LocalPlayerBoard.top_tile));
         }
 
     }

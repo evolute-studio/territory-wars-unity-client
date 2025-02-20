@@ -25,7 +25,7 @@ namespace TerritoryWars.UI
         private General.SessionManager _sessionManager;
         private DeckManager deckManager;
 
-        private void Start()
+        public void Initialize()
         {
             _sessionManager = FindObjectOfType<General.SessionManager>();
             deckManager = FindObjectOfType<DeckManager>();

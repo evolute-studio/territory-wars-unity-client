@@ -10,12 +10,13 @@ namespace TerritoryWars.General
         {
             if (Instance != null)
             {
+                Debug.LogError("SessionManager already exists. Deleting new instance.");
                 Destroy(gameObject);
             }
             else
             {
                 Instance = this;
-                DontDestroyOnLoad(gameObject);
+                //DontDestroyOnLoad(gameObject);
             }
         }
         

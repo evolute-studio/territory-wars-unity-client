@@ -35,6 +35,8 @@ namespace TerritoryWars.General
         {
             _mainCamera = Camera.main;
             SetInitialPosition();
+            
+            tileGeneratorForUI.gameObject.SetActive(false);
         }
 
         private void SetInitialPosition()
@@ -94,6 +96,7 @@ namespace TerritoryWars.General
 
         public void UpdatePreview(TileData currentTile)
         {
+            tileGeneratorForUI.gameObject.SetActive(true);
             if (previewTileView != null && currentTile != null)
             {
                 previewTileView.gameObject.SetActive(true);

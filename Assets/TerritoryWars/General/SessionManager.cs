@@ -21,6 +21,7 @@ namespace TerritoryWars.General
             }
             else
             {
+                Debug.LogError("SessionManager already exists. Deleting new instance.");
                 Destroy(gameObject);
             }
         }
@@ -118,6 +119,7 @@ namespace TerritoryWars.General
         {
             InitializePlayers();
             Board.Initialize();
+            gameUI.Initialize();
             StartGame();
         }
 
@@ -165,8 +167,7 @@ namespace TerritoryWars.General
             TileSelector.OnTurnStarted.AddListener(OnTurnStarted);
             TileSelector.OnTurnEnding.AddListener(OnTurnEnding);
 
-            if (DojoGameManager.Instance.IsLocalPlayer)
-                Invoke(nameof(StartNewTurn), 7f);
+            Invoke(nameof(StartNewTurn), 2f);
         }
 
         private void OnTurnStarted()
@@ -197,7 +198,7 @@ namespace TerritoryWars.General
                 return;
             }
 
-            TileData currentTile = deckManager.DrawTile();
+            TileData currentTile = DojoGameManager.Instance.SessionManager.GetTopTile();
             TileSelector.StartTilePlacement(currentTile);
         }
 
