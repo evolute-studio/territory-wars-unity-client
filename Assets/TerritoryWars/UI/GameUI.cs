@@ -144,6 +144,8 @@ namespace TerritoryWars.UI
             if (rotateTileButton != null)
             {
                 rotateTileButton.gameObject.SetActive(active);
+                arrowAnimations.gameObject.SetActive(active);
+                arrowAnimations.SetActiveArrow(active);
             }
         }
 

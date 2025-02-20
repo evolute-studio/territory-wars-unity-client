@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TerritoryWars.General;
 using TerritoryWars.ScriptablesObjects;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
@@ -34,6 +35,9 @@ namespace TerritoryWars.Tile
         public GameObject RoadPath;
         
         private int _currentHouseIndex = 0;
+        
+        public List<SpriteRenderer> AllCityRenderers = new List<SpriteRenderer>();
+        public List<LineRenderer> AllCityLineRenderers = new List<LineRenderer>();
 
 
         public void Start() => Initialize();
@@ -61,6 +65,8 @@ namespace TerritoryWars.Tile
         {
             Destroy(City);
             City = null;
+            AllCityRenderers = new List<SpriteRenderer>();
+            AllCityLineRenderers = new List<LineRenderer>();
 
             TileRotator.ClearLists();
 
@@ -169,6 +175,10 @@ namespace TerritoryWars.Tile
 
         public void InitCity(GameObject city, int index)
         {
+            AllCityRenderers = new List<SpriteRenderer>();
+            AllCityLineRenderers = new List<LineRenderer>();
+            
+            
             // find in children game objects with sprite renderer and name House
             List<SpriteRenderer> houseRenderers = city.GetComponentsInChildren<SpriteRenderer>()
                 .ToList().Where(x => x.name == "House").ToList();
@@ -177,6 +187,14 @@ namespace TerritoryWars.Tile
             TerritoryFiller territoryFiller = city.GetComponentInChildren<TerritoryFiller>();
             FencePlacer fencePlacer = city.GetComponentInChildren<FencePlacer>();
             List<Transform> pillars = fencePlacer.pillars;
+            List<SpriteRenderer> pillarsRenderers = pillars.Select(x => x.GetComponent<SpriteRenderer>()).ToList();
+            
+            AllCityRenderers.AddRange(houseRenderers);
+            AllCityRenderers.AddRange(arcRenderers);
+            AllCityRenderers.AddRange(pillarsRenderers);
+            AllCityLineRenderers.Add(fencePlacer.lineRenderer);
+            
+            
             
             TileAssetsObject.BackIndex(houseRenderers.Count);
             

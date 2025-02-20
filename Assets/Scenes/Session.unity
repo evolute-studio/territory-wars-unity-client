@@ -742,6 +742,8 @@ MonoBehaviour:
     CityPrefab: {fileID: 8778307303312571641, guid: 6955c475efe0f425f8ca0dfd61ea648f, type: 3}
   TileConfig: RCRC
   RoadPath: {fileID: 0}
+  AllCityRenderers: []
+  AllCityLineRenderers: []
 --- !u!114 &13953019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1804,6 +1806,8 @@ MonoBehaviour:
     CityPrefab: {fileID: 960592573413856705, guid: a9123233ce1fa46d5ad5e9efbec80695, type: 3}
   TileConfig: CRRC
   RoadPath: {fileID: 0}
+  AllCityRenderers: []
+  AllCityLineRenderers: []
 --- !u!114 &46274231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3757,6 +3761,8 @@ MonoBehaviour:
     CityPrefab: {fileID: 960592573413856705, guid: a9123233ce1fa46d5ad5e9efbec80695, type: 3}
   TileConfig: CRRC
   RoadPath: {fileID: 0}
+  AllCityRenderers: []
+  AllCityLineRenderers: []
 --- !u!114 &108572643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4862,6 +4868,8 @@ MonoBehaviour:
     CityPrefab: {fileID: 8778307303312571641, guid: 6955c475efe0f425f8ca0dfd61ea648f, type: 3}
   TileConfig: RCRC
   RoadPath: {fileID: 0}
+  AllCityRenderers: []
+  AllCityLineRenderers: []
 --- !u!114 &152342360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6313,6 +6321,8 @@ MonoBehaviour:
     CityPrefab: {fileID: 960592573413856705, guid: a9123233ce1fa46d5ad5e9efbec80695, type: 3}
   TileConfig: CRRC
   RoadPath: {fileID: 0}
+  AllCityRenderers: []
+  AllCityLineRenderers: []
 --- !u!114 &220333393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7396,6 +7406,8 @@ MonoBehaviour:
     CityPrefab: {fileID: 8778307303312571641, guid: 6955c475efe0f425f8ca0dfd61ea648f, type: 3}
   TileConfig: CRRR
   RoadPath: {fileID: 0}
+  AllCityRenderers: []
+  AllCityLineRenderers: []
 --- !u!114 &244106202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7744,6 +7756,8 @@ MonoBehaviour:
     CityPrefab: {fileID: 8778307303312571641, guid: 6955c475efe0f425f8ca0dfd61ea648f, type: 3}
   TileConfig: CRRC
   RoadPath: {fileID: 0}
+  AllCityRenderers: []
+  AllCityLineRenderers: []
 --- !u!114 &245490570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8598,6 +8612,8 @@ MonoBehaviour:
   CityData: []
   TileConfig: CRFR
   RoadPath: {fileID: 0}
+  AllCityRenderers: []
+  AllCityLineRenderers: []
 --- !u!114 &288805508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11360,7 +11376,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 147.10156, y: -600.7969}
+  m_AnchoredPosition: {x: 147.1015, y: -600.7969}
   m_SizeDelta: {x: 241.95996, y: 132.00012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &406405457
@@ -12741,6 +12757,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 78250859496273695, guid: 774b7ce5654b64e70a908d11e8fec69e, type: 3}
+      propertyPath: duration
+      value: 0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 78250859496273695, guid: 774b7ce5654b64e70a908d11e8fec69e, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 132372104289375649, guid: 774b7ce5654b64e70a908d11e8fec69e, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -12765,6 +12789,14 @@ PrefabInstance:
       propertyPath: loop
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2196430591122592945, guid: 774b7ce5654b64e70a908d11e8fec69e, type: 3}
+      propertyPath: duration
+      value: 0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 2196430591122592945, guid: 774b7ce5654b64e70a908d11e8fec69e, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2373883306116039529, guid: 774b7ce5654b64e70a908d11e8fec69e, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -12775,6 +12807,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2684594945425436323, guid: 774b7ce5654b64e70a908d11e8fec69e, type: 3}
       propertyPath: loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2766041482901798673, guid: 774b7ce5654b64e70a908d11e8fec69e, type: 3}
+      propertyPath: duration
+      value: 0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 2766041482901798673, guid: 774b7ce5654b64e70a908d11e8fec69e, type: 3}
+      propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2789809172933933645, guid: 774b7ce5654b64e70a908d11e8fec69e, type: 3}
@@ -12863,6 +12903,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5928972490151076185, guid: 774b7ce5654b64e70a908d11e8fec69e, type: 3}
       propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239728737541113578, guid: 774b7ce5654b64e70a908d11e8fec69e, type: 3}
+      propertyPath: duration
+      value: 0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239728737541113578, guid: 774b7ce5654b64e70a908d11e8fec69e, type: 3}
+      propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6692876922033902294, guid: 774b7ce5654b64e70a908d11e8fec69e, type: 3}
@@ -14149,6 +14197,8 @@ MonoBehaviour:
     CityPrefab: {fileID: 960592573413856705, guid: a9123233ce1fa46d5ad5e9efbec80695, type: 3}
   TileConfig: CRRC
   RoadPath: {fileID: 0}
+  AllCityRenderers: []
+  AllCityLineRenderers: []
 --- !u!114 &489755571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16236,7 +16286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -16593,6 +16643,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 765587717741525535, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
   m_PrefabInstance: {fileID: 1261502053}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &579849686 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6656283264602794713, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
+  m_PrefabInstance: {fileID: 1261502053}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8efc85e6f8aa58645b1243b01ad8b782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &580020216
 GameObject:
   m_ObjectHideFlags: 0
@@ -16866,6 +16927,7 @@ MonoBehaviour:
   spawnDelay: 0
   showDebugInfo: 0
   territoryPrefab: {fileID: 8966325575830096033, guid: 69e89afcf12104fa1abb0ee24bbad36e, type: 3}
+  TerritorySpriteRenderer: {fileID: 0}
   lineRenderer: {fileID: 588469445}
 --- !u!4 &588469444
 Transform:
@@ -21491,6 +21553,8 @@ MonoBehaviour:
     CityPrefab: {fileID: 8778307303312571641, guid: 6955c475efe0f425f8ca0dfd61ea648f, type: 3}
   TileConfig: CCRC
   RoadPath: {fileID: 0}
+  AllCityRenderers: []
+  AllCityLineRenderers: []
 --- !u!114 &744814868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25409,6 +25473,8 @@ MonoBehaviour:
     CityPrefab: {fileID: 8778307303312571641, guid: 6955c475efe0f425f8ca0dfd61ea648f, type: 3}
   TileConfig: CRRR
   RoadPath: {fileID: 0}
+  AllCityRenderers: []
+  AllCityLineRenderers: []
 --- !u!114 &886106264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28104,6 +28170,7 @@ MonoBehaviour:
   spawnDelay: 0
   showDebugInfo: 0
   territoryPrefab: {fileID: 8966325575830096033, guid: 69e89afcf12104fa1abb0ee24bbad36e, type: 3}
+  TerritorySpriteRenderer: {fileID: 0}
   lineRenderer: {fileID: 996950218}
 --- !u!4 &996950217
 Transform:
@@ -28644,6 +28711,8 @@ MonoBehaviour:
     CityPrefab: {fileID: 960592573413856705, guid: a9123233ce1fa46d5ad5e9efbec80695, type: 3}
   TileConfig: CRRC
   RoadPath: {fileID: 0}
+  AllCityRenderers: []
+  AllCityLineRenderers: []
 --- !u!114 &1001611983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29038,6 +29107,8 @@ MonoBehaviour:
   CityData: []
   TileConfig: CRFR
   RoadPath: {fileID: 0}
+  AllCityRenderers: []
+  AllCityLineRenderers: []
 --- !u!114 &1006209252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29862,6 +29933,8 @@ MonoBehaviour:
   CityData: []
   TileConfig: FFFF
   RoadPath: {fileID: 0}
+  AllCityRenderers: []
+  AllCityLineRenderers: []
 --- !u!114 &1029797343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37201,11 +37274,15 @@ PrefabInstance:
       objectReference: {fileID: 1067172505}
     - target: {fileID: 6656283264602794713, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
       propertyPath: players.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6656283264602794713, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
       propertyPath: imagePlayers.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6656283264602794713, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
+      propertyPath: JokerNotAvailableColor.a
+      value: 0.50980395
       objectReference: {fileID: 0}
     - target: {fileID: 6656283264602794713, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
       propertyPath: 'imagePlayers.Array.data[0]'
@@ -37228,13 +37305,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1836942788}
     - target: {fileID: 6656283264602794713, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
+      propertyPath: players.Array.data[0].jokerCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6656283264602794713, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
+      propertyPath: players.Array.data[1].jokerCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6656283264602794713, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
       propertyPath: players.Array.data[0].playerImage
       value: 
-      objectReference: {fileID: 1262083351}
+      objectReference: {fileID: 0}
     - target: {fileID: 6656283264602794713, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
       propertyPath: players.Array.data[1].playerImage
       value: 
-      objectReference: {fileID: 549787220}
+      objectReference: {fileID: 0}
     - target: {fileID: 6656283264602794713, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
       propertyPath: players.Array.data[2].playerImage
       value: 
@@ -37964,6 +38049,8 @@ MonoBehaviour:
     CityPrefab: {fileID: 8778307303312571641, guid: 6955c475efe0f425f8ca0dfd61ea648f, type: 3}
   TileConfig: CCRC
   RoadPath: {fileID: 0}
+  AllCityRenderers: []
+  AllCityLineRenderers: []
 --- !u!114 &1284754621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39048,6 +39135,8 @@ MonoBehaviour:
     CityPrefab: {fileID: 8778307303312571641, guid: 6955c475efe0f425f8ca0dfd61ea648f, type: 3}
   TileConfig: CRRC
   RoadPath: {fileID: 0}
+  AllCityRenderers: []
+  AllCityLineRenderers: []
 --- !u!114 &1326452238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41205,6 +41294,8 @@ MonoBehaviour:
     CityPrefab: {fileID: 8778307303312571641, guid: 6955c475efe0f425f8ca0dfd61ea648f, type: 3}
   TileConfig: CCCC
   RoadPath: {fileID: 0}
+  AllCityRenderers: []
+  AllCityLineRenderers: []
 --- !u!114 &1415290367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44218,6 +44309,7 @@ MonoBehaviour:
   spawnDelay: 0
   showDebugInfo: 0
   territoryPrefab: {fileID: 8966325575830096033, guid: 69e89afcf12104fa1abb0ee24bbad36e, type: 3}
+  TerritorySpriteRenderer: {fileID: 0}
   lineRenderer: {fileID: 1525227210}
 --- !u!120 &1525227210
 LineRenderer:
@@ -44637,6 +44729,7 @@ MonoBehaviour:
   StartDuration: 5
   Board: {fileID: 989829360}
   gameUI: {fileID: 288063303}
+  sessionUI: {fileID: 579849686}
   deckManager: {fileID: 1317628979}
   TileSelector: {fileID: 1530375626}
   SpawnPoints:
@@ -46659,6 +46752,8 @@ MonoBehaviour:
   CityData: []
   TileConfig: RXRX
   RoadPath: {fileID: 0}
+  AllCityRenderers: []
+  AllCityLineRenderers: []
 --- !u!114 &1628962978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49631,7 +49726,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -295, y: -594}
+  m_AnchoredPosition: {x: -294.99994, y: -594}
   m_SizeDelta: {x: 241.95996, y: 132.00012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1744775422
@@ -50646,6 +50741,8 @@ MonoBehaviour:
     CityPrefab: {fileID: 960592573413856705, guid: a9123233ce1fa46d5ad5e9efbec80695, type: 3}
   TileConfig: CRRC
   RoadPath: {fileID: 0}
+  AllCityRenderers: []
+  AllCityLineRenderers: []
 --- !u!114 &1768213543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55886,6 +55983,8 @@ MonoBehaviour:
     CityPrefab: {fileID: 8778307303312571641, guid: 6955c475efe0f425f8ca0dfd61ea648f, type: 3}
   TileConfig: FFFF
   RoadPath: {fileID: 0}
+  AllCityRenderers: []
+  AllCityLineRenderers: []
 --- !u!114 &1923207648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64231,6 +64330,8 @@ MonoBehaviour:
     CityPrefab: {fileID: 960592573413856705, guid: a9123233ce1fa46d5ad5e9efbec80695, type: 3}
   TileConfig: CRRC
   RoadPath: {fileID: 0}
+  AllCityRenderers: []
+  AllCityLineRenderers: []
 --- !u!1 &4463962604794711543
 GameObject:
   m_ObjectHideFlags: 0
@@ -65091,6 +65192,8 @@ MonoBehaviour:
     CityPrefab: {fileID: 8778307303312571641, guid: 6955c475efe0f425f8ca0dfd61ea648f, type: 3}
   TileConfig: CCCC
   RoadPath: {fileID: 0}
+  AllCityRenderers: []
+  AllCityLineRenderers: []
 --- !u!1 &6339277531021389358
 GameObject:
   m_ObjectHideFlags: 0

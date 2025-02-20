@@ -222,6 +222,7 @@ namespace TerritoryWars.General
             // currentTween = transform
             //     .DOMove(_initialPosition, moveDuration)
             //     .SetEase(moveEase);
+            tileGenerator.Generate(new TileData("FFFF"));
             _tileJokerAnimator.SetOffAllAnimationObjects();
             _tileJokerAnimatorPreview.SetOffAllAnimationObjects();
             

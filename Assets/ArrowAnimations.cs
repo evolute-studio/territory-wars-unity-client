@@ -6,21 +6,25 @@ public class ArrowAnimations : MonoBehaviour
 {
     public GameObject[] arrows;
 
-    private void Start()
-    {
-        arrows[0].GetComponent<SpriteAnimator>().OnAnimationEnd = OffArrows;
-    }
-
     public void PlayRotationAnimation()
     {
         foreach (var arrow in arrows)
         {
             arrow.SetActive(true);
+            arrow.GetComponent<SpriteAnimator>().Play();
         }
         
         
     }
-
+    
+    public void SetActiveArrow(bool isActive)
+    {
+        foreach (var arrow in arrows)
+        {
+            arrow.SetActive(isActive);
+        }
+    }
+    
     public void OffArrows()
     {
         foreach (var arrow in arrows)

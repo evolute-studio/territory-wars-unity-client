@@ -969,6 +969,8 @@ MonoBehaviour:
     CityPrefab: {fileID: 960592573413856705, guid: a9123233ce1fa46d5ad5e9efbec80695, type: 3}
   TileConfig: CRRC
   RoadPath: {fileID: 0}
+  AllCityRenderers: []
+  AllCityLineRenderers: []
 --- !u!114 &2757118565399566220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3319,7 +3321,6 @@ MonoBehaviour:
   MainObject: {fileID: 0}
   _tileObjects:
   - {fileID: 2403509818276302944}
-  - {fileID: 6692876922033902294}
   - {fileID: 970706888425215492}
   _tileGenerator: {fileID: 4415033790335919484}
   _evoluteTile: {fileID: 4066220847729988170}

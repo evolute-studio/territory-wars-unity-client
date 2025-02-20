@@ -35,7 +35,9 @@ namespace TerritoryWars.Tile
         [Header("Territory")]
         [SerializeField] private GameObject territoryPrefab;
         private Territory currentTerritory;
-
+        
+        public SpriteRenderer TerritorySpriteRenderer;
+        
         public LineRenderer lineRenderer;
         private bool isArcSpawned = false;
 
@@ -80,6 +82,7 @@ namespace TerritoryWars.Tile
             }
             
             currentTerritory = Instantiate(territoryPrefab, transform).GetComponent<Territory>();
+            TerritorySpriteRenderer = currentTerritory.GetComponent<SpriteRenderer>();
             currentTerritory.SetLineRenderer(lineRenderer);
             currentTerritory.GenerateMask();
 

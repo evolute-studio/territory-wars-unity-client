@@ -37,6 +37,10 @@ namespace TerritoryWars.General
         private static event Action CanCalculateHints;
         private SpriteRenderer _evoluteTileSpriteRenderer;
         
+        private Vector3 _initialShardsParentPosition;
+
+        private Tween _currentShardTween;
+        
         
         
         private Action OnLightningEnd; 
@@ -51,6 +55,7 @@ namespace TerritoryWars.General
             _evoluteTileSpriteRenderer = _evoluteTile.gameObject.GetComponent<SpriteRenderer>();
             _evoluteTileSpriteAnimator = _evoluteTile.gameObject.GetComponent<SpriteAnimator>();
             _evoluteTileSpriteAnimator.Validate();
+            _initialShardsParentPosition = _evoluteShards.transform.localPosition;
         }
 
         // when click on joker button
@@ -80,6 +85,7 @@ namespace TerritoryWars.General
                 
             if(_activeStaticMember)
                 CanCalculateHints?.Invoke();
+            
             
         }
         
@@ -127,7 +133,11 @@ namespace TerritoryWars.General
         public void SetOffAllAnimationObjects()
         {
             _evoluteTile.SetActive(false);
-            //_JokerGroundTile.SetActive(false);
+            _JokerGroundTile.SetActive(false);
+            _evoluteTileDisappear.SetActive(false);
+            _evoluteShards.SetActive(false);
+            SetActiveShardsEffects(false);
+            
             foreach (var obj in _tileObjects)
             {
                 obj.SetActive(true);
@@ -155,27 +165,24 @@ namespace TerritoryWars.General
                 .SetEase(Ease.OutQuint)
                 .OnComplete(() =>
                 {
-                    StartCoroutine(ShardAnimationCoroutine());
+                    ShardLevitationAnimation();
                     ShardEffectCoroutine = StartCoroutine(ShardEffectAnimation());
+                    
                 });
         }
         
-        private IEnumerator ShardAnimationCoroutine()
+        private void ShardLevitationAnimation()
         {
-            while (true)
-            {
-                Vector3 startPosition = _evoluteShards.transform.localPosition; 
-                Vector3 endPosition = startPosition + new Vector3(0, 0.05f, 0);
-                float duration = 0.8f;
-
-                Tween shardTween = _evoluteShards.transform.DOLocalMove(endPosition, duration).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo);
-
-                yield return new WaitForSeconds(duration * 2);
-            }
+            SetActiveShardsEffects(true);
+            Vector3 startPosition = new Vector3(_initialShardsParentPosition.x, -0.15f, 0);
+            Vector3 endPosition = startPosition + new Vector3(0, -0.12f, 0);
+            float duration = 0.8f;
+            _currentShardTween = _evoluteShards.transform.DOLocalMove(endPosition, duration).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo);
         }
 
         private IEnumerator ShardEffectAnimation()
         {
+            SetActiveShardsEffects(true);
             while (true)
             {
                 foreach (var shardEffect in _shardsEffects)
@@ -187,14 +194,69 @@ namespace TerritoryWars.General
             }
         }
         
-        public void ShardsDisappear()
+        public void JokerConfChanging()
         {
-            StopCoroutine(ShardEffectCoroutine);
-            _evoluteShards.transform.DOLocalMove(_shardsStartPosition, 0.2f).OnComplete(() =>
+            _currentShardTween.Kill();
+            
+            Vector3 startPosition = new Vector3(_initialShardsParentPosition.x, -0.15f, 0);
+            Vector3 endPosition = startPosition + new Vector3(0, -0.05f, 0);
+            SetActiveShardsEffects(false);
+            Sequence sequence = DOTween.Sequence();
+            sequence.Append(_evoluteShards.transform.DOLocalMove(_initialShardsParentPosition, 0.2f));
+            // Fade Out
+            foreach (var spriteRenderer in _tileGenerator.AllCityRenderers)
             {
-                _evoluteShards.SetActive(false);
-                OnShardsDisappearAnimationComplete?.Invoke();
+                sequence.Join(GetFadeSpriteRendererTween(spriteRenderer, 0.2f, 0f));
+            }
+            foreach (var lineRenderer in _tileGenerator.AllCityLineRenderers)
+            {
+                sequence.Join(GetFadeLineRendererTween(lineRenderer, 0.2f, 0f));
+            }
+            sequence.Join(GetFadeSpriteRendererTween(_tileGenerator.RoadRenderer, 0.2f, 0f));
+            
+            sequence.OnComplete(() => {
+                Debug.Log("OnComplete");
+                GameManager.Instance.TileSelector.RegenerateJokerTile();
             });
+            sequence.Append(_evoluteShards.transform.DOLocalMove(endPosition, 0.3f));
+            // Fade In
+            foreach (var spriteRenderer in _tileGenerator.AllCityRenderers)
+            {
+                sequence.Join(GetFadeSpriteRendererTween(spriteRenderer, 0.3f, 1f));
+            }
+            foreach (var lineRenderer in _tileGenerator.AllCityLineRenderers)
+            {
+                sequence.Join(GetFadeLineRendererTween(lineRenderer, 0.3f, 1f));
+            }
+            sequence.Join(GetFadeSpriteRendererTween(_tileGenerator.RoadRenderer, 0.3f, 1f));
+            sequence.OnComplete(ShardLevitationAnimation);
+            
+            sequence.Play();
+        }
+        
+        private Tween GetFadeSpriteRendererTween(SpriteRenderer spriteRenderer, float duration, float endAlpha)
+        {
+            if (spriteRenderer == null)
+            {
+                return null;
+            }
+            return spriteRenderer.DOFade(endAlpha, duration);
+        }
+        
+        private Tween GetFadeLineRendererTween(LineRenderer lineRenderer, float duration, float endAlpha)
+        {
+            //lineRenderer.colorGradient.alphaKeys[0].alpha = 0;
+            if (lineRenderer == null)
+            {
+                return null;
+            }
+            return DOTween.To(() => lineRenderer.colorGradient.alphaKeys[0].alpha, 
+                x => lineRenderer.colorGradient.alphaKeys[0].alpha = x, endAlpha, duration);
+        }
+        
+        public void SetActiveShardsEffects(bool active)
+        {
+            _shardsEffects[0].transform.parent.gameObject.SetActive(active);
         }
 
         public void FindCityAndRoadsToDisable()

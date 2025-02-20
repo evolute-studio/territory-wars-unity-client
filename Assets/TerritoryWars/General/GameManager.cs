@@ -28,6 +28,7 @@ namespace TerritoryWars.General
 
         public Board Board;
         [SerializeField] private GameUI gameUI;
+        [SerializeField] private SessionUI sessionUI;
         [SerializeField] private DeckManager deckManager;
         public TileSelector TileSelector;
 
@@ -74,7 +75,6 @@ namespace TerritoryWars.General
                 Side side = (Side)i;
                 if (neighborSides.ContainsKey(side))
                 {
-                    
                     sides[i] = LandscapeToChar(neighborSides[side]);
                 }
                 else
@@ -233,6 +233,7 @@ namespace TerritoryWars.General
         {
             isJokerActive = false;
             gameUI.UpdateUI();
+            sessionUI.UseJoker(CurrentCharacter.Id);
         }
     }
 }
