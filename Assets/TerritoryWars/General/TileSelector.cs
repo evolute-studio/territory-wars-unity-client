@@ -34,6 +34,7 @@ namespace TerritoryWars.General
         private string initialTileConfig;
         private bool isJokerMode = false;
         private Vector2Int? jokerPosition;
+        private List<ValidPlacement> _currentValidPlacements;
 
         public TileData CurrentTile => currentTile;
 
@@ -109,14 +110,14 @@ namespace TerritoryWars.General
             isPlacingTile = true;
             selectedPosition = null;
 
-            var validPlacements = board.GetValidPlacements(currentTile);
-            if (validPlacements.Count == 0)
+            _currentValidPlacements = board.GetValidPlacements(currentTile);
+            if (_currentValidPlacements.Count == 0)
             {
                 EndTilePlacement();
                 return;
             }
 
-            ShowPossiblePlacements(validPlacements);
+            ShowPossiblePlacements(_currentValidPlacements);
             gameUI.SetEndTurnButtonActive(false);
             gameUI.SetRotateButtonActive(false);
             gameUI.UpdateUI();
@@ -178,10 +179,12 @@ namespace TerritoryWars.General
 
             if (!isPlacingTile) return;
 
-                if (selectedPosition.HasValue && selectedPosition.Value == new Vector2Int(x, y))
+                if (selectedPosition.HasValue && selectedPosition.Value == new Vector2Int(x, y) && !IsPossiblePosition(x,y))
                 {
                     return;
                 }
+
+                if(!IsPossiblePosition(x,y)) return;
 
                 if (selectedPosition.HasValue)
                 {
@@ -237,6 +240,19 @@ namespace TerritoryWars.General
                 gameUI.SetRotateButtonActive(currentValidRotations.Count > 1);
                 gameUI.SetEndTurnButtonActive(true);
             
+        }
+
+        private bool IsPossiblePosition(int x, int y)
+        {
+            foreach (var position in _currentValidPlacements)
+            {
+                if (position.X == x && position.Y == y)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         private void UpdateHighlights(int selectedX, int selectedY)
@@ -367,6 +383,7 @@ namespace TerritoryWars.General
         public void EndTilePlacement()
         {
             isPlacingTile = false;
+            _currentValidPlacements = new List<ValidPlacement>();
             ClearHighlights();
         }
 
