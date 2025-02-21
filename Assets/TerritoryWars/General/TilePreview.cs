@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -167,13 +168,14 @@ namespace TerritoryWars.General
                 .SetEase(moveEase);
             //previewTileView.transform.DOScale(1, 0.5f).SetEase(Ease.OutQuint);
         }
-
-        public void PlaceTile()
+        
+        public void PlaceTile(Action callback = null)
         {
-            StartCoroutine(PlaceTileCoroutine());
+            StartCoroutine(PlaceTileCoroutine(callback));
         }
+        
 
-        private IEnumerator PlaceTileCoroutine()
+        private IEnumerator PlaceTileCoroutine(Action callback = null)
         {
             if (!gameObject.activeSelf) yield break;
             // shake animation Y
@@ -200,6 +202,7 @@ namespace TerritoryWars.General
                 .OnComplete(() =>
                 {
                     SessionManager.Instance.TileSelector.CompleteTilePlacement();
+                    callback?.Invoke();
                     // ResetPosition буде викликано через OnTilePlaced event
                 });
         }
@@ -210,7 +213,8 @@ namespace TerritoryWars.General
             // currentTween = transform
             //     .DOMove(_initialPosition, moveDuration)
             //     .SetEase(moveEase);
-            _tileJokerAnimator.SetOffAllAnimationObjects();
+            if(_tileJokerAnimator != null)
+                _tileJokerAnimator.SetOffAllAnimationObjects();
             
             transform.position = _initialPosition;
         }

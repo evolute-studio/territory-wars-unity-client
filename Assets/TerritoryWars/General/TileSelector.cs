@@ -15,7 +15,7 @@ namespace TerritoryWars.General
         [SerializeField] private Material highlightMaterial;
         [SerializeField] private LayerMask backgroundLayer;
         [SerializeField] private Sprite highlightSprite;
-        [SerializeField] private TilePreview tilePreview;
+        [SerializeField] public TilePreview tilePreview;
        
 
         [Header("Colors")]
@@ -40,6 +40,7 @@ namespace TerritoryWars.General
         public UnityEvent OnTurnEnding = new UnityEvent();
         
         [SerializeField] private float highlightYOffset = -0.08f;
+        public (TileData, Vector2Int) LastMove { get; private set; }
 
         private void Awake()
         {
@@ -88,6 +89,11 @@ namespace TerritoryWars.General
                     OnTileClicked(x, y);
                 }
             }
+        }
+        public void SetCurrentTile(TileData tile)
+        {
+            currentTile = tile;
+            gameUI.UpdateUI();
         }
 
         public void StartTilePlacement(TileData tile)
@@ -287,14 +293,16 @@ namespace TerritoryWars.General
             tilePreview.PlaceTile();
         }
 
-        public void CompleteTilePlacement(List<Sprite> houses = default)
+        public void CompleteTilePlacement()
         {
             try
             {
                 if (!selectedPosition.HasValue) return;
 
-                if (board.PlaceTile(currentTile, selectedPosition.Value.x, selectedPosition.Value.y, SessionManager.Instance.CurrentCharacter.Id))
+                if (board.PlaceTile(currentTile, selectedPosition.Value.x, selectedPosition.Value.y, SessionManager.Instance.CurrentTurnPlayer.LocalId))
                 {
+                    DojoGameManager.Instance.SessionManager.MakeMove(currentTile, selectedPosition.Value.x, selectedPosition.Value.y);
+                    LastMove = (currentTile, selectedPosition.Value);
                     isPlacingTile = false;
                     isJokerMode = false;
                     selectedPosition = null;
@@ -305,6 +313,7 @@ namespace TerritoryWars.General
 
                     SessionManager.Instance.CompleteJokerPlacement();
                     SessionManager.Instance.CompleteEndTurn();
+                    
                 }
             }
             catch (System.Exception e)

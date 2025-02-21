@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using Dojo;
 using Dojo.Starknet;
 using TerritoryWars.ModelsDataConverters;
@@ -10,7 +12,12 @@ namespace TerritoryWars
     {
         private DojoGameManager _dojoGameManager;
         
+        private Account _localPlayerAccount => _dojoGameManager.LocalBurnerAccount;
         private evolute_duel_Board _localPlayerBoard;
+        private string _lastMoveIdHex;
+        
+        public delegate void OpponentMoveHandler(TileData tile, Vector2Int position, int rotation);
+        public event OpponentMoveHandler OnOpponentMoveReceived;
 
         public evolute_duel_Board LocalPlayerBoard
         {
@@ -37,9 +44,40 @@ namespace TerritoryWars
             
         }
 
-        public void CheckBoardUpdate(ModelInstance modelInstance)
+        public void CheckBoardUpdate()
         {
-            if (!modelInstance.transform.TryGetComponent(out evolute_duel_Board board)) return;    
+            if(LocalPlayerBoard == null || LocalPlayerBoard.last_move_id == null) return;
+            
+            string newMove = LocalPlayerBoard.last_move_id switch
+            {
+                Option<FieldElement>.Some moveId => moveId.value.Hex(),
+                Option<FieldElement>.None => null
+            };
+            
+            if (newMove != _lastMoveIdHex)
+            {
+                _lastMoveIdHex = newMove;
+                Debug.Log($"New move detected: {_lastMoveIdHex}");
+                if (LocalPlayerBoard != null)
+                {
+                    evolute_duel_Move moveModel = GetMoveModelById(LocalPlayerBoard.last_move_id);
+                    if (moveModel == null) return;
+                    var moveData = OnChainMoveDataConverter.GetMoveData(moveModel);
+                    if (moveData.Item1 != null)
+                    {
+                        OnOpponentMoveReceived?.Invoke(moveData.Item2, moveData.Item4, moveData.Item3);
+                    }
+                }
+            }
+            else
+            {
+                Coroutines.StartRoutine(TryAgain(CheckBoardUpdate, 1f));
+            }
+        }
+        
+        private IEnumerator TryAgain(Action action, float delay){
+            yield return new WaitForSeconds(delay);
+            action();
         }
         
         public evolute_duel_Board GetLocalPlayerBoard()
@@ -70,5 +108,47 @@ namespace TerritoryWars
             return new TileData(OnChainBoardDataConverter.GetTopTile(LocalPlayerBoard.top_tile));
         }
 
+        public async void MakeMove(TileData data, int x, int y)
+        {
+            try
+            {
+                Account account = _dojoGameManager.LocalBurnerAccount;
+                Option<byte> jokerTile = new Option<byte>.None();
+                byte rotation = (byte) data.rotationIndex;
+                byte col = (byte) x;
+                byte row = (byte) y;
+                var txHash = await _dojoGameManager.GameSystem.make_move(account, jokerTile, rotation, col, row);
+                Debug.Log($"[Move]: Account {account.Address.Hex()} made a move at {x}, {y}. Transaction hash: {txHash.Hex()}");
+            }
+            catch (Exception e)
+            {
+                Debug.LogError(e);
+            }
+        }
+
+        private evolute_duel_Move GetMoveModelById(Option<FieldElement> move_id)
+        {
+            GameObject[] movesGO = _dojoGameManager.WorldManager.Entities<evolute_duel_Move>();
+            foreach (var moveGO in movesGO)
+            {
+                if (moveGO.TryGetComponent(out evolute_duel_Move move))
+                {
+                    string moveId = move_id switch
+                    {
+                        Option<FieldElement>.Some id => id.value.Hex(),
+                        Option<FieldElement>.None => null
+                    };
+                    if (moveId == null) continue;
+                    if (move.id.Hex() == moveId)
+                    {
+                        return move;
+                    }
+                }
+            }
+            return null;
+            
+        }
+        
+        
     }
 }

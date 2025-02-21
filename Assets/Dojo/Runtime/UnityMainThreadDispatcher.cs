@@ -45,7 +45,7 @@ namespace Dojo {
 		public void Enqueue(IEnumerator action) {
 			lock (_executionQueue) {
 				_executionQueue.Enqueue (() => {
-					StartCoroutine (action);
+ 					StartCoroutine (action);
 				});
 			}
 		}

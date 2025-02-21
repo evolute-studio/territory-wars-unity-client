@@ -61,7 +61,7 @@ namespace TerritoryWars.Carts
 
             GameObject tileObject = board.GetTileObject(x, y);
             Transform cartsPath = tileObject.GetComponent<TileGenerator>().RoadPath.transform;
-            int playerId = General.SessionManager.Instance.CurrentCharacter.Id;
+            int playerId = General.SessionManager.Instance.CurrentTurnPlayer.LocalId;
             RoadTile roadTile = new RoadTile(playerId, tileObject, tileData, cartsPath);
             
             //int cartsCount = tileData.id.Count(c => c == 'R');
@@ -282,7 +282,6 @@ namespace TerritoryWars.Carts
             if(PreviousTile == null) cart.gameObject.transform.position = path[startIndex];
 
             // cart.spriteRenderer.sprite = OwnerId == 0 ? CartsSystem.FirstPlayerCartSpriteStatic : CartsSystem.SecondPlayerCartSpriteStatic;
-            Debug.Log($"Cart accepted at position {cart.gameObject.transform.position}, starting at index {startIndex}");
             cart.spriteRenderer.sprite = OwnerId == 0 ? CartsSystem.FirstPlayerCartSpriteStatic : CartsSystem.SecondPlayerCartSpriteStatic;
 
         }

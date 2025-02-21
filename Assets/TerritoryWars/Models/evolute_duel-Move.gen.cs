@@ -5,6 +5,9 @@ using Dojo.Starknet;
 using System.Reflection;
 using System.Linq;
 using System.Collections.Generic;
+using TerritoryWars.ModelsDataConverters;
+using TerritoryWars.Tile;
+using UnityEngine;
 using Enum = Dojo.Starknet.Enum;
 using BigInteger = System.Numerics.BigInteger;
 
@@ -26,10 +29,10 @@ public class evolute_duel_Move : ModelInstance {
         [ModelField("rotation")]
         public byte rotation;
 
-        [ModelField("col")]
+        [ModelField("col")] //x
         public byte col;
 
-        [ModelField("row")]
+        [ModelField("row")] //y
         public byte row;
 
         [ModelField("is_joker")]

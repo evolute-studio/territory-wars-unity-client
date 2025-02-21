@@ -63,7 +63,7 @@ namespace TerritoryWars
                 new FieldElement(gameManagerData.masterAddress));
             burnerManager = new BurnerManager(provider, masterAccount);
 
-            //WorldManager.synchronizationMaster.OnEventMessage.AddListener(OnDojoEventReceived);
+            WorldManager.synchronizationMaster.OnEventMessage.AddListener(OnDojoEventReceived);
             WorldManager.synchronizationMaster.OnSynchronized.AddListener(OnSynchronized);
             WorldManager.synchronizationMaster.OnEntitySpawned.AddListener(SpawnEntity);
             WorldManager.synchronizationMaster.OnModelUpdated.AddListener(ModelUpdated);
@@ -130,11 +130,17 @@ namespace TerritoryWars
             {
                 CheckStartSession();
             }
+            if(modelInstance.transform.TryGetComponent(out evolute_duel_Board boardModel))
+            {
+                SessionManager.CheckBoardUpdate();
+            }
             
         }
 
         private void CheckStartSession()
         {
+            if (CustomSceneManager.Instance.CurrentScene == CustomSceneManager.Instance.Session) return;
+            
             GameObject[] games = WorldManager.Entities<evolute_duel_Game>();
             evolute_duel_Game hostedGame = null;
             if (games.Length == 0) return;
@@ -180,34 +186,10 @@ namespace TerritoryWars
             Debug.Log($"Spawned entity: {entity.name}");
         }
         
-        // public void OnDojoEventReceived(ModelInstance eventMessage)
-        // {
-        //     Debug.Log($"Received event: {eventMessage.Model.Name}");
-        //     switch (eventMessage.Model.Name)
-        //     {
-        //         case "GameCreated":
-        //             HandleGameCreated(eventMessage);
-        //             break;
-        //         case "GameStarted":
-        //             HandleGameStarted(eventMessage);
-        //             break;
-        //         case "GameFinished":
-        //             HandleGameFinished(eventMessage);
-        //             break;
-        //         case "Moved":
-        //             HandleMoved(eventMessage);
-        //             break;
-        //         case "InvalidMove":
-        //             HandleInvalidMove(eventMessage);
-        //             break;
-        //         case "GameCanceled":
-        //             HandleGameCanceled(eventMessage);
-        //             break;
-        //         case "BoardCreated":
-        //             HandleBoardCreated(eventMessage);
-        //             break;
-        //     }
-        // }
+        public void OnDojoEventReceived(ModelInstance eventMessage)
+        {
+            Debug.Log($"!!!!!! Received event: {eventMessage.Model.Name}");
+        }
         
         // private T GetFieldValue<T>(ModelInstance eventMessage, string fieldName)
         // {
@@ -280,7 +262,7 @@ namespace TerritoryWars
         {
             if (WorldManager.synchronizationMaster != null)
             {
-                //WorldManager.synchronizationMaster.OnEventMessage.RemoveListener(OnDojoEventReceived);
+                WorldManager.synchronizationMaster.OnEventMessage.RemoveListener(OnDojoEventReceived);
                 WorldManager.synchronizationMaster.OnSynchronized.RemoveListener(OnSynchronized);
                 WorldManager.synchronizationMaster.OnEntitySpawned.RemoveListener(SpawnEntity);
                 WorldManager.synchronizationMaster.OnModelUpdated.RemoveListener(ModelUpdated);
