@@ -126,6 +126,12 @@ namespace TerritoryWars.General
                 {
                     tileObjects[availablePositions[i].x, availablePositions[i].y].transform.Find("RoadRenderer").GetComponent<SpriteRenderer>().sprite = tileAssets.GetRandomMountain();
                 }
+                else if (tilesToSpawn[i] == roadTile)
+                {
+                    tileObjects[availablePositions[i].x, availablePositions[i].y].transform.Find("BorderArc").gameObject.SetActive(true);
+                    Transform borderArc = tileObjects[availablePositions[i].x, availablePositions[i].y].transform.Find("BorderArc");
+                    TileRotator.GetMirrorRotationStatic(borderArc, rotationTimes);
+                }
             }
         }
 

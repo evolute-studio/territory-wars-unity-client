@@ -91,11 +91,13 @@ namespace TerritoryWars.Tile
         public void GenerateRoad()
         {
             string id = TileConfig;
+
             if (string.IsNullOrEmpty(id) || !id.Contains('R'))
             {
                 RoadRenderer.sprite = null;
                 return;
             }
+            
             int roadCount = id.Count(c => c == 'R');
 
             if (roadCount == 1)
@@ -134,7 +136,7 @@ namespace TerritoryWars.Tile
                 }
             }
             
-            if (roadCount == 3)
+            if (roadCount >= 3)
             {
                 if(Mill != null)
                     Destroy(Mill);
@@ -151,12 +153,24 @@ namespace TerritoryWars.Tile
         public void GenerateCity()
         {
             string id = TileConfig;
-            if (string.IsNullOrEmpty(id) || !id.Contains('C'))
+            int cityCount = id.Count(c => c == 'C');
+            int roadCount = id.Count(c => c == 'R');
+
+            if (cityCount == 1 && roadCount == 3) { }
+
+            else if(cityCount == 3 && roadCount == 1) { }
+            else
             {
-                return;
+                if (string.IsNullOrEmpty(id) || !id.Contains('C')) 
+                {
+                    return;
+                }
+                
+                id = id.Replace('R', 'X');
+                id = id.Replace('F', 'X');
+                
             }
-            id = id.Replace('R', 'X');
-            id = id.Replace('F', 'X');
+
 
             if (City != null)
             {
@@ -219,24 +233,14 @@ namespace TerritoryWars.Tile
 
             foreach (var arcs in arcRenderers)
             {
-                int roadCount = TileConfig.Count(c => c == 'R');
-                if (arcs != null && roadCount % 2 != 0)
-                {
-                    TileRotator.SimpleRotation(arcs.transform, index);
-                    TileRotator.SimpleRotationObjects.Add(arcs.transform);
-                }
+                TileRotator.MirrorRotation(arcs.transform, index);
+                TileRotator.MirrorRotationObjects.Add(arcs.transform);
             }
 
             foreach (var pillar in pillars)
             {
                 TileRotator.SimpleRotation(pillar, index);
                 TileRotator.SimpleRotationObjects.Add(pillar);
-            }
-
-            if (arc != null)
-            {
-                TileRotator.MirrorRotation(arc, index);
-                TileRotator.MirrorRotationObjects.Add(arc);
             }
 
             LineRenderer territoryLineRenderer = territoryFiller.GetComponent<LineRenderer>();

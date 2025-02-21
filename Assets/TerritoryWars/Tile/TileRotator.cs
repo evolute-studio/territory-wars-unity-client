@@ -74,6 +74,20 @@ namespace TerritoryWars.Tile
             }
         }
 
+        public static void GetMirrorRotationStatic(Transform obj, int times = 1)
+        {
+            for (int i = 0; i < times; i++)
+            {
+                Vector3 originalPos = obj.localPosition;
+                Vector3 newPos = originalPos;
+
+                newPos.x = originalPos.y * 2;
+                newPos.y = originalPos.x / -2;
+                obj.localPosition = newPos;
+                obj.localScale = new Vector3(-obj.localScale.x, obj.localScale.y, obj.localScale.z);
+            }
+        }
+
         public void LineRotation(LineRenderer lineRenderer, int times = 1)
         {
             Vector3[] positions = new Vector3[lineRenderer.positionCount];
