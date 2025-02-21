@@ -77,16 +77,24 @@ namespace TerritoryWars.UI
                     GameStatus.Canceled => "Canceled",
                     _ => "Unknown"
                 };
-                
-                matchListItem.UpdateItem(playerName, gameId, status, () =>
+                if( status == "Created")
                 {
-                    DojoGameManager.Instance.JoinGame(gameModel.player);
-                });
+                    matchListItem.UpdateItem(playerName, gameId, status, () =>
+                    {
+                        DojoGameManager.Instance.JoinGame(gameModel.player);
+                    });
                 
-                if (playerName == DojoGameManager.Instance.LocalBurnerAccount.Address.Hex())
-                {
-                    matchListItem.SetAwaiting(true);
+                    if (playerName == DojoGameManager.Instance.LocalBurnerAccount.Address.Hex())
+                    {
+                        matchListItem.SetAwaiting(true);
+                    }
                 }
+                else
+                {
+                    Destroy(matchListItem.ListItem);
+                    _matchListItems.Remove(matchListItem);
+                }
+                
             }
 
             SortByStatus();
@@ -200,6 +208,11 @@ namespace TerritoryWars.UI
             _playButton.gameObject.SetActive(!isAwaiting);
             _awaitText.gameObject.SetActive(isAwaiting);
             _awaitText.text = "Awaiting...";
+        }
+        
+        public void SetActive(bool isActive)
+        {
+            ListItem.SetActive(isActive);
         }
         
         

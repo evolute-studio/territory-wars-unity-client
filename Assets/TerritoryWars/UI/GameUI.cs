@@ -22,7 +22,7 @@ namespace TerritoryWars.UI
         [SerializeField] private TilePreview tilePreview;
         [SerializeField] private TileJokerAnimator tilePreviewUITileJokerAnimator;
 
-        private General.SessionManager _sessionManager;
+        private SessionManager _sessionManager;
         private DeckManager deckManager;
 
         public void Initialize()

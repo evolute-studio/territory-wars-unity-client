@@ -14,7 +14,8 @@ namespace TerritoryWars
         
         private Account _localPlayerAccount => _dojoGameManager.LocalBurnerAccount;
         private evolute_duel_Board _localPlayerBoard;
-        private string _lastMoveIdHex;
+        public string LastMoveIdHex { get; set; }
+        public int LastPlayerSide { get; set; }
         
         public delegate void OpponentMoveHandler(TileData tile, Vector2Int position, int rotation);
         public event OpponentMoveHandler OnOpponentMoveReceived;
@@ -54,31 +55,30 @@ namespace TerritoryWars
                 Option<FieldElement>.None => null
             };
             
-            if (newMove != _lastMoveIdHex)
+            if (newMove != LastMoveIdHex || LocalPlayerBoard != null)
             {
-                _lastMoveIdHex = newMove;
-                Debug.Log($"New move detected: {_lastMoveIdHex}");
-                if (LocalPlayerBoard != null)
+                LastMoveIdHex = newMove;
+                Debug.Log($"New move detected: {LastMoveIdHex}");
+                evolute_duel_Move moveModel = GetMoveModelById(LocalPlayerBoard.last_move_id);
+                if (moveModel == null) return;
+                var moveData = OnChainMoveDataConverter.GetMoveData(moveModel);
+                if (moveData.Item1 != null)
                 {
-                    evolute_duel_Move moveModel = GetMoveModelById(LocalPlayerBoard.last_move_id);
-                    if (moveModel == null) return;
-                    var moveData = OnChainMoveDataConverter.GetMoveData(moveModel);
-                    if (moveData.Item1 != null)
+                    LastPlayerSide = moveData.Item1 switch
                     {
-                        OnOpponentMoveReceived?.Invoke(moveData.Item2, moveData.Item4, moveData.Item3);
-                    }
+                        PlayerSide.Blue => 0,
+                        PlayerSide.Red => 1,
+                    };
+                    OnOpponentMoveReceived?.Invoke(moveData.Item2, moveData.Item4, moveData.Item3);
                 }
             }
             else
             {
-                Coroutines.StartRoutine(TryAgain(CheckBoardUpdate, 1f));
+                _dojoGameManager.TryAgain(CheckBoardUpdate, 1f);
             }
         }
         
-        private IEnumerator TryAgain(Action action, float delay){
-            yield return new WaitForSeconds(delay);
-            action();
-        }
+        
         
         public evolute_duel_Board GetLocalPlayerBoard()
         {

@@ -1,0 +1,2448 @@
+fileFormatVersion: 2
+guid: 8c6eb9a8c7c6cbe2ab6c10d3211194d0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2384525856310691376
+    second: FINAL_HUDS_AND_INTERFACE_0
+  - first:
+      213: 2045741177935996711
+    second: FINAL_HUDS_AND_INTERFACE_1
+  - first:
+      213: -8069575004395679753
+    second: FINAL_HUDS_AND_INTERFACE_2
+  - first:
+      213: -6711166489441643212
+    second: FINAL_HUDS_AND_INTERFACE_3
+  - first:
+      213: 7204639612266255973
+    second: FINAL_HUDS_AND_INTERFACE_4
+  - first:
+      213: -2279047257280065853
+    second: FINAL_HUDS_AND_INTERFACE_5
+  - first:
+      213: -7291124600820577297
+    second: FINAL_HUDS_AND_INTERFACE_6
+  - first:
+      213: 4614352085634865568
+    second: FINAL_HUDS_AND_INTERFACE_7
+  - first:
+      213: 5743133935313074570
+    second: FINAL_HUDS_AND_INTERFACE_8
+  - first:
+      213: 7780654682280402482
+    second: FINAL_HUDS_AND_INTERFACE_9
+  - first:
+      213: -340878678747555835
+    second: FINAL_HUDS_AND_INTERFACE_10
+  - first:
+      213: 6118040019726039182
+    second: FINAL_HUDS_AND_INTERFACE_11
+  - first:
+      213: 7142002620816361253
+    second: FINAL_HUDS_AND_INTERFACE_12
+  - first:
+      213: -7205269716772304459
+    second: FINAL_HUDS_AND_INTERFACE_13
+  - first:
+      213: 5783594883459643935
+    second: FINAL_HUDS_AND_INTERFACE_14
+  - first:
+      213: -8828127633506550312
+    second: FINAL_HUDS_AND_INTERFACE_15
+  - first:
+      213: 8148113121392032624
+    second: FINAL_HUDS_AND_INTERFACE_16
+  - first:
+      213: -6673710192305710250
+    second: FINAL_HUDS_AND_INTERFACE_17
+  - first:
+      213: -4104958143481731593
+    second: FINAL_HUDS_AND_INTERFACE_18
+  - first:
+      213: 8703271232967149776
+    second: FINAL_HUDS_AND_INTERFACE_19
+  - first:
+      213: -4557094919083259583
+    second: FINAL_HUDS_AND_INTERFACE_20
+  - first:
+      213: 6672540478914675692
+    second: FINAL_HUDS_AND_INTERFACE_21
+  - first:
+      213: -6478217768376426432
+    second: FINAL_HUDS_AND_INTERFACE_22
+  - first:
+      213: 3888955079834928484
+    second: FINAL_HUDS_AND_INTERFACE_23
+  - first:
+      213: -8197047629022441124
+    second: FINAL_HUDS_AND_INTERFACE_24
+  - first:
+      213: -591160429839508884
+    second: FINAL_HUDS_AND_INTERFACE_25
+  - first:
+      213: -8891901557971921499
+    second: FINAL_HUDS_AND_INTERFACE_26
+  - first:
+      213: -498782361870195853
+    second: FINAL_HUDS_AND_INTERFACE_27
+  - first:
+      213: -3498694658369987002
+    second: FINAL_HUDS_AND_INTERFACE_28
+  - first:
+      213: 1646278578938917438
+    second: FINAL_HUDS_AND_INTERFACE_29
+  - first:
+      213: -533966417822173089
+    second: FINAL_HUDS_AND_INTERFACE_30
+  - first:
+      213: 1589746576918701834
+    second: FINAL_HUDS_AND_INTERFACE_31
+  - first:
+      213: 2959910449093420696
+    second: FINAL_HUDS_AND_INTERFACE_32
+  - first:
+      213: 2334053890484170846
+    second: FINAL_HUDS_AND_INTERFACE_33
+  - first:
+      213: 5921403596797608241
+    second: FINAL_HUDS_AND_INTERFACE_34
+  - first:
+      213: 9218223791719879820
+    second: FINAL_HUDS_AND_INTERFACE_35
+  - first:
+      213: -7957393393647797759
+    second: FINAL_HUDS_AND_INTERFACE_36
+  - first:
+      213: 7568005326599978607
+    second: FINAL_HUDS_AND_INTERFACE_37
+  - first:
+      213: 4567570269552361945
+    second: FINAL_HUDS_AND_INTERFACE_38
+  - first:
+      213: -2758188934325655955
+    second: FINAL_HUDS_AND_INTERFACE_39
+  - first:
+      213: 7366775324700926683
+    second: FINAL_HUDS_AND_INTERFACE_40
+  - first:
+      213: -5649531360804107614
+    second: FINAL_HUDS_AND_INTERFACE_41
+  - first:
+      213: 3102791794606978814
+    second: FINAL_HUDS_AND_INTERFACE_42
+  - first:
+      213: -6798368849313096027
+    second: FINAL_HUDS_AND_INTERFACE_43
+  - first:
+      213: -5867904476200457485
+    second: FINAL_HUDS_AND_INTERFACE_44
+  - first:
+      213: -1862275481717163164
+    second: FINAL_HUDS_AND_INTERFACE_45
+  - first:
+      213: -4629154823851820335
+    second: FINAL_HUDS_AND_INTERFACE_46
+  - first:
+      213: -8590548632778874491
+    second: FINAL_HUDS_AND_INTERFACE_47
+  - first:
+      213: 7791756237433789444
+    second: FINAL_HUDS_AND_INTERFACE_48
+  - first:
+      213: 5019461293417678720
+    second: FINAL_HUDS_AND_INTERFACE_49
+  - first:
+      213: 5095996589771103071
+    second: FINAL_HUDS_AND_INTERFACE_50
+  - first:
+      213: -6886162302755864970
+    second: FINAL_HUDS_AND_INTERFACE_51
+  - first:
+      213: 3467649101630502014
+    second: FINAL_HUDS_AND_INTERFACE_52
+  - first:
+      213: 3593866682116114202
+    second: FINAL_HUDS_AND_INTERFACE_53
+  - first:
+      213: 7521291105112779878
+    second: FINAL_HUDS_AND_INTERFACE_54
+  - first:
+      213: 6244096086449939745
+    second: FINAL_HUDS_AND_INTERFACE_55
+  - first:
+      213: -8412294858324258881
+    second: FINAL_HUDS_AND_INTERFACE_56
+  - first:
+      213: -1016364527781803899
+    second: FINAL_HUDS_AND_INTERFACE_57
+  - first:
+      213: -2516731143433857082
+    second: FINAL_HUDS_AND_INTERFACE_58
+  - first:
+      213: -3203448265714197574
+    second: FINAL_HUDS_AND_INTERFACE_59
+  - first:
+      213: -6538002066724106895
+    second: FINAL_HUDS_AND_INTERFACE_60
+  - first:
+      213: -1988841645768927960
+    second: FINAL_HUDS_AND_INTERFACE_61
+  - first:
+      213: -2373535446122617506
+    second: FINAL_HUDS_AND_INTERFACE_62
+  - first:
+      213: -6688542427685768392
+    second: FINAL_HUDS_AND_INTERFACE_63
+  - first:
+      213: 1008194081044979484
+    second: FINAL_HUDS_AND_INTERFACE_64
+  - first:
+      213: 3868550330677537542
+    second: FINAL_HUDS_AND_INTERFACE_65
+  - first:
+      213: -7850886122160088634
+    second: FINAL_HUDS_AND_INTERFACE_66
+  - first:
+      213: 4213641972911754919
+    second: FINAL_HUDS_AND_INTERFACE_67
+  - first:
+      213: 3961183061279449417
+    second: FINAL_HUDS_AND_INTERFACE_68
+  - first:
+      213: -6184189343067441065
+    second: FINAL_HUDS_AND_INTERFACE_69
+  - first:
+      213: -3594126670511168607
+    second: FINAL_HUDS_AND_INTERFACE_70
+  - first:
+      213: -5903909144367451231
+    second: FINAL_HUDS_AND_INTERFACE_71
+  - first:
+      213: -1285223394027571894
+    second: FINAL_HUDS_AND_INTERFACE_72
+  - first:
+      213: 8057070066806238539
+    second: FINAL_HUDS_AND_INTERFACE_73
+  - first:
+      213: -928014159893508551
+    second: FINAL_HUDS_AND_INTERFACE_74
+  - first:
+      213: 5453412105764807122
+    second: FINAL_HUDS_AND_INTERFACE_75
+  - first:
+      213: -5786124434480304209
+    second: FINAL_HUDS_AND_INTERFACE_76
+  - first:
+      213: -2519549479150724021
+    second: FINAL_HUDS_AND_INTERFACE_77
+  - first:
+      213: -7143097660049216665
+    second: FINAL_HUDS_AND_INTERFACE_78
+  - first:
+      213: 8554729624446440131
+    second: FINAL_HUDS_AND_INTERFACE_79
+  - first:
+      213: 9067889960415637273
+    second: FINAL_HUDS_AND_INTERFACE_80
+  - first:
+      213: 2541965956091204822
+    second: FINAL_HUDS_AND_INTERFACE_81
+  - first:
+      213: 4508866943441081869
+    second: FINAL_HUDS_AND_INTERFACE_82
+  - first:
+      213: -3924208605306407210
+    second: FINAL_HUDS_AND_INTERFACE_83
+  - first:
+      213: 8737264009816565154
+    second: FINAL_HUDS_AND_INTERFACE_84
+  - first:
+      213: 198442843307806380
+    second: FINAL_HUDS_AND_INTERFACE_85
+  - first:
+      213: -9096113321252991516
+    second: FINAL_HUDS_AND_INTERFACE_86
+  - first:
+      213: -2038992314108862890
+    second: FINAL_HUDS_AND_INTERFACE_87
+  - first:
+      213: -4113715757233109071
+    second: FINAL_HUDS_AND_INTERFACE_88
+  - first:
+      213: -6620521386156564749
+    second: FINAL_HUDS_AND_INTERFACE_89
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_0
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 1911
+        width: 59
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 036022fe1a9871120800000000000000
+      internalID: 2384525856310691376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_1
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1909
+        width: 52
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 727a34533cee36c10800000000000000
+      internalID: 2045741177935996711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_2
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 1910
+        width: 64
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ffcf96b94c130090800000000000000
+      internalID: -8069575004395679753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_3
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 1910
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 435535892a52dd2a0800000000000000
+      internalID: -6711166489441643212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_4
+      rect:
+        serializedVersion: 2
+        x: 1389
+        y: 1897
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56696d73e850cf360800000000000000
+      internalID: 7204639612266255973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_5
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 1893
+        width: 88
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ce4e7b28923f50e0800000000000000
+      internalID: -2279047257280065853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_6
+      rect:
+        serializedVersion: 2
+        x: 1499
+        y: 1896
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: feb4afa3ec8b0da90800000000000000
+      internalID: -7291124600820577297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_7
+      rect:
+        serializedVersion: 2
+        x: 1530
+        y: 1913
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a959d426c8790040800000000000000
+      internalID: 4614352085634865568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_8
+      rect:
+        serializedVersion: 2
+        x: 1555
+        y: 1913
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a89b3dfb2e5b3bf40800000000000000
+      internalID: 5743133935313074570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_9
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 1912
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23e9d49b5307afb60800000000000000
+      internalID: 7780654682280402482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_10
+      rect:
+        serializedVersion: 2
+        x: 1621
+        y: 1912
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5085fb1d5a4f44bf0800000000000000
+      internalID: -340878678747555835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_11
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 1852
+        width: 128
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e88f461bbf4a7e450800000000000000
+      internalID: 6118040019726039182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_12
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 1852
+        width: 128
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5270bae2b8d7d1360800000000000000
+      internalID: 7142002620816361253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_13
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 1733
+        width: 291
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b948e42e5db10c90800000000000000
+      internalID: -7205269716772304459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_14
+      rect:
+        serializedVersion: 2
+        x: 1025
+        y: 1865
+        width: 88
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 37, y: 14, z: 37, w: 14}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1af06957e4734050800000000000000
+      internalID: 5783594883459643935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_15
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 1865
+        width: 88
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dd3805d0b03c7580800000000000000
+      internalID: -8828127633506550312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_16
+      rect:
+        serializedVersion: 2
+        x: 1531
+        y: 1875
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07b754e96b9e31170800000000000000
+      internalID: 8148113121392032624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_17
+      rect:
+        serializedVersion: 2
+        x: 1555
+        y: 1875
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65bd6bd50f73263a0800000000000000
+      internalID: -6673710192305710250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_18
+      rect:
+        serializedVersion: 2
+        x: 1597
+        y: 1874
+        width: 18
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f5ace741524807c0800000000000000
+      internalID: -4104958143481731593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_19
+      rect:
+        serializedVersion: 2
+        x: 1621
+        y: 1874
+        width: 18
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d802e0131b38c870800000000000000
+      internalID: 8703271232967149776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_20
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 1673
+        width: 164
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1490e4cc052f1c0c0800000000000000
+      internalID: -4557094919083259583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_21
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 1675
+        width: 164
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce3cf138630a99c50800000000000000
+      internalID: 6672540478914675692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_22
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 1816
+        width: 88
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 37, y: 14, z: 37, w: 14}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 040ac42434fb816a0800000000000000
+      internalID: -6478217768376426432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_23
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 1815
+        width: 90
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46503016a0858f530800000000000000
+      internalID: 3888955079834928484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_24
+      rect:
+        serializedVersion: 2
+        x: 1393
+        y: 1796
+        width: 90
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c51d8297c9c3e3e80800000000000000
+      internalID: -8197047629022441124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_25
+      rect:
+        serializedVersion: 2
+        x: 1505
+        y: 1796
+        width: 90
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6a162e98b6cbc7f0800000000000000
+      internalID: -591160429839508884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_26
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 1774
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a55753f4ae999480800000000000000
+      internalID: -8891901557971921499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_27
+      rect:
+        serializedVersion: 2
+        x: 1394
+        y: 1747
+        width: 88
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3732f74a518f319f0800000000000000
+      internalID: -498782361870195853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_28
+      rect:
+        serializedVersion: 2
+        x: 1506
+        y: 1747
+        width: 88
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64edc4ebeb3227fc0800000000000000
+      internalID: -3498694658369987002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_29
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 1548
+        width: 291
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e323dfa25a1c8d610800000000000000
+      internalID: 1646278578938917438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_30
+      rect:
+        serializedVersion: 2
+        x: 1018
+        y: 1701
+        width: 246
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f58b8bf3f58f698f0800000000000000
+      internalID: -533966417822173089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_31
+      rect:
+        serializedVersion: 2
+        x: 1394
+        y: 1668
+        width: 88
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a07e120c61aef0610800000000000000
+      internalID: 1589746576918701834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_32
+      rect:
+        serializedVersion: 2
+        x: 1506
+        y: 1668
+        width: 88
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8962e250fd6b31920800000000000000
+      internalID: 2959910449093420696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_33
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 1606
+        width: 128
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e507de4a5a9346020800000000000000
+      internalID: 2334053890484170846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_34
+      rect:
+        serializedVersion: 2
+        x: 1019
+        y: 1642
+        width: 246
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13187d6c23d0d2250800000000000000
+      internalID: 5921403596797608241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_35
+      rect:
+        serializedVersion: 2
+        x: 1401
+        y: 1586
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c849485c2b5bdef70800000000000000
+      internalID: 9218223791719879820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_36
+      rect:
+        serializedVersion: 2
+        x: 1513
+        y: 1586
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10a35995ed8a19190800000000000000
+      internalID: -7957393393647797759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_37
+      rect:
+        serializedVersion: 2
+        x: 1021
+        y: 1607
+        width: 36
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6e714e5fb4f60960800000000000000
+      internalID: 7568005326599978607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_38
+      rect:
+        serializedVersion: 2
+        x: 1057
+        y: 1609
+        width: 43
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d1cd4bc5f4436f30800000000000000
+      internalID: 4567570269552361945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_39
+      rect:
+        serializedVersion: 2
+        x: 1101
+        y: 1609
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d662b1a17c1f8b9d0800000000000000
+      internalID: -2758188934325655955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_40
+      rect:
+        serializedVersion: 2
+        x: 1117
+        y: 1609
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd269e0802b0c3660800000000000000
+      internalID: 7366775324700926683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_41
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 1607
+        width: 34
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2aa87dbe825d891b0800000000000000
+      internalID: -5649531360804107614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_42
+      rect:
+        serializedVersion: 2
+        x: 1021
+        y: 1577
+        width: 42
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef6bb89a2b45f0b20800000000000000
+      internalID: 3102791794606978814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_43
+      rect:
+        serializedVersion: 2
+        x: 1063
+        y: 1575
+        width: 36
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ae9c940d8757a1a0800000000000000
+      internalID: -6798368849313096027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_44
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 1577
+        width: 43
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3faa528e7f3019ea0800000000000000
+      internalID: -5867904476200457485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_45
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 1545
+        width: 64
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46b345ee05ed726e0800000000000000
+      internalID: -1862275481717163164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_47
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 1546
+        width: 78
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5816f7d788d38c880800000000000000
+      internalID: -8590548632778874491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_48
+      rect:
+        serializedVersion: 2
+        x: 1398
+        y: 1478
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40cdca4f301e12c60800000000000000
+      internalID: 7791756237433789444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_49
+      rect:
+        serializedVersion: 2
+        x: 1503
+        y: 1478
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 087cbfdb375b8a540800000000000000
+      internalID: 5019461293417678720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_50
+      rect:
+        serializedVersion: 2
+        x: 1611
+        y: 1478
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5b98ed06ed98b640800000000000000
+      internalID: 5095996589771103071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_51
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 1361
+        width: 291
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67efc8ebedf6f60a0800000000000000
+      internalID: -6886162302755864970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_52
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 1354
+        width: 291
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e74736c4c709f1030800000000000000
+      internalID: 3467649101630502014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_53
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 974
+        width: 636
+        height: 326
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1784adc4baffd130800000000000000
+      internalID: 3593866682116114202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_54
+      rect:
+        serializedVersion: 2
+        x: 1703
+        y: 1287
+        width: 31
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66c6d8c196ef06860800000000000000
+      internalID: 7521291105112779878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_55
+      rect:
+        serializedVersion: 2
+        x: 1751
+        y: 1275
+        width: 7
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1256148de4c77a650800000000000000
+      internalID: 6244096086449939745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_56
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 784
+        width: 800
+        height: 461
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbfccb78566814b80800000000000000
+      internalID: -8412294858324258881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_57
+      rect:
+        serializedVersion: 2
+        x: 1703
+        y: 999
+        width: 31
+        height: 266
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 588024fc8d525e1f0800000000000000
+      internalID: -1016364527781803899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_58
+      rect:
+        serializedVersion: 2
+        x: 1751
+        y: 1220
+        width: 93
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c75678fb56c21dd0800000000000000
+      internalID: -2516731143433857082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_59
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 1220
+        width: 93
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abb93c166c01b83d0800000000000000
+      internalID: -3203448265714197574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_60
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 1167
+        width: 95
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17dc32892c95445a0800000000000000
+      internalID: -6538002066724106895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_61
+      rect:
+        serializedVersion: 2
+        x: 1855
+        y: 1167
+        width: 95
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 825907d7f073664e0800000000000000
+      internalID: -1988841645768927960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_62
+      rect:
+        serializedVersion: 2
+        x: 1752
+        y: 1112
+        width: 88
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e55201856128f0fd0800000000000000
+      internalID: -2373535446122617506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_63
+      rect:
+        serializedVersion: 2
+        x: 1857
+        y: 1112
+        width: 88
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83339a479168d23a0800000000000000
+      internalID: -6688542427685768392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_64
+      rect:
+        serializedVersion: 2
+        x: 1751
+        y: 1059
+        width: 90
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1f5651dc23ddfd00800000000000000
+      internalID: 1008194081044979484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_65
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 1059
+        width: 90
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60b21cf770adfa530800000000000000
+      internalID: 3868550330677537542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_66
+      rect:
+        serializedVersion: 2
+        x: 1738
+        y: 988
+        width: 52
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c99a9ceaac0c0390800000000000000
+      internalID: -7850886122160088634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_67
+      rect:
+        serializedVersion: 2
+        x: 1806
+        y: 1010
+        width: 131
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7aec41eac0dd97a30800000000000000
+      internalID: 4213641972911754919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_68
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 867
+        width: 558
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9412bd9c103f8f630800000000000000
+      internalID: 3961183061279449417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_69
+      rect:
+        serializedVersion: 2
+        x: 1057
+        y: 431
+        width: 636
+        height: 395
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75875b6ce885d2aa0800000000000000
+      internalID: -6184189343067441065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_70
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 774
+        width: 68
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a3ac6ee5d81f1ec0800000000000000
+      internalID: -3594126670511168607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_71
+      rect:
+        serializedVersion: 2
+        x: 1793
+        y: 774
+        width: 68
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a33cc7d9e9111ea0800000000000000
+      internalID: -5903909144367451231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_72
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 679
+        width: 695
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a45f6fde128f92ee0800000000000000
+      internalID: -1285223394027571894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_73
+      rect:
+        serializedVersion: 2
+        x: 1703
+        y: 726
+        width: 70
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4d2b6e998670df60800000000000000
+      internalID: 8057070066806238539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_74
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 726
+        width: 70
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93ec305d9080f13f0800000000000000
+      internalID: -928014159893508551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_75
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 698
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d12de1ba696eab40800000000000000
+      internalID: 5453412105764807122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_76
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 702
+        width: 32
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fafe798ab7e83bfa0800000000000000
+      internalID: -5786124434480304209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_77
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 701
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4c533d0913c80dd0800000000000000
+      internalID: -2519549479150724021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_78
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 701
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76ba7d0268e9edc90800000000000000
+      internalID: -7143097660049216665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_79
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 701
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c214aeb44188b670800000000000000
+      internalID: 8554729624446440131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_80
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 669
+        width: 68
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91fa7e010ed97dd70800000000000000
+      internalID: 9067889960415637273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_81
+      rect:
+        serializedVersion: 2
+        x: 1793
+        y: 669
+        width: 68
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d4d3f3b190e64320800000000000000
+      internalID: 2541965956091204822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_82
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 624
+        width: 88
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d069e479896b29e30800000000000000
+      internalID: 4508866943441081869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_83
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 623
+        width: 90
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d63e2890196a89c0800000000000000
+      internalID: -3924208605306407210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_84
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 620
+        width: 40
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a5ebed235ff04970800000000000000
+      internalID: 8737264009816565154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_85
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 623
+        width: 39
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cae849fe6b201c200800000000000000
+      internalID: 198442843307806380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_86
+      rect:
+        serializedVersion: 2
+        x: 1703
+        y: 621
+        width: 70
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ed440aa02d14c180800000000000000
+      internalID: -9096113321252991516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_87
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 621
+        width: 70
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65e1ac91b4b04b3e0800000000000000
+      internalID: -2038992314108862890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_88
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 121
+        width: 800
+        height: 461
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b7813f605529e6c0800000000000000
+      internalID: -4113715757233109071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_89
+      rect:
+        serializedVersion: 2
+        x: 1057
+        y: 77
+        width: 636
+        height: 326
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fed24650ee2f14a0800000000000000
+      internalID: -6620521386156564749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: d71515b641148b6429aeba62c34d805c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      FINAL_HUDS_AND_INTERFACE_0: 2384525856310691376
+      FINAL_HUDS_AND_INTERFACE_1: 2045741177935996711
+      FINAL_HUDS_AND_INTERFACE_10: -340878678747555835
+      FINAL_HUDS_AND_INTERFACE_11: 6118040019726039182
+      FINAL_HUDS_AND_INTERFACE_12: 7142002620816361253
+      FINAL_HUDS_AND_INTERFACE_13: -7205269716772304459
+      FINAL_HUDS_AND_INTERFACE_14: 5783594883459643935
+      FINAL_HUDS_AND_INTERFACE_15: -8828127633506550312
+      FINAL_HUDS_AND_INTERFACE_16: 8148113121392032624
+      FINAL_HUDS_AND_INTERFACE_17: -6673710192305710250
+      FINAL_HUDS_AND_INTERFACE_18: -4104958143481731593
+      FINAL_HUDS_AND_INTERFACE_19: 8703271232967149776
+      FINAL_HUDS_AND_INTERFACE_2: -8069575004395679753
+      FINAL_HUDS_AND_INTERFACE_20: -4557094919083259583
+      FINAL_HUDS_AND_INTERFACE_21: 6672540478914675692
+      FINAL_HUDS_AND_INTERFACE_22: -6478217768376426432
+      FINAL_HUDS_AND_INTERFACE_23: 3888955079834928484
+      FINAL_HUDS_AND_INTERFACE_24: -8197047629022441124
+      FINAL_HUDS_AND_INTERFACE_25: -591160429839508884
+      FINAL_HUDS_AND_INTERFACE_26: -8891901557971921499
+      FINAL_HUDS_AND_INTERFACE_27: -498782361870195853
+      FINAL_HUDS_AND_INTERFACE_28: -3498694658369987002
+      FINAL_HUDS_AND_INTERFACE_29: 1646278578938917438
+      FINAL_HUDS_AND_INTERFACE_3: -6711166489441643212
+      FINAL_HUDS_AND_INTERFACE_30: -533966417822173089
+      FINAL_HUDS_AND_INTERFACE_31: 1589746576918701834
+      FINAL_HUDS_AND_INTERFACE_32: 2959910449093420696
+      FINAL_HUDS_AND_INTERFACE_33: 2334053890484170846
+      FINAL_HUDS_AND_INTERFACE_34: 5921403596797608241
+      FINAL_HUDS_AND_INTERFACE_35: 9218223791719879820
+      FINAL_HUDS_AND_INTERFACE_36: -7957393393647797759
+      FINAL_HUDS_AND_INTERFACE_37: 7568005326599978607
+      FINAL_HUDS_AND_INTERFACE_38: 4567570269552361945
+      FINAL_HUDS_AND_INTERFACE_39: -2758188934325655955
+      FINAL_HUDS_AND_INTERFACE_4: 7204639612266255973
+      FINAL_HUDS_AND_INTERFACE_40: 7366775324700926683
+      FINAL_HUDS_AND_INTERFACE_41: -5649531360804107614
+      FINAL_HUDS_AND_INTERFACE_42: 3102791794606978814
+      FINAL_HUDS_AND_INTERFACE_43: -6798368849313096027
+      FINAL_HUDS_AND_INTERFACE_44: -5867904476200457485
+      FINAL_HUDS_AND_INTERFACE_45: -1862275481717163164
+      FINAL_HUDS_AND_INTERFACE_46: -4629154823851820335
+      FINAL_HUDS_AND_INTERFACE_47: -8590548632778874491
+      FINAL_HUDS_AND_INTERFACE_48: 7791756237433789444
+      FINAL_HUDS_AND_INTERFACE_49: 5019461293417678720
+      FINAL_HUDS_AND_INTERFACE_5: -2279047257280065853
+      FINAL_HUDS_AND_INTERFACE_50: 5095996589771103071
+      FINAL_HUDS_AND_INTERFACE_51: -6886162302755864970
+      FINAL_HUDS_AND_INTERFACE_52: 3467649101630502014
+      FINAL_HUDS_AND_INTERFACE_53: 3593866682116114202
+      FINAL_HUDS_AND_INTERFACE_54: 7521291105112779878
+      FINAL_HUDS_AND_INTERFACE_55: 6244096086449939745
+      FINAL_HUDS_AND_INTERFACE_56: -8412294858324258881
+      FINAL_HUDS_AND_INTERFACE_57: -1016364527781803899
+      FINAL_HUDS_AND_INTERFACE_58: -2516731143433857082
+      FINAL_HUDS_AND_INTERFACE_59: -3203448265714197574
+      FINAL_HUDS_AND_INTERFACE_6: -7291124600820577297
+      FINAL_HUDS_AND_INTERFACE_60: -6538002066724106895
+      FINAL_HUDS_AND_INTERFACE_61: -1988841645768927960
+      FINAL_HUDS_AND_INTERFACE_62: -2373535446122617506
+      FINAL_HUDS_AND_INTERFACE_63: -6688542427685768392
+      FINAL_HUDS_AND_INTERFACE_64: 1008194081044979484
+      FINAL_HUDS_AND_INTERFACE_65: 3868550330677537542
+      FINAL_HUDS_AND_INTERFACE_66: -7850886122160088634
+      FINAL_HUDS_AND_INTERFACE_67: 4213641972911754919
+      FINAL_HUDS_AND_INTERFACE_68: 3961183061279449417
+      FINAL_HUDS_AND_INTERFACE_69: -6184189343067441065
+      FINAL_HUDS_AND_INTERFACE_7: 4614352085634865568
+      FINAL_HUDS_AND_INTERFACE_70: -3594126670511168607
+      FINAL_HUDS_AND_INTERFACE_71: -5903909144367451231
+      FINAL_HUDS_AND_INTERFACE_72: -1285223394027571894
+      FINAL_HUDS_AND_INTERFACE_73: 8057070066806238539
+      FINAL_HUDS_AND_INTERFACE_74: -928014159893508551
+      FINAL_HUDS_AND_INTERFACE_75: 5453412105764807122
+      FINAL_HUDS_AND_INTERFACE_76: -5786124434480304209
+      FINAL_HUDS_AND_INTERFACE_77: -2519549479150724021
+      FINAL_HUDS_AND_INTERFACE_78: -7143097660049216665
+      FINAL_HUDS_AND_INTERFACE_79: 8554729624446440131
+      FINAL_HUDS_AND_INTERFACE_8: 5743133935313074570
+      FINAL_HUDS_AND_INTERFACE_80: 9067889960415637273
+      FINAL_HUDS_AND_INTERFACE_81: 2541965956091204822
+      FINAL_HUDS_AND_INTERFACE_82: 4508866943441081869
+      FINAL_HUDS_AND_INTERFACE_83: -3924208605306407210
+      FINAL_HUDS_AND_INTERFACE_84: 8737264009816565154
+      FINAL_HUDS_AND_INTERFACE_85: 198442843307806380
+      FINAL_HUDS_AND_INTERFACE_86: -9096113321252991516
+      FINAL_HUDS_AND_INTERFACE_87: -2038992314108862890
+      FINAL_HUDS_AND_INTERFACE_88: -4113715757233109071
+      FINAL_HUDS_AND_INTERFACE_89: -6620521386156564749
+      FINAL_HUDS_AND_INTERFACE_9: 7780654682280402482
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

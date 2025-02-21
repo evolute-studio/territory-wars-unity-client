@@ -172,6 +172,7 @@ namespace TerritoryWars.General
 
         public void StartGame()
         {
+            CustomSceneManager.Instance.LoadingScreen.SetActive(false);
             // Підписуємось на події ходу
             TileSelector.OnTurnStarted.AddListener(OnTurnStarted);
             TileSelector.OnTurnEnding.AddListener(OnTurnEnding);

@@ -1,0 +1,2456 @@
+fileFormatVersion: 2
+guid: 83ce922eaec302ab5b0eb131bd7dde88
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7373589006131367773
+    second: loading-crystal-spritesheet_0
+  - first:
+      213: -4661558112124723780
+    second: loading-crystal-spritesheet_1
+  - first:
+      213: -5931581134368710134
+    second: loading-crystal-spritesheet_2
+  - first:
+      213: -6174803298189098606
+    second: loading-crystal-spritesheet_3
+  - first:
+      213: -3302184538947093268
+    second: loading-crystal-spritesheet_4
+  - first:
+      213: 4721528159459564984
+    second: loading-crystal-spritesheet_5
+  - first:
+      213: -1261874557523046657
+    second: loading-crystal-spritesheet_6
+  - first:
+      213: -7556587884814976924
+    second: loading-crystal-spritesheet_7
+  - first:
+      213: 1699411030416729307
+    second: loading-crystal-spritesheet_8
+  - first:
+      213: 2766140590451927514
+    second: loading-crystal-spritesheet_9
+  - first:
+      213: 6648419323395085034
+    second: loading-crystal-spritesheet_10
+  - first:
+      213: -4077497364870101113
+    second: loading-crystal-spritesheet_11
+  - first:
+      213: -3990252662909954949
+    second: loading-crystal-spritesheet_12
+  - first:
+      213: -5443378256433194929
+    second: loading-crystal-spritesheet_13
+  - first:
+      213: 2979659183412520557
+    second: loading-crystal-spritesheet_14
+  - first:
+      213: 5328043314717097664
+    second: loading-crystal-spritesheet_15
+  - first:
+      213: 2059946455773823292
+    second: loading-crystal-spritesheet_16
+  - first:
+      213: -4622046125501493409
+    second: loading-crystal-spritesheet_17
+  - first:
+      213: -5648473272729641150
+    second: loading-crystal-spritesheet_18
+  - first:
+      213: 7462698118716904514
+    second: loading-crystal-spritesheet_19
+  - first:
+      213: 3553834729792911526
+    second: loading-crystal-spritesheet_20
+  - first:
+      213: -1688069595406401742
+    second: loading-crystal-spritesheet_21
+  - first:
+      213: 1428590899219976549
+    second: loading-crystal-spritesheet_22
+  - first:
+      213: 9210522437384098919
+    second: loading-crystal-spritesheet_23
+  - first:
+      213: -1462496409063782454
+    second: loading-crystal-spritesheet_24
+  - first:
+      213: 3214606088938366670
+    second: loading-crystal-spritesheet_25
+  - first:
+      213: -4268229778800814979
+    second: loading-crystal-spritesheet_26
+  - first:
+      213: 4161300333161201279
+    second: loading-crystal-spritesheet_27
+  - first:
+      213: -1548661933114007669
+    second: loading-crystal-spritesheet_28
+  - first:
+      213: -2667093880270573175
+    second: loading-crystal-spritesheet_29
+  - first:
+      213: -1301114009502218130
+    second: loading-crystal-spritesheet_30
+  - first:
+      213: -6625267917813558927
+    second: loading-crystal-spritesheet_31
+  - first:
+      213: -770086896754187369
+    second: loading-crystal-spritesheet_32
+  - first:
+      213: -2111042621041648340
+    second: loading-crystal-spritesheet_33
+  - first:
+      213: 2436235343896883372
+    second: loading-crystal-spritesheet_34
+  - first:
+      213: -843669118280124510
+    second: loading-crystal-spritesheet_35
+  - first:
+      213: -4552514766718680275
+    second: loading-crystal-spritesheet_36
+  - first:
+      213: -888315237687334707
+    second: loading-crystal-spritesheet_37
+  - first:
+      213: 653305719670666856
+    second: loading-crystal-spritesheet_38
+  - first:
+      213: 3743982520332254068
+    second: loading-crystal-spritesheet_39
+  - first:
+      213: 8586050393120261574
+    second: loading-crystal-spritesheet_40
+  - first:
+      213: 7293185061847418755
+    second: loading-crystal-spritesheet_41
+  - first:
+      213: 5463350265975886838
+    second: loading-crystal-spritesheet_42
+  - first:
+      213: 6102673627099608352
+    second: loading-crystal-spritesheet_43
+  - first:
+      213: -779807932896060133
+    second: loading-crystal-spritesheet_44
+  - first:
+      213: 2942635521951714653
+    second: loading-crystal-spritesheet_45
+  - first:
+      213: 8973602224401761024
+    second: loading-crystal-spritesheet_46
+  - first:
+      213: 8486475464566962187
+    second: loading-crystal-spritesheet_47
+  - first:
+      213: 5041216088440195284
+    second: loading-crystal-spritesheet_48
+  - first:
+      213: 3120487809442840127
+    second: loading-crystal-spritesheet_49
+  - first:
+      213: 4232215819665470819
+    second: loading-crystal-spritesheet_50
+  - first:
+      213: -2633687815306425751
+    second: loading-crystal-spritesheet_51
+  - first:
+      213: -9009297594891275632
+    second: loading-crystal-spritesheet_52
+  - first:
+      213: -7626820146913673975
+    second: loading-crystal-spritesheet_53
+  - first:
+      213: 9168567989664706249
+    second: loading-crystal-spritesheet_54
+  - first:
+      213: -3511886563729522658
+    second: loading-crystal-spritesheet_55
+  - first:
+      213: 1065108645475896305
+    second: loading-crystal-spritesheet_56
+  - first:
+      213: -2926812144105308469
+    second: loading-crystal-spritesheet_57
+  - first:
+      213: -4877563699360779493
+    second: loading-crystal-spritesheet_58
+  - first:
+      213: 7124488889868550453
+    second: loading-crystal-spritesheet_59
+  - first:
+      213: 3038889942914340366
+    second: loading-crystal-spritesheet_60
+  - first:
+      213: -7067369865126514355
+    second: loading-crystal-spritesheet_61
+  - first:
+      213: -1893720207451628355
+    second: loading-crystal-spritesheet_62
+  - first:
+      213: -1126637494573346055
+    second: loading-crystal-spritesheet_63
+  - first:
+      213: 3989982630021716916
+    second: loading-crystal-spritesheet_64
+  - first:
+      213: -8715852267084171352
+    second: loading-crystal-spritesheet_65
+  - first:
+      213: -9152291248691990221
+    second: loading-crystal-spritesheet_66
+  - first:
+      213: 5433695324085743333
+    second: loading-crystal-spritesheet_67
+  - first:
+      213: -8461326662897875027
+    second: loading-crystal-spritesheet_68
+  - first:
+      213: -2697995418860139355
+    second: loading-crystal-spritesheet_69
+  - first:
+      213: -6373115943686579466
+    second: loading-crystal-spritesheet_70
+  - first:
+      213: -6507756732329730347
+    second: loading-crystal-spritesheet_71
+  - first:
+      213: 4764117000638722930
+    second: loading-crystal-spritesheet_72
+  - first:
+      213: -6695277647088607229
+    second: loading-crystal-spritesheet_73
+  - first:
+      213: -1772527169230426958
+    second: loading-crystal-spritesheet_74
+  - first:
+      213: -5226631211558524118
+    second: loading-crystal-spritesheet_75
+  - first:
+      213: 3031646515206950927
+    second: loading-crystal-spritesheet_76
+  - first:
+      213: -8613996601877066349
+    second: loading-crystal-spritesheet_77
+  - first:
+      213: 253049752147993742
+    second: loading-crystal-spritesheet_78
+  - first:
+      213: -3852538648188108704
+    second: loading-crystal-spritesheet_79
+  - first:
+      213: 4374814151801863285
+    second: loading-crystal-spritesheet_80
+  - first:
+      213: -492755429149141659
+    second: loading-crystal-spritesheet_81
+  - first:
+      213: -4094501705720974884
+    second: loading-crystal-spritesheet_82
+  - first:
+      213: 881997636909332781
+    second: loading-crystal-spritesheet_83
+  - first:
+      213: 7883492760881837527
+    second: loading-crystal-spritesheet_84
+  - first:
+      213: -3936993958442771229
+    second: loading-crystal-spritesheet_85
+  - first:
+      213: -5904345211438149137
+    second: loading-crystal-spritesheet_86
+  - first:
+      213: -1525870858592287254
+    second: loading-crystal-spritesheet_87
+  - first:
+      213: -5668860250308921686
+    second: loading-crystal-spritesheet_88
+  - first:
+      213: 3391346954230130722
+    second: loading-crystal-spritesheet_89
+  - first:
+      213: -8067858895043309391
+    second: loading-crystal-spritesheet_90
+  - first:
+      213: 4133532456944733532
+    second: loading-crystal-spritesheet_91
+  - first:
+      213: -4863972019512816846
+    second: loading-crystal-spritesheet_92
+  - first:
+      213: 1435134184928809296
+    second: loading-crystal-spritesheet_93
+  - first:
+      213: 581562109357403439
+    second: loading-crystal-spritesheet_94
+  - first:
+      213: 4012711427993249729
+    second: loading-crystal-spritesheet_95
+  - first:
+      213: -957280609439967838
+    second: loading-crystal-spritesheet_96
+  - first:
+      213: 7486239085596316406
+    second: loading-crystal-spritesheet_97
+  - first:
+      213: 1375001289276303521
+    second: loading-crystal-spritesheet_98
+  - first:
+      213: 9002768758320073283
+    second: loading-crystal-spritesheet_99
+  - first:
+      213: 6429735649290968395
+    second: loading-crystal-spritesheet_100
+  - first:
+      213: 4127302797133153910
+    second: loading-crystal-spritesheet_101
+  - first:
+      213: -397494984775804149
+    second: loading-crystal-spritesheet_102
+  - first:
+      213: -2629539153402765280
+    second: loading-crystal-spritesheet_103
+  - first:
+      213: -5508569124513931367
+    second: loading-crystal-spritesheet_104
+  - first:
+      213: 2140590692071745212
+    second: loading-crystal-spritesheet_105
+  - first:
+      213: -2212876636637614916
+    second: loading-crystal-spritesheet_106
+  - first:
+      213: -4428148489879518837
+    second: loading-crystal-spritesheet_107
+  - first:
+      213: -1611844959491246866
+    second: loading-crystal-spritesheet_108
+  - first:
+      213: 8916505011600059376
+    second: loading-crystal-spritesheet_109
+  - first:
+      213: 2743499138481949280
+    second: loading-crystal-spritesheet_110
+  - first:
+      213: -2852500157986207715
+    second: loading-crystal-spritesheet_111
+  - first:
+      213: 7153506214463065751
+    second: loading-crystal-spritesheet_112
+  - first:
+      213: -6915819590893577222
+    second: loading-crystal-spritesheet_113
+  - first:
+      213: 6597866582374431894
+    second: loading-crystal-spritesheet_114
+  - first:
+      213: 2836150854667360363
+    second: loading-crystal-spritesheet_115
+  - first:
+      213: 4593198155976262011
+    second: loading-crystal-spritesheet_116
+  - first:
+      213: -1901561808873329225
+    second: loading-crystal-spritesheet_117
+  - first:
+      213: -1775734501529218057
+    second: loading-crystal-spritesheet_118
+  - first:
+      213: -3183240336947861004
+    second: loading-crystal-spritesheet_119
+  - first:
+      213: -4310993491598203707
+    second: loading-crystal-spritesheet_120
+  - first:
+      213: 1898586212095615641
+    second: loading-crystal-spritesheet_121
+  - first:
+      213: -4848894514997719544
+    second: loading-crystal-spritesheet_122
+  - first:
+      213: 5875460339220930494
+    second: loading-crystal-spritesheet_123
+  - first:
+      213: -1254927228194207302
+    second: loading-crystal-spritesheet_124
+  - first:
+      213: 7988415268703026831
+    second: loading-crystal-spritesheet_125
+  - first:
+      213: -8698689895320402959
+    second: loading-crystal-spritesheet_126
+  - first:
+      213: 2731122164245028690
+    second: loading-crystal-spritesheet_127
+  - first:
+      213: -3098774810422050450
+    second: loading-crystal-spritesheet_128
+  - first:
+      213: 6331655416622391272
+    second: loading-crystal-spritesheet_129
+  - first:
+      213: -7125558039229822374
+    second: loading-crystal-spritesheet_130
+  - first:
+      213: -5659598747054277592
+    second: loading-crystal-spritesheet_131
+  - first:
+      213: -116800035832990688
+    second: loading-crystal-spritesheet_132
+  - first:
+      213: 8106280093354002029
+    second: loading-crystal-spritesheet_133
+  - first:
+      213: 2970249991016344846
+    second: loading-crystal-spritesheet_134
+  - first:
+      213: -9168485816490630137
+    second: loading-crystal-spritesheet_135
+  - first:
+      213: -5508971686936791316
+    second: loading-crystal-spritesheet_136
+  - first:
+      213: -5902234417338845742
+    second: loading-crystal-spritesheet_137
+  - first:
+      213: 6798199795126998294
+    second: loading-crystal-spritesheet_138
+  - first:
+      213: 5542007908718940659
+    second: loading-crystal-spritesheet_139
+  - first:
+      213: 6627846967642725904
+    second: loading-crystal-spritesheet_140
+  - first:
+      213: -8615683005923404435
+    second: loading-crystal-spritesheet_141
+  - first:
+      213: -492915440138911004
+    second: loading-crystal-spritesheet_142
+  - first:
+      213: -6036434368176182124
+    second: loading-crystal-spritesheet_143
+  - first:
+      213: -1030743603577149983
+    second: loading-crystal-spritesheet_144
+  - first:
+      213: 7719414600413723237
+    second: loading-crystal-spritesheet_145
+  - first:
+      213: -6270651564450482447
+    second: loading-crystal-spritesheet_146
+  - first:
+      213: 8481518208040543575
+    second: loading-crystal-spritesheet_147
+  - first:
+      213: -2321560876968735599
+    second: loading-crystal-spritesheet_148
+  - first:
+      213: -7844559805734700045
+    second: loading-crystal-spritesheet_149
+  - first:
+      213: -6017085218227757756
+    second: loading-crystal-spritesheet_150
+  - first:
+      213: 2885233582640721942
+    second: loading-crystal-spritesheet_151
+  - first:
+      213: 6419602094657940293
+    second: loading-crystal-spritesheet_152
+  - first:
+      213: -5279251563707012054
+    second: loading-crystal-spritesheet_153
+  - first:
+      213: 5270734527874126687
+    second: loading-crystal-spritesheet_154
+  - first:
+      213: 4511768349155094851
+    second: loading-crystal-spritesheet_155
+  - first:
+      213: -5031126548039871080
+    second: loading-crystal-spritesheet_156
+  - first:
+      213: 6502324241522082540
+    second: loading-crystal-spritesheet_157
+  - first:
+      213: -2744208488846973601
+    second: loading-crystal-spritesheet_158
+  - first:
+      213: -1604668987554017589
+    second: loading-crystal-spritesheet_159
+  - first:
+      213: -3769120428633712398
+    second: loading-crystal-spritesheet_160
+  - first:
+      213: -1416834683650083162
+    second: loading-crystal-spritesheet_161
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5f8f265220445660800000000000000
+      internalID: 7373589006131367773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbd17f25891de4fb0800000000000000
+      internalID: -4661558112124723780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a026b89926aceada0800000000000000
+      internalID: -5931581134368710134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2914785ad11be4aa0800000000000000
+      internalID: -6174803298189098606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cec754558a84c22d0800000000000000
+      internalID: -3302184538947093268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bd579568dc368140800000000000000
+      internalID: 4721528159459564984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffe4cbf86cbec7ee0800000000000000
+      internalID: -1261874557523046657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4683593fa5b912790800000000000000
+      internalID: -7556587884814976924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd4ae5b0455859710800000000000000
+      internalID: 1699411030416729307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad92dac163e436620800000000000000
+      internalID: 2766140590451927514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae29ec8562ee34c50800000000000000
+      internalID: 6648419323395085034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 787835a00c1d967c0800000000000000
+      internalID: -4077497364870101113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7412372856cf98c0800000000000000
+      internalID: -3990252662909954949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 2496
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f48d637e05c3574b0800000000000000
+      internalID: -5443378256433194929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d66a80b8d30e95920800000000000000
+      internalID: 2979659183412520557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ce7b916a2301f940800000000000000
+      internalID: 5328043314717097664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3149b03366669c10800000000000000
+      internalID: 2059946455773823292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 3264
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5f430a99813bdfb0800000000000000
+      internalID: -4622046125501493409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 3456
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24f59af3c779c91b0800000000000000
+      internalID: -5648473272729641150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 3648
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 244d8106664d09760800000000000000
+      internalID: 7462698118716904514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a8b0c39bd1c15130800000000000000
+      internalID: 3553834729792911526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 4032
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23ff9a195a5c298e0800000000000000
+      internalID: -1688069595406401742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 4224
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 561dc559adf53d310800000000000000
+      internalID: 1428590899219976549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 4416
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7645b0c7b5952df70800000000000000
+      internalID: 9210522437384098919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac7087cb34b24bbe0800000000000000
+      internalID: -1462496409063782454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec6aaf7c4339c9c20800000000000000
+      internalID: 3214606088938366670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 4992
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7455d651a334c4c0800000000000000
+      internalID: -4268229778800814979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 5184
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7eb9c10b98efb930800000000000000
+      internalID: 4161300333161201279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 5376
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8fd19f4d2c028ae0800000000000000
+      internalID: -1548661933114007669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 5568
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 981badb2f349cfad0800000000000000
+      internalID: -2667093880270573175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e680653b3b381fde0800000000000000
+      internalID: -1301114009502218130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 5952
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1715ee05ee15e04a0800000000000000
+      internalID: -6625267917813558927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 6144
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 793a8c82c0a1055f0800000000000000
+      internalID: -770086896754187369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 6336
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2d5a13cbe114b2e0800000000000000
+      internalID: -2111042621041648340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 6528
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca0b936332f3fc120800000000000000
+      internalID: 2436235343896883372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_35
+      rect:
+        serializedVersion: 2
+        x: 6720
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a732f8286faa44f0800000000000000
+      internalID: -843669118280124510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_36
+      rect:
+        serializedVersion: 2
+        x: 6912
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d23430f90f732d0c0800000000000000
+      internalID: -4552514766718680275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_37
+      rect:
+        serializedVersion: 2
+        x: 7104
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc864117ff11ca3f0800000000000000
+      internalID: -888315237687334707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_38
+      rect:
+        serializedVersion: 2
+        x: 7296
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86673b63712011900800000000000000
+      internalID: 653305719670666856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_39
+      rect:
+        serializedVersion: 2
+        x: 7488
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47bfca9044c45f330800000000000000
+      internalID: 3743982520332254068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_40
+      rect:
+        serializedVersion: 2
+        x: 7680
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c549897757c72770800000000000000
+      internalID: 8586050393120261574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_41
+      rect:
+        serializedVersion: 2
+        x: 7872
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 387c99c3c29963560800000000000000
+      internalID: 7293185061847418755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_42
+      rect:
+        serializedVersion: 2
+        x: 8064
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f3570fee18b1db40800000000000000
+      internalID: 5463350265975886838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_43
+      rect:
+        serializedVersion: 2
+        x: 8256
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 025ba6b945d01b450800000000000000
+      internalID: 6102673627099608352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_44
+      rect:
+        serializedVersion: 2
+        x: 8448
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1dd2be01d09d25f0800000000000000
+      internalID: -779807932896060133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_45
+      rect:
+        serializedVersion: 2
+        x: 8640
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5dc06d9a6756d820800000000000000
+      internalID: 2942635521951714653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_46
+      rect:
+        serializedVersion: 2
+        x: 8832
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0034f1dcda3a88c70800000000000000
+      internalID: 8973602224401761024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_47
+      rect:
+        serializedVersion: 2
+        x: 9024
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b08f494c87406c570800000000000000
+      internalID: 8486475464566962187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_48
+      rect:
+        serializedVersion: 2
+        x: 9216
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d8467ba25ff5f540800000000000000
+      internalID: 5041216088440195284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_49
+      rect:
+        serializedVersion: 2
+        x: 9408
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3ef6cf21233e4b20800000000000000
+      internalID: 3120487809442840127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_50
+      rect:
+        serializedVersion: 2
+        x: 9600
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 365f2ff5dd9dbba30800000000000000
+      internalID: 4232215819665470819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_51
+      rect:
+        serializedVersion: 2
+        x: 9792
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96ac267c2e2437bd0800000000000000
+      internalID: -2633687815306425751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_52
+      rect:
+        serializedVersion: 2
+        x: 9984
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09279bc129b88f280800000000000000
+      internalID: -9009297594891275632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_53
+      rect:
+        serializedVersion: 2
+        x: 10176
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90dfa692c77182690800000000000000
+      internalID: -7626820146913673975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_54
+      rect:
+        serializedVersion: 2
+        x: 10368
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ce6bfa620c4d3f70800000000000000
+      internalID: 9168567989664706249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_55
+      rect:
+        serializedVersion: 2
+        x: 10560
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e104f6de6c5434fc0800000000000000
+      internalID: -3511886563729522658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_56
+      rect:
+        serializedVersion: 2
+        x: 10752
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fbc9cc7ba608ce00800000000000000
+      internalID: 1065108645475896305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_57
+      rect:
+        serializedVersion: 2
+        x: 10944
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcebd42acdfd167d0800000000000000
+      internalID: -2926812144105308469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_58
+      rect:
+        serializedVersion: 2
+        x: 11136
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b13b24a68a96f4cb0800000000000000
+      internalID: -4877563699360779493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_59
+      rect:
+        serializedVersion: 2
+        x: 11328
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53105dee5e44fd260800000000000000
+      internalID: 7124488889868550453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_60
+      rect:
+        serializedVersion: 2
+        x: 11520
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e069ae66d4e4c2a20800000000000000
+      internalID: 3038889942914340366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_61
+      rect:
+        serializedVersion: 2
+        x: 11712
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4175dc5d88abed90800000000000000
+      internalID: -7067369865126514355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_62
+      rect:
+        serializedVersion: 2
+        x: 11904
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbcddd2318728b5e0800000000000000
+      internalID: -1893720207451628355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_63
+      rect:
+        serializedVersion: 2
+        x: 12096
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f2d159fa216d50f0800000000000000
+      internalID: -1126637494573346055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_64
+      rect:
+        serializedVersion: 2
+        x: 12288
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bb5c6aef044f5730800000000000000
+      internalID: 3989982630021716916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_65
+      rect:
+        serializedVersion: 2
+        x: 12480
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a73aa9aa821b0780800000000000000
+      internalID: -8715852267084171352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_66
+      rect:
+        serializedVersion: 2
+        x: 12672
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3313cc8a9978cf080800000000000000
+      internalID: -9152291248691990221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_67
+      rect:
+        serializedVersion: 2
+        x: 12864
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5eee4d9bb1d586b40800000000000000
+      internalID: 5433695324085743333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_68
+      rect:
+        serializedVersion: 2
+        x: 13056
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da74e69ea34539a80800000000000000
+      internalID: -8461326662897875027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_69
+      rect:
+        serializedVersion: 2
+        x: 13248
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5acc53d067bce8ad0800000000000000
+      internalID: -2697995418860139355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_70
+      rect:
+        serializedVersion: 2
+        x: 13440
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fade20c0d42e87a0800000000000000
+      internalID: -6373115943686579466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_71
+      rect:
+        serializedVersion: 2
+        x: 13632
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5de54d44bbdcfa5a0800000000000000
+      internalID: -6507756732329730347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_72
+      rect:
+        serializedVersion: 2
+        x: 13824
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2737873bb2b8d1240800000000000000
+      internalID: 4764117000638722930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_73
+      rect:
+        serializedVersion: 2
+        x: 14016
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 300abacf3789513a0800000000000000
+      internalID: -6695277647088607229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_74
+      rect:
+        serializedVersion: 2
+        x: 14208
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bcaa4b4ee7b667e0800000000000000
+      internalID: -1772527169230426958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_75
+      rect:
+        serializedVersion: 2
+        x: 14400
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2ba51fda964777b0800000000000000
+      internalID: -5226631211558524118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_76
+      rect:
+        serializedVersion: 2
+        x: 14592
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0016777172921a20800000000000000
+      internalID: 3031646515206950927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_77
+      rect:
+        serializedVersion: 2
+        x: 14784
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39d02b0cabfe47880800000000000000
+      internalID: -8613996601877066349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_78
+      rect:
+        serializedVersion: 2
+        x: 14976
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e84284ba863038300800000000000000
+      internalID: 253049752147993742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-crystal-spritesheet_79
+      rect:
+        serializedVersion: 2
+        x: 15168
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 060c847d288098ac0800000000000000
+      internalID: -3852538648188108704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 73c487fca156e6c749297b13ff188f10
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      loading-crystal-spritesheet_0: 7373589006131367773
+      loading-crystal-spritesheet_1: -4661558112124723780
+      loading-crystal-spritesheet_10: 6648419323395085034
+      loading-crystal-spritesheet_11: -4077497364870101113
+      loading-crystal-spritesheet_12: -3990252662909954949
+      loading-crystal-spritesheet_13: -5443378256433194929
+      loading-crystal-spritesheet_14: 2979659183412520557
+      loading-crystal-spritesheet_15: 5328043314717097664
+      loading-crystal-spritesheet_16: 2059946455773823292
+      loading-crystal-spritesheet_17: -4622046125501493409
+      loading-crystal-spritesheet_18: -5648473272729641150
+      loading-crystal-spritesheet_19: 7462698118716904514
+      loading-crystal-spritesheet_2: -5931581134368710134
+      loading-crystal-spritesheet_20: 3553834729792911526
+      loading-crystal-spritesheet_21: -1688069595406401742
+      loading-crystal-spritesheet_22: 1428590899219976549
+      loading-crystal-spritesheet_23: 9210522437384098919
+      loading-crystal-spritesheet_24: -1462496409063782454
+      loading-crystal-spritesheet_25: 3214606088938366670
+      loading-crystal-spritesheet_26: -4268229778800814979
+      loading-crystal-spritesheet_27: 4161300333161201279
+      loading-crystal-spritesheet_28: -1548661933114007669
+      loading-crystal-spritesheet_29: -2667093880270573175
+      loading-crystal-spritesheet_3: -6174803298189098606
+      loading-crystal-spritesheet_30: -1301114009502218130
+      loading-crystal-spritesheet_31: -6625267917813558927
+      loading-crystal-spritesheet_32: -770086896754187369
+      loading-crystal-spritesheet_33: -2111042621041648340
+      loading-crystal-spritesheet_34: 2436235343896883372
+      loading-crystal-spritesheet_35: -843669118280124510
+      loading-crystal-spritesheet_36: -4552514766718680275
+      loading-crystal-spritesheet_37: -888315237687334707
+      loading-crystal-spritesheet_38: 653305719670666856
+      loading-crystal-spritesheet_39: 3743982520332254068
+      loading-crystal-spritesheet_4: -3302184538947093268
+      loading-crystal-spritesheet_40: 8586050393120261574
+      loading-crystal-spritesheet_41: 7293185061847418755
+      loading-crystal-spritesheet_42: 5463350265975886838
+      loading-crystal-spritesheet_43: 6102673627099608352
+      loading-crystal-spritesheet_44: -779807932896060133
+      loading-crystal-spritesheet_45: 2942635521951714653
+      loading-crystal-spritesheet_46: 8973602224401761024
+      loading-crystal-spritesheet_47: 8486475464566962187
+      loading-crystal-spritesheet_48: 5041216088440195284
+      loading-crystal-spritesheet_49: 3120487809442840127
+      loading-crystal-spritesheet_5: 4721528159459564984
+      loading-crystal-spritesheet_50: 4232215819665470819
+      loading-crystal-spritesheet_51: -2633687815306425751
+      loading-crystal-spritesheet_52: -9009297594891275632
+      loading-crystal-spritesheet_53: -7626820146913673975
+      loading-crystal-spritesheet_54: 9168567989664706249
+      loading-crystal-spritesheet_55: -3511886563729522658
+      loading-crystal-spritesheet_56: 1065108645475896305
+      loading-crystal-spritesheet_57: -2926812144105308469
+      loading-crystal-spritesheet_58: -4877563699360779493
+      loading-crystal-spritesheet_59: 7124488889868550453
+      loading-crystal-spritesheet_6: -1261874557523046657
+      loading-crystal-spritesheet_60: 3038889942914340366
+      loading-crystal-spritesheet_61: -7067369865126514355
+      loading-crystal-spritesheet_62: -1893720207451628355
+      loading-crystal-spritesheet_63: -1126637494573346055
+      loading-crystal-spritesheet_64: 3989982630021716916
+      loading-crystal-spritesheet_65: -8715852267084171352
+      loading-crystal-spritesheet_66: -9152291248691990221
+      loading-crystal-spritesheet_67: 5433695324085743333
+      loading-crystal-spritesheet_68: -8461326662897875027
+      loading-crystal-spritesheet_69: -2697995418860139355
+      loading-crystal-spritesheet_7: -7556587884814976924
+      loading-crystal-spritesheet_70: -6373115943686579466
+      loading-crystal-spritesheet_71: -6507756732329730347
+      loading-crystal-spritesheet_72: 4764117000638722930
+      loading-crystal-spritesheet_73: -6695277647088607229
+      loading-crystal-spritesheet_74: -1772527169230426958
+      loading-crystal-spritesheet_75: -5226631211558524118
+      loading-crystal-spritesheet_76: 3031646515206950927
+      loading-crystal-spritesheet_77: -8613996601877066349
+      loading-crystal-spritesheet_78: 253049752147993742
+      loading-crystal-spritesheet_79: -3852538648188108704
+      loading-crystal-spritesheet_8: 1699411030416729307
+      loading-crystal-spritesheet_9: 2766140590451927514
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Threading.Tasks;
+using TerritoryWars.Tools;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
@@ -20,6 +21,7 @@ namespace TerritoryWars.General
             else
             {
                 Instance = this;
+                DontDestroyOnLoad(gameObject);
             }
         }
         #endregion
@@ -28,6 +30,8 @@ namespace TerritoryWars.General
         
         private float _progress;
         private bool _isLoading;
+
+        public LoadingScreen LoadingScreen;
 
         public delegate void SimpleEvent();
 

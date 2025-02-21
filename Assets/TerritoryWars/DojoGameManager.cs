@@ -98,11 +98,13 @@ namespace TerritoryWars
         {
             try
             {
+                CustomSceneManager.Instance.LoadingScreen.SetActive(true, CancelGame);
                 var txHash = await GameSystem.create_game(LocalBurnerAccount);
                 Debug.Log($"Create Game: {txHash}");
             }
             catch (Exception e)
             {
+                CustomSceneManager.Instance.LoadingScreen.SetActive(false);
                 Debug.LogError(e);
             }
         }
@@ -111,6 +113,7 @@ namespace TerritoryWars
         {
             try
             {
+                CustomSceneManager.Instance.LoadingScreen.SetActive(true);
                 var txHash = await GameSystem.join_game(LocalBurnerAccount, hostPlayer);
                 Debug.Log($"Join Game: {txHash}");
                 SessionManager = new DojoSessionManager(this);
@@ -119,13 +122,30 @@ namespace TerritoryWars
             }
             catch (Exception e)
             {
+                CustomSceneManager.Instance.LoadingScreen.SetActive(false);
+                Debug.LogError(e);
+            }
+        }
+        
+        public async void CancelGame()
+        {
+            try
+            {
+                var txHash = await GameSystem.cancel_game(LocalBurnerAccount);
+                Debug.Log($"Cancel Game: {txHash}");
+                CustomSceneManager.Instance.LoadingScreen.SetActive(false);
+            }
+            catch (Exception e)
+            {
+                CustomSceneManager.Instance.LoadingScreen.SetActive(false);
                 Debug.LogError(e);
             }
         }
         
         private void ModelUpdated(ModelInstance modelInstance)
         {
-            Debug.Log($"Model updated: {modelInstance.transform.name}");
+            if (modelInstance == null || modelInstance.transform == null) return;
+            
             if (modelInstance.transform.TryGetComponent(out evolute_duel_Game gameModel))
             {
                 CheckStartSession();
@@ -189,6 +209,16 @@ namespace TerritoryWars
         public void OnDojoEventReceived(ModelInstance eventMessage)
         {
             Debug.Log($"!!!!!! Received event: {eventMessage.Model.Name}");
+        }
+        
+        public void TryAgain(Action action, float delay)
+        {
+            StartCoroutine(TryAgainCoroutine(action, delay));
+        }
+        
+        private IEnumerator TryAgainCoroutine(Action action, float delay){
+            yield return new WaitForSeconds(delay);
+            action();
         }
         
         // private T GetFieldValue<T>(ModelInstance eventMessage, string fieldName)
