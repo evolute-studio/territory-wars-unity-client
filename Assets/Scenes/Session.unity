@@ -11376,7 +11376,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 147.1015, y: -600.7969}
+  m_AnchoredPosition: {x: 147.10156, y: -600.7969}
   m_SizeDelta: {x: 241.95996, y: 132.00012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &406405457
@@ -37282,7 +37282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6656283264602794713, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
       propertyPath: JokerNotAvailableColor.a
-      value: 0.50980395
+      value: 0.08627451
       objectReference: {fileID: 0}
     - target: {fileID: 6656283264602794713, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
       propertyPath: 'imagePlayers.Array.data[0]'
@@ -37315,11 +37315,11 @@ PrefabInstance:
     - target: {fileID: 6656283264602794713, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
       propertyPath: players.Array.data[0].playerImage
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1262083351}
     - target: {fileID: 6656283264602794713, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
       propertyPath: players.Array.data[1].playerImage
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 549787220}
     - target: {fileID: 6656283264602794713, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
       propertyPath: players.Array.data[2].playerImage
       value: 
@@ -37332,6 +37332,14 @@ PrefabInstance:
       propertyPath: players.Array.data[4].playerImage
       value: 
       objectReference: {fileID: 549787220}
+    - target: {fileID: 6656283264602794713, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
+      propertyPath: players.Array.data[0].jokerCountText
+      value: 
+      objectReference: {fileID: 931255412}
+    - target: {fileID: 6656283264602794713, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
+      propertyPath: players.Array.data[1].jokerCountText
+      value: 
+      objectReference: {fileID: 931255412}
     - target: {fileID: 6656283264602794713, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
       propertyPath: players.Array.data[0].jokersImage.Array.size
       value: 3
@@ -37355,7 +37363,7 @@ PrefabInstance:
     - target: {fileID: 6656283264602794713, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
       propertyPath: 'players.Array.data[1].jokersImage.Array.data[0]'
       value: 
-      objectReference: {fileID: 1875466020}
+      objectReference: {fileID: 685190906}
     - target: {fileID: 6656283264602794713, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
       propertyPath: 'players.Array.data[1].jokersImage.Array.data[1]'
       value: 
@@ -37363,7 +37371,7 @@ PrefabInstance:
     - target: {fileID: 6656283264602794713, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
       propertyPath: 'players.Array.data[1].jokersImage.Array.data[2]'
       value: 
-      objectReference: {fileID: 685190906}
+      objectReference: {fileID: 1875466020}
     - target: {fileID: 7047076625125448395, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -49726,7 +49734,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -294.99994, y: -594}
+  m_AnchoredPosition: {x: -295, y: -594}
   m_SizeDelta: {x: 241.95996, y: 132.00012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1744775422
@@ -55653,7 +55661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.061918736, g: 1, b: 0, a: 1}
+  m_Color: {r: 0.061918736, g: 1, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

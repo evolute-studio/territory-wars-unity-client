@@ -64,7 +64,9 @@ namespace TerritoryWars.Tile
         public void Generate()
         {
             Destroy(City);
+            Destroy(Mill);
             City = null;
+            Mill = null;
             AllCityRenderers = new List<SpriteRenderer>();
             AllCityLineRenderers = new List<LineRenderer>();
 

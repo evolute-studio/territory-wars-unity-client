@@ -72,7 +72,7 @@ namespace TerritoryWars.General
                 if (isJokerMode && selectedPosition.HasValue)
                 {
                     Debug.Log("Joker mode");
-                    //RegenerateJokerTile();
+                    RegenerateJokerTile();
                     return;
                 }
                 
@@ -330,6 +330,7 @@ namespace TerritoryWars.General
                         GameManager.Instance.CurrentCharacter.Id))
                 {
                     isPlacingTile = false;
+                    if(isJokerMode) GameManager.Instance.CompleteJokerPlacement();
                     isJokerMode = false;
                     selectedPosition = null;
                     jokerPosition = null;
@@ -338,7 +339,7 @@ namespace TerritoryWars.General
                     gameUI.SetEndTurnButtonActive(false);
                     gameUI.SetRotateButtonActive(false);
 
-                    GameManager.Instance.CompleteJokerPlacement();
+                    
                     GameManager.Instance.CompleteEndTurn();
                 }
             }
