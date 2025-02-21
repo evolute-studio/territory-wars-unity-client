@@ -7,7 +7,7 @@ namespace TerritoryWars.Tools
 
     public class SpriteAnimator : MonoBehaviour
     {
-        public Sprite[] sprites;
+        public Sprite[] sprites = new Sprite[0];
         public float duration = 1f;
         public bool loop = true;
         public float delay = 0f;
@@ -17,7 +17,7 @@ namespace TerritoryWars.Tools
         public bool playOnAwake = true;
         public Action OnAnimationEnd;
 
-        private SpriteRenderer _spriteRenderer;
+        [SerializeField] private SpriteRenderer _spriteRenderer;
 
         private void Start()
         {

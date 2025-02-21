@@ -1,0 +1,852 @@
+fileFormatVersion: 2
+guid: ae01df4a17dca693aab0456b95179715
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1710275416910006927
+    second: Sword cross animation_0
+  - first:
+      213: -6315599485041162780
+    second: Sword cross animation_1
+  - first:
+      213: 2717249835840545250
+    second: Sword cross animation_2
+  - first:
+      213: 7079710889931582924
+    second: Sword cross animation_3
+  - first:
+      213: -666741126661589251
+    second: Sword cross animation_4
+  - first:
+      213: -3336667837792511968
+    second: Sword cross animation_5
+  - first:
+      213: 2077531497301109510
+    second: Sword cross animation_6
+  - first:
+      213: -8920911025793989259
+    second: Sword cross animation_7
+  - first:
+      213: 4197140327610034096
+    second: Sword cross animation_8
+  - first:
+      213: 6583561548381435510
+    second: Sword cross animation_9
+  - first:
+      213: -8941092691230841740
+    second: Sword cross animation_10
+  - first:
+      213: 5716988152937500416
+    second: Sword cross animation_11
+  - first:
+      213: 3943753948610804127
+    second: Sword cross animation_12
+  - first:
+      213: -3234869656602642017
+    second: Sword cross animation_13
+  - first:
+      213: -52177385398582893
+    second: Sword cross animation_14
+  - first:
+      213: 7827669325073060859
+    second: Sword cross animation_15
+  - first:
+      213: 887772137128766378
+    second: Sword cross animation_16
+  - first:
+      213: 4151909457408887203
+    second: Sword cross animation_17
+  - first:
+      213: -680438595956440338
+    second: Sword cross animation_18
+  - first:
+      213: -3565979307978870615
+    second: Sword cross animation_19
+  - first:
+      213: -1310209700768376853
+    second: Sword cross animation_20
+  - first:
+      213: -6826347582303585608
+    second: Sword cross animation_21
+  - first:
+      213: 5023214500300373685
+    second: Sword cross animation_22
+  - first:
+      213: 4293040048970082633
+    second: Sword cross animation_23
+  - first:
+      213: -5761990220118124892
+    second: Sword cross animation_24
+  - first:
+      213: -8767544465995704612
+    second: Sword cross animation_25
+  - first:
+      213: -6407931196250017419
+    second: Sword cross animation_26
+  - first:
+      213: 1932478403429460145
+    second: Sword cross animation_27
+  - first:
+      213: -4024896954803936590
+    second: Sword cross animation_28
+  - first:
+      213: 5228812007125004206
+    second: Sword cross animation_29
+  - first:
+      213: -7396146902113001016
+    second: Sword cross animation_30
+  - first:
+      213: 3090121214480734132
+    second: Sword cross animation_31
+  - first:
+      213: -517428019398460490
+    second: Sword cross animation_32
+  - first:
+      213: -8295931144591215776
+    second: Sword cross animation_33
+  - first:
+      213: 4409866151042832682
+    second: Sword cross animation_34
+  - first:
+      213: -2958786865508002874
+    second: Sword cross animation_35
+  - first:
+      213: 7575831767922479268
+    second: Sword cross animation_36
+  - first:
+      213: -3841772437693783706
+    second: Sword cross animation_37
+  - first:
+      213: 3259513979304789074
+    second: Sword cross animation_38
+  - first:
+      213: 2397516222921932529
+    second: Sword cross animation_39
+  - first:
+      213: 4418135015915266332
+    second: Sword cross animation_40
+  - first:
+      213: 1660707969219695055
+    second: Sword cross animation_41
+  - first:
+      213: -7846195035005976900
+    second: Sword cross animation_42
+  - first:
+      213: -85198775354007864
+    second: Sword cross animation_43
+  - first:
+      213: 6406299593068833823
+    second: Sword cross animation_44
+  - first:
+      213: -1936024912360106651
+    second: Sword cross animation_45
+  - first:
+      213: -587841340300525249
+    second: Sword cross animation_46
+  - first:
+      213: -391630587586800160
+    second: Sword cross animation_47
+  - first:
+      213: -7431258363090733358
+    second: Sword cross animation_48
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sword cross animation_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 144
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 175fefad191e348e0800000000000000
+      internalID: -1710275416910006927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword cross animation_1
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 144
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e54b76dabb7a58a0800000000000000
+      internalID: -6315599485041162780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword cross animation_2
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 144
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e1a34f345c95b520800000000000000
+      internalID: 2717249835840545250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword cross animation_3
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 144
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccd26d26b8f204260800000000000000
+      internalID: 7079710889931582924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword cross animation_4
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 144
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df631345a724fb6f0800000000000000
+      internalID: -666741126661589251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword cross animation_5
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 144
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02818eaa746c1b1d0800000000000000
+      internalID: -3336667837792511968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword cross animation_6
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 0
+        width: 144
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60b615ab3efd4dc10800000000000000
+      internalID: 2077531497301109510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword cross animation_7
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 0
+        width: 144
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5750fa2efae823480800000000000000
+      internalID: -8920911025793989259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword cross animation_8
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 144
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b7a9abf3ec3f3a30800000000000000
+      internalID: 4197140327610034096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword cross animation_9
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 0
+        width: 144
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6763238d8528d5b50800000000000000
+      internalID: 6583561548381435510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword cross animation_10
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 144
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 474285bb19bdae380800000000000000
+      internalID: -8941092691230841740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword cross animation_11
+      rect:
+        serializedVersion: 2
+        x: 1584
+        y: 0
+        width: 144
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00fc4f86f62d65f40800000000000000
+      internalID: 5716988152937500416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword cross animation_12
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 0
+        width: 144
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f99bd7442570bb630800000000000000
+      internalID: 3943753948610804127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword cross animation_13
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 0
+        width: 144
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f997287bf2f6b13d0800000000000000
+      internalID: -3234869656602642017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword cross animation_14
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 0
+        width: 144
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3914206c1f0a64ff0800000000000000
+      internalID: -52177385398582893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword cross animation_15
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 0
+        width: 144
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf3933447c771ac60800000000000000
+      internalID: 7827669325073060859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword cross animation_16
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 0
+        width: 144
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aabac0b1e00025c00800000000000000
+      internalID: 887772137128766378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword cross animation_17
+      rect:
+        serializedVersion: 2
+        x: 2448
+        y: 0
+        width: 144
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a9017c57ab8e9930800000000000000
+      internalID: 4151909457408887203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword cross animation_18
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 0
+        width: 144
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee20d8cb3b89e86f0800000000000000
+      internalID: -680438595956440338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword cross animation_19
+      rect:
+        serializedVersion: 2
+        x: 2736
+        y: 0
+        width: 144
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a0b68776b8138ec0800000000000000
+      internalID: -3565979307978870615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword cross animation_20
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 0
+        width: 144
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be71e6c083331dde0800000000000000
+      internalID: -1310209700768376853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword cross animation_21
+      rect:
+        serializedVersion: 2
+        x: 3024
+        y: 0
+        width: 144
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bab27b9a01f341a0800000000000000
+      internalID: -6826347582303585608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword cross animation_22
+      rect:
+        serializedVersion: 2
+        x: 3168
+        y: 0
+        width: 144
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bebef059fa06b540800000000000000
+      internalID: 5023214500300373685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword cross animation_23
+      rect:
+        serializedVersion: 2
+        x: 3312
+        y: 0
+        width: 144
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9492365dd21f39b30800000000000000
+      internalID: 4293040048970082633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword cross animation_24
+      rect:
+        serializedVersion: 2
+        x: 3456
+        y: 0
+        width: 144
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a695925c6c4900b0800000000000000
+      internalID: -5761990220118124892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 8d0abb225fc67e3e2ba1e0aac0f55344
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Sword cross animation_0: -1710275416910006927
+      Sword cross animation_1: -6315599485041162780
+      Sword cross animation_10: -8941092691230841740
+      Sword cross animation_11: 5716988152937500416
+      Sword cross animation_12: 3943753948610804127
+      Sword cross animation_13: -3234869656602642017
+      Sword cross animation_14: -52177385398582893
+      Sword cross animation_15: 7827669325073060859
+      Sword cross animation_16: 887772137128766378
+      Sword cross animation_17: 4151909457408887203
+      Sword cross animation_18: -680438595956440338
+      Sword cross animation_19: -3565979307978870615
+      Sword cross animation_2: 2717249835840545250
+      Sword cross animation_20: -1310209700768376853
+      Sword cross animation_21: -6826347582303585608
+      Sword cross animation_22: 5023214500300373685
+      Sword cross animation_23: 4293040048970082633
+      Sword cross animation_24: -5761990220118124892
+      Sword cross animation_3: 7079710889931582924
+      Sword cross animation_4: -666741126661589251
+      Sword cross animation_5: -3336667837792511968
+      Sword cross animation_6: 2077531497301109510
+      Sword cross animation_7: -8920911025793989259
+      Sword cross animation_8: 4197140327610034096
+      Sword cross animation_9: 6583561548381435510
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -11376,7 +11376,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 147.10156, y: -600.7969}
+  m_AnchoredPosition: {x: 147.1015, y: -600.7969}
   m_SizeDelta: {x: 241.95996, y: 132.00012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &406405457
@@ -44816,6 +44816,7 @@ MonoBehaviour:
   - {fileID: 5368312208594547958, guid: 19110789765fd2c48b79d1198ae58085, type: 3}
   - {fileID: 6849612934398127024, guid: a995aaa8a0d2d034ba3bc5c29e0bed8f, type: 3}
   MillPrefab: {fileID: 3455373684899882535, guid: fcd9b48a23aea57cfb312a4245521c07, type: 3}
+  ClashAnimationPrefab: {fileID: 3572563069366787145, guid: 1150a510853d224fd89883a8f0548b6c, type: 3}
 --- !u!1 &1539724579
 GameObject:
   m_ObjectHideFlags: 0
@@ -49734,7 +49735,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -295, y: -594}
+  m_AnchoredPosition: {x: -294.99994, y: -594}
   m_SizeDelta: {x: 241.95996, y: 132.00012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1744775422
