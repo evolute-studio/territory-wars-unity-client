@@ -38,6 +38,7 @@ namespace TerritoryWars.General
 
         public void Start()
         {
+            StartOnChainMode();
             // CustomSceneManager.Instance.OnLoadScene += SceneLoaded;
             //
             // switch (ConnectionType)
