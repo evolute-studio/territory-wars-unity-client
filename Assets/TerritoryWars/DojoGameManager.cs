@@ -39,7 +39,7 @@ namespace TerritoryWars
         
         public WorldManager WorldManager;
 
-        [SerializeField] WorldManagerData dojoConfig;
+        public WorldManagerData dojoConfig;
         [SerializeField] GameManagerData gameManagerData;
         
         public Game GameSystem;

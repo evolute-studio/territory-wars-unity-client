@@ -557,7 +557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WorldManager: {fileID: 209425369}
-  dojoConfig: {fileID: 11400000, guid: 2fcdfc0770a1cc4a0a656cf28c71fc55, type: 2}
+  dojoConfig: {fileID: 11400000, guid: cae5977e93d0db70e8a96199bd1ca33a, type: 2}
   gameManagerData: {fileID: 11400000, guid: 291ea469f20a3a04097ffbc7db4f51f5, type: 2}
   GameSystem: {fileID: 209425367}
   IsLocalPlayer: 1
@@ -613,7 +613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   synchronizationMaster: {fileID: 209425368}
-  dojoConfig: {fileID: 11400000, guid: 2fcdfc0770a1cc4a0a656cf28c71fc55, type: 2}
+  dojoConfig: {fileID: 11400000, guid: cae5977e93d0db70e8a96199bd1ca33a, type: 2}
 --- !u!4 &209425370
 Transform:
   m_ObjectHideFlags: 0
@@ -5849,10 +5849,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 208f1df940f64631bec8e2510922c875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ConnectionType: 1
   GameMode: 1
+  WorldManager: {fileID: 209425369}
   DojoGameManager: {fileID: 209425366}
   DojoGameGUIController: {fileID: 1734509912}
   UseDojoGUIController: 0
+  LocalConnection: {fileID: 11400000, guid: 2fcdfc0770a1cc4a0a656cf28c71fc55, type: 2}
+  RemoteDevConnection: {fileID: 11400000, guid: cae5977e93d0db70e8a96199bd1ca33a, type: 2}
+  RemoteProdConnection: {fileID: 11400000, guid: df6c209f9a34120ecb69941c57148899, type: 2}
+  GameContract: {fileID: 209425367}
+  PlayerProfileContract: {fileID: 209425371}
 --- !u!4 &1842911252
 Transform:
   m_ObjectHideFlags: 0

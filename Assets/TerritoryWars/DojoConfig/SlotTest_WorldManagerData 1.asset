@@ -10,14 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: faed63f2427f3ed83a42d16bb3e73e6d, type: 3}
-  m_Name: WorldManagerData
+  m_Name: SlotTest_WorldManagerData 1
   m_EditorClassIdentifier: 
-  toriiUrl: http://localhost:8080
-  rpcUrl: http://localhost:5050
+  toriiUrl: https://api.cartridge.gg/x/liyard-evolute-duel/torii
+  rpcUrl: https://api.cartridge.gg/x/liyard-evolute-duel/katana
   relayUrl: 
   relayWebrtcUrl: 
   worldAddress:
-    hex: 0x06a4d87ac4a224fbc633b46ec896545f8783cfc6d87ce8a4ef8c5630a3c17711
+    hex: 0x07f086a6f69eb87ceadfc7a1275f670524416af400ede15a3d2703dd6393bde0
+  GameContractAddress: 
+  PlayerProfileContractAddress: 
   query:
     limit: 1000
     offset: 0

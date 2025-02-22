@@ -16,6 +16,10 @@ namespace Dojo
         public string relayWebrtcUrl;
         [Header("World")]
         public FieldElement worldAddress;
+        
+        [Header("Contracts")]
+        public string GameContractAddress;
+        public string PlayerProfileContractAddress;
 
         public Query query;
     }
