@@ -216,7 +216,7 @@ namespace TerritoryWars.General
             
             sequence.OnComplete(() => {
                 Debug.Log("OnComplete");
-                GameManager.Instance.TileSelector.RegenerateJokerTile();
+                SessionManager.Instance.TileSelector.RegenerateJokerTile();
             });
             sequence.Append(_evoluteShards.transform.DOLocalMove(endPosition, 0.3f));
             // Fade In

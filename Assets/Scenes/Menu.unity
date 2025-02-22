@@ -573,7 +573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb53232f67c4c74a3019b9862a69724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contractAddress: 0x004d9f0e45858c8c25af85e11cf2986ebb6875369f74cd41094317b7d2b84a4f
+  contractAddress: 0x0461bf09a868951e3bd3a30519f90b42e84d7f3d8de526c40720ccca4eff94cb
 --- !u!114 &209425368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -641,7 +641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05e6e0e5e92900cb385659b57ed36e8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contractAddress: 0x0231578ae06610bbffba207e59e26a47e6fbd658d08e5106f867dfaaa299c27d
+  contractAddress: 0x052f91c7c4bda4610fde56c149228c3ec98244983422fcd52d0c1c1c4a89b22f
 --- !u!1 &346118383
 GameObject:
   m_ObjectHideFlags: 0
@@ -2070,6 +2070,7 @@ MonoBehaviour:
   maxRandomDelay: 0.5
   waitBetweenLoops: 0
   playOnAwake: 1
+  _spriteRenderer: {fileID: 0}
 --- !u!114 &603810582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5893,7 +5894,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1853912903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6216,6 +6217,7 @@ MonoBehaviour:
   maxRandomDelay: 0.5
   waitBetweenLoops: 0
   playOnAwake: 1
+  _spriteRenderer: {fileID: 0}
 --- !u!114 &1937942676
 MonoBehaviour:
   m_ObjectHideFlags: 0
