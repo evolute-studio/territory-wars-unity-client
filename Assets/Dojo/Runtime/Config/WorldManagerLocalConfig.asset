@@ -12,16 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faed63f2427f3ed83a42d16bb3e73e6d, type: 3}
   m_Name: WorldManagerLocalConfig
   m_EditorClassIdentifier: 
-  toriiUrl: https://api.cartridge.gg/x/liyard-dojo-starter/torii
-  rpcUrl: https://api.cartridge.gg/x/liyard-dojo-starter/katana
+  toriiUrl: http://localhost:8080
+  rpcUrl: http://localhost:5050
   relayUrl: /ip4/127.0.0.1/tcp/9090
-  relayWebrtcUrl: /ip4/127.0.0.1/tcp/9091
+  relayWebrtcUrl: /ip4/127.0.0.1/udp/9091/webrtc-direct/certhash/uEiAS9CpA5yNwO7iidBM5f9FcPl67PwohiK-1J9BhnFMrHg
   worldAddress:
-    hex: 0x0190386ce184452b6fed8ff0b17b4d42ea47cdf8a2d1f0a98be083f53b41662f
+    hex: 0x025e74888e786245ec7aa93d846b2cc9e4b49a5244209860bbf4b384f654521b
   query:
     limit: 100
     offset: 0
-    dont_include_hashed_keys: 0
-    order_by: []
-    entity_models: []
-    entity_updated_after: 0
