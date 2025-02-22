@@ -129,6 +129,9 @@ namespace Dojo
 
         private void HandleEventMessage(FieldElement hashedKeys, Model[] entityModels)
         {
+            Debug.Log($"Event message received: {hashedKeys.Hex()}");
+            
+            
             foreach (var entityModel in entityModels)
             {
                 string[] parts = entityModel.Name.Split('-');
