@@ -13,13 +13,10 @@ MonoBehaviour:
   m_Name: Local_WorldManagerData
   m_EditorClassIdentifier: 
   toriiUrl: http://localhost:8080
-  rpcUrl: http://localhost:5050
   relayUrl: 
   relayWebrtcUrl: 
   worldAddress:
-    hex: 0x07f086a6f69eb87ceadfc7a1275f670524416af400ede15a3d2703dd6393bde0
-  GameContractAddress: 0x063446a7d50998f2474372f7b0b9e83b7b1ee0e0b0ba45e4e65c1718fbce9352
-  PlayerProfileContractAddress: 0x02c7d7f9d22e3d0448f839a58991064b32571edd8df919466ba8292c71d01f68
+    hex: 0x06a4d87ac4a224fbc633b46ec896545f8783cfc6d87ce8a4ef8c5630a3c17711
   query:
     limit: 1000
     offset: 0

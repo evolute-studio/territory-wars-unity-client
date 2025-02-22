@@ -573,7 +573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb53232f67c4c74a3019b9862a69724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contractAddress: 0x0461bf09a868951e3bd3a30519f90b42e84d7f3d8de526c40720ccca4eff94cb
+  contractAddress: 0x0711edd1059552a476434c6885f7ecfff4029626f8c5959e7b1e4862a8115d5e
 --- !u!114 &209425368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -641,7 +641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05e6e0e5e92900cb385659b57ed36e8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contractAddress: 0x052f91c7c4bda4610fde56c149228c3ec98244983422fcd52d0c1c1c4a89b22f
+  contractAddress: 0x03ec6fbfd9233e33de90f726501d12bea66f4d7fa4b07d41f799bfff4b54b804
 --- !u!1 &346118383
 GameObject:
   m_ObjectHideFlags: 0
@@ -5850,8 +5850,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 208f1df940f64631bec8e2510922c875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConnectionType: 0
-  GameMode: 1
   WorldManager: {fileID: 209425369}
   DojoGameManager: {fileID: 209425366}
   DojoGameGUIController: {fileID: 1734509912}
