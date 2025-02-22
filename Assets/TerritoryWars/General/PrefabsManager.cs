@@ -22,12 +22,18 @@ namespace TerritoryWars.General
         
         public GameObject[] Players;
         public GameObject MillPrefab;
+        public GameObject ClashAnimationPrefab;
         private int _currentPlayerIndex = 0;
         
         public GameObject GetNextPlayer()
         {
             _currentPlayerIndex = (_currentPlayerIndex + 1) % Players.Length;
             return Players[_currentPlayerIndex];
+        }
+        
+        public GameObject InstantiateObject(GameObject prefab)
+        {
+            return Instantiate(prefab);
         }
     }
 }

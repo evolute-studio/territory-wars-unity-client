@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TerritoryWars.General;
 using TerritoryWars.ScriptablesObjects;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
@@ -34,6 +35,9 @@ namespace TerritoryWars.Tile
         public GameObject RoadPath;
         
         private int _currentHouseIndex = 0;
+        
+        public List<SpriteRenderer> AllCityRenderers = new List<SpriteRenderer>();
+        public List<LineRenderer> AllCityLineRenderers = new List<LineRenderer>();
 
 
         public void Start() => Initialize();
@@ -60,7 +64,11 @@ namespace TerritoryWars.Tile
         public void Generate()
         {
             Destroy(City);
+            Destroy(Mill);
             City = null;
+            Mill = null;
+            AllCityRenderers = new List<SpriteRenderer>();
+            AllCityLineRenderers = new List<LineRenderer>();
 
             TileRotator.ClearLists();
 
@@ -83,11 +91,13 @@ namespace TerritoryWars.Tile
         public void GenerateRoad()
         {
             string id = TileConfig;
+
             if (string.IsNullOrEmpty(id) || !id.Contains('R'))
             {
                 RoadRenderer.sprite = null;
                 return;
             }
+            
             int roadCount = id.Count(c => c == 'R');
 
             if (roadCount == 1)
@@ -126,7 +136,7 @@ namespace TerritoryWars.Tile
                 }
             }
             
-            if (roadCount == 3)
+            if (roadCount >= 3)
             {
                 if(Mill != null)
                     Destroy(Mill);
@@ -143,12 +153,24 @@ namespace TerritoryWars.Tile
         public void GenerateCity()
         {
             string id = TileConfig;
-            if (string.IsNullOrEmpty(id) || !id.Contains('C'))
+            int cityCount = id.Count(c => c == 'C');
+            int roadCount = id.Count(c => c == 'R');
+
+            if (cityCount == 1 && roadCount == 3) { }
+
+            else if(cityCount == 3 && roadCount == 1) { }
+            else
             {
-                return;
+                if (string.IsNullOrEmpty(id) || !id.Contains('C')) 
+                {
+                    return;
+                }
+                
+                id = id.Replace('R', 'X');
+                id = id.Replace('F', 'X');
+                
             }
-            id = id.Replace('R', 'X');
-            id = id.Replace('F', 'X');
+
 
             if (City != null)
             {
@@ -169,6 +191,10 @@ namespace TerritoryWars.Tile
 
         public void InitCity(GameObject city, int index)
         {
+            AllCityRenderers = new List<SpriteRenderer>();
+            AllCityLineRenderers = new List<LineRenderer>();
+            
+            
             // find in children game objects with sprite renderer and name House
             List<SpriteRenderer> houseRenderers = city.GetComponentsInChildren<SpriteRenderer>()
                 .ToList().Where(x => x.name == "House").ToList();
@@ -177,6 +203,14 @@ namespace TerritoryWars.Tile
             TerritoryFiller territoryFiller = city.GetComponentInChildren<TerritoryFiller>();
             FencePlacer fencePlacer = city.GetComponentInChildren<FencePlacer>();
             List<Transform> pillars = fencePlacer.pillars;
+            List<SpriteRenderer> pillarsRenderers = pillars.Select(x => x.GetComponent<SpriteRenderer>()).ToList();
+            
+            AllCityRenderers.AddRange(houseRenderers);
+            AllCityRenderers.AddRange(arcRenderers);
+            AllCityRenderers.AddRange(pillarsRenderers);
+            AllCityLineRenderers.Add(fencePlacer.lineRenderer);
+            
+            
             
             TileAssetsObject.BackIndex(houseRenderers.Count);
             
@@ -199,24 +233,14 @@ namespace TerritoryWars.Tile
 
             foreach (var arcs in arcRenderers)
             {
-                int roadCount = TileConfig.Count(c => c == 'R');
-                if (arcs != null && roadCount % 2 != 0)
-                {
-                    TileRotator.SimpleRotation(arcs.transform, index);
-                    TileRotator.SimpleRotationObjects.Add(arcs.transform);
-                }
+                TileRotator.MirrorRotation(arcs.transform, index);
+                TileRotator.MirrorRotationObjects.Add(arcs.transform);
             }
 
             foreach (var pillar in pillars)
             {
                 TileRotator.SimpleRotation(pillar, index);
                 TileRotator.SimpleRotationObjects.Add(pillar);
-            }
-
-            if (arc != null)
-            {
-                TileRotator.MirrorRotation(arc, index);
-                TileRotator.MirrorRotationObjects.Add(arc);
             }
 
             LineRenderer territoryLineRenderer = territoryFiller.GetComponent<LineRenderer>();

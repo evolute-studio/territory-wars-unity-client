@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using TerritoryWars;
 using TerritoryWars.General;
 using TerritoryWars.Tile;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class StructureChecker
 {
     public Dictionary<Vector2Int, Structure> CityMap = new Dictionary<Vector2Int, Structure>();
     public Dictionary<Vector2Int, Structure> RoadMap = new Dictionary<Vector2Int, Structure>();
+    public List<List<Structure>> CompletedStructures = new List<List<Structure>>();
     
 
     public StructureChecker(Board board)
@@ -70,6 +72,38 @@ public class StructureChecker
         
         ChangeOwner(root, winner);
         
+        List<Structure> completed = MoveToCompleted(root);
+
+        GameObject contestAnimationGO = PrefabsManager.Instance.InstantiateObject(PrefabsManager.Instance.ClashAnimationPrefab);
+        ClashAnimation contestAnimation = contestAnimationGO.GetComponent<ClashAnimation>();
+        contestAnimation.Initialize(GetCompletedStructuresPosition(completed), winner, completed,(points[0] + points[1]) * 2);
+    }
+    
+    private List<Structure> MoveToCompleted(Structure structure)
+    {
+        List<Structure> completedStructure = new List<Structure>();
+        CollectStructureGroup(structure, completedStructure);
+        CompletedStructures.Add(completedStructure);
+        return completedStructure;
+    }
+    
+    private void CollectStructureGroup(Structure structure, List<Structure> group)
+    {
+        group.Add(structure);
+        
+        if (structure.TileData.CityStructure == structure)
+        {
+            CityMap.Remove(structure.Position);
+        }
+        else if (structure.TileData.RoadStructure == structure)
+        {
+            RoadMap.Remove(structure.Position);
+        }
+        
+        foreach (var child in structure.Children)
+        {
+            CollectStructureGroup(child, group);
+        }
     }
     
     public void ChangeOwner(Structure structure, int newOwner)
@@ -130,6 +164,16 @@ public class StructureChecker
         return result;
     }
     
+    public Vector3 GetCompletedStructuresPosition(List<Structure> structures)
+    {
+        Vector3 result = Vector3.zero;
+        foreach (var structure in structures)
+        {
+            result += GameManager.Instance.Board.GetTilePosition(structure.Position.x, structure.Position.y);
+        }
+        result /= structures.Count;
+        return result;
+    }
 }
 
 [Serializable]

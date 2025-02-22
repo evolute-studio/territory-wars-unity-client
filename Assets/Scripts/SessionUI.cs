@@ -81,6 +81,7 @@ public class SessionUI : MonoBehaviour
 
         players[player].jokerCount--;
         players[player].jokersImage[players[player].jokerCount].color = JokerNotAvailableColor;
+        players[player].jokerCountText.text = players[player].jokerCount.ToString();
     }
 
     public void SessionExit()
@@ -99,6 +100,7 @@ public class SessionUI : MonoBehaviour
         public int tileScore = 0;
         public float time = 600f;
         public List<Image> jokersImage;
+        public TextMeshProUGUI jokerCountText;
 
         public void UpdateTimer()
         {

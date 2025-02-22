@@ -67,10 +67,11 @@ namespace TerritoryWars.Tile
         
         public void SetCityOwner(int playerId)
         {
-            RecolorCityStructures();
+            OwnerId = playerId;
+            
         }
         
-        private void RecolorCityStructures()
+        public void RecolorCityStructures()
         {
             if (CityStructure == null) return;
             GameObject city = SessionManager.Instance.Board.GetTileObject(CityStructure.Position.x, CityStructure.Position.y);

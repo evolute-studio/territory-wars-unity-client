@@ -30,6 +30,7 @@ namespace TerritoryWars.General
 
         public Board Board;
         [SerializeField] private GameUI gameUI;
+        [SerializeField] private SessionUI sessionUI;
         [SerializeField] private DeckManager deckManager;
         public TileSelector TileSelector;
 
@@ -41,7 +42,7 @@ namespace TerritoryWars.General
         public Character LocalPlayer { get; private set; }
         public Character RemotePlayer { get; private set; }
 
-        private int[] jokerCount = new int[] { 3, 3 }; // Джокери для кожного гравця
+        private int[] jokerCount = new int[] { 3, 3 }; 
         private bool isJokerActive = false;
         
         public bool IsJokerActive => isJokerActive;
@@ -52,7 +53,7 @@ namespace TerritoryWars.General
             {
                 isJokerActive = true;
                 jokerCount[CurrentTurnPlayer.LocalId]--;
-                // TileSelector.StartJokerPlacement();
+                TileSelector.StartJokerPlacement();
             }
         }
         
@@ -79,12 +80,11 @@ namespace TerritoryWars.General
                 Side side = (Side)i;
                 if (neighborSides.ContainsKey(side))
                 {
-                    // Встановлюємо відповідну сторону
                     sides[i] = LandscapeToChar(neighborSides[side]);
                 }
                 else
                 {
-                    // Генеруємо випадкову сторону
+                    
                     sides[i] = GetRandomLandscape();
                 }
             }
@@ -272,9 +272,6 @@ namespace TerritoryWars.General
         {
             if (TileSelector.CurrentTile != null && CurrentTurnPlayer == LocalPlayer)
             {
-                // Відправляємо хід на сервер
-                //DojoGameManager.Instance.SessionManager.MakeMove(TileSelector.LastMove.Item1, TileSelector.LastMove.Item2.x, TileSelector.LastMove.Item2.y);
-                
                 TileSelector.PlaceCurrentTile();
             }
         }
@@ -319,6 +316,7 @@ namespace TerritoryWars.General
         {
             isJokerActive = false;
             gameUI.UpdateUI();
+            sessionUI.UseJoker(CurrentTurnPlayer.LocalId);
         }
 
         private void OnGUI()

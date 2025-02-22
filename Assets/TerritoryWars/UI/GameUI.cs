@@ -1,6 +1,8 @@
+using System;
 using TerritoryWars.General;
 using TerritoryWars.Tile;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +19,10 @@ namespace TerritoryWars.UI
         [SerializeField] private TextMeshProUGUI player1JokersText;
         [SerializeField] private TextMeshProUGUI player2JokersText;
         [SerializeField] private GameObject jokerModeIndicator;
+        [SerializeField] private Sprite[] _toggleMods;
+        [SerializeField] private Image _toggleSpriteRenderer;
+        
+        public static event Action OnJokerButtonClickedEvent;
 
         [Header("Tile Preview")]
         [SerializeField] private TilePreview tilePreview;
@@ -24,6 +30,8 @@ namespace TerritoryWars.UI
 
         private SessionManager _sessionManager;
         private DeckManager deckManager;
+        
+        [SerializeField] private ArrowAnimations arrowAnimations;
 
         public void Initialize()
         {
@@ -109,12 +117,15 @@ namespace TerritoryWars.UI
         private void OnRotateButtonClicked()
         {
             Debug.Log("Rotate button clicked");
+            arrowAnimations.PlayRotationAnimation();
             _sessionManager.RotateCurrentTile();
         }
 
         private void OnJokerButtonClicked()
         {
+            OnJokerButtonClickedEvent?.Invoke();
             _sessionManager.ActivateJoker();
+            SwitchToggle();
             tilePreview._tileJokerAnimator.ShowIdleJokerAnimation();
             tilePreviewUITileJokerAnimator.ShowIdleJokerAnimation();
             UpdateUI();
@@ -133,7 +144,14 @@ namespace TerritoryWars.UI
             if (rotateTileButton != null)
             {
                 rotateTileButton.gameObject.SetActive(active);
+                arrowAnimations.gameObject.SetActive(active);
+                arrowAnimations.SetActiveArrow(active);
             }
+        }
+
+        private void SwitchToggle()
+        {
+            _toggleSpriteRenderer.sprite = _toggleMods[0] ? _toggleMods[1] : _toggleMods[0];
         }
 
         public void SetJokerButtonActive(bool active)
