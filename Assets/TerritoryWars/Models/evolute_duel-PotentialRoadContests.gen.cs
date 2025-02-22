@@ -9,8 +9,8 @@ using Enum = Dojo.Starknet.Enum;
 using BigInteger = System.Numerics.BigInteger;
 
 
-// Model definition for `evolute_duel::models::PotentialCityContests` model
-public class evolute_duel_PotentialCityContests : ModelInstance {
+// Model definition for `evolute_duel::models::PotentialRoadContests` model
+public class evolute_duel_PotentialRoadContests : ModelInstance {
     [ModelField("board_id")]
         public FieldElement board_id;
 

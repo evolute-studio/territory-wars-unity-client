@@ -9,13 +9,19 @@ using Enum = Dojo.Starknet.Enum;
 using BigInteger = System.Numerics.BigInteger;
 
 
-// Model definition for `evolute_duel::models::PotentialCityContests` model
-public class evolute_duel_PotentialCityContests : ModelInstance {
-    [ModelField("board_id")]
+// Model definition for `evolute_duel::models::Snapshot` model
+public class evolute_duel_Snapshot : ModelInstance {
+    [ModelField("snapshot_id")]
+        public FieldElement snapshot_id;
+
+        [ModelField("player")]
+        public FieldElement player;
+
+        [ModelField("board_id")]
         public FieldElement board_id;
 
-        [ModelField("roots")]
-        public byte[] roots;
+        [ModelField("move_delta")]
+        public byte move_delta;
 
     // Start is called before the first frame update
     void Start() {
