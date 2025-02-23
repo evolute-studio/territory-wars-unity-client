@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Dojo;
 using Dojo.Starknet;
+using TerritoryWars.General;
 using TerritoryWars.ModelsDataConverters;
 using TerritoryWars.Tile;
 using TerritoryWars.Tools;
@@ -121,6 +122,7 @@ namespace TerritoryWars
                     PlayerSide.Blue => 0,
                     PlayerSide.Red => 1,
                 };
+                if(LastPlayerSide == SessionManager.Instance.LocalPlayer.LocalId) return;
                 LastMoveIdHex = newMove;
                 Moved(moveData);
             }
@@ -166,19 +168,26 @@ namespace TerritoryWars
 
         public async void MakeMove(TileData data, int x, int y)
         {
+            Account account = _dojoGameManager.LocalBurnerAccount;
+            Option<byte> jokerTile = new Option<byte>.None();
+            byte rotation = (byte) data.rotationIndex;
+            byte col = (byte) (x - 1);
+            byte row = (byte) (y - 1);
             try
             {
-                Account account = _dojoGameManager.LocalBurnerAccount;
-                Option<byte> jokerTile = new Option<byte>.None();
-                byte rotation = (byte) data.rotationIndex;
-                byte col = (byte) (x - 1);
-                byte row = (byte) (y - 1);
+                
                 var txHash = await _dojoGameManager.GameSystem.make_move(account, jokerTile, rotation, col, row);
                 CustomLogger.LogModelUpdate($"[Make Move]: Account {account.Address.Hex()} made a move at {x}, {y}. Rotation: {rotation}");
             }
             catch (Exception e)
             {
-                CustomLogger.LogError($"Error making move: {e.Message}");
+                CustomLogger.LogError($"Error making move: {e.Message}. " +
+                                      $"\n| account: {account.Address.Hex()} |" +
+                                      $"jokerTile: {jokerTile} |" +
+                                      $"rotation: {rotation} |" +
+                                      $"col: {col} |" +
+                                      $"row: {row} |" +
+                                      $"tile config: {data}");
             }
         }
 

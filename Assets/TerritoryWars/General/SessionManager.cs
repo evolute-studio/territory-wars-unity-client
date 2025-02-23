@@ -282,16 +282,16 @@ namespace TerritoryWars.General
 
         public void CompleteEndTurn()
         {
-            // Змінюємо поточного персонажа
             CurrentTurnPlayer = CurrentTurnPlayer == Characters[0] ? Characters[1] : Characters[0];
 
             if (CurrentTurnPlayer == LocalPlayer)
             {
-                Invoke(nameof(StartLocalTurn), 5f);
+                StartLocalTurn();
             }
             else
             {
-                Invoke(nameof(StartRemoteTurn), 5f);
+                StartRemoteTurn();
+                
             }
         }
 
