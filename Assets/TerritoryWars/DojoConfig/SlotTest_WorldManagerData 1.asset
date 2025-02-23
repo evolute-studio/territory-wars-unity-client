@@ -17,9 +17,7 @@ MonoBehaviour:
   relayUrl: 
   relayWebrtcUrl: 
   worldAddress:
-    hex: 0x07f086a6f69eb87ceadfc7a1275f670524416af400ede15a3d2703dd6393bde0
-  GameContractAddress: 
-  PlayerProfileContractAddress: 
+    hex: 0x06a4d87ac4a224fbc633b46ec896545f8783cfc6d87ce8a4ef8c5630a3c17711
   query:
     limit: 1000
     offset: 0

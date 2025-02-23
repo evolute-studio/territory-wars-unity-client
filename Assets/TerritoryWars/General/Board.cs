@@ -3,6 +3,7 @@ using System.Linq;
 using TerritoryWars.ModelsDataConverters;
 using TerritoryWars.ScriptablesObjects;
 using TerritoryWars.Tile;
+using TerritoryWars.Tools;
 using UnityEngine;
 
 namespace TerritoryWars.General
@@ -159,7 +160,7 @@ namespace TerritoryWars.General
         {
             if (!CanPlaceTile(data, x, y))
             {
-                Debug.LogWarning($"Cannot place tile: position check failed");
+                CustomLogger.LogWarning($"Can't place tile {data.id} at {x}, {y}");
                 return false;
             }
 

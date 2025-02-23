@@ -9,7 +9,9 @@ using UnityEngine;
 
 // Fix to use Records in Unity ref. https://stackoverflow.com/a/73100830
 using System.ComponentModel;
+using System.Threading.Tasks;
 using TerritoryWars.General;
+using TerritoryWars.Tools;
 using UnityEngine.Serialization;
 
 namespace System.Runtime.CompilerServices
@@ -68,10 +70,31 @@ namespace TerritoryWars
             WorldManager.synchronizationMaster.OnEntitySpawned.AddListener(SpawnEntity);
             WorldManager.synchronizationMaster.OnModelUpdated.AddListener(ModelUpdated);
             
-            CreateAccount();
+            TryCreateAccount(3);
         }
         
-        private async void CreateAccount()
+        private async void TryCreateAccount(int attempts)
+        {
+            try
+            {
+                for (int i = 0; i < attempts; i++)
+                {
+                    CustomLogger.LogInfo($"Creating burner account. Attempt: {i}");
+                    if (await CreateAccount())
+                    {
+                        CustomLogger.LogInfo($"Burner account created. Attempt: {i}. Address: {LocalBurnerAccount.Address}");
+                        break;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                CustomLogger.LogError($"Failed to create burner account. {e}");
+            }
+        }
+        
+        
+        private async Task<bool> CreateAccount()
         {
             try
             {
@@ -85,10 +108,11 @@ namespace TerritoryWars
                 //     //use last burner account
                 //     LocalBurnerAccount = burnerManager.Burners.Last();
                 // }
+                return true;
             }
             catch (Exception e)
             {
-                Debug.LogError(e);
+                return false;
             }
         }
 
@@ -100,12 +124,12 @@ namespace TerritoryWars
             {
                 CustomSceneManager.Instance.LoadingScreen.SetActive(true, CancelGame);
                 var txHash = await GameSystem.create_game(LocalBurnerAccount);
-                Debug.Log($"Create Game: {txHash}");
+                CustomLogger.LogInfo($"Create Game: {txHash.Hex()}");
             }
             catch (Exception e)
             {
                 CustomSceneManager.Instance.LoadingScreen.SetActive(false);
-                Debug.LogError(e);
+                CustomLogger.LogError($"Failed to create game. {e}");
             }
         }
         
@@ -115,15 +139,15 @@ namespace TerritoryWars
             {
                 CustomSceneManager.Instance.LoadingScreen.SetActive(true);
                 var txHash = await GameSystem.join_game(LocalBurnerAccount, hostPlayer);
-                Debug.Log($"Join Game: {txHash}");
-                SessionManager = new DojoSessionManager(this);
+                CustomLogger.LogInfo($"Join Game: {txHash.Hex()}");
+                SessionManager ??= new DojoSessionManager(this);
                 CustomSceneManager.Instance.LoadSession();
                 
             }
             catch (Exception e)
             {
                 CustomSceneManager.Instance.LoadingScreen.SetActive(false);
-                Debug.LogError(e);
+                CustomLogger.LogError($"Failed to join game. {e}");
             }
         }
         
@@ -132,13 +156,13 @@ namespace TerritoryWars
             try
             {
                 var txHash = await GameSystem.cancel_game(LocalBurnerAccount);
-                Debug.Log($"Cancel Game: {txHash}");
+                CustomLogger.LogInfo($"Cancel Game: {txHash.Hex()}");
                 CustomSceneManager.Instance.LoadingScreen.SetActive(false);
             }
             catch (Exception e)
             {
                 CustomSceneManager.Instance.LoadingScreen.SetActive(false);
-                Debug.LogError(e);
+                CustomLogger.LogError($"Failed to cancel game. {e}");
             }
         }
         
@@ -146,15 +170,10 @@ namespace TerritoryWars
         {
             if (modelInstance == null || modelInstance.transform == null) return;
             
-            if (modelInstance.transform.TryGetComponent(out evolute_duel_Game gameModel))
+            if (IsTargetModel(modelInstance, nameof(evolute_duel_Game)))
             {
                 CheckStartSession();
             }
-            if(modelInstance.transform.TryGetComponent(out evolute_duel_Board boardModel))
-            {
-                SessionManager.CheckBoardUpdate();
-            }
-            
         }
 
         private void CheckStartSession()
@@ -179,10 +198,11 @@ namespace TerritoryWars
             if (hostedGame == null) return;
             
             var hostPlayer = hostedGame.player;
-            Debug.Log("Host player: " + hostPlayer.Hex());
-            Debug.Log("Local player: " + LocalBurnerAccount.Address);
-            Debug.Log("Host player is local: " + (hostPlayer == LocalBurnerAccount.Address));
-            Debug.Log("Game status: " + hostedGame.status);
+            
+            CustomLogger.LogInfo($"Host player: {hostPlayer.Hex()}");
+            CustomLogger.LogInfo($"Local player: {LocalBurnerAccount.Address}");
+            CustomLogger.LogInfo($"Host player is local: {hostPlayer == LocalBurnerAccount.Address}");
+            CustomLogger.LogInfo($"Game status: {hostedGame.status}");
             bool inProgress = hostedGame.status switch
             {
                 GameStatus.InProgress => true,
@@ -196,19 +216,30 @@ namespace TerritoryWars
             
         }
         
+        public bool IsTargetModel(ModelInstance modelInstance, string targetModelName)
+        {
+            string modelInstanceName = modelInstance.ToString();
+            if (modelInstanceName.Contains(targetModelName))
+            {
+                return true;
+            }
+            return false;
+        }
+        
         private void OnSynchronized(List<GameObject> synchronizedModels)
         {
-            Debug.Log($"Synchronized {synchronizedModels.Count} models");
+            CustomLogger.LogInfo($"Synchronized {synchronizedModels.Count} models");
         }
         
         public void SpawnEntity(GameObject entity)
         {
-            Debug.Log($"Spawned entity: {entity.name}");
+            CustomLogger.LogInfo($"Spawned entity: {entity.name}");
         }
         
         public void OnDojoEventReceived(ModelInstance eventMessage)
         {
             Debug.Log($"!!!!!! Received event: {eventMessage.Model.Name}");
+            CustomLogger.LogImportant($"Received event: {eventMessage.Model.Name}");
         }
         
         public void TryAgain(Action action, float delay)

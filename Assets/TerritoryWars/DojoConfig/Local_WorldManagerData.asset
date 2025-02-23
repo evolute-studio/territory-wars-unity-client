@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Local_WorldManagerData
   m_EditorClassIdentifier: 
   toriiUrl: http://localhost:8080
+  rpcUrl: http://localhost:5050
   relayUrl: 
   relayWebrtcUrl: 
   worldAddress:

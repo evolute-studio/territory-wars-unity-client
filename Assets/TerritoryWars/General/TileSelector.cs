@@ -354,8 +354,10 @@ namespace TerritoryWars.General
                     gameUI.SetEndTurnButtonActive(false);
                     gameUI.SetRotateButtonActive(false);
 
-                    
-                    SessionManager.Instance.CompleteEndTurn();
+                    if (SessionManager.Instance.IsLocalPlayerTurn)
+                    {
+                        SessionManager.Instance.CompleteEndTurn();
+                    }
                 }
             }
             catch (System.Exception e)

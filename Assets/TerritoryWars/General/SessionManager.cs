@@ -41,6 +41,8 @@ namespace TerritoryWars.General
         public Character CurrentTurnPlayer { get; private set; }
         public Character LocalPlayer { get; private set; }
         public Character RemotePlayer { get; private set; }
+        
+        public bool IsLocalPlayerTurn => CurrentTurnPlayer == LocalPlayer;
 
         private int[] jokerCount = new int[] { 3, 3 }; 
         private bool isJokerActive = false;
@@ -210,12 +212,14 @@ namespace TerritoryWars.General
         {
             // Підписуємось на події від мережевого менеджера
             DojoGameManager.Instance.SessionManager.OnOpponentMoveReceived += HandleOpponentMove;
+            DojoGameManager.Instance.SessionManager.StartBoardChecking();
         }
 
         private void HandleOpponentMove(TileData tile, Vector2Int position, int rotation)
         {
             // Відписуємось від подій
             DojoGameManager.Instance.SessionManager.OnOpponentMoveReceived -= HandleOpponentMove;
+            DojoGameManager.Instance.SessionManager.StopBoardChecking();
             
             StartCoroutine(HandleOpponentMoveCoroutine(tile, position, rotation));
             
@@ -226,11 +230,11 @@ namespace TerritoryWars.General
             tile.Rotate(rotation);
             tile.OwnerId = RemotePlayer.LocalId;
             TileSelector.SetCurrentTile(tile);
-            TileSelector.tilePreview.SetPosition(position.x, position.y);
+            TileSelector.tilePreview.SetPosition(position.x + 1, position.y + 1);
             yield return new WaitForSeconds(0.3f);
             TileSelector.tilePreview.PlaceTile(() =>
             {
-                Board.PlaceTile(tile, position.x, position.y, RemotePlayer.LocalId);
+                Board.PlaceTile(tile, position.x + 1, position.y + 1, RemotePlayer.LocalId);
             });
             yield return new WaitForSeconds(1f);
             TileSelector.tilePreview.ResetPosition();
@@ -283,11 +287,11 @@ namespace TerritoryWars.General
 
             if (CurrentTurnPlayer == LocalPlayer)
             {
-                Invoke(nameof(StartLocalTurn), 2f);
+                Invoke(nameof(StartLocalTurn), 5f);
             }
             else
             {
-                Invoke(nameof(StartRemoteTurn), 2f);
+                Invoke(nameof(StartRemoteTurn), 5f);
             }
         }
 
