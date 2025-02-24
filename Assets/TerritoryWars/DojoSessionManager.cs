@@ -22,6 +22,8 @@ namespace TerritoryWars
         public delegate void MoveHandler(string playerAddress, TileData tile, Vector2Int position, int rotation);
 
         public event MoveHandler OnMoveReceived;
+        public delegate void SkipMoveHandler(string address);
+        public event SkipMoveHandler OnSkipMoveReceived;
 
         public evolute_duel_Board LocalPlayerBoard
         {
@@ -62,6 +64,9 @@ namespace TerritoryWars
                 case evolute_duel_InvalidMove invalidMove:
                     InvalidMove(invalidMove);
                     break;
+                case evolute_duel_Skiped skipped:
+                    Skipped(skipped);
+                    break;
             }
             if(_dojoGameManager.IsTargetModel(modelInstance, nameof(evolute_duel_Moved)))
             {
@@ -96,7 +101,13 @@ namespace TerritoryWars
             string player = eventModel.player.Hex();
             
             CustomLogger.LogError($"[InvalidMove] | Player: {player} | MoveId: {move_id}");
-            
+        }
+        
+        private void Skipped(evolute_duel_Skiped eventModel)
+        {
+            string player = eventModel.player.Hex();
+            CustomLogger.LogEvent($"[Skipped] | Player: {player}");
+            OnSkipMoveReceived?.Invoke(player);
         }
         
         // public void CheckBoardUpdate()
@@ -189,6 +200,19 @@ namespace TerritoryWars
                                       $"col: {col} |" +
                                       $"row: {row} |" +
                                       $"tile config: {data}");
+            }
+        }
+
+        public async void SkipMove()
+        {
+            try
+            {
+                var txHash = await _dojoGameManager.GameSystem.skip_move(_localPlayerAccount);
+                CustomLogger.LogEvent($"[Skip Move]: Hash {txHash} Account {_localPlayerAccount.Address.Hex()} skipped a move");
+                
+            } catch (Exception e)
+            {
+                CustomLogger.LogError($"Error skipping move: {e.Message}");
             }
         }
 

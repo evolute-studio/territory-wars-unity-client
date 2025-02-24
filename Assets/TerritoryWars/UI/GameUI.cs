@@ -1,4 +1,5 @@
 using System;
+using DG.Tweening;
 using TerritoryWars.General;
 using TerritoryWars.Tile;
 using TMPro;
@@ -12,6 +13,7 @@ namespace TerritoryWars.UI
     {
         [Header("References")]
         [SerializeField] private Button endTurnButton;
+        [SerializeField] private Button skipTurnButton;
         [SerializeField] private Button rotateTileButton;
         [SerializeField] private Image currentTilePreview;
         [SerializeField] private TextMeshProUGUI remainingTilesText;
@@ -21,6 +23,7 @@ namespace TerritoryWars.UI
         [SerializeField] private GameObject jokerModeIndicator;
         [SerializeField] private Sprite[] _toggleMods;
         [SerializeField] private Image _toggleSpriteRenderer;
+        [SerializeField] private CanvasGroup _deckContainerCanvasGroup;
         
         public static event Action OnJokerButtonClickedEvent;
 
@@ -64,11 +67,16 @@ namespace TerritoryWars.UI
             {
                 endTurnButton.onClick.AddListener(OnEndTurnClicked);
             }
-
-            if (jokerButton != null)
+            
+            if (skipTurnButton != null)
             {
-                jokerButton.onClick.AddListener(OnJokerButtonClicked);
+                skipTurnButton.onClick.AddListener(SkipMoveButtonClicked);
             }
+
+            // if (jokerButton != null)
+            // {
+            //     jokerButton.onClick.AddListener(OnJokerButtonClicked);
+            // }
         }
 
         public void UpdateUI()
@@ -112,6 +120,28 @@ namespace TerritoryWars.UI
         {
             _sessionManager.EndTurn();
             UpdateUI();
+            SetActiveDeckContainer(false);
+        }
+        
+        private void SkipMoveButtonClicked()
+        {
+            _sessionManager.SkipMove();
+            UpdateUI();
+        }
+        
+        public void SetActiveDeckContainer(bool active)
+        {
+            if (active)
+            {
+                _deckContainerCanvasGroup.alpha = 0.5f;
+                _deckContainerCanvasGroup.DOFade(1, 0.5f);
+                
+            }
+            else
+            {
+                _deckContainerCanvasGroup.alpha = 1;
+                _deckContainerCanvasGroup.DOFade(0.5f, 0.5f);
+            }
         }
 
         private void OnRotateButtonClicked()
@@ -136,6 +166,14 @@ namespace TerritoryWars.UI
             if (endTurnButton != null)
             {
                 endTurnButton.gameObject.SetActive(active);
+            }
+        }
+        
+        public void SetSkipTurnButtonActive(bool active)
+        {
+            if (skipTurnButton != null)
+            {
+                skipTurnButton.gameObject.SetActive(active);
             }
         }
 

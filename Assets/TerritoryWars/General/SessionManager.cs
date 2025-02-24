@@ -188,29 +188,40 @@ namespace TerritoryWars.General
                 Invoke(nameof(StartRemoteTurn), 2f);
             }
             DojoGameManager.Instance.SessionManager.OnMoveReceived += HandleMove;
+            DojoGameManager.Instance.SessionManager.OnSkipMoveReceived += SkipMove;
         }
 
         private void StartLocalTurn()
         {
             gameUI.SetEndTurnButtonActive(false);
             gameUI.SetRotateButtonActive(false);
+            gameUI.SetSkipTurnButtonActive(true);
 
             TileData currentTile = DojoGameManager.Instance.SessionManager.GetTopTile();
             currentTile.OwnerId = LocalPlayer.LocalId;
             TileSelector.StartTilePlacement(currentTile);
+            gameUI.SetActiveDeckContainer(true);
         }
 
         private void StartRemoteTurn()
         {
             gameUI.SetEndTurnButtonActive(false);
             gameUI.SetRotateButtonActive(false);
+            gameUI.SetSkipTurnButtonActive(false);
             UpdateTile();
+            gameUI.SetActiveDeckContainer(false);
         }
 
         private void HandleMove(string playerAddress, TileData tile, Vector2Int position, int rotation)
         {
             if (playerAddress == LocalPlayer.Address.Hex()) CompleteEndTurn(playerAddress);
             else StartCoroutine(HandleOpponentMoveCoroutine(playerAddress, tile, position, rotation));
+        }
+        
+        private void SkipMove(string playerAddress)
+        {
+            TileSelector.ClearHighlights();
+            CompleteEndTurn(playerAddress);
         }
 
         private IEnumerator HandleOpponentMoveCoroutine(string playerAddress, TileData tile, Vector2Int position, int rotation)
@@ -268,6 +279,11 @@ namespace TerritoryWars.General
                 TileSelector.PlaceCurrentTile();
             }
         }
+        
+        public void SkipMove()
+        {
+            DojoGameManager.Instance.SessionManager.SkipMove();
+        }
 
         public void CompleteEndTurn(string lastMovePlayerAddress)
         {
@@ -281,6 +297,7 @@ namespace TerritoryWars.General
             {
                 CurrentTurnPlayer = LocalPlayer;
                 StartLocalTurn();
+                gameUI.SetActiveDeckContainer(true);
             }
         }
 
