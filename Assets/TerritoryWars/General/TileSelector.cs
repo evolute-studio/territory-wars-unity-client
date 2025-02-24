@@ -418,17 +418,17 @@ namespace TerritoryWars.General
             }
             SetHighlightColor(normalHighlightColor);
         }
-        
+
         private bool IsValidJokerPosition(int x, int y)
         {
             if (board.GetTileData(x, y) != null) return false;
-            
+
             bool hasNonBorderNeighbor = false;
             foreach (Side side in System.Enum.GetValues(typeof(Side)))
             {
                 int newX = x + board.GetXOffset(side);
                 int newY = y + board.GetYOffset(side);
-                
+
                 if (board.IsValidPosition(newX, newY) && board.GetTileData(newX, newY) != null)
                 {
                     if (!board.IsBorderTile(newX, newY))
@@ -438,10 +438,10 @@ namespace TerritoryWars.General
                     }
                 }
             }
-            
+
             return hasNonBorderNeighbor;
         }
-        
+
         public void StartJokerTilePlacement(TileData tile, int x, int y)
         {
             try
@@ -449,17 +449,15 @@ namespace TerritoryWars.General
                 currentTile = tile;
                 selectedPosition = new Vector2Int(x, y);
                 isPlacingTile = true;
+
                 
-                // Показуємо превью тайлу
                 gameUI.UpdateUI();
                 gameUI.SetEndTurnButtonActive(true);
                 
-                // Оновлюємо підсвічування
                 ClearHighlights();
                 CreateHighlight(x, y);
                 SetHighlightColor(selectedHighlightColor);
                 
-                // Переміщуємо превью на вибрану позицію
                 tilePreview.SetPosition(x, y);
             }
             catch (System.Exception e)
@@ -481,6 +479,7 @@ namespace TerritoryWars.General
             {
                 Debug.LogError($"Error in RegenerateJokerTile: {e}");
             }
+
         }
     }
 }

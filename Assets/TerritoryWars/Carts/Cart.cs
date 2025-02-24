@@ -14,18 +14,5 @@ namespace TerritoryWars.Carts
             this.gameObject = gameObject;
             spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         }
-        
-        public void Initialize()
-        {
-            
-        }
-        
-        public void Move(Vector2 direction)
-        {
-            if (Direction == direction) return;
-            Direction = direction;
-            // if(Direction.x >= 1) transform.localScale = new Vector3(-1, 1, 1);
-            // else if(Direction.x < -1) transform.localScale = new Vector3(1, 1, 1);
-        }
     }
 }
