@@ -61,7 +61,7 @@ namespace TerritoryWars.General
             string roadTile = "RFRF";
             string cityTile = "FFCF";
             string fieldTile = "FFFF";
-            // наприклад start (9, 9) end (9, 0)
+            // eg Start (9, 9) end (9, 0)
 
             roadTile = TileData.GetRotatedConfig(roadTile, rotationTimes);
             cityTile = TileData.GetRotatedConfig(cityTile, rotationTimes);
@@ -190,7 +190,7 @@ namespace TerritoryWars.General
                 return true;
             }
 
-            // Знаходимо всі сусідні тайли
+            // We find all the adjacent tiles
             Dictionary<Side, TileData> neighbors = new Dictionary<Side, TileData>();
             bool hasAnyNeighbor = false;
             bool hasNonBorderNeighbor = false;
@@ -205,7 +205,7 @@ namespace TerritoryWars.General
                     neighbors[side] = tileData[newX, newY];
                     hasAnyNeighbor = true;
 
-                    // Перевіряємо чи це не граничний тайл
+                    // check whether this is not a boundary tile
                     if (!IsBorderTile(newX, newY))
                     {
                         hasNonBorderNeighbor = true;
@@ -213,24 +213,24 @@ namespace TerritoryWars.General
                 }
             }
 
-            // Якщо немає сусідів взагалі
+            // if there are no neighbors at all
             if (!hasAnyNeighbor)
             {
                 return false;
             }
 
-            // Якщо є тільки один сусід і це граничний тайл
+            // If there is only one neighbor and it is a boundary tile
             if (neighbors.Count == 1 && !hasNonBorderNeighbor)
             {
                 var neighbor = neighbors.First();
-                // Перевіряємо, чи сторона граничного тайла - поле
+                // check that the side of the boundary tile is the field
                 if (neighbor.Value.GetSide(GetOppositeSide(neighbor.Key)) == LandscapeType.Field)
                 {
                     return false;
                 }
             }
 
-            // Перевіряємо кожну сторону тайлу на відповідність
+            // check each side of the tile for matching
             foreach (var neighbor in neighbors)
             {
                 Side side = neighbor.Key;
@@ -256,7 +256,7 @@ namespace TerritoryWars.General
                 return;
             }
 
-            // Знаходимо всі сусідні тайли
+            // find all the neighboring tiles
             Dictionary<Side, TileData> neighbors = new Dictionary<Side, TileData>();
             bool hasAnyNeighbor = false;
             bool hasNonBorderNeighbor = false;
@@ -271,32 +271,28 @@ namespace TerritoryWars.General
                     neighbors[side] = tileData[newX, newY];
                     hasAnyNeighbor = true;
 
-                    // Перевіряємо чи це не граничний тайл
+                    // Check whether it is not a borderline tile
                     if (!IsBorderTile(newX, newY))
                     {
                         hasNonBorderNeighbor = true;
                     }
                 }
             }
-
-            // Якщо немає сусідів взагалі
+            
             if (!hasAnyNeighbor)
             {
                 return;
             }
-
-            // Якщо є тільки один сусід і це граничний тайл
+            
             if (neighbors.Count == 1 && !hasNonBorderNeighbor)
             {
                 var neighbor = neighbors.First();
-                // Перевіряємо, чи сторона граничного тайла - поле
                 if (neighbor.Value.GetSide(GetOppositeSide(neighbor.Key)) == LandscapeType.Field)
                 {
                     return;
                 }
             }
-
-            // Перевіряємо кожну сторону тайлу на відповідність
+            
             foreach (var neighbor in neighbors)
             {
                 Side side = neighbor.Key;
@@ -350,9 +346,9 @@ namespace TerritoryWars.General
 
         public int GetXOffset(Side dir)
         {
-            // В ізометричній проекції:
-            // x збільшується при русі вгору (Top)
-            // x зменшується при русі вниз (Bottom)
+           // In isometric projection:
+            // x increases when moving up (Top)
+            // x decreases when moving down (Bottom)
             return dir switch
             {
                 Side.Top => 1,
@@ -363,9 +359,9 @@ namespace TerritoryWars.General
 
         public int GetYOffset(Side dir)
         {
-            // В ізометричній проекції:
-            // y збільшується при русі вліво (Left)
-            // y зменшується при русі вправо (Right)
+            // In isometric projection:
+            // y increases when moving to the left (Left)
+            // y decreases when moving to the right (Right)
             return dir switch
             {
                 Side.Left => 1,
@@ -381,7 +377,7 @@ namespace TerritoryWars.General
 
         public bool IsBorderTile(int x, int y)
         {
-            // Перевіряємо чи тайл знаходиться на границі поля
+            // Check whether the tile is on the field border
             return x == 0 || x == width - 1 || y == 0 || y == height - 1;
         }
 

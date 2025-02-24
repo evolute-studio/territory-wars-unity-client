@@ -99,6 +99,7 @@ namespace TerritoryWars.Tile
             }
             
             int roadCount = id.Count(c => c == 'R');
+            int cityCount = id.Count(c => c == 'C');
 
             if (roadCount == 1)
             {
@@ -136,7 +137,7 @@ namespace TerritoryWars.Tile
                 }
             }
             
-            if (roadCount >= 3)
+            if (roadCount >= 3 && cityCount == 0)
             {
                 if(Mill != null)
                     Destroy(Mill);

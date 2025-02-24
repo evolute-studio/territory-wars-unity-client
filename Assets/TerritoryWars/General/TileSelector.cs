@@ -403,7 +403,7 @@ namespace TerritoryWars.General
 
 
 
-            // Показуємо можливі позиції для джокера
+            
             ShowJokerPlacements();
         }
 
@@ -455,17 +455,14 @@ namespace TerritoryWars.General
                 selectedPosition = new Vector2Int(x, y);
                 isPlacingTile = true;
 
-
-                // Показуємо превью тайлу
+                
                 gameUI.UpdateUI();
                 gameUI.SetEndTurnButtonActive(true);
-
-                // Оновлюємо підсвічування
+                
                 ClearHighlights();
                 CreateHighlight(x, y);
                 SetHighlightColor(selectedHighlightColor);
-
-                // Переміщуємо превью на вибрану позицію
+                
                 tilePreview.SetPosition(x, y);
             }
             catch (System.Exception e)
@@ -473,8 +470,7 @@ namespace TerritoryWars.General
                 Debug.LogError($"Error in StartJokerTilePlacement: {e}");
             }
         }
-
-        // Додамо новий метод для обробки кліку по тайлу в режимі джокера
+        
         public void RegenerateJokerTile()
         {
             // Debug.Log("RegenerateJokerTile");
