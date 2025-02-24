@@ -642,58 +642,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contractAddress: 0x03ec6fbfd9233e33de90f726501d12bea66f4d7fa4b07d41f799bfff4b54b804
---- !u!1 &292060599
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 292060600}
-  - component: {fileID: 292060601}
-  m_Layer: 0
-  m_Name: SnapshotTabUI
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &292060600
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 292060599}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 342495707}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &292060601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 292060599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6745b9e5c98e414aac727cb6298ca81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PanelGameObject: {fileID: 0}
-  SnapshotListItemPrefab: {fileID: 0}
-  ListItemParent: {fileID: 0}
---- !u!4 &342495707 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2487132034357024736, guid: ecd4eab03d892ab99a56a1c2e7972ebf, type: 3}
-  m_PrefabInstance: {fileID: 4237476928421870861}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &346118383
 GameObject:
   m_ObjectHideFlags: 0
@@ -1697,6 +1645,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 557404293}
   m_CullTransparentMesh: 1
+--- !u!1 &558397670 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8862802046633755789, guid: dab301b96ced5474290878d13aa7842b, type: 3}
+  m_PrefabInstance: {fileID: 7841321346488775197}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &558397671 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3273515060636902581, guid: dab301b96ced5474290878d13aa7842b, type: 3}
@@ -5612,6 +5565,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1604953779}
   m_CullTransparentMesh: 1
+--- !u!224 &1618517832 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3226441139909757904, guid: dab301b96ced5474290878d13aa7842b, type: 3}
+  m_PrefabInstance: {fileID: 7841321346488775197}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1625938408
 GameObject:
   m_ObjectHideFlags: 0
@@ -6936,12 +6894,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIControllers
       objectReference: {fileID: 0}
+    - target: {fileID: 8304575307951164207, guid: ecd4eab03d892ab99a56a1c2e7972ebf, type: 3}
+      propertyPath: ListItemParent
+      value: 
+      objectReference: {fileID: 1618517832}
+    - target: {fileID: 8304575307951164207, guid: ecd4eab03d892ab99a56a1c2e7972ebf, type: 3}
+      propertyPath: PanelGameObject
+      value: 
+      objectReference: {fileID: 558397670}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 2487132034357024736, guid: ecd4eab03d892ab99a56a1c2e7972ebf, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 292060600}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecd4eab03d892ab99a56a1c2e7972ebf, type: 3}
 --- !u!1001 &7841321346488775197
