@@ -103,11 +103,16 @@ namespace TerritoryWars.Tile
 
             if (roadCount == 1)
             {
-                int roadIndex = id.IndexOf('R');
-                int oppositeIndex = (roadIndex + 2) % 4;
-                char[] idChars = id.ToCharArray();
-                idChars[oppositeIndex] = 'R';
-                id = new string(idChars);
+                for (int i = 0; i < id.Length; i++)
+                {
+                    char[] idReplace = id.ToCharArray();
+                    if (id[i] == 'C')
+                    {
+                        idReplace[i] = 'R';
+                        id = new string(idReplace);
+                        break;
+                    }
+                }
                 roadCount = 2;
             }
             
