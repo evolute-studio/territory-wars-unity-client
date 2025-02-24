@@ -353,7 +353,7 @@ namespace TerritoryWars.General
                     OnTilePlaced.Invoke();
                     gameUI.SetEndTurnButtonActive(false);
                     gameUI.SetRotateButtonActive(false);
-
+                    gameUI.SetSkipTurnButtonActive(true);
                     // if (SessionManager.Instance.IsLocalPlayerTurn)
                     // {
                     //     SessionManager.Instance.CompleteEndTurn();
@@ -366,7 +366,7 @@ namespace TerritoryWars.General
             }
         }
 
-        private void ClearHighlights()
+        public void ClearHighlights()
         {
             if (highlightedTiles == null) return;
 
