@@ -19,7 +19,7 @@ namespace TerritoryWars.Tools
             {LogType.Warning, "#FFA500"},       // Помаранчевий для попереджень
             {LogType.ModelUpdate, "#32CD32"},   // Лайм-зелений для оновлень моделі
             {LogType.Error, "#DC143C"},         // Темно-червоний для помилок  
-            {LogType.Important, "#8A2BE2"}      // Фіолетовий для важливих повідомлень
+            {LogType.Important, "#9441e0"}      // Фіолетовий для важливих повідомлень
         };
         
         public static Dictionary<LogType, bool> LogTypeEnabled = new Dictionary<LogType, bool>

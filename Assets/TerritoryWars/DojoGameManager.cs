@@ -68,7 +68,7 @@ namespace TerritoryWars
             WorldManager.synchronizationMaster.OnEventMessage.AddListener(OnDojoEventReceived);
             WorldManager.synchronizationMaster.OnSynchronized.AddListener(OnSynchronized);
             WorldManager.synchronizationMaster.OnEntitySpawned.AddListener(SpawnEntity);
-            WorldManager.synchronizationMaster.OnModelUpdated.AddListener(ModelUpdated);
+            //WorldManager.synchronizationMaster.OnModelUpdated.AddListener(ModelUpdated);
             
             TryCreateAccount(3);
         }
@@ -141,7 +141,7 @@ namespace TerritoryWars
                 var txHash = await GameSystem.join_game(LocalBurnerAccount, hostPlayer);
                 CustomLogger.LogInfo($"Join Game: {txHash.Hex()}");
                 SessionManager ??= new DojoSessionManager(this);
-                CustomSceneManager.Instance.LoadSession();
+                //CustomSceneManager.Instance.LoadSession();
                 
             }
             catch (Exception e)
@@ -172,74 +172,17 @@ namespace TerritoryWars
             
             if (IsTargetModel(modelInstance, nameof(evolute_duel_Game)))
             {
-                CheckStartSession();
+                
             }
-        }
-
-        private void CheckStartSession()
-        {
-            if (CustomSceneManager.Instance.CurrentScene == CustomSceneManager.Instance.Session) return;
-            
-            GameObject[] games = WorldManager.Entities<evolute_duel_Game>();
-            evolute_duel_Game hostedGame = null;
-            if (games.Length == 0) return;
-
-            foreach (var game in games)
-            {
-                if (game.TryGetComponent(out evolute_duel_Game gameModel))
-                {
-                    if (gameModel.player.Hex() == LocalBurnerAccount.Address.Hex())
-                    {
-                        hostedGame = gameModel;
-                        break;
-                    }
-                }
-            }
-            if (hostedGame == null) return;
-            
-            var hostPlayer = hostedGame.player;
-            
-            CustomLogger.LogInfo($"Host player: {hostPlayer.Hex()}");
-            CustomLogger.LogInfo($"Local player: {LocalBurnerAccount.Address}");
-            CustomLogger.LogInfo($"Host player is local: {hostPlayer == LocalBurnerAccount.Address}");
-            CustomLogger.LogInfo($"Game status: {hostedGame.status}");
-            bool inProgress = hostedGame.status switch
-            {
-                GameStatus.InProgress => true,
-                _ => false
-            };
-            if (!inProgress) return;
-            
-            // Start session
-            SessionManager = new DojoSessionManager(this);
-            CustomSceneManager.Instance.LoadSession();
-            
-        }
-        
-        public bool IsTargetModel(ModelInstance modelInstance, string targetModelName)
-        {
-            string modelInstanceName = modelInstance.ToString();
-            if (modelInstanceName.Contains(targetModelName))
-            {
-                return true;
-            }
-            return false;
-        }
-        
-        private void OnSynchronized(List<GameObject> synchronizedModels)
-        {
-            CustomLogger.LogInfo($"Synchronized {synchronizedModels.Count} models");
-        }
-        
-        public void SpawnEntity(GameObject entity)
-        {
-            CustomLogger.LogInfo($"Spawned entity: {entity.name}");
         }
         
         public void OnDojoEventReceived(ModelInstance eventMessage)
         {
             CustomLogger.LogImportant($"Received event: {eventMessage.Model.Name}");
-
+            if (IsTargetModel(eventMessage, nameof(evolute_duel_GameStarted)))
+            {
+                CheckStartSession(eventMessage);
+            }
             // if (IsTargetModel(eventMessage, nameof(evolute_duel_GameCreated)))
             // {
             //     try
@@ -276,6 +219,52 @@ namespace TerritoryWars
             //     
             // }
         }
+
+        private void CheckStartSession(ModelInstance eventMessage)
+        {
+            evolute_duel_GameStarted gameStarted = eventMessage as evolute_duel_GameStarted;
+            if (gameStarted == null)
+            {
+                CustomLogger.LogWarning($"Event {nameof(evolute_duel_Game)} is null");
+                return;
+            }
+            CustomLogger.LogInfo($"Check start session. " +
+                                 $"\nLocalPlayerIsHost: {gameStarted.host_player.Hex() == LocalBurnerAccount.Address.Hex()}" +
+                                 $"\nLocalPlayerIsGuest: {gameStarted.guest_player.Hex() == LocalBurnerAccount.Address.Hex()}" +
+                                 $"\nEventHostPlayerAddress: {gameStarted.host_player.Hex()}" +
+                                 $"\nEventGuestPlayerAddress: {gameStarted.guest_player.Hex()}" +
+                                 $"\nLocalPlayerAddress: {LocalBurnerAccount.Address.Hex()}");
+            if (gameStarted.host_player.Hex() == LocalBurnerAccount.Address.Hex() ||
+                gameStarted.guest_player.Hex() == LocalBurnerAccount.Address.Hex())
+            {
+                CustomLogger.LogInfo("Start session");
+                // Start session
+                SessionManager = new DojoSessionManager(this);
+                CustomSceneManager.Instance.LoadSession();
+            }
+        }
+        
+        public bool IsTargetModel(ModelInstance modelInstance, string targetModelName)
+        {
+            string modelInstanceName = modelInstance.ToString();
+            if (modelInstanceName.Contains(targetModelName))
+            {
+                return true;
+            }
+            return false;
+        }
+        
+        private void OnSynchronized(List<GameObject> synchronizedModels)
+        {
+            CustomLogger.LogInfo($"Synchronized {synchronizedModels.Count} models");
+        }
+        
+        public void SpawnEntity(GameObject entity)
+        {
+            CustomLogger.LogInfo($"Spawned entity: {entity.name}");
+        }
+        
+        
         
         public void TryAgain(Action action, float delay)
         {
@@ -361,7 +350,7 @@ namespace TerritoryWars
                 WorldManager.synchronizationMaster.OnEventMessage.RemoveListener(OnDojoEventReceived);
                 WorldManager.synchronizationMaster.OnSynchronized.RemoveListener(OnSynchronized);
                 WorldManager.synchronizationMaster.OnEntitySpawned.RemoveListener(SpawnEntity);
-                WorldManager.synchronizationMaster.OnModelUpdated.RemoveListener(ModelUpdated);
+                //WorldManager.synchronizationMaster.OnModelUpdated.RemoveListener(ModelUpdated);
             }
         }
     }
