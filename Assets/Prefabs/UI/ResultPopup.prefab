@@ -54,7 +54,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9195510528496137290}
-  - component: {fileID: 4864598101595985261}
   - component: {fileID: 6242826475866156462}
   m_Layer: 5
   m_Name: Player1Hero
@@ -83,18 +82,6 @@ RectTransform:
   m_AnchoredPosition: {x: -450, y: 80}
   m_SizeDelta: {x: 200, y: 300}
   m_Pivot: {x: 0, y: 0}
---- !u!225 &4864598101595985261
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 188572276153641271}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!95 &6242826475866156462
 Animator:
   serializedVersion: 7
@@ -563,7 +550,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003959519756443474}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -100}
   m_LocalScale: {x: -90, y: 90, z: 90}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2191,6 +2178,7 @@ GameObject:
   - component: {fileID: 3942304635046165018}
   - component: {fileID: 8775694068436366466}
   - component: {fileID: 7999466004321007010}
+  - component: {fileID: 7668185778476399559}
   m_Layer: 5
   m_Name: ScoreIcon
   m_TagString: Untagged
@@ -2216,7 +2204,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -0.0000076293945}
-  m_SizeDelta: {x: 53, y: 100}
+  m_SizeDelta: {x: 50, y: 96}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &8775694068436366466
 CanvasRenderer:
@@ -2256,6 +2244,39 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7668185778476399559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2539569960850760821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa2fb40dcb0933642a019f27c5faaf41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 738205535084369030, guid: 26030b69ac446504bbbf48c68f0e9c9e, type: 3}
+  - {fileID: -3468225153094671654, guid: 26030b69ac446504bbbf48c68f0e9c9e, type: 3}
+  - {fileID: 209043217693976900, guid: 26030b69ac446504bbbf48c68f0e9c9e, type: 3}
+  - {fileID: 7022938142004002104, guid: 26030b69ac446504bbbf48c68f0e9c9e, type: 3}
+  - {fileID: 8080639411991452538, guid: 26030b69ac446504bbbf48c68f0e9c9e, type: 3}
+  - {fileID: 7574252485240858239, guid: 26030b69ac446504bbbf48c68f0e9c9e, type: 3}
+  - {fileID: -6400348899677383973, guid: 26030b69ac446504bbbf48c68f0e9c9e, type: 3}
+  - {fileID: 6862185614432659877, guid: 26030b69ac446504bbbf48c68f0e9c9e, type: 3}
+  - {fileID: 8759586585794343614, guid: 26030b69ac446504bbbf48c68f0e9c9e, type: 3}
+  - {fileID: -2894501662160495782, guid: 26030b69ac446504bbbf48c68f0e9c9e, type: 3}
+  - {fileID: 746296471256153038, guid: 26030b69ac446504bbbf48c68f0e9c9e, type: 3}
+  - {fileID: -1548440330133398235, guid: 26030b69ac446504bbbf48c68f0e9c9e, type: 3}
+  duration: 1.2
+  loop: 1
+  delay: 0
+  randomizeStart: 0
+  maxRandomDelay: 0.5
+  waitBetweenLoops: 0
+  playOnAwake: 1
+  _spriteRenderer: {fileID: 0}
 --- !u!1 &2592425739027339821
 GameObject:
   m_ObjectHideFlags: 0
@@ -4875,7 +4896,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 16.342, y: -50}
+  m_AnchoredPosition: {x: 0, y: -50}
   m_SizeDelta: {x: 567.32, y: 174.7174}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1273399579788333843
@@ -5892,6 +5913,7 @@ GameObject:
   - component: {fileID: 6287867754340859555}
   - component: {fileID: 4692510416549709007}
   - component: {fileID: 7148654557510196754}
+  - component: {fileID: 683031673274789581}
   m_Layer: 5
   m_Name: ScoreIcon
   m_TagString: Untagged
@@ -5917,7 +5939,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 53, y: 100}
+  m_SizeDelta: {x: 50, y: 96}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &4692510416549709007
 CanvasRenderer:
@@ -5947,7 +5969,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2453574397287891384, guid: 0a80c98dab9a24147a0293de32e0e944, type: 3}
+  m_Sprite: {fileID: 738205535084369030, guid: 26030b69ac446504bbbf48c68f0e9c9e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5957,6 +5979,39 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &683031673274789581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7456353347243118624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa2fb40dcb0933642a019f27c5faaf41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 738205535084369030, guid: 26030b69ac446504bbbf48c68f0e9c9e, type: 3}
+  - {fileID: -3468225153094671654, guid: 26030b69ac446504bbbf48c68f0e9c9e, type: 3}
+  - {fileID: 209043217693976900, guid: 26030b69ac446504bbbf48c68f0e9c9e, type: 3}
+  - {fileID: 7022938142004002104, guid: 26030b69ac446504bbbf48c68f0e9c9e, type: 3}
+  - {fileID: 8080639411991452538, guid: 26030b69ac446504bbbf48c68f0e9c9e, type: 3}
+  - {fileID: 7574252485240858239, guid: 26030b69ac446504bbbf48c68f0e9c9e, type: 3}
+  - {fileID: -6400348899677383973, guid: 26030b69ac446504bbbf48c68f0e9c9e, type: 3}
+  - {fileID: 6862185614432659877, guid: 26030b69ac446504bbbf48c68f0e9c9e, type: 3}
+  - {fileID: 8759586585794343614, guid: 26030b69ac446504bbbf48c68f0e9c9e, type: 3}
+  - {fileID: -2894501662160495782, guid: 26030b69ac446504bbbf48c68f0e9c9e, type: 3}
+  - {fileID: 746296471256153038, guid: 26030b69ac446504bbbf48c68f0e9c9e, type: 3}
+  - {fileID: -1548440330133398235, guid: 26030b69ac446504bbbf48c68f0e9c9e, type: 3}
+  duration: 1.2
+  loop: 1
+  delay: 0
+  randomizeStart: 0
+  maxRandomDelay: 0.5
+  waitBetweenLoops: 0
+  playOnAwake: 1
+  _spriteRenderer: {fileID: 0}
 --- !u!1 &7532083327266264830
 GameObject:
   m_ObjectHideFlags: 0

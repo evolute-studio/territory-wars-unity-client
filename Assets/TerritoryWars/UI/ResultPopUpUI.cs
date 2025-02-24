@@ -80,6 +80,16 @@ namespace TerritoryWars.UI
 
         public void ViewResults()
         {
+            for(int i = 0; i < _player1JokersCount; i++)
+            {
+                _resultPopupComponents.Player1Jokers[i].GetComponent<CanvasGroup>().alpha = 1f;
+            }
+            
+            for(int i = 0; i < _player2JokersCount; i++)
+            {
+                _resultPopupComponents.Player2Jokers[i].GetComponent<CanvasGroup>().alpha = 1f;
+            }
+            
             Sequence sequence = DOTween.Sequence();
             sequence.Append(_resultPopupComponents.CityEvoluteScoreGOPlayer1.GetComponent<CanvasGroup>().DOFade(1f, _animationDuration));
             sequence.Append(_resultPopupComponents.CartEvoluteScoreGOPlayer1.GetComponent<CanvasGroup>().DOFade(1f, _animationDuration));
@@ -88,7 +98,6 @@ namespace TerritoryWars.UI
             {
                 for (int i = 0; i < _player1JokersCount; i++)
                 {
-                    sequence.Append(_resultPopupComponents.Player1Jokers[i].GetComponent<CanvasGroup>().DOFade(1f, _animationDuration));
                     sequence.Append(_resultPopupComponents.JokerEvoluteScoreGOPlayer1[i].GetComponent<CanvasGroup>().DOFade(1f, _animationDuration));
                 }
             }
@@ -100,7 +109,6 @@ namespace TerritoryWars.UI
             {
                 for (int i = 0; i < _player2JokersCount; i++)
                 {
-                    sequence.Append(_resultPopupComponents.Player2Jokers[i].GetComponent<CanvasGroup>().DOFade(1f, _animationDuration));
                     sequence.Append(_resultPopupComponents.JokerEvoluteScoreGOPlayer2[i].GetComponent<CanvasGroup>().DOFade(1f, _animationDuration));
                 }
             }
