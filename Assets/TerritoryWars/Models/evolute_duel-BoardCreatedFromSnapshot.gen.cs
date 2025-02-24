@@ -11,11 +11,11 @@ using BigInteger = System.Numerics.BigInteger;
 
 // Model definition for `evolute_duel::eventsModels::EBoardCreatedFromSnapshot` model
 public class evolute_duel_BoardCreatedFromSnapshot : ModelInstance {
-    [ModelField("board_id")]
+        [ModelField("board_id")]
         public FieldElement board_id;
 
-        // [ModelField("old_board_id")]
-        // public FieldElement old_board_id;
+        [ModelField("old_board_id")]
+        public FieldElement old_board_id;
 
         [ModelField("move_number")]
         public byte move_number;

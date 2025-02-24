@@ -10,7 +10,7 @@ using UnityEngine.UI;
 
 namespace TerritoryWars.UI
 {
-    public class MatchesTabUI : MonoBehaviour
+    public class MatchesTabController : MonoBehaviour
     {
         public GameObject PanelGameObject;
         public GameObject MatchListItemPrefab;
