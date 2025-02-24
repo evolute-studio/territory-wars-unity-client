@@ -14,23 +14,23 @@ public class evolute_duel_BoardCreatedFromSnapshot : ModelInstance {
     [ModelField("board_id")]
         public FieldElement board_id;
 
-        [ModelField("old_board_id")]
-        public FieldElement old_board_id;
+        // [ModelField("old_board_id")]
+        // public FieldElement old_board_id;
 
         [ModelField("move_number")]
         public byte move_number;
 
-        [ModelField("initial_edge_state")]
-        public byte[] initial_edge_state;
+        // [ModelField("initial_edge_state")] я можу взяти це з old_board_id
+        // public byte[] initial_edge_state;
 
-        [ModelField("available_tiles_in_deck")]
-        public byte[] available_tiles_in_deck;
+        // [ModelField("available_tiles_in_deck")]
+        // public byte[] available_tiles_in_deck;
 
         [ModelField("top_tile")]
         public Option<byte> top_tile;
 
         [ModelField("state")]
-        public (byte, byte, byte)[] state;
+        public (byte, byte, byte)[] state; // type, rotation, player side
 
         [ModelField("player1")]
         public (FieldElement, PlayerSide, byte) player1;

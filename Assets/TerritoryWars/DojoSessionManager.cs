@@ -81,7 +81,7 @@ namespace TerritoryWars
                 Option<FieldElement>.None => null
             };
             TileData tile = eventModel.tile is Option<byte>.Some some ? new TileData(OnChainBoardDataConverter.TileTypes[some.value]) : null;
-            int rotation = eventModel.rotation;
+            int rotation = (eventModel.rotation + 3) % 4;
             Vector2Int position = new Vector2Int(eventModel.col, eventModel.row);
             bool isJoker = eventModel.is_joker;
             string board_id = eventModel.board_id.Hex();
@@ -172,7 +172,7 @@ namespace TerritoryWars
         {
             Account account = _dojoGameManager.LocalBurnerAccount;
             Option<byte> jokerTile = new Option<byte>.None();
-            byte rotation = (byte) data.rotationIndex;
+            byte rotation = (byte)((data.rotationIndex + 1) % 4);
             byte col = (byte) (x - 1);
             byte row = (byte) (y - 1);
             try
