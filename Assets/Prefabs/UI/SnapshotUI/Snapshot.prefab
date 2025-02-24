@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 7257182331898594100}
   - component: {fileID: 3620225234210784149}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: TilesLeftText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1093,7 +1093,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -575, y: 0}
-  m_SizeDelta: {x: 1300, y: 164.28572}
+  m_SizeDelta: {x: 1100, y: 140}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &686647076201502671
 CanvasRenderer:
