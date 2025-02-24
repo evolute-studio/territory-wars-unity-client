@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace TerritoryWars.Tools
 {
@@ -18,10 +19,15 @@ namespace TerritoryWars.Tools
         public Action OnAnimationEnd;
 
         [SerializeField] private SpriteRenderer _spriteRenderer;
+        private Image _image;
+        private bool _isUI;
 
         private void Start()
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
+            _image = GetComponent<Image>();
+            _isUI = _image != null;
+
             if (playOnAwake)
             {
                 Play();
@@ -31,6 +37,8 @@ namespace TerritoryWars.Tools
         public void Validate()
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
+            _image = GetComponent<Image>();
+            _isUI = _image != null;
         }
 
         public void ChangeSprites(Sprite[] AnimationSprites)
@@ -41,15 +49,15 @@ namespace TerritoryWars.Tools
         public void Play()
         {
             Stop();
-            if (sprites == null || sprites.Length == 0 || _spriteRenderer == null)
+            if (sprites == null || sprites.Length == 0 || (_spriteRenderer == null && _image == null))
             {
-                Debug.LogWarning("No sprites to animate");
+                Debug.LogWarning("No sprites to animate or no renderer/image component found");
                 return;
             }
 
             if (sprites.Length == 1)
             {
-                _spriteRenderer.sprite = sprites[0];
+                SetSprite(sprites[0]);
                 return;
             }
 
@@ -67,6 +75,18 @@ namespace TerritoryWars.Tools
             StopAllCoroutines();
         }
 
+        private void SetSprite(Sprite sprite)
+        {
+            if (_isUI)
+            {
+                _image.sprite = sprite;
+            }
+            else
+            {
+                _spriteRenderer.sprite = sprite;
+            }
+        }
+
         private IEnumerator Animate()
         {
             if (randomizeStart)
@@ -82,7 +102,7 @@ namespace TerritoryWars.Tools
             {
                 foreach (var sprite in sprites)
                 {
-                    _spriteRenderer.sprite = sprite;
+                    SetSprite(sprite);
                     yield return new WaitForSeconds(duration / sprites.Length);
                 }
                 
