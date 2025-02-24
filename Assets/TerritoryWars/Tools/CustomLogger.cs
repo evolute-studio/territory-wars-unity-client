@@ -6,7 +6,7 @@ namespace TerritoryWars.Tools
     {
         Info,
         Warning,
-        ModelUpdate,
+        Event,
         Error,
         Important
     }
@@ -17,7 +17,7 @@ namespace TerritoryWars.Tools
         {
             {LogType.Info, "#808080"},          // Сірий колір для звичайної інформації
             {LogType.Warning, "#FFA500"},       // Помаранчевий для попереджень
-            {LogType.ModelUpdate, "#32CD32"},   // Лайм-зелений для оновлень моделі
+            {LogType.Event, "#32CD32"},   // Лайм-зелений для оновлень моделі
             {LogType.Error, "#DC143C"},         // Темно-червоний для помилок  
             {LogType.Important, "#9441e0"}      // Фіолетовий для важливих повідомлень
         };
@@ -26,7 +26,7 @@ namespace TerritoryWars.Tools
         {
             {LogType.Info, true},
             {LogType.Warning, true},
-            {LogType.ModelUpdate, true},
+            {LogType.Event, true},
             {LogType.Error, true},
             {LogType.Important, true}
         };
@@ -49,9 +49,9 @@ namespace TerritoryWars.Tools
             Log(LogType.Warning, message);
         }
         
-        public static void LogModelUpdate(string message)
+        public static void LogEvent(string message)
         {
-            Log(LogType.ModelUpdate, message);
+            Log(LogType.Event, message);
         }
         
         public static void LogError(string message)

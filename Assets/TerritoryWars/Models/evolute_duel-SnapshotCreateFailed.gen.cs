@@ -20,8 +20,8 @@ public class evolute_duel_SnapshotCreateFailed : ModelInstance {
         [ModelField("board_game_state")]
         public GameState board_game_state;
 
-        [ModelField("move_delta")]
-        public byte move_delta;
+        [ModelField("move_number")]
+        public byte move_number;
 
     // Start is called before the first frame update
     void Start() {

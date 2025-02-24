@@ -16,14 +16,12 @@ namespace TerritoryWars
 
         private Account _localPlayerAccount => _dojoGameManager.LocalBurnerAccount;
         private evolute_duel_Board _localPlayerBoard;
-        public string LastMoveIdHex { get; set; }
-        public int LastPlayerSide { get; set; }
-        
-        private Coroutine _checkBoardCoroutine;
+        //public string LastMoveIdHex { get; set; }
+        //public int LastPlayerSide { get; set; }
 
-        public delegate void OpponentMoveHandler(TileData tile, Vector2Int position, int rotation);
+        public delegate void MoveHandler(string playerAddress, TileData tile, Vector2Int position, int rotation);
 
-        public event OpponentMoveHandler OnOpponentMoveReceived;
+        public event MoveHandler OnMoveReceived;
 
         public evolute_duel_Board LocalPlayerBoard
         {
@@ -43,96 +41,100 @@ namespace TerritoryWars
         {
             _dojoGameManager = dojoGameManager;
             dojoGameManager.WorldManager.synchronizationMaster.OnModelUpdated.AddListener(OnModelUpdated);
-            //dojoGameManager.WorldManager.synchronizationMaster.OnEntitySpawned.AddListener(OnEntitySpawned);
+            dojoGameManager.WorldManager.synchronizationMaster.OnEventMessage.AddListener(OnEventMessage);
         }
         
         private void OnModelUpdated(ModelInstance modelInstance)
         {
             if(_dojoGameManager.IsTargetModel(modelInstance, nameof(evolute_duel_Board)))
             {
-                CustomLogger.LogImportant($"Model {nameof(evolute_duel_Board)} via OnModelUpdated");
-                CheckBoardUpdate();
+                //CustomLogger.LogImportant($"Model {nameof(evolute_duel_Board)} via OnModelUpdated");
             }
         }
         
-        private void OnEntitySpawned(GameObject newEntity)
+        private void OnEventMessage(ModelInstance modelInstance)
         {
-            if(!newEntity.TryGetComponent(out evolute_duel_Move move)) return;
-        }
-
-        public void CheckNewMove(evolute_duel_Move move)
-        {
-            if (move == null) return;
-            var moveData = OnChainMoveDataConverter.GetMoveData(move);
-            CustomLogger.LogModelUpdate($"[New Move]: Account {moveData.Item1} made a move at {moveData.Item2}, {moveData.Item3}. Rotation: {moveData.Item4}");
-            if (moveData.Item1 != null)
+            switch (modelInstance)
             {
-                LastPlayerSide = moveData.Item1 switch
-                {
-                    PlayerSide.Blue => 0,
-                    PlayerSide.Red => 1,
-                };
-                OnOpponentMoveReceived?.Invoke(moveData.Item2, moveData.Item4, moveData.Item3);
+                case evolute_duel_Moved moved:
+                    Moved(moved);
+                    break;
+                case evolute_duel_InvalidMove invalidMove:
+                    InvalidMove(invalidMove);
+                    break;
             }
-            
-        }
-
-        public void StartBoardChecking()
-        {
-            _checkBoardCoroutine = _dojoGameManager.StartCoroutine(CheckBoardCoroutine(0.5f));
-        }
-        
-        public void StopBoardChecking()
-        {
-            if (_checkBoardCoroutine != null)
+            if(_dojoGameManager.IsTargetModel(modelInstance, nameof(evolute_duel_Moved)))
             {
-                _dojoGameManager.StopCoroutine(_checkBoardCoroutine);
+            }
+            else if(_dojoGameManager.IsTargetModel(modelInstance, nameof(evolute_duel_Moved)))
+            {
             }
         }
 
-        private IEnumerator CheckBoardCoroutine(float delay)
+        private void Moved(evolute_duel_Moved eventModel)
         {
-            yield return new WaitForSeconds(delay);
-            CheckBoardUpdate();
-        }
-        
-
-        public void CheckBoardUpdate()
-        {
-            CustomLogger.LogImportant($"Checking board update");
-            if(LocalPlayerBoard == null || LocalPlayerBoard.last_move_id == null) return;
-            CustomLogger.LogImportant($"Board is not null");
-            string newMove = LocalPlayerBoard.last_move_id switch
+            string move_id = eventModel.move_id.Hex();
+            string player = eventModel.player.Hex();
+            string prev_move_id = eventModel.prev_move_id switch
             {
-                Option<FieldElement>.Some moveId => moveId.value.Hex(),
+                Option<FieldElement>.Some id => id.value.Hex(),
                 Option<FieldElement>.None => null
             };
-            CustomLogger.LogImportant($"New move equals LastMoveIdHex: {newMove == LastMoveIdHex}. LastMoveIdHex: {LastMoveIdHex} NewMove: {newMove}");
-            if (newMove != LastMoveIdHex && LocalPlayerBoard != null)
-            {
-                evolute_duel_Move moveModel = GetMoveModelById(LocalPlayerBoard.last_move_id);
-                CustomLogger.LogImportant($"Move model is null: {moveModel == null}");
-                if (moveModel == null)
-                {
-                    DojoGameManager.Instance.TryAgain(CheckBoardUpdate, 1f);
-                }
-                var moveData = OnChainMoveDataConverter.GetMoveData(moveModel);
-                LastPlayerSide = moveData.Item1 switch
-                {
-                    PlayerSide.Blue => 0,
-                    PlayerSide.Red => 1,
-                };
-                if(LastPlayerSide == SessionManager.Instance.LocalPlayer.LocalId) return;
-                LastMoveIdHex = newMove;
-                Moved(moveData);
-            }
+            TileData tile = eventModel.tile is Option<byte>.Some some ? new TileData(OnChainBoardDataConverter.TileTypes[some.value]) : null;
+            int rotation = eventModel.rotation;
+            Vector2Int position = new Vector2Int(eventModel.col, eventModel.row);
+            bool isJoker = eventModel.is_joker;
+            string board_id = eventModel.board_id.Hex();
+            
+            CustomLogger.LogEvent($"[Moved] | Player: {player} | MoveId: {move_id} | PrevMoveId: {prev_move_id} | Tile: {tile} | Rotation: {rotation} | Position: {position} | IsJoker: {isJoker} | BoardId: {board_id}");
+            OnMoveReceived?.Invoke(player, tile, position, rotation);
         }
-
-        public void Moved((PlayerSide playerSide, TileData tile, int rotation, Vector2Int position, bool isJoker) moveData)
+        
+        private void InvalidMove(evolute_duel_InvalidMove eventModel)
         {
-            CustomLogger.LogModelUpdate($"[New Move]: Account {moveData.playerSide} made a move at {moveData.position.x}, {moveData.position.y}. Rotation: {moveData.rotation}");
-            OnOpponentMoveReceived?.Invoke(moveData.tile, moveData.position, moveData.rotation);
+            string move_id = eventModel.move_id.Hex();
+            string player = eventModel.player.Hex();
+            
+            CustomLogger.LogError($"[InvalidMove] | Player: {player} | MoveId: {move_id}");
+            
         }
+        
+        // public void CheckBoardUpdate()
+        // {
+        //     CustomLogger.LogImportant($"Checking board update");
+        //     if(LocalPlayerBoard == null || LocalPlayerBoard.last_move_id == null) return;
+        //     CustomLogger.LogImportant($"Board is not null");
+        //     string newMove = LocalPlayerBoard.last_move_id switch
+        //     {
+        //         Option<FieldElement>.Some moveId => moveId.value.Hex(),
+        //         Option<FieldElement>.None => null
+        //     };
+        //     CustomLogger.LogImportant($"New move equals LastMoveIdHex: {newMove == LastMoveIdHex}. LastMoveIdHex: {LastMoveIdHex} NewMove: {newMove}");
+        //     if (newMove != LastMoveIdHex && LocalPlayerBoard != null)
+        //     {
+        //         evolute_duel_Move moveModel = GetMoveModelById(LocalPlayerBoard.last_move_id);
+        //         CustomLogger.LogImportant($"Move model is null: {moveModel == null}");
+        //         if (moveModel == null)
+        //         {
+        //             DojoGameManager.Instance.TryAgain(CheckBoardUpdate, 1f);
+        //         }
+        //         var moveData = OnChainMoveDataConverter.GetMoveData(moveModel);
+        //         LastPlayerSide = moveData.Item1 switch
+        //         {
+        //             PlayerSide.Blue => 0,
+        //             PlayerSide.Red => 1,
+        //         };
+        //         if(LastPlayerSide == SessionManager.Instance.LocalPlayer.LocalId) return;
+        //         LastMoveIdHex = newMove;
+        //         Moved(moveData);
+        //     }
+        // }
+        //
+        // public void Moved((PlayerSide playerSide, TileData tile, int rotation, Vector2Int position, bool isJoker) moveData)
+        // {
+        //     CustomLogger.LogEvent($"[New Move]: Account {moveData.playerSide} made a move at {moveData.position.x}, {moveData.position.y}. Rotation: {moveData.rotation}");
+        //     OnMoveReceived?.Invoke(moveData.tile, moveData.position, moveData.rotation);
+        // }
         
         
         
@@ -175,9 +177,8 @@ namespace TerritoryWars
             byte row = (byte) (y - 1);
             try
             {
-                
                 var txHash = await _dojoGameManager.GameSystem.make_move(account, jokerTile, rotation, col, row);
-                CustomLogger.LogModelUpdate($"[Make Move]: Account {account.Address.Hex()} made a move at {x}, {y}. Rotation: {rotation}");
+                CustomLogger.LogEvent($"[Make Move]: Hash {txHash} Account {account.Address.Hex()} made a move at {x}, {y}. Rotation: {rotation}");
             }
             catch (Exception e)
             {

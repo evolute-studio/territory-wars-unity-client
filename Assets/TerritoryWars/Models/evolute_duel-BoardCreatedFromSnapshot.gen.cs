@@ -17,8 +17,8 @@ public class evolute_duel_BoardCreatedFromSnapshot : ModelInstance {
         [ModelField("old_board_id")]
         public FieldElement old_board_id;
 
-        [ModelField("move_delta")]
-        public byte move_delta;
+        [ModelField("move_number")]
+        public byte move_number;
 
         [ModelField("initial_edge_state")]
         public byte[] initial_edge_state;

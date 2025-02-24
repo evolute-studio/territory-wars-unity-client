@@ -183,41 +183,6 @@ namespace TerritoryWars
             {
                 CheckStartSession(eventMessage);
             }
-            // if (IsTargetModel(eventMessage, nameof(evolute_duel_GameCreated)))
-            // {
-            //     try
-            //     {
-            //         CustomLogger.LogImportant($"Try get info directly from event message");
-            //         evolute_duel_GameCreated gameCreated = eventMessage as evolute_duel_GameCreated;
-            //         CustomLogger.LogImportant($"Game Created. Host player {gameCreated.host_player.Hex()}. " +
-            //                                   $@"Status {gameCreated.status switch { 
-            //                                       GameStatus.Created => "Created", 
-            //                                       GameStatus.InProgress => "In Progress", 
-            //                                       GameStatus.Finished => "Finished", 
-            //                                       GameStatus.Canceled => "Canceled", _ => "Unknown" }}");
-            //     }
-            //     catch (Exception e)
-            //     {
-            //         CustomLogger.LogError($"Failed to get info from event message. {e}");
-            //     }
-            //     
-            //     try
-            //     {
-            //         CustomLogger.LogImportant($"Try get info from event message transform");
-            //         evolute_duel_GameCreated gameCreated = eventMessage.transform.GetComponent<evolute_duel_GameCreated>();
-            //         CustomLogger.LogImportant($"Game Created. Host player {gameCreated.host_player.Hex()}. " +
-            //                                   $@"Status {gameCreated.status switch { 
-            //                                       GameStatus.Created => "Created", 
-            //                                       GameStatus.InProgress => "In Progress", 
-            //                                       GameStatus.Finished => "Finished", 
-            //                                       GameStatus.Canceled => "Canceled", _ => "Unknown" }}");
-            //     }
-            //     catch (Exception e)
-            //     {
-            //         CustomLogger.LogError($"Failed to get info from event message by transform. {e}");
-            //     }
-            //     
-            // }
         }
 
         private void CheckStartSession(ModelInstance eventMessage)

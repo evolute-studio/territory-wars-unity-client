@@ -187,6 +187,7 @@ namespace TerritoryWars.General
             {
                 Invoke(nameof(StartRemoteTurn), 2f);
             }
+            DojoGameManager.Instance.SessionManager.OnMoveReceived += HandleMove;
         }
 
         private void StartLocalTurn()
@@ -204,28 +205,15 @@ namespace TerritoryWars.General
             gameUI.SetEndTurnButtonActive(false);
             gameUI.SetRotateButtonActive(false);
             UpdateTile();
-            // Тут можна додати логіку для відображення "Очікування ходу противника"
-            StartListeningForOpponentMove();
         }
 
-        private void StartListeningForOpponentMove()
+        private void HandleMove(string playerAddress, TileData tile, Vector2Int position, int rotation)
         {
-            // Підписуємось на події від мережевого менеджера
-            DojoGameManager.Instance.SessionManager.OnOpponentMoveReceived += HandleOpponentMove;
-            DojoGameManager.Instance.SessionManager.StartBoardChecking();
+            if (playerAddress == LocalPlayer.Address.Hex()) CompleteEndTurn(playerAddress);
+            else StartCoroutine(HandleOpponentMoveCoroutine(playerAddress, tile, position, rotation));
         }
 
-        private void HandleOpponentMove(TileData tile, Vector2Int position, int rotation)
-        {
-            // Відписуємось від подій
-            DojoGameManager.Instance.SessionManager.OnOpponentMoveReceived -= HandleOpponentMove;
-            DojoGameManager.Instance.SessionManager.StopBoardChecking();
-            
-            StartCoroutine(HandleOpponentMoveCoroutine(tile, position, rotation));
-            
-        }
-
-        private IEnumerator HandleOpponentMoveCoroutine(TileData tile, Vector2Int position, int rotation)
+        private IEnumerator HandleOpponentMoveCoroutine(string playerAddress, TileData tile, Vector2Int position, int rotation)
         {
             tile.Rotate(rotation);
             tile.OwnerId = RemotePlayer.LocalId;
@@ -238,7 +226,8 @@ namespace TerritoryWars.General
             });
             yield return new WaitForSeconds(1f);
             TileSelector.tilePreview.ResetPosition();
-            CompleteEndTurn();
+            //CompleteEndTurn();
+            CompleteEndTurn(playerAddress);
         }
 
         private void UpdateTile()
@@ -280,18 +269,18 @@ namespace TerritoryWars.General
             }
         }
 
-        public void CompleteEndTurn()
+        public void CompleteEndTurn(string lastMovePlayerAddress)
         {
-            CurrentTurnPlayer = CurrentTurnPlayer == Characters[0] ? Characters[1] : Characters[0];
-
-            if (CurrentTurnPlayer == LocalPlayer)
+            bool isLocalPlayer = lastMovePlayerAddress == LocalPlayer.Address.Hex();
+            if (isLocalPlayer)
             {
-                StartLocalTurn();
+                CurrentTurnPlayer = RemotePlayer;
+                StartRemoteTurn();
             }
             else
             {
-                StartRemoteTurn();
-                
+                CurrentTurnPlayer = LocalPlayer;
+                StartLocalTurn();
             }
         }
 
