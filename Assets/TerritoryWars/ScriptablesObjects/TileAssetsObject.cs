@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -72,5 +73,10 @@ namespace TerritoryWars.ScriptablesObjects
             return randomMountain;
         }
 
+        [Serializable]
+        public class HousesSprite
+        {
+            public Sprite[] HousesSprites;
+        }
     }
 }
