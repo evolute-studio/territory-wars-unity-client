@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TerritoryWars.General;
 using TerritoryWars.ScriptablesObjects;
+using TerritoryWars.Tools;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -232,7 +233,7 @@ namespace TerritoryWars.Tile
                 {
                     playerId = gameManager.CurrentCharacter.Id;
                 }
-                house.sprite = TileAssetsObject.GetNextHouse(playerId);
+                house.gameObject.GetComponent<SpriteAnimator>().ChangeSprites(TileAssetsObject.GetNextHouse(playerId));
                 TileRotator.SimpleRotation(house.transform, index);
                 TileRotator.SimpleRotationObjects.Add(house.transform);
             }

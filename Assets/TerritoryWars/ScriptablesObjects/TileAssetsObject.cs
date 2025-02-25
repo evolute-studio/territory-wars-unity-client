@@ -26,12 +26,12 @@ namespace TerritoryWars.ScriptablesObjects
             return randomHouse;
         }
 
-        public Sprite GetNextHouse(int playerIndex)
+        public Sprite[] GetNextHouse(int playerIndex)
         {
-            Sprite[][] Houses = { FirstPlayerHouses, SecondPlayerHouses };
-            CurrentHouseIndex = (CurrentHouseIndex + 1) % Houses[playerIndex].Length;
-            Sprite nextHouse = Houses[playerIndex][CurrentHouseIndex];
-            return nextHouse;
+            List<HousesSprite>[] Houses = { FirstPlayerHousesAnimated, SecondPlayerHousesAnimated };
+            CurrentHouseIndex = (CurrentHouseIndex + 1) % Houses[playerIndex].Count;
+            Sprite[] nextHouseSprites = Houses[playerIndex][CurrentHouseIndex].HousesSprites;
+            return nextHouseSprites;
         }
         
         public Sprite GetHouseByReference(Sprite sprite, int playerIndex)
