@@ -19,6 +19,14 @@ MonoBehaviour:
   - {fileID: 4323759710514417277, guid: a92961e747a6c41889e9d889471a73cb, type: 3}
   - {fileID: 6862363052645781871, guid: a92961e747a6c41889e9d889471a73cb, type: 3}
   - {fileID: 5136009905638925935, guid: a92961e747a6c41889e9d889471a73cb, type: 3}
+  FirstPlayerHousesAnimated:
+  - HousesSprites: []
+  - HousesSprites: []
+  - HousesSprites: []
+  SecondPlayerHousesAnimated:
+  - HousesSprites: []
+  - HousesSprites: []
+  - HousesSprites: []
   SecondPlayerHouses:
   - {fileID: -2059984849334355576, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
   - {fileID: -1702935629377491628, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -8,6 +9,8 @@ namespace TerritoryWars.ScriptablesObjects
     public class TileAssetsObject : ScriptableObject
     {
         public Sprite[] FirstPlayerHouses;
+        public List<HousesSprite> FirstPlayerHousesAnimated;
+        public List<HousesSprite> SecondPlayerHousesAnimated;
         public Sprite[] SecondPlayerHouses;
         public Sprite[] Mountains;
         public GameObject ForestPrefab;
@@ -72,5 +75,10 @@ namespace TerritoryWars.ScriptablesObjects
             return randomMountain;
         }
 
+        [Serializable]
+        public class HousesSprite
+        {
+            public Sprite[] HousesSprites;
+        }
     }
 }

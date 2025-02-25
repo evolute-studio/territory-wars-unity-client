@@ -104,26 +104,26 @@ namespace TerritoryWars.UI
         private void SortByStatus()
         {
             // Created -> In Progress -> Finished -> Canceled
-            _matchListItems.Sort((a, b) =>
-            {
-                int aStatus = a.Status switch
-                {
-                    "Created" => 0,
-                    "In Progress" => 1,
-                    "Finished" => 2,
-                    "Canceled" => 3,
-                    _ => 4
-                };
-                int bStatus = b.Status switch
-                {
-                    "Created" => 0,
-                    "In Progress" => 1,
-                    "Finished" => 2,
-                    "Canceled" => 3,
-                    _ => 4
-                };
-                return aStatus - bStatus;
-            });
+            // _matchListItems.Sort((a, b) =>
+            // {
+            //     int aStatus = a.Status switch
+            //     {
+            //         "Created" => 0,
+            //         "In Progress" => 1,
+            //         "Finished" => 2,
+            //         "Canceled" => 3,
+            //         _ => 4
+            //     };
+            //     int bStatus = b.Status switch
+            //     {
+            //         "Created" => 0,
+            //         "In Progress" => 1,
+            //         "Finished" => 2,
+            //         "Canceled" => 3,
+            //         _ => 4
+            //     };
+            //     return aStatus - bStatus;
+            // });
             
             for (int i = 0; i < _matchListItems.Count; i++)
             {
@@ -159,10 +159,10 @@ namespace TerritoryWars.UI
         public GameObject ListItem;
         public string PlayerName;
         public string GameId;
-        public string Status;
 
         private TextMeshProUGUI _playerNameText;
         //private TextMeshProUGUI _gameIdText;
+        private TextMeshProUGUI _evoluteCountText;
         private TextMeshProUGUI _statusText;
         private TextMeshProUGUI _awaitText;
         private Button _playButton;
@@ -172,7 +172,7 @@ namespace TerritoryWars.UI
             ListItem = listItem;
             _playerNameText = listItem.transform.Find("Content/PlayerNameText").GetComponent<TextMeshProUGUI>();
             //_gameIdText = listItem.transform.Find("Content/GameIdText").GetComponent<TextMeshProUGUI>();
-            _statusText = listItem.transform.Find("Content/StatusText").GetComponent<TextMeshProUGUI>();
+            _evoluteCountText = listItem.transform.Find("Content/EvoluteCountGO/EvoluteCountText").GetComponent<TextMeshProUGUI>();
             _awaitText = listItem.transform.Find("Content/AwaitText").GetComponent<TextMeshProUGUI>();
             _playButton = listItem.transform.Find("Content/PlayButton").GetComponent<Button>();
             _awaitText.gameObject.SetActive(false);
@@ -182,12 +182,10 @@ namespace TerritoryWars.UI
         {
             PlayerName = playerName;
             //GameId = gameId;
-            Status = status;
-            
+
             _playerNameText.text = PlayerName;
             //_gameIdText.text = GameId;
-            _statusText.text = Status;
-            
+
             _playButton.onClick.RemoveAllListeners();
 
             if (status != "Created")
