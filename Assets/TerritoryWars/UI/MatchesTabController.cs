@@ -71,7 +71,7 @@ namespace TerritoryWars.UI
         
         public void SetInProgressMatchesText(int count)
         {
-            InProgressMatchesText.text = "In progress games: " + count;
+            InProgressMatchesText.text = "Games In progress: " + count;
         }
         
         public void SetFinishedMatchesText(int count)
@@ -100,7 +100,7 @@ namespace TerritoryWars.UI
         {
             ClearAllListItems();
             GameObject[] games = DojoGameManager.Instance.GetGames();
-            BackgroundPlaceholderGO.SetActive(games.Length == 0);
+            //BackgroundPlaceholderGO.SetActive(games.Length == 0);
 
             foreach (var game in games)
             {
@@ -124,21 +124,9 @@ namespace TerritoryWars.UI
                 };
                 switch (status)
                 {
-                    case "Created":
-                        _createdMatchesCount++;
-                        SetCreatedMatchesText(_createdMatchesCount);
-                        break;
                     case "In Progress":
                         _inProgressMatchesCount++;
                         SetInProgressMatchesText(_inProgressMatchesCount);
-                        break;
-                    case "Finished":
-                        _finishedMatchesCount++;
-                        SetFinishedMatchesText(_finishedMatchesCount);
-                        break;
-                    case "Canceled":
-                        _canceledMatchesCount++;
-                        SetCanceledMatchesText(_canceledMatchesCount);
                         break;
                 }
                 if( status == "Created")
@@ -161,6 +149,7 @@ namespace TerritoryWars.UI
                 
             }
 
+            SetBackgroundPlaceholder(_createdMatchesCount == 0);
             SortByStatus();
         }
         

@@ -15,7 +15,6 @@ namespace TerritoryWars.ModelsDataConverters
             try
             {
                 var hexString = fieldElement.Hex().ToString();
-                CustomLogger.LogWarning($"hexString: {hexString}");
                 
                 // Пропускаємо префікс "0x" якщо він є
                 if (hexString.StartsWith("0x", StringComparison.OrdinalIgnoreCase))

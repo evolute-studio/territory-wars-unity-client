@@ -214,11 +214,12 @@ namespace TerritoryWars
             return new TileData(OnChainBoardDataConverter.GetTopTile(LocalPlayerBoard.top_tile));
         }
 
-        public async void MakeMove(TileData data, int x, int y)
+        public async void MakeMove(TileData data, int x, int y, bool isJoker)
         {
             Account account = _dojoGameManager.LocalBurnerAccount;
-            Option<byte> jokerTile = new Option<byte>.None();
-            byte rotation = (byte)((data.rotationIndex + 1) % 4);
+            var tileConfig = OnChainBoardDataConverter.GetTypeAndRotation(data.id);
+            Option<byte> jokerTile = isJoker ? new Option<byte>.Some(tileConfig.Item1) : new Option<byte>.None();
+            byte rotation = (byte)((tileConfig.Item2 + 1) % 4);
             byte col = (byte) (x - 1);
             byte row = (byte) (y - 1);
             try

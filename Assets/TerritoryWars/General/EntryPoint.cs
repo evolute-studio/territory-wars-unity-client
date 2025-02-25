@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Dojo;
+using TerritoryWars.Tools;
 using UnityEngine;
 
 namespace TerritoryWars.General
@@ -84,16 +85,31 @@ namespace TerritoryWars.General
         {
             DojoGameManager.Initialize();
             DojoGameGUIController.enabled = UseDojoGUIController;
-            
+            #if UNITY_EDITOR
             if (DojoGameManager.Instance.WorldManager.transform.childCount == 0 ||
                 DojoGameManager.Instance.LocalBurnerAccount == null)
             {
+                CustomLogger.LogInfo("Editor mode. Waiting for LocalBurnerAccount and WorldManager");
                 DojoGameManager.Instance.WorldManager.synchronizationMaster.OnSynchronized.AddListener(LoadMenu);
             }
             else
             {
                 LoadMenu();
             }
+            #endif
+            #if UNITY_WEBGL
+
+            CustomLogger.LogInfo("WebGL mode");
+            if (DojoGameManager.Instance.LocalBurnerAccount == null)
+            {
+                CustomLogger.LogInfo("LocalBurnerAccount is null");
+                DojoGameManager.Instance.OnLocalPlayerSet.AddListener(LoadMenu);
+            }
+            else
+            {
+                LoadMenu();
+            }
+            #endif
         }
 
         public void LoadMenu(List<GameObject> list)
@@ -105,7 +121,9 @@ namespace TerritoryWars.General
 
         public void LoadMenu()
         {
-            CustomSceneManager.Instance.LoadLobby(2);
+            //CustomLogger.LogInfo("LoadMenu");
+            CustomSceneManager.Instance.LoadingScreen.SetActive(false);
+            CustomSceneManager.Instance.LoadLobby();
         }
         
         

@@ -6,6 +6,8 @@ using DG.Tweening;
 using TerritoryWars.Tile;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace TerritoryWars.General
 {
@@ -45,6 +47,11 @@ namespace TerritoryWars.General
         
         private Action OnLightningEnd; 
         
+        private bool _isAnimating = false;
+        private Sequence _currentSequence;
+
+        private List<Tween> _activeTweens = new List<Tween>();
+
         private void Awake()
         {
             Initialization();
@@ -61,19 +68,6 @@ namespace TerritoryWars.General
         // when click on joker button
         public void ShowIdleJokerAnimation()
         {
-            // SpriteAnimator _explosionEffectSpriteAnimator = _explosionEffectGO.GetComponent<SpriteAnimator>();
-            // _explosionEffectGO.SetActive(true);
-            // _explosionEffectSpriteAnimator.Validate();
-            // _explosionEffectSpriteAnimator.OnAnimationEnd = () =>
-            // {
-            //     _explosionEffectSpriteAnimator.Stop();
-            //     _explosionEffectGO.SetActive(false);
-            //     _evoluteTile.SetActive(true);
-            //     _evoluteTileSpriteAnimator.Play(_evoluteTileIdleAnimationSprites);
-            // };
-            // _explosionEffectSpriteAnimator.Play();
-            
-            
             foreach (var obj in _tileObjects)   
             {
                 obj.SetActive(false);
@@ -85,8 +79,16 @@ namespace TerritoryWars.General
                 
             if(_activeStaticMember)
                 CanCalculateHints?.Invoke();
-            
-            
+        }
+        
+        public void StopIdleJokerAnimation()
+        {
+            _evoluteTile.SetActive(false);
+            _JokerGroundTile.SetActive(false);
+            foreach (var obj in _tileObjects)
+            {
+                obj.SetActive(true);
+            }
         }
         
         // when player place joker tile
@@ -194,64 +196,322 @@ namespace TerritoryWars.General
             }
         }
         
-        public void JokerConfChanging()
+        public void JokerConfChanging(int x, int y)
         {
-            _currentShardTween.Kill();
+            Debug.Log("Starting JokerConfChanging");
             
-            Vector3 startPosition = new Vector3(_initialShardsParentPosition.x, -0.15f, 0);
-            Vector3 endPosition = startPosition + new Vector3(0, -0.05f, 0);
-            SetActiveShardsEffects(false);
-            Sequence sequence = DOTween.Sequence();
-            sequence.Append(_evoluteShards.transform.DOLocalMove(_initialShardsParentPosition, 0.2f));
-            // Fade Out
-            foreach (var spriteRenderer in _tileGenerator.AllCityRenderers)
+            if (_isAnimating)
             {
-                sequence.Join(GetFadeSpriteRendererTween(spriteRenderer, 0.2f, 0f));
+                Debug.Log("Animation is already running");
+                return;
             }
-            foreach (var lineRenderer in _tileGenerator.AllCityLineRenderers)
-            {
-                sequence.Join(GetFadeLineRendererTween(lineRenderer, 0.2f, 0f));
-            }
-            sequence.Join(GetFadeSpriteRendererTween(_tileGenerator.RoadRenderer, 0.2f, 0f));
             
-            sequence.OnComplete(() => {
-                Debug.Log("OnComplete");
-                SessionManager.Instance.TileSelector.RegenerateJokerTile();
-            });
-            sequence.Append(_evoluteShards.transform.DOLocalMove(endPosition, 0.3f));
-            // Fade In
-            foreach (var spriteRenderer in _tileGenerator.AllCityRenderers)
-            {
-                sequence.Join(GetFadeSpriteRendererTween(spriteRenderer, 0.3f, 1f));
-            }
-            foreach (var lineRenderer in _tileGenerator.AllCityLineRenderers)
-            {
-                sequence.Join(GetFadeLineRendererTween(lineRenderer, 0.3f, 1f));
-            }
-            sequence.Join(GetFadeSpriteRendererTween(_tileGenerator.RoadRenderer, 0.3f, 1f));
-            sequence.OnComplete(ShardLevitationAnimation);
+            CleanupActiveTweens();
             
-            sequence.Play();
+            _isAnimating = true;
+
+            try
+            {
+                Vector3 startPosition = new Vector3(_initialShardsParentPosition.x, -0.15f, 0);
+                Vector3 endPosition = startPosition + new Vector3(0, -0.05f, 0);
+                SetActiveShardsEffects(false);
+
+                _currentSequence = DOTween.Sequence()
+                    .OnKill(() => {
+                        CleanupActiveTweens();
+                        _isAnimating = false;
+                    });
+                    
+                // First part
+                if (_evoluteShards != null)
+                {
+                    var moveTween = _evoluteShards.transform
+                        .DOLocalMove(_initialShardsParentPosition, 0.2f)
+                        .SetAutoKill(true);
+                    _currentSequence.Append(moveTween);
+                    _activeTweens.Add(moveTween);
+                }
+                
+                // Fade Out
+                if (_tileGenerator != null && _tileGenerator.AllCityRenderers != null)
+                {
+                    AddFadeTweens(0.2f, 0f);
+                }
+
+                // Middle callback
+                _currentSequence.AppendCallback(() => {
+                    try
+                    {
+                        if (SessionManager.Instance != null && !_isAnimating) return;
+                        
+                        var jokerTile = SessionManager.Instance.GetGenerateJokerTile(x, y);
+                        if (jokerTile != null)
+                        {
+                            SessionManager.Instance.TileSelector.StartJokerTilePlacement(jokerTile, x, y);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogError($"Error in joker tile generation: {e}");
+                        CleanupAndReset();
+                    }
+                });
+
+                // Second part
+                if (_evoluteShards != null)
+                {
+                    var moveTween = _evoluteShards.transform
+                        .DOLocalMove(endPosition, 0.3f)
+                        .SetAutoKill(true);
+                    _currentSequence.Append(moveTween);
+                    _activeTweens.Add(moveTween);
+                }
+                
+                // Fade In
+                if (_tileGenerator != null && _tileGenerator.AllCityRenderers != null)
+                {
+                    AddFadeTweens(0.3f, 1f);
+                }
+
+                _currentSequence
+                    .OnComplete(() => {
+                        if (this == null || !gameObject.activeInHierarchy)
+                        {
+                            CleanupAndReset();
+                            return;
+                        }
+                        
+                        try
+                        {
+                            ShardLevitationAnimation();
+                            SetActiveShardsEffects(true);
+                        }
+                        finally
+                        {
+                            CleanupAndReset();
+                        }
+                    })
+                    .OnKill(() => CleanupAndReset())
+                    .Play();
+
+                Debug.Log("JokerConfChanging sequence started");
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Error in JokerConfChanging: {e}");
+                CleanupAndReset();
+            }
         }
         
+        private void AddFadeTweens(float duration, float targetAlpha)
+        {
+            try
+            {
+                if (_tileGenerator == null)
+                    return;
+
+                var validCityRenderers = _tileGenerator.AllCityRenderers?
+                    .Where(sr => sr != null && sr.gameObject != null && sr.gameObject.activeInHierarchy)
+                    .ToList() ?? new List<SpriteRenderer>();
+                    
+                var validLineRenderers = _tileGenerator.AllCityLineRenderers?
+                    .Where(lr => lr != null && lr.gameObject != null && lr.gameObject.activeInHierarchy)
+                    .ToList() ?? new List<LineRenderer>();
+
+                foreach (var spriteRenderer in validCityRenderers)
+                {
+                    if (spriteRenderer == null || spriteRenderer.gameObject == null) continue;
+                    
+                    var tween = GetFadeSpriteRendererTween(spriteRenderer, duration, targetAlpha);
+                    if (tween != null)
+                    {
+                        _currentSequence.Join(tween);
+                        _activeTweens.Add(tween);
+                    }
+                }
+
+                foreach (var lineRenderer in validLineRenderers)
+                {
+                    if (lineRenderer == null || lineRenderer.gameObject == null) continue;
+                    
+                    var tween = GetFadeLineRendererTween(lineRenderer, duration, targetAlpha);
+                    if (tween != null)
+                    {
+                        _currentSequence.Join(tween);
+                        _activeTweens.Add(tween);
+                    }
+                }
+
+                if (_tileGenerator.RoadRenderer != null && 
+                    _tileGenerator.RoadRenderer.gameObject != null && 
+                    _tileGenerator.RoadRenderer.gameObject.activeInHierarchy)
+                {
+                    var roadTween = GetFadeSpriteRendererTween(_tileGenerator.RoadRenderer, duration, targetAlpha);
+                    if (roadTween != null)
+                    {
+                        _currentSequence.Join(roadTween);
+                        _activeTweens.Add(roadTween);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Error in AddFadeTweens: {e}");
+            }
+        }
+
+        private void CleanupActiveTweens()
+        {
+            if (_currentSequence != null)
+            {
+                if (_currentSequence.IsPlaying())
+                {
+                    _currentSequence.Kill(true);
+                }
+                _currentSequence = null;
+            }
+
+            if (_currentShardTween != null)
+            {
+                if (_currentShardTween.IsPlaying())
+                {
+                    _currentShardTween.Kill(true);
+                }
+                _currentShardTween = null;
+            }
+
+            foreach (var tween in _activeTweens)
+            {
+                if (tween != null && tween.IsPlaying())
+                {
+                    tween.Kill(true);
+                }
+            }
+            _activeTweens.Clear();
+
+            if (ShardEffectCoroutine != null)
+            {
+                StopCoroutine(ShardEffectCoroutine);
+                ShardEffectCoroutine = null;
+            }
+        }
+
+        private void CleanupAndReset()
+        {
+            CleanupActiveTweens();
+            _isAnimating = false;
+        }
+
+        private void OnDisable()
+        {
+            CleanupAndReset();
+        }
+
+        private void OnDestroy()
+        {
+            CleanupAndReset();
+        }
+
         private Tween GetFadeSpriteRendererTween(SpriteRenderer spriteRenderer, float duration, float endAlpha)
         {
-            if (spriteRenderer == null)
+            if (spriteRenderer == null || !spriteRenderer.gameObject.activeInHierarchy)
             {
                 return null;
             }
-            return spriteRenderer.DOFade(endAlpha, duration);
+            
+            try
+            {
+                // Зберігаємо weak reference на spriteRenderer
+                var spriteRendererRef = new WeakReference<SpriteRenderer>(spriteRenderer);
+                
+                return DOTween.To(
+                    () => {
+                        if (spriteRendererRef.TryGetTarget(out var sr) && sr != null && sr.gameObject != null)
+                        {
+                            return sr.color.a;
+                        }
+                        return 0f;
+                    },
+                    (alpha) => {
+                        if (spriteRendererRef.TryGetTarget(out var sr) && sr != null && sr.gameObject != null)
+                        {
+                            var color = sr.color;
+                            color.a = alpha;
+                            sr.color = color;
+                        }
+                    },
+                    endAlpha,
+                    duration
+                )
+                .SetAutoKill(true)
+                .OnKill(() => {
+                    if (spriteRendererRef.TryGetTarget(out var sr) && sr != null && sr.gameObject != null)
+                    {
+                        var color = sr.color;
+                        color.a = endAlpha;
+                        sr.color = color;
+                    }
+                });
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Error creating fade tween: {e}");
+                return null;
+            }
         }
         
         private Tween GetFadeLineRendererTween(LineRenderer lineRenderer, float duration, float endAlpha)
         {
-            //lineRenderer.colorGradient.alphaKeys[0].alpha = 0;
-            if (lineRenderer == null)
+            if (lineRenderer == null || !lineRenderer.gameObject.activeInHierarchy)
             {
                 return null;
             }
-            return DOTween.To(() => lineRenderer.colorGradient.alphaKeys[0].alpha, 
-                x => lineRenderer.colorGradient.alphaKeys[0].alpha = x, endAlpha, duration);
+            
+            try
+            {
+                // Зберігаємо weak reference на lineRenderer
+                var lineRendererRef = new WeakReference<LineRenderer>(lineRenderer);
+                
+                return DOTween.To(
+                    () => {
+                        if (lineRendererRef.TryGetTarget(out var lr) && lr != null && lr.gameObject != null)
+                        {
+                            return lr.colorGradient.alphaKeys[0].alpha;
+                        }
+                        return 0f;
+                    },
+                    (alpha) => {
+                        if (lineRendererRef.TryGetTarget(out var lr) && lr != null && lr.gameObject != null)
+                        {
+                            var gradient = lr.colorGradient;
+                            var alphaKeys = gradient.alphaKeys;
+                            alphaKeys[0].alpha = alpha;
+                            var newGradient = new Gradient();
+                            newGradient.SetKeys(gradient.colorKeys, alphaKeys);
+                            lr.colorGradient = newGradient;
+                        }
+                    },
+                    endAlpha,
+                    duration
+                )
+                .SetAutoKill(true)
+                .OnKill(() => {
+                    if (lineRendererRef.TryGetTarget(out var lr) && lr != null && lr.gameObject != null)
+                    {
+                        var gradient = lr.colorGradient;
+                        var alphaKeys = gradient.alphaKeys;
+                        alphaKeys[0].alpha = endAlpha;
+                        var newGradient = new Gradient();
+                        newGradient.SetKeys(gradient.colorKeys, alphaKeys);
+                        lr.colorGradient = newGradient;
+                    }
+                });
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Error creating line renderer fade tween: {e}");
+                return null;
+            }
         }
         
         public void SetActiveShardsEffects(bool active)

@@ -56,6 +56,7 @@ namespace TerritoryWars.UI
         private DeckManager deckManager;
         
         [SerializeField] private ArrowAnimations arrowAnimations;
+        private bool _isJokerActive = false;
 
         public void Initialize()
         {
@@ -94,10 +95,10 @@ namespace TerritoryWars.UI
                 skipTurnButton.onClick.AddListener(SkipMoveButtonClicked);
             }
 
-            // if (jokerButton != null)
-            // {
-            //     jokerButton.onClick.AddListener(OnJokerButtonClicked);
-            // }
+            if (jokerButton != null)
+            {
+                jokerButton.onClick.AddListener(OnJokerButtonClicked);
+            }
         }
         
         public void ShowResultPopUp()
@@ -207,12 +208,48 @@ namespace TerritoryWars.UI
 
         private void OnJokerButtonClicked()
         {
-            OnJokerButtonClickedEvent?.Invoke();
-            _sessionManager.ActivateJoker();
+            _isJokerActive = !_isJokerActive;
             SwitchToggle();
-            tilePreview._tileJokerAnimator.ShowIdleJokerAnimation();
-            tilePreviewUITileJokerAnimator.ShowIdleJokerAnimation();
-            UpdateUI();
+            if (_isJokerActive)
+            {
+                OnJokerButtonClickedEvent?.Invoke();
+                _sessionManager.ActivateJoker();
+                
+                tilePreview._tileJokerAnimator.ShowIdleJokerAnimation();
+                tilePreviewUITileJokerAnimator.ShowIdleJokerAnimation();
+                UpdateUI();
+            }
+            else
+            {
+                _sessionManager.DeactivateJoker();
+                tilePreview._tileJokerAnimator.StopIdleJokerAnimation();
+                tilePreviewUITileJokerAnimator.StopIdleJokerAnimation();
+                UpdateUI();
+            }
+            
+        }
+        
+        public void SetJokerMode(bool active)
+        {
+            _isJokerActive = active;
+            if (active)
+            {
+                _toggleSpriteRenderer.sprite = _toggleMods[1];
+                OnJokerButtonClickedEvent?.Invoke();
+                _sessionManager.ActivateJoker();
+                
+                tilePreview._tileJokerAnimator.ShowIdleJokerAnimation();
+                tilePreviewUITileJokerAnimator.ShowIdleJokerAnimation();
+                UpdateUI();
+            }
+            else
+            {
+                _toggleSpriteRenderer.sprite = _toggleMods[0];
+                _sessionManager.DeactivateJoker();
+                tilePreview._tileJokerAnimator.StopIdleJokerAnimation();
+                tilePreviewUITileJokerAnimator.StopIdleJokerAnimation();
+                UpdateUI();
+            }
         }
 
         public void SetEndTurnButtonActive(bool active)
@@ -243,7 +280,7 @@ namespace TerritoryWars.UI
 
         private void SwitchToggle()
         {
-            _toggleSpriteRenderer.sprite = _toggleMods[0] ? _toggleMods[1] : _toggleMods[0];
+            _toggleSpriteRenderer.sprite = _toggleMods[_isJokerActive ? 1 : 0];
         }
 
         public void SetJokerButtonActive(bool active)

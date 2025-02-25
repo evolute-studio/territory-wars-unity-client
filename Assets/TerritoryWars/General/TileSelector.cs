@@ -164,13 +164,19 @@ namespace TerritoryWars.General
                     tilePreview.SetPosition(x, y);
                     TileJokerAnimator.EvoluteTileDisappear();
                     TileJokerAnimatorUI.EvoluteTileDisappear();
+                    
                     StartCoroutine(InvokeActionWithDelay(0.8f, () =>
                     {
-                        SessionManager.Instance.GenerateJokerTile(x, y);
-                        
+                        TileJokerAnimator.JokerConfChanging(x, y);
                     }));
+                    
+                    // StartCoroutine(InvokeActionWithDelay(0.8f, () =>
+                    // {
+                    //     SessionManager.Instance.GenerateJokerTile(x, y);
+                    //     
+                    // }));
                     //GameManager.Instance.GenerateJokerTile(x, y);
-                    //TileJokerAnimator.JokerConfChanging();
+                    
                     //RegenerateJokerTile();
                     return;
                 }
@@ -343,7 +349,7 @@ namespace TerritoryWars.General
                 if (board.PlaceTile(currentTile, selectedPosition.Value.x, selectedPosition.Value.y,
                         SessionManager.Instance.CurrentTurnPlayer.LocalId))
                 {
-                    DojoGameManager.Instance.SessionManager.MakeMove(currentTile, selectedPosition.Value.x, selectedPosition.Value.y);
+                    DojoGameManager.Instance.SessionManager.MakeMove(currentTile, selectedPosition.Value.x, selectedPosition.Value.y, isJokerMode);
                     LastMove = (currentTile, selectedPosition.Value);
                     isPlacingTile = false;
                     if(isJokerMode) SessionManager.Instance.CompleteJokerPlacement();
@@ -474,7 +480,10 @@ namespace TerritoryWars.General
             
             try
             {
-                SessionManager.Instance.GenerateJokerTile(selectedPosition.Value.x, selectedPosition.Value.y);
+                StartCoroutine(InvokeActionWithDelay(0.8f, () =>
+                {
+                    TileJokerAnimator.JokerConfChanging(selectedPosition.Value.x, selectedPosition.Value.y);
+                }));
             }
             catch (System.Exception e)
             {

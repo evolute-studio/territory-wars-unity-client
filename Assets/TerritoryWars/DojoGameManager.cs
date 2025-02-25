@@ -77,7 +77,29 @@ namespace TerritoryWars
             WorldManager.synchronizationMaster.OnEntitySpawned.AddListener(SpawnEntity);
             //WorldManager.synchronizationMaster.OnModelUpdated.AddListener(ModelUpdated);
             
-            TryCreateAccount(3, true);
+            //TryCreateAccount(3, true);
+            SimpleAccountCreation(3);
+        }
+        
+        private async void SimpleAccountCreation(int attempts)
+        {
+            try
+            {
+                for (int i = 0; i < attempts; i++)
+                {
+                    LocalBurnerAccount = await burnerManager.DeployBurner();
+                    if (LocalBurnerAccount != null)
+                    {
+                        OnLocalPlayerSet?.Invoke();
+                        CustomLogger.LogInfo($"Burner account created. Attempt: {i}. Address: {LocalBurnerAccount.Address}");
+                        break;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                CustomLogger.LogError($"Failed to create burner account. {e}");
+            }
         }
         
         private async void TryCreateAccount(int attempts, bool createNew)

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
@@ -6,6 +7,7 @@ using TerritoryWars.Tile;
 using TerritoryWars.UI;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 namespace TerritoryWars.General
 {
@@ -79,7 +81,13 @@ namespace TerritoryWars.General
             }
         }
         
-        public void GenerateJokerTile(int x, int y)
+        public void DeactivateJoker()
+        {
+            isJokerActive = false;
+            gameUI.UpdateUI();
+        }
+        
+        public TileData GetGenerateJokerTile(int x, int y)
         {
             // Отримуємо інформацію про сусідні тайли
             Dictionary<Side, LandscapeType> neighborSides = new Dictionary<Side, LandscapeType>();
@@ -96,24 +104,31 @@ namespace TerritoryWars.General
             }
             
             // Генеруємо новий тайл
-            char[] sides = new char[4];
+            char[] baseSides = new char[4];
+            char[] randomSides = new char[4];
             for (int i = 0; i < 4; i++)
             {
                 Side side = (Side)i;
                 if (neighborSides.ContainsKey(side))
                 {
-                    sides[i] = LandscapeToChar(neighborSides[side]);
+                    baseSides[i] = LandscapeToChar(neighborSides[side]);
+                    randomSides[i] = LandscapeToChar(neighborSides[side]);
                 }
                 else
                 {
-                    
-                    sides[i] = GetRandomLandscape();
+                    baseSides[i] = 'X';
+                    randomSides[i] = GetRandomLandscape();
                 }
             }
             
-            string tileConfig = new string(sides);
-            TileData jokerTile = new TileData(tileConfig);
-            TileSelector.StartJokerTilePlacement(jokerTile, x, y);
+            string baseTileConfig = new string(baseSides);
+            string randomTileConfig = new string(randomSides);
+            
+            (string tileConfig, int rotation) = OnChainBoardDataConverter.GetRandomTypeAndRotationFromDeck(baseTileConfig);
+            string configResult = String.IsNullOrEmpty(tileConfig) ? randomTileConfig : tileConfig;
+            TileData jokerTile = new TileData(randomTileConfig);
+            jokerTile.Rotate((rotation + 2) % 4);
+            return jokerTile;
         }
         
         private char GetRandomLandscape()
@@ -362,6 +377,7 @@ namespace TerritoryWars.General
         public void CompleteJokerPlacement()
         {
             isJokerActive = false;
+            gameUI.SetJokerMode(false);
             gameUI.UpdateUI();
             sessionUI.UseJoker(CurrentTurnPlayer.LocalId);
         }
