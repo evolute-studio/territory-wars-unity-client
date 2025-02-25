@@ -274,7 +274,7 @@ namespace TerritoryWars.Tile
                 .ToList().Where(x => x.name == "House").ToArray();
             for (int i = 0; i < houseRenderers.Length; i++)
             {
-                houseRenderers[i].sprite = TileAssetsObject.GetHouseByReference(houseRenderers[i].sprite, playerId);
+                houseRenderers[i].gameObject.GetComponent<SpriteAnimator>().ChangeSprites(TileAssetsObject.GetHouseByReference(houseRenderers[i].gameObject.GetComponent<SpriteAnimator>().sprites, playerId));
             }
         }
 
