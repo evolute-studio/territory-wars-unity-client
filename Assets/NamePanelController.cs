@@ -1,4 +1,7 @@
 using System;
+using TerritoryWars;
+using TerritoryWars.ModelsDataConverters;
+using TerritoryWars.Tools;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -7,19 +10,37 @@ public class NamePanelController : MonoBehaviour
 {
     public GameObject NamePanel;
     public GameObject ChangeNamePanel;
-    private TextMeshProUGUI _playerNameText;
-    private TextMeshProUGUI _evoluteCountText;
-    private Button _changeNameButton;
-
-    private void Start() => Initialize();
+    public TextMeshProUGUI PlayerNameText;
+    public TextMeshProUGUI EvoluteCountText;
+    public Button ChangeNameButton;
     
-    private void Initialize()
+    private bool _isInitialized = false;
+    
+    public void Initialize()
     {
-        _playerNameText = NamePanel.transform.Find("PlayerNameText").GetComponent<TextMeshProUGUI>();
-        _evoluteCountText = NamePanel.transform.Find("EvoluteCountText").GetComponent<TextMeshProUGUI>();
-        _changeNameButton = NamePanel.transform.Find("ChangeNameButton").GetComponent<Button>();
+        if (_isInitialized)
+        {
+            return;
+        }
+        //ChangeNameButton.onClick.AddListener(CallChangeNamePanel);
+
+        evolute_duel_Player profile = DojoGameManager.Instance.GetLocalPlayerData();
+        if(profile == null)
+        {
+            CustomLogger.LogWarning("profile is null");
+            
+            DojoGameManager.Instance.SetPlayerName(CairoFieldsConverter.GetFieldElementFromString("Default" + UnityEngine.Random.Range(0, 1000)));
+            SetName(DojoGameManager.Instance.LocalBurnerAccount.Address.Hex());
+            SetEvoluteBalance(0);
+            return;
+        }
+        else
+        {
+            string name = CairoFieldsConverter.GetStringFromFieldElement(profile.username);
+            SetName(name);
+            SetEvoluteBalance(profile.balance);
+        }
         
-        _changeNameButton.onClick.AddListener(CallChangeNamePanel);
     }
 
     public void CallChangeNamePanel()
@@ -27,8 +48,12 @@ public class NamePanelController : MonoBehaviour
         ChangeNamePanel.SetActive(true);
     }
 
-    public void ChangeName(string name)
+    public void SetName(string name)
     {
-        _playerNameText.text = name;
+        PlayerNameText.text = name;
+    }
+    
+    public void SetEvoluteBalance(int value){
+        EvoluteCountText.text = value.ToString();
     }
 }

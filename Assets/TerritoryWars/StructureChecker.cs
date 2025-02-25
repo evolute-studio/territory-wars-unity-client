@@ -17,7 +17,12 @@ public class StructureChecker
     {
         board.OnTilePlaced += CreateStructures;
     }
-    
+
+    public void OnDestroy()
+    {
+        SessionManager.Instance.Board.OnTilePlaced -= CreateStructures;
+    }
+
 
     public void CreateStructures(TileData tileData, int x, int y)
     {

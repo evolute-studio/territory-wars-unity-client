@@ -72,6 +72,14 @@ public class evolute_duel_Board : ModelInstance {
     // Update is called once per frame
     void Update() {
     }
+
+    public int GetJokerCountPlayer1() {
+        return player1.Item3;
+    }
+    
+    public int GetJokerCountPlayer2() {
+        return player2.Item3;
+    }
 }
 
         

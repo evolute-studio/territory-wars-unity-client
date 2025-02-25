@@ -11,7 +11,10 @@ using UnityEngine;
 using System.ComponentModel;
 using System.Threading.Tasks;
 using TerritoryWars.General;
+using TerritoryWars.ModelsDataConverters;
 using TerritoryWars.Tools;
+using TerritoryWars.UI;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 namespace System.Runtime.CompilerServices
@@ -45,6 +48,7 @@ namespace TerritoryWars
         [SerializeField] GameManagerData gameManagerData;
         
         public Game GameSystem;
+        public Player_profile_actions PlayerProfileSystem;
 
         public BurnerManager burnerManager;
 
@@ -56,6 +60,8 @@ namespace TerritoryWars
         public bool IsLocalPlayer;
         
         public DojoSessionManager SessionManager;
+        
+        public UnityEvent OnLocalPlayerSet = new UnityEvent();
 
 
         public void Initialize()
@@ -66,6 +72,7 @@ namespace TerritoryWars
             burnerManager = new BurnerManager(provider, masterAccount);
 
             WorldManager.synchronizationMaster.OnEventMessage.AddListener(OnDojoEventReceived);
+            WorldManager.synchronizationMaster.OnEventMessage.AddListener(OnEventMessage);
             WorldManager.synchronizationMaster.OnSynchronized.AddListener(OnSynchronized);
             WorldManager.synchronizationMaster.OnEntitySpawned.AddListener(SpawnEntity);
             //WorldManager.synchronizationMaster.OnModelUpdated.AddListener(ModelUpdated);
@@ -83,6 +90,7 @@ namespace TerritoryWars
                     if (await CreateAccount(createNew))
                     {
                         CustomLogger.LogInfo($"Burner account created. Attempt: {i}. Address: {LocalBurnerAccount.Address}");
+                        OnLocalPlayerSet?.Invoke();
                         break;
                     }
                 }
@@ -111,10 +119,12 @@ namespace TerritoryWars
                 {
                     if (burnerManager.Burners.Count == 0)
                     {
+                        CustomLogger.LogWarning("Burner account not found. Creating new account.");
                         LocalBurnerAccount = await burnerManager.DeployBurner();
                     }
                     else
                     {
+                        CustomLogger.LogInfo("Burner account found. Using last account.");
                         //use last burner account
                         LocalBurnerAccount = burnerManager.Burners.Last();
                     }
@@ -152,7 +162,7 @@ namespace TerritoryWars
                 CustomSceneManager.Instance.LoadingScreen.SetActive(true);
                 var txHash = await GameSystem.join_game(LocalBurnerAccount, hostPlayer);
                 CustomLogger.LogInfo($"Join Game: {txHash.Hex()}");
-                SessionManager ??= new DojoSessionManager(this);
+                SessionManager = new DojoSessionManager(this);
                 //CustomSceneManager.Instance.LoadSession();
                 
             }
@@ -187,6 +197,23 @@ namespace TerritoryWars
                 
             }
         }
+        
+        private void OnEventMessage(ModelInstance modelInstance)
+        {
+            switch (modelInstance)
+            {
+                case evolute_duel_PlayerUsernameChanged playerUsernameChanged:
+                    PlayerUsernameChanged(playerUsernameChanged);
+                    break;
+            }
+        }
+        
+        private void PlayerUsernameChanged(evolute_duel_PlayerUsernameChanged eventMessage)
+        {
+            if(LocalBurnerAccount == null || LocalBurnerAccount.Address.Hex() != eventMessage.player_id.Hex()) return;
+            MenuUIController.Instance._namePanelController.SetName(CairoFieldsConverter.GetStringFromFieldElement(eventMessage.new_username));
+        }
+        
         
         public void OnDojoEventReceived(ModelInstance eventMessage)
         {
@@ -247,6 +274,38 @@ namespace TerritoryWars
             return null;
         }
         
+        public evolute_duel_Player GetLocalPlayerData()
+        {
+            return GetPlayerData(LocalBurnerAccount.Address.Hex());
+        }
+        
+        public async void SetPlayerName(string playerName)
+        {
+            try
+            {
+                FieldElement username = CairoFieldsConverter.GetFieldElementFromString(playerName);
+                var txHash = await PlayerProfileSystem.change_username(LocalBurnerAccount, username);
+                CustomLogger.LogInfo($"Set Player Name: {txHash.Hex()}");
+            }
+            catch (Exception e)
+            {
+                CustomLogger.LogError($"Failed to set player name. {e}");
+            }
+        }
+        
+        public async void SetPlayerName(FieldElement playerName)
+        {
+            try
+            {
+                var txHash = await PlayerProfileSystem.change_username(LocalBurnerAccount, playerName);
+                CustomLogger.LogInfo($"Set Player Name: {txHash.Hex()}");
+            }
+            catch (Exception e)
+            {
+                CustomLogger.LogError($"Failed to set player name. {e}");
+            }
+        }
+        
         private void OnSynchronized(List<GameObject> synchronizedModels)
         {
             CustomLogger.LogInfo($"Synchronized {synchronizedModels.Count} models");
@@ -257,6 +316,22 @@ namespace TerritoryWars
             CustomLogger.LogInfo($"Spawned entity: {entity.name}");
         }
         
+        
+        public evolute_duel_Player GetPlayerProfileByAddress(string address)
+        {
+            GameObject[] playerProfiles = WorldManager.Entities<evolute_duel_Player>();
+            foreach (var playerProfile in playerProfiles)
+            {
+                if (playerProfile.TryGetComponent(out evolute_duel_Player player))
+                {
+                    if (player.player_id.Hex() == address)
+                    {
+                        return player;
+                    }
+                }
+            }
+            return null;
+        }
         
         
         public void TryAgain(Action action, float delay)

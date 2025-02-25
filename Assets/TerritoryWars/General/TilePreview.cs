@@ -235,6 +235,9 @@ namespace TerritoryWars.General
         {
             // Зупиняємо всі анімації при знищенні об'єкта
             currentTween?.Kill();
+            
+            SessionManager.Instance.TileSelector.OnTileSelected -= SetPosition;
+            GameUI.OnJokerButtonClickedEvent -= GenerateFFFFTile;
         }
     }
 }

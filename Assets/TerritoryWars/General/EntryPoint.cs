@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Dojo;
 using UnityEngine;
 
@@ -38,6 +39,7 @@ namespace TerritoryWars.General
 
         public void Start()
         {
+            CustomSceneManager.Instance.LoadingScreen.SetActive(true, null, false);
             StartOnChainMode();
             // CustomSceneManager.Instance.OnLoadScene += SceneLoaded;
             //
@@ -83,7 +85,29 @@ namespace TerritoryWars.General
             DojoGameManager.Initialize();
             DojoGameGUIController.enabled = UseDojoGUIController;
             
+            if (DojoGameManager.Instance.WorldManager.transform.childCount == 0 ||
+                DojoGameManager.Instance.LocalBurnerAccount == null)
+            {
+                DojoGameManager.Instance.WorldManager.synchronizationMaster.OnSynchronized.AddListener(LoadMenu);
+            }
+            else
+            {
+                LoadMenu();
+            }
         }
+
+        public void LoadMenu(List<GameObject> list)
+        {
+            DojoGameManager.Instance.WorldManager.synchronizationMaster.OnSynchronized.RemoveListener(LoadMenu);
+            if(DojoGameManager.Instance.LocalBurnerAccount != null) LoadMenu();
+            else DojoGameManager.Instance.OnLocalPlayerSet.AddListener(LoadMenu);
+        }
+
+        public void LoadMenu()
+        {
+            CustomSceneManager.Instance.LoadLobby(2);
+        }
+        
         
         private void SceneLoaded(string name)
         {

@@ -100,6 +100,7 @@ namespace TerritoryWars.General
         {
             currentTile = tile;
             gameUI.UpdateUI();
+            tilePreview.UpdatePreview(tile);
         }
 
         public void StartTilePlacement(TileData tile)

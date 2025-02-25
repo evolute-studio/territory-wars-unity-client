@@ -1,7 +1,9 @@
 using System;
 using DG.Tweening;
 using TerritoryWars.General;
+using TerritoryWars.ModelsDataConverters;
 using TerritoryWars.Tile;
+using TerritoryWars.Tools;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -100,13 +102,31 @@ namespace TerritoryWars.UI
         
         public void ShowResultPopUp()
         {
-            _resultPopUpUI.SetResultPopupActive(true);
-            _resultPopUpUI.SetPlayersName(
-                _sessionManager.PlayersData[0].username.Inner.data.ToString(), 
-                _sessionManager.PlayersData[1].username.Inner.data.ToString());
-            int score1 = DojoGameManager.Instance.SessionManager.LocalPlayerBoard.blue_score;
-            int score2 = DojoGameManager.Instance.SessionManager.LocalPlayerBoard.red_score;
+            _resultPopUpUI.SetupButtons();
+            if(_sessionManager.PlayersData[0] == null || _sessionManager.PlayersData[1] == null)
+            {
+                CustomLogger.LogWarning("PlayersData is null");
+                return;
+            }
+            _resultPopUpUI.SetPlayersName(_sessionManager.PlayersData[0].username, _sessionManager.PlayersData[1].username);
+            evolute_duel_Board board = DojoGameManager.Instance.SessionManager.LocalPlayerBoard;
+            int score1 = board.blue_score;
+            int score2 = board.red_score;
             _resultPopUpUI.SetPlayersScore(score1, score2);
+            _resultPopUpUI.SetPlayersCityScores(score1, score2);
+            _resultPopUpUI.SetPlayersCartScores(score1, score2);
+            bool isLocalPlayerBlue = SessionManager.Instance.LocalPlayer.LocalId == 0;
+            string wonText;
+            if (score1 > score2 && isLocalPlayerBlue || score1 < score2 && !isLocalPlayerBlue)
+                wonText = "You won!";
+            else if (score1 < score2 && isLocalPlayerBlue || score1 > score2 && !isLocalPlayerBlue)
+                wonText = "You lose!";
+            else
+                wonText = "Draw!";
+            _resultPopUpUI.SetWinnerText(wonText);
+            _resultPopUpUI.SetPlayersJoker(board.GetJokerCountPlayer1(), board.GetJokerCountPlayer2());
+            _resultPopUpUI.SetResultPopupActive(true);
+            _resultPopUpUI.ViewResults();
         }
 
         public void UpdateUI()

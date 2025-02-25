@@ -46,6 +46,7 @@ namespace TerritoryWars.General
         public delegate void LoadSceneEvent(string name);
         public event LoadSceneEvent OnLoadScene;
 
+        
         public void LoadLobby(float wait = 0)
         {
             //Game.SetLobbyState();

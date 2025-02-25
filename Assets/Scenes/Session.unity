@@ -8483,6 +8483,8 @@ MonoBehaviour:
   - {fileID: -8975183859656605054, guid: ebd723c738926984eaab5bf039d53692, type: 3}
   _toggleSpriteRenderer: {fileID: 1867604853}
   _deckContainerCanvasGroup: {fileID: 81638378}
+  _resultPopUpUI: {fileID: 751280849}
+  SessionUI: {fileID: 579849686}
   tilePreview: {fileID: 1558212604}
   tilePreviewUITileJokerAnimator: {fileID: 605219370}
   arrowAnimations: {fileID: 742295723}
@@ -21918,6 +21920,9 @@ MonoBehaviour:
   _resultPopup: {fileID: 7830861899892344319}
   _resultPopupComponents: {fileID: 3952909496244047534}
   _animationDuration: 0.5
+  WonText: You won!
+  LoseText: You lose!
+  DrawText: Draw!
 --- !u!1 &753769067
 GameObject:
   m_ObjectHideFlags: 0
@@ -37507,6 +37512,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 1490648170475728813, guid: ebd723c738926984eaab5bf039d53692, type: 3}
+    - target: {fileID: 7932155472596637087, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8134781553236913472, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
       propertyPath: m_LocalScale.x
       value: -1
@@ -44848,7 +44857,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  Characters: []
+  Players: []
+  PlayersData: []
 --- !u!4 &1530375625
 Transform:
   m_ObjectHideFlags: 0
@@ -68029,7 +68039,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000030518, y: 29.6}
+  m_AnchoredPosition: {x: 0.000030518, y: 29.600006}
   m_SizeDelta: {x: 230, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4415033791388260853
@@ -70946,7 +70956,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 34.991116, y: -30}
+  m_AnchoredPosition: {x: 34.99112, y: -30}
   m_SizeDelta: {x: 69.98223, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6531991088471723093
@@ -71523,7 +71533,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 4.0000005}
+  m_AnchoredPosition: {x: 0, y: 4}
   m_SizeDelta: {x: -30, y: -28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6885916171363796984
@@ -71657,7 +71667,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 2499890533136543269}
   m_OnClick:
     m_PersistentCalls:

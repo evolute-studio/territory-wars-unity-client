@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using TerritoryWars.ModelsDataConverters;
 using TerritoryWars.Tile;
 using TerritoryWars.UI;
 using UnityEngine;
@@ -8,6 +9,23 @@ using UnityEngine.Serialization;
 
 namespace TerritoryWars.General
 {
+    public class PlayerData
+    {
+        public string player_id;
+        public string username;
+
+        public PlayerData(evolute_duel_Player model)
+        {
+            UpdatePlayerData(model);
+        }
+        
+        public void UpdatePlayerData(evolute_duel_Player profile)
+        {
+            player_id = profile.player_id.Hex();
+            username = CairoFieldsConverter.GetStringFromFieldElement(profile.username);
+        }
+    }
+    
     public class SessionManager : MonoBehaviour
     {
         public static SessionManager Instance { get; private set; }
@@ -38,7 +56,7 @@ namespace TerritoryWars.General
         public AnimationCurve spawnCurve;
 
         public Character[] Players;
-        public evolute_duel_Player[] PlayersData;
+        public PlayerData[] PlayersData;
         public Character CurrentTurnPlayer { get; private set; }
         public Character LocalPlayer { get; private set; }
         public Character RemotePlayer { get; private set; }
@@ -132,7 +150,7 @@ namespace TerritoryWars.General
         private void InitializePlayers()
         {
             Players = new Character[2];
-            PlayersData = new evolute_duel_Player[2];
+            PlayersData = new PlayerData[2];
 
             // Створюємо точки для дугової траєкторії для першого персонажа
             Vector3[] path1 = new Vector3[3];
@@ -157,8 +175,8 @@ namespace TerritoryWars.General
             Players[0].Initialize(board.player1.Item1, board.player1.Item2);
             Players[1].Initialize(board.player2.Item1, board.player2.Item2);
             
-            PlayersData[0] = DojoGameManager.Instance.GetPlayerData(Players[0].Address.Hex());
-            PlayersData[1] = DojoGameManager.Instance.GetPlayerData(Players[1].Address.Hex());
+            PlayersData[0] = new PlayerData(DojoGameManager.Instance.GetPlayerData(Players[0].Address.Hex()));
+            PlayersData[1] = new PlayerData(DojoGameManager.Instance.GetPlayerData(Players[1].Address.Hex()));
             
             
             Players[0].transform.localScale = new Vector3(-0.7f, 0.7f, 1f);
@@ -219,6 +237,15 @@ namespace TerritoryWars.General
 
         private void HandleMove(string playerAddress, TileData tile, Vector2Int position, int rotation)
         {
+            evolute_duel_Player player = DojoGameManager.Instance.GetPlayerData(playerAddress);
+            if(playerAddress == Players[0].Address.Hex() &&  player != null)
+            {
+                PlayersData[0].UpdatePlayerData(player);
+            }
+            else if(playerAddress == Players[1].Address.Hex() &&  player != null)
+            {
+                PlayersData[1].UpdatePlayerData(player);
+            }
             if (playerAddress == LocalPlayer.Address.Hex()) CompleteEndTurn(playerAddress);
             else StartCoroutine(HandleOpponentMoveCoroutine(playerAddress, tile, position, rotation));
         }
@@ -314,6 +341,9 @@ namespace TerritoryWars.General
                 TileSelector.OnTurnStarted.RemoveListener(OnTurnStarted);
                 TileSelector.OnTurnEnding.RemoveListener(OnTurnEnding);
             }
+            
+            DojoGameManager.Instance.SessionManager.OnMoveReceived -= HandleMove;
+            DojoGameManager.Instance.SessionManager.OnSkipMoveReceived -= SkipMove;
         }
 
         public int GetJokerCount(int playerId)

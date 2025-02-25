@@ -20,8 +20,10 @@ namespace TerritoryWars.Tools
             loadingText.text = loadingTextPrefix + new string('.', dotsCount) + new string(' ', 3 - dotsCount);
         }
         
-        public void SetActive(bool active, Action onCancel = null)
+        public void SetActive(bool active, Action onCancel = null, bool isTextEnabled = true)
         {
+            loadingText.gameObject.SetActive(isTextEnabled);
+            
             LoadingScreenObject.SetActive(active);
             CancelButton.onClick.RemoveAllListeners();
             if (onCancel != null)

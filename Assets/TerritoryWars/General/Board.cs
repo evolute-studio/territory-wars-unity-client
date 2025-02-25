@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using TerritoryWars.ModelsDataConverters;
@@ -44,6 +45,11 @@ namespace TerritoryWars.General
             char[] edgeTiles = OnChainBoardDataConverter.GetInitialEdgeState(onChainBoard.initial_edge_state);
             CreateBorder(edgeTiles);
 
+        }
+
+        public void OnDestroy()
+        {
+            structureChecker.OnDestroy();
         }
 
         private void InitializeBoard()
@@ -158,11 +164,11 @@ namespace TerritoryWars.General
         
         public bool PlaceTile(TileData data, int x, int y, int ownerId)
         {
-            if (!CanPlaceTile(data, x, y))
-            {
-                CustomLogger.LogWarning($"Can't place tile {data.id} at {x}, {y}");
-                return false;
-            }
+            // if (!CanPlaceTile(data, x, y))
+            // {
+            //     CustomLogger.LogWarning($"Can't place tile {data.id} at {x}, {y}");
+            //     return false;
+            // }
 
             tileData[x, y] = data;
             data.OwnerId = ownerId;

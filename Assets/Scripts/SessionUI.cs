@@ -44,6 +44,11 @@ public class SessionUI : MonoBehaviour
         _board.OnTilePlaced += AddScore;
     }
 
+    public void OnDestroy()
+    {
+        _board.OnTilePlaced -= AddScore;
+    }
+
     private void AddScore(TileData tile, int x, int y)
     {
         string config = tile.GetConfigWithoutRotation();

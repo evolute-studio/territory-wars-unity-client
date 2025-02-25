@@ -179,6 +179,7 @@ namespace TerritoryWars
             {
                 if (boardGO.TryGetComponent(out evolute_duel_Board board))
                 {
+                    if (board.game_state is GameState.Finished) continue;
                     //public (FieldElement, PlayerSide, byte, bool) player1;
                     if (board.player1.Item1.Hex() == player.Hex() || board.player2.Item1.Hex() == player.Hex())
                     {

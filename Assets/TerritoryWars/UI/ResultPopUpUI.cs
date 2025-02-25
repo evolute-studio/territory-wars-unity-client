@@ -1,5 +1,6 @@
 ﻿using System;
 using DG.Tweening;
+using TerritoryWars.General;
 using TerritoryWars.Tools;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,11 +25,14 @@ namespace TerritoryWars.UI
         private int _player2CartScores;
         private int _player2JokersCount;
         private int _player2Score;
+        
+        public string WonText = "You won!";
+        public string LoseText = "You lose!";
+        public string DrawText = "Draw!";
 
-        private void Start()
+        public void SetupButtons()
         {
-            TestInit();
-            ViewResults();
+            _resultPopupComponents.FinishButton.onClick.AddListener(() => CustomSceneManager.Instance.LoadLobby(0));
         }
         
         public void SetResultPopupActive(bool active)
@@ -72,7 +76,7 @@ namespace TerritoryWars.UI
             _resultPopupComponents.WinnerText.text = winnerText;
         }
         
-        public void SetPlayer1Jokers(int player1JokersCount, int player2JokersCount)
+        public void SetPlayersJoker(int player1JokersCount, int player2JokersCount)
         {
             _player1JokersCount = player1JokersCount;
             _player2JokersCount = player2JokersCount;
