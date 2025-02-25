@@ -40,32 +40,16 @@ public class SessionUI : MonoBehaviour
                 joker.color = JokerAvailableColor;
             }
         }
-
-        _board.OnTilePlaced += AddScore;
     }
-
-    public void OnDestroy()
+    
+    public void SetCityScore(int player, int score)
     {
-        _board.OnTilePlaced -= AddScore;
+        cityScoreTextPlayers[player].text = score.ToString();
     }
-
-    private void AddScore(TileData tile, int x, int y)
+    
+    public void SetRoadScore(int player, int score)
     {
-        string config = tile.GetConfigWithoutRotation();
-
-        int currentCharacter = TerritoryWars.General.SessionManager.Instance.GetCurrentCharacter();
-
-        foreach (var side in config)
-        {
-            if (side == 'C')
-            {
-                cityScoreTextPlayers[currentCharacter].text = (int.Parse(cityScoreTextPlayers[currentCharacter].text) + 1).ToString();
-            }
-            else if (side == 'R')
-            {
-                tileScoreTextPlayers[currentCharacter].text = (int.Parse(tileScoreTextPlayers[currentCharacter].text) + 1).ToString();
-            }
-        }
+        tileScoreTextPlayers[player].text = score.ToString();
     }
 
     public void UpdateTime()

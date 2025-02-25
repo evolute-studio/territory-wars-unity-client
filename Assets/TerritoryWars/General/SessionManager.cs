@@ -320,6 +320,7 @@ namespace TerritoryWars.General
         public void CompleteEndTurn(string lastMovePlayerAddress)
         {
             bool isLocalPlayer = lastMovePlayerAddress == LocalPlayer.Address.Hex();
+            
             if (isLocalPlayer)
             {
                 CurrentTurnPlayer = RemotePlayer;

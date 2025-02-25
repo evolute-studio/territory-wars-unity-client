@@ -68,6 +68,9 @@ namespace TerritoryWars
                 case evolute_duel_Skiped skipped:
                     Skipped(skipped);
                     break;
+                case evolute_duel_BoardUpdated boardUpdated:
+                    BoardUpdated(boardUpdated);
+                    break;
                 case evolute_duel_GameFinished gameFinished:
                     GameFinished(gameFinished.board_id);
                     break;
@@ -115,6 +118,20 @@ namespace TerritoryWars
             string player = eventModel.player.Hex();
             CustomLogger.LogEvent($"[Skipped] | Player: {player}");
             OnSkipMoveReceived?.Invoke(player);
+        }
+        
+        private void BoardUpdated(evolute_duel_BoardUpdated eventModel)
+        {
+            string board_id = eventModel.board_id.Hex();
+            CustomLogger.LogEvent($"[BoardUpdated] | BoardId: {board_id}");
+            int cityScoreBlue = eventModel.blue_score.Item1;
+            int cartScoreBlue = eventModel.blue_score.Item2;
+            int cityScoreRed = eventModel.red_score.Item1;
+            int cartScoreRed = eventModel.red_score.Item2;
+            GameUI.Instance.SessionUI.SetCityScore(0, cityScoreBlue);
+            GameUI.Instance.SessionUI.SetCityScore(1, cityScoreRed);
+            GameUI.Instance.SessionUI.SetRoadScore(0, cartScoreBlue);
+            GameUI.Instance.SessionUI.SetRoadScore(1, cartScoreRed);
         }
         
         private void GameFinished(FieldElement board_id)

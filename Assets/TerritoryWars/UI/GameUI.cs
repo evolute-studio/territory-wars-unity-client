@@ -110,11 +110,15 @@ namespace TerritoryWars.UI
             }
             _resultPopUpUI.SetPlayersName(_sessionManager.PlayersData[0].username, _sessionManager.PlayersData[1].username);
             evolute_duel_Board board = DojoGameManager.Instance.SessionManager.LocalPlayerBoard;
-            int score1 = board.blue_score;
-            int score2 = board.red_score;
+            int cityScoreBlue = board.blue_score.Item1;
+            int cartScoreBlue = board.blue_score.Item2;
+            int cityScoreRed = board.red_score.Item1;
+            int cartScoreRed = board.red_score.Item2;
+            int score1 = cityScoreBlue + cartScoreBlue;
+            int score2 = cityScoreRed + cartScoreRed;
             _resultPopUpUI.SetPlayersScore(score1, score2);
-            _resultPopUpUI.SetPlayersCityScores(score1, score2);
-            _resultPopUpUI.SetPlayersCartScores(score1, score2);
+            _resultPopUpUI.SetPlayersCityScores(cityScoreBlue, cityScoreRed);
+            _resultPopUpUI.SetPlayersCartScores(cartScoreBlue, cartScoreRed);
             bool isLocalPlayerBlue = SessionManager.Instance.LocalPlayer.LocalId == 0;
             string wonText;
             if (score1 > score2 && isLocalPlayerBlue || score1 < score2 && !isLocalPlayerBlue)

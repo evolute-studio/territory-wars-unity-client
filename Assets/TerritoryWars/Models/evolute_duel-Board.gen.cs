@@ -51,16 +51,13 @@ public class evolute_duel_Board : ModelInstance {
         public (FieldElement, PlayerSide, byte) player2;
 
         [ModelField("blue_score")]
-        public ushort blue_score;
+        public (ushort, ushort) blue_score;
 
         [ModelField("red_score")]
-        public ushort red_score;
+        public (ushort, ushort) red_score;
 
         [ModelField("last_move_id")]
         public Option<FieldElement> last_move_id;
-
-        [ModelField("first_move_id")]
-        public Option<FieldElement> first_move_id;
 
         [ModelField("game_state")]
         public GameState game_state;

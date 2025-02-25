@@ -32,8 +32,11 @@ public class evolute_duel_BoardUpdated : ModelInstance {
         [ModelField("last_move_id")]
         public Option<FieldElement> last_move_id;
         
-        [ModelField("last_move_id")]
-        public Option<FieldElement> first_move_id;
+        [ModelField("blue_score")]
+        public (ushort, ushort) blue_score;
+        
+        [ModelField("red_score")]
+        public (ushort, ushort) red_score;
 
         [ModelField("game_state")]
         public GameState game_state;
