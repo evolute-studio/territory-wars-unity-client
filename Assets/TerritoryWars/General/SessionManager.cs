@@ -21,6 +21,7 @@ namespace TerritoryWars.General
         
         public void UpdatePlayerData(evolute_duel_Player profile)
         {
+            if (profile == null) return;
             player_id = profile.player_id.Hex();
             username = CairoFieldsConverter.GetStringFromFieldElement(profile.username);
         }

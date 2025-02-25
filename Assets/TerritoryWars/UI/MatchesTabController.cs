@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Dojo;
 using Dojo.Starknet;
+using TerritoryWars.ModelsDataConverters;
 using TerritoryWars.Tools;
 using TMPro;
 using UnityEngine;
@@ -20,6 +21,12 @@ namespace TerritoryWars.UI
         public TextMeshProUGUI FinishedMatchesText;
         public TextMeshProUGUI CanceledMatchesText;
         public GameObject BackgroundPlaceholderGO;
+        public Button CreateMatchButton;
+        
+        private int _createdMatchesCount = 0;
+        private int _inProgressMatchesCount = 0;
+        private int _finishedMatchesCount = 0;
+        private int _canceledMatchesCount = 0;
         
         private List<MatchListItem> _matchListItems = new List<MatchListItem>();
 
@@ -27,7 +34,7 @@ namespace TerritoryWars.UI
         
         public void Initialize()
         {
-            
+            CreateMatchButton.onClick.AddListener(CreateMatch);
             
         }
         
@@ -46,6 +53,10 @@ namespace TerritoryWars.UI
                 Destroy(matchListItem.ListItem);
             }
             _matchListItems.Clear();
+            _createdMatchesCount = 0;
+            _inProgressMatchesCount = 0;
+            _finishedMatchesCount = 0;
+            _canceledMatchesCount = 0;
         }
         
         public void SetBackgroundPlaceholder(bool isActive)
@@ -89,12 +100,15 @@ namespace TerritoryWars.UI
         {
             ClearAllListItems();
             GameObject[] games = DojoGameManager.Instance.GetGames();
+            BackgroundPlaceholderGO.SetActive(games.Length == 0);
+
             foreach (var game in games)
             {
                 if (!game.TryGetComponent(out evolute_duel_Game gameModel)) return;
                 MatchListItem matchListItem = CreateListItem();
-
-                string playerName = gameModel.player.Hex();
+                evolute_duel_Player player = DojoGameManager.Instance.GetPlayerData(gameModel.player.Hex());
+                string playerName = CairoFieldsConverter.GetStringFromFieldElement(player.username);
+                int evoluteBalance = player.balance;
                 string gameId = gameModel.board_id switch
                 {
                     Option<FieldElement>.Some some => some.value.Hex(),
@@ -108,9 +122,28 @@ namespace TerritoryWars.UI
                     GameStatus.Canceled => "Canceled",
                     _ => "Unknown"
                 };
+                switch (status)
+                {
+                    case "Created":
+                        _createdMatchesCount++;
+                        SetCreatedMatchesText(_createdMatchesCount);
+                        break;
+                    case "In Progress":
+                        _inProgressMatchesCount++;
+                        SetInProgressMatchesText(_inProgressMatchesCount);
+                        break;
+                    case "Finished":
+                        _finishedMatchesCount++;
+                        SetFinishedMatchesText(_finishedMatchesCount);
+                        break;
+                    case "Canceled":
+                        _canceledMatchesCount++;
+                        SetCanceledMatchesText(_canceledMatchesCount);
+                        break;
+                }
                 if( status == "Created")
                 {
-                    matchListItem.UpdateItem(playerName, gameId, status, () =>
+                    matchListItem.UpdateItem(playerName, evoluteBalance, status, () =>
                     {
                         DojoGameManager.Instance.JoinGame(gameModel.player);
                     });
@@ -188,6 +221,7 @@ namespace TerritoryWars.UI
     {
         public GameObject ListItem;
         public string PlayerName;
+        public int EvoluteCount;
         public string GameId;
 
         private TextMeshProUGUI _playerNameText;
@@ -208,12 +242,14 @@ namespace TerritoryWars.UI
             _awaitText.gameObject.SetActive(false);
             _awaitText.text = "Await...";
         }
-        public void UpdateItem(string playerName, string gameId, string status, UnityAction onJoin = null)
+        public void UpdateItem(string playerName, int evoluteBalance, string status, UnityAction onJoin = null)
         {
             PlayerName = playerName;
+            EvoluteCount = evoluteBalance;
             //GameId = gameId;
 
             _playerNameText.text = PlayerName;
+            _evoluteCountText.text = EvoluteCount.ToString();
             //_gameIdText.text = GameId;
 
             _playButton.onClick.RemoveAllListeners();
