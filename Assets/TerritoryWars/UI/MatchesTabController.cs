@@ -15,6 +15,11 @@ namespace TerritoryWars.UI
         public GameObject PanelGameObject;
         public GameObject MatchListItemPrefab;
         public Transform ListItemParent;
+        public TextMeshProUGUI CreatedMatchesText;
+        public TextMeshProUGUI InProgressMatchesText;
+        public TextMeshProUGUI FinishedMatchesText;
+        public TextMeshProUGUI CanceledMatchesText;
+        public GameObject BackgroundPlaceholderGO;
         
         private List<MatchListItem> _matchListItems = new List<MatchListItem>();
 
@@ -41,6 +46,31 @@ namespace TerritoryWars.UI
                 Destroy(matchListItem.ListItem);
             }
             _matchListItems.Clear();
+        }
+        
+        public void SetBackgroundPlaceholder(bool isActive)
+        {
+            BackgroundPlaceholderGO.SetActive(isActive);
+        }
+        
+        public void SetCreatedMatchesText(int count)
+        {
+            CreatedMatchesText.text = "Created games: " + count;
+        }
+        
+        public void SetInProgressMatchesText(int count)
+        {
+            InProgressMatchesText.text = "In progress games: " + count;
+        }
+        
+        public void SetFinishedMatchesText(int count)
+        {
+            FinishedMatchesText.text = "Finished games: " + count;
+        }
+        
+        public void SetCanceledMatchesText(int count)
+        {
+            CanceledMatchesText.text = "Canceled games: " + count;
         }
 
         private void CreatedNewEntity(GameObject newEntity)
