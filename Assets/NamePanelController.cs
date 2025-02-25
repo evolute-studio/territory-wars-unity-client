@@ -53,7 +53,8 @@ public class NamePanelController : MonoBehaviour
         PlayerNameText.text = name;
     }
     
-    public void SetEvoluteBalance(int value){
-        EvoluteCountText.text = value.ToString();
+    public void SetEvoluteBalance(int value)
+    {
+        EvoluteCountText.text = value.ToString() + " x ";
     }
 }

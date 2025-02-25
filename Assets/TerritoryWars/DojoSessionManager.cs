@@ -136,7 +136,8 @@ namespace TerritoryWars
         
         private void GameFinished(FieldElement board_id)
         {
-            if (LocalPlayerBoard.id.Hex() == board_id.Hex())
+            evolute_duel_Board board = GetLocalPlayerBoard(true);
+            if (board.id.Hex() == board_id.Hex())
             {
                 CustomLogger.LogEvent($"[GameFinished] | BoardId: {board_id.Hex()}");
                 GameUI.Instance.ShowResultPopUp();
@@ -184,19 +185,19 @@ namespace TerritoryWars
         
         
         
-        public evolute_duel_Board GetLocalPlayerBoard()
+        public evolute_duel_Board GetLocalPlayerBoard(bool isFinished = false)
         {
-            return GetBoard(_dojoGameManager.LocalBurnerAccount.Address);
+            return GetBoard(_dojoGameManager.LocalBurnerAccount.Address, isFinished);
         }
 
-        private evolute_duel_Board GetBoard(FieldElement player)
+        private evolute_duel_Board GetBoard(FieldElement player, bool isFinished = false)
         {
             GameObject[] boardsGO = _dojoGameManager.WorldManager.Entities<evolute_duel_Board>();
             foreach (var boardGO in boardsGO)
             {
                 if (boardGO.TryGetComponent(out evolute_duel_Board board))
                 {
-                    if (board.game_state is GameState.Finished) continue;
+                    if (board.game_state is GameState.Finished && !isFinished) continue;
                     //public (FieldElement, PlayerSide, byte, bool) player1;
                     if (board.player1.Item1.Hex() == player.Hex() || board.player2.Item1.Hex() == player.Hex())
                     {
