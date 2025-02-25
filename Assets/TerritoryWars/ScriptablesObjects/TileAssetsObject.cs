@@ -9,8 +9,6 @@ namespace TerritoryWars.ScriptablesObjects
     public class TileAssetsObject : ScriptableObject
     {
         public Sprite[] FirstPlayerHouses;
-        public List<HousesSprite> FirstPlayerHousesAnimated;
-        public List<HousesSprite> SecondPlayerHousesAnimated;
         public Sprite[] SecondPlayerHouses;
         public Sprite[] Mountains;
         public GameObject ForestPrefab;
