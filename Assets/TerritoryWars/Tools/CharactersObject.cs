@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace TerritoryWars.Tools
 {
@@ -15,9 +16,9 @@ namespace TerritoryWars.Tools
             return Characters.Find(character => character.Id == id).AnimatorController;
         }
         
-        public Sprite GetIcon(int id)
+        public Image GetIcon(int id)
         {
-            return Characters.Find(character => character.Id == id).Icon;
+            return Characters.Find(character => character.Id == id).Avatar;
         }
         
         public string GetCharacterName(int id)
@@ -31,7 +32,7 @@ namespace TerritoryWars.Tools
         {
             public string CharacterName;
             public RuntimeAnimatorController AnimatorController;
-            public Sprite Icon;
+            public Image Avatar;
             public int Id;
         }
     }

@@ -131,8 +131,6 @@ namespace TerritoryWars.General
             path2[1] = new Vector3(SpawnPoints[1].x + 5, SpawnPoints[1].y + 7, 0);
             path2[2] = SpawnPoints[1];
             
-            PlayerCharactersManager.ChangeCurrentCharacterId(1);// only for test
-            PlayerCharactersManager.ChangeOpponentCurrentCharacterId(0);// only for test
             GameObject player1 = Instantiate(PrefabsManager.Instance.GetNextPlayer(), path1[0], Quaternion.identity);
             GameObject player2 = Instantiate(PrefabsManager.Instance.GetNextPlayer(), path2[0], Quaternion.identity);
 
