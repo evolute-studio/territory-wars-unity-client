@@ -6,6 +6,7 @@ using TerritoryWars.General;
 using TerritoryWars.ModelsDataConverters;
 using TerritoryWars.Tile;
 using TerritoryWars.Tools;
+using TerritoryWars.UI;
 using UnityEngine;
 
 namespace TerritoryWars
@@ -67,6 +68,12 @@ namespace TerritoryWars
                 case evolute_duel_Skiped skipped:
                     Skipped(skipped);
                     break;
+                case evolute_duel_GameFinished gameFinished:
+                    GameFinished(gameFinished.board_id);
+                    break;
+                case evolute_duel_GameIsAlreadyFinished gameIsAlreadyFinished:
+                    GameFinished(gameIsAlreadyFinished.board_id);
+                    break;
             }
             if(_dojoGameManager.IsTargetModel(modelInstance, nameof(evolute_duel_Moved)))
             {
@@ -108,6 +115,15 @@ namespace TerritoryWars
             string player = eventModel.player.Hex();
             CustomLogger.LogEvent($"[Skipped] | Player: {player}");
             OnSkipMoveReceived?.Invoke(player);
+        }
+        
+        private void GameFinished(FieldElement board_id)
+        {
+            if (LocalPlayerBoard.id.Hex() == board_id.Hex())
+            {
+                CustomLogger.LogEvent($"[GameFinished] | BoardId: {board_id.Hex()}");
+                GameUI.Instance.ShowResultPopUp();
+            }
         }
         
         // public void CheckBoardUpdate()

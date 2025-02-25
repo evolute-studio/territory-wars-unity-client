@@ -2337,6 +2337,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: FINAL_HUDS_AND_INTERFACE_46
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 1550
+        width: 337
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 11, y: 12, z: 11, w: 11}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f8925a49b9ca3051b64916301e8bdef
+      internalID: -4629154823851820335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []

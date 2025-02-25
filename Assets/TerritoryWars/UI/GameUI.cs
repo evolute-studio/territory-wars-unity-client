@@ -5,12 +5,28 @@ using TerritoryWars.Tile;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace TerritoryWars.UI
 {
     public class GameUI : MonoBehaviour
     {
+        public static GameUI Instance { get; private set; }
+        
+        void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+        
+        
         [Header("References")]
         [SerializeField] private Button endTurnButton;
         [SerializeField] private Button skipTurnButton;
@@ -24,6 +40,9 @@ namespace TerritoryWars.UI
         [SerializeField] private Sprite[] _toggleMods;
         [SerializeField] private Image _toggleSpriteRenderer;
         [SerializeField] private CanvasGroup _deckContainerCanvasGroup;
+
+        [SerializeField] private ResultPopUpUI _resultPopUpUI;
+        [SerializeField] public SessionUI SessionUI;
         
         public static event Action OnJokerButtonClickedEvent;
 
@@ -77,6 +96,17 @@ namespace TerritoryWars.UI
             // {
             //     jokerButton.onClick.AddListener(OnJokerButtonClicked);
             // }
+        }
+        
+        public void ShowResultPopUp()
+        {
+            _resultPopUpUI.SetResultPopupActive(true);
+            _resultPopUpUI.SetPlayersName(
+                _sessionManager.PlayersData[0].username.Inner.data.ToString(), 
+                _sessionManager.PlayersData[1].username.Inner.data.ToString());
+            int score1 = DojoGameManager.Instance.SessionManager.LocalPlayerBoard.blue_score;
+            int score2 = DojoGameManager.Instance.SessionManager.LocalPlayerBoard.red_score;
+            _resultPopUpUI.SetPlayersScore(score1, score2);
         }
 
         public void UpdateUI()

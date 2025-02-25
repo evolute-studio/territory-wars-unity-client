@@ -37,7 +37,8 @@ namespace TerritoryWars.General
         public Vector3[] SpawnPoints;
         public AnimationCurve spawnCurve;
 
-        public Character[] Characters;
+        public Character[] Players;
+        public evolute_duel_Player[] PlayersData;
         public Character CurrentTurnPlayer { get; private set; }
         public Character LocalPlayer { get; private set; }
         public Character RemotePlayer { get; private set; }
@@ -130,7 +131,8 @@ namespace TerritoryWars.General
 
         private void InitializePlayers()
         {
-            Characters = new Character[2];
+            Players = new Character[2];
+            PlayersData = new evolute_duel_Player[2];
 
             // Створюємо точки для дугової траєкторії для першого персонажа
             Vector3[] path1 = new Vector3[3];
@@ -149,25 +151,28 @@ namespace TerritoryWars.General
 
             evolute_duel_Board board = DojoGameManager.Instance.SessionManager.LocalPlayerBoard;
             
-            Characters[0] = player1.GetComponent<Character>();
-            Characters[1] = player2.GetComponent<Character>();
+            Players[0] = player1.GetComponent<Character>();
+            Players[1] = player2.GetComponent<Character>();
             
-            Characters[0].Initialize(board.player1.Item1, board.player1.Item2);
-            Characters[1].Initialize(board.player2.Item1, board.player2.Item2);
+            Players[0].Initialize(board.player1.Item1, board.player1.Item2);
+            Players[1].Initialize(board.player2.Item1, board.player2.Item2);
+            
+            PlayersData[0] = DojoGameManager.Instance.GetPlayerData(Players[0].Address.Hex());
+            PlayersData[1] = DojoGameManager.Instance.GetPlayerData(Players[1].Address.Hex());
             
             
-            Characters[0].transform.localScale = new Vector3(-0.7f, 0.7f, 1f);
-            CurrentTurnPlayer = Characters[0];
-            LocalPlayer = Characters[0].Address.Hex() == DojoGameManager.Instance.LocalBurnerAccount.Address.Hex() 
-                ? Characters[0] : Characters[1];
-            RemotePlayer = LocalPlayer == Characters[0] ? Characters[1] : Characters[0];
+            Players[0].transform.localScale = new Vector3(-0.7f, 0.7f, 1f);
+            CurrentTurnPlayer = Players[0];
+            LocalPlayer = Players[0].Address.Hex() == DojoGameManager.Instance.LocalBurnerAccount.Address.Hex() 
+                ? Players[0] : Players[1];
+            RemotePlayer = LocalPlayer == Players[0] ? Players[1] : Players[0];
 
             // Анімація спуску персонажів по дузі
-            Characters[0].transform
+            Players[0].transform
                 .DOPath(path1, 2.5f, PathType.CatmullRom)
                 .SetEase(Ease.OutQuad);
 
-            Characters[1].transform
+            Players[1].transform
                 .DOPath(path2, 2.5f, PathType.CatmullRom)
                 .SetEase(Ease.OutQuad);
         }
@@ -264,7 +269,7 @@ namespace TerritoryWars.General
         
         public int GetCurrentCharacter()
         {
-            return CurrentTurnPlayer == Characters[0] ? 0 : 1;
+            return CurrentTurnPlayer == Players[0] ? 0 : 1;
         }
 
         public void RotateCurrentTile()

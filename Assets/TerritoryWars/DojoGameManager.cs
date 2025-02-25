@@ -70,17 +70,17 @@ namespace TerritoryWars
             WorldManager.synchronizationMaster.OnEntitySpawned.AddListener(SpawnEntity);
             //WorldManager.synchronizationMaster.OnModelUpdated.AddListener(ModelUpdated);
             
-            TryCreateAccount(3);
+            TryCreateAccount(3, true);
         }
         
-        private async void TryCreateAccount(int attempts)
+        private async void TryCreateAccount(int attempts, bool createNew)
         {
             try
             {
                 for (int i = 0; i < attempts; i++)
                 {
                     CustomLogger.LogInfo($"Creating burner account. Attempt: {i}");
-                    if (await CreateAccount())
+                    if (await CreateAccount(createNew))
                     {
                         CustomLogger.LogInfo($"Burner account created. Attempt: {i}. Address: {LocalBurnerAccount.Address}");
                         break;
@@ -93,21 +93,33 @@ namespace TerritoryWars
             }
         }
         
+        public void TryCreateNewAccount()
+        {
+            TryCreateAccount(6, true);
+        }
         
-        private async Task<bool> CreateAccount()
+        
+        private async Task<bool> CreateAccount(bool createNew)
         {
             try
             {
-                LocalBurnerAccount = await burnerManager.DeployBurner();
-                // if (burnerManager.Burners.Count == 0)
-                // {
-                //     LocalBurnerAccount = await burnerManager.DeployBurner();
-                // }
-                // else
-                // {
-                //     //use last burner account
-                //     LocalBurnerAccount = burnerManager.Burners.Last();
-                // }
+                if (createNew)
+                {
+                    LocalBurnerAccount = await burnerManager.DeployBurner();
+                }
+                else
+                {
+                    if (burnerManager.Burners.Count == 0)
+                    {
+                        LocalBurnerAccount = await burnerManager.DeployBurner();
+                    }
+                    else
+                    {
+                        //use last burner account
+                        LocalBurnerAccount = burnerManager.Burners.Last();
+                    }
+                }
+
                 return true;
             }
             catch (Exception e)
@@ -217,6 +229,22 @@ namespace TerritoryWars
                 return true;
             }
             return false;
+        }
+
+        public evolute_duel_Player GetPlayerData(string address)
+        {
+            GameObject[] playerModelsGO = WorldManager.Entities<evolute_duel_Player>();
+            foreach (var playerModelGO in playerModelsGO)
+            {
+                if (playerModelGO.TryGetComponent(out evolute_duel_Player playerModel))
+                {
+                    if (playerModel.player_id.Hex() == address)
+                    {
+                        return playerModel;
+                    }
+                }
+            }
+            return null;
         }
         
         private void OnSynchronized(List<GameObject> synchronizedModels)
