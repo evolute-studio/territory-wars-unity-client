@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using DG.Tweening;
 using TerritoryWars.Tile;
+using TerritoryWars.Tools;
 using TerritoryWars.UI;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -36,6 +37,7 @@ namespace TerritoryWars.General
         public AnimationCurve spawnCurve;
 
         public Character[] Characters;
+        public CharactersObject CharactersObject;
         public Character CurrentCharacter { get; private set; }
 
         private int[] jokerCount = new int[] { 3, 3 }; 
@@ -128,7 +130,9 @@ namespace TerritoryWars.General
             path2[0] = new Vector3(SpawnPoints[1].x, SpawnPoints[1].y + 15, 0);
             path2[1] = new Vector3(SpawnPoints[1].x + 5, SpawnPoints[1].y + 7, 0);
             path2[2] = SpawnPoints[1];
-
+            
+            PlayerCharactersManager.ChangeCurrentCharacterId(1);// only for test
+            PlayerCharactersManager.ChangeOpponentCurrentCharacterId(0);// only for test
             GameObject player1 = Instantiate(PrefabsManager.Instance.GetNextPlayer(), path1[0], Quaternion.identity);
             GameObject player2 = Instantiate(PrefabsManager.Instance.GetNextPlayer(), path2[0], Quaternion.identity);
 
@@ -138,6 +142,9 @@ namespace TerritoryWars.General
             CurrentCharacter = Characters[0];
             Characters[0].Id = 0;
             Characters[1].Id = 1;
+
+            Characters[0].SetAnimatorController(CharactersObject.GetAnimatorController(PlayerCharactersManager.GetCurrentCharacterId()));
+            Characters[1].SetAnimatorController(CharactersObject.GetAnimatorController(PlayerCharactersManager.GetOpponentCurrentCharacterId()));
 
             // Анімація спуску персонажів по дузі
             Characters[0].transform
