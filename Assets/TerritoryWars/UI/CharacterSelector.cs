@@ -78,14 +78,7 @@ namespace TerritoryWars.UI
                     sequence.Play();
                 }
 
-                if (PlayerCharactersManager.GetCurrentCharacterId() == characters[i].CharacterId)
-                {
-                    ApplyButtonImage.color = new Color(1f, 1f, 1f, 0f);
-                }
-                else
-                {
-                    ApplyButtonImage.color = new Color(1f, 1f, 1f, 1f);
-                }
+                UpdateButtonVisual();
 
 
                 characters[i].MainObject.transform
@@ -109,6 +102,21 @@ namespace TerritoryWars.UI
         public void ApplyButtonClicked()
         {
             PlayerCharactersManager.ChangeCurrentCharacterId(characters[1].CharacterId);
+            UpdateButtonVisual();
+        }
+
+        public void UpdateButtonVisual()
+        {
+            if (PlayerCharactersManager.GetCurrentCharacterId() == characters[1].CharacterId)
+            {
+                ApplyButton.interactable = false;
+                ApplyButtonImage.color = new Color(1f, 1f, 1f, 0f);
+            }
+            else
+            {
+                ApplyButton.interactable = true;
+                ApplyButtonImage.color = new Color(1f, 1f, 1f, 1f);
+            }
         }
 
 
