@@ -152,14 +152,6 @@ namespace TerritoryWars.General
             };
         }
 
-        // public void Initialize()
-        // {
-        //     InitializePlayers();
-        //     Board.Initialize();
-        //     gameUI.Initialize();
-        //     StartGame();
-        // }
-
         public void Start()
         {
             Invoke(nameof(Initialize), 5);
@@ -200,6 +192,7 @@ namespace TerritoryWars.General
                 }
             } 
             gameUI.Initialize();
+            sessionUI.Initialization();
             StartGame();
         }
 
@@ -224,7 +217,7 @@ namespace TerritoryWars.General
             GameObject player2 = Instantiate(PrefabsManager.Instance.GetNextPlayer(), path2[0], Quaternion.identity);
 
             evolute_duel_Board board = DojoGameManager.Instance.SessionManager.LocalPlayerBoard;
-            
+
             Players[0] = player1.GetComponent<Character>();
             Players[1] = player2.GetComponent<Character>();
             
@@ -429,7 +422,8 @@ namespace TerritoryWars.General
             {
                 fontSize = 20,
                 fontStyle = FontStyle.Bold,
-                normal = { textColor = Color.white }
+                normal = { textColor = Color.white },
+                alignment = TextAnchor.MiddleCenter
             };
 
             // Створюємо напівпрозорий фон для тексту
@@ -441,25 +435,26 @@ namespace TerritoryWars.General
             // Відступи для тексту
             int padding = 10;
             int yPosition = 10;
-            int xPosition = 10;
+
+            // Розраховуємо позицію по центру екрану
+            float screenCenterX = Screen.width / 2f;
+            float labelWidth = 300f;
+            float xPosition = screenCenterX - labelWidth / 2f;
 
             // Показуємо чий зараз хід
-            string turnInfo = $"Turn of player: {(CurrentTurnPlayer == LocalPlayer ? "Your" : "Opponent")}";
-            GUI.Label(new Rect(xPosition, yPosition, 300, 30), turnInfo, style);
-
-            // // Показуємо кількість джокерів
-            // yPosition += 40;
-            // string jokersInfo = $"Jokers: Ви ({GetJokerCount(LocalPlayer.LocalId)}) | Противник ({GetJokerCount(RemotePlayer.LocalId)})";
-            // GUI.Label(new Rect(xPosition, yPosition, 300, 30), jokersInfo, style);
-
-            // Якщо очікуємо хід противника
+            float time = Time.time;
+            string turnInfo;
+            
             if (CurrentTurnPlayer != LocalPlayer)
             {
-                yPosition += 40;
-                float time = Time.time;
-                string waitingText = "waiting for the turn" + new string('.', (int)(time % 3) + 1);
-                GUI.Label(new Rect(xPosition, yPosition, 300, 30), waitingText, style);
+                turnInfo = $"Waiting for {PlayersData[1].username} turn" + new string('.', (int)(time % 3) + 1);;
             }
+            else
+            {
+                turnInfo = "Your turn now.";
+            }
+            GUI.Label(new Rect(xPosition, yPosition, labelWidth, 30), turnInfo, style);
+
 
             // Очищаємо створену текстуру
             Destroy(backgroundTexture);

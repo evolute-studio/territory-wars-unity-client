@@ -22,6 +22,8 @@ namespace TerritoryWars.Tile
         public TileRotator TileRotator;
         public GameObject City { get; private set; }
         public GameObject Mill { get; private set; }
+        
+        private TileData _tileData;
 
 
         [Header("Roads")]
@@ -59,6 +61,7 @@ namespace TerritoryWars.Tile
         public void Generate(TileData data)
         {
             TileConfig = data.id;
+            _tileData = data;
             Generate();
         }
 
@@ -233,6 +236,8 @@ namespace TerritoryWars.Tile
                 {
                     playerId = sessionManager.CurrentTurnPlayer.LocalId;
                 }
+
+                if (_tileData.OwnerId == -1) playerId = -1;
                 house.gameObject.GetComponent<SpriteAnimator>().ChangeSprites(TileAssetsObject.GetNextHouse(playerId));
                 TileRotator.SimpleRotation(house.transform, index);
                 TileRotator.SimpleRotationObjects.Add(house.transform);
