@@ -18,6 +18,7 @@ namespace TerritoryWars.UI
         public float animationDuration = 0.5f;
         private int currentCharacterId = 0;
         public Button ApplyButton;
+        public Image ApplyButtonImage;
 
         public void Start()
         {
@@ -75,6 +76,15 @@ namespace TerritoryWars.UI
                     });
 
                     sequence.Play();
+                }
+
+                if (PlayerCharactersManager.GetCurrentCharacterId() == characters[i].CharacterId)
+                {
+                    ApplyButtonImage.color = new Color(1f, 1f, 1f, 0f);
+                }
+                else
+                {
+                    ApplyButtonImage.color = new Color(1f, 1f, 1f, 1f);
                 }
 
 
