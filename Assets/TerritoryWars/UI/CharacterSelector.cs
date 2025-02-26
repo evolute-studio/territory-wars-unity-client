@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using DG.Tweening;
 using TerritoryWars.General;
 using TerritoryWars.Tools;
@@ -19,10 +20,12 @@ namespace TerritoryWars.UI
         private int currentCharacterId = 0;
         public Button ApplyButton;
         public Image ApplyButtonImage;
+        private bool isAnimating = false;
 
         public void Start()
         {
             ApplyButton.onClick.AddListener(ApplyButtonClicked);
+            UpdateButtonVisual();
             foreach (var character in characters)
             {
                 character.Initialize();
@@ -32,6 +35,12 @@ namespace TerritoryWars.UI
         public void ShiftCharacters(bool isRight)
         {
             // shift array characters
+            // if(isAnimating)
+            //     return;
+            //
+            // isAnimating = true;
+            // SimpleTimer(0.5f, () => { isAnimating = false; });
+            
             if (isRight)
             {
                 Character temp = characters[characters.Length - 1];
@@ -118,6 +127,14 @@ namespace TerritoryWars.UI
                 ApplyButtonImage.color = new Color(1f, 1f, 1f, 1f);
             }
         }
+        
+        private IEnumerator SimpleTimer(float duration, Action callback)
+        {
+            yield return new WaitForSeconds(duration);
+            callback?.Invoke();
+        }
+        
+        
 
 
 
