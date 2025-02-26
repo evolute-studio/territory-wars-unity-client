@@ -36,6 +36,7 @@ namespace TerritoryWars.UI
         [SerializeField] private Image currentTilePreview;
         [SerializeField] private TextMeshProUGUI remainingTilesText;
         [SerializeField] private Button jokerButton;
+        [SerializeField] private Button deckButton;
         [SerializeField] private TextMeshProUGUI player1JokersText;
         [SerializeField] private TextMeshProUGUI player2JokersText;
         [SerializeField] private GameObject jokerModeIndicator;
@@ -101,6 +102,11 @@ namespace TerritoryWars.UI
             if (jokerButton != null)
             {
                 jokerButton.onClick.AddListener(OnJokerButtonClicked);
+            }
+            
+            if (deckButton != null)
+            {
+                deckButton.onClick.AddListener(OnDeckButtonClicked);
             }
             
             if (SaveSnapshotButton != null)
@@ -236,6 +242,18 @@ namespace TerritoryWars.UI
                 UpdateUI();
             }
             
+        }
+        
+        private void OnDeckButtonClicked()
+        {
+            _isJokerActive = !_isJokerActive;
+            SwitchToggle();
+
+            _sessionManager.DeactivateJoker();
+            
+            tilePreview._tileJokerAnimator.StopIdleJokerAnimation();
+            tilePreviewUITileJokerAnimator.StopIdleJokerAnimation();
+            UpdateUI();
         }
         
         public void SetJokerMode(bool active)

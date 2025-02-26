@@ -28,11 +28,6 @@ public class CursorManager : MonoBehaviour
             Destroy(gameObject);
         }
         
- 
-    }
-
-    private void Start()
-    {
         SetCursor("default");
     }
 
