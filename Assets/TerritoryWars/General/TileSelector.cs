@@ -15,6 +15,7 @@ namespace TerritoryWars.General
         [SerializeField] private GameUI gameUI;
         [SerializeField] private Material highlightMaterial;
         [SerializeField] private LayerMask backgroundLayer;
+        [SerializeField] private LayerMask hoverLayer;
         [SerializeField] private Sprite highlightSprite;
         [SerializeField] public TilePreview tilePreview;
         [SerializeField] private TileJokerAnimator TileJokerAnimator;
@@ -35,6 +36,7 @@ namespace TerritoryWars.General
         private bool isJokerMode = false;
         private Vector2Int? jokerPosition;
         private List<ValidPlacement> _currentValidPlacements;
+        private bool onEnterHoverObject = false;
 
         public TileData CurrentTile => currentTile;
 
@@ -78,7 +80,30 @@ namespace TerritoryWars.General
                     HandleTilePlacement();
                 }
             }
+            HandleTileHover();
         }
+
+        private void HandleTileHover()
+        {
+            if (CursorManager.Instance != null)
+            {
+               
+                var hit = Physics2D.RaycastAll(Camera.main.ScreenPointToRay(Input.mousePosition).origin,
+                    Vector2.zero, Mathf.Infinity, hoverLayer);
+
+                if (hit.Length > 0)
+                {
+                    onEnterHoverObject = true;
+                    CursorManager.Instance.SetCursor("pointer");
+                }
+                else if (onEnterHoverObject)
+                {
+                    onEnterHoverObject = false;
+                    CursorManager.Instance.SetCursor("default");
+                }
+            }
+        }
+    
 
         private void HandleTilePlacement()
         {
@@ -143,7 +168,13 @@ namespace TerritoryWars.General
             spriteRenderer.sprite = highlightSprite;
             spriteRenderer.material = highlightMaterial;
             spriteRenderer.sortingOrder = 9;
+            if (spriteRenderer.gameObject.layer != LayerMask.NameToLayer("TileHover"))
+            {
+                spriteRenderer.gameObject.layer = LayerMask.NameToLayer("TileHover");
+            }
+     
 
+            highlight.AddComponent<PolygonCollider2D>();
             var clickHandler = highlight.AddComponent<TileClickHandler>();
             clickHandler.Initialize(this, x, y);
         }

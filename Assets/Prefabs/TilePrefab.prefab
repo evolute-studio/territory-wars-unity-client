@@ -811,6 +811,7 @@ GameObject:
   - component: {fileID: 7349166713346459192}
   - component: {fileID: 4415033790335919484}
   - component: {fileID: 2757118565399566220}
+  - component: {fileID: 7793714312400054033}
   m_Layer: 0
   m_Name: TilePrefab
   m_TagString: Untagged
@@ -1050,6 +1051,59 @@ MonoBehaviour:
       m_Calls: []
   autoRotate: 0
   rotateInterval: 1
+--- !u!60 &7793714312400054033
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282971855922823901}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 0.34496784}
+      - {x: -0.63277817, y: 0.008231878}
+      - {x: -0.63476855, y: -0.15887854}
+      - {x: 0.010807574, y: -0.48488843}
+      - {x: 0.64267886, y: -0.17644334}
+      - {x: 0.6466036, y: 0.013791263}
+  m_UseDelaunayMesh: 0
 --- !u!1 &1522269517585319440
 GameObject:
   m_ObjectHideFlags: 0

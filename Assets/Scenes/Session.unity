@@ -12812,7 +12812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1282971855922823901, guid: 774b7ce5654b64e70a908d11e8fec69e, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1633457990209666821, guid: 774b7ce5654b64e70a908d11e8fec69e, type: 3}
       propertyPath: loop
@@ -24234,7 +24234,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 119
+    m_Bits: 631
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -45428,6 +45428,9 @@ MonoBehaviour:
   backgroundLayer:
     serializedVersion: 2
     m_Bits: 64
+  hoverLayer:
+    serializedVersion: 2
+    m_Bits: 768
   highlightSprite: {fileID: 6918190165331826287, guid: 4d9731e6f9033b947a1c88a2e8c1c487, type: 3}
   tilePreview: {fileID: 1558212604}
   TileJokerAnimator: {fileID: 557829319}
