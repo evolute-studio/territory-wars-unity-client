@@ -15,16 +15,22 @@ public class SessionUI : MonoBehaviour
     public List<TextMeshProUGUI> tileScoreTextPlayers;
     public List<TextMeshProUGUI> timeTextPlayers;
     [SerializeField] private Board _board;
+    public TextMeshProUGUI LocalPlayerName;
+    public TextMeshProUGUI RemotePlayerName;
 
     public List<Image> imagePlayers;
 
     [Header("Players")]
     public List<PlayerInfo> players;
+    
+    private SessionManager _sessionManager;
 
     public void Start() => Initialization();
 
     public void Initialization()
     {
+        _sessionManager = FindObjectOfType<SessionManager>();
+        SetNames(_sessionManager.PlayersData[0].username, _sessionManager.PlayersData[1].username);
         for (int i = 0; i < players.Count; i++)
         {
             cityScoreTextPlayers[i].text = players[i].cityScore.ToString();
@@ -59,6 +65,12 @@ public class SessionUI : MonoBehaviour
         timeTextPlayers[currentCharacter].text = string.Format("{0:00}:{1:00}",
             Mathf.Floor(players[currentCharacter].time / 60),
             Mathf.Floor(players[currentCharacter].time % 60));
+    }
+    
+    public void SetNames(string localPlayerName, string remotePlayerName)
+    {
+        LocalPlayerName.text = localPlayerName;
+        RemotePlayerName.text = remotePlayerName;
     }
 
 

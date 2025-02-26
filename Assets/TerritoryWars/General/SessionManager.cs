@@ -20,7 +20,7 @@ namespace TerritoryWars.General
         {
             UpdatePlayerData(model);
         }
-        
+
         public void UpdatePlayerData(evolute_duel_Player profile)
         {
             if (profile == null) return;
@@ -28,7 +28,7 @@ namespace TerritoryWars.General
             username = CairoFieldsConverter.GetStringFromFieldElement(profile.username);
         }
     }
-    
+
     public class SessionManager : MonoBehaviour
     {
         public static SessionManager Instance { get; private set; }
@@ -63,14 +63,14 @@ namespace TerritoryWars.General
         public Character CurrentTurnPlayer { get; private set; }
         public Character LocalPlayer { get; private set; }
         public Character RemotePlayer { get; private set; }
-        
+
         public bool IsLocalPlayerTurn => CurrentTurnPlayer == LocalPlayer;
 
-        private int[] jokerCount = new int[] { 3, 3 }; 
+        private int[] jokerCount = new int[] { 3, 3 };
         private bool isJokerActive = false;
-        
+
         public bool IsJokerActive => isJokerActive;
-        
+
         public void ActivateJoker()
         {
             if (jokerCount[CurrentTurnPlayer.LocalId] > 0)
@@ -80,13 +80,13 @@ namespace TerritoryWars.General
                 TileSelector.StartJokerPlacement();
             }
         }
-        
+
         public void DeactivateJoker()
         {
             isJokerActive = false;
             gameUI.UpdateUI();
         }
-        
+
         public TileData GetGenerateJokerTile(int x, int y)
         {
             // Отримуємо інформацію про сусідні тайли
@@ -95,14 +95,14 @@ namespace TerritoryWars.General
             {
                 int newX = x + Board.GetXOffset(side);
                 int newY = y + Board.GetYOffset(side);
-                
+
                 if (Board.IsValidPosition(newX, newY) && Board.GetTileData(newX, newY) != null)
                 {
                     var neighborTile = Board.GetTileData(newX, newY);
                     neighborSides[side] = neighborTile.GetSide(Board.GetOppositeSide(side));
                 }
             }
-            
+
             // Генеруємо новий тайл
             char[] baseSides = new char[4];
             char[] randomSides = new char[4];
@@ -120,25 +120,26 @@ namespace TerritoryWars.General
                     randomSides[i] = GetRandomLandscape();
                 }
             }
-            
+
             string baseTileConfig = new string(baseSides);
             string randomTileConfig = new string(randomSides);
-            
-            (string tileConfig, int rotation) = OnChainBoardDataConverter.GetRandomTypeAndRotationFromDeck(baseTileConfig);
+
+            (string tileConfig, int rotation) =
+                OnChainBoardDataConverter.GetRandomTypeAndRotationFromDeck(baseTileConfig);
             string configResult = String.IsNullOrEmpty(tileConfig) ? randomTileConfig : tileConfig;
             TileData jokerTile = new TileData(randomTileConfig);
             //jokerTile.Rotate((rotation + 2) % 4);
             return jokerTile;
         }
-        
+
         private char GetRandomLandscape()
         {
             float random = Random.value;
-            if (random < 0.4f) return 'F';      // 40% шанс поля
-            else if (random < 0.7f) return 'R';  // 30% шанс дороги
-            else return 'C';                     // 30% шанс міста
+            if (random < 0.4f) return 'F'; // 40% шанс поля
+            else if (random < 0.7f) return 'R'; // 30% шанс дороги
+            else return 'C'; // 30% шанс міста
         }
-        
+
         private char LandscapeToChar(LandscapeType type)
         {
             return type switch
@@ -184,21 +185,22 @@ namespace TerritoryWars.General
             GameObject player2 = Instantiate(PrefabsManager.Instance.GetNextPlayer(), path2[0], Quaternion.identity);
 
             evolute_duel_Board board = DojoGameManager.Instance.SessionManager.LocalPlayerBoard;
-            
+
             Players[0] = player1.GetComponent<Character>();
             Players[1] = player2.GetComponent<Character>();
-            
+
             Players[0].Initialize(board.player1.Item1, board.player1.Item2);
             Players[1].Initialize(board.player2.Item1, board.player2.Item2);
-            
+
             PlayersData[0] = new PlayerData(DojoGameManager.Instance.GetPlayerData(Players[0].Address.Hex()));
             PlayersData[1] = new PlayerData(DojoGameManager.Instance.GetPlayerData(Players[1].Address.Hex()));
-            
-            
+
+
             Players[0].transform.localScale = new Vector3(-0.7f, 0.7f, 1f);
             CurrentTurnPlayer = Players[0];
-            LocalPlayer = Players[0].Address.Hex() == DojoGameManager.Instance.LocalBurnerAccount.Address.Hex() 
-                ? Players[0] : Players[1];
+            LocalPlayer = Players[0].Address.Hex() == DojoGameManager.Instance.LocalBurnerAccount.Address.Hex()
+                ? Players[0]
+                : Players[1];
             RemotePlayer = LocalPlayer == Players[0] ? Players[1] : Players[0];
 
             // Анімація спуску персонажів по дузі
@@ -226,6 +228,7 @@ namespace TerritoryWars.General
             {
                 Invoke(nameof(StartRemoteTurn), 2f);
             }
+
             DojoGameManager.Instance.SessionManager.OnMoveReceived += HandleMove;
             DojoGameManager.Instance.SessionManager.OnSkipMoveReceived += SkipMove;
         }
@@ -254,25 +257,27 @@ namespace TerritoryWars.General
         private void HandleMove(string playerAddress, TileData tile, Vector2Int position, int rotation)
         {
             evolute_duel_Player player = DojoGameManager.Instance.GetPlayerData(playerAddress);
-            if(playerAddress == Players[0].Address.Hex() &&  player != null)
+            if (playerAddress == Players[0].Address.Hex() && player != null)
             {
                 PlayersData[0].UpdatePlayerData(player);
             }
-            else if(playerAddress == Players[1].Address.Hex() &&  player != null)
+            else if (playerAddress == Players[1].Address.Hex() && player != null)
             {
                 PlayersData[1].UpdatePlayerData(player);
             }
+
             if (playerAddress == LocalPlayer.Address.Hex()) CompleteEndTurn(playerAddress);
             else StartCoroutine(HandleOpponentMoveCoroutine(playerAddress, tile, position, rotation));
         }
-        
+
         private void SkipMove(string playerAddress)
         {
             TileSelector.ClearHighlights();
             CompleteEndTurn(playerAddress);
         }
 
-        private IEnumerator HandleOpponentMoveCoroutine(string playerAddress, TileData tile, Vector2Int position, int rotation)
+        private IEnumerator HandleOpponentMoveCoroutine(string playerAddress, TileData tile, Vector2Int position,
+            int rotation)
         {
             tile.Rotate(rotation);
             tile.OwnerId = RemotePlayer.LocalId;
@@ -309,7 +314,7 @@ namespace TerritoryWars.General
             CurrentTurnPlayer.EndTurn();
 
         }
-        
+
         public int GetCurrentCharacter()
         {
             return CurrentTurnPlayer == Players[0] ? 0 : 1;
@@ -327,7 +332,7 @@ namespace TerritoryWars.General
                 TileSelector.PlaceCurrentTile();
             }
         }
-        
+
         public void SkipMove()
         {
             DojoGameManager.Instance.SessionManager.SkipMove();
@@ -336,7 +341,7 @@ namespace TerritoryWars.General
         public void CompleteEndTurn(string lastMovePlayerAddress)
         {
             bool isLocalPlayer = lastMovePlayerAddress == LocalPlayer.Address.Hex();
-            
+
             if (isLocalPlayer)
             {
                 CurrentTurnPlayer = RemotePlayer;
@@ -358,7 +363,7 @@ namespace TerritoryWars.General
                 TileSelector.OnTurnStarted.RemoveListener(OnTurnStarted);
                 TileSelector.OnTurnEnding.RemoveListener(OnTurnEnding);
             }
-            
+
             DojoGameManager.Instance.SessionManager.OnMoveReceived -= HandleMove;
             DojoGameManager.Instance.SessionManager.OnSkipMoveReceived -= SkipMove;
         }
@@ -389,7 +394,8 @@ namespace TerritoryWars.General
             {
                 fontSize = 20,
                 fontStyle = FontStyle.Bold,
-                normal = { textColor = Color.white }
+                normal = { textColor = Color.white },
+                alignment = TextAnchor.MiddleCenter
             };
 
             // Створюємо напівпрозорий фон для тексту
@@ -401,16 +407,15 @@ namespace TerritoryWars.General
             // Відступи для тексту
             int padding = 10;
             int yPosition = 10;
-            int xPosition = 10;
+
+            // Розраховуємо позицію по центру екрану
+            float screenCenterX = Screen.width / 2f;
+            float labelWidth = 300f;
+            float xPosition = screenCenterX - labelWidth / 2f;
 
             // Показуємо чий зараз хід
-            string turnInfo = $"Turn of player: {(CurrentTurnPlayer == LocalPlayer ? "Your" : "Opponent")}";
-            GUI.Label(new Rect(xPosition, yPosition, 300, 30), turnInfo, style);
-
-            // // Показуємо кількість джокерів
-            // yPosition += 40;
-            // string jokersInfo = $"Jokers: Ви ({GetJokerCount(LocalPlayer.LocalId)}) | Противник ({GetJokerCount(RemotePlayer.LocalId)})";
-            // GUI.Label(new Rect(xPosition, yPosition, 300, 30), jokersInfo, style);
+            string turnInfo = $"Waiting for {(CurrentTurnPlayer == LocalPlayer ? "Your" : PlayersData[1].username)} turn";
+            GUI.Label(new Rect(xPosition, yPosition, labelWidth, 30), turnInfo, style);
 
             // Якщо очікуємо хід противника
             if (CurrentTurnPlayer != LocalPlayer)
@@ -418,7 +423,7 @@ namespace TerritoryWars.General
                 yPosition += 40;
                 float time = Time.time;
                 string waitingText = "waiting for the turn" + new string('.', (int)(time % 3) + 1);
-                GUI.Label(new Rect(xPosition, yPosition, 300, 30), waitingText, style);
+                GUI.Label(new Rect(xPosition, yPosition, labelWidth, 30), waitingText, style);
             }
 
             // Очищаємо створену текстуру
