@@ -1,0 +1,2496 @@
+fileFormatVersion: 2
+guid: bcf1b5aa8ec07874591899ce2c0b8683
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6932095923753414554
+    second: house with Flags spritesheet_0
+  - first:
+      213: -8894660520762034692
+    second: house with Flags spritesheet_1
+  - first:
+      213: -4412775616499266683
+    second: house with Flags spritesheet_2
+  - first:
+      213: -6824992770595746539
+    second: house with Flags spritesheet_3
+  - first:
+      213: -5798655095659574947
+    second: house with Flags spritesheet_4
+  - first:
+      213: -7263871912826141317
+    second: house with Flags spritesheet_5
+  - first:
+      213: 5531682066619136809
+    second: house with Flags spritesheet_6
+  - first:
+      213: -5687494834431423159
+    second: house with Flags spritesheet_7
+  - first:
+      213: 433278150696194571
+    second: house with Flags spritesheet_8
+  - first:
+      213: -5892632623772639162
+    second: house with Flags spritesheet_9
+  - first:
+      213: 7777921320807847090
+    second: house with Flags spritesheet_10
+  - first:
+      213: 2645786105480062313
+    second: house with Flags spritesheet_11
+  - first:
+      213: -6484037974369097881
+    second: house with Flags spritesheet_12
+  - first:
+      213: 8858004552385356492
+    second: house with Flags spritesheet_13
+  - first:
+      213: -1812943215386304879
+    second: house with Flags spritesheet_14
+  - first:
+      213: 2841415987029790556
+    second: house with Flags spritesheet_15
+  - first:
+      213: 1002875413463540541
+    second: house with Flags spritesheet_16
+  - first:
+      213: -5665822508091549330
+    second: house with Flags spritesheet_17
+  - first:
+      213: 383826214899928955
+    second: house with Flags spritesheet_18
+  - first:
+      213: -7549747876781444083
+    second: house with Flags spritesheet_19
+  - first:
+      213: 8071978351589781509
+    second: house with Flags spritesheet_20
+  - first:
+      213: -3726164309603048426
+    second: house with Flags spritesheet_21
+  - first:
+      213: -7528073151625169100
+    second: house with Flags spritesheet_22
+  - first:
+      213: -5402629075153655843
+    second: house with Flags spritesheet_23
+  - first:
+      213: 4693528102212535103
+    second: house with Flags spritesheet_24
+  - first:
+      213: -5258699189786554404
+    second: house with Flags spritesheet_25
+  - first:
+      213: -8314642865392877068
+    second: house with Flags spritesheet_26
+  - first:
+      213: 1843677728731451076
+    second: house with Flags spritesheet_27
+  - first:
+      213: 3556222730379459413
+    second: house with Flags spritesheet_28
+  - first:
+      213: -3879344436790259974
+    second: house with Flags spritesheet_29
+  - first:
+      213: -6058338615623315030
+    second: house with Flags spritesheet_30
+  - first:
+      213: -7334626581901504747
+    second: house with Flags spritesheet_31
+  - first:
+      213: -7553797007263615538
+    second: house with Flags spritesheet_32
+  - first:
+      213: -3899320181902817831
+    second: house with Flags spritesheet_33
+  - first:
+      213: 3044188105040930300
+    second: house with Flags spritesheet_34
+  - first:
+      213: -5271786696703568108
+    second: house with Flags spritesheet_35
+  - first:
+      213: -5583267293106885175
+    second: house with Flags spritesheet_36
+  - first:
+      213: -2999221340391703974
+    second: house with Flags spritesheet_37
+  - first:
+      213: 5402349899722676869
+    second: house with Flags spritesheet_38
+  - first:
+      213: 6405028605148113050
+    second: house with Flags spritesheet_39
+  - first:
+      213: 2001692451986436167
+    second: house with Flags spritesheet_40
+  - first:
+      213: 1318693895491122799
+    second: house with Flags spritesheet_41
+  - first:
+      213: -2169631107380648537
+    second: house with Flags spritesheet_42
+  - first:
+      213: -6387338510027742941
+    second: house with Flags spritesheet_43
+  - first:
+      213: -2983942195965234280
+    second: house with Flags spritesheet_44
+  - first:
+      213: 9212504495649119605
+    second: house with Flags spritesheet_45
+  - first:
+      213: -2174800195049225963
+    second: house with Flags spritesheet_46
+  - first:
+      213: 2216968190201051531
+    second: house with Flags spritesheet_47
+  - first:
+      213: -1633270435588285595
+    second: house with Flags spritesheet_48
+  - first:
+      213: 1663972164635426262
+    second: house with Flags spritesheet_49
+  - first:
+      213: -1700302354515552184
+    second: house with Flags spritesheet_50
+  - first:
+      213: 6557931888885149782
+    second: house with Flags spritesheet_51
+  - first:
+      213: 2440386309421319594
+    second: house with Flags spritesheet_52
+  - first:
+      213: 1730648491430035510
+    second: house with Flags spritesheet_53
+  - first:
+      213: -4369007325997921503
+    second: house with Flags spritesheet_54
+  - first:
+      213: 2753749908512634856
+    second: house with Flags spritesheet_55
+  - first:
+      213: -8077239394638113175
+    second: house with Flags spritesheet_56
+  - first:
+      213: -8682457572924116016
+    second: house with Flags spritesheet_57
+  - first:
+      213: -3443164016474535192
+    second: house with Flags spritesheet_58
+  - first:
+      213: -2086181041577230221
+    second: house with Flags spritesheet_59
+  - first:
+      213: 3350585999214592431
+    second: house with Flags spritesheet_60
+  - first:
+      213: -4835449200390009366
+    second: house with Flags spritesheet_61
+  - first:
+      213: 7588770000414421623
+    second: house with Flags spritesheet_62
+  - first:
+      213: 2211771123198225801
+    second: house with Flags spritesheet_63
+  - first:
+      213: -3404224937676158269
+    second: house with Flags spritesheet_64
+  - first:
+      213: -5754432059307842415
+    second: house with Flags spritesheet_65
+  - first:
+      213: 2949950013751910835
+    second: house with Flags spritesheet_66
+  - first:
+      213: 4061533724223563513
+    second: house with Flags spritesheet_67
+  - first:
+      213: -1507374276582458981
+    second: house with Flags spritesheet_68
+  - first:
+      213: 2600971324819763468
+    second: house with Flags spritesheet_69
+  - first:
+      213: -870864856557129120
+    second: house with Flags spritesheet_70
+  - first:
+      213: 206586183469348537
+    second: house with Flags spritesheet_71
+  - first:
+      213: 3425435324958325216
+    second: house with Flags spritesheet_72
+  - first:
+      213: 1373749924154683832
+    second: house with Flags spritesheet_73
+  - first:
+      213: 5351020009188932759
+    second: house with Flags spritesheet_74
+  - first:
+      213: 147084462347513394
+    second: house with Flags spritesheet_75
+  - first:
+      213: -3872625090963408043
+    second: house with Flags spritesheet_76
+  - first:
+      213: -5097820730630677818
+    second: house with Flags spritesheet_77
+  - first:
+      213: -968438999588753101
+    second: house with Flags spritesheet_78
+  - first:
+      213: -6231746087340669667
+    second: house with Flags spritesheet_79
+  - first:
+      213: -4875743409479086122
+    second: house with Flags spritesheet_80
+  - first:
+      213: 4407554447982648268
+    second: house with Flags spritesheet_81
+  - first:
+      213: -5808269123797765594
+    second: house with Flags spritesheet_82
+  - first:
+      213: -4890706634738188632
+    second: house with Flags spritesheet_83
+  - first:
+      213: 3326159141906970948
+    second: house with Flags spritesheet_84
+  - first:
+      213: 3918263718059298465
+    second: house with Flags spritesheet_85
+  - first:
+      213: -3614346836267394520
+    second: house with Flags spritesheet_86
+  - first:
+      213: -2745766983592815796
+    second: house with Flags spritesheet_87
+  - first:
+      213: -4659347413083532248
+    second: house with Flags spritesheet_88
+  - first:
+      213: 513149391113334901
+    second: house with Flags spritesheet_89
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: house with Flags spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 896
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.44562927, y: 0.40583092}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9f614cc380c33060800000000000000
+      internalID: 6932095923753414554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 896
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.4456293, y: 0.4058309}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf5b94ed161df8480800000000000000
+      internalID: -8894660520762034692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 896
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.4456293, y: 0.4058309}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58b4e09e4fba2c2c0800000000000000
+      internalID: -4412775616499266683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 896
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.4456293, y: 0.4058309}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51d080a4c31c841a0800000000000000
+      internalID: -6824992770595746539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 896
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.4456293, y: 0.4058309}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d59c330c9e9078fa0800000000000000
+      internalID: -5798655095659574947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 896
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.4456293, y: 0.4058309}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b758f0e1bfa813b90800000000000000
+      internalID: -7263871912826141317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 896
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.4456293, y: 0.4058309}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92b7b3f088b74cc40800000000000000
+      internalID: 5531682066619136809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 896
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.4456293, y: 0.4058309}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94d88dbe495f111b0800000000000000
+      internalID: -5687494834431423159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 896
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.4456293, y: 0.4058309}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b025f25be20530600800000000000000
+      internalID: 433278150696194571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 896
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.4456293, y: 0.4058309}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 640672469d9293ea0800000000000000
+      internalID: -5892632623772639162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 784
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5072053, y: 0.40273014}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b450b96b3ab0fb60800000000000000
+      internalID: 7777921320807847090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 784
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5072053, y: 0.4027301}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 965adc8e178b7b420800000000000000
+      internalID: 2645786105480062313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 784
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5072053, y: 0.4027301}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7672693f0d11406a0800000000000000
+      internalID: -6484037974369097881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 784
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5072053, y: 0.4027301}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc2e8bb6534fdea70800000000000000
+      internalID: 8858004552385356492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 784
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5072053, y: 0.4027301}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19ed1f040c127d6e0800000000000000
+      internalID: -1812943215386304879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 784
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5072053, y: 0.4027301}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5fc60629ccbe6720800000000000000
+      internalID: 2841415987029790556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 784
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5072053, y: 0.4027301}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d33a77500edeaed00800000000000000
+      internalID: 1002875413463540541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 784
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5072053, y: 0.4027301}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e695acc9274fe51b0800000000000000
+      internalID: -5665822508091549330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 784
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5072053, y: 0.4027301}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7fc79aa8ef935500800000000000000
+      internalID: 383826214899928955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 784
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5072053, y: 0.4027301}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d04beac6e48e93790800000000000000
+      internalID: -7549747876781444083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 672
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.54487777, y: 0.48717827}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 500f6292b8d650070800000000000000
+      internalID: 8071978351589781509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 672
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5448778, y: 0.4871783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6142f5f6d410a4cc0800000000000000
+      internalID: -3726164309603048426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 672
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5448778, y: 0.4871783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 437f932aa59e68790800000000000000
+      internalID: -7528073151625169100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 672
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5448778, y: 0.4871783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd7e4420b710605b0800000000000000
+      internalID: -5402629075153655843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 672
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5448778, y: 0.4871783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3301bb01f2c22140800000000000000
+      internalID: 4693528102212535103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 672
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5448778, y: 0.4871783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdf432cd2f85507b0800000000000000
+      internalID: -5258699189786554404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 672
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5448778, y: 0.4871783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f18506ed547c9c80800000000000000
+      internalID: -8314642865392877068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 672
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5448778, y: 0.4871783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ce4655402f069910800000000000000
+      internalID: 1843677728731451076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 672
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5448778, y: 0.4871783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55bff6a4bbd3a5130800000000000000
+      internalID: 3556222730379459413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 672
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5448778, y: 0.4871783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afe8ab3d9ccc92ac0800000000000000
+      internalID: -3879344436790259974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 560
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.4456293, y: 0.4058309}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa19db6a0257ceba0800000000000000
+      internalID: -6058338615623315030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 560
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.4456293, y: 0.4058309}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51f8f99fbfb263a90800000000000000
+      internalID: -7334626581901504747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 560
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.4456293, y: 0.4058309}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec5b4a4c4a58b2790800000000000000
+      internalID: -7553797007263615538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 560
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.4456293, y: 0.4058309}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d5cb2c34f4d2e9c0800000000000000
+      internalID: -3899320181902817831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 560
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.4456293, y: 0.4058309}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf52f66e3f02f3a20800000000000000
+      internalID: 3044188105040930300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_35
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 560
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.4456293, y: 0.4058309}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4179a533ee9d6d6b0800000000000000
+      internalID: -5271786696703568108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_36
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 560
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.4456293, y: 0.4058309}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cdae447aff3482b0800000000000000
+      internalID: -5583267293106885175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_37
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 560
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.4456293, y: 0.4058309}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5a7e2bd410a066d0800000000000000
+      internalID: -2999221340391703974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_38
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 560
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.4456293, y: 0.4058309}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58a56556c9009fa40800000000000000
+      internalID: 5402349899722676869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_39
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 560
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.4456293, y: 0.4058309}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a98a112c49b33e850800000000000000
+      internalID: 6405028605148113050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5072053, y: 0.4027301}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7407b3efda077cb10800000000000000
+      internalID: 2001692451986436167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_41
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 448
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5072053, y: 0.4027301}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6679387c11fc4210800000000000000
+      internalID: 1318693895491122799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_42
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 448
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5072053, y: 0.4027301}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a560f6c00ce3e1e0800000000000000
+      internalID: -2169631107380648537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_43
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 448
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5072053, y: 0.4027301}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 321af99777d9b57a0800000000000000
+      internalID: -6387338510027742941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_44
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 448
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5072053, y: 0.4027301}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8937133e168e696d0800000000000000
+      internalID: -2983942195965234280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_45
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 448
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5072053, y: 0.4027301}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57ddad2670469df70800000000000000
+      internalID: 9212504495649119605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_46
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 448
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5072053, y: 0.4027301}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51104a4cebe81d1e0800000000000000
+      internalID: -2174800195049225963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_47
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 448
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5072053, y: 0.4027301}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b89364fa2d044ce10800000000000000
+      internalID: 2216968190201051531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_48
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 448
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5072053, y: 0.4027301}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56bdc9831357559e0800000000000000
+      internalID: -1633270435588285595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_49
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 448
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5072053, y: 0.4027301}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dd7b3d1edd971710800000000000000
+      internalID: 1663972164635426262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 336
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5448778, y: 0.4871783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 848175464005768e0800000000000000
+      internalID: -1700302354515552184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_51
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 336
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5448778, y: 0.4871783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 650b43abe44720b50800000000000000
+      internalID: 6557931888885149782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_52
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 336
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5448778, y: 0.4871783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa5c8cf2b6efdd120800000000000000
+      internalID: 2440386309421319594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_53
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 336
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5448778, y: 0.4871783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 630c0c232af740810800000000000000
+      internalID: 1730648491430035510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_54
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 336
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5448778, y: 0.4871783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12b80d82cfa2e53c0800000000000000
+      internalID: -4369007325997921503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_55
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 336
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5448778, y: 0.4871783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e7f829a3f8473620800000000000000
+      internalID: 2753749908512634856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_56
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 336
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5448778, y: 0.4871783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 966ddccc091e7ef80800000000000000
+      internalID: -8077239394638113175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_57
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 336
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5448778, y: 0.4871783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d3357cc6d6b18780800000000000000
+      internalID: -8682457572924116016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_58
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 336
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5448778, y: 0.4871783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8eac0a6d19c6730d0800000000000000
+      internalID: -3443164016474535192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_59
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 336
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5448778, y: 0.4871783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37082af45656c03e0800000000000000
+      internalID: -2086181041577230221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.4456293, y: 0.4058309}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa14590d63caf7e20800000000000000
+      internalID: 3350585999214592431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_61
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 224
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.4456293, y: 0.4058309}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aed8e41529805ecb0800000000000000
+      internalID: -4835449200390009366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_62
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 224
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.4456293, y: 0.4058309}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 772b7dcbb1ab05960800000000000000
+      internalID: 7588770000414421623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_63
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 224
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.4456293, y: 0.4058309}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98d62ba3e1ac1be10800000000000000
+      internalID: 2211771123198225801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_64
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 224
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.4456293, y: 0.4058309}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ca494e9473c1c0d0800000000000000
+      internalID: -3404224937676158269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_65
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 224
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.4456293, y: 0.4058309}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19426d4c7862420b0800000000000000
+      internalID: -5754432059307842415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_66
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 224
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.4456293, y: 0.4058309}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b167d278e350f820800000000000000
+      internalID: 2949950013751910835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_67
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 224
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.4456293, y: 0.4058309}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f66d9b37677d5830800000000000000
+      internalID: 4061533724223563513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_68
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 224
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.4456293, y: 0.4058309}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b99bdb4f41bb41be0800000000000000
+      internalID: -1507374276582458981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_69
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 224
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.4456293, y: 0.4058309}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c01fbdea3a1881420800000000000000
+      internalID: 2600971324819763468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_70
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5072053, y: 0.4027301}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0627a89e6011ae3f0800000000000000
+      internalID: -870864856557129120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_71
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 112
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5072053, y: 0.4027301}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b6b1311a01fdd200800000000000000
+      internalID: 206586183469348537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_72
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 112
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5072053, y: 0.4027301}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e937318747998f20800000000000000
+      internalID: 3425435324958325216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_73
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 112
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5072053, y: 0.4027301}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b1b57f074a801310800000000000000
+      internalID: 1373749924154683832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_74
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 112
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5072053, y: 0.4027301}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79cb6b1f854a24a40800000000000000
+      internalID: 5351020009188932759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_75
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 112
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5072053, y: 0.4027301}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23ee33a0a8c8a0200800000000000000
+      internalID: 147084462347513394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_76
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 112
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5072053, y: 0.4027301}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55b7cd07ffba14ac0800000000000000
+      internalID: -3872625090963408043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_77
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 112
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5072053, y: 0.4027301}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cad22e0e07e049b0800000000000000
+      internalID: -5097820730630677818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_78
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 112
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5072053, y: 0.4027301}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 331b0e26cd96f82f0800000000000000
+      internalID: -968438999588753101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_79
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 112
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5072053, y: 0.4027301}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1501a563f36489a0800000000000000
+      internalID: -6231746087340669667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5448778, y: 0.4871783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6df0c0ea331e55cb0800000000000000
+      internalID: -4875743409479086122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_81
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5448778, y: 0.4871783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccbd2301b67ca2d30800000000000000
+      internalID: 4407554447982648268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_82
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5448778, y: 0.4871783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6223a246102e46fa0800000000000000
+      internalID: -5808269123797765594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_83
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5448778, y: 0.4871783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8aeb8cf4a38b02cb0800000000000000
+      internalID: -4890706634738188632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_84
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5448778, y: 0.4871783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44978c7ed14e82e20800000000000000
+      internalID: 3326159141906970948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_85
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5448778, y: 0.4871783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1aec93b7718706630800000000000000
+      internalID: 3918263718059298465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_86
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5448778, y: 0.4871783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82a9939b3b247ddc0800000000000000
+      internalID: -3614346836267394520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_87
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5448778, y: 0.4871783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4354f2e97315e9d0800000000000000
+      internalID: -2745766983592815796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_88
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5448778, y: 0.4871783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 824550ec63ca65fb0800000000000000
+      internalID: -4659347413083532248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house with Flags spritesheet_89
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 48
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5448778, y: 0.4871783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 570b40607a21f1700800000000000000
+      internalID: 513149391113334901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 3576437c5ff0bb147a647bc088c09c21
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      house with Flags spritesheet_0: 6932095923753414554
+      house with Flags spritesheet_1: -8894660520762034692
+      house with Flags spritesheet_10: 7777921320807847090
+      house with Flags spritesheet_11: 2645786105480062313
+      house with Flags spritesheet_12: -6484037974369097881
+      house with Flags spritesheet_13: 8858004552385356492
+      house with Flags spritesheet_14: -1812943215386304879
+      house with Flags spritesheet_15: 2841415987029790556
+      house with Flags spritesheet_16: 1002875413463540541
+      house with Flags spritesheet_17: -5665822508091549330
+      house with Flags spritesheet_18: 383826214899928955
+      house with Flags spritesheet_19: -7549747876781444083
+      house with Flags spritesheet_2: -4412775616499266683
+      house with Flags spritesheet_20: 8071978351589781509
+      house with Flags spritesheet_21: -3726164309603048426
+      house with Flags spritesheet_22: -7528073151625169100
+      house with Flags spritesheet_23: -5402629075153655843
+      house with Flags spritesheet_24: 4693528102212535103
+      house with Flags spritesheet_25: -5258699189786554404
+      house with Flags spritesheet_26: -8314642865392877068
+      house with Flags spritesheet_27: 1843677728731451076
+      house with Flags spritesheet_28: 3556222730379459413
+      house with Flags spritesheet_29: -3879344436790259974
+      house with Flags spritesheet_3: -6824992770595746539
+      house with Flags spritesheet_30: -6058338615623315030
+      house with Flags spritesheet_31: -7334626581901504747
+      house with Flags spritesheet_32: -7553797007263615538
+      house with Flags spritesheet_33: -3899320181902817831
+      house with Flags spritesheet_34: 3044188105040930300
+      house with Flags spritesheet_35: -5271786696703568108
+      house with Flags spritesheet_36: -5583267293106885175
+      house with Flags spritesheet_37: -2999221340391703974
+      house with Flags spritesheet_38: 5402349899722676869
+      house with Flags spritesheet_39: 6405028605148113050
+      house with Flags spritesheet_4: -5798655095659574947
+      house with Flags spritesheet_40: 2001692451986436167
+      house with Flags spritesheet_41: 1318693895491122799
+      house with Flags spritesheet_42: -2169631107380648537
+      house with Flags spritesheet_43: -6387338510027742941
+      house with Flags spritesheet_44: -2983942195965234280
+      house with Flags spritesheet_45: 9212504495649119605
+      house with Flags spritesheet_46: -2174800195049225963
+      house with Flags spritesheet_47: 2216968190201051531
+      house with Flags spritesheet_48: -1633270435588285595
+      house with Flags spritesheet_49: 1663972164635426262
+      house with Flags spritesheet_5: -7263871912826141317
+      house with Flags spritesheet_50: -1700302354515552184
+      house with Flags spritesheet_51: 6557931888885149782
+      house with Flags spritesheet_52: 2440386309421319594
+      house with Flags spritesheet_53: 1730648491430035510
+      house with Flags spritesheet_54: -4369007325997921503
+      house with Flags spritesheet_55: 2753749908512634856
+      house with Flags spritesheet_56: -8077239394638113175
+      house with Flags spritesheet_57: -8682457572924116016
+      house with Flags spritesheet_58: -3443164016474535192
+      house with Flags spritesheet_59: -2086181041577230221
+      house with Flags spritesheet_6: 5531682066619136809
+      house with Flags spritesheet_60: 3350585999214592431
+      house with Flags spritesheet_61: -4835449200390009366
+      house with Flags spritesheet_62: 7588770000414421623
+      house with Flags spritesheet_63: 2211771123198225801
+      house with Flags spritesheet_64: -3404224937676158269
+      house with Flags spritesheet_65: -5754432059307842415
+      house with Flags spritesheet_66: 2949950013751910835
+      house with Flags spritesheet_67: 4061533724223563513
+      house with Flags spritesheet_68: -1507374276582458981
+      house with Flags spritesheet_69: 2600971324819763468
+      house with Flags spritesheet_7: -5687494834431423159
+      house with Flags spritesheet_70: -870864856557129120
+      house with Flags spritesheet_71: 206586183469348537
+      house with Flags spritesheet_72: 3425435324958325216
+      house with Flags spritesheet_73: 1373749924154683832
+      house with Flags spritesheet_74: 5351020009188932759
+      house with Flags spritesheet_75: 147084462347513394
+      house with Flags spritesheet_76: -3872625090963408043
+      house with Flags spritesheet_77: -5097820730630677818
+      house with Flags spritesheet_78: -968438999588753101
+      house with Flags spritesheet_79: -6231746087340669667
+      house with Flags spritesheet_8: 433278150696194571
+      house with Flags spritesheet_80: -4875743409479086122
+      house with Flags spritesheet_81: 4407554447982648268
+      house with Flags spritesheet_82: -5808269123797765594
+      house with Flags spritesheet_83: -4890706634738188632
+      house with Flags spritesheet_84: 3326159141906970948
+      house with Flags spritesheet_85: 3918263718059298465
+      house with Flags spritesheet_86: -3614346836267394520
+      house with Flags spritesheet_87: -2745766983592815796
+      house with Flags spritesheet_88: -4659347413083532248
+      house with Flags spritesheet_89: 513149391113334901
+      house with Flags spritesheet_9: -5892632623772639162
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -9,6 +9,8 @@ namespace TerritoryWars.ScriptablesObjects
     public class TileAssetsObject : ScriptableObject
     {
         public Sprite[] FirstPlayerHouses;
+        public List<HousesSprite> FirstPlayerHousesAnimated;
+        public List<HousesSprite> SecondPlayerHousesAnimated;
         public Sprite[] SecondPlayerHouses;
         public Sprite[] Mountains;
         public GameObject ForestPrefab;
@@ -24,38 +26,38 @@ namespace TerritoryWars.ScriptablesObjects
             return randomHouse;
         }
 
-        public Sprite GetNextHouse(int playerIndex)
+        public Sprite[] GetNextHouse(int playerIndex)
         {
-            Sprite[][] Houses = { FirstPlayerHouses, SecondPlayerHouses };
-            CurrentHouseIndex = (CurrentHouseIndex + 1) % Houses[playerIndex].Length;
-            Sprite nextHouse = Houses[playerIndex][CurrentHouseIndex];
-            return nextHouse;
+            List<HousesSprite>[] Houses = { FirstPlayerHousesAnimated, SecondPlayerHousesAnimated };
+            CurrentHouseIndex = (CurrentHouseIndex + 1) % Houses[playerIndex].Count;
+            Sprite[] nextHouseSprites = Houses[playerIndex][CurrentHouseIndex].HousesSprites;
+            return nextHouseSprites;
         }
         
-        public Sprite GetHouseByReference(Sprite sprite, int playerIndex)
+        public Sprite[] GetHouseByReference(Sprite[] sprites, int playerIndex)
         {
-            foreach (var house in FirstPlayerHouses)
+            foreach (var house in FirstPlayerHousesAnimated)
             {
-                if (house == sprite)
+                if (house.HousesSprites == sprites)
                 {
                     if (playerIndex == 0)
-                        return house;
+                        return house.HousesSprites;
                     else
-                        return SecondPlayerHouses[Array.IndexOf(FirstPlayerHouses, house)];
+                        return SecondPlayerHousesAnimated[FirstPlayerHousesAnimated.IndexOf(house)].HousesSprites;
                 }
             }
-            
-            foreach (var house in SecondPlayerHouses)
+
+            foreach (var house in SecondPlayerHousesAnimated)
             {
-                if (house == sprite)
+                if (house.HousesSprites == sprites)
                 {
                     if (playerIndex == 1)
-                        return house;
+                        return house.HousesSprites;
                     else
-                        return FirstPlayerHouses[Array.IndexOf(SecondPlayerHouses, house)];
+                        return FirstPlayerHousesAnimated[SecondPlayerHousesAnimated.IndexOf(house)].HousesSprites;
                 }
             }
-            
+
             return null;
         }
 

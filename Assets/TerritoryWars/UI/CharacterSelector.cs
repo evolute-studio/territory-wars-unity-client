@@ -1,7 +1,9 @@
 using System;
 using DG.Tweening;
+using TerritoryWars.General;
 using TerritoryWars.Tools;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace TerritoryWars.UI
 {
@@ -14,9 +16,12 @@ namespace TerritoryWars.UI
         public Color[] brightness;
         public int[] order;
         public float animationDuration = 0.5f;
+        private int currentCharacterId = 0;
+        public Button ApplyButton;
 
         public void Start()
         {
+            ApplyButton.onClick.AddListener(ApplyButtonClicked);
             foreach (var character in characters)
             {
                 character.Initialize();
@@ -91,6 +96,11 @@ namespace TerritoryWars.UI
             }
         }
 
+        public void ApplyButtonClicked()
+        {
+            PlayerCharactersManager.ChangeCurrentCharacterId(characters[1].CharacterId);
+        }
+
 
 
     }
@@ -101,6 +111,8 @@ namespace TerritoryWars.UI
         public GameObject MainObject;
 
         public GameObject CharacterObject;
+        
+        public int CharacterId;
         [HideInInspector]
         public SpriteRenderer CharacterRenderer;
         [HideInInspector]
