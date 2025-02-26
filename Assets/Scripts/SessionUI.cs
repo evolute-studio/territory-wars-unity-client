@@ -36,7 +36,7 @@ public class SessionUI : MonoBehaviour
             cityScoreTextPlayers[i].text = players[i].cityScore.ToString();
             tileScoreTextPlayers[i].text = players[i].tileScore.ToString();
             timeTextPlayers[i].text = players[i].time.ToString();
-            players[i].playerImage.sprite = imagePlayers[i].sprite;
+            // players[i].playerImage.sprite = imagePlayers[i].sprite;
         }
 
         foreach (var player in players)
@@ -47,8 +47,8 @@ public class SessionUI : MonoBehaviour
             }
         }
 
-        players[0].playerImage.sprite = charactersObject.GetAvatar(PlayerCharactersManager.GetCurrentCharacterId());
-        players[1].playerImage.sprite = charactersObject.GetAvatar(PlayerCharactersManager.GetOpponentCurrentCharacterId());
+        // players[0].playerImage.sprite = charactersObject.GetAvatar(PlayerCharactersManager.GetCurrentCharacterId());
+        // players[1].playerImage.sprite = charactersObject.GetAvatar(PlayerCharactersManager.GetOpponentCurrentCharacterId());
     }
     
     public void SetCityScore(int player, int score)
