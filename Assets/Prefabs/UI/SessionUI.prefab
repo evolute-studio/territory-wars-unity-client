@@ -1417,7 +1417,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5303679264781249252, guid: d039d9accee319a48a7799ada6d44454, type: 3}
+  m_Sprite: {fileID: 9103280516811619962, guid: 9a2cf65f8acf4194bbacd94cc9d96191, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3140,6 +3140,8 @@ MonoBehaviour:
   - {fileID: 6802274860861386654}
   timeTextPlayers: []
   _board: {fileID: 0}
+  LocalPlayerName: {fileID: 0}
+  RemotePlayerName: {fileID: 0}
   imagePlayers: []
   players: []
 --- !u!1 &7386069408660945740
@@ -3420,7 +3422,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5303679264781249252, guid: d039d9accee319a48a7799ada6d44454, type: 3}
+  m_Sprite: {fileID: -7863657807390931076, guid: 9a2cf65f8acf4194bbacd94cc9d96191, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

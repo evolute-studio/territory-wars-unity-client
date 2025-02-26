@@ -147,10 +147,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 41
+        width: 40
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -167,12 +167,12 @@ TextureImporter:
       name: ROAD_ICONS_1
       rect:
         serializedVersion: 2
-        x: 47
+        x: 48
         y: 0
-        width: 41
+        width: 40
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -189,7 +189,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d6bf7352308164e4cae864cbcbf68050
     internalID: 0
     vertices: []
     indices: 
