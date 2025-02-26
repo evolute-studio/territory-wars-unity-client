@@ -136,3 +136,7 @@ MonoBehaviour:
   - {fileID: 902211640, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
   - {fileID: 272867803, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
   ForestPrefab: {fileID: 7438903187752395731, guid: 6864943972b7f4f56b6bfa8909333cc2, type: 3}
+  Pins:
+  - {fileID: 1077374344162666398, guid: 02aa0d29e69cceed48e9c296a5d40a23, type: 3}
+  - {fileID: 1497060305, guid: 02aa0d29e69cceed48e9c296a5d40a23, type: 3}
+  - {fileID: 729795581, guid: 02aa0d29e69cceed48e9c296a5d40a23, type: 3}

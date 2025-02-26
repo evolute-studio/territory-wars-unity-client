@@ -23,6 +23,7 @@ namespace TerritoryWars.General
         public GameObject[] Players;
         public GameObject MillPrefab;
         public GameObject ClashAnimationPrefab;
+        public GameObject PinPrefab;
         private int _currentPlayerIndex = 0;
         
         public GameObject GetNextPlayer()

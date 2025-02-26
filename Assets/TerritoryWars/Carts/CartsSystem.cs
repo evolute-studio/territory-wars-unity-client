@@ -66,12 +66,12 @@ namespace TerritoryWars.Carts
             
             //int cartsCount = tileData.id.Count(c => c == 'R');
             int cartsCount = 1;
-            Cart[] carts = new Cart[cartsCount];
+            OwnerPin[] carts = new OwnerPin[cartsCount];
             for (int i = 0; i < cartsCount; i++)
             {
                 GameObject cartObject = Instantiate(PlayerCartPrefab, tileObject.transform);
                 cartObject.SetActive(false);
-                carts[i] = new Cart(cartObject);
+                carts[i] = new OwnerPin(cartObject);
             }
             roadTile.AddCart(carts);
 

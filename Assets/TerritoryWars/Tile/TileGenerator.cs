@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using DG.Tweening;
 using TerritoryWars.General;
 using TerritoryWars.ScriptablesObjects;
 using TerritoryWars.Tools;
@@ -16,31 +17,29 @@ namespace TerritoryWars.Tile
         public TileConnector[] connectors;
         public SpriteRenderer RoadRenderer;
         public TileAssetsObject TileAssetsObject;
-        
+
         public TileJokerAnimator TileJokerAnimator;
 
         public TileRotator TileRotator;
         public GameObject City { get; private set; }
         public GameObject Mill { get; private set; }
-        
+
         private TileData _tileData;
 
 
-        [Header("Roads")]
-        public List<RoadPair> RoadPairs;
+        [Header("Roads")] public List<RoadPair> RoadPairs;
 
-        [Header("Cities")]
-        public List<CityData> CityData;
+        [Header("Cities")] public List<CityData> CityData;
 
-        [HideInInspector]
-        public string TileConfig;
+        [HideInInspector] public string TileConfig;
 
         public GameObject RoadPath;
-        
+
         private int _currentHouseIndex = 0;
-        
+
         public List<SpriteRenderer> AllCityRenderers = new List<SpriteRenderer>();
         public List<LineRenderer> AllCityLineRenderers = new List<LineRenderer>();
+        public List<SpriteRenderer> Pins = new List<SpriteRenderer>();
 
 
         public void Start() => Initialize();
@@ -69,8 +68,15 @@ namespace TerritoryWars.Tile
         {
             Destroy(City);
             Destroy(Mill);
+            foreach (var pin in Pins)
+            {
+                if(pin == null) continue;
+                pin.transform.DOKill();
+                Destroy(pin.gameObject);
+            }
             City = null;
             Mill = null;
+            Pins.Clear();
             AllCityRenderers = new List<SpriteRenderer>();
             AllCityLineRenderers = new List<LineRenderer>();
 
@@ -101,7 +107,7 @@ namespace TerritoryWars.Tile
                 RoadRenderer.sprite = null;
                 return;
             }
-            
+
             int roadCount = id.Count(c => c == 'R');
             int cityCount = id.Count(c => c == 'C');
 
@@ -117,10 +123,11 @@ namespace TerritoryWars.Tile
                         break;
                     }
                 }
+
                 roadCount = 2;
             }
-            
-            
+
+
             id = id.Replace('C', 'X');
             id = id.Replace('F', 'X');
             RoadRenderer.transform.localScale = Vector3.one;
@@ -133,6 +140,7 @@ namespace TerritoryWars.Tile
                     RoadPath = Instantiate(roadPair.RoadPath, RoadRenderer.transform);
                     break;
                 }
+
                 if (roadPair.MirroredConfig == id)
                 {
                     RoadRenderer.sprite = roadPair.Sprite;
@@ -145,22 +153,66 @@ namespace TerritoryWars.Tile
                     break;
                 }
             }
-            
+
             if (roadCount >= 3 && cityCount == 0)
             {
-                if(Mill != null)
+                if (Mill != null)
                     Destroy(Mill);
                 Mill = Instantiate(PrefabsManager.Instance.MillPrefab, transform);
                 Mill.transform.localPosition = Vector3.zero;
             }
             else
             {
-                if(Mill != null)
+                if (Mill != null)
                     Destroy(Mill);
             }
+
+            GenerateRoadPins();
         }
 
-        public void GenerateCity()
+        private void GenerateRoadPins()
+        {
+            int playerId = SessionManager.Instance.CurrentTurnPlayer != null
+                ? SessionManager.Instance.CurrentTurnPlayer.LocalId
+                : -1;
+            if (RoadPath == null)
+            {
+                return;
+            }
+            Transform[] points = new Transform[4];
+            for (int i = 0; i < 4; i++)
+            {
+                points[i] = RoadPath.transform.GetChild(i);
+            }
+            CustomLogger.LogInfo("Points count: " + points.Length);
+            SpriteRenderer[] pins = new SpriteRenderer[4];
+            char[] id = TileConfig.ToCharArray();
+            for (int i = 0; i < id.Length; i++)
+            {
+                if (id[i] == 'R')
+                {
+                    CustomLogger.LogInfo("Creating pin for road " + i + " parent: " + points[i].name);
+                    GameObject pin = Instantiate(PrefabsManager.Instance.PinPrefab, points[i]);
+                    SpriteRenderer pinRenderer = pin.GetComponent<SpriteRenderer>();
+                    pin.transform.parent = points[i];
+                    Vector3 scale = pinRenderer.transform.localScale;
+                    scale.x = pinRenderer.transform.parent.parent.parent.localScale.x;
+                    scale.y = pinRenderer.transform.parent.parent.parent.localScale.y;
+                    pinRenderer.transform.localScale = scale;
+                    pinRenderer.transform.localPosition = Vector3.zero;
+                    pin.transform.DOLocalMoveY(0.035f, 2f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutQuad);
+                    if (_tileData.OwnerId == -1) playerId = -1;
+                    pinRenderer.sprite = TileAssetsObject.GetPinByPlayerId(playerId);
+                    pins[i] = pinRenderer;
+                }
+            }
+            //_tileData.RoadsPin = pins;
+            Pins.AddRange(pins);
+            
+        }
+    
+
+    public void GenerateCity()
         {
             string id = TileConfig;
             int cityCount = id.Count(c => c == 'C');

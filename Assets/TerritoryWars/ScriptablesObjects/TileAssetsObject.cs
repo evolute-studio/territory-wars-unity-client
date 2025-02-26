@@ -16,6 +16,8 @@ namespace TerritoryWars.ScriptablesObjects
         public Sprite[] Mountains;
         public GameObject ForestPrefab;
 
+        public Sprite[] Pins; // 0 - neutral, 1 - first player, 2 - second player
+
         public int CurrentIndex { get; private set; } = 0;
         public int CurrentHouseIndex { get; private set; } = 0;
 
@@ -66,6 +68,12 @@ namespace TerritoryWars.ScriptablesObjects
             }
 
             return null;
+        }
+        
+        public Sprite GetPinByPlayerId(int playerId)
+        {
+            int id = playerId + 1;
+            return Pins[id];
         }
 
         public void BackIndex(int times)

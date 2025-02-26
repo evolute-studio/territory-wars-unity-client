@@ -744,6 +744,7 @@ MonoBehaviour:
   RoadPath: {fileID: 0}
   AllCityRenderers: []
   AllCityLineRenderers: []
+  Pins: []
 --- !u!114 &13953019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1808,6 +1809,7 @@ MonoBehaviour:
   RoadPath: {fileID: 0}
   AllCityRenderers: []
   AllCityLineRenderers: []
+  Pins: []
 --- !u!114 &46274231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3776,6 +3778,7 @@ MonoBehaviour:
   RoadPath: {fileID: 0}
   AllCityRenderers: []
   AllCityLineRenderers: []
+  Pins: []
 --- !u!114 &108572643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4883,6 +4886,7 @@ MonoBehaviour:
   RoadPath: {fileID: 0}
   AllCityRenderers: []
   AllCityLineRenderers: []
+  Pins: []
 --- !u!114 &152342360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6336,6 +6340,7 @@ MonoBehaviour:
   RoadPath: {fileID: 0}
   AllCityRenderers: []
   AllCityLineRenderers: []
+  Pins: []
 --- !u!114 &220333393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7421,6 +7426,7 @@ MonoBehaviour:
   RoadPath: {fileID: 0}
   AllCityRenderers: []
   AllCityLineRenderers: []
+  Pins: []
 --- !u!114 &244106202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7771,6 +7777,7 @@ MonoBehaviour:
   RoadPath: {fileID: 0}
   AllCityRenderers: []
   AllCityLineRenderers: []
+  Pins: []
 --- !u!114 &245490570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8633,6 +8640,7 @@ MonoBehaviour:
   RoadPath: {fileID: 0}
   AllCityRenderers: []
   AllCityLineRenderers: []
+  Pins: []
 --- !u!114 &288805508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14218,6 +14226,7 @@ MonoBehaviour:
   RoadPath: {fileID: 0}
   AllCityRenderers: []
   AllCityLineRenderers: []
+  Pins: []
 --- !u!114 &489755571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20626,6 +20635,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!1001 &725155252
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1282971855922823901, guid: 774b7ce5654b64e70a908d11e8fec69e, type: 3}
+      propertyPath: m_Name
+      value: TilePrefab (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4595436739884098153, guid: 774b7ce5654b64e70a908d11e8fec69e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -23.328
+      objectReference: {fileID: 0}
+    - target: {fileID: 4595436739884098153, guid: 774b7ce5654b64e70a908d11e8fec69e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.338
+      objectReference: {fileID: 0}
+    - target: {fileID: 4595436739884098153, guid: 774b7ce5654b64e70a908d11e8fec69e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4595436739884098153, guid: 774b7ce5654b64e70a908d11e8fec69e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4595436739884098153, guid: 774b7ce5654b64e70a908d11e8fec69e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4595436739884098153, guid: 774b7ce5654b64e70a908d11e8fec69e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4595436739884098153, guid: 774b7ce5654b64e70a908d11e8fec69e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4595436739884098153, guid: 774b7ce5654b64e70a908d11e8fec69e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4595436739884098153, guid: 774b7ce5654b64e70a908d11e8fec69e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4595436739884098153, guid: 774b7ce5654b64e70a908d11e8fec69e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 774b7ce5654b64e70a908d11e8fec69e, type: 3}
 --- !u!1 &725812503
 GameObject:
   m_ObjectHideFlags: 0
@@ -21574,6 +21640,7 @@ MonoBehaviour:
   RoadPath: {fileID: 0}
   AllCityRenderers: []
   AllCityLineRenderers: []
+  Pins: []
 --- !u!114 &744814868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25544,6 +25611,7 @@ MonoBehaviour:
   RoadPath: {fileID: 0}
   AllCityRenderers: []
   AllCityLineRenderers: []
+  Pins: []
 --- !u!114 &886106264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28918,6 +28986,7 @@ MonoBehaviour:
   RoadPath: {fileID: 0}
   AllCityRenderers: []
   AllCityLineRenderers: []
+  Pins: []
 --- !u!114 &1001611983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29314,6 +29383,7 @@ MonoBehaviour:
   RoadPath: {fileID: 0}
   AllCityRenderers: []
   AllCityLineRenderers: []
+  Pins: []
 --- !u!114 &1006209252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30140,6 +30210,7 @@ MonoBehaviour:
   RoadPath: {fileID: 0}
   AllCityRenderers: []
   AllCityLineRenderers: []
+  Pins: []
 --- !u!114 &1029797343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38331,6 +38402,7 @@ MonoBehaviour:
   RoadPath: {fileID: 0}
   AllCityRenderers: []
   AllCityLineRenderers: []
+  Pins: []
 --- !u!114 &1284754621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39537,6 +39609,7 @@ MonoBehaviour:
   RoadPath: {fileID: 0}
   AllCityRenderers: []
   AllCityLineRenderers: []
+  Pins: []
 --- !u!114 &1326452238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41696,6 +41769,7 @@ MonoBehaviour:
   RoadPath: {fileID: 0}
   AllCityRenderers: []
   AllCityLineRenderers: []
+  Pins: []
 --- !u!114 &1415290367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45210,6 +45284,7 @@ MonoBehaviour:
   - {fileID: 6849612934398127024, guid: a995aaa8a0d2d034ba3bc5c29e0bed8f, type: 3}
   MillPrefab: {fileID: 3455373684899882535, guid: fcd9b48a23aea57cfb312a4245521c07, type: 3}
   ClashAnimationPrefab: {fileID: 3572563069366787145, guid: 1150a510853d224fd89883a8f0548b6c, type: 3}
+  PinPrefab: {fileID: 4552174000051031344, guid: 68fa6979b3f7643588120e3008d09c5d, type: 3}
 --- !u!1 &1539724579
 GameObject:
   m_ObjectHideFlags: 0
@@ -47156,6 +47231,7 @@ MonoBehaviour:
   RoadPath: {fileID: 0}
   AllCityRenderers: []
   AllCityLineRenderers: []
+  Pins: []
 --- !u!114 &1628962978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51145,6 +51221,7 @@ MonoBehaviour:
   RoadPath: {fileID: 0}
   AllCityRenderers: []
   AllCityLineRenderers: []
+  Pins: []
 --- !u!114 &1768213543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56508,6 +56585,7 @@ MonoBehaviour:
   RoadPath: {fileID: 0}
   AllCityRenderers: []
   AllCityLineRenderers: []
+  Pins: []
 --- !u!114 &1923207648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68435,6 +68513,7 @@ MonoBehaviour:
   RoadPath: {fileID: 0}
   AllCityRenderers: []
   AllCityLineRenderers: []
+  Pins: []
 --- !u!1 &4463962604794711543
 GameObject:
   m_ObjectHideFlags: 0
@@ -70758,6 +70837,7 @@ MonoBehaviour:
   RoadPath: {fileID: 0}
   AllCityRenderers: []
   AllCityLineRenderers: []
+  Pins: []
 --- !u!222 &6325765557633565629
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -74990,3 +75070,4 @@ SceneRoots:
   - {fileID: 1391132964}
   - {fileID: 1963761405}
   - {fileID: 560712303}
+  - {fileID: 725155252}

@@ -22,14 +22,14 @@ namespace TerritoryWars.Carts
         public int OwnerId;
         public GameObject gameObject;
         public TileData tileData;
-        public List<Cart> carts;
+        public List<OwnerPin> carts;
         public Vector3[] path;
 
         public RoadTile NextTile;
         public RoadTile PreviousTile;
         
         private List<int> currentTargetIndices;
-        public List<Cart> pendingCarts;
+        public List<OwnerPin> pendingCarts;
         private bool firstCondition = false;
         private bool isReadyToSpawnCarts = false;
         private bool isCartsSpawned = false;
@@ -44,15 +44,15 @@ namespace TerritoryWars.Carts
                 path[i] = pathParent.GetChild(i).position;
             }
 
-            carts = new List<Cart>();
+            carts = new List<OwnerPin>();
             currentTargetIndices = new List<int>();
             OwnerId = ownerId;
         }
         
         
-        public void AddCart(Cart[] newCarts)
+        public void AddCart(OwnerPin[] newCarts)
         {
-            pendingCarts = new List<Cart>(newCarts);
+            pendingCarts = new List<OwnerPin>(newCarts);
         }
 
         public void TrySpawnCarts()
@@ -160,16 +160,16 @@ namespace TerritoryWars.Carts
         }
 
         // метод коли тайл приймає карт з іншого тайлу
-        public void AcceptCart(Cart cart)
+        public void AcceptCart(OwnerPin ownerPin)
         {
-            carts.Add(cart);
-            int startIndex = GetClosestPathIndex(cart.gameObject.transform.position);
+            carts.Add(ownerPin);
+            int startIndex = GetClosestPathIndex(ownerPin.gameObject.transform.position);
             currentTargetIndices.Add(startIndex);
-            if (PreviousTile == null) cart.gameObject.transform.position = path[startIndex];
+            if (PreviousTile == null) ownerPin.gameObject.transform.position = path[startIndex];
             
             Debug.Log(
-                $"Cart accepted at position {cart.gameObject.transform.position}, starting at index {startIndex}");
-            cart.spriteRenderer.sprite = OwnerId == 0
+                $"Cart accepted at position {ownerPin.gameObject.transform.position}, starting at index {startIndex}");
+            ownerPin.spriteRenderer.sprite = OwnerId == 0
                 ? CartsSystem.FirstPlayerCartSpriteStatic
                 : CartsSystem.SecondPlayerCartSpriteStatic;
 
@@ -291,11 +291,11 @@ namespace TerritoryWars.Carts
             return nextTarget;
         }
 
-        private void TransferCartToNextTile(Cart cart, int cartIndex)
+        private void TransferCartToNextTile(OwnerPin ownerPin, int cartIndex)
         {
             if (NextTile != null)
             {
-                NextTile.AcceptCart(cart);
+                NextTile.AcceptCart(ownerPin);
                 carts.RemoveAt(cartIndex);
                 currentTargetIndices.RemoveAt(cartIndex);
             }
@@ -304,14 +304,14 @@ namespace TerritoryWars.Carts
                 RoadTile startingTile = FindStartingTile();
                 if (startingTile != this)
                 {
-                    startingTile.AcceptCart(cart);
+                    startingTile.AcceptCart(ownerPin);
                     carts.RemoveAt(cartIndex);
                     currentTargetIndices.RemoveAt(cartIndex);
                 }
                 else
                 {
                     // Переміщуємо карт на початок стартового тайла
-                    cart.gameObject.transform.position = startingTile.path[0];
+                    ownerPin.gameObject.transform.position = startingTile.path[0];
                     currentTargetIndices[cartIndex] = 0;
                 }
             }

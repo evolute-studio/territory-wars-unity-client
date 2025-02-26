@@ -16,6 +16,9 @@ namespace TerritoryWars.Tile
         public int rotationIndex = 0;
         public int OwnerId = -1;
 
+        public SpriteRenderer[] RoadsPin = new SpriteRenderer[4]; 
+        
+
         public TileData(string tileCode)
         {
             sides = tileCode.ToCharArray();

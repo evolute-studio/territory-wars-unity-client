@@ -287,6 +287,7 @@ MonoBehaviour:
   maxRandomDelay: 0.5
   waitBetweenLoops: 0
   playOnAwake: 1
+  _spriteRenderer: {fileID: 0}
 --- !u!1 &578906564450597520
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,6 +402,7 @@ MonoBehaviour:
   maxRandomDelay: 0.5
   waitBetweenLoops: 0
   playOnAwake: 1
+  _spriteRenderer: {fileID: 0}
 --- !u!1 &641903199541287788
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,6 +711,7 @@ MonoBehaviour:
   maxRandomDelay: 0.5
   waitBetweenLoops: 0
   playOnAwake: 1
+  _spriteRenderer: {fileID: 0}
 --- !u!1 &1065501864389376619
 GameObject:
   m_ObjectHideFlags: 0
@@ -892,6 +895,18 @@ MonoBehaviour:
     FlipX: 1
     FlipY: 0
     RoadPath: {fileID: 5505607829167185695, guid: 7a985042e14754c1b85bb551570083bf, type: 3}
+  - MainConfig: XXXR
+    MirroredConfig: RXXX
+    Sprite: {fileID: 8044837882678929092, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
+    FlipX: 1
+    FlipY: 0
+    RoadPath: {fileID: 5505607829167185695, guid: 7a985042e14754c1b85bb551570083bf, type: 3}
+  - MainConfig: XRXX
+    MirroredConfig: XXRX
+    Sprite: {fileID: 8044837882678929092, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
+    FlipX: 1
+    FlipY: 0
+    RoadPath: {fileID: 5505607829167185695, guid: 7a985042e14754c1b85bb551570083bf, type: 3}
   - MainConfig: XXRR
     MirroredConfig: RRXX
     Sprite: {fileID: 862869666472089368, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
@@ -1014,6 +1029,7 @@ MonoBehaviour:
   RoadPath: {fileID: 0}
   AllCityRenderers: []
   AllCityLineRenderers: []
+  Pins: []
 --- !u!114 &2757118565399566220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1147,6 +1163,7 @@ MonoBehaviour:
   maxRandomDelay: 0.5
   waitBetweenLoops: 0
   playOnAwake: 1
+  _spriteRenderer: {fileID: 0}
 --- !u!1 &1898408854631687927
 GameObject:
   m_ObjectHideFlags: 0
@@ -1348,6 +1365,7 @@ MonoBehaviour:
   maxRandomDelay: 0.5
   waitBetweenLoops: 0
   playOnAwake: 1
+  _spriteRenderer: {fileID: 0}
 --- !u!1 &2373883306116039529
 GameObject:
   m_ObjectHideFlags: 0
@@ -1635,6 +1653,7 @@ MonoBehaviour:
   maxRandomDelay: 0.5
   waitBetweenLoops: 0
   playOnAwake: 1
+  _spriteRenderer: {fileID: 0}
 --- !u!1 &2713798503080142887
 GameObject:
   m_ObjectHideFlags: 0
@@ -1748,6 +1767,7 @@ MonoBehaviour:
   maxRandomDelay: 0.5
   waitBetweenLoops: 0
   playOnAwake: 1
+  _spriteRenderer: {fileID: 0}
 --- !u!1 &2789809172933933645
 GameObject:
   m_ObjectHideFlags: 0
@@ -1984,6 +2004,7 @@ MonoBehaviour:
   maxRandomDelay: 0.5
   waitBetweenLoops: 0
   playOnAwake: 1
+  _spriteRenderer: {fileID: 0}
 --- !u!1 &3262034648682482269
 GameObject:
   m_ObjectHideFlags: 0
@@ -2184,6 +2205,7 @@ MonoBehaviour:
   maxRandomDelay: 0.5
   waitBetweenLoops: 0
   playOnAwake: 1
+  _spriteRenderer: {fileID: 0}
 --- !u!1 &3356758406836872827
 GameObject:
   m_ObjectHideFlags: 0
@@ -2297,6 +2319,7 @@ MonoBehaviour:
   maxRandomDelay: 0.5
   waitBetweenLoops: 0
   playOnAwake: 1
+  _spriteRenderer: {fileID: 0}
 --- !u!1 &3507396241334653701
 GameObject:
   m_ObjectHideFlags: 0
@@ -2512,6 +2535,7 @@ MonoBehaviour:
   maxRandomDelay: 0.5
   waitBetweenLoops: 0
   playOnAwake: 1
+  _spriteRenderer: {fileID: 0}
 --- !u!1 &3702293912738140198
 GameObject:
   m_ObjectHideFlags: 0
@@ -2620,6 +2644,7 @@ MonoBehaviour:
   maxRandomDelay: 0.5
   waitBetweenLoops: 0
   playOnAwake: 1
+  _spriteRenderer: {fileID: 0}
 --- !u!1 &3712107169157762108
 GameObject:
   m_ObjectHideFlags: 0
@@ -2926,6 +2951,7 @@ MonoBehaviour:
   maxRandomDelay: 0.5
   waitBetweenLoops: 0
   playOnAwake: 1
+  _spriteRenderer: {fileID: 0}
 --- !u!1 &4463962605948514686
 GameObject:
   m_ObjectHideFlags: 0
@@ -3140,6 +3166,7 @@ MonoBehaviour:
   maxRandomDelay: 0.5
   waitBetweenLoops: 0
   playOnAwake: 1
+  _spriteRenderer: {fileID: 0}
 --- !u!1 &5770431420310901589
 GameObject:
   m_ObjectHideFlags: 0
@@ -3413,8 +3440,8 @@ Transform:
   m_GameObject: {fileID: 6427572621328051650}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.281, y: 0.133, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.25, y: -0.138, z: 0}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4595436739884098153}
@@ -3587,6 +3614,7 @@ MonoBehaviour:
   maxRandomDelay: 0.5
   waitBetweenLoops: 0
   playOnAwake: 1
+  _spriteRenderer: {fileID: 0}
 --- !u!1 &6670752198838199653
 GameObject:
   m_ObjectHideFlags: 0
@@ -3832,6 +3860,7 @@ MonoBehaviour:
   maxRandomDelay: 0.5
   waitBetweenLoops: 0
   playOnAwake: 1
+  _spriteRenderer: {fileID: 0}
 --- !u!1 &6904588712519242799
 GameObject:
   m_ObjectHideFlags: 0
@@ -4377,6 +4406,7 @@ MonoBehaviour:
   maxRandomDelay: 0.5
   waitBetweenLoops: 0
   playOnAwake: 1
+  _spriteRenderer: {fileID: 0}
 --- !u!1 &8383418951159515312
 GameObject:
   m_ObjectHideFlags: 0
@@ -4578,6 +4608,7 @@ MonoBehaviour:
   maxRandomDelay: 0.5
   waitBetweenLoops: 0
   playOnAwake: 1
+  _spriteRenderer: {fileID: 0}
 --- !u!1 &8748874040126171855
 GameObject:
   m_ObjectHideFlags: 0
