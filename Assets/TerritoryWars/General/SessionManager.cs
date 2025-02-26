@@ -161,6 +161,7 @@ namespace TerritoryWars.General
             InitializePlayers();
             Board.Initialize();
             gameUI.Initialize();
+            sessionUI.Initialization();
             StartGame();
         }
 

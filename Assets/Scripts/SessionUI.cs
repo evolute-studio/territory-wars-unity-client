@@ -25,8 +25,6 @@ public class SessionUI : MonoBehaviour
     
     private SessionManager _sessionManager;
 
-    public void Start() => Initialization();
-
     public void Initialization()
     {
         _sessionManager = FindObjectOfType<SessionManager>();
