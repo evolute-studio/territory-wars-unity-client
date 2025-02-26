@@ -195,6 +195,7 @@ namespace TerritoryWars.General
                     tilePreview.SetPosition(x, y);
                     TileJokerAnimator.EvoluteTileDisappear();
                     TileJokerAnimatorUI.EvoluteTileDisappear();
+                    gameUI.SetRotateButtonActive(true);
                     
                     StartCoroutine(InvokeActionWithDelay(0.8f, () =>
                     {

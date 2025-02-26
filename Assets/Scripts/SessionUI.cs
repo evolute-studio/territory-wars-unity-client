@@ -19,6 +19,8 @@ public class SessionUI : MonoBehaviour
     public TextMeshProUGUI LocalPlayerName;
     public TextMeshProUGUI RemotePlayerName;
     public CharactersObject charactersObject;
+    public TextMeshProUGUI LocalPlayerScore;
+    public TextMeshProUGUI RemotePlayerScore;
 
     public List<Image> imagePlayers;
 
@@ -59,6 +61,16 @@ public class SessionUI : MonoBehaviour
     public void SetRoadScore(int player, int score)
     {
         tileScoreTextPlayers[player].text = score.ToString();
+    }
+
+    public void SetLocalPlayerScore(int localPlayerCityScore, int localPlayerTileScore)
+    {
+        LocalPlayerScore.text = (localPlayerCityScore + localPlayerTileScore).ToString();
+    }
+    
+    public void SetRemotePlayerScore(int remotePlayerCityScore, int remotePlayerTileScore)
+    {
+        RemotePlayerScore.text = (remotePlayerCityScore + remotePlayerTileScore).ToString();
     }
 
     public void UpdateTime()

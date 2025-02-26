@@ -137,6 +137,8 @@ namespace TerritoryWars
             GameUI.Instance.SessionUI.SetCityScore(1, cityScoreRed);
             GameUI.Instance.SessionUI.SetRoadScore(0, cartScoreBlue);
             GameUI.Instance.SessionUI.SetRoadScore(1, cartScoreRed);
+            GameUI.Instance.SessionUI.SetLocalPlayerScore(cityScoreBlue, cartScoreBlue);
+            GameUI.Instance.SessionUI.SetRemotePlayerScore(cityScoreRed, cartScoreRed);
         }
         
         private void GameFinished(FieldElement board_id)
