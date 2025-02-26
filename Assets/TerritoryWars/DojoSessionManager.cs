@@ -17,6 +17,8 @@ namespace TerritoryWars
 
         private Account _localPlayerAccount => _dojoGameManager.LocalBurnerAccount;
         private evolute_duel_Board _localPlayerBoard;
+        private int _moveCount = 0;
+        private int _snapshotTurn = 0;
         //public string LastMoveIdHex { get; set; }
         //public int LastPlayerSide { get; set; }
 
@@ -91,6 +93,7 @@ namespace TerritoryWars
             string player = eventModel.player.Hex();
             if (player != SessionManager.Instance.LocalPlayer.Address.Hex() && player != SessionManager.Instance.RemotePlayer.Address.Hex()) return;
             
+            _moveCount++;
             string move_id = eventModel.move_id.Hex();
             string prev_move_id = eventModel.prev_move_id switch
             {
@@ -143,6 +146,7 @@ namespace TerritoryWars
             {
                 CustomLogger.LogEvent($"[GameFinished] | BoardId: {board_id.Hex()}");
                 GameUI.Instance.ShowResultPopUp();
+                CreateSnapshot();
             }
         }
         
@@ -238,6 +242,29 @@ namespace TerritoryWars
                                       $"col: {col} |" +
                                       $"row: {row} |" +
                                       $"tile config: {data}");
+            }
+        }
+        
+        public void SetSnapshotTurn()
+        {
+            _snapshotTurn = _moveCount;
+        }
+        
+        public void CreateSnapshot()
+        {
+            if (_snapshotTurn == 0) return;
+            
+            try
+            {
+                var txHash = _dojoGameManager.GameSystem.create_snapshot(_localPlayerAccount, LocalPlayerBoard.id, (byte)_snapshotTurn);
+                CustomLogger.LogEvent($"[Create Snapshot]: Hash {txHash} Account {_localPlayerAccount.Address.Hex()} created a snapshot");
+            }
+            catch (Exception e)
+            {
+                CustomLogger.LogError($"Error creating snapshot: {e.Message}. " +
+                                      $"\n| account: {_localPlayerAccount.Address.Hex()} |" +
+                                      $"boardId: {LocalPlayerBoard.id} |" +
+                                      $"snapshotTurn: {_snapshotTurn}");
             }
         }
 

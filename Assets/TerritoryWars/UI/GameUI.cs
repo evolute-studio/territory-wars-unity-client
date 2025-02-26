@@ -46,6 +46,9 @@ namespace TerritoryWars.UI
         [SerializeField] private ResultPopUpUI _resultPopUpUI;
         [SerializeField] public SessionUI SessionUI;
         
+        [SerializeField] private Button SaveSnapshotButton;
+        [SerializeField] private TextMeshProUGUI SaveSnapshotText;
+        
         public static event Action OnJokerButtonClickedEvent;
 
         [Header("Tile Preview")]
@@ -98,6 +101,11 @@ namespace TerritoryWars.UI
             if (jokerButton != null)
             {
                 jokerButton.onClick.AddListener(OnJokerButtonClicked);
+            }
+            
+            if (SaveSnapshotButton != null)
+            {
+                SaveSnapshotButton.onClick.AddListener(OnSaveSnapshotButtonClicked);
             }
         }
         
@@ -250,6 +258,31 @@ namespace TerritoryWars.UI
                 tilePreviewUITileJokerAnimator.StopIdleJokerAnimation();
                 UpdateUI();
             }
+        }
+        
+        private void OnSaveSnapshotButtonClicked()
+        {
+            SaveSnapshotText.gameObject.SetActive(true);
+
+            DojoGameManager.Instance.SessionManager.SetSnapshotTurn();
+            
+            SaveSnapshotButton.interactable = false;
+            SaveSnapshotText.transform.DOScale(1.2f, 0.1f).OnComplete(() =>
+            {
+                SaveSnapshotText.transform.DOScale(1f, 0.1f);
+            });
+            DOVirtual.DelayedCall(3, () =>
+            {
+                SaveSnapshotButton.GetComponent<SpriteRenderer>().DOFade(0, 0.5f).OnComplete(() =>
+                {
+                    SaveSnapshotButton.gameObject.SetActive(false);
+                });
+                //SaveSnapshotButton.interactable = true;
+                SaveSnapshotText.DOFade(0, 0.5f).OnComplete(() =>
+                {
+                    SaveSnapshotText.gameObject.SetActive(false);
+                });
+            });
         }
 
         public void SetEndTurnButtonActive(bool active)

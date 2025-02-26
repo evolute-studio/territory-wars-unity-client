@@ -163,6 +163,7 @@ namespace TerritoryWars
         }
 
         public GameObject[] GetGames() => WorldManager.Entities<evolute_duel_Game>();
+        public GameObject[] GetSnapshots() => WorldManager.Entities<evolute_duel_Snapshot>();
         
         public async void CreateGame()
         {
@@ -176,6 +177,21 @@ namespace TerritoryWars
             {
                 CustomSceneManager.Instance.LoadingScreen.SetActive(false);
                 CustomLogger.LogError($"Failed to create game. {e}");
+            }
+        }
+        
+        public async void CreateGameFromSnapshot(FieldElement snapshotId)
+        {
+            try
+            {
+                CustomSceneManager.Instance.LoadingScreen.SetActive(true, CancelGame);
+                var txHash = await GameSystem.create_game_from_snapshot(LocalBurnerAccount, snapshotId);
+                CustomLogger.LogInfo($"Create Game from Snapshot: {txHash.Hex()}");
+            }
+            catch (Exception e)
+            {
+                CustomSceneManager.Instance.LoadingScreen.SetActive(false);
+                CustomLogger.LogError($"Failed to create game from snapshot. {e}");
             }
         }
         

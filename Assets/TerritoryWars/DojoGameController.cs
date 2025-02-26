@@ -18,6 +18,8 @@ namespace TerritoryWars
         private GUIStyle textFieldStyle;
         private GUIStyle logStyle;
         private bool stylesInitialized;
+
+        public FieldElement SnapshotGameId;
         
         private void Awake()
         {
@@ -136,17 +138,17 @@ namespace TerritoryWars
             
             
             
-            // Область для логів
-            GUILayout.BeginArea(new Rect(10, 220, 500, 400));
-            GUILayout.Label("Logs:", buttonStyle);
-            
-            scrollPosition = GUILayout.BeginScrollView(scrollPosition, 
-                GUI.skin.box, GUILayout.Width(480), GUILayout.Height(380));
-            
-            GUILayout.TextArea(logMessages, logStyle);
-            
-            GUILayout.EndScrollView();
-            GUILayout.EndArea();
+            // // Область для логів
+            // GUILayout.BeginArea(new Rect(10, 220, 500, 400));
+            // GUILayout.Label("Logs:", buttonStyle);
+            //
+            // scrollPosition = GUILayout.BeginScrollView(scrollPosition, 
+            //     GUI.skin.box, GUILayout.Width(480), GUILayout.Height(380));
+            //
+            // GUILayout.TextArea(logMessages, logStyle);
+            //
+            // GUILayout.EndScrollView();
+            // GUILayout.EndArea();
         }
         
         private string hostAddress = "";
