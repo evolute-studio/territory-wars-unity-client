@@ -8485,8 +8485,8 @@ MonoBehaviour:
   _deckContainerCanvasGroup: {fileID: 81638378}
   _resultPopUpUI: {fileID: 751280849}
   SessionUI: {fileID: 579849686}
-  SaveSnapshotButton: {fileID: 0}
-  SaveSnapshotText: {fileID: 0}
+  SaveSnapshotButton: {fileID: 1302876534}
+  SaveSnapshotText: {fileID: 897750885}
   tilePreview: {fileID: 1558212604}
   tilePreviewUITileJokerAnimator: {fileID: 605219370}
   arrowAnimations: {fileID: 742295723}
@@ -26036,7 +26036,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 282.9, y: 72}
+  m_AnchoredPosition: {x: 282.89996, y: 72}
   m_SizeDelta: {x: 1314.99, y: 62.72}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &897750885
@@ -38684,7 +38684,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 94.170044, y: 57.44}
+  m_AnchoredPosition: {x: 94.170044, y: 57.440002}
   m_SizeDelta: {x: 68, y: 31}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1302876534

@@ -28,6 +28,9 @@ public class evolute_duel_Game : ModelInstance {
 
         [ModelField("board_id")]
         public Option<FieldElement> board_id;
+        
+        [ModelField("snapshot_id")]
+        public Option<FieldElement> snapshot_id;
 
     // Start is called before the first frame update
     void Start() {

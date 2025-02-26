@@ -165,6 +165,23 @@ namespace TerritoryWars
         public GameObject[] GetGames() => WorldManager.Entities<evolute_duel_Game>();
         public GameObject[] GetSnapshots() => WorldManager.Entities<evolute_duel_Snapshot>();
         
+        public evolute_duel_Snapshot GetSnapshot(FieldElement snapshotId)
+        {
+            if (snapshotId == null) return null;
+            GameObject[] snapshots = GetSnapshots();
+            foreach (var snapshot in snapshots)
+            {
+                if (snapshot.TryGetComponent(out evolute_duel_Snapshot snapshotModel))
+                {
+                    if (snapshotModel.snapshot_id.Hex() == snapshotId.Hex())
+                    {
+                        return snapshotModel;
+                    }
+                }
+            }
+            return null;
+        }
+        
         public async void CreateGame()
         {
             try

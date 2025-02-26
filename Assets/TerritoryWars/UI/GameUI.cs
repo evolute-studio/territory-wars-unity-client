@@ -105,6 +105,7 @@ namespace TerritoryWars.UI
             
             if (SaveSnapshotButton != null)
             {
+                SaveSnapshotText.gameObject.SetActive(false);
                 SaveSnapshotButton.onClick.AddListener(OnSaveSnapshotButtonClicked);
             }
         }
@@ -273,7 +274,7 @@ namespace TerritoryWars.UI
             });
             DOVirtual.DelayedCall(3, () =>
             {
-                SaveSnapshotButton.GetComponent<SpriteRenderer>().DOFade(0, 0.5f).OnComplete(() =>
+                SaveSnapshotButton.GetComponent<Image>().DOFade(0, 0.5f).OnComplete(() =>
                 {
                     SaveSnapshotButton.gameObject.SetActive(false);
                 });

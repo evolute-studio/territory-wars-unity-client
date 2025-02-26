@@ -113,7 +113,7 @@ public class SnapshotListItem
     
     private TextMeshProUGUI _creatorPlayerNameText;
     private TextMeshProUGUI _creatorPlayerEvoluteCountText;
-    private TextMeshProUGUI _tileLeftCountText;
+    private TextMeshProUGUI _moveNumberText;
     private Button _seeMapButton;
     private Button _restoreButton;
 
@@ -122,7 +122,7 @@ public class SnapshotListItem
         ListItem = listItem;
         _creatorPlayerNameText = listItem.transform.Find("PlayerName/PlayerNameText").GetComponent<TextMeshProUGUI>();
         _creatorPlayerEvoluteCountText = listItem.transform.Find("EvoluteCount/Count").GetComponent<TextMeshProUGUI>();
-        _tileLeftCountText = listItem.transform.Find("TileLeft/TilesLeftText").GetComponent<TextMeshProUGUI>();
+        _moveNumberText = listItem.transform.Find("MoveNumber/MoveNumberText").GetComponent<TextMeshProUGUI>();
         _seeMapButton = listItem.transform.Find("Buttons/MapButton").GetComponent<Button>();
         _restoreButton = listItem.transform.Find("Buttons/RestoreButton").GetComponent<Button>();
     }
@@ -134,7 +134,7 @@ public class SnapshotListItem
         
         _creatorPlayerNameText.text = creatorPlayerName;
         _creatorPlayerEvoluteCountText.text = creatorPlayerEvoluteCount.ToString();
-        _tileLeftCountText.text = "Move number: " + moveNumber;
+        _moveNumberText.text = "Move number: \n" + moveNumber;
         
         _restoreButton.onClick.RemoveAllListeners();
         if (onRestore != null)

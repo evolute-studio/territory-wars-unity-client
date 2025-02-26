@@ -109,6 +109,13 @@ namespace TerritoryWars.UI
                     Option<FieldElement>.Some some => some.value.Hex(),
                     Option<FieldElement>.None => "None"
                 };
+                FieldElement snapshotId = gameModel.snapshot_id switch
+                {
+                    Option<FieldElement>.Some some => some.value,
+                    Option<FieldElement>.None => null
+                };
+                evolute_duel_Snapshot snapshotModel = DojoGameManager.Instance.GetSnapshot(snapshotId);
+                int moveNumber = snapshotModel != null ? snapshotModel.move_number : 0;
                 string status = gameModel.status switch
                 {
                     GameStatus.Created => "Created",
@@ -129,7 +136,7 @@ namespace TerritoryWars.UI
                 }
                 if( status == "Created")
                 {
-                    matchListItem.UpdateItem(playerName, evoluteBalance, status, () =>
+                    matchListItem.UpdateItem(playerName, evoluteBalance, status, moveNumber,() =>
                     {
                         DojoGameManager.Instance.JoinGame(gameModel.player);
                     });
@@ -214,6 +221,7 @@ namespace TerritoryWars.UI
         private TextMeshProUGUI _playerNameText;
         //private TextMeshProUGUI _gameIdText;
         private TextMeshProUGUI _evoluteCountText;
+        private TextMeshProUGUI _moveNumberText;
         private TextMeshProUGUI _statusText;
         private TextMeshProUGUI _awaitText;
         private Button _playButton;
@@ -224,12 +232,13 @@ namespace TerritoryWars.UI
             _playerNameText = listItem.transform.Find("Content/PlayerNameText").GetComponent<TextMeshProUGUI>();
             //_gameIdText = listItem.transform.Find("Content/GameIdText").GetComponent<TextMeshProUGUI>();
             _evoluteCountText = listItem.transform.Find("Content/EvoluteCountGO/EvoluteCountText").GetComponent<TextMeshProUGUI>();
+            _moveNumberText = listItem.transform.Find("Content/MoveNumber/MoveNumberText").GetComponent<TextMeshProUGUI>();
             _awaitText = listItem.transform.Find("Content/AwaitText").GetComponent<TextMeshProUGUI>();
             _playButton = listItem.transform.Find("Content/PlayButton").GetComponent<Button>();
             _awaitText.gameObject.SetActive(false);
             _awaitText.text = "Await...";
         }
-        public void UpdateItem(string playerName, int evoluteBalance, string status, UnityAction onJoin = null)
+        public void UpdateItem(string playerName, int evoluteBalance, string status, int moveNumber = 0, UnityAction onJoin = null)
         {
             PlayerName = playerName;
             EvoluteCount = evoluteBalance;
@@ -237,6 +246,8 @@ namespace TerritoryWars.UI
 
             _playerNameText.text = PlayerName;
             _evoluteCountText.text = EvoluteCount.ToString();
+            _moveNumberText.gameObject.SetActive(moveNumber > 0);
+            _moveNumberText.text = "Move number: " + moveNumber;
             //_gameIdText.text = GameId;
 
             _playButton.onClick.RemoveAllListeners();
