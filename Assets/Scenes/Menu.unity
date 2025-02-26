@@ -3107,6 +3107,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &689426456 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6776208454920077324, guid: 40d5b67fe8508449eba890315cabc5df, type: 3}
+  m_PrefabInstance: {fileID: 689426453}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253194505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &720803890
 GameObject:
   m_ObjectHideFlags: 0
@@ -3839,6 +3850,10 @@ PrefabInstance:
       propertyPath: ApplyButton
       value: 
       objectReference: {fileID: 689426455}
+    - target: {fileID: 162142844437461381, guid: 352b9bb01fea04b749f577d77e838a9b, type: 3}
+      propertyPath: ApplyButtonImage
+      value: 
+      objectReference: {fileID: 689426456}
     - target: {fileID: 162142844437461381, guid: 352b9bb01fea04b749f577d77e838a9b, type: 3}
       propertyPath: brightness.Array.data[0].b
       value: 0.3056603
