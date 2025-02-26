@@ -414,17 +414,19 @@ namespace TerritoryWars.General
             float xPosition = screenCenterX - labelWidth / 2f;
 
             // Показуємо чий зараз хід
-            string turnInfo = $"Waiting for {(CurrentTurnPlayer == LocalPlayer ? "Your" : PlayersData[1].username)} turn";
-            GUI.Label(new Rect(xPosition, yPosition, labelWidth, 30), turnInfo, style);
-
-            // Якщо очікуємо хід противника
+            float time = Time.time;
+            string turnInfo;
+            
             if (CurrentTurnPlayer != LocalPlayer)
             {
-                yPosition += 40;
-                float time = Time.time;
-                string waitingText = "waiting for the turn" + new string('.', (int)(time % 3) + 1);
-                GUI.Label(new Rect(xPosition, yPosition, labelWidth, 30), waitingText, style);
+                turnInfo = $"Waiting for {PlayersData[1].username} turn" + new string('.', (int)(time % 3) + 1);;
             }
+            else
+            {
+                turnInfo = "Your turn now.";
+            }
+            GUI.Label(new Rect(xPosition, yPosition, labelWidth, 30), turnInfo, style);
+
 
             // Очищаємо створену текстуру
             Destroy(backgroundTexture);
