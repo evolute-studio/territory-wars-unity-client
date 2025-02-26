@@ -221,6 +221,9 @@ namespace TerritoryWars.General
             Players[0] = player1.GetComponent<Character>();
             Players[1] = player2.GetComponent<Character>();
             
+            Players[0].SetAnimatorController(sessionUI.charactersObject.GetAnimatorController(PlayerCharactersManager.GetCurrentCharacterId()));
+            Players[1].SetAnimatorController(sessionUI.charactersObject.GetAnimatorController(PlayerCharactersManager.GetOpponentCurrentCharacterId()));
+            
             Players[0].Initialize(board.player1.Item1, board.player1.Item2, board.player1.Item3);
             Players[1].Initialize(board.player2.Item1, board.player2.Item2, board.player2.Item3);
             

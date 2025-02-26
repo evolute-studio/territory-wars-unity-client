@@ -37514,6 +37514,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1261502054}
     - target: {fileID: 6656283264602794713, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
+      propertyPath: charactersObject
+      value: 
+      objectReference: {fileID: 11400000, guid: aa83e81b294e46740a39ef5dffd94f2d, type: 2}
+    - target: {fileID: 6656283264602794713, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
       propertyPath: players.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -66305,7 +66309,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0.000015258789, y: -87.3587}
+  m_AnchoredPosition: {x: 0.000030517578, y: -87.3587}
   m_SizeDelta: {x: 204.96, y: 174.7174}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!1 &2798192354311215887

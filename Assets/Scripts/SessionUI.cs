@@ -47,8 +47,8 @@ public class SessionUI : MonoBehaviour
             }
         }
 
-        players[0].playerImage = charactersObject.GetAvatar(PlayerCharactersManager.GetCurrentCharacterId());
-        players[1].playerImage = charactersObject.GetAvatar(PlayerCharactersManager.GetOpponentCurrentCharacterId());
+        players[0].playerImage.sprite = charactersObject.GetAvatar(PlayerCharactersManager.GetCurrentCharacterId());
+        players[1].playerImage.sprite = charactersObject.GetAvatar(PlayerCharactersManager.GetOpponentCurrentCharacterId());
     }
     
     public void SetCityScore(int player, int score)

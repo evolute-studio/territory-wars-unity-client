@@ -15,9 +15,9 @@ MonoBehaviour:
   Characters:
   - CharacterName: Moon Mage
     AnimatorController: {fileID: 9100000, guid: 7a4f601e2c0ec3a47861fce2cbae86d7, type: 2}
-    Icon: {fileID: 0}
+    Avatar: {fileID: -3253252081953816941, guid: 74e2574f90b9c45bd97e9896f79e8c17, type: 3}
     Id: 0
   - CharacterName: Sun Mage
     AnimatorController: {fileID: 9100000, guid: ab8679ae00cc0b64fbb8f56551123ed5, type: 2}
-    Icon: {fileID: 0}
+    Avatar: {fileID: -6319067558682363733, guid: 09ffad3c164ce124887fdebf47eb4ac2, type: 3}
     Id: 1
