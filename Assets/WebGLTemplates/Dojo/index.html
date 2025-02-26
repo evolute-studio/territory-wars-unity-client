@@ -10,10 +10,58 @@
     <link rel="stylesheet" href="<<<TemplateData/diagnostics.css>>>">
     <script src="<<<TemplateData/diagnostics.js>>>"></script>
 #endif
+      <style>
+      body { 
+        margin: 0; 
+        padding: 0; 
+        overflow: hidden;
+      }
+      #unity-container { 
+        width: 100vw; 
+        height: 100vh; 
+        position: absolute;
+        overflow: hidden;
+      }
+      #unity-canvas { 
+        width: 100% !important; 
+        height: 100% !important;
+      }
+    </style>
+    <script>
+      // We add an event handler at the beginning of the page download
+      window.addEventListener('load', function(e) {
+          const dbName = '/idbfs';
+          const request = window.indexedDB.open(dbName);
+          
+          request.onsuccess = function(event) {
+              const db = event.target.result;
+              const transaction = db.transaction(['FILE_DATA'], 'readwrite');
+              const objectStore = transaction.objectStore('FILE_DATA');
+              
+              // we get all the keys
+              const getAllKeysRequest = objectStore.getAllKeys();
+              
+              getAllKeysRequest.onsuccess = function() {
+                  const keys = getAllKeysRequest.result;
+                  
+                  // We delete all records that do not end on /Playerprefs
+                  keys.forEach(function(key) {
+                      if (!key.endsWith('/PlayerPrefs')) {
+                          objectStore.delete(key);
+                      }
+                  });
+              };
+              
+              transaction.oncomplete = function() {
+                  db.close();
+              };
+          };
+      });
+  </script>
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width={{{ WIDTH }}} height={{{ HEIGHT }}} tabindex="-1"></canvas>
+      <canvas id="unity-canvas" tabindex="-1"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">

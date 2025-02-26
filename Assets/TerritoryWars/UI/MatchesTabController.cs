@@ -64,11 +64,6 @@ namespace TerritoryWars.UI
             BackgroundPlaceholderGO.SetActive(isActive);
         }
         
-        public void SetCreatedMatchesText(int count)
-        {
-            CreatedMatchesText.text = "Created games: " + count;
-        }
-        
         public void SetInProgressMatchesText(int count)
         {
             InProgressMatchesText.text = "Games In progress: " + count;
@@ -124,6 +119,9 @@ namespace TerritoryWars.UI
                 };
                 switch (status)
                 {
+                    case "Created":
+                        _createdMatchesCount++;
+                        break;
                     case "In Progress":
                         _inProgressMatchesCount++;
                         SetInProgressMatchesText(_inProgressMatchesCount);

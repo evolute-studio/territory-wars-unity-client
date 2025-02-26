@@ -12,14 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faed63f2427f3ed83a42d16bb3e73e6d, type: 3}
   m_Name: SlotRealese_WorldManagerData 2
   m_EditorClassIdentifier: 
-  toriiUrl: https://api.cartridge.gg/x/evolute-duel/torii
-  rpcUrl: https://api.cartridge.gg/x/evolute-duel/katana
+  toriiUrl: https://api.cartridge.gg/x/liyard-evolute-duel/torii
+  rpcUrl: https://api.cartridge.gg/x/liyard-evolute-duel/katana
   relayUrl: 
   relayWebrtcUrl: 
   worldAddress:
     hex: 0x07f086a6f69eb87ceadfc7a1275f670524416af400ede15a3d2703dd6393bde0
-  GameContractAddress: 
-  PlayerProfileContractAddress: 
   query:
     limit: 1000
     offset: 0

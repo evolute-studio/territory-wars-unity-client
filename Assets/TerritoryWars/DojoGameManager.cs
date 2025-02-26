@@ -62,6 +62,8 @@ namespace TerritoryWars
         public DojoSessionManager SessionManager;
         
         public UnityEvent OnLocalPlayerSet = new UnityEvent();
+        
+        public bool Synced { get; private set; }
 
 
         public void Initialize()
@@ -330,6 +332,7 @@ namespace TerritoryWars
         
         private void OnSynchronized(List<GameObject> synchronizedModels)
         {
+            Synced = true;
             CustomLogger.LogInfo($"Synchronized {synchronizedModels.Count} models");
         }
         

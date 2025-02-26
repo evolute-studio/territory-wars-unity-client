@@ -88,8 +88,10 @@ namespace TerritoryWars
 
         private void Moved(evolute_duel_Moved eventModel)
         {
-            string move_id = eventModel.move_id.Hex();
             string player = eventModel.player.Hex();
+            if (player != SessionManager.Instance.LocalPlayer.Address.Hex() && player != SessionManager.Instance.RemotePlayer.Address.Hex()) return;
+            
+            string move_id = eventModel.move_id.Hex();
             string prev_move_id = eventModel.prev_move_id switch
             {
                 Option<FieldElement>.Some id => id.value.Hex(),

@@ -127,7 +127,7 @@ namespace TerritoryWars.General
             (string tileConfig, int rotation) = OnChainBoardDataConverter.GetRandomTypeAndRotationFromDeck(baseTileConfig);
             string configResult = String.IsNullOrEmpty(tileConfig) ? randomTileConfig : tileConfig;
             TileData jokerTile = new TileData(randomTileConfig);
-            jokerTile.Rotate((rotation + 2) % 4);
+            //jokerTile.Rotate((rotation + 2) % 4);
             return jokerTile;
         }
         
