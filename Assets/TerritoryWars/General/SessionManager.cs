@@ -2,8 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using Dojo.Starknet;
 using TerritoryWars.ModelsDataConverters;
 using TerritoryWars.Tile;
+using TerritoryWars.Tools;
 using TerritoryWars.UI;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -65,18 +67,17 @@ namespace TerritoryWars.General
         public Character RemotePlayer { get; private set; }
         
         public bool IsLocalPlayerTurn => CurrentTurnPlayer == LocalPlayer;
-
-        private int[] jokerCount = new int[] { 3, 3 }; 
+        
         private bool isJokerActive = false;
         
         public bool IsJokerActive => isJokerActive;
         
         public void ActivateJoker()
         {
-            if (jokerCount[CurrentTurnPlayer.LocalId] > 0)
+            if (Players[CurrentTurnPlayer.LocalId].JokerCount > 0)
             {
                 isJokerActive = true;
-                jokerCount[CurrentTurnPlayer.LocalId]--;
+                Players[CurrentTurnPlayer.LocalId].JokerCount--;
                 TileSelector.StartJokerPlacement();
             }
         }
@@ -84,6 +85,7 @@ namespace TerritoryWars.General
         public void DeactivateJoker()
         {
             isJokerActive = false;
+            Players[CurrentTurnPlayer.LocalId].JokerCount++;
             gameUI.UpdateUI();
         }
         
@@ -150,15 +152,53 @@ namespace TerritoryWars.General
             };
         }
 
+        // public void Initialize()
+        // {
+        //     InitializePlayers();
+        //     Board.Initialize();
+        //     gameUI.Initialize();
+        //     StartGame();
+        // }
+
         public void Start()
         {
-            Invoke(nameof(Initialize), 5f);
+            Invoke(nameof(Initialize), 5);
         }
 
         public void Initialize()
         {
+            CustomLogger.LogImportant("SessionManager.Initialize()");
+            evolute_duel_Board board = DojoGameManager.Instance.SessionManager.LocalPlayerBoard;
+            FieldElement lastMoveId = board.last_move_id switch
+            {
+                Option<FieldElement>.Some some => some.value,
+                _ => null
+            };
+            
             InitializePlayers();
             Board.Initialize();
+            if (lastMoveId != null)
+            {
+                CustomLogger.LogImportant("SessionManager.Initialize() - lastMoveId != null");
+                evolute_duel_Move lastMove = DojoGameManager.Instance.GetMove(lastMoveId);
+                List<evolute_duel_Move> moves = DojoGameManager.Instance.GetMoves(new List<evolute_duel_Move>{lastMove});
+                CustomLogger.LogImportant("SessionManager.Initialize() - moves.Count: " + moves.Count);
+                foreach (var move in moves)
+                {
+                    int owner = move.player_side switch
+                    {
+                        PlayerSide.Blue => 0,
+                        PlayerSide.Red => 1,
+                        _ => -1
+                    };
+                    TileData tile = new TileData(OnChainBoardDataConverter.GetTopTile(move.tile));
+                    int rotation = move.rotation;
+                    int x = move.col + 1;
+                    int y = move.row + 1;
+                    tile.Rotate((rotation + 3) % 4);
+                    Board.PlaceTile(tile, x, y, owner);
+                }
+            } 
             gameUI.Initialize();
             StartGame();
         }
@@ -188,8 +228,8 @@ namespace TerritoryWars.General
             Players[0] = player1.GetComponent<Character>();
             Players[1] = player2.GetComponent<Character>();
             
-            Players[0].Initialize(board.player1.Item1, board.player1.Item2);
-            Players[1].Initialize(board.player2.Item1, board.player2.Item2);
+            Players[0].Initialize(board.player1.Item1, board.player1.Item2, board.player1.Item3);
+            Players[1].Initialize(board.player2.Item1, board.player2.Item2, board.player2.Item3);
             
             PlayersData[0] = new PlayerData(DojoGameManager.Instance.GetPlayerData(Players[0].Address.Hex()));
             PlayersData[1] = new PlayerData(DojoGameManager.Instance.GetPlayerData(Players[1].Address.Hex()));
@@ -365,13 +405,13 @@ namespace TerritoryWars.General
 
         public int GetJokerCount(int playerId)
         {
-            return jokerCount[playerId];
+            return Players[playerId].JokerCount;
         }
 
         public bool CanUseJoker()
         {
             int characterId = CurrentTurnPlayer == null ? 0 : CurrentTurnPlayer.LocalId;
-            return !isJokerActive && jokerCount[characterId] > 0;
+            return !isJokerActive && Players[characterId].JokerCount > 0;
         }
 
         public void CompleteJokerPlacement()

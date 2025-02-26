@@ -8,8 +8,9 @@ public class Character : MonoBehaviour
     public FieldElement Address;
     public int LocalId;
     public PlayerSide Side;
+    public int JokerCount;
     
-    public void Initialize(FieldElement address,PlayerSide side)
+    public void Initialize(FieldElement address,PlayerSide side, int jokerCount)
     {
         Address = address;
         Side = side;
@@ -19,11 +20,10 @@ public class Character : MonoBehaviour
             PlayerSide.Red => 1,
             _ => 0
         };
-
+        JokerCount = jokerCount;
         _animator = GetComponent<Animator>();
         _characterAnimator = new CharacterAnimator(_animator);
     }
-
     public void StartSelecting()
     {
         _characterAnimator.PlayCast(true);

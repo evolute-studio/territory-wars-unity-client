@@ -330,6 +330,57 @@ namespace TerritoryWars
             }
             return null;
         }
+
+
+        public evolute_duel_Move GetMove(FieldElement moveId)
+        {
+            GameObject[] moveModelsGO = WorldManager.Entities<evolute_duel_Move>();
+            foreach (var moveModelGO in moveModelsGO)
+            {
+                if (moveModelGO.TryGetComponent(out evolute_duel_Move moveModel))
+                {
+                    if (moveModel.id.Hex() == moveId.Hex())
+                    {
+                        return moveModel;
+                    }
+                }
+            }
+            return null;
+        }
+        
+        public List<evolute_duel_Move> GetMoves(List<evolute_duel_Move> moves, GameObject[] allMoveGameObjects = null)
+        {
+            CustomLogger.LogInfo($"GetMoves: {moves.Count}");
+            if (allMoveGameObjects == null)
+            {
+                allMoveGameObjects = WorldManager.Entities<evolute_duel_Move>();
+            }
+            
+            evolute_duel_Move currentMove = moves.First();
+            FieldElement previousMoveId = currentMove.prev_move_id switch
+            {
+                Option<FieldElement>.Some some => some.value,
+                _ => null
+            };
+            if (previousMoveId == null)
+            {
+                return moves;
+            }
+            
+            foreach (var moveGO in allMoveGameObjects)
+            {
+                if (moveGO.TryGetComponent(out evolute_duel_Move move))
+                {
+                    if (move.id.Hex() == previousMoveId.Hex())
+                    {
+                        moves.Insert(0, move);
+                        return GetMoves(moves, allMoveGameObjects);
+                    }
+                }
+            }
+
+            return moves;
+        }
         
         public evolute_duel_Player GetLocalPlayerData()
         {

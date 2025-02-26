@@ -42,7 +42,7 @@ public class evolute_duel_Board : ModelInstance {
         public Option<byte> top_tile;
 
         [ModelField("state")]
-        public (byte, byte, byte)[] state;
+        public (byte, byte, byte)[] state; // type, rotation, player side
 
         [ModelField("player1")]
         public (FieldElement, PlayerSide, byte) player1;
