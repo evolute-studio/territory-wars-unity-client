@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using TerritoryWars.General;
 using TerritoryWars.Tile;
+using TerritoryWars.Tools;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -17,6 +18,7 @@ public class SessionUI : MonoBehaviour
     [SerializeField] private Board _board;
     public TextMeshProUGUI LocalPlayerName;
     public TextMeshProUGUI RemotePlayerName;
+    public CharactersObject charactersObject;
 
     public List<Image> imagePlayers;
 
@@ -44,6 +46,9 @@ public class SessionUI : MonoBehaviour
                 joker.color = JokerAvailableColor;
             }
         }
+
+        players[0].playerImage = charactersObject.GetAvatar(PlayerCharactersManager.GetCurrentCharacterId());
+        players[1].playerImage = charactersObject.GetAvatar(PlayerCharactersManager.GetOpponentCurrentCharacterId());
     }
     
     public void SetCityScore(int player, int score)
