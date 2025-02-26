@@ -209,6 +209,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4986880040569737829}
   - component: {fileID: 2537027103737221636}
+  - component: {fileID: 2492921782169629254}
   m_Layer: 0
   m_Name: House
   m_TagString: Untagged
@@ -286,6 +287,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &2492921782169629254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514251192327008479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa2fb40dcb0933642a019f27c5faaf41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites: []
+  duration: 1
+  loop: 1
+  delay: 0
+  randomizeStart: 0
+  maxRandomDelay: 0.5
+  waitBetweenLoops: 0
+  playOnAwake: 1
+  _spriteRenderer: {fileID: 0}
 --- !u!1 &2260238761731442596
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,6 +318,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8562312573625501912}
   - component: {fileID: 6826061477681744299}
+  - component: {fileID: 3924398786083492007}
   m_Layer: 0
   m_Name: House
   m_TagString: Untagged
@@ -373,6 +396,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &3924398786083492007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2260238761731442596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa2fb40dcb0933642a019f27c5faaf41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites: []
+  duration: 1
+  loop: 1
+  delay: 0
+  randomizeStart: 0
+  maxRandomDelay: 0.5
+  waitBetweenLoops: 0
+  playOnAwake: 1
+  _spriteRenderer: {fileID: 0}
 --- !u!1 &2950147304053834284
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,6 +480,7 @@ MonoBehaviour:
   spawnDelay: 0
   showDebugInfo: 0
   territoryPrefab: {fileID: 8966325575830096033, guid: 69e89afcf12104fa1abb0ee24bbad36e, type: 3}
+  TerritorySpriteRenderer: {fileID: 0}
   lineRenderer: {fileID: 8708559087405362800}
 --- !u!120 &8708559087405362800
 LineRenderer:
@@ -557,6 +602,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5730437865591400613}
   - component: {fileID: 2154097377195841094}
+  - component: {fileID: 8498642306987883804}
   m_Layer: 0
   m_Name: House
   m_TagString: Untagged
@@ -634,6 +680,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &8498642306987883804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4804970321804374028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa2fb40dcb0933642a019f27c5faaf41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites: []
+  duration: 1
+  loop: 1
+  delay: 0
+  randomizeStart: 0
+  maxRandomDelay: 0.5
+  waitBetweenLoops: 0
+  playOnAwake: 1
+  _spriteRenderer: {fileID: 0}
 --- !u!1 &5320001131655052798
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,6 +750,7 @@ MonoBehaviour:
   fenceYOffset: 0.08
   lineRenderer: {fileID: 9155945615281146868}
   skipIndices: 02000000
+  poleYOffset: 0
 --- !u!1 &6943819491436868274
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,6 +898,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8040716818129004828}
   - component: {fileID: 31966424206363960}
+  - component: {fileID: 1972826481781847768}
   m_Layer: 0
   m_Name: House
   m_TagString: Untagged
@@ -907,3 +976,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &1972826481781847768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7330221065900076496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa2fb40dcb0933642a019f27c5faaf41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites: []
+  duration: 1
+  loop: 1
+  delay: 0
+  randomizeStart: 0
+  maxRandomDelay: 0.5
+  waitBetweenLoops: 0
+  playOnAwake: 1
+  _spriteRenderer: {fileID: 0}

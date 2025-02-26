@@ -35,5 +35,11 @@ public class Character : MonoBehaviour
         _characterAnimator.PlayHit();
     }
     
+    public void SetAnimatorController(RuntimeAnimatorController controller)
+    {
+        _animator = GetComponent<Animator>();
+        _animator.runtimeAnimatorController = controller;
+    }
+    
     
 }

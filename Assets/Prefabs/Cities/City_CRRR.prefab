@@ -582,6 +582,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9121132302072480582}
   - component: {fileID: 5151528852716190858}
+  - component: {fileID: 7620503307367478727}
   m_Layer: 0
   m_Name: House
   m_TagString: Untagged
@@ -659,6 +660,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &7620503307367478727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5109306942719350967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa2fb40dcb0933642a019f27c5faaf41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites: []
+  duration: 1
+  loop: 1
+  delay: 0
+  randomizeStart: 0
+  maxRandomDelay: 0.5
+  waitBetweenLoops: 0
+  playOnAwake: 1
+  _spriteRenderer: {fileID: 0}
 --- !u!1 &5231345310478320182
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,13 +20,107 @@ MonoBehaviour:
   - {fileID: 6862363052645781871, guid: a92961e747a6c41889e9d889471a73cb, type: 3}
   - {fileID: 5136009905638925935, guid: a92961e747a6c41889e9d889471a73cb, type: 3}
   FirstPlayerHousesAnimated:
-  - HousesSprites: []
-  - HousesSprites: []
-  - HousesSprites: []
+  - HousesSprites:
+    - {fileID: -6058338615623315030, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -7334626581901504747, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -7553797007263615538, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -3899320181902817831, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 3044188105040930300, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -5271786696703568108, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -5583267293106885175, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -2999221340391703974, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 5402349899722676869, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 6405028605148113050, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+  - HousesSprites:
+    - {fileID: 2001692451986436167, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 1318693895491122799, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -2169631107380648537, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -6387338510027742941, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -2983942195965234280, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 9212504495649119605, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -2174800195049225963, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 2216968190201051531, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -1633270435588285595, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 1663972164635426262, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+  - HousesSprites:
+    - {fileID: -1700302354515552184, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 6557931888885149782, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 2440386309421319594, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 1730648491430035510, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -4369007325997921503, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 2753749908512634856, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -8077239394638113175, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -8682457572924116016, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -3443164016474535192, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -2086181041577230221, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
   SecondPlayerHousesAnimated:
-  - HousesSprites: []
-  - HousesSprites: []
-  - HousesSprites: []
+  - HousesSprites:
+    - {fileID: 6932095923753414554, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -8894660520762034692, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -4412775616499266683, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -6824992770595746539, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -5798655095659574947, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -7263871912826141317, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 5531682066619136809, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -5687494834431423159, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 433278150696194571, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -5892632623772639162, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+  - HousesSprites:
+    - {fileID: 7777921320807847090, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 2645786105480062313, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -6484037974369097881, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 8858004552385356492, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -1812943215386304879, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 2841415987029790556, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 1002875413463540541, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -5665822508091549330, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 383826214899928955, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -7549747876781444083, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+  - HousesSprites:
+    - {fileID: 8071978351589781509, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -3726164309603048426, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -7528073151625169100, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -5402629075153655843, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 4693528102212535103, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -5258699189786554404, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -8314642865392877068, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 1843677728731451076, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 3556222730379459413, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -3879344436790259974, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+  NeutralHousesAnimated:
+  - HousesSprites:
+    - {fileID: 3350585999214592431, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -4835449200390009366, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 7588770000414421623, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 2211771123198225801, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -3404224937676158269, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -5754432059307842415, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 2949950013751910835, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 4061533724223563513, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -1507374276582458981, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 2600971324819763468, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+  - HousesSprites:
+    - {fileID: -870864856557129120, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 206586183469348537, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 3425435324958325216, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 1373749924154683832, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 5351020009188932759, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 147084462347513394, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -3872625090963408043, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -5097820730630677818, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -968438999588753101, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -6231746087340669667, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+  - HousesSprites:
+    - {fileID: -4875743409479086122, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 4407554447982648268, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -5808269123797765594, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -4890706634738188632, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 3326159141906970948, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 3918263718059298465, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -3614346836267394520, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -2745766983592815796, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: -4659347413083532248, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
+    - {fileID: 513149391113334901, guid: bcf1b5aa8ec07874591899ce2c0b8683, type: 3}
   SecondPlayerHouses:
   - {fileID: -2059984849334355576, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
   - {fileID: -1702935629377491628, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
