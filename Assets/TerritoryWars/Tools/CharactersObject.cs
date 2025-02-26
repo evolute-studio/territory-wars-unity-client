@@ -16,7 +16,7 @@ namespace TerritoryWars.Tools
             return Characters.Find(character => character.Id == id).AnimatorController;
         }
         
-        public Image GetIcon(int id)
+        public Sprite GetAvatar(int id)
         {
             return Characters.Find(character => character.Id == id).Avatar;
         }
@@ -32,7 +32,7 @@ namespace TerritoryWars.Tools
         {
             public string CharacterName;
             public RuntimeAnimatorController AnimatorController;
-            public Image Avatar;
+            public Sprite Avatar;
             public int Id;
         }
     }
