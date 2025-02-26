@@ -11,6 +11,7 @@ namespace TerritoryWars.ScriptablesObjects
         public Sprite[] FirstPlayerHouses;
         public List<HousesSprite> FirstPlayerHousesAnimated;
         public List<HousesSprite> SecondPlayerHousesAnimated;
+        public List<HousesSprite> NeutralHousesAnimated;
         public Sprite[] SecondPlayerHouses;
         public Sprite[] Mountains;
         public GameObject ForestPrefab;
@@ -28,6 +29,12 @@ namespace TerritoryWars.ScriptablesObjects
 
         public Sprite[] GetNextHouse(int playerIndex)
         {
+            if (playerIndex == -1)
+            {
+                CurrentHouseIndex = (CurrentHouseIndex + 1) % NeutralHousesAnimated.Count;
+                Sprite[] neutralNextHouseSprites = NeutralHousesAnimated[CurrentHouseIndex].HousesSprites;
+                return neutralNextHouseSprites;
+            }
             List<HousesSprite>[] Houses = { FirstPlayerHousesAnimated, SecondPlayerHousesAnimated };
             CurrentHouseIndex = (CurrentHouseIndex + 1) % Houses[playerIndex].Count;
             Sprite[] nextHouseSprites = Houses[playerIndex][CurrentHouseIndex].HousesSprites;
