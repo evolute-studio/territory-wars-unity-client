@@ -21,6 +21,7 @@ namespace TerritoryWars.UI
         public Button ApplyButton;
         public Image ApplyButtonImage;
         private bool isAnimating = false;
+        [SerializeField] private float AnimationDuration = 1.5f;
 
         public void Start()
         {
@@ -35,11 +36,11 @@ namespace TerritoryWars.UI
         public void ShiftCharacters(bool isRight)
         {
             // shift array characters
-            // if(isAnimating)
-            //     return;
-            //
-            // isAnimating = true;
-            // SimpleTimer(0.5f, () => { isAnimating = false; });
+            if(isAnimating)
+                return;
+            
+            isAnimating = true;
+            StartCoroutine(SimpleTimer(AnimationDuration, () => { isAnimating = false; }));
             
             if (isRight)
             {
