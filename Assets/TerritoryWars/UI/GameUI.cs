@@ -130,11 +130,16 @@ namespace TerritoryWars.UI
             int cartScoreBlue = board.blue_score.Item2;
             int cityScoreRed = board.red_score.Item1;
             int cartScoreRed = board.red_score.Item2;
-            int score1 = cityScoreBlue + cartScoreBlue;
-            int score2 = cityScoreRed + cartScoreRed;
+            int score1 = cityScoreBlue + cartScoreBlue + _sessionManager.Players[0].JokerCount * 5;
+            int score2 = cityScoreRed + cartScoreRed + _sessionManager.Players[1].JokerCount * 5;
             _resultPopUpUI.SetPlayersScore(score1, score2);
             _resultPopUpUI.SetPlayersCityScores(cityScoreBlue, cityScoreRed);
             _resultPopUpUI.SetPlayersCartScores(cartScoreBlue, cartScoreRed);
+            _resultPopUpUI.SetPlayersAvatars(SessionUI.charactersObject.GetAvatar(PlayerCharactersManager.GetCurrentCharacterId()),
+                SessionUI.charactersObject.GetAvatar(PlayerCharactersManager.GetOpponentCurrentCharacterId()));
+            _resultPopUpUI.SetPlayerHeroAnimator(SessionUI.charactersObject.GetAnimatorController(PlayerCharactersManager.GetCurrentCharacterId()),
+                SessionUI.charactersObject.GetAnimatorController(PlayerCharactersManager.GetOpponentCurrentCharacterId()));
+                
             bool isLocalPlayerBlue = SessionManager.Instance.LocalPlayer.LocalId == 0;
             string wonText;
             if (score1 > score2 && isLocalPlayerBlue || score1 < score2 && !isLocalPlayerBlue)

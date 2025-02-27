@@ -45,7 +45,13 @@ namespace TerritoryWars.UI
             _resultPopupComponents.Player1Name.text = player1Name;
             _resultPopupComponents.Player2Name.text = player2Name;
         }
-        
+
+        public void SetPlayersAvatars(Sprite localPlayerSprite, Sprite remotePlayerSprite)
+        {
+            _resultPopupComponents.Player1Avatar.sprite = localPlayerSprite;
+            _resultPopupComponents.Player2Avatar.sprite = remotePlayerSprite;
+        }
+
         public void SetPlayersScore(int player1Score, int player2Score)
         {
             _player1Score = player1Score;
@@ -70,7 +76,13 @@ namespace TerritoryWars.UI
             _resultPopupComponents.Player2CartScores.text = player2CartScores.ToString();
             _resultPopupComponents.CartEvoluteScoreTextPlayer2.text = $" x {player2CartScores}";
         }
-        
+
+        public void SetPlayerHeroAnimator(RuntimeAnimatorController localPlayerAnimator, RuntimeAnimatorController remotePlayerAnimator)
+        {
+            _resultPopupComponents.Player1Animator.runtimeAnimatorController = localPlayerAnimator;
+            _resultPopupComponents.Player2Animator.runtimeAnimatorController = remotePlayerAnimator;
+        }
+
         public void SetWinnerText(string winnerText)
         {
             _resultPopupComponents.WinnerText.text = winnerText;
@@ -125,26 +137,26 @@ namespace TerritoryWars.UI
             sequence.Append(_resultPopupComponents.Player1HeroSpriteRenderer.DOFade(1f, _animationDuration).OnComplete(
                 () =>
                 {
-                    // if (IsPlayer1Winner)
-                    // {
-                    //     _resultPopupComponents.Player1Animator.SetBool("Win", true);
-                    // }
-                    // else
-                    // {
-                    //     _resultPopupComponents.Player1Animator.SetBool("Lose", true);
-                    // }
+                    if (IsPlayer1Winner)
+                    {
+                        _resultPopupComponents.Player1Animator.SetBool("Win", true);
+                    }
+                    else
+                    {
+                        _resultPopupComponents.Player1Animator.SetBool("Lose", true);
+                    }
                 }));
             sequence.Append(_resultPopupComponents.Player2HeroSpriteRenderer.DOFade(1f, _animationDuration).OnComplete(
                 () =>
                 {
-                    // if (IsPlayer1Winner)
-                    // {
-                    //     _resultPopupComponents.Player2Animator.SetBool("Lose", true);
-                    // }
-                    // else
-                    // {
-                    //     _resultPopupComponents.Player2Animator.SetBool("Win", true);
-                    // }
+                    if (IsPlayer1Winner)
+                    {
+                        _resultPopupComponents.Player2Animator.SetBool("Lose", true);
+                    }
+                    else
+                    {
+                        _resultPopupComponents.Player2Animator.SetBool("Win", true);
+                    }
                 }));
             sequence.Append(_resultPopupComponents.Buttons.GetComponent<CanvasGroup>().DOFade(1f, _animationDuration));
 
