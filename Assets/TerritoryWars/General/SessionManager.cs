@@ -173,6 +173,13 @@ namespace TerritoryWars.General
             {
                 CustomLogger.LogImportant("SessionManager.Initialize() - lastMoveId != null");
                 evolute_duel_Move lastMove = DojoGameManager.Instance.GetMove(lastMoveId);
+                int playerIndex = lastMove.player_side switch
+                {
+                    PlayerSide.Blue => 1,
+                    PlayerSide.Red => 0,
+                    _ => -1
+                };
+                CurrentTurnPlayer = Players[playerIndex];
                 List<evolute_duel_Move> moves = DojoGameManager.Instance.GetMoves(new List<evolute_duel_Move>{lastMove});
                 CustomLogger.LogImportant("SessionManager.Initialize() - moves.Count: " + moves.Count);
                 foreach (var move in moves)
@@ -190,9 +197,23 @@ namespace TerritoryWars.General
                     tile.Rotate((rotation + 3) % 4);
                     Board.PlaceTile(tile, x, y, owner);
                 }
+                
+                // set scores
             } 
+            DojoGameManager.Instance.SessionManager.UpdateBoardAfterRoadContest();
+            DojoGameManager.Instance.SessionManager.UpdateBoardAfterCityContest();
             gameUI.Initialize();
             sessionUI.Initialization();
+            int cityScoreBlue = board.blue_score.Item1;
+            int cartScoreBlue = board.blue_score.Item2;
+            int cityScoreRed = board.red_score.Item1;
+            int cartScoreRed = board.red_score.Item2;
+            GameUI.Instance.SessionUI.SetCityScore(0, cityScoreBlue);
+            GameUI.Instance.SessionUI.SetCityScore(1, cityScoreRed);
+            GameUI.Instance.SessionUI.SetRoadScore(0, cartScoreBlue);
+            GameUI.Instance.SessionUI.SetRoadScore(1, cartScoreRed);
+            GameUI.Instance.SessionUI.SetLocalPlayerScore(cityScoreBlue, cartScoreBlue);
+            GameUI.Instance.SessionUI.SetRemotePlayerScore(cityScoreRed, cartScoreRed);
             StartGame();
         }
 

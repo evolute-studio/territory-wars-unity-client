@@ -65919,6 +65919,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 489755572}
     m_Modifications:
+    - target: {fileID: 1829093012500436510, guid: 97f581e29b72548009efd9233bf4b6ed, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.089
+      objectReference: {fileID: 0}
     - target: {fileID: 1963201984722855525, guid: 97f581e29b72548009efd9233bf4b6ed, type: 3}
       propertyPath: m_Name
       value: RoadPath_XRRX
@@ -65962,6 +65966,10 @@ PrefabInstance:
     - target: {fileID: 2566948718235298026, guid: 97f581e29b72548009efd9233bf4b6ed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7200596256909519376, guid: 97f581e29b72548009efd9233bf4b6ed, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.089
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -69700,6 +69708,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1001611984}
     m_Modifications:
+    - target: {fileID: 3687032340581338176, guid: d2427d6eab86c4d2e8e44c3c295441e4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.136
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687032340581338176, guid: d2427d6eab86c4d2e8e44c3c295441e4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.005
+      objectReference: {fileID: 0}
     - target: {fileID: 5630751692621974893, guid: d2427d6eab86c4d2e8e44c3c295441e4, type: 3}
       propertyPath: m_Name
       value: RoadPath_XXRR
@@ -69743,6 +69759,14 @@ PrefabInstance:
     - target: {fileID: 7308782739947823848, guid: d2427d6eab86c4d2e8e44c3c295441e4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7433716359289827318, guid: d2427d6eab86c4d2e8e44c3c295441e4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.136
+      objectReference: {fileID: 0}
+    - target: {fileID: 7433716359289827318, guid: d2427d6eab86c4d2e8e44c3c295441e4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.005
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -561,7 +561,169 @@ namespace TerritoryWars.General
             if (!IsValidPosition(x, y)) return null;
             return tileData[x, y];
         }
-
         
+        public void RoadContest(byte root, int winnerId, int bluePoints, int redPoints)
+        {
+            List<RoadStructure> connectedRoadTiles = GetConnectedRoadTiles(root);
+            foreach (RoadStructure roadStructure in connectedRoadTiles)
+            {
+                TileData tile = GetTileData(roadStructure.tilePosition.x, roadStructure.tilePosition.y);
+                if (tile != null && tile.IsRoad())
+                {
+                    tile.RoadStructure.OwnerId = winnerId;
+                    // Можливо, тут потрібно оновити візуальне відображення доріг
+                    // тільки для тих сторін, де roadStructure.roadSides[i] == true
+                    
+                }
+                
+                
+                // GameObject tileObject = GetTileObject(roadStructure.tilePosition.x, roadStructure.tilePosition.y);
+                // if (tileObject != null)
+                // {
+                //     //TileGenerator tileGenerator = tileObject.GetComponent<TileGenerator>();
+                //     //tileGenerator.RecolorRoads(winnerId);
+                //     // через DOTween зробити анімацію припідняття тайла, 1 секунда завися і повернути на місце
+                //     Sequence sequence = DOTween.Sequence();
+                //     sequence.Append(tileObject.transform.DOMoveY(tileObject.transform.position.y + 0.2f, 0.5f).SetEase(Ease.InOutSine));
+                //     sequence.AppendInterval(1.5f);
+                //     sequence.Append(tileObject.transform.DOMoveY(tileObject.transform.position.y, 0.5f).SetEase(Ease.InOutSine));
+                //     sequence.Play();
+                // }
+                Vector2 centralPinPosition = ReplacePinsAndGetCentralPosition(connectedRoadTiles, winnerId);
+                Vector2 offset = new Vector2(0, 0.4f);
+            }
+        }
+
+        public List<RoadStructure> GetConnectedRoadTiles(byte root)
+        {
+            Vector2Int startPosition = OnChainBoardDataConverter.GetPositionByRoot(root);
+            // Конвертуємо startSide в enum Side
+            Side startSide = (Side)((root + 3) % 4);
+            HashSet<Vector2Int> visited = new HashSet<Vector2Int>();
+            List<RoadStructure> roadTiles = new List<RoadStructure>();
+            //roadTiles[0].roadSides[(int)startSide] = true;
+
+            
+
+            // Передаємо startSide як fromSide для першого тайлу
+            DfsRoadSearch(startPosition.x, startPosition.y, visited, roadTiles, startSide);
+            
+            return roadTiles;
+        }
+        
+        private Vector2 ReplacePinsAndGetCentralPosition(List<RoadStructure> roadTiles, int winnerId)
+        {
+            List<Vector2> pinsPositions = new List<Vector2>();
+            foreach (RoadStructure roadStructure in roadTiles)
+            {
+                GameObject tileObject = GetTileObject(roadStructure.tilePosition.x, roadStructure.tilePosition.y);
+                if (tileObject != null)
+                {
+                    TileGenerator tileGenerator = tileObject.GetComponent<TileGenerator>();
+                    for(int i = 0; i < 4; i++)
+                    {
+                        if (roadStructure.roadSides[i])
+                        {
+                            if (tileGenerator.pinRenderers[i] == null) continue;
+                            pinsPositions.Add(tileGenerator.pinRenderers[i].transform.position);    
+                            
+                            tileGenerator.pinRenderers[i].sprite = tileAssets.GetPinByPlayerId(winnerId);
+                            //tileGenerator.pinRenderers[i].transform.DOKill();
+                            //Destroy(tileGenerator.pinRenderers[i].gameObject);
+                        }
+                    }
+                }
+            }
+            // sort pinsPositions by x and y
+            pinsPositions.Sort((a, b) => a.x.CompareTo(b.x));
+            return pinsPositions[pinsPositions.Count / 2];
+        }
+
+        private void DfsRoadSearch(int x, int y, HashSet<Vector2Int> visited, List<RoadStructure> roadTiles, Side? fromSide = null)
+        {
+            string s = "";
+            s += $"DfsRoadSearch at {x}, {y} from {fromSide} visited: \n";
+            Vector2Int currentPos = new Vector2Int(x, y);
+
+            if (visited.Contains(currentPos) || !IsValidPosition(x, y))
+            {
+                CustomLogger.LogWarning(s);
+                return;
+            }
+            s += $"DfsRoadSearch at {x}, {y} is not visited and valid\n";
+            
+            TileData currentTile = GetTileData(x, y);
+            if (currentTile == null || !currentTile.IsRoad())
+            {
+                CustomLogger.LogWarning(s);
+                return;
+            }
+            s += $"DfsRoadSearch at {x}, {y} is road\n";
+            
+            visited.Add(currentPos);
+            
+            RoadStructure roadStructure = new RoadStructure 
+            { 
+                tilePosition = currentPos,
+                roadSides = new bool[4]
+            };
+
+            // Підрахуємо кількість доріг на тайлі і позначимо їх
+            int roadCount = 0;
+            foreach (Side side in System.Enum.GetValues(typeof(Side)))
+            {
+                if (currentTile.GetSide(side) == LandscapeType.Road)
+                {
+                    roadCount++;
+                    roadStructure.roadSides[(int)side] = true;
+                }
+            }
+            s += $"DfsRoadSearch at {x}, {y} roadCount: {roadCount}\n";
+            
+            // Якщо дорога одинарна, потрійна або четверна - залишаємо тільки потрібну сторону
+            if (roadCount == 1 || roadCount >= 3)
+            {
+                // Завжди використовуємо fromSide, оскільки тепер воно є і для першого тайлу
+                s += $"DfsRoadSearch at {x}, {y} fromSide: {fromSide}\n";
+                // Залишаємо тільки ту сторону, з якої прийшли
+                for (int i = 0; i < 4; i++)
+                {
+                    roadStructure.roadSides[i] = (i == (int)GetOppositeSide(fromSide.Value));
+                }
+                
+                roadTiles.Add(roadStructure);
+                s += $"DfsRoadSearch at {x}, {y} roadStructure added\n";
+                CustomLogger.LogWarning(s);
+                return;
+            }
+
+            roadTiles.Add(roadStructure);
+            
+            // Перевіряємо всі сторони для подальшого пошуку
+            foreach (Side side in System.Enum.GetValues(typeof(Side)))
+            {
+                if (!roadStructure.roadSides[(int)side])
+                    continue;
+
+                int newX = x + GetXOffset(side);
+                int newY = y + GetYOffset(side);
+                s += $"DfsRoadSearch at {x}, {y} side: {side} newX: {newX} newY: {newY}\n";
+                
+                TileData neighborTile = GetTileData(newX, newY);
+                if (neighborTile != null && 
+                    neighborTile.GetSide(GetOppositeSide(side)) == LandscapeType.Road)
+                {
+                    s += $"DfsRoadSearch at {x}, {y} side: {side} newX: {newX} newY: {newY} is road\n";
+                    DfsRoadSearch(newX, newY, visited, roadTiles, side);
+                }
+            }
+            CustomLogger.LogWarning(s);
+        }
+
+        public class RoadStructure
+        {
+            public Vector2Int tilePosition;
+            public bool[] roadSides = new bool[4];
+        }
     }
 }

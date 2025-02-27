@@ -22,6 +22,7 @@ namespace TerritoryWars
         public List<Sprite> SwordsAnimations;
         public List<Sprite> FirstPlayerFlagsAnimations;
         public List<Sprite> SecondPlayerFlagsAnimations;
+        public List<Sprite> MixedFlagsAnimations;
         
         public Color[] PlayerColors;
         
@@ -33,22 +34,23 @@ namespace TerritoryWars
         private int WinPlayerId;
         
         // third action dependencies
-        private List<Structure> _structures;
+        private Action Recoloring;
         
         // fourth action dependencies
-        private int Points;
+        private ushort[] Points;
         
-        public void Initialize(Vector3 position, int winPlayerId, List<Structure> structures, int points)
+        public void Initialize(Vector3 position, int winPlayerId, ushort[] points, Action recoloring)
         {
             transform.position = position;
             WinPlayerId = winPlayerId;
-            _structures = structures;
             Points = points;
+            Recoloring = recoloring;
             
             FlagsAnimations = new List<List<Sprite>>()
             {
                 FirstPlayerFlagsAnimations,
-                SecondPlayerFlagsAnimations
+                SecondPlayerFlagsAnimations,
+                MixedFlagsAnimations
             };
             
             _animationQueue.Enqueue(FirstAction);
@@ -69,13 +71,17 @@ namespace TerritoryWars
         
         private void SecondAction()
         {
+            if (Points[0] == Points[1])
+            {
+                WinPlayerId = 2;
+            }
             BackgroundCircle.color = PlayerColors[WinPlayerId];
             FlagsAnimator.Play(FlagsAnimations[WinPlayerId].ToArray());
             FlagsAnimator.OnAnimationEnd = NextAction;
             
             BackgroundCircle.gameObject.SetActive(true);
             PointsText.gameObject.SetActive(true);
-            PointsText.text = Points.ToString();
+            PointsText.text = (Points[0] + Points[1]).ToString();
             
             PointsText.color = new Color(1, 1, 1, 0);
             BackgroundCircle.color = new Color(PlayerColors[WinPlayerId].r, PlayerColors[WinPlayerId].g, PlayerColors[WinPlayerId].b, 0);
@@ -87,10 +93,7 @@ namespace TerritoryWars
         
         private void ThirdAction()
         {
-            foreach (var structure in _structures)
-            {
-                structure.TileData.RecolorCityStructures();
-            }
+            Recoloring.Invoke();
             NextAction();
         }
         

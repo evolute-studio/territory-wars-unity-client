@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using Dojo;
 using Dojo.Starknet;
 using TerritoryWars.General;
@@ -18,6 +19,7 @@ namespace TerritoryWars
         private Account _localPlayerAccount => _dojoGameManager.LocalBurnerAccount;
         private evolute_duel_Board _localPlayerBoard;
         private int _moveCount = 0;
+
         private int _snapshotTurn = 0;
         //public string LastMoveIdHex { get; set; }
         //public int LastPlayerSide { get; set; }
@@ -25,7 +27,9 @@ namespace TerritoryWars
         public delegate void MoveHandler(string playerAddress, TileData tile, Vector2Int position, int rotation);
 
         public event MoveHandler OnMoveReceived;
+
         public delegate void SkipMoveHandler(string address);
+
         public event SkipMoveHandler OnSkipMoveReceived;
 
         public evolute_duel_Board LocalPlayerBoard
@@ -48,15 +52,15 @@ namespace TerritoryWars
             dojoGameManager.WorldManager.synchronizationMaster.OnModelUpdated.AddListener(OnModelUpdated);
             dojoGameManager.WorldManager.synchronizationMaster.OnEventMessage.AddListener(OnEventMessage);
         }
-        
+
         private void OnModelUpdated(ModelInstance modelInstance)
         {
-            if(_dojoGameManager.IsTargetModel(modelInstance, nameof(evolute_duel_Board)))
+            if (_dojoGameManager.IsTargetModel(modelInstance, nameof(evolute_duel_Board)))
             {
                 //CustomLogger.LogImportant($"Model {nameof(evolute_duel_Board)} via OnModelUpdated");
             }
         }
-        
+
         private void OnEventMessage(ModelInstance modelInstance)
         {
             switch (modelInstance)
@@ -85,11 +89,18 @@ namespace TerritoryWars
                 case evolute_duel_RoadContestDraw roadContestDraw:
                     RoadContestDraw(roadContestDraw);
                     break;
+                case evolute_duel_CityContestWon cityContestWon:
+                    CityContestWon(cityContestWon);
+                    break;
+                case evolute_duel_CityContestDraw cityContestDraw:
+                    CityContestDraw(cityContestDraw);
+                    break;
             }
-            if(_dojoGameManager.IsTargetModel(modelInstance, nameof(evolute_duel_Moved)))
+
+            if (_dojoGameManager.IsTargetModel(modelInstance, nameof(evolute_duel_Moved)))
             {
             }
-            else if(_dojoGameManager.IsTargetModel(modelInstance, nameof(evolute_duel_Moved)))
+            else if (_dojoGameManager.IsTargetModel(modelInstance, nameof(evolute_duel_Moved)))
             {
             }
         }
@@ -97,8 +108,9 @@ namespace TerritoryWars
         private void Moved(evolute_duel_Moved eventModel)
         {
             string player = eventModel.player.Hex();
-            if (player != SessionManager.Instance.LocalPlayer.Address.Hex() && player != SessionManager.Instance.RemotePlayer.Address.Hex()) return;
-            
+            if (player != SessionManager.Instance.LocalPlayer.Address.Hex() &&
+                player != SessionManager.Instance.RemotePlayer.Address.Hex()) return;
+
             _moveCount++;
             string move_id = eventModel.move_id.Hex();
             string prev_move_id = eventModel.prev_move_id switch
@@ -106,31 +118,34 @@ namespace TerritoryWars
                 Option<FieldElement>.Some id => id.value.Hex(),
                 Option<FieldElement>.None => null
             };
-            TileData tile = eventModel.tile is Option<byte>.Some some ? new TileData(OnChainBoardDataConverter.TileTypes[some.value]) : null;
+            TileData tile = eventModel.tile is Option<byte>.Some some
+                ? new TileData(OnChainBoardDataConverter.TileTypes[some.value])
+                : null;
             int rotation = (eventModel.rotation + 3) % 4;
             Vector2Int position = new Vector2Int(eventModel.col, eventModel.row);
             bool isJoker = eventModel.is_joker;
             string board_id = eventModel.board_id.Hex();
-            
-            CustomLogger.LogEvent($"[Moved] | Player: {player} | MoveId: {move_id} | PrevMoveId: {prev_move_id} | Tile: {tile} | Rotation: {rotation} | Position: {position} | IsJoker: {isJoker} | BoardId: {board_id}");
+
+            CustomLogger.LogEvent(
+                $"[Moved] | Player: {player} | MoveId: {move_id} | PrevMoveId: {prev_move_id} | Tile: {tile} | Rotation: {rotation} | Position: {position} | IsJoker: {isJoker} | BoardId: {board_id}");
             OnMoveReceived?.Invoke(player, tile, position, rotation);
         }
-        
+
         private void InvalidMove(evolute_duel_InvalidMove eventModel)
         {
             string move_id = eventModel.move_id.Hex();
             string player = eventModel.player.Hex();
-            
+
             CustomLogger.LogError($"[InvalidMove] | Player: {player} | MoveId: {move_id}");
         }
-        
+
         private void Skipped(evolute_duel_Skiped eventModel)
         {
             string player = eventModel.player.Hex();
             CustomLogger.LogEvent($"[Skipped] | Player: {player}");
             OnSkipMoveReceived?.Invoke(player);
         }
-        
+
         private void BoardUpdated(evolute_duel_BoardUpdated eventModel)
         {
             string board_id = eventModel.board_id.Hex();
@@ -146,7 +161,7 @@ namespace TerritoryWars
             GameUI.Instance.SessionUI.SetLocalPlayerScore(cityScoreBlue, cartScoreBlue);
             GameUI.Instance.SessionUI.SetRemotePlayerScore(cityScoreRed, cartScoreRed);
         }
-        
+
         private void GameFinished(FieldElement board_id)
         {
             evolute_duel_Board board = GetLocalPlayerBoard(true);
@@ -157,82 +172,282 @@ namespace TerritoryWars
                 CreateSnapshot();
             }
         }
-        
+
         private void RoadContestWon(evolute_duel_RoadContestWon eventModel)
         {
             string board_id = eventModel.board_id.Hex();
-            
+
             if (LocalPlayerBoard.id.Hex() != board_id) return;
-            
+
             byte root = eventModel.root;
             int winner = eventModel.winner switch
             {
                 PlayerSide.Blue => 0,
                 PlayerSide.Red => 1,
             };
-            ushort red_points = eventModel.red_points; 
+            ushort red_points = eventModel.red_points;
             ushort blue_points = eventModel.blue_points;
+
+            ContestAnimation(root, new ushort[] {blue_points, red_points}, UpdateBoardAfterRoadContest);
             
-            //SessionManager.Instance.Board.RoadContest(root, winner, red_points, blue_points);
-            
-            
-            CustomLogger.LogEvent($"[RoadContestWon] | Player: {winner} | BluePoints: {blue_points} | RedPoints: {red_points} | BoardId: {board_id}");
+
+
+            CustomLogger.LogEvent(
+                $"[RoadContestWon] | Player: {winner} | BluePoints: {blue_points} | RedPoints: {red_points} | BoardId: {board_id}");
         }
-        
+
         private void RoadContestDraw(evolute_duel_RoadContestDraw eventModel)
         {
             string board_id = eventModel.board_id.Hex();
-            
+
             if (LocalPlayerBoard.id.Hex() != board_id) return;
-            
+
             byte root = eventModel.root;
             ushort red_points = eventModel.red_points;
             ushort blue_points = eventModel.blue_points;
             
-            CustomLogger.LogEvent($"[RoadContestDraw] | BluePoints: {blue_points} | RedPoints: {red_points} | BoardId: {board_id}");
+            
+            ContestAnimation(root, new ushort[] {blue_points, red_points}, UpdateBoardAfterRoadContest);
+            
+
+            CustomLogger.LogEvent(
+                $"[RoadContestDraw] | BluePoints: {blue_points} | RedPoints: {red_points} | BoardId: {board_id}");
         }
         
-        // public void CheckBoardUpdate()
-        // {
-        //     CustomLogger.LogImportant($"Checking board update");
-        //     if(LocalPlayerBoard == null || LocalPlayerBoard.last_move_id == null) return;
-        //     CustomLogger.LogImportant($"Board is not null");
-        //     string newMove = LocalPlayerBoard.last_move_id switch
-        //     {
-        //         Option<FieldElement>.Some moveId => moveId.value.Hex(),
-        //         Option<FieldElement>.None => null
-        //     };
-        //     CustomLogger.LogImportant($"New move equals LastMoveIdHex: {newMove == LastMoveIdHex}. LastMoveIdHex: {LastMoveIdHex} NewMove: {newMove}");
-        //     if (newMove != LastMoveIdHex && LocalPlayerBoard != null)
-        //     {
-        //         evolute_duel_Move moveModel = GetMoveModelById(LocalPlayerBoard.last_move_id);
-        //         CustomLogger.LogImportant($"Move model is null: {moveModel == null}");
-        //         if (moveModel == null)
-        //         {
-        //             DojoGameManager.Instance.TryAgain(CheckBoardUpdate, 1f);
-        //         }
-        //         var moveData = OnChainMoveDataConverter.GetMoveData(moveModel);
-        //         LastPlayerSide = moveData.Item1 switch
-        //         {
-        //             PlayerSide.Blue => 0,
-        //             PlayerSide.Red => 1,
-        //         };
-        //         if(LastPlayerSide == SessionManager.Instance.LocalPlayer.LocalId) return;
-        //         LastMoveIdHex = newMove;
-        //         Moved(moveData);
-        //     }
-        // }
-        //
-        // public void Moved((PlayerSide playerSide, TileData tile, int rotation, Vector2Int position, bool isJoker) moveData)
-        // {
-        //     CustomLogger.LogEvent($"[New Move]: Account {moveData.playerSide} made a move at {moveData.position.x}, {moveData.position.y}. Rotation: {moveData.rotation}");
-        //     OnMoveReceived?.Invoke(moveData.tile, moveData.position, moveData.rotation);
-        // }
+
+        private void CityContestWon(evolute_duel_CityContestWon eventModel)
+        {
+            string board_id = eventModel.board_id.Hex();
+
+            if (LocalPlayerBoard.id.Hex() != board_id) return;
+
+            byte root = eventModel.root;
+            int winner = eventModel.winner switch
+            {
+                PlayerSide.Blue => 0,
+                PlayerSide.Red => 1,
+            };
+            ushort red_points = eventModel.red_points;
+            ushort blue_points = eventModel.blue_points;
+
+            ContestAnimation(root, new ushort[] {blue_points, red_points}, UpdateBoardAfterCityContest);
+
+
+            CustomLogger.LogEvent(
+                $"[CityContestWon] | Player: {winner} | BluePoints: {blue_points} | RedPoints: {red_points} | BoardId: {board_id}");
+        }
+
+        private void CityContestDraw(evolute_duel_CityContestDraw eventModel)
+        {
+            string board_id = eventModel.board_id.Hex();
+
+            if (LocalPlayerBoard.id.Hex() != board_id) return;
+
+            byte root = eventModel.root;
+            ushort red_points = eventModel.red_points;
+            ushort blue_points = eventModel.blue_points;
+
+            ContestAnimation(root, new ushort[] {blue_points, red_points}, UpdateBoardAfterCityContest);
+
+            CustomLogger.LogEvent(
+                $"[CityContestDraw] | BluePoints: {blue_points} | RedPoints: {red_points} | BoardId: {board_id}");
+        }
+
         
+        private ClashAnimation CreateContestAnimation()
+        {
+            Vector3 offset = new Vector3(0, 0.5f, 0);
+            GameObject contestAnimationGO = PrefabsManager.Instance.InstantiateObject(PrefabsManager.Instance.ClashAnimationPrefab);
+            ClashAnimation contestAnimation = contestAnimationGO.GetComponent<ClashAnimation>();
+            return contestAnimation;
+        }
+        private void ContestAnimation(byte root, ushort[] points, Action recoloring)
+        {
+            ClashAnimation contestAnimation = CreateContestAnimation();
+            Vector2Int coord = OnChainBoardDataConverter.GetPositionByRoot(root);
+            Vector3 position = SessionManager.Instance.Board.GetTileObject(coord.x, coord.y).transform.position;
+            Vector3 offset = new Vector3(0, 0.5f, 0);
+            int winner;
+            if (points[0] > points[1])
+                winner = 0;
+            else if (points[0] < points[1]) 
+                winner = 1;
+            else
+                winner = -1;
+            contestAnimation.Initialize(position + offset, winner, points, recoloring);
+        }
+
+        private Dictionary<evolute_duel_CityNode, List<evolute_duel_CityNode>> cities;
+        private Dictionary<evolute_duel_RoadNode, List<evolute_duel_RoadNode>> roads;
+
+        private void BuildCitySets()
+        {
+            cities = new Dictionary<evolute_duel_CityNode, List<evolute_duel_CityNode>>();
+            var cityNodesList = GetCityNodes();
+            CustomLogger.LogWarning("CityNodesList: " + cityNodesList.Count);
+            foreach (var cityNode in cityNodesList)
+            {
+                var root = GetCityRoot(cityNode);
+                if (!cities.ContainsKey(root))
+                {
+                    cities[root] = new List<evolute_duel_CityNode>();
+                }
+
+                cities[root].Add(cityNode);
+            }
+        }
+
+        private void BuildRoadSets()
+        {
+            roads = new Dictionary<evolute_duel_RoadNode, List<evolute_duel_RoadNode>>();
+            var roadNodesList = GetRoadNodes();
+            CustomLogger.LogWarning("RoadNodesList: " + roadNodesList.Count);
+            foreach (var roadNode in roadNodesList)
+            {
+                var root = GetRoadRoot(roadNode);
+                if (!roads.ContainsKey(root))
+                {
+                    roads[root] = new List<evolute_duel_RoadNode>();
+                }
+
+                roads[root].Add(roadNode);
+            }
+        }
+
+        private evolute_duel_RoadNode GetRoadRoot(evolute_duel_RoadNode road)
+        {
+            if (road.position == road.parent)
+            {
+                return road;
+            }
+
+            var parentPosition = road.parent;
+            foreach (var roadNode in roadNodes)
+            {
+                if (roadNode.position == parentPosition)
+                {
+                    return GetRoadRoot(roadNode);
+                }
+            }
+            
+            return road;
+        }
+
+        private evolute_duel_CityNode GetCityRoot(evolute_duel_CityNode city)
+        {
+            if (city.position == city.parent)
+            {
+                return city;
+            }
+
+            var parentPosition = city.parent;
+            foreach (var cityNode in cityNodes)
+            {
+                if (cityNode.position == parentPosition)
+                {
+                    return GetCityRoot(cityNode);
+                }
+            }
+            
+            return city;
+        }
+
+        public void UpdateBoardAfterCityContest()
+        {
+            BuildCitySets();
+            
+            string s = "";
+            
+            foreach (var city in cities)
+            {
+                s += "Root: " + city.Key.position + " | ";
+                foreach (var node in city.Value)
+                {
+                    s += node.position + " ";
+                    Vector2Int position = OnChainBoardDataConverter.GetPositionByRoot(node.position);
+                    TileGenerator tileGenerator = SessionManager.Instance.Board.GetTileObject(position.x, position.y).GetComponent<TileGenerator>();
+                    int playerOwner;
+                    if(city.Key.contested) playerOwner = city.Key.blue_points > city.Key.red_points ? 0 : 1;
+                    else
+                    {
+                        playerOwner = OnChainBoardDataConverter.WhoPlaceTile(LocalPlayerBoard, position);
+                    }
+                    tileGenerator.RecolorHouses(playerOwner);
+                }
+                
+                
+            }
+            CustomLogger.LogWarning(s);
+        }
         
+            
+        public void UpdateBoardAfterRoadContest()
+        {
+            BuildRoadSets();
+            
+            string s = "";
+            foreach (var road in roads)
+            {
+                s += "Root: " + road.Key.position + " | ";
+                foreach (var node in road.Value)
+                {
+                    s += node.position + " ";
+                    (Vector2Int position, Side side) = OnChainBoardDataConverter.GetPositionAndSide(node.position);
+                    TileGenerator tileGenerator = SessionManager.Instance.Board.GetTileObject(position.x, position.y).GetComponent<TileGenerator>();
+                    int playerOwner;
+                    if (road.Key.contested)
+                    {
+                        if (road.Key.blue_points == road.Key.red_points)
+                        {
+                            continue;
+                        }
+                        playerOwner = road.Key.blue_points > road.Key.red_points ? 0 : 1;
+                    }
+                    else
+                    {
+                        playerOwner = OnChainBoardDataConverter.WhoPlaceTile(LocalPlayerBoard, position);
+                    }
+                    tileGenerator.RecolorPinOnSide(playerOwner, (int)side);
+                }
+                
+            }
+            CustomLogger.LogWarning(s);
+            
+        }
         
-        
-        
+
+        private List<evolute_duel_CityNode> cityNodes;
+        private List<evolute_duel_CityNode> GetCityNodes()
+        {
+            cityNodes = new List<evolute_duel_CityNode>();
+            GameObject[] cityNodesGO = _dojoGameManager.WorldManager.Entities<evolute_duel_CityNode>();
+            foreach (var cityNodeGO in cityNodesGO)
+            {
+                if (cityNodeGO.TryGetComponent(out evolute_duel_CityNode cityNode))
+                {
+                    if(cityNode.board_id.Hex() == LocalPlayerBoard.id.Hex())
+                        cityNodes.Add(cityNode);
+                }
+            }
+            return cityNodes;
+        }
+
+        private List<evolute_duel_RoadNode> roadNodes;
+        private List<evolute_duel_RoadNode> GetRoadNodes()
+        {
+            roadNodes = new List<evolute_duel_RoadNode>();
+            GameObject[] roadNodesGO = _dojoGameManager.WorldManager.Entities<evolute_duel_RoadNode>();
+            foreach (var roadNodeGO in roadNodesGO)
+            {
+                if (roadNodeGO.TryGetComponent(out evolute_duel_RoadNode roadNode))
+                {
+                    if(roadNode.board_id.Hex() == LocalPlayerBoard.id.Hex())
+                        roadNodes.Add(roadNode);
+                }
+            }
+            return roadNodes;
+        }
+
         public evolute_duel_Board GetLocalPlayerBoard(bool isFinished = false)
         {
             return GetBoard(_dojoGameManager.LocalBurnerAccount.Address, isFinished);

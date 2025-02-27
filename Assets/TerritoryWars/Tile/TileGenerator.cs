@@ -342,6 +342,34 @@ namespace TerritoryWars.Tile
                 houseRenderers[i].gameObject.GetComponent<SpriteAnimator>().ChangeSprites(TileAssetsObject.GetHouseByReference(houseRenderers[i].gameObject.GetComponent<SpriteAnimator>().sprites, playerId));
             }
         }
+        
+        public void RecolorPins(int playerId)
+        {
+            if (Pins.Count == 0)
+            {
+                return;
+            }
+            foreach (var pin in Pins)
+            {
+                if (pin == null) continue;
+                pin.sprite = TileAssetsObject.GetPinByPlayerId(playerId);
+            }
+        }
+        
+        public void RecolorPinOnSide(int playerId, int side)
+        {
+            if (Pins.Count == 0)
+            {
+                return;
+            }
+            if (pinRenderers[side] == null)
+            {
+                return;
+            }
+            pinRenderers[side].sprite = TileAssetsObject.GetPinByPlayerId(playerId);
+        }
+
+        
 
 
 

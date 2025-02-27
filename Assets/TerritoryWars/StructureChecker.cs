@@ -79,9 +79,7 @@ public class StructureChecker
         
         List<Structure> completed = MoveToCompleted(root);
 
-        GameObject contestAnimationGO = PrefabsManager.Instance.InstantiateObject(PrefabsManager.Instance.ClashAnimationPrefab);
-        ClashAnimation contestAnimation = contestAnimationGO.GetComponent<ClashAnimation>();
-        contestAnimation.Initialize(GetCompletedStructuresPosition(completed), winner, completed,(points[0] + points[1]) * 2);
+        
     }
     
     private List<Structure> MoveToCompleted(Structure structure)

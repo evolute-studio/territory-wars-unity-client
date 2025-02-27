@@ -191,7 +191,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.44, y: 1.92}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -295,7 +295,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.1764706, g: 0.25882354, b: 0.56078434, a: 1}
+  m_Color: {r: 0.99607843, g: 0.74509805, b: 0.4509804, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -393,9 +393,15 @@ MonoBehaviour:
   - {fileID: -647108332, guid: c4e74a2b7cbf4da368041b50f1e5a353, type: 3}
   - {fileID: 2059710483, guid: c4e74a2b7cbf4da368041b50f1e5a353, type: 3}
   - {fileID: -1834621551, guid: c4e74a2b7cbf4da368041b50f1e5a353, type: 3}
+  MixedFlagsAnimations:
+  - {fileID: -866118520, guid: c4e74a2b7cbf4da368041b50f1e5a353, type: 3}
+  - {fileID: -1633776904, guid: c4e74a2b7cbf4da368041b50f1e5a353, type: 3}
+  - {fileID: -1161983631, guid: c4e74a2b7cbf4da368041b50f1e5a353, type: 3}
+  - {fileID: -227369348, guid: c4e74a2b7cbf4da368041b50f1e5a353, type: 3}
   PlayerColors:
   - {r: 0.17254902, g: 0.25490198, b: 0.5647059, a: 1}
   - {r: 0.7019608, g: 0.15686275, b: 0.24705882, a: 1}
+  - {r: 0.99607843, g: 0.74509805, b: 0.4509804, a: 1}
 --- !u!1 &8118487898656169790
 GameObject:
   m_ObjectHideFlags: 0

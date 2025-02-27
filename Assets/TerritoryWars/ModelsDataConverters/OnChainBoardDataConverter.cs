@@ -172,5 +172,27 @@ namespace TerritoryWars.ModelsDataConverters
             int y = tile % 8;
             return new Vector2Int(x + 1, y + 1);
         }
+        
+        public static byte GetRootByPosition(Vector2Int position)
+        {
+            int x = position.x - 1;
+            int y = position.y - 1;
+            int tile = x * 8 + y;
+            return (byte)(tile * 4);
+        }
+        
+        public static (Vector2Int, Side) GetPositionAndSide(byte root)
+        {
+            Vector2Int position = GetPositionByRoot(root);
+            Side side = (Side)((root + 3) % 4);
+            return (position, side);
+        }
+        
+        public static int WhoPlaceTile(evolute_duel_Board board, Vector2Int position)
+        {
+            byte root = GetRootByPosition(position);
+            int tileId = root / 4;
+            return board.state[tileId].Item3;
+        }
     }
 }

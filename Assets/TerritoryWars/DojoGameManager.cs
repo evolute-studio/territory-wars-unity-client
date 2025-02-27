@@ -104,6 +104,15 @@ namespace TerritoryWars
             }
         }
         
+        public void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                SessionManager.UpdateBoardAfterCityContest();
+                SessionManager.UpdateBoardAfterRoadContest();
+            }
+        }
+        
         private async void TryCreateAccount(int attempts, bool createNew)
         {
             try
