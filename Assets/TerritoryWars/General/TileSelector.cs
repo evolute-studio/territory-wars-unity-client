@@ -471,7 +471,7 @@ namespace TerritoryWars.General
         {
             if (board.GetTileData(x, y) != null) return false;
 
-            bool hasNonBorderNeighbor = false;
+            bool hasValidNeighbor = false;
             foreach (Side side in System.Enum.GetValues(typeof(Side)))
             {
                 int newX = x + board.GetXOffset(side);
@@ -481,13 +481,28 @@ namespace TerritoryWars.General
                 {
                     if (!board.IsBorderTile(newX, newY))
                     {
-                        hasNonBorderNeighbor = true;
+                        // Якщо є звичайний (не граничний) сусід
+                        hasValidNeighbor = true;
                         break;
+                    }
+                    else
+                    {
+                        // Якщо це граничний тайл, перевіряємо чи він не Field
+                        TileData neighborTile = board.GetTileData(newX, newY);
+                        Side oppositeSide = board.GetOppositeSide(side);
+                        LandscapeType borderSide = neighborTile.GetSide(oppositeSide);
+                        
+                        if (borderSide != LandscapeType.Field)
+                        {
+                            // Якщо граничний тайл має дорогу або місто
+                            hasValidNeighbor = true;
+                            break;
+                        }
                     }
                 }
             }
 
-            return hasNonBorderNeighbor;
+            return hasValidNeighbor;
         }
 
         public void StartJokerTilePlacement(TileData tile, int x, int y)
