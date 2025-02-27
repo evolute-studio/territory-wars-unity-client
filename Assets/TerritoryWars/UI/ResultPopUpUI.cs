@@ -15,6 +15,7 @@ namespace TerritoryWars.UI
         [SerializeField] private float _animationDuration = 0.5f;
 
         private bool IsPlayer1Winner => _player1Score > _player2Score;
+        private bool IsDraw => _player1Score == _player2Score;
         
         private int _player1CityScores;
         private int _player1CartScores;
@@ -141,10 +142,15 @@ namespace TerritoryWars.UI
                     {
                         _resultPopupComponents.Player1Animator.SetBool("Win", true);
                     }
-                    else
+                    else if(!IsPlayer1Winner)
                     {
                         _resultPopupComponents.Player1Animator.SetBool("Lose", true);
                     }
+                    else if(IsDraw)
+                    {
+                        _resultPopupComponents.Player1Animator.SetBool("Lose", true);
+                    }
+                    
                 }));
             sequence.Append(_resultPopupComponents.Player2HeroSpriteRenderer.DOFade(1f, _animationDuration).OnComplete(
                 () =>
@@ -153,9 +159,13 @@ namespace TerritoryWars.UI
                     {
                         _resultPopupComponents.Player2Animator.SetBool("Lose", true);
                     }
-                    else
+                    else if(!IsPlayer1Winner)
                     {
                         _resultPopupComponents.Player2Animator.SetBool("Win", true);
+                    }
+                    else if (IsDraw)
+                    {
+                        _resultPopupComponents.Player2Animator.SetBool("Lose", true);
                     }
                 }));
             sequence.Append(_resultPopupComponents.Buttons.GetComponent<CanvasGroup>().DOFade(1f, _animationDuration));
