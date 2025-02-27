@@ -17,6 +17,7 @@ namespace TerritoryWars.General
     {
         public string player_id;
         public string username;
+        public int skin_id;
 
         public PlayerData(evolute_duel_Player model)
         {
@@ -28,6 +29,7 @@ namespace TerritoryWars.General
             if (profile == null) return;
             player_id = profile.player_id.Hex();
             username = CairoFieldsConverter.GetStringFromFieldElement(profile.username);
+            skin_id = profile.active_skin;
         }
     }
     
@@ -242,14 +244,14 @@ namespace TerritoryWars.General
             Players[0] = player1.GetComponent<Character>();
             Players[1] = player2.GetComponent<Character>();
             
-            Players[0].SetAnimatorController(sessionUI.charactersObject.GetAnimatorController(PlayerCharactersManager.GetCurrentCharacterId()));
-            Players[1].SetAnimatorController(sessionUI.charactersObject.GetAnimatorController(PlayerCharactersManager.GetOpponentCurrentCharacterId()));
-            
             Players[0].Initialize(board.player1.Item1, board.player1.Item2, board.player1.Item3);
             Players[1].Initialize(board.player2.Item1, board.player2.Item2, board.player2.Item3);
             
             PlayersData[0] = new PlayerData(DojoGameManager.Instance.GetPlayerData(Players[0].Address.Hex()));
             PlayersData[1] = new PlayerData(DojoGameManager.Instance.GetPlayerData(Players[1].Address.Hex()));
+            
+            Players[0].SetAnimatorController(sessionUI.charactersObject.GetAnimatorController(PlayersData[0].skin_id));
+            Players[1].SetAnimatorController(sessionUI.charactersObject.GetAnimatorController(PlayersData[1].skin_id));
             
             
             Players[0].transform.localScale = new Vector3(-0.7f, 0.7f, 1f);
@@ -308,7 +310,7 @@ namespace TerritoryWars.General
             gameUI.SetActiveDeckContainer(false);
         }
 
-        private void HandleMove(string playerAddress, TileData tile, Vector2Int position, int rotation)
+        private void HandleMove(string playerAddress, TileData tile, Vector2Int position, int rotation, bool isJoker)
         {
             evolute_duel_Player player = DojoGameManager.Instance.GetPlayerData(playerAddress);
             if(playerAddress == Players[0].Address.Hex() &&  player != null)
@@ -320,16 +322,17 @@ namespace TerritoryWars.General
                 PlayersData[1].UpdatePlayerData(player);
             }
             if (playerAddress == LocalPlayer.Address.Hex()) CompleteEndTurn(playerAddress);
-            else StartCoroutine(HandleOpponentMoveCoroutine(playerAddress, tile, position, rotation));
+            else StartCoroutine(HandleOpponentMoveCoroutine(playerAddress, tile, position, rotation, isJoker));
         }
         
         private void SkipMove(string playerAddress)
         {
-            TileSelector.ClearHighlights();
+            GameUI.Instance.SetJokerMode(false);
+            TileSelector.EndTilePlacement();
             CompleteEndTurn(playerAddress);
         }
 
-        private IEnumerator HandleOpponentMoveCoroutine(string playerAddress, TileData tile, Vector2Int position, int rotation)
+        private IEnumerator HandleOpponentMoveCoroutine(string playerAddress, TileData tile, Vector2Int position, int rotation, bool isJoker)
         {
             tile.Rotate(rotation);
             tile.OwnerId = RemotePlayer.LocalId;
@@ -342,6 +345,7 @@ namespace TerritoryWars.General
             });
             yield return new WaitForSeconds(1f);
             TileSelector.tilePreview.ResetPosition();
+            GameUI.Instance.SessionUI.UseJoker(RemotePlayer.LocalId);
             //CompleteEndTurn();
             CompleteEndTurn(playerAddress);
         }
@@ -387,6 +391,8 @@ namespace TerritoryWars.General
         
         public void SkipMove()
         {
+            TileSelector.ClearHighlights();
+            TileSelector.tilePreview.ResetPosition();
             DojoGameManager.Instance.SessionManager.SkipMove();
         }
 

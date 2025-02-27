@@ -24,7 +24,7 @@ namespace TerritoryWars
         //public string LastMoveIdHex { get; set; }
         //public int LastPlayerSide { get; set; }
 
-        public delegate void MoveHandler(string playerAddress, TileData tile, Vector2Int position, int rotation);
+        public delegate void MoveHandler(string playerAddress, TileData tile, Vector2Int position, int rotation, bool isJoker);
 
         public event MoveHandler OnMoveReceived;
 
@@ -128,7 +128,7 @@ namespace TerritoryWars
 
             CustomLogger.LogEvent(
                 $"[Moved] | Player: {player} | MoveId: {move_id} | PrevMoveId: {prev_move_id} | Tile: {tile} | Rotation: {rotation} | Position: {position} | IsJoker: {isJoker} | BoardId: {board_id}");
-            OnMoveReceived?.Invoke(player, tile, position, rotation);
+            OnMoveReceived?.Invoke(player, tile, position, rotation, isJoker);
         }
 
         private void InvalidMove(evolute_duel_InvalidMove eventModel)

@@ -220,7 +220,7 @@ namespace TerritoryWars.General
 
         public void ResetPosition()
         {
-            // currentTween?.Kill();
+            currentTween?.Kill();
             // currentTween = transform
             //     .DOMove(_initialPosition, moveDuration)
             //     .SetEase(moveEase);

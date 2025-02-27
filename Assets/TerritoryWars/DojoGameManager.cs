@@ -254,6 +254,19 @@ namespace TerritoryWars
             }
         }
         
+        public async void ChangePlayerSkin(int skinId)
+        {
+            try
+            {
+                CustomLogger.LogInfo("Set player skin");
+                var txHash = await PlayerProfileSystem.change_skin(LocalBurnerAccount, (byte)skinId);
+            }
+            catch (Exception e)
+            {
+                CustomLogger.LogError($"Failed to set player skin. {e}");
+            }
+        }
+        
         private void ModelUpdated(ModelInstance modelInstance)
         {
             if (modelInstance == null || modelInstance.transform == null) return;

@@ -428,6 +428,9 @@ namespace TerritoryWars.General
         {
             isPlacingTile = false;
             _currentValidPlacements = new List<ValidPlacement>();
+            isJokerMode = false;
+            selectedPosition = null;
+            jokerPosition = null;
             ClearHighlights();
         }
 

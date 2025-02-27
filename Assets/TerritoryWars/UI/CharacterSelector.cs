@@ -113,6 +113,7 @@ namespace TerritoryWars.UI
         {
             PlayerCharactersManager.ChangeCurrentCharacterId(characters[1].CharacterId);
             UpdateButtonVisual();
+            DojoGameManager.Instance.ChangePlayerSkin(characters[1].CharacterId);
         }
 
         public void UpdateButtonVisual()
