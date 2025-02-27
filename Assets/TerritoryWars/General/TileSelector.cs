@@ -284,8 +284,13 @@ namespace TerritoryWars.General
 
                 OnTileSelected?.Invoke(x, y);
                 gameUI.SetRotateButtonActive(currentValidRotations.Count > 1);
+                SetActiveHover(currentValidRotations.Count > 1);
                 gameUI.SetEndTurnButtonActive(true);
-            
+        }
+
+        public void SetActiveHover(bool isActive)
+        {
+            tilePreview.PreviewPolygonCollider2D.enabled = isActive;
         }
 
         private bool IsPossiblePosition(int x, int y)
@@ -401,6 +406,7 @@ namespace TerritoryWars.General
                     OnTilePlaced.Invoke();
                     gameUI.SetEndTurnButtonActive(false);
                     gameUI.SetRotateButtonActive(false);
+                    SetActiveHover(false);
                     gameUI.SetSkipTurnButtonActive(true);
                     // if (SessionManager.Instance.IsLocalPlayerTurn)
                     // {

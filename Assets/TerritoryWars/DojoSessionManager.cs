@@ -154,12 +154,10 @@ namespace TerritoryWars
             int cartScoreBlue = eventModel.blue_score.Item2;
             int cityScoreRed = eventModel.red_score.Item1;
             int cartScoreRed = eventModel.red_score.Item2;
-            GameUI.Instance.SessionUI.SetCityScore(0, cityScoreBlue);
-            GameUI.Instance.SessionUI.SetCityScore(1, cityScoreRed);
-            GameUI.Instance.SessionUI.SetRoadScore(0, cartScoreBlue);
-            GameUI.Instance.SessionUI.SetRoadScore(1, cartScoreRed);
-            GameUI.Instance.SessionUI.SetLocalPlayerScore(cityScoreBlue, cartScoreBlue);
-            GameUI.Instance.SessionUI.SetRemotePlayerScore(cityScoreRed, cartScoreRed);
+            
+            GameUI.Instance.SessionUI.SetCityScores(cityScoreBlue, cityScoreRed);
+            GameUI.Instance.SessionUI.SetRoadScores(cartScoreBlue, cartScoreRed);
+            GameUI.Instance.SessionUI.SetPlayerScores(cityScoreBlue + cartScoreBlue, cityScoreRed + cartScoreRed);
         }
 
         private void GameFinished(FieldElement board_id)

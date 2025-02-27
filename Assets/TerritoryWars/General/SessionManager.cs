@@ -69,6 +69,7 @@ namespace TerritoryWars.General
         public Character RemotePlayer { get; private set; }
         
         public bool IsLocalPlayerTurn => CurrentTurnPlayer == LocalPlayer;
+        public bool IsLocalPlayerBlue => LocalPlayer.LocalId == 0;
         
         private bool isJokerActive = false;
         

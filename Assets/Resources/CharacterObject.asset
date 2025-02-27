@@ -21,3 +21,7 @@ MonoBehaviour:
     AnimatorController: {fileID: 9100000, guid: ab8679ae00cc0b64fbb8f56551123ed5, type: 2}
     Avatar: {fileID: -6319067558682363733, guid: 09ffad3c164ce124887fdebf47eb4ac2, type: 3}
     Id: 1
+  - CharacterName: Bandicoot
+    AnimatorController: {fileID: 9100000, guid: ab8679ae00cc0b64fbb8f56551123ed5, type: 2}
+    Avatar: {fileID: -6319067558682363733, guid: 09ffad3c164ce124887fdebf47eb4ac2, type: 3}
+    Id: 1

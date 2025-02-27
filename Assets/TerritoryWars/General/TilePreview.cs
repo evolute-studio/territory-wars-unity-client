@@ -14,6 +14,7 @@ namespace TerritoryWars.General
         [SerializeField] private TileGenerator tileGenerator;
         [SerializeField] private TileView previewTileView;
         [SerializeField] private float tilePreviewSetHeight = 0.5f;
+        public PolygonCollider2D PreviewPolygonCollider2D;
         public TileJokerAnimator _tileJokerAnimator;
         public TileJokerAnimator _tileJokerAnimatorPreview;
         

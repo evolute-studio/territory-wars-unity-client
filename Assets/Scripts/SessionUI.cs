@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TerritoryWars.General;
 using TerritoryWars.Tile;
 using TerritoryWars.Tools;
+using TerritoryWars.UI;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -16,11 +17,11 @@ public class SessionUI : MonoBehaviour
     public List<TextMeshProUGUI> tileScoreTextPlayers;
     public List<TextMeshProUGUI> timeTextPlayers;
     [SerializeField] private Board _board;
+    public CharactersObject charactersObject;
     public TextMeshProUGUI LocalPlayerName;
     public TextMeshProUGUI RemotePlayerName;
-    public CharactersObject charactersObject;
-    public TextMeshProUGUI LocalPlayerScore;
-    public TextMeshProUGUI RemotePlayerScore;
+    public TextMeshProUGUI LocalPlayerScoreText;
+    public TextMeshProUGUI RemotePlayerScoreText;
 
     public List<Image> imagePlayers;
 
@@ -48,50 +49,64 @@ public class SessionUI : MonoBehaviour
                 joker.color = JokerAvailableColor;
             }
         }
-
-        players[0].playerImage.sprite = charactersObject.GetAvatar(PlayerCharactersManager.GetCurrentCharacterId());
-        players[1].playerImage.sprite = charactersObject.GetAvatar(PlayerCharactersManager.GetOpponentCurrentCharacterId());
+        
+        SetPlayersAvatars(charactersObject.GetAvatar(PlayerCharactersManager.GetCurrentCharacterId()),
+            charactersObject.GetAvatar(PlayerCharactersManager.GetOpponentCurrentCharacterId()));
     }
     
-    public void SetCityScore(int player, int score)
+    public void SetPlayersAvatars(Sprite localPlayerSprite, Sprite remotePlayerSprite)
     {
-        cityScoreTextPlayers[player].text = score.ToString();
+        Sprite[] playerSprites = SetLocalPlayerData.GetLocalPlayerSprite(localPlayerSprite, remotePlayerSprite);
+        players[0].playerImage.sprite = playerSprites[0];
+        players[1].playerImage.sprite = playerSprites[1];
     }
     
-    public void SetRoadScore(int player, int score)
-    {
-        tileScoreTextPlayers[player].text = score.ToString();
-    }
 
-    public void SetLocalPlayerScore(int localPlayerCityScore, int localPlayerTileScore)
+    public void SetCityScores(int localPlayerCityScore, int remotePlayerCityScore)
     {
-        LocalPlayerScore.text = (localPlayerCityScore + localPlayerTileScore).ToString();
+        int[] playersCityScores = SetLocalPlayerData.GetLocalPlayerInt(localPlayerCityScore, remotePlayerCityScore);
+        cityScoreTextPlayers[0].text = playersCityScores[0].ToString();
+        cityScoreTextPlayers[1].text = playersCityScores[1].ToString();
     }
     
-    public void SetRemotePlayerScore(int remotePlayerCityScore, int remotePlayerTileScore)
+    
+    public void SetRoadScores(int localPlayerTileScore, int remotePlayerTileScore)
     {
-        RemotePlayerScore.text = (remotePlayerCityScore + remotePlayerTileScore).ToString();
+        int[] playersRoadScores = SetLocalPlayerData.GetLocalPlayerInt(localPlayerTileScore, remotePlayerTileScore);
+        tileScoreTextPlayers[0].text = playersRoadScores[0].ToString();
+        tileScoreTextPlayers[1].text = playersRoadScores[1].ToString();
     }
 
-    public void UpdateTime()
+    public void SetPlayerScores(int localPlayerScore, int remotePlayerScore)
     {
-        int currentCharacter = TerritoryWars.General.SessionManager.Instance.GetCurrentCharacter();
-        players[currentCharacter].UpdateTimer();
-        timeTextPlayers[currentCharacter].text = string.Format("{0:00}:{1:00}",
-            Mathf.Floor(players[currentCharacter].time / 60),
-            Mathf.Floor(players[currentCharacter].time % 60));
+        int[] playersScores = SetLocalPlayerData.GetLocalPlayerInt(localPlayerScore, remotePlayerScore);
+        LocalPlayerScoreText.text = playersScores[0].ToString();
+        RemotePlayerScoreText.text = playersScores[1].ToString();
     }
+
+    // public void UpdateTime()
+    // {
+    //     int currentCharacter = TerritoryWars.General.SessionManager.Instance.GetCurrentCharacter();
+    //     players[currentCharacter].UpdateTimer();
+    //     timeTextPlayers[currentCharacter].text = string.Format("{0:00}:{1:00}",
+    //         Mathf.Floor(players[currentCharacter].time / 60),
+    //         Mathf.Floor(players[currentCharacter].time % 60));
+    // }
     
     public void SetNames(string localPlayerName, string remotePlayerName)
     {
-        LocalPlayerName.text = localPlayerName;
-        RemotePlayerName.text = remotePlayerName;
+        string[] playerNames = SetLocalPlayerData.GetLocalPlayerString(localPlayerName, remotePlayerName);
+        LocalPlayerName.text = playerNames[0];
+        RemotePlayerName.text = playerNames[1];
     }
 
-
-
-    public void UseJoker(int player)
+    public void UseJoker(int player) // логіку сюди для відображення корректної кількості джокерів для локал плеєра і спавн персонажів правильний
     {
+        if (!SessionManager.Instance.IsLocalPlayerBlue)
+        {
+            player = player == 0 ? 1 : 0;
+        }
+        
         if (players[player].jokerCount == 0)
             return;
 
@@ -99,13 +114,6 @@ public class SessionUI : MonoBehaviour
         players[player].jokersImage[players[player].jokerCount].color = JokerNotAvailableColor;
         players[player].jokerCountText.text = players[player].jokerCount.ToString();
     }
-
-    public void SessionExit()
-    {
-
-    }
-
-
 
     [Serializable]
     public class PlayerInfo

@@ -43,45 +43,52 @@ namespace TerritoryWars.UI
 
         public void SetPlayersName(string player1Name, string player2Name)
         {
-            _resultPopupComponents.Player1Name.text = player1Name;
-            _resultPopupComponents.Player2Name.text = player2Name;
+            string[] playerNames = SetLocalPlayerData.GetLocalPlayerString(player1Name, player2Name);
+            _resultPopupComponents.Player1Name.text = playerNames[0];
+            _resultPopupComponents.Player2Name.text = playerNames[1];
         }
 
         public void SetPlayersAvatars(Sprite localPlayerSprite, Sprite remotePlayerSprite)
         {
-            _resultPopupComponents.Player1Avatar.sprite = localPlayerSprite;
-            _resultPopupComponents.Player2Avatar.sprite = remotePlayerSprite;
+            Sprite[] playerSprites = SetLocalPlayerData.GetLocalPlayerSprite(localPlayerSprite, remotePlayerSprite);
+            _resultPopupComponents.Player1Avatar.sprite = playerSprites[0];
+            _resultPopupComponents.Player2Avatar.sprite = playerSprites[1];
         }
 
         public void SetPlayersScore(int player1Score, int player2Score)
         {
-            _player1Score = player1Score;
-            _player2Score = player2Score;
+            int[] playerScores = SetLocalPlayerData.GetLocalPlayerInt(player1Score, player2Score);
+            _player1Score = playerScores[0];
+            _player2Score = playerScores[1];
             
-            _resultPopupComponents.Player1Score.text = player1Score.ToString();
-            _resultPopupComponents.Player2Score.text = player2Score.ToString();
+            _resultPopupComponents.Player1Score.text = playerScores[0].ToString();
+            _resultPopupComponents.Player2Score.text = playerScores[1].ToString();
         }
         
         public void SetPlayersCityScores(int player1CityScores, int player2CityScores)
         {
-            _resultPopupComponents.Player1CityScores.text = player1CityScores.ToString();
-            _resultPopupComponents.CityEvoluteScoreTextPlayer1.text = $" x {player1CityScores}";
-            _resultPopupComponents.Player2CityScores.text = player2CityScores.ToString();
-            _resultPopupComponents.CityEvoluteScoreTextPlayer2.text = $" x {player2CityScores}";
+            int[] playersCityScores = SetLocalPlayerData.GetLocalPlayerInt(player1CityScores, player2CityScores);
+            
+            _resultPopupComponents.Player1CityScores.text = playersCityScores[0].ToString();
+            _resultPopupComponents.CityEvoluteScoreTextPlayer1.text = $" x {playersCityScores[0]}";
+            _resultPopupComponents.Player2CityScores.text = playersCityScores[1].ToString();
+            _resultPopupComponents.CityEvoluteScoreTextPlayer2.text = $" x {playersCityScores[1]}";
         }
         
         public void SetPlayersCartScores(int player1CartScores, int player2CartScores)
         {
-            _resultPopupComponents.Player1CartScores.text = player1CartScores.ToString();
-            _resultPopupComponents.CartEvoluteScoreTextPlayer1.text = $" x {player1CartScores}";
-            _resultPopupComponents.Player2CartScores.text = player2CartScores.ToString();
-            _resultPopupComponents.CartEvoluteScoreTextPlayer2.text = $" x {player2CartScores}";
+            int[] playersCartScores = SetLocalPlayerData.GetLocalPlayerInt(player1CartScores, player2CartScores);
+            _resultPopupComponents.Player1CartScores.text = playersCartScores[0].ToString();
+            _resultPopupComponents.CartEvoluteScoreTextPlayer1.text = $" x {playersCartScores[0]}";
+            _resultPopupComponents.Player2CartScores.text = playersCartScores[1].ToString();
+            _resultPopupComponents.CartEvoluteScoreTextPlayer2.text = $" x {playersCartScores[1]}";
         }
 
         public void SetPlayerHeroAnimator(RuntimeAnimatorController localPlayerAnimator, RuntimeAnimatorController remotePlayerAnimator)
         {
-            _resultPopupComponents.Player1Animator.runtimeAnimatorController = localPlayerAnimator;
-            _resultPopupComponents.Player2Animator.runtimeAnimatorController = remotePlayerAnimator;
+            RuntimeAnimatorController[] playersAnimatorController = SetLocalPlayerData.GetLocalPlayerAnimator(localPlayerAnimator, remotePlayerAnimator);
+            _resultPopupComponents.Player1Animator.runtimeAnimatorController = playersAnimatorController[0];
+            _resultPopupComponents.Player2Animator.runtimeAnimatorController = playersAnimatorController[1];
         }
 
         public void SetWinnerText(string winnerText)
@@ -91,8 +98,9 @@ namespace TerritoryWars.UI
         
         public void SetPlayersJoker(int player1JokersCount, int player2JokersCount)
         {
-            _player1JokersCount = player1JokersCount;
-            _player2JokersCount = player2JokersCount;
+            int[] playersJokersCount = SetLocalPlayerData.GetLocalPlayerInt(player1JokersCount, player2JokersCount);
+            _player1JokersCount = playersJokersCount[0];
+            _player2JokersCount = playersJokersCount[1];
         }
 
         public void ViewResults()

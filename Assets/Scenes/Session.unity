@@ -12986,6 +12986,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7793714312400054033, guid: 774b7ce5654b64e70a908d11e8fec69e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8383418951159515312, guid: 774b7ce5654b64e70a908d11e8fec69e, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -13031,6 +13035,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf8ec81a4dc80408788e760e5c68b12a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!60 &445110156 stripped
+PolygonCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7793714312400054033, guid: 774b7ce5654b64e70a908d11e8fec69e, type: 3}
+  m_PrefabInstance: {fileID: 445110153}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &447543790
 GameObject:
   m_ObjectHideFlags: 0
@@ -38249,6 +38258,14 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6656283264602794713, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
+      propertyPath: LocalPlayerScoreText
+      value: 
+      objectReference: {fileID: 1261502057}
+    - target: {fileID: 6656283264602794713, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
+      propertyPath: RemotePlayerScoreText
+      value: 
+      objectReference: {fileID: 1261502056}
+    - target: {fileID: 6656283264602794713, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
       propertyPath: imagePlayers.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -46680,6 +46697,7 @@ MonoBehaviour:
   tileGenerator: {fileID: 445110154}
   previewTileView: {fileID: 445110155}
   tilePreviewSetHeight: 0.5
+  PreviewPolygonCollider2D: {fileID: 445110156}
   _tileJokerAnimator: {fileID: 557829319}
   _tileJokerAnimatorPreview: {fileID: 605219370}
   tileGeneratorForUI: {fileID: 1954797706}

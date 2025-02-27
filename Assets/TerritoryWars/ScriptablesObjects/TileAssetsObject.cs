@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TerritoryWars.UI;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -31,12 +32,16 @@ namespace TerritoryWars.ScriptablesObjects
 
         public Sprite[] GetNextHouse(int playerIndex)
         {
+            playerIndex = SetLocalPlayerData.GetLocalIndex(playerIndex);
             if (playerIndex == -1)
             {
                 CurrentHouseIndex = (CurrentHouseIndex + 1) % NeutralHousesAnimated.Count;
                 Sprite[] neutralNextHouseSprites = NeutralHousesAnimated[CurrentHouseIndex].HousesSprites;
                 return neutralNextHouseSprites;
             }
+            
+            
+            
             List<HousesSprite>[] Houses = { FirstPlayerHousesAnimated, SecondPlayerHousesAnimated };
             CurrentHouseIndex = (CurrentHouseIndex + 1) % Houses[playerIndex].Count;
             Sprite[] nextHouseSprites = Houses[playerIndex][CurrentHouseIndex].HousesSprites;
@@ -45,6 +50,7 @@ namespace TerritoryWars.ScriptablesObjects
         
         public Sprite[] GetHouseByReference(Sprite[] sprites, int playerIndex)
         {
+            playerIndex = SetLocalPlayerData.GetLocalIndex(playerIndex);
             foreach (var house in FirstPlayerHousesAnimated)
             {
                 if (house.HousesSprites == sprites)
@@ -125,6 +131,7 @@ namespace TerritoryWars.ScriptablesObjects
         
         public Sprite GetPinByPlayerId(int playerId)
         {
+            playerId = SetLocalPlayerData.GetLocalIndex(playerId);
             int id = playerId + 1;
             return Pins[id];
         }
