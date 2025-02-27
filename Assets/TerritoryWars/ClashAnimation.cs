@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
 using TerritoryWars.Tools;
+using TerritoryWars.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -41,8 +42,9 @@ namespace TerritoryWars
         
         public void Initialize(Vector3 position, int winPlayerId, ushort[] points, Action recoloring)
         {
+            
             transform.position = position;
-            WinPlayerId = winPlayerId;
+            WinPlayerId = SetLocalPlayerData.GetLocalIndex(winPlayerId);
             Points = points;
             Recoloring = recoloring;
             

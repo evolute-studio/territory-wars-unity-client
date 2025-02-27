@@ -50,9 +50,8 @@ namespace TerritoryWars.UI
 
         public void SetPlayersAvatars(Sprite localPlayerSprite, Sprite remotePlayerSprite)
         {
-            Sprite[] playerSprites = SetLocalPlayerData.GetLocalPlayerSprite(localPlayerSprite, remotePlayerSprite);
-            _resultPopupComponents.Player1Avatar.sprite = playerSprites[0];
-            _resultPopupComponents.Player2Avatar.sprite = playerSprites[1];
+            _resultPopupComponents.Player1Avatar.sprite = localPlayerSprite;
+            _resultPopupComponents.Player2Avatar.sprite = remotePlayerSprite;
         }
 
         public void SetPlayersScore(int player1Score, int player2Score)

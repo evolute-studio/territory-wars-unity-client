@@ -211,12 +211,9 @@ namespace TerritoryWars.General
             int cartScoreBlue = board.blue_score.Item2;
             int cityScoreRed = board.red_score.Item1;
             int cartScoreRed = board.red_score.Item2;
-            GameUI.Instance.SessionUI.SetCityScore(0, cityScoreBlue);
-            GameUI.Instance.SessionUI.SetCityScore(1, cityScoreRed);
-            GameUI.Instance.SessionUI.SetRoadScore(0, cartScoreBlue);
-            GameUI.Instance.SessionUI.SetRoadScore(1, cartScoreRed);
-            GameUI.Instance.SessionUI.SetLocalPlayerScore(cityScoreBlue, cartScoreBlue);
-            GameUI.Instance.SessionUI.SetRemotePlayerScore(cityScoreRed, cartScoreRed);
+            GameUI.Instance.SessionUI.SetCityScores(cityScoreBlue, cityScoreRed);
+            GameUI.Instance.SessionUI.SetRoadScores(cartScoreBlue, cartScoreRed);
+            GameUI.Instance.SessionUI.SetPlayerScores(cityScoreBlue + cartScoreBlue, cityScoreRed + cartScoreRed);
             StartGame();
         }
 
@@ -250,17 +247,25 @@ namespace TerritoryWars.General
             
             PlayersData[0] = new PlayerData(DojoGameManager.Instance.GetPlayerData(Players[0].Address.Hex()));
             PlayersData[1] = new PlayerData(DojoGameManager.Instance.GetPlayerData(Players[1].Address.Hex()));
-            
-            Players[0].SetAnimatorController(sessionUI.charactersObject.GetAnimatorController(PlayersData[0].skin_id));
-            Players[1].SetAnimatorController(sessionUI.charactersObject.GetAnimatorController(PlayersData[1].skin_id));
-            
-            
+
+
+
             Players[0].transform.localScale = new Vector3(-0.7f, 0.7f, 1f);
             CurrentTurnPlayer = Players[0];
             LocalPlayer = Players[0].Address.Hex() == DojoGameManager.Instance.LocalBurnerAccount.Address.Hex() 
                 ? Players[0] : Players[1];
             RemotePlayer = LocalPlayer == Players[0] ? Players[1] : Players[0];
 
+            if (IsLocalPlayerBlue)
+            {
+                Players[0].SetAnimatorController(sessionUI.charactersObject.GetAnimatorController(PlayersData[0].skin_id));
+                Players[1].SetAnimatorController(sessionUI.charactersObject.GetAnimatorController(PlayersData[1].skin_id));
+            }
+            else
+            {
+                Players[0].SetAnimatorController(sessionUI.charactersObject.GetAnimatorController(PlayersData[1].skin_id));
+                Players[1].SetAnimatorController(sessionUI.charactersObject.GetAnimatorController(PlayersData[0].skin_id));
+            }
             // Анімація спуску персонажів по дузі
             Players[0].transform
                 .DOPath(path1, 2.5f, PathType.CatmullRom)
@@ -429,6 +434,7 @@ namespace TerritoryWars.General
 
         public int GetJokerCount(int playerId)
         {
+            SetLocalPlayerData.GetLocalIndex(playerId);
             return Players[playerId].JokerCount;
         }
 
@@ -475,10 +481,11 @@ namespace TerritoryWars.General
             // Показуємо чий зараз хід
             float time = Time.time;
             string turnInfo;
+            string enemyNickname = IsLocalPlayerBlue ? PlayersData[1].username : PlayersData[0].username;
             
             if (CurrentTurnPlayer != LocalPlayer)
             {
-                turnInfo = $"Waiting for {PlayersData[1].username} turn" + new string('.', (int)(time % 3) + 1);;
+                turnInfo = $"Waiting for {enemyNickname} turn" + new string('.', (int)(time % 3) + 1);;
             }
             else
             {
