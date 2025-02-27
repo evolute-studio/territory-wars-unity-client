@@ -164,5 +164,13 @@ namespace TerritoryWars.ModelsDataConverters
             }
             return 0;
         }
+
+        public static Vector2Int GetPositionByRoot(byte root)
+        {
+            int tile = root / 4;
+            int x = tile / 8;
+            int y = tile % 8;
+            return new Vector2Int(x + 1, y + 1);
+        }
     }
 }

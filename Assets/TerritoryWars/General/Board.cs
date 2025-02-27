@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using DG.Tweening;
 using TerritoryWars.ModelsDataConverters;
 using TerritoryWars.ScriptablesObjects;
 using TerritoryWars.Tile;
@@ -180,25 +181,73 @@ namespace TerritoryWars.General
             PlacedTiles[new Vector2Int(x, y)] = data;
             OnTilePlaced?.Invoke(data, x, y);
             CheckConnections(data, x, y);
+            
+            if( (x == 1 || x == width - 2 || y == 1 || y == height - 2) && !IsEdgeTile(x, y))
+            {
+                TryConnectEdgeStructure(ownerId, x, y);
+            }
 
             return true;
         }
 
+        private void TryConnectEdgeStructure(int owner, int x, int y)
+        {
+            CustomLogger.LogInfo($"TryConnectEdgeStructure at {x}, {y}");
+            GameObject[] neighborsGO = new GameObject[4];
+            TileData[] neighborsData = new TileData[4];
+            int[,] positions = new int[4, 2] { {1, 0}, {0, -1}, {-1, 0}, {0, 1} };
+            int[,] tilePositions = new int[4, 2];
+            
+            for (int i = 0; i < 4; i++)
+            {
+                int newX = x + positions[i, 0];
+                int newY = y + positions[i, 1];
+                tilePositions[i, 0] = newX;
+                tilePositions[i, 1] = newY;
+                neighborsGO[i] = tileObjects[newX, newY];
+                neighborsData[i] = tileData[newX, newY];
+            }
+            
+            for( int i = 0; i < 4; i++)
+            {
+                if(IsEdgeTile(tilePositions[i, 0], tilePositions[i, 1]) && neighborsGO[i] != null)
+                {
+                    TileGenerator tileGenerator = neighborsGO[i].GetComponent<TileGenerator>();
+                    foreach (var renderer in tileGenerator.houseRenderers)
+                    {
+                        //renderer.sprite = tileAssets.GetHouseByReference(renderer.sprite, owner);
+                        tileGenerator.RecolorHouses(owner);
+                    }
+
+                    foreach (var pin in tileGenerator.pinRenderers)
+                    {
+                        if (pin == null) continue;
+                        pin.sprite = tileAssets.GetPinByPlayerId(owner);
+                    }
+                }
+            }
+        }
+        
+        private bool IsEdgeTile(int x, int y)
+        {
+            return x == 0 || x == width - 1 || y == 0 || y == height - 1;
+        }
+        
         public bool CanPlaceTile(TileData tile, int x, int y)
         {
-            // Checking the boundaries of the field
+            // Перевірка меж поля
             if (x < 0 || x >= width || y < 0 || y >= height)
             {
                 return false;
             }
 
-            // Checking or position is free
+            // Перевірка чи позиція вільна
             if (tileData[x, y] != null)
             {
                 return false;
             }
 
-            // We count the number of tiles placed
+            // Підрахунок кількості розміщених тайлів
             int placedTiles = 0;
             for (int i = 0; i < width; i++)
             {
@@ -211,16 +260,17 @@ namespace TerritoryWars.General
                 }
             }
 
-            // If the map is less than 36 tile, we allow placement in any position
+            // Якщо карта менше 36 тайлів, дозволяємо розміщення в будь-якій позиції
             if (placedTiles < 36)
             {
                 return true;
             }
 
-            // We find all the adjacent tiles
+            // Знаходимо всі сусідні тайли
             Dictionary<Side, TileData> neighbors = new Dictionary<Side, TileData>();
             bool hasAnyNeighbor = false;
             bool hasNonBorderNeighbor = false;
+            bool hasBorderWithNonField = false;
 
             foreach (Side side in System.Enum.GetValues(typeof(Side)))
             {
@@ -232,32 +282,52 @@ namespace TerritoryWars.General
                     neighbors[side] = tileData[newX, newY];
                     hasAnyNeighbor = true;
 
-                    // check whether this is not a boundary tile
-                    if (!IsBorderTile(newX, newY))
+                    if (IsBorderTile(newX, newY))
+                    {
+                        // Перевіряємо чи граничний тайл має дорогу або місто
+                        LandscapeType borderSide = tileData[newX, newY].GetSide(GetOppositeSide(side));
+                        if (borderSide != LandscapeType.Field)
+                        {
+                            hasBorderWithNonField = true;
+                        }
+                    }
+                    else
                     {
                         hasNonBorderNeighbor = true;
                     }
                 }
             }
 
-            // if there are no neighbors at all
+            // Якщо немає сусідів взагалі
             if (!hasAnyNeighbor)
             {
                 return false;
             }
 
-            // If there is only one neighbor and it is a boundary tile
-            if (neighbors.Count == 1 && !hasNonBorderNeighbor)
+            // Якщо є граничний сусід з дорогою або містом, дозволяємо розміщення
+            if (hasBorderWithNonField)
             {
-                var neighbor = neighbors.First();
-                // check that the side of the boundary tile is the field
-                if (neighbor.Value.GetSide(GetOppositeSide(neighbor.Key)) == LandscapeType.Field)
+                // Перевіряємо відповідність типів для всіх сусідів
+                foreach (var neighbor in neighbors)
                 {
-                    return false;
+                    Side side = neighbor.Key;
+                    TileData adjacentTile = neighbor.Value;
+                    if (!IsMatchingLandscape(tile.GetSide(side), 
+                        adjacentTile.GetSide(GetOppositeSide(side))))
+                    {
+                        return false;
+                    }
                 }
+                return true;
             }
 
-            // check each side of the tile for matching
+            // Якщо немає граничного сусіда з дорогою/містом і немає звичайного сусіда
+            if (!hasNonBorderNeighbor)
+            {
+                return false;
+            }
+
+            // Перевіряємо кожну сторону тайла на відповідність
             foreach (var neighbor in neighbors)
             {
                 Side side = neighbor.Key;
@@ -266,6 +336,13 @@ namespace TerritoryWars.General
                 LandscapeType currentSide = tile.GetSide(side);
                 LandscapeType adjacentSide = adjacentTile.GetSide(GetOppositeSide(side));
 
+                // Якщо сусід - граничний тайл і його сторона - поле (F), дозволяємо будь-який тип
+                if (IsBorderTile(x + GetXOffset(side), y + GetYOffset(side)) && adjacentSide == LandscapeType.Field)
+                {
+                    continue;
+                }
+
+                // Інакше перевіряємо на відповідність типів
                 if (!IsMatchingLandscape(currentSide, adjacentSide))
                 {
                     return false;
@@ -484,5 +561,7 @@ namespace TerritoryWars.General
             if (!IsValidPosition(x, y)) return null;
             return tileData[x, y];
         }
+
+        
     }
 }

@@ -119,7 +119,7 @@ namespace TerritoryWars.General
                 else
                 {
                     baseSides[i] = 'X';
-                    randomSides[i] = GetRandomLandscape();
+                    randomSides[i] = 'F';
                 }
             }
             

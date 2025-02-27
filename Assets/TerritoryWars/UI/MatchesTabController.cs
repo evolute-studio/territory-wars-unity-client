@@ -138,6 +138,7 @@ namespace TerritoryWars.UI
                 {
                     matchListItem.UpdateItem(playerName, evoluteBalance, status, moveNumber,() =>
                     {
+                        SetActivePanel(false);
                         DojoGameManager.Instance.JoinGame(gameModel.player);
                     });
                 
@@ -190,6 +191,7 @@ namespace TerritoryWars.UI
 
         public void CreateMatch()
         {
+            SetActivePanel(false);
             DojoGameManager.Instance.CreateGame();
         }
         

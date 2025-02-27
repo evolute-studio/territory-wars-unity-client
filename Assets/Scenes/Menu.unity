@@ -8401,9 +8401,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5603004037400268344, guid: ecd4eab03d892ab99a56a1c2e7972ebf, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4237476928421870864}
-    - targetCorrespondingSourceObject: {fileID: 5603004037400268344, guid: ecd4eab03d892ab99a56a1c2e7972ebf, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4237476928421870866}
   m_SourcePrefab: {fileID: 100100000, guid: ecd4eab03d892ab99a56a1c2e7972ebf, type: 3}
 --- !u!4 &4237476928421870862 stripped
 Transform:
@@ -8440,22 +8437,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6745b9e5c98e414aac727cb6298ca81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4237476928421870866
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4237476928421870863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c4b5d206a534104aeb1c3ef5223826f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultCursor: {fileID: 2800000, guid: e5677a2b321a94501a141bbeac5f7914, type: 3}
-  pointerCursor: {fileID: 2800000, guid: 99b6fe76644da4379a026360b3a1b435, type: 3}
-  defaultHotspot: {x: 0, y: 0}
-  pointerHotspot: {x: 0, y: 0}
 --- !u!114 &4415714426033337175
 MonoBehaviour:
   m_ObjectHideFlags: 0

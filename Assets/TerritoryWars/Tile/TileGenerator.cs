@@ -40,6 +40,8 @@ namespace TerritoryWars.Tile
         public List<SpriteRenderer> AllCityRenderers = new List<SpriteRenderer>();
         public List<LineRenderer> AllCityLineRenderers = new List<LineRenderer>();
         public List<SpriteRenderer> Pins = new List<SpriteRenderer>();
+        public List<SpriteRenderer> houseRenderers;
+        public SpriteRenderer[] pinRenderers;
 
 
         public void Start() => Initialize();
@@ -131,6 +133,9 @@ namespace TerritoryWars.Tile
             id = id.Replace('C', 'X');
             id = id.Replace('F', 'X');
             RoadRenderer.transform.localScale = Vector3.one;
+            
+            if(RoadPath != null)
+                Destroy(RoadPath);
 
             foreach (var roadPair in RoadPairs)
             {
@@ -172,6 +177,7 @@ namespace TerritoryWars.Tile
 
         private void GenerateRoadPins()
         {
+            pinRenderers = new SpriteRenderer[4];
             int playerId = SessionManager.Instance.CurrentTurnPlayer != null
                 ? SessionManager.Instance.CurrentTurnPlayer.LocalId
                 : -1;
@@ -189,16 +195,18 @@ namespace TerritoryWars.Tile
             char[] id = TileConfig.ToCharArray();
             for (int i = 0; i < id.Length; i++)
             {
+                RoadPath.transform.localScale = RoadPath.transform.parent.localScale;
                 if (id[i] == 'R')
                 {
                     CustomLogger.LogInfo("Creating pin for road " + i + " parent: " + points[i].name);
                     GameObject pin = Instantiate(PrefabsManager.Instance.PinPrefab, points[i]);
                     SpriteRenderer pinRenderer = pin.GetComponent<SpriteRenderer>();
+                    pinRenderers[i] = pinRenderer;
                     pin.transform.parent = points[i];
-                    Vector3 scale = pinRenderer.transform.localScale;
-                    scale.x = pinRenderer.transform.parent.parent.parent.localScale.x;
-                    scale.y = pinRenderer.transform.parent.parent.parent.localScale.y;
-                    pinRenderer.transform.localScale = scale;
+                    // Vector3 scale = pinRenderer.transform.localScale;
+                    // scale.x = pinRenderer.transform.parent.parent.parent.localScale.x;
+                    // scale.y = pinRenderer.transform.parent.parent.parent.localScale.y;
+                    // pinRenderer.transform.localScale = scale;
                     pinRenderer.transform.localPosition = Vector3.zero;
                     pin.transform.DOLocalMoveY(0.035f, 2f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutQuad);
                     if (_tileData.OwnerId == -1) playerId = -1;
@@ -258,7 +266,7 @@ namespace TerritoryWars.Tile
             
             
             // find in children game objects with sprite renderer and name House
-            List<SpriteRenderer> houseRenderers = city.GetComponentsInChildren<SpriteRenderer>()
+            houseRenderers = city.GetComponentsInChildren<SpriteRenderer>()
                 .ToList().Where(x => x.name == "House").ToList();
             Transform arc = city.transform.Find("Arc");
             List<SpriteRenderer> arcRenderers = city.GetComponentsInChildren<SpriteRenderer>().ToList().Where(x => x.name == "Arc").ToList();
@@ -327,9 +335,9 @@ namespace TerritoryWars.Tile
                 return;
             }
             Debug.Log("Recoloring houses. PlayerId: " + playerId);
-            SpriteRenderer[] houseRenderers = City.GetComponentsInChildren<SpriteRenderer>()
-                .ToList().Where(x => x.name == "House").ToArray();
-            for (int i = 0; i < houseRenderers.Length; i++)
+            houseRenderers = City.GetComponentsInChildren<SpriteRenderer>()
+                .ToList().Where(x => x.name == "House").ToList();
+            for (int i = 0; i < houseRenderers.Count; i++)
             {
                 houseRenderers[i].gameObject.GetComponent<SpriteAnimator>().ChangeSprites(TileAssetsObject.GetHouseByReference(houseRenderers[i].gameObject.GetComponent<SpriteAnimator>().sprites, playerId));
             }

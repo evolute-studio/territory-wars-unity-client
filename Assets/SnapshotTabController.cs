@@ -76,6 +76,7 @@ public class SnapshotTabController : MonoBehaviour
                 
                 snapshotListItem.UpdateItem(playerName, evoluteBalance, moveNumber, () =>
                 {
+                    SetActivePanel(false);
                     DojoGameManager.Instance.CreateGameFromSnapshot(snapshotModel.snapshot_id);
                 });
                 

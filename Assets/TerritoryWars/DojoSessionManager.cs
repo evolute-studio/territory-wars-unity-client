@@ -79,6 +79,12 @@ namespace TerritoryWars
                 case evolute_duel_GameIsAlreadyFinished gameIsAlreadyFinished:
                     GameFinished(gameIsAlreadyFinished.board_id);
                     break;
+                case evolute_duel_RoadContestWon roadContestWon:
+                    RoadContestWon(roadContestWon);
+                    break;
+                case evolute_duel_RoadContestDraw roadContestDraw:
+                    RoadContestDraw(roadContestDraw);
+                    break;
             }
             if(_dojoGameManager.IsTargetModel(modelInstance, nameof(evolute_duel_Moved)))
             {
@@ -150,6 +156,40 @@ namespace TerritoryWars
                 GameUI.Instance.ShowResultPopUp();
                 CreateSnapshot();
             }
+        }
+        
+        private void RoadContestWon(evolute_duel_RoadContestWon eventModel)
+        {
+            string board_id = eventModel.board_id.Hex();
+            
+            if (LocalPlayerBoard.id.Hex() != board_id) return;
+            
+            byte root = eventModel.root;
+            int winner = eventModel.winner switch
+            {
+                PlayerSide.Blue => 0,
+                PlayerSide.Red => 1,
+            };
+            ushort red_points = eventModel.red_points; 
+            ushort blue_points = eventModel.blue_points;
+            
+            //SessionManager.Instance.Board.RoadContest(root, winner, red_points, blue_points);
+            
+            
+            CustomLogger.LogEvent($"[RoadContestWon] | Player: {winner} | BluePoints: {blue_points} | RedPoints: {red_points} | BoardId: {board_id}");
+        }
+        
+        private void RoadContestDraw(evolute_duel_RoadContestDraw eventModel)
+        {
+            string board_id = eventModel.board_id.Hex();
+            
+            if (LocalPlayerBoard.id.Hex() != board_id) return;
+            
+            byte root = eventModel.root;
+            ushort red_points = eventModel.red_points;
+            ushort blue_points = eventModel.blue_points;
+            
+            CustomLogger.LogEvent($"[RoadContestDraw] | BluePoints: {blue_points} | RedPoints: {red_points} | BoardId: {board_id}");
         }
         
         // public void CheckBoardUpdate()

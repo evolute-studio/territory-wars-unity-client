@@ -67,6 +67,59 @@ namespace TerritoryWars.ScriptablesObjects
                 }
             }
 
+            int i = 0;
+            foreach (var house in NeutralHousesAnimated)
+            {
+                if (house.HousesSprites == sprites)
+                {
+                    if (playerIndex == 0)
+                    {
+                        return FirstPlayerHousesAnimated[i].HousesSprites;
+                    }
+
+                    if (playerIndex == 1)
+                    {
+                        return SecondPlayerHousesAnimated[i].HousesSprites;
+                    }
+
+                    i++;
+                }
+            }
+
+            return null;
+        }
+        
+        public Sprite GetHouseByReference(Sprite sprites, int playerIndex){
+            foreach (var house in FirstPlayerHouses)
+            {
+                if (house == sprites)
+                {
+                    if (playerIndex == 0)
+                        return house;
+                    else
+                        return SecondPlayerHouses[Array.IndexOf(FirstPlayerHouses, house)];
+                }
+            }
+
+            foreach (var house in SecondPlayerHouses)
+            {
+                if (house == sprites)
+                {
+                    if (playerIndex == 1)
+                        return house;
+                    else
+                        return FirstPlayerHouses[Array.IndexOf(SecondPlayerHouses, house)];
+                }
+            }
+            
+            foreach (var house in NeutralHousesAnimated)
+            {
+                if (house.HousesSprites[0] == sprites)
+                {
+                    return house.HousesSprites[0];
+                }
+            }
+
             return null;
         }
         

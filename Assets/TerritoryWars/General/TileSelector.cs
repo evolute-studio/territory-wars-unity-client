@@ -173,8 +173,17 @@ namespace TerritoryWars.General
                 spriteRenderer.gameObject.layer = LayerMask.NameToLayer("TileHover");
             }
      
-
+            // add this points
+            //GenericPropertyJSON:{"name":"data","type":-1,"arraySize":6,"arrayType":"Vector2","children":[{"name":"Array","type":-1,"arraySize":6,"arrayType":"Vector2","children":[{"name":"size","type":12,"val":6},{"name":"data","type":8,"children":[{"name":"x","type":2,"val":0},{"name":"y","type":2,"val":0.344967842}]},{"name":"data","type":8,"children":[{"name":"x","type":2,"val":-0.632778168},{"name":"y","type":2,"val":0.008231878}]},{"name":"data","type":8,"children":[{"name":"x","type":2,"val":-0.634768546},{"name":"y","type":2,"val":-0.158878535}]},{"name":"data","type":8,"children":[{"name":"x","type":2,"val":0.0108075738},{"name":"y","type":2,"val":-0.484888434}]},{"name":"data","type":8,"children":[{"name":"x","type":2,"val":0.642678857},{"name":"y","type":2,"val":-0.176443338}]},{"name":"data","type":8,"children":[{"name":"x","type":2,"val":0.6466036},{"name":"y","type":2,"val":0.0137912631}]}]}]}
             highlight.AddComponent<PolygonCollider2D>();
+            var points = new Vector2[6];
+            points[0] = new Vector2(0, 0.404967842f);
+            points[1] = new Vector2(-0.632778168f, 0.068231878f);
+            points[2] = new Vector2(-0.634768546f, -0.098878535f);
+            points[3] = new Vector2(0.0108075738f, -0.424888434f);
+            points[4] = new Vector2(0.642678857f, -0.116443338f);
+            points[5] = new Vector2(0.6466036f, 0.0737912631f);
+            highlight.GetComponent<PolygonCollider2D>().points = points;
             var clickHandler = highlight.AddComponent<TileClickHandler>();
             clickHandler.Initialize(this, x, y);
         }
