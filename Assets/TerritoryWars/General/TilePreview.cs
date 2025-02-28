@@ -215,7 +215,7 @@ namespace TerritoryWars.General
                 {
                     SessionManager.Instance.TileSelector.CompleteTilePlacement();
                     callback?.Invoke();
-                    // ResetPosition буде викликано через OnTilePlaced event
+                    
                 });
         }
 

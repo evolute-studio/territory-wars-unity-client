@@ -160,9 +160,9 @@ namespace TerritoryWars.General
         private char GetRandomLandscape()
         {
             float random = Random.value;
-            if (random < 0.4f) return 'F';      // 40% шанс поля
-            else if (random < 0.7f) return 'R';  // 30% шанс дороги
-            else return 'C';                     // 30% шанс міста
+            if (random < 0.4f) return 'F';      
+            else if (random < 0.7f) return 'R';  
+            else return 'C';                     
         }
         
         private char LandscapeToChar(LandscapeType type)

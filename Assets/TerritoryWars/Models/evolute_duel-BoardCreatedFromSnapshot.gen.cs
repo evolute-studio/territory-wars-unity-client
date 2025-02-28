@@ -20,7 +20,7 @@ public class evolute_duel_BoardCreatedFromSnapshot : ModelInstance {
         [ModelField("move_number")]
         public byte move_number;
 
-        // [ModelField("initial_edge_state")] я можу взяти це з old_board_id
+        // [ModelField("initial_edge_state")] 
         // public byte[] initial_edge_state;
 
         // [ModelField("available_tiles_in_deck")]

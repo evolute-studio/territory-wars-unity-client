@@ -71,7 +71,7 @@ namespace TerritoryWars.General
         {
             if (tileDeck.Count == 0)
             {
-                Debug.Log("Колода порожня!");
+                Debug.Log("Deck empty!");
                 return null;
             }
 
