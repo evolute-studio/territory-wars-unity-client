@@ -63,16 +63,16 @@ public class NamePanelController : MonoBehaviour
     
     public void SetEvoluteBalance(int value)
     {
-        EvoluteCountText.text = value.ToString() + " x ";
+        EvoluteCountText.text = " x " + value.ToString();
     }
 
     public void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.Alpha1))
         {
             ChangeEvoluteBalance(100);
         }
-        if(Input.GetKeyDown(KeyCode.Q))
+        if(Input.GetKeyDown(KeyCode.Alpha2))
         {
             ChangeEvoluteBalance(-100);
         }

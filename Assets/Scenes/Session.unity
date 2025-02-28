@@ -38193,6 +38193,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 815765889}
+    - target: {fileID: 5973684924702542619, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6122216628336104331, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
       propertyPath: m_fontSize
       value: 18
@@ -46189,6 +46193,8 @@ MonoBehaviour:
   Players:
   - {fileID: 5368312208594547958, guid: 19110789765fd2c48b79d1198ae58085, type: 3}
   - {fileID: 6849612934398127024, guid: a995aaa8a0d2d034ba3bc5c29e0bed8f, type: 3}
+  - {fileID: 6849612934398127024, guid: 5f722b2805741974ca9e61437e8a80ef, type: 3}
+  - {fileID: 6849612934398127024, guid: 9f70761f3d6e4d65eb29f4ff6ee03078, type: 3}
   MillPrefab: {fileID: 3455373684899882535, guid: fcd9b48a23aea57cfb312a4245521c07, type: 3}
   ClashAnimationPrefab: {fileID: 3572563069366787145, guid: 1150a510853d224fd89883a8f0548b6c, type: 3}
   PinPrefab: {fileID: 4552174000051031344, guid: 68fa6979b3f7643588120e3008d09c5d, type: 3}
@@ -52430,7 +52436,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -628261759
-  m_SortingOrder: 100
+  m_SortingOrder: 99
   m_TargetDisplay: 0
 --- !u!224 &1783385970
 RectTransform:
