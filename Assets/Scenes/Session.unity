@@ -38195,7 +38195,7 @@ PrefabInstance:
       objectReference: {fileID: 815765889}
     - target: {fileID: 5973684924702542619, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
       propertyPath: m_SortingOrder
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6122216628336104331, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
       propertyPath: m_fontSize
@@ -52436,7 +52436,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -628261759
-  m_SortingOrder: 99
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!224 &1783385970
 RectTransform:

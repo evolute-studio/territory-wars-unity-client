@@ -68,11 +68,11 @@ public class NamePanelController : MonoBehaviour
 
     public void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha1))
+        if(Input.GetKeyDown(KeyCode.X))
         {
             ChangeEvoluteBalance(100);
         }
-        if(Input.GetKeyDown(KeyCode.Alpha2))
+        if(Input.GetKeyDown(KeyCode.Z))
         {
             ChangeEvoluteBalance(-100);
         }
@@ -80,7 +80,7 @@ public class NamePanelController : MonoBehaviour
 
     public void ChangeEvoluteBalance(int value)
     {
-        int current = int.Parse(EvoluteCountText.text.Split(' ')[0]);
+        int current = int.Parse(EvoluteCountText.text.Split(' ')[2]);
         if(current < 0)
         {
             current = 0;
