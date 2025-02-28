@@ -1,6 +1,7 @@
 using TerritoryWars.Tools;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace TerritoryWars
 {
@@ -11,18 +12,16 @@ namespace TerritoryWars
         public Sprite[] ShineAnimation;
         
         public SpriteAnimator Animator;
-        public TextMeshProUGUI CostText;
-        public Transform CostTransform;
+        public Image IconRenderer;
         public NamePanelController PlayerData;
         
-        private bool isUnlocked = false;
+        public bool isUnlocked = false;
         
         public void Unlock()
         {
             if (isUnlocked)
                 return;
             isUnlocked = true;
-            PlayerData.ChangeEvoluteBalance(-cost);
             
             Animator.ChangeSprites(UnlockAnimation);
             Animator.OnAnimationEnd = () =>
@@ -37,9 +36,14 @@ namespace TerritoryWars
                 
             };
             Animator.Play();
-            
-            
-            CostTransform.gameObject.SetActive(false);
+        }
+        
+        public void FastUnlock()
+        {
+            if (isUnlocked)
+                return;
+            isUnlocked = true;
+            Animator.gameObject.SetActive(false);
         }
     }
 }

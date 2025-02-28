@@ -3,6 +3,7 @@ using System.Collections;
 using DG.Tweening;
 using TerritoryWars.General;
 using TerritoryWars.Tools;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,17 +18,35 @@ namespace TerritoryWars.UI
         public Color[] brightness;
         public int[] order;
         public float animationDuration = 0.5f;
-        private int currentCharacterId = 0;
+        private int currentCharacterId = 1;
         public Button ApplyButton;
+        public TextMeshProUGUI ApplyButtonText;
+        public GameObject NotActiveButton;
+        public GameObject CostTextParent;
+        public TextMeshProUGUI CostText;
         public GameObject AppliedText;
         public Image ApplyButtonImage;
         private bool isAnimating = false;
         [SerializeField] private float AnimationDuration = 1.5f;
 
+        private void Initialize()
+        {
+            int evoluteBalance = MenuUIController.Instance._namePanelController.EvoluteBalance;
+            foreach (var character in characters)
+            {
+                if (evoluteBalance >= character.CharacterId)
+                {
+                    character.Locker?.FastUnlock();
+                }
+            }
+        }
+
         public void Start()
         {
             ApplyButton.onClick.AddListener(ApplyButtonClicked);
-            UpdateButtonVisual();
+            
+            Initialize();
+            UpdateButtons();
             foreach (var character in characters)
             {
                 character.Initialize();
@@ -72,7 +91,11 @@ namespace TerritoryWars.UI
                 characters[i].CharacterRenderer.sortingOrder = order[i];
                 characters[i].RockRenderer.sortingOrder = order[i] - 1;
                 var locker = characters[i].Locker;
-                if (locker != null) locker.GetComponent<Canvas>().sortingOrder = order[i] + 1;
+                if (locker != null)
+                {
+                    locker.GetComponent<Canvas>().sortingOrder = order[i] + 1;
+                    locker.IconRenderer.color = brightness[i];
+                }
                 if (i == 1)
                 {
                     Sequence sequence = DOTween.Sequence();
@@ -91,7 +114,7 @@ namespace TerritoryWars.UI
                     sequence.Play();
                 }
 
-                UpdateButtonVisual();
+                UpdateButtons();
 
 
                 characters[i].MainObject.transform
@@ -114,34 +137,53 @@ namespace TerritoryWars.UI
 
         public void ApplyButtonClicked()
         {
+            currentCharacterId = characters[1].CharacterId;
             PlayerCharactersManager.ChangeCurrentCharacterId(characters[1].CharacterId);
-            UpdateButtonVisual();
+            UpdateButtons();
             characters[1].Locker?.Unlock();
             DojoGameManager.Instance.ChangePlayerSkin(characters[1].CharacterId);
         }
-
-        public void UpdateButtonVisual()
-        {
-            if (PlayerCharactersManager.GetCurrentCharacterId() == characters[1].CharacterId)
-            {
-                ApplyButton.interactable = false;
-                ApplyButtonImage.color = new Color(1f, 1f, 1f, 0f);
-                AppliedText.SetActive(true);
-                ApplyButton.gameObject.SetActive(false);
-            }
-            else
-            {
-                ApplyButton.interactable = true;
-                ApplyButtonImage.color = new Color(1f, 1f, 1f, 1f);
-                AppliedText.SetActive(false);
-                ApplyButton.gameObject.SetActive(true);
-            }
-        }
+        
         
         private IEnumerator SimpleTimer(float duration, Action callback)
         {
             yield return new WaitForSeconds(duration);
             callback?.Invoke();
+        }
+
+        public void UpdateButtons()
+        {
+            Character character = characters[1];
+            if (!character.Locker || character.Locker.isUnlocked)
+            {
+                ApplyButton.gameObject.SetActive(true);
+                NotActiveButton.SetActive(false);
+                CostTextParent.SetActive(false);
+                if (currentCharacterId == character.CharacterId)
+                {
+                    ApplyButton.interactable = false;
+                    ApplyButtonText.text = "APPLIED";
+                }
+                else
+                {
+                    ApplyButton.interactable = true;
+                    ApplyButtonText.text = "APPLY";
+                }
+            }
+            else
+            {
+                int evoluteBalance = MenuUIController.Instance._namePanelController.EvoluteBalance;
+                if (evoluteBalance >= character.Locker.cost)
+                {
+                    character.Locker.Unlock();
+                }
+
+                ApplyButton.gameObject.SetActive(false);
+                NotActiveButton.SetActive(true);
+                CostTextParent.SetActive(true);
+                CostText.text = "x " + character.Locker.cost.ToString();
+            }
+            
         }
         
         

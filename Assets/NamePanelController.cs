@@ -10,6 +10,8 @@ public class NamePanelController : MonoBehaviour
 {
     public ChangeNamePanelUIController ChangeNamePanelUIController;
     
+    public int EvoluteBalance;
+    
     public GameObject NamePanel;
     public GameObject ChangeNamePanel;
     public TextMeshProUGUI PlayerNameText;
@@ -63,6 +65,7 @@ public class NamePanelController : MonoBehaviour
     
     public void SetEvoluteBalance(int value)
     {
+        EvoluteBalance = value;
         EvoluteCountText.text = " x " + value.ToString();
     }
 
@@ -80,11 +83,13 @@ public class NamePanelController : MonoBehaviour
 
     public void ChangeEvoluteBalance(int value)
     {
-        int current = int.Parse(EvoluteCountText.text.Split(' ')[2]);
+        int current = EvoluteBalance;
         if(current < 0)
         {
             current = 0;
         }
+        
+        EvoluteBalance = current + value;
         EvoluteCountText.text = " x " + (current + value).ToString();
     }
 }
