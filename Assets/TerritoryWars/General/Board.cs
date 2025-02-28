@@ -61,13 +61,13 @@ namespace TerritoryWars.General
         
         private void CreateBorder(char[] border)
         {
-            GenerateBorderSide(new Vector2Int(0, 0), new Vector2Int(9, 0), 0, border[0..8]);
+            GenerateBorderSide(new Vector2Int(0, 0), new Vector2Int(9, 0), 0, border[0..8],true);
             GenerateBorderSide(new Vector2Int(9, 0), new Vector2Int(9, 9), 3, border[8..16]);
             GenerateBorderSide(new Vector2Int(9, 9), new Vector2Int(0, 9), 2, border[16..24]);
-            GenerateBorderSide(new Vector2Int(0, 9), new Vector2Int(0, 0), 1, border[24..32]);
+            GenerateBorderSide(new Vector2Int(0, 9), new Vector2Int(0, 0), 1, border[24..32], true);
         }
         
-        public void GenerateBorderSide(Vector2Int startPos, Vector2Int endPos, int rotationTimes, char[] border)
+        public void GenerateBorderSide(Vector2Int startPos, Vector2Int endPos, int rotationTimes, char[] border, bool swapOrderLayer = false)
         {
             string roadTile = "FFFR";
             string cityTile = "FFFC";
@@ -153,6 +153,11 @@ namespace TerritoryWars.General
                 if (tilesToSpawn[i] == fieldTile)
                 {
                     tileObjects[availablePositions[i].x, availablePositions[i].y].transform.Find("RoadRenderer").GetComponent<SpriteRenderer>().sprite = tileAssets.GetRandomMountain();
+                    if (swapOrderLayer)
+                    {
+                        tileObjects[availablePositions[i].x, availablePositions[i].y].transform.Find("RoadRenderer")
+                            .GetComponent<SpriteRenderer>().sortingOrder = 20;
+                    }
                 }
                 else if (tilesToSpawn[i] == roadTile)
                 {
