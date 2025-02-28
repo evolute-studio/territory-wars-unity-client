@@ -254,7 +254,7 @@ namespace TerritoryWars.UI
             //GameId = gameId;
 
             _playerNameText.text = PlayerName;
-            _evoluteCountText.text = " + " + EvoluteCount.ToString();
+            _evoluteCountText.text = " x " + EvoluteCount.ToString();
             _moveNumberText.gameObject.SetActive(moveNumber > 0);
             _moveNumberText.text = "Move number: " + moveNumber;
             //_gameIdText.text = GameId;

@@ -18,7 +18,7 @@ namespace TerritoryWars.UI
         public Color[] brightness;
         public int[] order;
         public float animationDuration = 0.5f;
-        private int currentCharacterId = 1;
+        private int currentCharacterId = 0;
         public Button ApplyButton;
         public TextMeshProUGUI ApplyButtonText;
         public GameObject NotActiveButton;
@@ -37,6 +37,10 @@ namespace TerritoryWars.UI
                 if (evoluteBalance >= character.CharacterId)
                 {
                     character.Locker?.FastUnlock();
+                }
+                else
+                {
+                    character.Locker?.gameObject.SetActive(true);
                 }
             }
         }

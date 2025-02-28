@@ -279,9 +279,6 @@ namespace TerritoryWars.UI
             SaveSnapshotText.DOFade(1, 0.2f);
             DOVirtual.DelayedCall(3, () =>
             {
-                SaveSnapshotButton.GetComponent<Image>().DOFade(0, 0.5f).OnComplete(() =>
-                {
-                });
                 //SaveSnapshotButton.interactable = true;
                 SaveSnapshotText.DOFade(0, 0.5f).OnComplete(() =>
                 {

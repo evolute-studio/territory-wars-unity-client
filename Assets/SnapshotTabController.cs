@@ -69,6 +69,7 @@ public class SnapshotTabController : MonoBehaviour
             foreach (var snapshot in snapshots)
             {
                 if (!snapshot.TryGetComponent(out evolute_duel_Snapshot snapshotModel)) return;
+                if (!snapshotModel.player.Hex().Equals(DojoGameManager.Instance.LocalBurnerAccount.Address.Hex())) continue;
                 SnapshotListItem snapshotListItem = CreateListItem();
                 evolute_duel_Player player = DojoGameManager.Instance.GetPlayerData(snapshotModel.player.Hex());
                 string playerName = CairoFieldsConverter.GetStringFromFieldElement(player.username);
@@ -142,7 +143,7 @@ public class SnapshotListItem
         CreatorPlayerEvoluteCount = creatorPlayerEvoluteCount;
         
         _creatorPlayerNameText.text = creatorPlayerName;
-        _creatorPlayerEvoluteCountText.text = " + " + creatorPlayerEvoluteCount.ToString();
+        _creatorPlayerEvoluteCountText.text = " x " + creatorPlayerEvoluteCount.ToString();
         _moveNumberText.text = "Move number: \n" + moveNumber;
         
         _restoreButton.onClick.RemoveAllListeners();

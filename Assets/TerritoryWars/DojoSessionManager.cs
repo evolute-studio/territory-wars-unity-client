@@ -305,6 +305,7 @@ namespace TerritoryWars
                     else
                         winner = -1;
                     contestAnimation.Initialize(position + offset, winner, points, recoloring);
+                    break;
                     
                 }
                 i++;
@@ -537,16 +538,11 @@ namespace TerritoryWars
             }
         }
         
-        public void SetSnapshotTurn()
-        {
-            _snapshotTurn = _moveCount;
-        }
-        
         public void CreateSnapshot()
         {
             try
             {
-                var txHash = _dojoGameManager.GameSystem.create_snapshot(_localPlayerAccount, LocalPlayerBoard.id, (byte)_snapshotTurn);
+                var txHash = _dojoGameManager.GameSystem.create_snapshot(_localPlayerAccount, LocalPlayerBoard.id, (byte)_moveCount);
                 CustomLogger.LogEvent($"[Create Snapshot]: Hash {txHash} Account {_localPlayerAccount.Address.Hex()} created a snapshot");
             }
             catch (Exception e)
