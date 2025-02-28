@@ -38250,6 +38250,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1067172505}
     - target: {fileID: 6656283264602794713, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
+      propertyPath: DeckCountText
+      value: 
+      objectReference: {fileID: 656554515}
+    - target: {fileID: 6656283264602794713, guid: e34a56c3d804a0948b0d29badd4dc8f3, type: 3}
       propertyPath: LocalPlayerName
       value: 
       objectReference: {fileID: 1261502055}
@@ -46116,6 +46120,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   Players: []
+  TilesInDeck: 64
 --- !u!4 &1530375625
 Transform:
   m_ObjectHideFlags: 0
