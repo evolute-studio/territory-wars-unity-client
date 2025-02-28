@@ -6,7 +6,7 @@ Information about on-chain part can be found here: [territory-wars-dojo](https:/
 
 Play Evolute Kingdom: Mage Duel there: https://mageduel.evolute.network/
 
-Playbook: https://evolute.notion.site/playbook
+Playbook (Lore and Game Rules): https://evolute.notion.site/playbook
 
 # **Development Setup**
 
