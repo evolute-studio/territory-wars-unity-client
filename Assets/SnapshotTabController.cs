@@ -142,12 +142,13 @@ public class SnapshotListItem
         CreatorPlayerEvoluteCount = creatorPlayerEvoluteCount;
         
         _creatorPlayerNameText.text = creatorPlayerName;
-        _creatorPlayerEvoluteCountText.text = creatorPlayerEvoluteCount.ToString();
+        _creatorPlayerEvoluteCountText.text = " + " + creatorPlayerEvoluteCount.ToString();
         _moveNumberText.text = "Move number: \n" + moveNumber;
         
         _restoreButton.onClick.RemoveAllListeners();
         if (onRestore != null)
         {
+            
             _restoreButton.onClick.AddListener(onRestore);
         }
         
