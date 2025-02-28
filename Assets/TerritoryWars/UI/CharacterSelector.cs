@@ -29,6 +29,9 @@ namespace TerritoryWars.UI
         private bool isAnimating = false;
         [SerializeField] private float AnimationDuration = 1.5f;
 
+        public Sprite ActiveButtonSprite;
+        public Sprite DisabledButtonSprite;
+
         private void Initialize()
         {
             int evoluteBalance = MenuUIController.Instance._namePanelController.EvoluteBalance;
@@ -166,10 +169,16 @@ namespace TerritoryWars.UI
                 if (currentCharacterId == character.CharacterId)
                 {
                     ApplyButton.interactable = false;
-                    ApplyButtonText.text = "APPLIED";
+                    ApplyButtonText.text = "APPLY";
+                    ApplyButton.GetComponent<Image>().sprite = DisabledButtonSprite;
+                    ApplyButton.GetComponent<Image>().color = new Color(127f / 255f, 127f / 255f, 127f / 255f, 1);
+                    ApplyButton.GetComponent<CanvasGroup>().alpha = 0.74f;
                 }
                 else
                 {
+                    ApplyButton.GetComponent<Image>().sprite = ActiveButtonSprite;
+                    ApplyButton.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+                    ApplyButton.GetComponent<CanvasGroup>().alpha = 1;
                     ApplyButton.interactable = true;
                     ApplyButtonText.text = "APPLY";
                 }
