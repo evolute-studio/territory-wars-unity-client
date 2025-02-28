@@ -146,16 +146,16 @@ namespace TerritoryWars.General
             }
         }
         
-        public void ShowJokerTile()
-        {
-            _JokerGroundTile.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.2f);
-            foreach (var obj in _tileObjects)
-            {
-                obj.SetActive(true);
-            }
-            
-            ShardAppearAnimation();
-        }
+        // public void ShowJokerTile()
+        // {
+        //     _JokerGroundTile.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.2f);
+        //     foreach (var obj in _tileObjects)
+        //     {
+        //         obj.SetActive(true);
+        //     }
+        //     
+        //     ShardAppearAnimation();
+        // }
 
         public void ShardAppearAnimation()
         {
