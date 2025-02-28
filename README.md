@@ -2,7 +2,7 @@
 
 Evolute Kingdom: Mage Duel is an on-chain game, built on Starknet using the [Dojo Engine](https://github.com/dojoengine/dojo)
 
-Information about the launch of the on-chain part can be found here: [territory-wars-dojo](https://github.com/evolute-studio/territory-wars-dojo)
+Information about on-chain part can be found here: [territory-wars-dojo](https://github.com/evolute-studio/territory-wars-dojo)
 
 Play Evolute Kingdom: Mage Duel there: https://mageduel.evolute.network/
 
