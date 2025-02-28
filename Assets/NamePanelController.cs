@@ -85,6 +85,6 @@ public class NamePanelController : MonoBehaviour
         {
             current = 0;
         }
-        EvoluteCountText.text = (current + value).ToString() + " x ";
+        EvoluteCountText.text = " x " + (current + value).ToString();
     }
 }
