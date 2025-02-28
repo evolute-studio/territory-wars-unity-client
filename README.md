@@ -16,7 +16,7 @@ Playbook: https://evolute.notion.site/playbook
 
 # **Running the Project**
 
-To run the client, you need to take the following steps:
+To run the client, follow simple steps:
 
 1. Open the scene `Assets/Scenes/Start.scene`
 2. Find the game object: `WorldManager`.
@@ -24,9 +24,8 @@ To run the client, you need to take the following steps:
 4. Set the address for the `Game` and `Player_profile_actions` contracts
 
 # **Building the Project**
-To build, you need to select the target platform. 
+To build, you need to select the target platform **WebGL**:
 
-**WebGL**
 1. Select the platform as a target in `Build Profiles`
 2. Select the `Dojo` template in `PlayerSettings` (a fix has been added to the template to solve the problem with the inability to create a Burner Account after page overload)
 3. Build the project
