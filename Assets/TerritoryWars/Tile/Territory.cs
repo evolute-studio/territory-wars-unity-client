@@ -20,28 +20,7 @@ namespace TerritoryWars.Tile
             this.lineRenderer = lineRenderer;
         }
         
-        // private void OnDrawGizmos()
-        // {
-        //     if (lineRenderer == null || lineRenderer.positionCount < 3) return;
-        //
-        //     // Малюємо контур
-        //     Gizmos.color = new Color(0, 1, 1, 0.5f);
-        //     Vector3[] points = new Vector3[lineRenderer.positionCount];
-        //     lineRenderer.GetPositions(points);
-        //
-        //     // Додаємо позицію об'єкта для відображення в правильному місці
-        //     for (int i = 0; i < points.Length; i++)
-        //     {
-        //         points[i] += transform.position;
-        //     }
-        //
-        //     for (int i = 0; i < points.Length; i++)
-        //     {
-        //         Vector3 current = points[i];
-        //         Vector3 next = points[(i + 1) % points.Length];
-        //         Gizmos.DrawLine(current, next);
-        //     }
-        // }
+       
 
         public void GenerateMask()
         {
@@ -52,22 +31,22 @@ namespace TerritoryWars.Tile
             }
 
             int pointCount = lineRenderer.positionCount;
-            // Отримуємо точки з LineRenderer
+            
             Vector3[] worldPoints = new Vector3[pointCount];
             lineRenderer.GetPositions(worldPoints);
 
-            // Конвертуємо в локальні координати
+            
             Vector3[] localPoints = new Vector3[worldPoints.Length];
             for (int i = 0; i < worldPoints.Length; i++)
             {
                 localPoints[i] = transform.InverseTransformPoint(worldPoints[i] + transform.position);
             }
 
-            // Створюємо текстуру
+            
             Texture2D texture = new Texture2D(textureSize, textureSize);
             texture.filterMode = FilterMode.Point;
 
-            // Очищаємо текстуру
+           
             Color[] clearColors = new Color[textureSize * textureSize];
             for (int i = 0; i < clearColors.Length; i++)
             {
@@ -75,23 +54,23 @@ namespace TerritoryWars.Tile
             }
             texture.SetPixels(clearColors);
 
-            // Знаходимо межі для масштабування
+           
             Bounds bounds = GetBounds(localPoints);
             float maxSize = Mathf.Max(bounds.size.x, bounds.size.y);
             Vector2 center = bounds.center;
 
-            // Конвертуємо в координати текстури
+            
             Vector2[] texturePoints = new Vector2[localPoints.Length];
             for (int i = 0; i < localPoints.Length; i++)
             {
-                // Центруємо координати відносно текстури
+                
                 texturePoints[i] = new Vector2(
                     (localPoints[i].x - center.x) * (textureSize / maxSize) + (textureSize / 2),
                     (localPoints[i].y - center.y) * (textureSize / maxSize) + (textureSize / 2)
                 );
             }
 
-            // Малюємо лінії
+            
             for (int i = 0; i < texturePoints.Length; i++)
             {
                 Vector2 start = texturePoints[i];
@@ -99,12 +78,12 @@ namespace TerritoryWars.Tile
                 DrawLine(texture, start, end, Color.white);
             }
 
-            // Заливаємо область
+            
             FloodFill(texture, textureSize / 2, textureSize / 2, Color.white);
 
             texture.Apply();
 
-            // Створюємо спрайт
+            
             Sprite maskSprite = Sprite.Create(
                 texture,
                 new Rect(0, 0, textureSize, textureSize),
@@ -112,12 +91,12 @@ namespace TerritoryWars.Tile
                 100f
             );
 
-            // Налаштовуємо маску
+            
             spriteMask.sprite = maskSprite;
             spriteMask.transform.localPosition = bounds.center;
             spriteMask.transform.localScale = new Vector3(maxSize, maxSize, 1);
 
-            // Налаштовуємо текстуру заповнення
+            
             if (fillTexture != null)
             {
                 fillTexture.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
@@ -142,7 +121,7 @@ namespace TerritoryWars.Tile
 
             while (true)
             {
-                // Малюємо товсту лінію
+                
                 for (int w = -Mathf.FloorToInt(lineWidth / 2); w <= lineWidth / 2; w++)
                 {
                     for (int h = -Mathf.FloorToInt(lineWidth / 2); h <= lineWidth / 2; h++)

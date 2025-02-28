@@ -133,7 +133,7 @@ namespace TerritoryWars.General
             int attempts = 0;
             startConenctionTime = Time.time;
             
-            while (attempts < 30) // Обмежимо кількість спроб до 30 секунд
+            while (attempts < 30) 
             {
                 attempts++;
                 CustomLogger.LogInfo($"Attempt {attempts}: Checking conditions...");
@@ -162,7 +162,7 @@ namespace TerritoryWars.General
             }
             
             CustomLogger.LogWarning("TryLoadMenu timed out after 30 attempts");
-            // Якщо вийшли по таймауту, спробуємо підписатися на події
+            
             DojoGameManager.Instance.OnLocalPlayerSet.AddListener(LoadMenu);
         }
 

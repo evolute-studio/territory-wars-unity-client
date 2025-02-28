@@ -18,20 +18,6 @@ namespace TerritoryWars.General
 
         private void InitializeTileConfig()
         {
-            // СССС	1
-            // ССFС	4
-            // ССRС	3
-            // СFFС	7
-            // СRRС	6
-            // FСFС	6
-            // СFFF	4
-            // СFRR	4
-            // СRRF	3
-            // СRFR	4
-            // RFRF	8
-            // FFRR	9
-            // FRRR	4
-            // FFFF 1
             tileConfig = new Dictionary<string, int>
             {
                 { "CCCC", 1 },
@@ -70,14 +56,14 @@ namespace TerritoryWars.General
                 }
             }
 
-            // Перемішуємо список
+            
             for (int i = allTiles.Count - 1; i > 0; i--)
             {
                 int randomIndex = Random.Range(0, i + 1);
                 (allTiles[i], allTiles[randomIndex]) = (allTiles[randomIndex], allTiles[i]);
             }
 
-            // Створюємо чергу з перемішаних тайлів
+            
             tileDeck = new Queue<TileData>(allTiles);
         }
 
@@ -96,14 +82,14 @@ namespace TerritoryWars.General
 
         public bool HasTiles => tileDeck.Count > 0;
 
-        // Метод для отримання інформації про залишок тайлів кожного типу
+        
         public Dictionary<string, int> GetRemainingTileTypes()
         {
             return tileDeck.GroupBy(t => t.id)
                           .ToDictionary(g => g.Key, g => g.Count());
         }
 
-        // Метод для перемішування залишку колоди
+        
         public void ReshuffleDeck()
         {
             var remainingTiles = tileDeck.ToList();

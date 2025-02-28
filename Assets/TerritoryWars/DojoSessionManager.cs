@@ -21,7 +21,7 @@ namespace TerritoryWars
         private int _moveCount = 0;
 
         private int _snapshotTurn = 0;
-        //public string LastMoveIdHex { get; set; }
+        //public string last_move_id_hex { get; set; }
         //public int LastPlayerSide { get; set; }
 
         public delegate void MoveHandler(string playerAddress, TileData tile, Vector2Int position, int rotation, bool isJoker);

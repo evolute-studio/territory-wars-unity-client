@@ -27,12 +27,11 @@ namespace TerritoryWars.Tile
 
         private void UpdateId()
         {
-            // Створюємо новий id на основі поточного повороту
+            
             char[] rotatedSides = new char[4];
             for (int i = 0; i < 4; i++)
             {
-                // Для повороту за годинниковою стрілкою:
-                // Якщо rotationIndex = 1, то:
+                
                 // Top(0) -> Right(1)
                 // Right(1) -> Bottom(2)
                 // Bottom(2) -> Left(3)
@@ -45,14 +44,14 @@ namespace TerritoryWars.Tile
 
         public void Rotate(int times = 1)
         {
-            // Додаємо поворот за годинниковою стрілкою
+           
             rotationIndex = (rotationIndex + times) % 4;
             UpdateId();
         }
 
         public LandscapeType GetSide(Side side)
         {
-            // Враховуємо поворот при отриманні типу сторони
+          
             int index = ((int)side - rotationIndex + 4) % 4;
             return CharToLandscape(sides[index]);
         }

@@ -18,13 +18,13 @@ public class StructureDebugger : MonoBehaviour
     {
         if (structureChecker == null || board == null) return;
 
-        // Спочатку відображаємо дороги (вони будуть знизу)
+        // first we display roads (they will be at the bottom)
         foreach (var roadEntry in structureChecker.RoadMap)
         {
             DrawStructureInfo(roadEntry.Value, Color.yellow, false);
         }
 
-        // Потім міста (вони будуть зверху)
+        // then cities (they will be on top)
         foreach (var cityEntry in structureChecker.CityMap)
         {
             DrawStructureInfo(cityEntry.Value, Color.cyan, true);
@@ -33,27 +33,27 @@ public class StructureDebugger : MonoBehaviour
 
     private void DrawStructureInfo(Structure structure, Color color, bool isCity)
     {
-        // Отримуємо світову позицію тайлу
+        // get the world position of the tile
         Vector3 worldPosition = board.GetTilePosition(structure.Position.x, structure.Position.y);
         
-        // Конвертуємо світову позицію в екранні координати
+        // convert the world position to screen coordinates
         Vector3 screenPos = mainCamera.WorldToScreenPoint(worldPosition);
         
-        // Якщо позиція поза екраном, не малюємо
+        // if the position is off-screen, don't draw
         if (screenPos.z < 0) return;
 
         Structure root = structureChecker.FindRoot(structure);
         string status = structureChecker.CheckCityCompletion(root) ? "Fin" : "N Fin";
         
-        // Створюємо стиль для тексту зі зменшеним розміром
+        // create a style for the text with a reduced size
         GUIStyle style = new GUIStyle(GUI.skin.label)
         {
             alignment = TextAnchor.MiddleCenter,
             normal = { textColor = color },
-            fontSize = 10 // Зменшений розмір шрифту
+            fontSize = 10 // reduced font size
         };
 
-        // Розраховуємо розмір та позицію прямокутника для тексту
+        // calculate the size and position of the rectangle for the text
         string text = $"{(isCity ? "C" : "R")}\n" +
                      $"Open: {structure.OpenEdges}\n" +
                      $"Root: {(root == structure ? "One" : root.Position.ToString())}\n" +
@@ -66,8 +66,8 @@ public class StructureDebugger : MonoBehaviour
         
         Vector2 textSize = style.CalcSize(new GUIContent(text));
         
-        // Зміщення в залежності від типу структури
-        float xOffset = isCity ? -60 : 60; // Міста зверху, дороги знизу
+        // offset depending on the type of structure
+        float xOffset = isCity ? -60 : 60; // cities on top, roads on the bottom
         
         Rect labelRect = new Rect(
             screenPos.x - textSize.x / 2 + xOffset,
@@ -76,11 +76,11 @@ public class StructureDebugger : MonoBehaviour
             textSize.y + 10
         );
 
-        // Малюємо фон для кращої читабельності
+        // draw a background for better readability
         GUI.color = new Color(0, 0, 0, 0.5f);
         GUI.DrawTexture(labelRect, Texture2D.whiteTexture);
         
-        // Повертаємо колір назад і малюємо текст
+        // return the color back and draw the text
         GUI.color = Color.white;
         GUI.Label(labelRect, text, style);
     }

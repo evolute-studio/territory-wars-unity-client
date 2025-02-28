@@ -31,25 +31,25 @@ namespace TerritoryWars.General
 
         private void HandlePanning()
         {
-            // Початок перетягування
+            
             if (Input.GetMouseButtonDown(0))
             {
                 isDragging = true;
                 lastMousePosition = Input.mousePosition;
             }
-            // Кінець перетягування
+            
             else if (Input.GetMouseButtonUp(0))
             {
                 isDragging = false;
             }
 
-            // Переміщення камери при перетягуванні
+            
             if (isDragging)
             {
                 Vector3 delta = Input.mousePosition - lastMousePosition;
                 Vector3 move = new Vector3(-delta.x, -delta.y, 0) * panSpeed * Time.deltaTime;
 
-                // Оскільки камера ортографічна, масштабуємо швидкість відносно зуму
+                
                 move *= mainCamera.orthographicSize / 5f;
 
                 transform.Translate(move);

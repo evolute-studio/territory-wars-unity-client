@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 public class CursorOnHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    // What cursor to use on hover
+    
     public string cursorType = "pointer";
 
     public void OnPointerEnter(PointerEventData eventData)

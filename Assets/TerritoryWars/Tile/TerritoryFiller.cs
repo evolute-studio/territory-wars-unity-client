@@ -19,18 +19,18 @@ namespace TerritoryWars.Tile
         [SerializeField] private Sprite fenceBottomLeft; // ╲
         [SerializeField] private Sprite fenceLeft;       // │
         [SerializeField] private Sprite fenceTopLeft;    // ╱
-        [SerializeField] private Sprite arcSprite;       // Спрайт арки
+        [SerializeField] private Sprite arcSprite;       
 
         [Header("Settings")]
         [SerializeField] private GameObject fencePrefab;
         [SerializeField] private float spacing = 0.5f;
-        [SerializeField] private float fenceWidth = 1f; // Ширина одного забору
-        [SerializeField] private int arcIndex = 2;       // Індекс для розміщення арки
-        [SerializeField] private List<int> skipVertices; // Масив індексів вершин, які треба пропустити
+        [SerializeField] private float fenceWidth = 1f; 
+        [SerializeField] private int arcIndex = 2;       
+        [SerializeField] private List<int> skipVertices; 
 
         [Header("Animation")]
-        [SerializeField] private float spawnDelay = 0.5f; // Затримка між спавном заборів
-        [SerializeField] private bool showDebugInfo = false; // Додаємо перемикач для відображення debug інформації
+        [SerializeField] private float spawnDelay = 0.5f; 
+        [SerializeField] private bool showDebugInfo = false; 
 
         [Header("Territory")]
         [SerializeField] private GameObject territoryPrefab;
@@ -46,7 +46,7 @@ namespace TerritoryWars.Tile
         {
             if (fencePrefab == null || lineRenderer == null || lineRenderer.positionCount < 2)
             {
-                Debug.LogError("Не задано префаб або потрібно хоча б дві точки у LineRenderer.");
+                
                 return;
             }
 
@@ -63,13 +63,13 @@ namespace TerritoryWars.Tile
             Vector3[] points = new Vector3[lineRenderer.positionCount];
             lineRenderer.GetPositions(points);
 
-            // Конвертуємо в локальні координати
+            
             for (int i = 0; i < points.Length; i++)
             {
                 points[i] = transform.InverseTransformPoint(points[i]);
             }
 
-            // Створюємо нову територію з усіма точками
+            
             if (currentTerritory != null)
             {
                 DestroyImmediate(currentTerritory.gameObject);
@@ -86,7 +86,7 @@ namespace TerritoryWars.Tile
             currentTerritory.SetLineRenderer(lineRenderer);
             currentTerritory.GenerateMask();
 
-            // Створюємо арку
+           
             if (arcIndex >= 0 && arcIndex < points.Length - 1 && !isArcSpawned)
             {
                 Vector3 arcPosition = Vector3.Lerp(points[arcIndex], points[arcIndex + 1], 0.5f);
@@ -104,23 +104,7 @@ namespace TerritoryWars.Tile
                 //transform.parent.GetComponentInParent<TileRotator>().MirrorRotationObjects.Add(arc.transform);
             }
 
-            // // Проходимо всі точки по порядку
-            // for (int i = 0; i < points.Length - 1; i++)
-            // {
-            //     // Пропускаємо вершини, які вказані в skipVertices
-            //     if (skipVertices != null && skipVertices.Contains(i))
-            //     {
-            //         Debug.Log($"Skipping vertex {i}");
-            //         continue;
-            //     }
-            //
-            //     // Пропускаємо спавн заборів на місці арки
-            //     if (i != arcIndex)
-            //     {
-            //         Debug.Log($"Processing segment {i} -> {i + 1}");
-            //         yield return StartCoroutine(PlaceFenceSegmentRoutine(points[i], points[i + 1]));
-            //     }
-            // }
+           
         }
 
         private IEnumerator PlaceFenceSegmentRoutine(Vector3 start, Vector3 end)
@@ -162,13 +146,13 @@ namespace TerritoryWars.Tile
 
         private int GetIsometricDirectionIndex(Vector2 direction)
         {
-            // Конвертуємо напрямок в ізометричні координати
+            
 
 
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             if (angle < 0) angle += 360;
 
-            // Розділяємо на 8 секторів (по 45 градусів)
+            
             int index = Mathf.RoundToInt(angle / 45f) % 8;
 
             return index;
@@ -186,7 +170,7 @@ namespace TerritoryWars.Tile
                 5 => fenceBottomLeft,
                 6 => fenceLeft,
                 7 => fenceTopLeft,
-                _ => fenceTop // За замовчуванням
+                _ => fenceTop 
             };
         }
         
@@ -209,7 +193,7 @@ namespace TerritoryWars.Tile
                 Vector3 worldStart = points[i];
                 Vector3 worldEnd = points[i + 1];
 
-                // Малюємо лінію між точками
+               
                 Gizmos.DrawLine(worldStart, worldEnd);
 
                 Vector3 localStart = transform.InverseTransformPoint(worldStart);
@@ -229,15 +213,15 @@ namespace TerritoryWars.Tile
                         Vector3 spawnPoint = Vector3.Lerp(worldStart, worldEnd, t);
                         Gizmos.DrawWireSphere(spawnPoint, 0.01f);
 
-                        if (showDebugInfo) // Показуємо текст тільки якщо включено debug інформацію
+                        if (showDebugInfo) 
                         {
-                            // Формуємо текст для відображення
+                            
                             string info = $"Spawn Point {j}:\n" +
                                         $"Start: P{i}({worldStart.x:F2}, {worldStart.y:F2})\n" +
                                         $"End: P{i + 1}({worldEnd.x:F2}, {worldEnd.y:F2})\n" +
                                         $"Angle: {GetAngleFromDirection(direction):F1}°";
 
-                            // Зміщуємо текст трохи вправо і вгору від точки
+                           
                             Vector3 labelPos = spawnPoint + new Vector3(0.05f, 0.05f, 0);
                             UnityEditor.Handles.Label(labelPos, info);
                         }
@@ -262,7 +246,7 @@ namespace TerritoryWars.Tile
 
         private void OnValidate()
         {
-            // Перевіряємо валідність індексів у skipVertices
+            
             if (skipVertices != null)
             {
                 for (int i = 0; i < skipVertices.Count; i++)

@@ -16,7 +16,7 @@ namespace TerritoryWars.Tools
         {
             if (!LoadingScreenObject.activeSelf) return;
             float time = Time.time * 2;
-            int dotsCount = (int)(time % 4); // Змінено з 3 на 4 щоб додати момент з 0 точок
+            int dotsCount = (int)(time % 4); 
             loadingText.text = loadingTextPrefix + new string('.', dotsCount) + new string(' ', 3 - dotsCount);
         }
         

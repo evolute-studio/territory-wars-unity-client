@@ -30,7 +30,7 @@ namespace TerritoryWars.Carts
 
 
 
-        // Змінюємо на Dictionary для швидкого доступу по координатах
+        
         private Dictionary<Vector2Int, RoadTile> roadTiles = new Dictionary<Vector2Int, RoadTile>();
 
         public void Start() => Initialize();
@@ -75,7 +75,7 @@ namespace TerritoryWars.Carts
             }
             roadTile.AddCart(carts);
 
-            // Додаємо тайл до словника і оновлюємо зв'язки
+            
             Vector2Int position = new Vector2Int(x, y);
             roadTiles[position] = roadTile;
             UpdateTileConnections(roadTile, position);
@@ -83,11 +83,11 @@ namespace TerritoryWars.Carts
 
         private void UpdateTileConnections(RoadTile newTile, Vector2Int position)
         {
-            // Отримуємо першу і останню точку шляху
+            
             Vector3 pathStart = newTile.path[0];
             Vector3 pathEnd = newTile.path[newTile.path.Length - 1];
 
-            // Перевіряємо всі сусідні клітинки
+            
             Vector2Int[] neighbors = new[]
             {
                 position + Vector2Int.up,
@@ -104,13 +104,12 @@ namespace TerritoryWars.Carts
                 Vector3 neighborStart = neighborTile.path[0];
                 Vector3 neighborEnd = neighborTile.path[neighborTile.path.Length - 1];
 
-                // Перевіряємо з'єднання кінця нового тайлу з початком сусіднього
+                
                 if (Vector3.Distance(pathEnd, neighborStart) < 0.1f)
                 {
                     newTile.NextTile = neighborTile;
                     neighborTile.PreviousTile = newTile;
                 }
-                // Перевіряємо з'єднання початку нового тайлу з кінцем сусіднього
                 else if (Vector3.Distance(pathStart, neighborEnd) < 0.1f)
                 {
                     newTile.PreviousTile = neighborTile;
@@ -129,7 +128,7 @@ namespace TerritoryWars.Carts
             }
         }
 
-        // Офни якщо тобі не треба відображати інформацію про карт
+        
         private void OnDrawGizmos()
         {
             if (!Application.isPlaying) return;

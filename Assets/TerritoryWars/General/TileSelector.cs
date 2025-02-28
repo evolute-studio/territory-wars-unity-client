@@ -201,13 +201,13 @@ namespace TerritoryWars.General
             {
                 if (IsValidJokerPosition(x, y))
                 {
-                    // Якщо вже вибрана та сама позиція - нічого не робимо
+                    
                     if (selectedPosition.HasValue && selectedPosition.Value == new Vector2Int(x, y))
                     {
                         return;
                     }
 
-                    // Оновлюємо виділення для нової позиції
+                    
                     UpdateHighlights(x, y);
                     selectedPosition = new Vector2Int(x, y);
                     tilePreview.SetPosition(x, y);
@@ -216,7 +216,7 @@ namespace TerritoryWars.General
                     TileJokerAnimatorUI.EvoluteTileDisappear();
                     gameUI.SetRotateButtonActive(true);
                     
-                    // Генеруємо новий конфіг для нової позиції
+                    
                     StartCoroutine(InvokeActionWithDelay(0.8f, () =>
                     {
                         TileJokerAnimator.JokerConfChanging(x, y);
@@ -354,7 +354,7 @@ namespace TerritoryWars.General
                 
                 try
                 {
-                    // Тільки регенерація конфігу при обертанні
+                    
                     TileJokerAnimator.JokerConfChanging(selectedPosition.Value.x, selectedPosition.Value.y);
                 }
                 catch (System.Exception e)
@@ -473,7 +473,7 @@ namespace TerritoryWars.General
             isPlacingTile = true;
             selectedPosition = null;
 
-            // Показуємо можливі позиції для джокера
+            
             ShowJokerPlacements();
             
             gameUI.SetEndTurnButtonActive(false);
@@ -484,7 +484,7 @@ namespace TerritoryWars.General
         private void ShowJokerPlacements()
         {
             ClearHighlights();
-            // Створюємо хайлайти для всіх можливих позицій джокера
+            
             for (int x = 0; x < board.Width; x++)
             {
                 for (int y = 0; y < board.Height; y++)
@@ -495,10 +495,10 @@ namespace TerritoryWars.General
                     }
                 }
             }
-            // Встановлюємо початковий колір для всіх хайлайтів
+           
             SetHighlightColor(normalHighlightColor);
             
-            // Якщо є вибрана позиція, оновлюємо її колір
+            
             if (selectedPosition.HasValue)
             {
                 UpdateHighlights(selectedPosition.Value.x, selectedPosition.Value.y);
@@ -519,20 +519,20 @@ namespace TerritoryWars.General
                 {
                     if (!board.IsBorderTile(newX, newY))
                     {
-                        // Якщо є звичайний (не граничний) сусід
+                        
                         hasValidNeighbor = true;
                         break;
                     }
                     else
                     {
-                        // Якщо це граничний тайл, перевіряємо чи він не Field
+                        
                         TileData neighborTile = board.GetTileData(newX, newY);
                         Side oppositeSide = board.GetOppositeSide(side);
                         LandscapeType borderSide = neighborTile.GetSide(oppositeSide);
                         
                         if (borderSide != LandscapeType.Field)
                         {
-                            // Якщо граничний тайл має дорогу або місто
+                            
                             hasValidNeighbor = true;
                             break;
                         }
@@ -554,7 +554,7 @@ namespace TerritoryWars.General
                 gameUI.UpdateUI();
                 gameUI.SetEndTurnButtonActive(true);
                 
-                // Замість очищення всіх хайлайтів, оновлюємо їх кольори
+               
                 UpdateHighlights(x, y);
                 
                 tilePreview.SetPosition(x, y);
@@ -563,12 +563,6 @@ namespace TerritoryWars.General
             {
                 Debug.LogError($"Error in StartJokerTilePlacement: {e}");
             }
-        }
-
-        // Додамо новий метод для обробки кліку по тайлу в режимі джокера
-        public void RegenerateJokerTile()
-        {
-            // Більше не використовується
         }
 
         public void CancelJokerMode()
@@ -580,12 +574,7 @@ namespace TerritoryWars.General
             jokerPosition = null;
             tilePreview.ResetPosition();
             ClearHighlights();
-            
-            // Відновлюємо анімацію джокера
-            //TileJokerAnimator.EvoluteTileAppear();
-            //TileJokerAnimatorUI.EvoluteTileAppear();
-            
-            // Починаємо розміщення звичайного тайла
+
             var currentTile = DojoGameManager.Instance.SessionManager.GetTopTile();
             if (currentTile != null)
             {

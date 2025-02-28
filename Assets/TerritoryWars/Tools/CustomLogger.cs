@@ -15,11 +15,11 @@ namespace TerritoryWars.Tools
     {
         public static Dictionary<LogType, string> LogTypeColors = new Dictionary<LogType, string>
         {
-            {LogType.Info, "#808080"},          // Сірий колір для звичайної інформації
-            {LogType.Warning, "#FFA500"},       // Помаранчевий для попереджень
-            {LogType.Event, "#32CD32"},   // Лайм-зелений для оновлень моделі
-            {LogType.Error, "#DC143C"},         // Темно-червоний для помилок  
-            {LogType.Important, "#9441e0"}      // Фіолетовий для важливих повідомлень
+            {LogType.Info, "#808080"},      
+            {LogType.Warning, "#FFA500"},    
+            {LogType.Event, "#32CD32"}, 
+            {LogType.Error, "#DC143C"},        
+            {LogType.Important, "#9441e0"}      
         };
         
         public static Dictionary<LogType, bool> LogTypeEnabled = new Dictionary<LogType, bool>

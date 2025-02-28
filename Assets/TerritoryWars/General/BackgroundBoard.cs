@@ -19,7 +19,7 @@ namespace TerritoryWars.General
             {
                 for (int y = 0; y < height; y++)
                 {
-                    // Використовуємо ту саму формулу позиціонування, що й в основній дошці
+                    
                     float xPosition = (x - y) * 0.5f;
                     float yPosition = (x + y) * 0.25f;
                     Vector3 position = new Vector3(xPosition, yPosition, 0);
@@ -27,15 +27,15 @@ namespace TerritoryWars.General
                     GameObject tile = Instantiate(backgroundTilePrefab, position, Quaternion.identity, transform);
                     tile.name = $"Tile_{x}_{y}";
 
-                    // Додаємо колайдер, якщо його немає
+                    
                     if (!tile.GetComponent<BoxCollider2D>())
                     {
                         var collider = tile.AddComponent<BoxCollider2D>();
-                        // Налаштовуємо розмір колайдера відповідно до спрайту
-                        collider.size = new Vector2(1f, 0.5f); // Приблизні розміри для ізометричної проекції
+                        
+                        collider.size = new Vector2(1f, 0.5f);
                     }
 
-                    // Встановлюємо правильний шар
+                    
                     tile.layer = LayerMask.NameToLayer("BackgroundBoard");
                 }
             }

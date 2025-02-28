@@ -95,7 +95,7 @@ namespace TerritoryWars.General
         
         public TileData GetGenerateJokerTile(int x, int y)
         {
-            // Отримуємо інформацію про сусідні тайли
+            
             Dictionary<Side, LandscapeType> neighborSides = new Dictionary<Side, LandscapeType>();
             foreach (Side side in System.Enum.GetValues(typeof(Side)))
             {
@@ -109,7 +109,7 @@ namespace TerritoryWars.General
                 }
             }
             
-            // Генеруємо новий тайл
+            
             char[] baseSides = new char[4];
             char[] randomSides = new char[4];
             for (int i = 0; i < 4; i++)
@@ -243,13 +243,13 @@ namespace TerritoryWars.General
             Players = new Character[2];
             PlayersData = new PlayerData[2];
 
-            // Створюємо точки для дугової траєкторії для першого персонажа
+            
             Vector3[] path1 = new Vector3[3];
-            path1[0] = new Vector3(SpawnPoints[0].x, SpawnPoints[0].y + 15, 0); // Початкова точка
-            path1[1] = new Vector3(SpawnPoints[0].x - 5, SpawnPoints[0].y + 7, 0); // Контрольна точка дуги
-            path1[2] = SpawnPoints[0]; // Кінцева точка
+            path1[0] = new Vector3(SpawnPoints[0].x, SpawnPoints[0].y + 15, 0); 
+            path1[1] = new Vector3(SpawnPoints[0].x - 5, SpawnPoints[0].y + 7, 0); 
+            path1[2] = SpawnPoints[0]; 
 
-            // Створюємо точки для дугової траєкторії для другого персонажа
+            
             Vector3[] path2 = new Vector3[3];
             path2[0] = new Vector3(SpawnPoints[1].x, SpawnPoints[1].y + 15, 0);
             path2[1] = new Vector3(SpawnPoints[1].x + 5, SpawnPoints[1].y + 7, 0);
@@ -307,7 +307,7 @@ namespace TerritoryWars.General
                 Players[0].SetAnimatorController(sessionUI.charactersObject.GetAnimatorController(PlayersData[1].skin_id));
                 Players[1].SetAnimatorController(sessionUI.charactersObject.GetAnimatorController(PlayersData[0].skin_id));
             }
-            // Анімація спуску персонажів по дузі
+            
             Players[0].transform
                 .DOPath(path1, 2.5f, PathType.CatmullRom)
                 .SetEase(Ease.OutQuad);
@@ -320,7 +320,7 @@ namespace TerritoryWars.General
         public void StartGame()
         {
             CustomSceneManager.Instance.LoadingScreen.SetActive(false);
-            // Підписуємось на події ходу
+            
             TileSelector.OnTurnStarted.AddListener(OnTurnStarted);
             TileSelector.OnTurnEnding.AddListener(OnTurnEnding);
 
@@ -407,7 +407,7 @@ namespace TerritoryWars.General
 
         private void OnTurnStarted()
         {
-            // Активуємо поточного персонажа
+            
             if (IsLocalPlayerHost)
             {
                 CurrentTurnPlayer.StartSelecting();
@@ -491,7 +491,7 @@ namespace TerritoryWars.General
 
         private void OnDestroy()
         {
-            // Відписуємось від подій
+            
             if (TileSelector != null)
             {
                 TileSelector.OnTurnStarted.RemoveListener(OnTurnStarted);
@@ -541,22 +541,22 @@ namespace TerritoryWars.General
                 alignment = TextAnchor.MiddleCenter
             };
 
-            // Створюємо напівпрозорий фон для тексту
+            
             Texture2D backgroundTexture = new Texture2D(1, 1);
             backgroundTexture.SetPixel(0, 0, new Color(0, 0, 0, 0.7f));
             backgroundTexture.Apply();
             style.normal.background = backgroundTexture;
 
-            // Відступи для тексту
+            
             int padding = 10;
             int yPosition = 10;
 
-            // Розраховуємо позицію по центру екрану
+            
             float screenCenterX = Screen.width / 2f;
             float labelWidth = 300f;
             float xPosition = screenCenterX - labelWidth / 2f;
 
-            // Показуємо чий зараз хід
+            
             float time = Time.time;
             string turnInfo;
             string enemyNickname = IsLocalPlayerHost ? PlayersData[1].username : PlayersData[0].username;
@@ -572,7 +572,7 @@ namespace TerritoryWars.General
             GUI.Label(new Rect(xPosition, yPosition, labelWidth, 30), turnInfo, style);
 
 
-            // Очищаємо створену текстуру
+            
             Destroy(backgroundTexture);
         }
     }
