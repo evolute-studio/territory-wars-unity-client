@@ -22,6 +22,10 @@ MonoBehaviour:
     Avatar: {fileID: -6319067558682363733, guid: 09ffad3c164ce124887fdebf47eb4ac2, type: 3}
     Id: 1
   - CharacterName: Bandicoot
-    AnimatorController: {fileID: 9100000, guid: ab8679ae00cc0b64fbb8f56551123ed5, type: 2}
-    Avatar: {fileID: -6319067558682363733, guid: 09ffad3c164ce124887fdebf47eb4ac2, type: 3}
-    Id: 1
+    AnimatorController: {fileID: 9100000, guid: bc0148781d8497a42b5d50797248abcc, type: 2}
+    Avatar: {fileID: -3062913738577216272, guid: ff84d338b70874346ae72330739095a1, type: 3}
+    Id: 2
+  - CharacterName: Golem
+    AnimatorController: {fileID: 9100000, guid: 15de44a782993af47b19fc2adf6b2b92, type: 2}
+    Avatar: {fileID: 3712650152755043891, guid: 928c12e00142d2f459d57360fcdbcf88, type: 3}
+    Id: 3
