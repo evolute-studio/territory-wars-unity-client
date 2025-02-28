@@ -274,18 +274,13 @@ namespace TerritoryWars.UI
         {
             SaveSnapshotText.gameObject.SetActive(true);
 
-            DojoGameManager.Instance.SessionManager.SetSnapshotTurn();
-            
-            SaveSnapshotButton.interactable = false;
-            SaveSnapshotText.transform.DOScale(1.2f, 0.1f).OnComplete(() =>
-            {
-                SaveSnapshotText.transform.DOScale(1f, 0.1f);
-            });
+            DojoGameManager.Instance.SessionManager.CreateSnapshot();
+
+            SaveSnapshotText.DOFade(1, 0.2f);
             DOVirtual.DelayedCall(3, () =>
             {
                 SaveSnapshotButton.GetComponent<Image>().DOFade(0, 0.5f).OnComplete(() =>
                 {
-                    SaveSnapshotButton.gameObject.SetActive(false);
                 });
                 //SaveSnapshotButton.interactable = true;
                 SaveSnapshotText.DOFade(0, 0.5f).OnComplete(() =>

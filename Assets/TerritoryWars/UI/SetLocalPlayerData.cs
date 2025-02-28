@@ -6,7 +6,7 @@ namespace TerritoryWars.UI
 {
     public class SetLocalPlayerData
     {
-        private static bool _isLocalPlayerHost => SessionManager.Instance.IsLocalPlayerBlue;
+        private static bool _isLocalPlayerHost => SessionManager.Instance.IsLocalPlayerHost;
 
         public static int[] GetLocalPlayerInt(int bluePlayer, int redPlayer)
         {

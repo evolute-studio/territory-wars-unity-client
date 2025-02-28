@@ -69,7 +69,7 @@ namespace TerritoryWars.General
         public Character RemotePlayer { get; private set; }
         
         public bool IsLocalPlayerTurn => CurrentTurnPlayer == LocalPlayer;
-        public bool IsLocalPlayerBlue => LocalPlayer.LocalId == 0;
+        public bool IsLocalPlayerHost => LocalPlayer.LocalId == 0;
         
         private bool isJokerActive = false;
         
@@ -261,11 +261,22 @@ namespace TerritoryWars.General
 
             evolute_duel_Player player1Data = DojoGameManager.Instance.GetPlayerData(board.player1.Item1.Hex());
             evolute_duel_Player player2Data = DojoGameManager.Instance.GetPlayerData(board.player2.Item1.Hex());
+
+            GameObject prefab1 = PrefabsManager.Instance.GetPlayer(player1Data.active_skin);
+            GameObject prefab2 = PrefabsManager.Instance.GetPlayer(player2Data.active_skin);
+            GameObject player1;
+            GameObject player2;
             
-            
-            
-            GameObject player1 = Instantiate(PrefabsManager.Instance.GetPlayer(player1Data.active_skin), path1[0], Quaternion.identity);
-            GameObject player2 = Instantiate(PrefabsManager.Instance.GetPlayer(player2Data.active_skin), path2[0], Quaternion.identity);
+            if (board.player1.Item1.Hex() == DojoGameManager.Instance.LocalBurnerAccount.Address.Hex())
+            {
+                player1 = Instantiate(prefab1, path1[0], Quaternion.identity);
+                player2 = Instantiate(prefab2, path2[0], Quaternion.identity);
+            }
+            else
+            {
+                player2 = Instantiate(prefab1, path1[0], Quaternion.identity);
+                player1 = Instantiate(prefab2, path2[0], Quaternion.identity);
+            }
             
             Players[0] = player1.GetComponent<Character>();
             Players[1] = player2.GetComponent<Character>();
@@ -286,7 +297,7 @@ namespace TerritoryWars.General
                 ? Players[0] : Players[1];
             RemotePlayer = LocalPlayer == Players[0] ? Players[1] : Players[0];
 
-            if (IsLocalPlayerBlue)
+            if (IsLocalPlayerHost)
             {
                 Players[0].SetAnimatorController(sessionUI.charactersObject.GetAnimatorController(PlayersData[0].skin_id));
                 Players[1].SetAnimatorController(sessionUI.charactersObject.GetAnimatorController(PlayersData[1].skin_id));
@@ -397,7 +408,7 @@ namespace TerritoryWars.General
         private void OnTurnStarted()
         {
             // Активуємо поточного персонажа
-            if (IsLocalPlayerBlue)
+            if (IsLocalPlayerHost)
             {
                 CurrentTurnPlayer.StartSelecting();
             }
@@ -416,7 +427,7 @@ namespace TerritoryWars.General
 
         private void OnTurnEnding()
         {
-            if (IsLocalPlayerBlue)
+            if (IsLocalPlayerHost)
             {
                 CurrentTurnPlayer.EndTurn();
             }
@@ -548,7 +559,7 @@ namespace TerritoryWars.General
             // Показуємо чий зараз хід
             float time = Time.time;
             string turnInfo;
-            string enemyNickname = IsLocalPlayerBlue ? PlayersData[1].username : PlayersData[0].username;
+            string enemyNickname = IsLocalPlayerHost ? PlayersData[1].username : PlayersData[0].username;
             
             if (CurrentTurnPlayer != LocalPlayer)
             {

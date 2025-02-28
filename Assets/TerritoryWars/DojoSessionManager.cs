@@ -166,7 +166,7 @@ namespace TerritoryWars
             {
                 CustomLogger.LogEvent($"[GameFinished] | BoardId: {board_id.Hex()}");
                 GameUI.Instance.ShowResultPopUp();
-                CreateSnapshot();
+                
             }
         }
 
@@ -544,8 +544,6 @@ namespace TerritoryWars
         
         public void CreateSnapshot()
         {
-            if (_snapshotTurn == 0) return;
-            
             try
             {
                 var txHash = _dojoGameManager.GameSystem.create_snapshot(_localPlayerAccount, LocalPlayerBoard.id, (byte)_snapshotTurn);

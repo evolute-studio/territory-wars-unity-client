@@ -102,7 +102,7 @@ public class SessionUI : MonoBehaviour
 
     public void UseJoker(int player) // логіку сюди для відображення корректної кількості джокерів для локал плеєра і спавн персонажів правильний
     {
-        if (!SessionManager.Instance.IsLocalPlayerBlue)
+        if (!SessionManager.Instance.IsLocalPlayerHost)
         {
             player = player == 0 ? 1 : 0;
         }

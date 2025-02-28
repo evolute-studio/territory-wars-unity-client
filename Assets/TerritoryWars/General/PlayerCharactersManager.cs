@@ -5,7 +5,7 @@ namespace TerritoryWars.General
     public class PlayerCharactersManager
     {
         private static int _currentCharacterId = 0;
-        private static int _opponentCharacterId => SessionManager.Instance.IsLocalPlayerBlue ? SessionManager.Instance.PlayersData[1].skin_id : SessionManager.Instance.PlayersData[0].skin_id;
+        private static int _opponentCharacterId => SessionManager.Instance.IsLocalPlayerHost ? SessionManager.Instance.PlayersData[1].skin_id : SessionManager.Instance.PlayersData[0].skin_id;
         private List<int> _availableCharacters = new List<int> { 0, 1 };
         
         
