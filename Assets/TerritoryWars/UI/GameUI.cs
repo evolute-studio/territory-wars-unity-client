@@ -70,7 +70,7 @@ namespace TerritoryWars.UI
             SetupButtons();
             UpdateUI();
             
-            // Початково ховаємо індикатор режиму джокера
+            
             if (jokerModeIndicator != null)
             {
                 jokerModeIndicator.SetActive(false);
@@ -156,19 +156,19 @@ namespace TerritoryWars.UI
 
         public void UpdateUI()
         {
-            // Оновлюємо текст з кількістю тайлів
+            
             if (remainingTilesText != null)
             {
                 remainingTilesText.text = $"{deckManager.RemainingTiles}";
             }
 
-            // Оновлюємо превью поточного тайлу
+            
             if (tilePreview != null)
             {
                 tilePreview.UpdatePreview(_sessionManager.TileSelector.CurrentTile);
             }
 
-            // Оновлюємо текст кількості джокерів для кожного гравця
+            
             if (player1JokersText != null)
             {
                 player1JokersText.text = $"Jokers: {_sessionManager.GetJokerCount(0)}";
@@ -178,13 +178,13 @@ namespace TerritoryWars.UI
                 player2JokersText.text = $"Jokers: {_sessionManager.GetJokerCount(1)}";
             }
 
-            // Оновлюємо стан кнопки джокера
+       
             if (jokerButton != null)
             {
                 jokerButton.interactable = _sessionManager.CanUseJoker();
             }
 
-            // Оновлюємо індикатор режиму джокера
+           
             if (jokerModeIndicator != null)
             {
                 jokerModeIndicator.SetActive(_sessionManager.IsJokerActive);
@@ -279,7 +279,7 @@ namespace TerritoryWars.UI
             SaveSnapshotText.DOFade(1, 0.2f);
             DOVirtual.DelayedCall(3, () =>
             {
-                //SaveSnapshotButton.interactable = true;
+               
                 SaveSnapshotText.DOFade(0, 0.5f).OnComplete(() =>
                 {
                     SaveSnapshotText.gameObject.SetActive(false);

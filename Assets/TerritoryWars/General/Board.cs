@@ -240,19 +240,19 @@ namespace TerritoryWars.General
         
         public bool CanPlaceTile(TileData tile, int x, int y)
         {
-            // Перевірка меж поля
+            
             if (x < 0 || x >= width || y < 0 || y >= height)
             {
                 return false;
             }
 
-            // Перевірка чи позиція вільна
+            
             if (tileData[x, y] != null)
             {
                 return false;
             }
 
-            // Підрахунок кількості розміщених тайлів
+            
             int placedTiles = 0;
             for (int i = 0; i < width; i++)
             {
@@ -265,13 +265,13 @@ namespace TerritoryWars.General
                 }
             }
 
-            // Якщо карта менше 36 тайлів, дозволяємо розміщення в будь-якій позиції
+            
             if (placedTiles < 36)
             {
                 return true;
             }
 
-            // Знаходимо всі сусідні тайли
+            
             Dictionary<Side, TileData> neighbors = new Dictionary<Side, TileData>();
             bool hasAnyNeighbor = false;
             bool hasNonBorderNeighbor = false;
@@ -289,7 +289,7 @@ namespace TerritoryWars.General
 
                     if (IsBorderTile(newX, newY))
                     {
-                        // Перевіряємо чи граничний тайл має дорогу або місто
+                        
                         LandscapeType borderSide = tileData[newX, newY].GetSide(GetOppositeSide(side));
                         if (borderSide != LandscapeType.Field)
                         {
@@ -303,16 +303,16 @@ namespace TerritoryWars.General
                 }
             }
 
-            // Якщо немає сусідів взагалі
+            
             if (!hasAnyNeighbor)
             {
                 return false;
             }
 
-            // Якщо є граничний сусід з дорогою або містом, дозволяємо розміщення
+            
             if (hasBorderWithNonField)
             {
-                // Перевіряємо відповідність типів для всіх сусідів
+                
                 foreach (var neighbor in neighbors)
                 {
                     Side side = neighbor.Key;
@@ -326,13 +326,13 @@ namespace TerritoryWars.General
                 return true;
             }
 
-            // Якщо немає граничного сусіда з дорогою/містом і немає звичайного сусіда
+            
             if (!hasNonBorderNeighbor)
             {
                 return false;
             }
 
-            // Перевіряємо кожну сторону тайла на відповідність
+            
             foreach (var neighbor in neighbors)
             {
                 Side side = neighbor.Key;
@@ -341,13 +341,13 @@ namespace TerritoryWars.General
                 LandscapeType currentSide = tile.GetSide(side);
                 LandscapeType adjacentSide = adjacentTile.GetSide(GetOppositeSide(side));
 
-                // Якщо сусід - граничний тайл і його сторона - поле (F), дозволяємо будь-який тип
+                
                 if (IsBorderTile(x + GetXOffset(side), y + GetYOffset(side)) && adjacentSide == LandscapeType.Field)
                 {
                     continue;
                 }
 
-                // Інакше перевіряємо на відповідність типів
+                
                 if (!IsMatchingLandscape(currentSide, adjacentSide))
                 {
                     return false;
@@ -533,10 +533,10 @@ namespace TerritoryWars.General
         {
             List<int> validRotations = new List<int>();
 
-            // Зберігаємо початковий поворот
+            
             int initialRotation = tile.rotationIndex;
 
-            // Перевіряємо всі можливі повороти
+            
             for (int rotation = 0; rotation < 4; rotation++)
             {
                 if (CanPlaceTile(tile, x, y))
@@ -546,7 +546,7 @@ namespace TerritoryWars.General
                 tile.Rotate();
             }
 
-            // Повертаємо тайл в початкове положення
+            
             tile.Rotate(4 - (tile.rotationIndex % 4));
             while (tile.rotationIndex != initialRotation)
             {
@@ -576,24 +576,12 @@ namespace TerritoryWars.General
                 if (tile != null && tile.IsRoad())
                 {
                     tile.RoadStructure.OwnerId = winnerId;
-                    // Можливо, тут потрібно оновити візуальне відображення доріг
-                    // тільки для тих сторін, де roadStructure.roadSides[i] == true
+                    
                     
                 }
                 
                 
-                // GameObject tileObject = GetTileObject(roadStructure.tilePosition.x, roadStructure.tilePosition.y);
-                // if (tileObject != null)
-                // {
-                //     //TileGenerator tileGenerator = tileObject.GetComponent<TileGenerator>();
-                //     //tileGenerator.RecolorRoads(winnerId);
-                //     // через DOTween зробити анімацію припідняття тайла, 1 секунда завися і повернути на місце
-                //     Sequence sequence = DOTween.Sequence();
-                //     sequence.Append(tileObject.transform.DOMoveY(tileObject.transform.position.y + 0.2f, 0.5f).SetEase(Ease.InOutSine));
-                //     sequence.AppendInterval(1.5f);
-                //     sequence.Append(tileObject.transform.DOMoveY(tileObject.transform.position.y, 0.5f).SetEase(Ease.InOutSine));
-                //     sequence.Play();
-                // }
+              
                 Vector2 centralPinPosition = ReplacePinsAndGetCentralPosition(connectedRoadTiles, winnerId);
                 Vector2 offset = new Vector2(0, 0.4f);
             }
@@ -602,15 +590,15 @@ namespace TerritoryWars.General
         public List<RoadStructure> GetConnectedRoadTiles(byte root)
         {
             Vector2Int startPosition = OnChainBoardDataConverter.GetPositionByRoot(root);
-            // Конвертуємо startSide в enum Side
+            
             Side startSide = (Side)((root + 3) % 4);
             HashSet<Vector2Int> visited = new HashSet<Vector2Int>();
             List<RoadStructure> roadTiles = new List<RoadStructure>();
-            //roadTiles[0].roadSides[(int)startSide] = true;
+           
 
             
 
-            // Передаємо startSide як fromSide для першого тайлу
+            
             DfsRoadSearch(startPosition.x, startPosition.y, visited, roadTiles, startSide);
             
             return roadTiles;
@@ -673,7 +661,7 @@ namespace TerritoryWars.General
                 roadSides = new bool[4]
             };
 
-            // Підрахуємо кількість доріг на тайлі і позначимо їх
+           
             int roadCount = 0;
             foreach (Side side in System.Enum.GetValues(typeof(Side)))
             {
@@ -685,12 +673,12 @@ namespace TerritoryWars.General
             }
             s += $"DfsRoadSearch at {x}, {y} roadCount: {roadCount}\n";
             
-            // Якщо дорога одинарна, потрійна або четверна - залишаємо тільки потрібну сторону
+           
             if (roadCount == 1 || roadCount >= 3)
             {
-                // Завжди використовуємо fromSide, оскільки тепер воно є і для першого тайлу
+                
                 s += $"DfsRoadSearch at {x}, {y} fromSide: {fromSide}\n";
-                // Залишаємо тільки ту сторону, з якої прийшли
+                
                 for (int i = 0; i < 4; i++)
                 {
                     roadStructure.roadSides[i] = (i == (int)GetOppositeSide(fromSide.Value));
@@ -704,7 +692,7 @@ namespace TerritoryWars.General
 
             roadTiles.Add(roadStructure);
             
-            // Перевіряємо всі сторони для подальшого пошуку
+            
             foreach (Side side in System.Enum.GetValues(typeof(Side)))
             {
                 if (!roadStructure.roadSides[(int)side])

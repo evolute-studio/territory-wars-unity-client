@@ -6,12 +6,7 @@ using UnityEngine;
 
 namespace TerritoryWars.General
 {
-    // public class ValidPlacement
-    // {
-    //     public int X { get; set; }
-    //     public int Y { get; set; }
-    //     public int Rotation { get; set; }
-    // }
+
 
     public class BoardOffline : MonoBehaviour
     {
@@ -33,12 +28,9 @@ namespace TerritoryWars.General
 
         public void Initialize()
         {
-            //structureChecker = new StructureChecker(this);
-            //var debugger = gameObject.AddComponent<StructureDebugger>();
-            //debugger.Initialize(structureChecker, this);
-            //Random.InitState(4);
+            
             InitializeBoard();
-            //CreateRandomBorder();
+            
             
         }
 
@@ -61,7 +53,7 @@ namespace TerritoryWars.General
             string roadTile = "RFRF";
             string cityTile = "FFCF";
             string fieldTile = "FFFF";
-            // наприклад start (9, 9) end (9, 0)
+            
 
             roadTile = TileData.GetRotatedConfig(roadTile, rotationTimes);
             cityTile = TileData.GetRotatedConfig(cityTile, rotationTimes);
@@ -184,7 +176,7 @@ namespace TerritoryWars.General
                 return true;
             }
 
-            // Знаходимо всі сусідні тайли
+            
             Dictionary<Side, TileData> neighbors = new Dictionary<Side, TileData>();
             bool hasAnyNeighbor = false;
             bool hasNonBorderNeighbor = false;
@@ -199,7 +191,7 @@ namespace TerritoryWars.General
                     neighbors[side] = tileData[newX, newY];
                     hasAnyNeighbor = true;
 
-                    // Перевіряємо чи це не граничний тайл
+                    
                     if (!IsBorderTile(newX, newY))
                     {
                         hasNonBorderNeighbor = true;
@@ -207,24 +199,24 @@ namespace TerritoryWars.General
                 }
             }
 
-            // Якщо немає сусідів взагалі
+            
             if (!hasAnyNeighbor)
             {
                 return false;
             }
 
-            // Якщо є тільки один сусід і це граничний тайл
+            
             if (neighbors.Count == 1 && !hasNonBorderNeighbor)
             {
                 var neighbor = neighbors.First();
-                // Перевіряємо, чи сторона граничного тайла - поле
+                
                 if (neighbor.Value.GetSide(GetOppositeSide(neighbor.Key)) == LandscapeType.Field)
                 {
                     return false;
                 }
             }
 
-            // Перевіряємо кожну сторону тайлу на відповідність
+            
             foreach (var neighbor in neighbors)
             {
                 Side side = neighbor.Key;
@@ -250,7 +242,7 @@ namespace TerritoryWars.General
                 return;
             }
 
-            // Знаходимо всі сусідні тайли
+            
             Dictionary<Side, TileData> neighbors = new Dictionary<Side, TileData>();
             bool hasAnyNeighbor = false;
             bool hasNonBorderNeighbor = false;
@@ -265,7 +257,7 @@ namespace TerritoryWars.General
                     neighbors[side] = tileData[newX, newY];
                     hasAnyNeighbor = true;
 
-                    // Перевіряємо чи це не граничний тайл
+                    
                     if (!IsBorderTile(newX, newY))
                     {
                         hasNonBorderNeighbor = true;
@@ -273,24 +265,24 @@ namespace TerritoryWars.General
                 }
             }
 
-            // Якщо немає сусідів взагалі
+            
             if (!hasAnyNeighbor)
             {
                 return;
             }
 
-            // Якщо є тільки один сусід і це граничний тайл
+            
             if (neighbors.Count == 1 && !hasNonBorderNeighbor)
             {
                 var neighbor = neighbors.First();
-                // Перевіряємо, чи сторона граничного тайла - поле
+                
                 if (neighbor.Value.GetSide(GetOppositeSide(neighbor.Key)) == LandscapeType.Field)
                 {
                     return;
                 }
             }
 
-            // Перевіряємо кожну сторону тайлу на відповідність
+            
             foreach (var neighbor in neighbors)
             {
                 Side side = neighbor.Key;
@@ -344,9 +336,7 @@ namespace TerritoryWars.General
 
         public int GetXOffset(Side dir)
         {
-            // В ізометричній проекції:
-            // x збільшується при русі вгору (Top)
-            // x зменшується при русі вниз (Bottom)
+            
             return dir switch
             {
                 Side.Top => 1,
@@ -357,9 +347,7 @@ namespace TerritoryWars.General
 
         public int GetYOffset(Side dir)
         {
-            // В ізометричній проекції:
-            // y збільшується при русі вліво (Left)
-            // y зменшується при русі вправо (Right)
+            
             return dir switch
             {
                 Side.Left => 1,
@@ -375,7 +363,7 @@ namespace TerritoryWars.General
 
         public bool IsBorderTile(int x, int y)
         {
-            // Перевіряємо чи тайл знаходиться на границі поля
+            
             return x == 0 || x == width - 1 || y == 0 || y == height - 1;
         }
 
@@ -422,10 +410,10 @@ namespace TerritoryWars.General
         {
             List<int> validRotations = new List<int>();
 
-            // Зберігаємо початковий поворот
+            
             int initialRotation = tile.rotationIndex;
 
-            // Перевіряємо всі можливі повороти
+            
             for (int rotation = 0; rotation < 4; rotation++)
             {
                 if (CanPlaceTile(tile, x, y))
@@ -435,7 +423,7 @@ namespace TerritoryWars.General
                 tile.Rotate();
             }
 
-            // Повертаємо тайл в початкове положення
+            
             tile.Rotate(4 - (tile.rotationIndex % 4));
             while (tile.rotationIndex != initialRotation)
             {

@@ -87,16 +87,16 @@ namespace TerritoryWars.ModelsDataConverters
 
             var matchingConfigs = new List<(string tile, int rotation)>();
             
-            // Перебираємо всі тайли з колоди
+          
             foreach (var deckTile in InDeckTileTypes)
             {
-                // Для кожного тайлу перевіряємо всі можливі ротації
+              
                 for (int rotationI = 0; rotationI < 4; rotationI++)
                 {
                     string rotatedTile = Rotate(deckTile, rotationI);
                     bool isMatch = true;
                     
-                    // Перевіряємо кожен символ в конфігурації
+                    
                     for (int i = 0; i < 4; i++)
                     {
                         if (config[i] != 'X' && config[i] != rotatedTile[i])
@@ -108,7 +108,7 @@ namespace TerritoryWars.ModelsDataConverters
                     
                     if (isMatch)
                     {
-                        // Зберігаємо оригінальний тайл та кількість поворотів
+                        
                         matchingConfigs.Add((deckTile, rotationI));
                         Debug.Log($"Found matching config: {deckTile} with rotation {rotationI}. Original: {config}, Rotated: {rotatedTile}");
                     }
@@ -121,7 +121,7 @@ namespace TerritoryWars.ModelsDataConverters
                 return (null, 0);
             }
 
-            // Вибираємо випадкову конфігурацію
+            
             var randomIndex = Random.Next(matchingConfigs.Count);
             var (selectedTile, rotation) = matchingConfigs[randomIndex];
             

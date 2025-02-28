@@ -421,7 +421,7 @@ namespace TerritoryWars.General
             
             try
             {
-                // Зберігаємо weak reference на spriteRenderer
+                
                 var spriteRendererRef = new WeakReference<SpriteRenderer>(spriteRenderer);
                 
                 return DOTween.To(
@@ -469,7 +469,7 @@ namespace TerritoryWars.General
             
             try
             {
-                // Зберігаємо weak reference на lineRenderer
+                
                 var lineRendererRef = new WeakReference<LineRenderer>(lineRenderer);
                 
                 return DOTween.To(

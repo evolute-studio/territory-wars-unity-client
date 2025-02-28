@@ -5,17 +5,6 @@ using UnityEngine;
 
 namespace TerritoryWars.Carts
 {
-    // основний флоу:
-    // 1. карти не спаняться відразу, вони спочатку додаються в лист очікування. Method: AddCart
-    // 2. тайл очікує, коли на нього заїде карт з сусіднього тайлу (якщо такого не відбувається - спавн відразу) Method: TrySpawnCarts
-    // 3. очікування коли карти проїдуть тайл. Method: TrySpawnCarts
-    // 4. в момент коли останній тайл виїхав, відразу відбувається рівномірний спавн карті. Method: SpawnCarts
-        
-    // це було зробленно заради костильної синхронізації руху картів. На прямих дорогах, а точніше на дорогах з однаковою довжиною це працює непогано.
-    // але якщо після прямої, є дорога з поворотом, то синхронізація збивається
-        
-    // як варіант можна динамічно змінювати швидкість карт, щоб вони рухались рівномірно
-    
     
     public class RoadTile
     {
@@ -99,7 +88,7 @@ namespace TerritoryWars.Carts
             PlaceCarts();
         }
 
-        // рівномірне розміщення картів на шляху, де перший карт займає 0 позицію, а інші рівномірно розподіляються по шляху
+       
         public void PlaceCarts()
         {
             for (int i = 0; i < carts.Count; i++)
@@ -146,8 +135,7 @@ namespace TerritoryWars.Carts
                 carts[i].gameObject.SetActive(true);
             }
         }
-
-        // RoadTile це нода двохзв'язного списку, тому ми можемо знайти початковий тайл
+        
         private RoadTile FindStartingTile()
         {
             RoadTile current = this;
@@ -159,7 +147,7 @@ namespace TerritoryWars.Carts
             return current;
         }
 
-        // метод коли тайл приймає карт з іншого тайлу
+        
         public void AcceptCart(OwnerPin ownerPin)
         {
             carts.Add(ownerPin);
@@ -310,7 +298,7 @@ namespace TerritoryWars.Carts
                 }
                 else
                 {
-                    // Переміщуємо карт на початок стартового тайла
+                    
                     ownerPin.gameObject.transform.position = startingTile.path[0];
                     currentTargetIndices[cartIndex] = 0;
                 }
@@ -327,10 +315,10 @@ namespace TerritoryWars.Carts
                 Vector3 targetPoint = GetNextTargetPoint(i);
                 Vector3 direction = (targetPoint - cartPosition).normalized;
 
-                // Позиція для тексту (трохи вище карта)
+                
                 Vector3 textPosition = cartPosition + Vector3.up * 0.5f;
 
-                // Формуємо текст
+                
                 string info = $"Cart #{i}\n" +
                               $"Dir: {direction.ToString("F2")}\n" +
                               $"Target: {targetPoint.ToString("F2")}";
@@ -341,7 +329,7 @@ namespace TerritoryWars.Carts
                 if (view != null)
                 {
                     Vector3 screenPos = view.camera.WorldToScreenPoint(textPosition);
-                    // Перевіряємо, чи точка перед камерою
+                    
                     if (screenPos.z > 0)
                     {
                         screenPos.y = view.camera.pixelHeight - screenPos.y;

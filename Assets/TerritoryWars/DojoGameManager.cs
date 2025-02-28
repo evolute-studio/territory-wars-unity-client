@@ -7,7 +7,7 @@ using Dojo;
 using Dojo.Starknet;
 using UnityEngine;
 
-// Fix to use Records in Unity ref. https://stackoverflow.com/a/73100830
+// fix to use Records in Unity ref. https://stackoverflow.com/a/73100830
 using System.ComponentModel;
 using System.Threading.Tasks;
 using TerritoryWars.General;

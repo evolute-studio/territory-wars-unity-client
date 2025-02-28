@@ -23,7 +23,7 @@ namespace TerritoryWars
         
         private void Awake()
         {
-            // Підписка на події логування
+            // subscribe to logging events
             Application.logMessageReceived += HandleLog;
         }
         
@@ -99,7 +99,7 @@ namespace TerritoryWars
         {
             InitStyles();
             
-            // Область для кнопок та вводу
+            
             GUILayout.BeginArea(new Rect(10, 10, 300, 200));
             
             if (GUILayout.Button("Create Game", buttonStyle))
@@ -138,17 +138,7 @@ namespace TerritoryWars
             
             
             
-            // // Область для логів
-            // GUILayout.BeginArea(new Rect(10, 220, 500, 400));
-            // GUILayout.Label("Logs:", buttonStyle);
-            //
-            // scrollPosition = GUILayout.BeginScrollView(scrollPosition, 
-            //     GUI.skin.box, GUILayout.Width(480), GUILayout.Height(380));
-            //
-            // GUILayout.TextArea(logMessages, logStyle);
-            //
-            // GUILayout.EndScrollView();
-            // GUILayout.EndArea();
+         
         }
         
         private string hostAddress = "";

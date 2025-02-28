@@ -81,7 +81,7 @@ public class LoadingManager : MonoBehaviour
         SetActiveScreen(false);
     }
     
-    // Кожні 0,5 секунд точка
+   
     
     private IEnumerator LoadingTextCoroutine()
     {

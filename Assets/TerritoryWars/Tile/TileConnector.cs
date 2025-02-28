@@ -17,11 +17,11 @@ namespace TerritoryWars.Tile
             switch (landscape)
             {
                 case LandscapeType.City:
-                    return new Color(0.3f, 0.5f, 0.9f); // Синій
+                    return new Color(0.3f, 0.5f, 0.9f); 
                 case LandscapeType.Road:
-                    return new Color(0.5f, 0.35f, 0.2f); // Коричневий
+                    return new Color(0.5f, 0.35f, 0.2f);
                 case LandscapeType.Field:
-                    return new Color(0.3f, 0.8f, 0.3f); // Зелений
+                    return new Color(0.3f, 0.8f, 0.3f);
                 default:
                     return Color.white;
             }

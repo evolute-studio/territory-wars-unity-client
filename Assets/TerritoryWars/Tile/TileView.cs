@@ -4,9 +4,9 @@ namespace TerritoryWars.Tile
 {
     public class TileView : MonoBehaviour
     {
-        private static readonly Color CityColor = new Color(0.3f, 0.5f, 0.9f);    // Синій
-        private static readonly Color RoadColor = new Color(0.5f, 0.35f, 0.2f);   // Коричневий
-        private static readonly Color FieldColor = new Color(0.3f, 0.8f, 0.3f);   // Зелений
+        private static readonly Color CityColor = new Color(0.3f, 0.5f, 0.9f);    
+        private static readonly Color RoadColor = new Color(0.5f, 0.35f, 0.2f);   
+        private static readonly Color FieldColor = new Color(0.3f, 0.8f, 0.3f);   
 
         private SpriteRenderer[] sideRenderers;
         private TileData tileData;
@@ -14,7 +14,7 @@ namespace TerritoryWars.Tile
 
         private void Awake()
         {
-            // Отримуємо всі SpriteRenderer в правильному порядку
+           
             Transform connectorsTransform = transform.Find("Connectors");
             sideRenderers = new SpriteRenderer[4]
             {
@@ -43,9 +43,9 @@ namespace TerritoryWars.Tile
             if (!showDebugInfo || tileData == null || !gameObject.activeSelf) return;
 
             Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
-            if (screenPos.z <= 0) return; // Не показуємо, якщо тайл позаду камери
+            if (screenPos.z <= 0) return; 
 
-            // Конвертуємо координати екрану в GUI координати
+            
             screenPos.y = Screen.height - screenPos.y;
 
             GUIStyle style = new GUIStyle(GUI.skin.label)
@@ -55,14 +55,14 @@ namespace TerritoryWars.Tile
                 fontSize = 12
             };
 
-            // Показуємо ID тайлу
+            
             GUI.color = Color.black;
             GUI.Label(new Rect(screenPos.x - 49, screenPos.y - 9, 100, 20), tileData.id, style);
             GUI.color = Color.white;
             GUI.Label(new Rect(screenPos.x - 50, screenPos.y - 10, 100, 20), tileData.id, style);
 
-            // Показуємо типи конекторів
-            float offset = 30f; // Відступ від центру
+           
+            float offset = 30f;
             Vector2[] positions = new Vector2[]
             {
                 new Vector2(screenPos.x, screenPos.y - offset),      // Top
@@ -82,7 +82,7 @@ namespace TerritoryWars.Tile
                     _ => "?"
                 };
 
-                // Встановлюємо колір відповідно до типу
+               
                 GUI.color = type switch
                 {
                     LandscapeType.City => CityColor,
@@ -91,13 +91,13 @@ namespace TerritoryWars.Tile
                     _ => Color.white
                 };
 
-                // Додаємо чорну тінь для кращої видимості
+              
                 GUI.color = Color.black;
                 GUI.Label(new Rect(positions[i].x - 9, positions[i].y - 9, 20, 20), typeChar, style);
                 GUI.color = GetColorForLandscape(type);
                 GUI.Label(new Rect(positions[i].x - 10, positions[i].y - 10, 20, 20), typeChar, style);
             }
-            GUI.color = Color.white; // Скидаємо колір назад до білого
+            GUI.color = Color.white; 
         }
 
         private Color GetColorForLandscape(LandscapeType type)
@@ -111,7 +111,7 @@ namespace TerritoryWars.Tile
             };
         }
 
-        // Метод для вмикання/вимикання відображення debug інформації
+       
         public void ToggleDebugInfo()
         {
             showDebugInfo = !showDebugInfo;

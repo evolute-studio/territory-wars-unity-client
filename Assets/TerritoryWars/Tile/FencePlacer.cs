@@ -24,24 +24,24 @@ namespace TerritoryWars.Tile
                 Vector3 pillarPos = pillars[i].localPosition;
                 Vector3 fencePoint = pillarPos + Vector3.up * fenceYOffset;
 
-                // Якщо поточний індекс треба пропустити
+                
                 if (skipIndices != null && skipIndices.Contains(i))
                 {
-                    // Додаємо дві точки для створення розриву
+                    
                     if (i < pillars.Count - 1)
                     {
                         Vector3 nextPillarPos = pillars[i + 1].localPosition;
                         Vector3 nextFencePoint = nextPillarPos + Vector3.up * fenceYOffset;
 
-                        // Додаємо точку перед розривом
+                        
                         points.Add(fencePoint);
-                        // Опускаємо лінію вниз
+                        
                         points.Add(new Vector3(fencePoint.x - 0.001f, fencePoint.y, -150f));
-                        // Піднімаємо лінію в наступній точці
+                        
                         points.Add(new Vector3(nextFencePoint.x + 0.001f, nextFencePoint.y, -150f));
                         points.Add(nextFencePoint);
 
-                        // Пропускаємо наступну точку, оскільки ми вже її додали
+                        
                         i++;
                     }
                 }
@@ -56,7 +56,7 @@ namespace TerritoryWars.Tile
         }
 
 
-        // Альтернативний підхід через використання двох окремих сегментів
+        
         [ContextMenu("PlaceFenceAlternative")]
         private void PlaceFenceAlternative()
         {
@@ -71,15 +71,15 @@ namespace TerritoryWars.Tile
 
                 if (skipIndices != null && skipIndices.Contains(i))
                 {
-                    // Створюємо два окремі сегменти замість одного
-                    float gapSize = 0.5f; // Розмір пробілу
+                    
+                    float gapSize = 0.5f; 
                     Vector3 direction = (nextPos - currentPos).normalized;
 
-                    // Додаємо точку поточного стовпа
+                    
                     points.Add(currentPos);
-                    // Додаємо точку трохи не доходячи до наступного стовпа
+                    
                     points.Add(nextPos - direction * gapSize);
-                    // Починаємо новий сегмент
+                    
                     points.Add(nextPos - direction * gapSize);
                     points.Add(nextPos);
                 }
@@ -99,11 +99,11 @@ namespace TerritoryWars.Tile
         {
             if (pillars == null || pillars.Count < 3) return;
 
-            // Отримуємо всі позиції точок з LineRenderer
+            
             Vector3[] linePoints = new Vector3[lineRenderer.positionCount];
             lineRenderer.GetPositions(linePoints);
 
-            // Знаходимо індекси розривів у масиві точок
+            
             List<int> breakIndices = new List<int>();
             for (int i = 1; i < linePoints.Length - 1; i++)
             {
@@ -113,7 +113,7 @@ namespace TerritoryWars.Tile
                 }
             }
 
-            // Розбиваємо масив точок на окремі сегменти за індексами розривів
+            
             List<Vector3[]> segments = new List<Vector3[]>();
             int startIndex = 0;
             foreach (int breakIndex in breakIndices)
@@ -124,13 +124,13 @@ namespace TerritoryWars.Tile
                 segments.Add(segment);
                 startIndex = breakIndex + 1;
             }
-            // Додаємо останній сегмент
+            
             int lastSegmentLength = linePoints.Length - startIndex;
             Vector3[] lastSegment = new Vector3[lastSegmentLength];
             System.Array.Copy(linePoints, startIndex, lastSegment, 0, lastSegmentLength);
             segments.Add(lastSegment);
 
-            // Розміщуємо стовпчики на кожному сегменті окремо
+            
             int pillarIndex = 1;
             foreach (Vector3[] segment in segments)
             {

@@ -22,7 +22,7 @@ namespace TerritoryWars.General
         [SerializeField] private LayerMask previewLayerMask;
 
         [Header("Preview Position")] [SerializeField]
-        private Vector2 screenOffset = new Vector2(100f, 100f); // Відступ від правого нижнього кута
+        private Vector2 screenOffset = new Vector2(100f, 100f);
 
         [Header("Animation Settings")] [SerializeField]
         private float moveDuration = 0.3f;
@@ -45,20 +45,20 @@ namespace TerritoryWars.General
 
         private void SetInitialPosition()
         {
-            // Отримуємо розміри екрану
+            
             Vector2 screenSize = new Vector2(Screen.width, Screen.height);
 
-            // Позиція в правому нижньому куті з відступом
+            
             Vector2 screenPosition = new Vector2(
                 screenSize.x - screenOffset.x,
                 screenOffset.y
             );
 
-            // Конвертуємо позицію з екранних координат в світові
+            
             _initialPosition = _mainCamera.ScreenToWorldPoint(new Vector3(screenPosition.x, screenPosition.y, 10));
             _initialPosition.z = 0;
 
-            // Встановлюємо початкову позицію
+            
             transform.position = _initialPosition;
             if (previewTileView != null)
             {
@@ -91,7 +91,7 @@ namespace TerritoryWars.General
 
         private void Update()
         {
-            // Якщо тайл в початковій позиції, оновлюємо її при зміні розміру екрана
+            
             if (transform.position == _initialPosition)
             {
                 SetInitialPosition();
@@ -215,7 +215,7 @@ namespace TerritoryWars.General
                 {
                     SessionManager.Instance.TileSelector.CompleteTilePlacement();
                     callback?.Invoke();
-                    // ResetPosition буде викликано через OnTilePlaced event
+                    
                 });
         }
 
@@ -234,7 +234,7 @@ namespace TerritoryWars.General
 
         private void OnDestroy()
         {
-            // Зупиняємо всі анімації при знищенні об'єкта
+            
             currentTween?.Kill();
             
             SessionManager.Instance.TileSelector.OnTileSelected -= SetPosition;
