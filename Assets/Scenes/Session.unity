@@ -26314,7 +26314,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 219.2998, y: 64.30005}
+  m_AnchoredPosition: {x: 410, y: 80}
   m_SizeDelta: {x: 1314.99, y: 62.72}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &897750885
@@ -26337,7 +26337,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The snapshot will be saved after the session is over
+  m_text: You can get back to this Board in "My Snapshots"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 24138cd20de74b549a41ee210f236a43, type: 2}
   m_sharedMaterial: {fileID: 3585466013461026599, guid: 24138cd20de74b549a41ee210f236a43, type: 2}
@@ -39660,15 +39660,15 @@ RectTransform:
   m_GameObject: {fileID: 1302876532}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 579849685}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 94.17041, y: 57.43994}
-  m_SizeDelta: {x: 68, y: 31}
+  m_AnchoredPosition: {x: 64, y: 64.30005}
+  m_SizeDelta: {x: 317, y: 70}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1302876534
 MonoBehaviour:
@@ -39734,7 +39734,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 514882983208043884, guid: 17e881f1090fa3019ab3ae2ace2ad3da, type: 3}
+  m_Sprite: {fileID: 3357882181022188179, guid: 43b947ac1b86e1648a5e241f89056733, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -53664,7 +53664,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2959910449093420696, guid: 8c6eb9a8c7c6cbe2ab6c10d3211194d0, type: 3}
+  m_Sprite: {fileID: 6312979718594280136, guid: 3474183e58ba9f54f88e12af0bde773b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -64493,7 +64493,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 450, y: 190}
+  m_AnchoredPosition: {x: 703, y: 190}
   m_SizeDelta: {x: 200, y: 300}
   m_Pivot: {x: 1, y: 0}
 --- !u!1 &791663579148114927
@@ -64996,7 +64996,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -450, y: 190}
+  m_AnchoredPosition: {x: -703, y: 190}
   m_SizeDelta: {x: 200, y: 300}
   m_Pivot: {x: 0, y: 0}
 --- !u!4 &960792075254498755
@@ -67237,7 +67237,7 @@ Animator:
   m_GameObject: {fileID: 8093062894366049229}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ab8679ae00cc0b64fbb8f56551123ed5, type: 2}
+  m_Controller: {fileID: 9100000, guid: 15de44a782993af47b19fc2adf6b2b92, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -67341,7 +67341,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: -87.3587}
+  m_AnchoredPosition: {x: 0.000015258789, y: -87.3587}
   m_SizeDelta: {x: 204.96, y: 174.7174}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!1 &2798192354311215887
@@ -69589,7 +69589,7 @@ SpriteRenderer:
   m_SortingLayerID: -628261759
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1291404879975149935, guid: 7bef83afa789f6c4e93798de8ad5ddbb, type: 3}
+  m_Sprite: {fileID: 1954381830469734688, guid: 18b419f3b5bc20342b521f10a024e474, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
@@ -74833,7 +74833,7 @@ SpriteRenderer:
   m_SortingLayerID: -628261759
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7777624132969497184, guid: 6b64ad2389a12b143aa3a48f2e1312b3, type: 3}
+  m_Sprite: {fileID: 220501060, guid: 9f54c6834d456a5468eede9cfcc14811, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
@@ -75367,7 +75367,7 @@ Animator:
   m_GameObject: {fileID: 925161954376831764}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7a4f601e2c0ec3a47861fce2cbae86d7, type: 2}
+  m_Controller: {fileID: 9100000, guid: bc0148781d8497a42b5d50797248abcc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
