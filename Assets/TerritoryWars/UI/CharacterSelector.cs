@@ -71,6 +71,8 @@ namespace TerritoryWars.UI
             {
                 characters[i].CharacterRenderer.sortingOrder = order[i];
                 characters[i].RockRenderer.sortingOrder = order[i] - 1;
+                var locker = characters[i].Locker;
+                if (locker != null) locker.GetComponent<Canvas>().sortingOrder = order[i] + 1;
                 if (i == 1)
                 {
                     Sequence sequence = DOTween.Sequence();

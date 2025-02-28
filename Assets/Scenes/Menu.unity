@@ -2525,7 +2525,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!1 &543119314
 GameObject:
@@ -2555,8 +2555,8 @@ Transform:
   m_GameObject: {fileID: 543119314}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.401, y: 1.805, z: 0}
-  m_LocalScale: {x: -2, y: 2, z: 2}
+  m_LocalPosition: {x: -0.401, y: 2.28, z: 0}
+  m_LocalScale: {x: -0.97, y: 0.97, z: 0.97}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1796900702}
@@ -3583,7 +3583,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!114 &634997420
 MonoBehaviour:
@@ -4766,8 +4766,20 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 162142844437461381, guid: 352b9bb01fea04b749f577d77e838a9b, type: 3}
-      propertyPath: 'order.Array.data[3]'
+      propertyPath: 'order.Array.data[0]'
       value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 162142844437461381, guid: 352b9bb01fea04b749f577d77e838a9b, type: 3}
+      propertyPath: 'order.Array.data[1]'
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 162142844437461381, guid: 352b9bb01fea04b749f577d77e838a9b, type: 3}
+      propertyPath: 'order.Array.data[2]'
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 162142844437461381, guid: 352b9bb01fea04b749f577d77e838a9b, type: 3}
+      propertyPath: 'order.Array.data[3]'
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 162142844437461381, guid: 352b9bb01fea04b749f577d77e838a9b, type: 3}
       propertyPath: positions.Array.size
@@ -6544,7 +6556,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!224 &1408281959
 RectTransform:
