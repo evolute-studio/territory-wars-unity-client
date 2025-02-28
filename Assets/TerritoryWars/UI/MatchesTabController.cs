@@ -197,6 +197,13 @@ namespace TerritoryWars.UI
         
         public void SetActivePanel(bool isActive)
         {
+            if (isActive && MenuUIController.Instance._namePanelController.IsDefaultName())
+            {
+                MenuUIController.Instance._changeNamePanelUIController.SetNamePanelActive(true);
+                return;
+            }
+            
+            
             PanelGameObject.SetActive(isActive);
             if (isActive)
             {

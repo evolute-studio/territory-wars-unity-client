@@ -8,6 +8,8 @@ using TMPro;
 
 public class NamePanelController : MonoBehaviour
 {
+    public ChangeNamePanelUIController ChangeNamePanelUIController;
+    
     public GameObject NamePanel;
     public GameObject ChangeNamePanel;
     public TextMeshProUGUI PlayerNameText;
@@ -29,7 +31,7 @@ public class NamePanelController : MonoBehaviour
         {
             CustomLogger.LogWarning("profile is null");
             
-            DojoGameManager.Instance.SetPlayerName(CairoFieldsConverter.GetFieldElementFromString("Default" + UnityEngine.Random.Range(0, 1000)));
+            //DojoGameManager.Instance.SetPlayerName(CairoFieldsConverter.GetFieldElementFromString("Default" + UnityEngine.Random.Range(0, 1000)));
             SetName(DojoGameManager.Instance.LocalBurnerAccount.Address.Hex());
             SetEvoluteBalance(0);
             return;
@@ -48,6 +50,12 @@ public class NamePanelController : MonoBehaviour
         ChangeNamePanel.SetActive(true);
     }
 
+    public bool IsDefaultName()
+    {
+        // default name starts with "0x"
+        return PlayerNameText.text.StartsWith("0x");
+    }
+    
     public void SetName(string name)
     {
         PlayerNameText.text = name;
@@ -56,5 +64,27 @@ public class NamePanelController : MonoBehaviour
     public void SetEvoluteBalance(int value)
     {
         EvoluteCountText.text = value.ToString() + " x ";
+    }
+
+    public void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            ChangeEvoluteBalance(100);
+        }
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            ChangeEvoluteBalance(-100);
+        }
+    }
+
+    public void ChangeEvoluteBalance(int value)
+    {
+        int current = int.Parse(EvoluteCountText.text.Split(' ')[0]);
+        if(current < 0)
+        {
+            current = 0;
+        }
+        EvoluteCountText.text = (current + value).ToString() + " x ";
     }
 }

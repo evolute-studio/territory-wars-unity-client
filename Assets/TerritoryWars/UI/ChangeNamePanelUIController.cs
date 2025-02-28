@@ -29,6 +29,7 @@ public class ChangeNamePanelUIController : MonoBehaviour
     
     public void SetNamePanelActive(bool active)
     {
+        NameInputField.text = "";
         NamePanel.SetActive(active);
     }
 

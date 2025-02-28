@@ -4,6 +4,7 @@ using Dojo;
 using Dojo.Starknet;
 using TerritoryWars;
 using TerritoryWars.ModelsDataConverters;
+using TerritoryWars.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -87,6 +88,13 @@ public class SnapshotTabController : MonoBehaviour
         
         public void SetActivePanel(bool isActive)
         {
+            if (isActive && MenuUIController.Instance._namePanelController.IsDefaultName())
+            {
+                MenuUIController.Instance._changeNamePanelUIController.SetNamePanelActive(true);
+                return;
+            }
+            
+            
             PanelGameObject.SetActive(isActive);
             if (isActive)
             {

@@ -19,6 +19,7 @@ namespace TerritoryWars.UI
         public float animationDuration = 0.5f;
         private int currentCharacterId = 0;
         public Button ApplyButton;
+        public GameObject AppliedText;
         public Image ApplyButtonImage;
         private bool isAnimating = false;
         [SerializeField] private float AnimationDuration = 1.5f;
@@ -113,6 +114,7 @@ namespace TerritoryWars.UI
         {
             PlayerCharactersManager.ChangeCurrentCharacterId(characters[1].CharacterId);
             UpdateButtonVisual();
+            characters[1].Locker?.Unlock();
             DojoGameManager.Instance.ChangePlayerSkin(characters[1].CharacterId);
         }
 
@@ -122,11 +124,15 @@ namespace TerritoryWars.UI
             {
                 ApplyButton.interactable = false;
                 ApplyButtonImage.color = new Color(1f, 1f, 1f, 0f);
+                AppliedText.SetActive(true);
+                ApplyButton.gameObject.SetActive(false);
             }
             else
             {
                 ApplyButton.interactable = true;
                 ApplyButtonImage.color = new Color(1f, 1f, 1f, 1f);
+                AppliedText.SetActive(false);
+                ApplyButton.gameObject.SetActive(true);
             }
         }
         
@@ -161,6 +167,7 @@ namespace TerritoryWars.UI
         
         public Sprite[] IdleSprites;
         public Sprite[] SelectedSprites;
+        public Locker Locker;
 
         public void Initialize()
         {
