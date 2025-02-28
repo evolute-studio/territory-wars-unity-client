@@ -74,6 +74,7 @@ namespace TerritoryWars.General
         private bool isJokerActive = false;
         
         public bool IsJokerActive => isJokerActive;
+        public int TilesInDeck = 64;
         
         public void ActivateJoker()
         {
@@ -372,6 +373,7 @@ namespace TerritoryWars.General
             yield return new WaitForSeconds(1f);
             TileSelector.tilePreview.ResetPosition();
             if(isJoker) GameUI.Instance.SessionUI.UseJoker(RemotePlayer.LocalId);
+            else TilesInDeck--;
             //CompleteEndTurn();
             CompleteEndTurn(playerAddress);
         }
@@ -424,6 +426,8 @@ namespace TerritoryWars.General
 
         public void CompleteEndTurn(string lastMovePlayerAddress)
         {
+            GameUI.Instance.SessionUI.UpdateDeckCount();
+            
             bool isLocalPlayer = lastMovePlayerAddress == LocalPlayer.Address.Hex();
             
             if (isLocalPlayer)

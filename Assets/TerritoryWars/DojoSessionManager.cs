@@ -523,6 +523,7 @@ namespace TerritoryWars
             {
                 var txHash = await _dojoGameManager.GameSystem.make_move(account, jokerTile, rotation, col, row);
                 CustomLogger.LogEvent($"[Make Move]: Hash {txHash} Account {account.Address.Hex()} made a move at {x}, {y}. Rotation: {rotation}");
+                if(!isJoker) SessionManager.Instance.TilesInDeck--;
             }
             catch (Exception e)
             {

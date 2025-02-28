@@ -22,7 +22,9 @@ public class SessionUI : MonoBehaviour
     public TextMeshProUGUI RemotePlayerName;
     public TextMeshProUGUI LocalPlayerScoreText;
     public TextMeshProUGUI RemotePlayerScoreText;
-
+    public TextMeshProUGUI DeckCountText; 
+    
+    
     public List<Image> imagePlayers;
 
     [Header("Players")]
@@ -111,6 +113,11 @@ public class SessionUI : MonoBehaviour
         players[player].jokerCount--;
         players[player].jokersImage[players[player].jokerCount].color = JokerNotAvailableColor;
         players[player].jokerCountText.text = players[player].jokerCount.ToString();
+    }
+    
+    public void UpdateDeckCount()
+    {
+        DeckCountText.text = SessionManager.Instance.TilesInDeck.ToString();
     }
 
     [Serializable]
