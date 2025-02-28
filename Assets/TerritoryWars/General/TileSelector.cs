@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TerritoryWars.Tile;
+using TerritoryWars.Tools;
 using TerritoryWars.UI;
 using UnityEngine;
 using UnityEngine.Events;
@@ -68,16 +69,12 @@ namespace TerritoryWars.General
                 {
                     return;
                 }
-
-                if (isJokerMode && selectedPosition.HasValue)
-                {
-                    RegenerateJokerTile();
-                    return;
-                }
+                
 
                 if (isPlacingTile)
                 {
                     HandleTilePlacement();
+                    
                 }
             }
             HandleTileHover();
@@ -130,6 +127,10 @@ namespace TerritoryWars.General
 
         public void StartTilePlacement(TileData tile)
         {
+            CustomLogger.LogWarning("StartTilePlacement Simple");
+            GameUI.Instance.SetEndTurnButtonActive(false);
+            tilePreview.ResetPosition();
+            tilePreview.UpdatePreview(tile);
             currentTile = tile;
             initialTileConfig = tile.GetConfig();
             isPlacingTile = true;
@@ -200,27 +201,29 @@ namespace TerritoryWars.General
             {
                 if (IsValidJokerPosition(x, y))
                 {
-                    //selectedPosition = new Vector2Int(x, y);
+                    // Якщо вже вибрана та сама позиція - нічого не робимо
+                    if (selectedPosition.HasValue && selectedPosition.Value == new Vector2Int(x, y))
+                    {
+                        return;
+                    }
+
+                    // Оновлюємо виділення для нової позиції
+                    UpdateHighlights(x, y);
+                    selectedPosition = new Vector2Int(x, y);
                     tilePreview.SetPosition(x, y);
+                    
                     TileJokerAnimator.EvoluteTileDisappear();
                     TileJokerAnimatorUI.EvoluteTileDisappear();
                     gameUI.SetRotateButtonActive(true);
                     
+                    // Генеруємо новий конфіг для нової позиції
                     StartCoroutine(InvokeActionWithDelay(0.8f, () =>
                     {
                         TileJokerAnimator.JokerConfChanging(x, y);
                     }));
-                    
-                    // StartCoroutine(InvokeActionWithDelay(0.8f, () =>
-                    // {
-                    //     SessionManager.Instance.GenerateJokerTile(x, y);
-                    //     
-                    // }));
-                    //GameManager.Instance.GenerateJokerTile(x, y);
-                    
-                    //RegenerateJokerTile();
                     return;
                 }
+                return;
             }
 
             if (!isPlacingTile) return;
@@ -284,13 +287,8 @@ namespace TerritoryWars.General
 
                 OnTileSelected?.Invoke(x, y);
                 gameUI.SetRotateButtonActive(currentValidRotations.Count > 1);
-                SetActiveHover(currentValidRotations.Count > 1);
                 gameUI.SetEndTurnButtonActive(true);
-        }
-
-        public void SetActiveHover(bool isActive)
-        {
-            tilePreview.PreviewPolygonCollider2D.enabled = isActive;
+            
         }
 
         private bool IsPossiblePosition(int x, int y)
@@ -350,29 +348,47 @@ namespace TerritoryWars.General
 
         public void RotateCurrentTile()
         {
-            if (currentValidRotations?.Count <= 1) return;
-
-            int currentIndex = currentValidRotations.IndexOf(currentTile.rotationIndex);
-
-            if (currentIndex == -1)
+            if (isJokerMode)
             {
-                RecalculateValidRotations();
-                return;
+                if (!selectedPosition.HasValue) return;
+                
+                try
+                {
+                    // Тільки регенерація конфігу при обертанні
+                    TileJokerAnimator.JokerConfChanging(selectedPosition.Value.x, selectedPosition.Value.y);
+                }
+                catch (System.Exception e)
+                {
+                    Debug.LogError($"Error in RotateCurrentTile for Joker: {e}");
+                }
             }
-
-            int nextIndex = (currentIndex + 1) % currentValidRotations.Count;
-            while (currentTile.rotationIndex != currentValidRotations[nextIndex])
+            else
             {
-                currentTile.Rotate();
-            }
+                if (currentValidRotations?.Count <= 1) return;
 
-            if (!board.CanPlaceTile(currentTile, selectedPosition.Value.x, selectedPosition.Value.y))
-            {
-                RecalculateValidRotations();
-                return;
-            }
+                int currentIndex = currentValidRotations.IndexOf(currentTile.rotationIndex);
 
-            gameUI.UpdateUI();
+                if (currentIndex == -1)
+                {
+                    RecalculateValidRotations();
+                    return;
+                }
+
+                int nextIndex = (currentIndex + 1) % currentValidRotations.Count;
+                while (currentTile.rotationIndex != currentValidRotations[nextIndex])
+                {
+                    currentTile.Rotate();
+                }
+
+                if (!board.CanPlaceTile(currentTile, selectedPosition.Value.x, selectedPosition.Value.y))
+                {
+                    RecalculateValidRotations();
+                    return;
+                }
+
+                gameUI.UpdateUI();
+            }
+            
         }
 
         public void PlaceCurrentTile()
@@ -398,7 +414,10 @@ namespace TerritoryWars.General
                     DojoGameManager.Instance.SessionManager.MakeMove(currentTile, selectedPosition.Value.x, selectedPosition.Value.y, isJokerMode);
                     LastMove = (currentTile, selectedPosition.Value);
                     isPlacingTile = false;
-                    if(isJokerMode) SessionManager.Instance.CompleteJokerPlacement();
+                    if(isJokerMode) 
+                    {
+                        SessionManager.Instance.CompleteJokerPlacement();
+                    }
                     isJokerMode = false;
                     selectedPosition = null;
                     jokerPosition = null;
@@ -406,12 +425,7 @@ namespace TerritoryWars.General
                     OnTilePlaced.Invoke();
                     gameUI.SetEndTurnButtonActive(false);
                     gameUI.SetRotateButtonActive(false);
-                    SetActiveHover(false);
                     gameUI.SetSkipTurnButtonActive(true);
-                    // if (SessionManager.Instance.IsLocalPlayerTurn)
-                    // {
-                    //     SessionManager.Instance.CompleteEndTurn();
-                    // }
                 }
             }
             catch (System.Exception e)
@@ -450,19 +464,27 @@ namespace TerritoryWars.General
 
         public void StartJokerPlacement()
         {
+            CustomLogger.LogWarning("StartTilePlacement Joker");
+            GameUI.Instance.SetEndTurnButtonActive(false);
+            tilePreview.ResetPosition();
+            
             isJokerMode = true;
             jokerPosition = null;
             isPlacingTile = true;
-
-
+            selectedPosition = null;
 
             // Показуємо можливі позиції для джокера
             ShowJokerPlacements();
+            
+            gameUI.SetEndTurnButtonActive(false);
+            gameUI.SetRotateButtonActive(false);
+            gameUI.UpdateUI();
         }
 
         private void ShowJokerPlacements()
         {
             ClearHighlights();
+            // Створюємо хайлайти для всіх можливих позицій джокера
             for (int x = 0; x < board.Width; x++)
             {
                 for (int y = 0; y < board.Height; y++)
@@ -473,7 +495,14 @@ namespace TerritoryWars.General
                     }
                 }
             }
+            // Встановлюємо початковий колір для всіх хайлайтів
             SetHighlightColor(normalHighlightColor);
+            
+            // Якщо є вибрана позиція, оновлюємо її колір
+            if (selectedPosition.HasValue)
+            {
+                UpdateHighlights(selectedPosition.Value.x, selectedPosition.Value.y);
+            }
         }
 
         private bool IsValidJokerPosition(int x, int y)
@@ -522,13 +551,11 @@ namespace TerritoryWars.General
                 selectedPosition = new Vector2Int(x, y);
                 isPlacingTile = true;
 
-                
                 gameUI.UpdateUI();
                 gameUI.SetEndTurnButtonActive(true);
                 
-                ClearHighlights();
-                CreateHighlight(x, y);
-                SetHighlightColor(selectedHighlightColor);
+                // Замість очищення всіх хайлайтів, оновлюємо їх кольори
+                UpdateHighlights(x, y);
                 
                 tilePreview.SetPosition(x, y);
             }
@@ -541,20 +568,29 @@ namespace TerritoryWars.General
         // Додамо новий метод для обробки кліку по тайлу в режимі джокера
         public void RegenerateJokerTile()
         {
-            if (!isJokerMode || !selectedPosition.HasValue) return;
-            
-            try
-            {
-                StartCoroutine(InvokeActionWithDelay(0.8f, () =>
-                {
-                    TileJokerAnimator.JokerConfChanging(selectedPosition.Value.x, selectedPosition.Value.y);
-                }));
-            }
-            catch (System.Exception e)
-            {
-                Debug.LogError($"Error in RegenerateJokerTile: {e}");
-            }
+            // Більше не використовується
+        }
 
+        public void CancelJokerMode()
+        {
+            if (!isJokerMode) return;
+            
+            isJokerMode = false;
+            selectedPosition = null;
+            jokerPosition = null;
+            tilePreview.ResetPosition();
+            ClearHighlights();
+            
+            // Відновлюємо анімацію джокера
+            //TileJokerAnimator.EvoluteTileAppear();
+            //TileJokerAnimatorUI.EvoluteTileAppear();
+            
+            // Починаємо розміщення звичайного тайла
+            var currentTile = DojoGameManager.Instance.SessionManager.GetTopTile();
+            if (currentTile != null)
+            {
+                StartTilePlacement(currentTile);
+            }
         }
     }
 }

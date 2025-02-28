@@ -49,6 +49,7 @@ namespace TerritoryWars.General
         
         public void LoadLobby(float wait = 0)
         {
+            CursorManager.Instance.SetCursor("default");
             //Game.SetLobbyState();
             LoadSceneWithDealay(Menu, wait);
         }

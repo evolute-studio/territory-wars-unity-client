@@ -122,9 +122,29 @@ namespace TerritoryWars.General
                 else
                 {
                     baseSides[i] = 'X';
-                    randomSides[i] = 'F';
+                    randomSides[i] = GetRandomLandscape();
                 }
             }
+
+            // int roadCount = 0;
+            // foreach (var side in randomSides)
+            // {
+            //     if (side == 'R') roadCount++;
+            // }
+
+            // if (roadCount == 1)
+            // {
+            //     for (int i = 0; i < 4; i++)
+            //     {
+            //         if (randomSides[i] == 'R')
+            //         {
+            //             int oppositeIndex = (i + 2) % 4;
+            //             randomSides[oppositeIndex] = 'R';
+            //         }
+            //     }
+            // }
+            
+            
             
             string baseTileConfig = new string(baseSides);
             string randomTileConfig = new string(randomSides);
@@ -351,7 +371,7 @@ namespace TerritoryWars.General
             });
             yield return new WaitForSeconds(1f);
             TileSelector.tilePreview.ResetPosition();
-            GameUI.Instance.SessionUI.UseJoker(RemotePlayer.LocalId);
+            if(isJoker) GameUI.Instance.SessionUI.UseJoker(RemotePlayer.LocalId);
             //CompleteEndTurn();
             CompleteEndTurn(playerAddress);
         }
@@ -450,6 +470,14 @@ namespace TerritoryWars.General
             gameUI.SetJokerMode(false);
             gameUI.UpdateUI();
             sessionUI.UseJoker(CurrentTurnPlayer.LocalId);
+        }
+        
+        public void CancelJokerPlacement()
+        {
+            isJokerActive = false;
+            gameUI.SetJokerMode(false);
+            gameUI.UpdateUI();
+            
         }
 
         private void OnGUI()
