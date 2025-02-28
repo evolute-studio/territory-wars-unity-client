@@ -1,0 +1,2600 @@
+fileFormatVersion: 2
+guid: 8fe0fa50d9bb89e47a8d194f30fe89ed
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5868188383671685039
+    second: INTERFACE HUD ASSETS 4.0_0
+  - first:
+      213: 6129635290094759836
+    second: INTERFACE HUD ASSETS 4.0_1
+  - first:
+      213: -9169483954770744998
+    second: INTERFACE HUD ASSETS 4.0_2
+  - first:
+      213: -3921704326305498939
+    second: INTERFACE HUD ASSETS 4.0_3
+  - first:
+      213: -4241368601746822786
+    second: INTERFACE HUD ASSETS 4.0_4
+  - first:
+      213: -3297533518314152951
+    second: INTERFACE HUD ASSETS 4.0_5
+  - first:
+      213: -2169332300000880091
+    second: INTERFACE HUD ASSETS 4.0_6
+  - first:
+      213: 6069789316475568823
+    second: INTERFACE HUD ASSETS 4.0_7
+  - first:
+      213: -6034970197631359920
+    second: INTERFACE HUD ASSETS 4.0_8
+  - first:
+      213: 8231800179077489004
+    second: INTERFACE HUD ASSETS 4.0_9
+  - first:
+      213: 5964919671343766516
+    second: INTERFACE HUD ASSETS 4.0_10
+  - first:
+      213: -3283385581914628181
+    second: INTERFACE HUD ASSETS 4.0_11
+  - first:
+      213: -5404730406215977612
+    second: INTERFACE HUD ASSETS 4.0_12
+  - first:
+      213: -4865851532321046378
+    second: INTERFACE HUD ASSETS 4.0_13
+  - first:
+      213: -8304344686671935609
+    second: INTERFACE HUD ASSETS 4.0_14
+  - first:
+      213: 6491531819060318063
+    second: INTERFACE HUD ASSETS 4.0_15
+  - first:
+      213: 7774148928594466022
+    second: INTERFACE HUD ASSETS 4.0_16
+  - first:
+      213: 3140006537170293548
+    second: INTERFACE HUD ASSETS 4.0_17
+  - first:
+      213: 3184813921800039384
+    second: INTERFACE HUD ASSETS 4.0_18
+  - first:
+      213: -8185956598394813354
+    second: INTERFACE HUD ASSETS 4.0_19
+  - first:
+      213: -8723083402297306730
+    second: INTERFACE HUD ASSETS 4.0_20
+  - first:
+      213: 348800537621877226
+    second: INTERFACE HUD ASSETS 4.0_21
+  - first:
+      213: -263260381015918917
+    second: INTERFACE HUD ASSETS 4.0_22
+  - first:
+      213: 8922437442187343132
+    second: INTERFACE HUD ASSETS 4.0_23
+  - first:
+      213: 3330602803409175069
+    second: INTERFACE HUD ASSETS 4.0_24
+  - first:
+      213: 1413875829623469622
+    second: INTERFACE HUD ASSETS 4.0_25
+  - first:
+      213: -5696406362629982629
+    second: INTERFACE HUD ASSETS 4.0_26
+  - first:
+      213: 920999607583503254
+    second: INTERFACE HUD ASSETS 4.0_27
+  - first:
+      213: -997028857341981601
+    second: INTERFACE HUD ASSETS 4.0_28
+  - first:
+      213: -2894494612139555354
+    second: INTERFACE HUD ASSETS 4.0_29
+  - first:
+      213: -8861516270929439098
+    second: INTERFACE HUD ASSETS 4.0_30
+  - first:
+      213: 6543816992532622559
+    second: INTERFACE HUD ASSETS 4.0_31
+  - first:
+      213: -5964937304647890949
+    second: INTERFACE HUD ASSETS 4.0_32
+  - first:
+      213: -725177376398463380
+    second: INTERFACE HUD ASSETS 4.0_33
+  - first:
+      213: -1709564944942779560
+    second: INTERFACE HUD ASSETS 4.0_34
+  - first:
+      213: -286197310461419129
+    second: INTERFACE HUD ASSETS 4.0_35
+  - first:
+      213: -8968604704238834051
+    second: INTERFACE HUD ASSETS 4.0_36
+  - first:
+      213: -3102616227197251393
+    second: INTERFACE HUD ASSETS 4.0_37
+  - first:
+      213: 8317009585762824276
+    second: INTERFACE HUD ASSETS 4.0_38
+  - first:
+      213: 8666245477846669584
+    second: INTERFACE HUD ASSETS 4.0_39
+  - first:
+      213: -2365640549091465841
+    second: INTERFACE HUD ASSETS 4.0_40
+  - first:
+      213: 8147995908093236951
+    second: INTERFACE HUD ASSETS 4.0_41
+  - first:
+      213: 7414404931492084611
+    second: INTERFACE HUD ASSETS 4.0_42
+  - first:
+      213: -4407710750822319960
+    second: INTERFACE HUD ASSETS 4.0_43
+  - first:
+      213: 3672570688057395642
+    second: INTERFACE HUD ASSETS 4.0_44
+  - first:
+      213: -3848413712201727163
+    second: INTERFACE HUD ASSETS 4.0_45
+  - first:
+      213: -607155246875198084
+    second: INTERFACE HUD ASSETS 4.0_46
+  - first:
+      213: 6816954374850137069
+    second: INTERFACE HUD ASSETS 4.0_47
+  - first:
+      213: -937519340424161320
+    second: INTERFACE HUD ASSETS 4.0_48
+  - first:
+      213: -5042079724978817579
+    second: INTERFACE HUD ASSETS 4.0_49
+  - first:
+      213: 6155989620276903926
+    second: INTERFACE HUD ASSETS 4.0_50
+  - first:
+      213: 1954971285328974951
+    second: INTERFACE HUD ASSETS 4.0_51
+  - first:
+      213: 8874518049933454348
+    second: INTERFACE HUD ASSETS 4.0_52
+  - first:
+      213: 1065136358724480790
+    second: INTERFACE HUD ASSETS 4.0_53
+  - first:
+      213: 6624894125500852036
+    second: INTERFACE HUD ASSETS 4.0_54
+  - first:
+      213: -1091723252006451593
+    second: INTERFACE HUD ASSETS 4.0_55
+  - first:
+      213: 2807275870594434347
+    second: INTERFACE HUD ASSETS 4.0_56
+  - first:
+      213: -7948914544962748464
+    second: INTERFACE HUD ASSETS 4.0_57
+  - first:
+      213: -5758693283253382967
+    second: INTERFACE HUD ASSETS 4.0_58
+  - first:
+      213: -2933342689178164314
+    second: INTERFACE HUD ASSETS 4.0_59
+  - first:
+      213: -7400310988166243618
+    second: INTERFACE HUD ASSETS 4.0_60
+  - first:
+      213: 7247591702720314075
+    second: INTERFACE HUD ASSETS 4.0_61
+  - first:
+      213: 7900422060435198441
+    second: INTERFACE HUD ASSETS 4.0_62
+  - first:
+      213: -4923115292534246308
+    second: INTERFACE HUD ASSETS 4.0_63
+  - first:
+      213: -3419708049530444250
+    second: INTERFACE HUD ASSETS 4.0_64
+  - first:
+      213: -2385426612469689615
+    second: INTERFACE HUD ASSETS 4.0_65
+  - first:
+      213: -8493604358478701039
+    second: INTERFACE HUD ASSETS 4.0_66
+  - first:
+      213: 5222110488179090776
+    second: INTERFACE HUD ASSETS 4.0_67
+  - first:
+      213: 7056901557544642160
+    second: INTERFACE HUD ASSETS 4.0_68
+  - first:
+      213: -356687737043564305
+    second: INTERFACE HUD ASSETS 4.0_69
+  - first:
+      213: 8811125980893132302
+    second: INTERFACE HUD ASSETS 4.0_70
+  - first:
+      213: -32639179190135266
+    second: INTERFACE HUD ASSETS 4.0_71
+  - first:
+      213: 5116239027835580533
+    second: INTERFACE HUD ASSETS 4.0_72
+  - first:
+      213: -4799918621824321833
+    second: INTERFACE HUD ASSETS 4.0_73
+  - first:
+      213: 8265395626361827863
+    second: INTERFACE HUD ASSETS 4.0_74
+  - first:
+      213: -321700619697763861
+    second: INTERFACE HUD ASSETS 4.0_75
+  - first:
+      213: 3930563203362464972
+    second: INTERFACE HUD ASSETS 4.0_76
+  - first:
+      213: -3481979187927465508
+    second: INTERFACE HUD ASSETS 4.0_77
+  - first:
+      213: 398682585292433743
+    second: INTERFACE HUD ASSETS 4.0_78
+  - first:
+      213: 509746138560503509
+    second: INTERFACE HUD ASSETS 4.0_79
+  - first:
+      213: -5962802837256609665
+    second: INTERFACE HUD ASSETS 4.0_80
+  - first:
+      213: -8393087996972145594
+    second: INTERFACE HUD ASSETS 4.0_81
+  - first:
+      213: -8972805343919584976
+    second: INTERFACE HUD ASSETS 4.0_82
+  - first:
+      213: 1653632712135837397
+    second: INTERFACE HUD ASSETS 4.0_83
+  - first:
+      213: 3438915462687301080
+    second: INTERFACE HUD ASSETS 4.0_84
+  - first:
+      213: -704882251892587592
+    second: INTERFACE HUD ASSETS 4.0_85
+  - first:
+      213: -5789392118268917907
+    second: INTERFACE HUD ASSETS 4.0_86
+  - first:
+      213: 2335227680653880997
+    second: INTERFACE HUD ASSETS 4.0_87
+  - first:
+      213: -5037234486877393378
+    second: INTERFACE HUD ASSETS 4.0_88
+  - first:
+      213: 2240672441453437476
+    second: INTERFACE HUD ASSETS 4.0_89
+  - first:
+      213: -4155693510095030471
+    second: INTERFACE HUD ASSETS 4.0_90
+  - first:
+      213: 2427532845038018183
+    second: INTERFACE HUD ASSETS 4.0_91
+  - first:
+      213: -5766378973771212400
+    second: INTERFACE HUD ASSETS 4.0_92
+  - first:
+      213: 105337957152115868
+    second: INTERFACE HUD ASSETS 4.0_93
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_0
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 1070
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 150fc2c81c1009ea0800000000000000
+      internalID: -5868188383671685039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_1
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 1069
+        width: 81
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9febc4f1d6d01550800000000000000
+      internalID: 6129635290094759836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_2
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 1032
+        width: 43
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a59ee36dce27fb080800000000000000
+      internalID: -9169483954770744998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_3
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 1031
+        width: 42
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c8b27c71be4399c0800000000000000
+      internalID: -3921704326305498939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_4
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 1033
+        width: 41
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e79a26b7ab1a325c0800000000000000
+      internalID: -4241368601746822786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_5
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 1033
+        width: 46
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90cd0f57cbecc32d0800000000000000
+      internalID: -3297533518314152951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_6
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 961
+        width: 175
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52a9aaa44cbf4e1e0800000000000000
+      internalID: -2169332300000880091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_7
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 963
+        width: 172
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b2ccf569393c3450800000000000000
+      internalID: 6069789316475568823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_8
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 850
+        width: 306
+        height: 299
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0542d14749a7f3ca0800000000000000
+      internalID: -6034970197631359920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_9
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 982
+        width: 235
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6129ef16aa3d3270800000000000000
+      internalID: 8231800179077489004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_10
+      rect:
+        serializedVersion: 2
+        x: 1852
+        y: 982
+        width: 235
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fb5f2c66d6a7c250800000000000000
+      internalID: 5964919671343766516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_11
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 975
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bafd65995321f62d0800000000000000
+      internalID: -3283385581914628181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_12
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 976
+        width: 81
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4757ebeb45a8ef4b0800000000000000
+      internalID: -5404730406215977612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_13
+      rect:
+        serializedVersion: 2
+        x: 1737
+        y: 912
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 690c63ecfc5097cb0800000000000000
+      internalID: -4865851532321046378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_14
+      rect:
+        serializedVersion: 2
+        x: 1852
+        y: 808
+        width: 235
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 787448a718a01cc80800000000000000
+      internalID: -8304344686671935609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_15
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 737
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6f4c3bbbcd861a50800000000000000
+      internalID: 6491531819060318063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_16
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 747
+        width: 126
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e45bd7e24353eb60800000000000000
+      internalID: 7774148928594466022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_17
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 730
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2390702f4b839b20800000000000000
+      internalID: 3140006537170293548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_18
+      rect:
+        serializedVersion: 2
+        x: 1741
+        y: 876
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8db2c94536bb23c20800000000000000
+      internalID: 3184813921800039384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_19
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 750
+        width: 78
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65489e548d3a56e80800000000000000
+      internalID: -8185956598394813354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_20
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 770
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69196fbccd161f680800000000000000
+      internalID: -8723083402297306730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_21
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 794
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae1da6ead3037d400800000000000000
+      internalID: 348800537621877226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_22
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 503
+        width: 314
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb6bc1a0416b85cf0800000000000000
+      internalID: -263260381015918917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_23
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 685
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c15b830a49dd2db70800000000000000
+      internalID: 8922437442187343132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_24
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 682
+        width: 66
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d12cf197a9da83e20800000000000000
+      internalID: 3330602803409175069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_25
+      rect:
+        serializedVersion: 2
+        x: 1033
+        y: 716
+        width: 34
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 636b73573981f9310800000000000000
+      internalID: 1413875829623469622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_26
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 612
+        width: 24
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b563a23189c42f0b0800000000000000
+      internalID: -5696406362629982629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_27
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 626
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 693f940734c08cc00800000000000000
+      internalID: 920999607583503254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_28
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 626
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5c41576987d922f0800000000000000
+      internalID: -997028857341981601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_29
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 626
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e5c3276c70b4d7d0800000000000000
+      internalID: -2894494612139555354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_30
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 591
+        width: 72
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68618e3e6e1950580800000000000000
+      internalID: -8861516270929439098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_31
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 601
+        width: 28
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdc621352ee40da50800000000000000
+      internalID: 6543816992532622559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_32
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 588
+        width: 46
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf78cf00029483da0800000000000000
+      internalID: -5964937304647890949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_33
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 587
+        width: 72
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6eae90b407afe5f0800000000000000
+      internalID: -725177376398463380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_34
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 587
+        width: 72
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 853b9308db76648e0800000000000000
+      internalID: -1709564944942779560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_35
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 560
+        width: 172
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 781664eff09370cf0800000000000000
+      internalID: -286197310461419129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_36
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 590
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7e62f80a8d198380800000000000000
+      internalID: -8968604704238834051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_37
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 590
+        width: 21
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb09b8fcafa41f4d0800000000000000
+      internalID: -3102616227197251393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_38
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 549
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45079e02724fb6370800000000000000
+      internalID: 8317009585762824276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_39
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 547
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 019d26ba850b44870800000000000000
+      internalID: 8666245477846669584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_40
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 547
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f85a42d447e8b2fd0800000000000000
+      internalID: -2365640549091465841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_41
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 547
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d6db35cb1f731170800000000000000
+      internalID: 8147995908093236951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_42
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 547
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38b7d72800245e660800000000000000
+      internalID: 7414404931492084611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_43
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 543
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a8b098dc6aa4d2c0800000000000000
+      internalID: -4407710750822319960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_44
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 516
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab94c2a259797f230800000000000000
+      internalID: 3672570688057395642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_45
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 516
+        width: 8
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54349775e10b79ac0800000000000000
+      internalID: -3848413712201727163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_46
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 516
+        width: 22
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7d3d721583f297f0800000000000000
+      internalID: -607155246875198084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_47
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 516
+        width: 7
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: debccfad2efaa9e50800000000000000
+      internalID: 6816954374850137069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_48
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 515
+        width: 19
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d795f780234df2f0800000000000000
+      internalID: -937519340424161320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_49
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 516
+        width: 21
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d53077443fe60ab0800000000000000
+      internalID: -5042079724978817579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_50
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 515
+        width: 21
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ffb89d91f77e6550800000000000000
+      internalID: 6155989620276903926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_51
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 516
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7645f10b604712b10800000000000000
+      internalID: 1954971285328974951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_52
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 516
+        width: 28
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0c631fa52f982b70800000000000000
+      internalID: 8874518049933454348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_53
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 516
+        width: 19
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61f202bffdf18ce00800000000000000
+      internalID: 1065136358724480790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_54
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 453
+        width: 24
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 447ec016b1a50fb50800000000000000
+      internalID: 6624894125500852036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_55
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 465
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7760f1b8c7b69d0f0800000000000000
+      internalID: -1091723252006451593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_56
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 465
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b258e4dd78275f620800000000000000
+      internalID: 2807275870594434347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_57
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 464
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0df3f852658cfa190800000000000000
+      internalID: -7948914544962748464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_58
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 378
+        width: 480
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c0114148f20510b0800000000000000
+      internalID: -5758693283253382967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_59
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 429
+        width: 22
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a3eb0f9d5caa47d0800000000000000
+      internalID: -2933342689178164314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_60
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 428
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eda5ee26d50dc4990800000000000000
+      internalID: -7400310988166243618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_61
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 429
+        width: 20
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bda76b5114e949460800000000000000
+      internalID: 7247591702720314075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_62
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 428
+        width: 23
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e156e77100f3ad60800000000000000
+      internalID: 7900422060435198441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_63
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 429
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c54f338a9b49dabb0800000000000000
+      internalID: -4923115292534246308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_64
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 429
+        width: 21
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 626a138b5a1ca80d0800000000000000
+      internalID: -3419708049530444250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_65
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 429
+        width: 21
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f21bfd622345eed0800000000000000
+      internalID: -2385426612469689615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_66
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 311
+        width: 306
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11eda2646d7a02a80800000000000000
+      internalID: -8493604358478701039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_67
+      rect:
+        serializedVersion: 2
+        x: 1687
+        y: 224
+        width: 173
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 855a1c132d9a87840800000000000000
+      internalID: 5222110488179090776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_68
+      rect:
+        serializedVersion: 2
+        x: 1893
+        y: 219
+        width: 173
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0766958d3962fe160800000000000000
+      internalID: 7056901557544642160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_69
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 223
+        width: 306
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe8c7c9946acc0bf0800000000000000
+      internalID: -356687737043564305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_70
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 259
+        width: 27
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e06b9527568674a70800000000000000
+      internalID: 8811125980893132302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_71
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 258
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e169c96e6da0c8ff0800000000000000
+      internalID: -32639179190135266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_72
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 258
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5703120f948800740800000000000000
+      internalID: 5116239027835580533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_73
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 258
+        width: 29
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d6f06bc173436db0800000000000000
+      internalID: -4799918621824321833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_74
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 258
+        width: 28
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7123d5db78594b270800000000000000
+      internalID: 8265395626361827863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_75
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 257
+        width: 29
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be944e6adf6198bf0800000000000000
+      internalID: -321700619697763861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_76
+      rect:
+        serializedVersion: 2
+        x: 1172
+        y: 86
+        width: 414
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc424af886a2c8630800000000000000
+      internalID: 3930563203362464972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_77
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 101
+        width: 52
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd1c74c70668dafc0800000000000000
+      internalID: -3481979187927465508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_78
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 98
+        width: 69
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f496d72f2b7688500800000000000000
+      internalID: 398682585292433743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_79
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 99
+        width: 51
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5de968a896bf21700800000000000000
+      internalID: 509746138560503509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_80
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 98
+        width: 75
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f70e0ab696edf3da0800000000000000
+      internalID: -5962802837256609665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_81
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 102
+        width: 20
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64461eb6fe2c58b80800000000000000
+      internalID: -8393087996972145594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_82
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 101
+        width: 50
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03942f464113a7380800000000000000
+      internalID: -8972805343919584976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_83
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 104
+        width: 45
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d682dbb032e2f610800000000000000
+      internalID: 1653632712135837397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_84
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 103
+        width: 42
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dd1316a46b79bf20800000000000000
+      internalID: 3438915462687301080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_85
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 101
+        width: 81
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b307779351c736f0800000000000000
+      internalID: -704882251892587592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_86
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 103
+        width: 42
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d67822dba82f7afa0800000000000000
+      internalID: -5789392118268917907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_87
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 105
+        width: 63
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aea807f335686020800000000000000
+      internalID: 2335227680653880997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_88
+      rect:
+        serializedVersion: 2
+        x: 1684
+        y: 26
+        width: 173
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1e635f2ce5281ab0800000000000000
+      internalID: -5037234486877393378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_89
+      rect:
+        serializedVersion: 2
+        x: 1892
+        y: 27
+        width: 173
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 422e6d2c6b7781f10800000000000000
+      internalID: 2240672441453437476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_90
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 75
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 937b36735c20456c0800000000000000
+      internalID: -4155693510095030471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_91
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 75
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78e951dc24450b120800000000000000
+      internalID: 2427532845038018183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_92
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 75
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 099d51cffd4b9ffa0800000000000000
+      internalID: -5766378973771212400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INTERFACE HUD ASSETS 4.0_93
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 75
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9cca6d505c367100800000000000000
+      internalID: 105337957152115868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      INTERFACE HUD ASSETS 4.0_0: -5868188383671685039
+      INTERFACE HUD ASSETS 4.0_1: 6129635290094759836
+      INTERFACE HUD ASSETS 4.0_10: 5964919671343766516
+      INTERFACE HUD ASSETS 4.0_11: -3283385581914628181
+      INTERFACE HUD ASSETS 4.0_12: -5404730406215977612
+      INTERFACE HUD ASSETS 4.0_13: -4865851532321046378
+      INTERFACE HUD ASSETS 4.0_14: -8304344686671935609
+      INTERFACE HUD ASSETS 4.0_15: 6491531819060318063
+      INTERFACE HUD ASSETS 4.0_16: 7774148928594466022
+      INTERFACE HUD ASSETS 4.0_17: 3140006537170293548
+      INTERFACE HUD ASSETS 4.0_18: 3184813921800039384
+      INTERFACE HUD ASSETS 4.0_19: -8185956598394813354
+      INTERFACE HUD ASSETS 4.0_2: -9169483954770744998
+      INTERFACE HUD ASSETS 4.0_20: -8723083402297306730
+      INTERFACE HUD ASSETS 4.0_21: 348800537621877226
+      INTERFACE HUD ASSETS 4.0_22: -263260381015918917
+      INTERFACE HUD ASSETS 4.0_23: 8922437442187343132
+      INTERFACE HUD ASSETS 4.0_24: 3330602803409175069
+      INTERFACE HUD ASSETS 4.0_25: 1413875829623469622
+      INTERFACE HUD ASSETS 4.0_26: -5696406362629982629
+      INTERFACE HUD ASSETS 4.0_27: 920999607583503254
+      INTERFACE HUD ASSETS 4.0_28: -997028857341981601
+      INTERFACE HUD ASSETS 4.0_29: -2894494612139555354
+      INTERFACE HUD ASSETS 4.0_3: -3921704326305498939
+      INTERFACE HUD ASSETS 4.0_30: -8861516270929439098
+      INTERFACE HUD ASSETS 4.0_31: 6543816992532622559
+      INTERFACE HUD ASSETS 4.0_32: -5964937304647890949
+      INTERFACE HUD ASSETS 4.0_33: -725177376398463380
+      INTERFACE HUD ASSETS 4.0_34: -1709564944942779560
+      INTERFACE HUD ASSETS 4.0_35: -286197310461419129
+      INTERFACE HUD ASSETS 4.0_36: -8968604704238834051
+      INTERFACE HUD ASSETS 4.0_37: -3102616227197251393
+      INTERFACE HUD ASSETS 4.0_38: 8317009585762824276
+      INTERFACE HUD ASSETS 4.0_39: 8666245477846669584
+      INTERFACE HUD ASSETS 4.0_4: -4241368601746822786
+      INTERFACE HUD ASSETS 4.0_40: -2365640549091465841
+      INTERFACE HUD ASSETS 4.0_41: 8147995908093236951
+      INTERFACE HUD ASSETS 4.0_42: 7414404931492084611
+      INTERFACE HUD ASSETS 4.0_43: -4407710750822319960
+      INTERFACE HUD ASSETS 4.0_44: 3672570688057395642
+      INTERFACE HUD ASSETS 4.0_45: -3848413712201727163
+      INTERFACE HUD ASSETS 4.0_46: -607155246875198084
+      INTERFACE HUD ASSETS 4.0_47: 6816954374850137069
+      INTERFACE HUD ASSETS 4.0_48: -937519340424161320
+      INTERFACE HUD ASSETS 4.0_49: -5042079724978817579
+      INTERFACE HUD ASSETS 4.0_5: -3297533518314152951
+      INTERFACE HUD ASSETS 4.0_50: 6155989620276903926
+      INTERFACE HUD ASSETS 4.0_51: 1954971285328974951
+      INTERFACE HUD ASSETS 4.0_52: 8874518049933454348
+      INTERFACE HUD ASSETS 4.0_53: 1065136358724480790
+      INTERFACE HUD ASSETS 4.0_54: 6624894125500852036
+      INTERFACE HUD ASSETS 4.0_55: -1091723252006451593
+      INTERFACE HUD ASSETS 4.0_56: 2807275870594434347
+      INTERFACE HUD ASSETS 4.0_57: -7948914544962748464
+      INTERFACE HUD ASSETS 4.0_58: -5758693283253382967
+      INTERFACE HUD ASSETS 4.0_59: -2933342689178164314
+      INTERFACE HUD ASSETS 4.0_6: -2169332300000880091
+      INTERFACE HUD ASSETS 4.0_60: -7400310988166243618
+      INTERFACE HUD ASSETS 4.0_61: 7247591702720314075
+      INTERFACE HUD ASSETS 4.0_62: 7900422060435198441
+      INTERFACE HUD ASSETS 4.0_63: -4923115292534246308
+      INTERFACE HUD ASSETS 4.0_64: -3419708049530444250
+      INTERFACE HUD ASSETS 4.0_65: -2385426612469689615
+      INTERFACE HUD ASSETS 4.0_66: -8493604358478701039
+      INTERFACE HUD ASSETS 4.0_67: 5222110488179090776
+      INTERFACE HUD ASSETS 4.0_68: 7056901557544642160
+      INTERFACE HUD ASSETS 4.0_69: -356687737043564305
+      INTERFACE HUD ASSETS 4.0_7: 6069789316475568823
+      INTERFACE HUD ASSETS 4.0_70: 8811125980893132302
+      INTERFACE HUD ASSETS 4.0_71: -32639179190135266
+      INTERFACE HUD ASSETS 4.0_72: 5116239027835580533
+      INTERFACE HUD ASSETS 4.0_73: -4799918621824321833
+      INTERFACE HUD ASSETS 4.0_74: 8265395626361827863
+      INTERFACE HUD ASSETS 4.0_75: -321700619697763861
+      INTERFACE HUD ASSETS 4.0_76: 3930563203362464972
+      INTERFACE HUD ASSETS 4.0_77: -3481979187927465508
+      INTERFACE HUD ASSETS 4.0_78: 398682585292433743
+      INTERFACE HUD ASSETS 4.0_79: 509746138560503509
+      INTERFACE HUD ASSETS 4.0_8: -6034970197631359920
+      INTERFACE HUD ASSETS 4.0_80: -5962802837256609665
+      INTERFACE HUD ASSETS 4.0_81: -8393087996972145594
+      INTERFACE HUD ASSETS 4.0_82: -8972805343919584976
+      INTERFACE HUD ASSETS 4.0_83: 1653632712135837397
+      INTERFACE HUD ASSETS 4.0_84: 3438915462687301080
+      INTERFACE HUD ASSETS 4.0_85: -704882251892587592
+      INTERFACE HUD ASSETS 4.0_86: -5789392118268917907
+      INTERFACE HUD ASSETS 4.0_87: 2335227680653880997
+      INTERFACE HUD ASSETS 4.0_88: -5037234486877393378
+      INTERFACE HUD ASSETS 4.0_89: 2240672441453437476
+      INTERFACE HUD ASSETS 4.0_9: 8231800179077489004
+      INTERFACE HUD ASSETS 4.0_90: -4155693510095030471
+      INTERFACE HUD ASSETS 4.0_91: 2427532845038018183
+      INTERFACE HUD ASSETS 4.0_92: -5766378973771212400
+      INTERFACE HUD ASSETS 4.0_93: 105337957152115868
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

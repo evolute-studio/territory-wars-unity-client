@@ -18,9 +18,9 @@ public class Tests
     private readonly string rpcUrl = "http://0.0.0.0:5050";
     private readonly string relayUrl = "/ip4/127.0.0.1/tcp/9090";
     // private readonly string playerKey = "0x028cd7ee02d7f6ec9810e75b930e8e607793b302445abbdee0ac88143f18da20";
-    private readonly FieldElement playerAddress = new FieldElement("0x127fd5f1fe78a71f8bcd1fec63e3fe2f0486b6ecd5c86a0466c3a21fa5cfcec");
-    private readonly FieldElement worldAddress = new FieldElement("0x0190386ce184452b6fed8ff0b17b4d42ea47cdf8a2d1f0a98be083f53b41662f");
-    private readonly FieldElement actionsAddress = new FieldElement("0x04d453a739c7fc75d226ff81d39e7a7393350aa92bc335a64d040b56648d864b");
+    private readonly FieldElement playerAddress = new FieldElement("0x6162896d1d7ab204c7ccac6dd5f8e9e7c25ecd5ae4fcb4ad32e57786bb46e03");
+    private readonly FieldElement worldAddress = new FieldElement("0x07efebb0c2d4cc285d48a97a7174def3be7fdd6b7bd29cca758fa2e17e03ef30");
+    private readonly FieldElement actionsAddress = new FieldElement("0x5c70a663d6b48d8e4c6aaa9572e3735a732ac3765700d470463e670587852af");
 
     private ToriiClient client;
     private JsonRpcClient provider;
@@ -36,7 +36,7 @@ public class Tests
     [SetUp]
     public void SetupTorii()
     {
-        client = new ToriiClient(toriiUrl, rpcUrl, relayUrl, worldAddress, false);
+        client = new ToriiClient(toriiUrl, relayUrl, worldAddress, false);
 
         if (client == null) throw new Exception("client is null");
     }

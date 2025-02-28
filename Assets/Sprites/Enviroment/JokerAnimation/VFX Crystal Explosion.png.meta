@@ -1,0 +1,432 @@
+fileFormatVersion: 2
+guid: e7bf595da4a53a24bb59f8ce913fd093
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7043013501770790876
+    second: VFX Crystal Explosion_0
+  - first:
+      213: -8390063086338531018
+    second: VFX Crystal Explosion_1
+  - first:
+      213: 4517420286062333349
+    second: VFX Crystal Explosion_2
+  - first:
+      213: -267492520749812722
+    second: VFX Crystal Explosion_3
+  - first:
+      213: -2965266900698572320
+    second: VFX Crystal Explosion_4
+  - first:
+      213: 7825882771254635128
+    second: VFX Crystal Explosion_5
+  - first:
+      213: 2007718448347645330
+    second: VFX Crystal Explosion_6
+  - first:
+      213: -5106518835719944262
+    second: VFX Crystal Explosion_7
+  - first:
+      213: -3455993840620346772
+    second: VFX Crystal Explosion_8
+  - first:
+      213: -6334671280549383407
+    second: VFX Crystal Explosion_9
+  - first:
+      213: -8395331640054529156
+    second: VFX Crystal Explosion_10
+  - first:
+      213: -1346818108751187375
+    second: VFX Crystal Explosion_11
+  - first:
+      213: 8063739174589529659
+    second: VFX Crystal Explosion_12
+  - first:
+      213: -7768911147388388425
+    second: VFX Crystal Explosion_13
+  - first:
+      213: -6787107565151257524
+    second: VFX Crystal Explosion_14
+  - first:
+      213: 5739916318589223079
+    second: VFX Crystal Explosion_15
+  - first:
+      213: 5486018439342254724
+    second: VFX Crystal Explosion_16
+  - first:
+      213: 6874424009962894606
+    second: VFX Crystal Explosion_17
+  - first:
+      213: 2331348533154121508
+    second: VFX Crystal Explosion_18
+  - first:
+      213: -1067843287592223548
+    second: VFX Crystal Explosion_19
+  - first:
+      213: -5410415625639793990
+    second: VFX Crystal Explosion_20
+  - first:
+      213: -2844391429644139229
+    second: VFX Crystal Explosion_21
+  - first:
+      213: 2635622678165675826
+    second: VFX Crystal Explosion_22
+  - first:
+      213: 1658833031492891576
+    second: VFX Crystal Explosion_23
+  - first:
+      213: -4809534578758798432
+    second: VFX Crystal Explosion_24
+  - first:
+      213: -5070822376380722304
+    second: VFX Crystal Explosion_25
+  - first:
+      213: -2044269765550907047
+    second: VFX Crystal Explosion_26
+  - first:
+      213: -552111201542396811
+    second: VFX Crystal Explosion_27
+  - first:
+      213: -1769481118894710671
+    second: VFX Crystal Explosion_28
+  - first:
+      213: -1263231471294656235
+    second: VFX Crystal Explosion_29
+  - first:
+      213: -3957137182798374957
+    second: VFX Crystal Explosion_30
+  - first:
+      213: -7861196746012862197
+    second: VFX Crystal Explosion_31
+  - first:
+      213: -1706606654781372021
+    second: VFX Crystal Explosion_32
+  - first:
+      213: -8666300668019037836
+    second: VFX Crystal Explosion_33
+  - first:
+      213: -8504451854211723519
+    second: VFX Crystal Explosion_34
+  - first:
+      213: 4451728033606767515
+    second: VFX Crystal Explosion_35
+  - first:
+      213: 8613824532551608183
+    second: VFX Crystal Explosion_36
+  - first:
+      213: -8997330973694770874
+    second: VFX Crystal Explosion_37
+  - first:
+      213: 7357519698054871120
+    second: VFX Crystal Explosion_38
+  - first:
+      213: 6735520306245842458
+    second: VFX Crystal Explosion_39
+  - first:
+      213: -4533113984508108416
+    second: VFX Crystal Explosion_40
+  - first:
+      213: -4466246034087678195
+    second: VFX Crystal Explosion_41
+  - first:
+      213: -1518834355599836469
+    second: VFX Crystal Explosion_42
+  - first:
+      213: -7255917720846470651
+    second: VFX Crystal Explosion_43
+  - first:
+      213: -6816387134400640500
+    second: VFX Crystal Explosion_44
+  - first:
+      213: -3918027621772243942
+    second: VFX Crystal Explosion_45
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: VFX Crystal Explosion_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd7f351e67fcdb160800000000000000
+      internalID: 7043013501770790876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX Crystal Explosion_1
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 0
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 631acaf4312809b80800000000000000
+      internalID: -8390063086338531018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX Crystal Explosion_2
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ad83ebd0d911be30800000000000000
+      internalID: 4517420286062333349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX Crystal Explosion_3
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 0
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0432a838fca94cf0800000000000000
+      internalID: -267492520749812722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX Crystal Explosion_4
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e953a7e67149d6d0800000000000000
+      internalID: -2965266900698572320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX Crystal Explosion_5
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 0
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87a6b7acaee1b9c60800000000000000
+      internalID: 7825882771254635128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 33b4df27fe3e6b242a18fb9e0ff667e4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      VFX Crystal Explosion_0: 7043013501770790876
+      VFX Crystal Explosion_1: -8390063086338531018
+      VFX Crystal Explosion_2: 4517420286062333349
+      VFX Crystal Explosion_3: -267492520749812722
+      VFX Crystal Explosion_4: -2965266900698572320
+      VFX Crystal Explosion_5: 7825882771254635128
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

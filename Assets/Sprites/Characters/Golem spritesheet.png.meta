@@ -1,0 +1,3276 @@
+fileFormatVersion: 2
+guid: 9f54c6834d456a5468eede9cfcc14811
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3777513871004918114
+    second: Golem spritesheet_0
+  - first:
+      213: 3624262598054087334
+    second: Golem spritesheet_1
+  - first:
+      213: 4648195460507116374
+    second: Golem spritesheet_2
+  - first:
+      213: 7648838970205398441
+    second: Golem spritesheet_3
+  - first:
+      213: -7068757989086904792
+    second: Golem spritesheet_4
+  - first:
+      213: -6589277157107218149
+    second: Golem spritesheet_5
+  - first:
+      213: 3333602336350322609
+    second: Golem spritesheet_6
+  - first:
+      213: 9221581398821231965
+    second: Golem spritesheet_7
+  - first:
+      213: -4961787120739284786
+    second: Golem spritesheet_8
+  - first:
+      213: -592704135434820840
+    second: Golem spritesheet_9
+  - first:
+      213: -1135562002682547496
+    second: Golem spritesheet_10
+  - first:
+      213: -5876624973583512027
+    second: Golem spritesheet_11
+  - first:
+      213: 5214929053903402360
+    second: Golem spritesheet_12
+  - first:
+      213: -158785732557680488
+    second: Golem spritesheet_13
+  - first:
+      213: 685457425388878983
+    second: Golem spritesheet_14
+  - first:
+      213: -3393308590449848850
+    second: Golem spritesheet_15
+  - first:
+      213: 3316554777095570602
+    second: Golem spritesheet_16
+  - first:
+      213: -2309153824197654596
+    second: Golem spritesheet_17
+  - first:
+      213: 4286937626631096759
+    second: Golem spritesheet_18
+  - first:
+      213: 3244475101803212867
+    second: Golem spritesheet_19
+  - first:
+      213: 4506022398549803556
+    second: Golem spritesheet_20
+  - first:
+      213: 5091549210972701903
+    second: Golem spritesheet_21
+  - first:
+      213: -7756453523574800384
+    second: Golem spritesheet_22
+  - first:
+      213: 7626423690001077172
+    second: Golem spritesheet_23
+  - first:
+      213: -337302760260797445
+    second: Golem spritesheet_24
+  - first:
+      213: 5925970182482999948
+    second: Golem spritesheet_25
+  - first:
+      213: 2726513106115949494
+    second: Golem spritesheet_26
+  - first:
+      213: -2694468854267196984
+    second: Golem spritesheet_27
+  - first:
+      213: 6710507422541501201
+    second: Golem spritesheet_28
+  - first:
+      213: -8745502710561795585
+    second: Golem spritesheet_29
+  - first:
+      213: 7405857192109188790
+    second: Golem spritesheet_30
+  - first:
+      213: -5414367015518193640
+    second: Golem spritesheet_31
+  - first:
+      213: 9022534746285237870
+    second: Golem spritesheet_32
+  - first:
+      213: 7346810755626167750
+    second: Golem spritesheet_33
+  - first:
+      213: -2464786498265432905
+    second: Golem spritesheet_34
+  - first:
+      213: -8870174142253361560
+    second: Golem spritesheet_35
+  - first:
+      213: 6501613527310252768
+    second: Golem spritesheet_36
+  - first:
+      213: 3510227225543355159
+    second: Golem spritesheet_37
+  - first:
+      213: -9026890381002211144
+    second: Golem spritesheet_38
+  - first:
+      213: 3871624479580218515
+    second: Golem spritesheet_39
+  - first:
+      213: 1860267742820230286
+    second: Golem spritesheet_40
+  - first:
+      213: -5725815709942543872
+    second: Golem spritesheet_41
+  - first:
+      213: -4313210651345428850
+    second: Golem spritesheet_42
+  - first:
+      213: -7931281386814375824
+    second: Golem spritesheet_43
+  - first:
+      213: 5142153037578780019
+    second: Golem spritesheet_44
+  - first:
+      213: -3140999195050500362
+    second: Golem spritesheet_45
+  - first:
+      213: 5899499296671778812
+    second: Golem spritesheet_46
+  - first:
+      213: 5012861969542012402
+    second: Golem spritesheet_47
+  - first:
+      213: 8453567056114886237
+    second: Golem spritesheet_48
+  - first:
+      213: 6048469543366301935
+    second: Golem spritesheet_49
+  - first:
+      213: 348819645177805849
+    second: Golem spritesheet_50
+  - first:
+      213: -8113593226767380763
+    second: Golem spritesheet_51
+  - first:
+      213: 4180957521913912073
+    second: Golem spritesheet_52
+  - first:
+      213: 6635700706167648686
+    second: Golem spritesheet_53
+  - first:
+      213: -6164797434332182470
+    second: Golem spritesheet_54
+  - first:
+      213: -2766823213024863286
+    second: Golem spritesheet_55
+  - first:
+      213: -503725089059563371
+    second: Golem spritesheet_56
+  - first:
+      213: 4100574320315350007
+    second: Golem spritesheet_57
+  - first:
+      213: -4118258108515384661
+    second: Golem spritesheet_58
+  - first:
+      213: -6755123651264209470
+    second: Golem spritesheet_59
+  - first:
+      213: -2777535891777502530
+    second: Golem spritesheet_60
+  - first:
+      213: -3365049418700027911
+    second: Golem spritesheet_61
+  - first:
+      213: -3007712050934401162
+    second: Golem spritesheet_62
+  - first:
+      213: 7986415584179516786
+    second: Golem spritesheet_63
+  - first:
+      213: 4626340483143339484
+    second: Golem spritesheet_64
+  - first:
+      213: 6985313215568268264
+    second: Golem spritesheet_65
+  - first:
+      213: 2945615675119271005
+    second: Golem spritesheet_66
+  - first:
+      213: 1252702581631068736
+    second: Golem spritesheet_67
+  - first:
+      213: 5662006662721117580
+    second: Golem spritesheet_68
+  - first:
+      213: -1170783717214180438
+    second: Golem spritesheet_69
+  - first:
+      213: 3823029016006287519
+    second: Golem spritesheet_70
+  - first:
+      213: 8516933876679968538
+    second: Golem spritesheet_71
+  - first:
+      213: 8399048141026653656
+    second: Golem spritesheet_72
+  - first:
+      213: -2712587403900663680
+    second: Golem spritesheet_73
+  - first:
+      213: 2458578833780733545
+    second: Golem spritesheet_74
+  - first:
+      213: 1589078721965306938
+    second: Golem spritesheet_75
+  - first:
+      213: -1556212513543860270
+    second: Golem spritesheet_76
+  - first:
+      213: -2246988496205719144
+    second: Golem spritesheet_77
+  - first:
+      213: -6420564436685762291
+    second: Golem spritesheet_78
+  - first:
+      213: -3901021699061109817
+    second: Golem spritesheet_79
+  - first:
+      213: -4399548899510978818
+    second: Golem spritesheet_80
+  - first:
+      213: -6758575993839076512
+    second: Golem spritesheet_81
+  - first:
+      213: -3412790837060678044
+    second: Golem spritesheet_82
+  - first:
+      213: -3551720514295283670
+    second: Golem spritesheet_83
+  - first:
+      213: 4300705980157224097
+    second: Golem spritesheet_84
+  - first:
+      213: 8824339075851381552
+    second: Golem spritesheet_85
+  - first:
+      213: -3372731110191751016
+    second: Golem spritesheet_86
+  - first:
+      213: 9114301969523194542
+    second: Golem spritesheet_87
+  - first:
+      213: -2210208244038356140
+    second: Golem spritesheet_88
+  - first:
+      213: 6646657733932219484
+    second: Golem spritesheet_89
+  - first:
+      213: 2491238540030332320
+    second: Golem spritesheet_90
+  - first:
+      213: -6342264245272649996
+    second: Golem spritesheet_91
+  - first:
+      213: 2894715380221228116
+    second: Golem spritesheet_92
+  - first:
+      213: -7879000146042719442
+    second: Golem spritesheet_93
+  - first:
+      213: 6693066330796660521
+    second: Golem spritesheet_94
+  - first:
+      213: -6938787919288337301
+    second: Golem spritesheet_95
+  - first:
+      213: -7522764736133486626
+    second: Golem spritesheet_96
+  - first:
+      213: -3049961039056190690
+    second: Golem spritesheet_97
+  - first:
+      213: 5348353110952963352
+    second: Golem spritesheet_98
+  - first:
+      213: -7089771522541615755
+    second: Golem spritesheet_99
+  - first:
+      213: -1497356729911062301
+    second: Golem spritesheet_100
+  - first:
+      213: -1490656013090153453
+    second: Golem spritesheet_101
+  - first:
+      213: -5596822604304954451
+    second: Golem spritesheet_102
+  - first:
+      213: 4606322140107946431
+    second: Golem spritesheet_103
+  - first:
+      213: -1430709147176856271
+    second: Golem spritesheet_104
+  - first:
+      213: 6656809906691070118
+    second: Golem spritesheet_105
+  - first:
+      213: 7414855503246321840
+    second: Golem spritesheet_106
+  - first:
+      213: 3388250886832051288
+    second: Golem spritesheet_107
+  - first:
+      213: -7193071548489157479
+    second: Golem spritesheet_108
+  - first:
+      213: -5302597125398412409
+    second: Golem spritesheet_109
+  - first:
+      213: -5351415419276125828
+    second: Golem spritesheet_110
+  - first:
+      213: -7489240347465103774
+    second: Golem spritesheet_111
+  - first:
+      213: 5049248757306138412
+    second: Golem spritesheet_112
+  - first:
+      213: -2623440619909597487
+    second: Golem spritesheet_113
+  - first:
+      213: -211828829505169526
+    second: Golem spritesheet_114
+  - first:
+      213: 3876075150498313612
+    second: Golem spritesheet_115
+  - first:
+      213: 7805263788505338337
+    second: Golem spritesheet_116
+  - first:
+      213: -895693240610952256
+    second: Golem spritesheet_117
+  - first:
+      213: -4050039390921281814
+    second: Golem spritesheet_118
+  - first:
+      213: 5637967947507790844
+    second: Golem spritesheet_119
+  - first:
+      213: 5621178672086124712
+    second: Golem spritesheet_120
+  - first:
+      213: -4434381260391429064
+    second: Golem spritesheet_121
+  - first:
+      213: -3420229969701255609
+    second: Golem spritesheet_122
+  - first:
+      213: -2176471221242810131
+    second: Golem spritesheet_123
+  - first:
+      213: -2414595615240784577
+    second: Golem spritesheet_124
+  - first:
+      213: -8400654639047423980
+    second: Golem spritesheet_125
+  - first:
+      213: -4086968943108166004
+    second: Golem spritesheet_126
+  - first:
+      213: -5866595144476121294
+    second: Golem spritesheet_127
+  - first:
+      213: -7847830789966072517
+    second: Golem spritesheet_128
+  - first:
+      213: -5312930657240195966
+    second: Golem spritesheet_129
+  - first:
+      213: 8176990607179506630
+    second: Golem spritesheet_130
+  - first:
+      213: 8055290867142652579
+    second: Golem spritesheet_131
+  - first:
+      213: 157291017965059987
+    second: Golem spritesheet_132
+  - first:
+      213: 1707699283805170928
+    second: Golem spritesheet_133
+  - first:
+      213: -3024712445572535311
+    second: Golem spritesheet_134
+  - first:
+      213: 5070682905303908270
+    second: Golem spritesheet_135
+  - first:
+      213: -3212249058137343063
+    second: Golem spritesheet_136
+  - first:
+      213: 1586998504011640413
+    second: Golem spritesheet_137
+  - first:
+      213: 7028077642777309362
+    second: Golem spritesheet_138
+  - first:
+      213: 1191442934723137987
+    second: Golem spritesheet_139
+  - first:
+      213: 5759766260335692498
+    second: Golem spritesheet_140
+  - first:
+      213: 3658965936915418662
+    second: Golem spritesheet_141
+  - first:
+      213: -2546468697482518731
+    second: Golem spritesheet_142
+  - first:
+      213: -4349002806637252247
+    second: Golem spritesheet_143
+  - first:
+      213: 5200761371041112895
+    second: Golem spritesheet_144
+  - first:
+      213: -531061174039248841
+    second: Golem spritesheet_145
+  - first:
+      213: 717382321801689932
+    second: Golem spritesheet_146
+  - first:
+      213: -4132665127643880670
+    second: Golem spritesheet_147
+  - first:
+      213: -8410643196783270261
+    second: Golem spritesheet_148
+  - first:
+      213: -2653467669290961718
+    second: Golem spritesheet_149
+  - first:
+      213: -8483822432520349506
+    second: Golem spritesheet_150
+  - first:
+      213: -8962180412085136334
+    second: Golem spritesheet_151
+  - first:
+      213: -8864064647322605458
+    second: Golem spritesheet_152
+  - first:
+      213: 360152513480063125
+    second: Golem spritesheet_153
+  - first:
+      213: 3811741612557726328
+    second: Golem spritesheet_154
+  - first:
+      213: -1163453407171698239
+    second: Golem spritesheet_155
+  - first:
+      213: -261275323807245703
+    second: Golem spritesheet_156
+  - first:
+      213: -8206751000286158493
+    second: Golem spritesheet_157
+  - first:
+      213: 7653077375810308524
+    second: Golem spritesheet_158
+  - first:
+      213: -5878169000128180227
+    second: Golem spritesheet_159
+  - first:
+      213: -9003118869590711723
+    second: Golem spritesheet_160
+  - first:
+      213: -5466516622224464732
+    second: Golem spritesheet_161
+  - first:
+      213: 4473790372791006948
+    second: Golem spritesheet_162
+  - first:
+      213: 4445972649022269322
+    second: Golem spritesheet_163
+  - first:
+      213: -9063154587114145372
+    second: Golem spritesheet_164
+  - first:
+      213: -3842213657226501612
+    second: Golem spritesheet_165
+  - first:
+      213: -6869072917766990153
+    second: Golem spritesheet_166
+  - first:
+      213: -1155516607599785962
+    second: Golem spritesheet_167
+  - first:
+      213: -5715136717561484060
+    second: Golem spritesheet_168
+  - first:
+      213: -258599443343998127
+    second: Golem spritesheet_169
+  - first:
+      213: -3006296777353615229
+    second: Golem spritesheet_170
+  - first:
+      213: 7608023677139105396
+    second: Golem spritesheet_171
+  - first:
+      213: -5543450232742598377
+    second: Golem spritesheet_172
+  - first:
+      213: -1261759041306056958
+    second: Golem spritesheet_173
+  - first:
+      213: 4651362365836261170
+    second: Golem spritesheet_174
+  - first:
+      213: 3215312973189259776
+    second: Golem spritesheet_175
+  - first:
+      213: -426159921617030939
+    second: Golem spritesheet_176
+  - first:
+      213: -8779563498302201287
+    second: Golem spritesheet_177
+  - first:
+      213: 8734704788727158522
+    second: Golem spritesheet_178
+  - first:
+      213: -1370192239315844228
+    second: Golem spritesheet_179
+  - first:
+      213: -4716011019834195274
+    second: Golem spritesheet_180
+  - first:
+      213: -770222978249694262
+    second: Golem spritesheet_181
+  - first:
+      213: -8522177183891240717
+    second: Golem spritesheet_182
+  - first:
+      213: 7518032778343866960
+    second: Golem spritesheet_183
+  - first:
+      213: -4638699025642727868
+    second: Golem spritesheet_184
+  - first:
+      213: 881621547383016451
+    second: Golem spritesheet_185
+  - first:
+      213: -6690877835691377346
+    second: Golem spritesheet_186
+  - first:
+      213: 8068138612905215275
+    second: Golem spritesheet_187
+  - first:
+      213: 4436541264914266694
+    second: Golem spritesheet_188
+  - first:
+      213: 8265481503134124279
+    second: Golem spritesheet_189
+  - first:
+      213: -4147495369915929265
+    second: Golem spritesheet_190
+  - first:
+      213: 6652615240891341166
+    second: Golem spritesheet_191
+  - first:
+      213: 8489743635069746521
+    second: Golem spritesheet_192
+  - first:
+      213: -4212959864887589377
+    second: Golem spritesheet_193
+  - first:
+      213: -5039558237353543088
+    second: Golem spritesheet_194
+  - first:
+      213: -6065207041175648103
+    second: Golem spritesheet_195
+  - first:
+      213: 7848558597702649913
+    second: Golem spritesheet_196
+  - first:
+      213: 4696805759432848652
+    second: Golem spritesheet_197
+  - first:
+      213: 3019009368658507521
+    second: Golem spritesheet_198
+  - first:
+      213: 4916768453601988373
+    second: Golem spritesheet_199
+  - first:
+      213: 6695962188846896602
+    second: Golem spritesheet_200
+  - first:
+      213: 1756379880329867799
+    second: Golem spritesheet_201
+  - first:
+      213: 5165894133925031824
+    second: Golem spritesheet_202
+  - first:
+      213: 5383583361490988487
+    second: Golem spritesheet_203
+  - first:
+      213: -5670443534136456111
+    second: Golem spritesheet_204
+  - first:
+      213: 7524018020524441011
+    second: Golem spritesheet_205
+  - first:
+      213: -4225896432557072136
+    second: Golem spritesheet_206
+  - first:
+      213: 5762781863761982096
+    second: Golem spritesheet_207
+  - first:
+      213: -7754355855315643462
+    second: Golem spritesheet_208
+  - first:
+      213: 605930146780630607
+    second: Golem spritesheet_209
+  - first:
+      213: 4913350833418531289
+    second: Golem spritesheet_210
+  - first:
+      213: -1765915686457278209
+    second: Golem spritesheet_211
+  - first:
+      213: 5471533912324204372
+    second: Golem spritesheet_212
+  - first:
+      213: -6759255550435597078
+    second: Golem spritesheet_213
+  - first:
+      213: 1906305691986762435
+    second: Golem spritesheet_214
+  - first:
+      213: 4996402653489564225
+    second: Golem spritesheet_215
+  - first:
+      213: 6113162702123513954
+    second: Golem spritesheet_216
+  - first:
+      213: -1553926434634790676
+    second: Golem spritesheet_217
+  - first:
+      213: -4568007271956670558
+    second: Golem spritesheet_218
+  - first:
+      213: 2743257671794966400
+    second: Golem spritesheet_219
+  - first:
+      213: 6244238949763517498
+    second: Golem spritesheet_220
+  - first:
+      213: -8484507678521449518
+    second: Golem spritesheet_221
+  - first:
+      213: 3229306440756662419
+    second: Golem spritesheet_222
+  - first:
+      213: -5047854961217188140
+    second: Golem spritesheet_223
+  - first:
+      213: 6387747741959657504
+    second: Golem spritesheet_224
+  - first:
+      213: 5407839311889500730
+    second: Golem spritesheet_225
+  - first:
+      213: 8547077983932460645
+    second: Golem spritesheet_226
+  - first:
+      213: -8078840641898340036
+    second: Golem spritesheet_227
+  - first:
+      213: 4298206907104094476
+    second: Golem spritesheet_228
+  - first:
+      213: -4355142982357455443
+    second: Golem spritesheet_229
+  - first:
+      213: 5398255297896501599
+    second: Golem spritesheet_230
+  - first:
+      213: -7234467465876572919
+    second: Golem spritesheet_231
+  - first:
+      213: -6028272253859828194
+    second: Golem spritesheet_232
+  - first:
+      213: 1719769912040741596
+    second: Golem spritesheet_233
+  - first:
+      213: -5534848944873435358
+    second: Golem spritesheet_234
+  - first:
+      213: 8008552501584358571
+    second: Golem spritesheet_235
+  - first:
+      213: -1818371006591864190
+    second: Golem spritesheet_236
+  - first:
+      213: -1670073583123880411
+    second: Golem spritesheet_237
+  - first:
+      213: 4909782251547898124
+    second: Golem spritesheet_238
+  - first:
+      213: 8392994464048119326
+    second: Golem spritesheet_239
+  - first:
+      213: -7866942945469562086
+    second: Golem spritesheet_240
+  - first:
+      213: -8622561678400412200
+    second: Golem spritesheet_241
+  - first:
+      213: 3126683225715672541
+    second: Golem spritesheet_242
+  - first:
+      213: -8931114110922344973
+    second: Golem spritesheet_243
+  - first:
+      213: 2988339604126011489
+    second: Golem spritesheet_244
+  - first:
+      213: -3609026229065790727
+    second: Golem spritesheet_245
+  - first:
+      213: 5949263808241468239
+    second: Golem spritesheet_246
+  - first:
+      213: 1542389783120288508
+    second: Golem spritesheet_247
+  - first:
+      213: -32804588191041686
+    second: Golem spritesheet_248
+  - first:
+      213: 5198787205171199152
+    second: Golem spritesheet_249
+  - first:
+      213: -4833131438552371578
+    second: Golem spritesheet_250
+  - first:
+      213: 4802796784230802933
+    second: Golem spritesheet_251
+  - first:
+      213: -3585073850247793465
+    second: Golem spritesheet_252
+  - first:
+      213: -9069700295853103512
+    second: Golem spritesheet_253
+  - first:
+      213: 1119002824416812478
+    second: Golem spritesheet_254
+  - first:
+      213: 2188608356885857094
+    second: Golem spritesheet_255
+  - first:
+      213: 5347677817334260688
+    second: Golem spritesheet_256
+  - first:
+      213: 281433687725203243
+    second: Golem spritesheet_257
+  - first:
+      213: 5286923130865915014
+    second: Golem spritesheet_258
+  - first:
+      213: 7615362398424326369
+    second: Golem spritesheet_259
+  - first:
+      213: -1989865884206199057
+    second: Golem spritesheet_260
+  - first:
+      213: -5191349461773009753
+    second: Golem spritesheet_261
+  - first:
+      213: 5721371087601961071
+    second: Golem spritesheet_262
+  - first:
+      213: 4669789769469221385
+    second: Golem spritesheet_263
+  - first:
+      213: 3612941019291271985
+    second: Golem spritesheet_264
+  - first:
+      213: -332806726388064387
+    second: Golem spritesheet_265
+  - first:
+      213: 4710717065681123636
+    second: Golem spritesheet_266
+  - first:
+      213: -8600988789654669034
+    second: Golem spritesheet_267
+  - first:
+      213: -7003366538288470702
+    second: Golem spritesheet_268
+  - first:
+      213: 6963738817155388731
+    second: Golem spritesheet_269
+  - first:
+      213: 7836471945562374382
+    second: Golem spritesheet_270
+  - first:
+      213: 4635326463487100661
+    second: Golem spritesheet_271
+  - first:
+      213: -6808029845632227488
+    second: Golem spritesheet_272
+  - first:
+      213: 7903461592648017875
+    second: Golem spritesheet_273
+  - first:
+      213: 4317650492957197473
+    second: Golem spritesheet_274
+  - first:
+      213: -403983991903627947
+    second: Golem spritesheet_275
+  - first:
+      213: -2103857481387381031
+    second: Golem spritesheet_276
+  - first:
+      213: 6888896177985114772
+    second: Golem spritesheet_277
+  - first:
+      213: -7939522150007441693
+    second: Golem spritesheet_278
+  - first:
+      213: -4599363740256397348
+    second: Golem spritesheet_279
+  - first:
+      213: 1025663317461075476
+    second: Golem spritesheet_280
+  - first:
+      213: 8604985447628538211
+    second: Golem spritesheet_281
+  - first:
+      213: -8208658076192544569
+    second: Golem spritesheet_282
+  - first:
+      213: -7278846731760431092
+    second: Golem spritesheet_283
+  - first:
+      213: -7982232645679884515
+    second: Golem spritesheet_284
+  - first:
+      213: -6435806967278048170
+    second: Golem spritesheet_285
+  - first:
+      213: 1755881588036791746
+    second: Golem spritesheet_286
+  - first:
+      213: 83346311865631433
+    second: Golem spritesheet_287
+  - first:
+      213: -4099394840896070081
+    second: Golem spritesheet_288
+  - first:
+      213: 8487617951848725027
+    second: Golem spritesheet_289
+  - first:
+      213: 478344688578366320
+    second: Golem spritesheet_290
+  - first:
+      213: 8203335907114038186
+    second: Golem spritesheet_291
+  - first:
+      213: 7617725711489511798
+    second: Golem spritesheet_292
+  - first:
+      213: -9091163270592817866
+    second: Golem spritesheet_293
+  - first:
+      213: -7661217156597825191
+    second: Golem spritesheet_294
+  - first:
+      213: 1801642662416209975
+    second: Golem spritesheet_295
+  - first:
+      213: 4124479374058809671
+    second: Golem spritesheet_296
+  - first:
+      213: 7560079464076033590
+    second: Golem spritesheet_297
+  - first:
+      213: -4026298676393758472
+    second: Golem spritesheet_298
+  - first:
+      213: 692746924384583056
+    second: Golem spritesheet_299
+  - first:
+      213: 1897004513477865681
+    second: Golem spritesheet_300
+  - first:
+      213: 1085143980496232499
+    second: Golem spritesheet_301
+  - first:
+      213: 4942885215852598362
+    second: Golem spritesheet_302
+  - first:
+      213: -7177448188769918918
+    second: Golem spritesheet_303
+  - first:
+      213: -3679366188464250455
+    second: Golem spritesheet_304
+  - first:
+      213: 8694846951135537371
+    second: Golem spritesheet_305
+  - first:
+      213: -4552016875530735634
+    second: Golem spritesheet_306
+  - first:
+      213: -6349421960198333184
+    second: Golem spritesheet_307
+  - first:
+      213: 10888525769621779
+    second: Golem spritesheet_308
+  - first:
+      213: 8075460654184163378
+    second: Golem spritesheet_309
+  - first:
+      213: -2039852698387214656
+    second: Golem spritesheet_310
+  - first:
+      213: 7969891680739756143
+    second: Golem spritesheet_311
+  - first:
+      213: -8429498711921275701
+    second: Golem spritesheet_312
+  - first:
+      213: -4548731028817510329
+    second: Golem spritesheet_313
+  - first:
+      213: -2917939700572304661
+    second: Golem spritesheet_314
+  - first:
+      213: 4750705145373238233
+    second: Golem spritesheet_315
+  - first:
+      213: -7241831791912019541
+    second: Golem spritesheet_316
+  - first:
+      213: 4786148184886623288
+    second: Golem spritesheet_317
+  - first:
+      213: -8469568021095647460
+    second: Golem spritesheet_318
+  - first:
+      213: 1803318662111284124
+    second: Golem spritesheet_319
+  - first:
+      213: 7573885224207357038
+    second: Golem spritesheet_320
+  - first:
+      213: -8455003392863056932
+    second: Golem spritesheet_321
+  - first:
+      213: 4809464749734247951
+    second: Golem spritesheet_322
+  - first:
+      213: -7136378923090024270
+    second: Golem spritesheet_323
+  - first:
+      213: -1009974093145825221
+    second: Golem spritesheet_324
+  - first:
+      213: 1057686651089421627
+    second: Golem spritesheet_325
+  - first:
+      213: -1015008842885273980
+    second: Golem spritesheet_326
+  - first:
+      213: -1058682280407362270
+    second: Golem spritesheet_327
+  - first:
+      213: -6296162128426825937
+    second: Golem spritesheet_328
+  - first:
+      213: -8095000095289045346
+    second: Golem spritesheet_329
+  - first:
+      213: -3626894129317143825
+    second: Golem spritesheet_330
+  - first:
+      213: -5361929098916410021
+    second: Golem spritesheet_331
+  - first:
+      213: 5952288953286241424
+    second: Golem spritesheet_332
+  - first:
+      213: -1327682898446441156
+    second: Golem spritesheet_333
+  - first:
+      213: -3762502865288588499
+    second: Golem spritesheet_334
+  - first:
+      213: -4498755979503365585
+    second: Golem spritesheet_335
+  - first:
+      213: 7267655309326560425
+    second: Golem spritesheet_336
+  - first:
+      213: -1509883728592810593
+    second: Golem spritesheet_337
+  - first:
+      213: 1024665504813672090
+    second: Golem spritesheet_338
+  - first:
+      213: -1039163443203469241
+    second: Golem spritesheet_339
+  - first:
+      213: -9199008164361093242
+    second: Golem spritesheet_340
+  - first:
+      213: 5847891927177743422
+    second: Golem spritesheet_341
+  - first:
+      213: -246823933324545934
+    second: Golem spritesheet_342
+  - first:
+      213: 4756664129181931221
+    second: Golem spritesheet_343
+  - first:
+      213: 2055110658190915920
+    second: Golem spritesheet_344
+  - first:
+      213: -2889173228905757380
+    second: Golem spritesheet_345
+  - first:
+      213: -3577377313515884155
+    second: Golem spritesheet_346
+  - first:
+      213: 2608576660834588389
+    second: Golem spritesheet_347
+  - first:
+      213: -9015773922633916010
+    second: Golem spritesheet_348
+  - first:
+      213: -2354498133630920583
+    second: Golem spritesheet_349
+  - first:
+      213: 8869906513348543709
+    second: Golem spritesheet_350
+  - first:
+      213: 3348603528960095920
+    second: Golem spritesheet_351
+  - first:
+      213: 2159854242824603733
+    second: Golem spritesheet_352
+  - first:
+      213: 340985305103347828
+    second: Golem spritesheet_353
+  - first:
+      213: -4884884149783716045
+    second: Golem spritesheet_354
+  - first:
+      213: -1480557717150015840
+    second: Golem spritesheet_355
+  - first:
+      213: 8982879175916621407
+    second: Golem spritesheet_356
+  - first:
+      213: 9015463424427848174
+    second: Golem spritesheet_357
+  - first:
+      213: 5098520928684484935
+    second: Golem spritesheet_358
+  - first:
+      213: 6194435300774072258
+    second: Golem spritesheet_359
+  - first:
+      213: 5365042881293135779
+    second: Golem spritesheet_360
+  - first:
+      213: -6227849854093906157
+    second: Golem spritesheet_361
+  - first:
+      213: 7712200783014270354
+    second: Golem spritesheet_362
+  - first:
+      213: -8212572173258612840
+    second: Golem spritesheet_363
+  - first:
+      213: -1895493299443841858
+    second: Golem spritesheet_364
+  - first:
+      213: -8952195729410369145
+    second: Golem spritesheet_365
+  - first:
+      213: 8873519822994726036
+    second: Golem spritesheet_366
+  - first:
+      213: -2870923309152934806
+    second: Golem spritesheet_367
+  - first:
+      213: -3971378061760463245
+    second: Golem spritesheet_368
+  - first:
+      213: 5737788065793495308
+    second: Golem spritesheet_369
+  - first:
+      213: -8956269880253311368
+    second: Golem spritesheet_370
+  - first:
+      213: -4207218581180744816
+    second: Golem spritesheet_371
+  - first:
+      213: -172560705075681071
+    second: Golem spritesheet_372
+  - first:
+      213: 8340448341938129248
+    second: Golem spritesheet_373
+  - first:
+      213: 4043117472250587523
+    second: Golem spritesheet_374
+  - first:
+      213: 5214421483811274449
+    second: Golem spritesheet_375
+  - first:
+      213: -7664967007700198664
+    second: Golem spritesheet_376
+  - first:
+      213: -8693257102286112891
+    second: Golem spritesheet_377
+  - first:
+      213: -4117883303902453740
+    second: Golem spritesheet_378
+  - first:
+      213: 1505836198474966599
+    second: Golem spritesheet_379
+  - first:
+      213: 1364178996607949665
+    second: Golem spritesheet_380
+  - first:
+      213: -6738342325051009270
+    second: Golem spritesheet_381
+  - first:
+      213: 8231381212302674203
+    second: Golem spritesheet_382
+  - first:
+      213: -1877977062683498434
+    second: Golem spritesheet_383
+  - first:
+      213: 2851383968050773451
+    second: Golem spritesheet_384
+  - first:
+      213: 6845137900184136173
+    second: Golem spritesheet_385
+  - first:
+      213: 2817543904517451605
+    second: Golem spritesheet_386
+  - first:
+      213: -3969474383223699113
+    second: Golem spritesheet_387
+  - first:
+      213: -7278151824454844616
+    second: Golem spritesheet_388
+  - first:
+      213: 3908605914827531654
+    second: Golem spritesheet_389
+  - first:
+      213: 7964022697442626156
+    second: Golem spritesheet_390
+  - first:
+      213: 1553450017526531460
+    second: Golem spritesheet_391
+  - first:
+      213: -181730373039945005
+    second: Golem spritesheet_392
+  - first:
+      213: -7111018363340078547
+    second: Golem spritesheet_393
+  - first:
+      213: -5471299079315962418
+    second: Golem spritesheet_394
+  - first:
+      213: -7846883258602810987
+    second: Golem spritesheet_395
+  - first:
+      213: 159646554241357046
+    second: Golem spritesheet_396
+  - first:
+      213: 6460882793783616292
+    second: Golem spritesheet_397
+  - first:
+      213: -5965951789067815910
+    second: Golem spritesheet_398
+  - first:
+      213: -5838099438601162907
+    second: Golem spritesheet_399
+  - first:
+      213: 6278786203980635512
+    second: Golem spritesheet_400
+  - first:
+      213: 1236388720846695913
+    second: Golem spritesheet_401
+  - first:
+      213: 8621133641313575777
+    second: Golem spritesheet_402
+  - first:
+      213: 6503461862450161187
+    second: Golem spritesheet_403
+  - first:
+      213: -5602023910735301609
+    second: Golem spritesheet_404
+  - first:
+      213: 6419554869899778867
+    second: Golem spritesheet_405
+  - first:
+      213: 8871548489830182499
+    second: Golem spritesheet_406
+  - first:
+      213: -9148094087876375198
+    second: Golem spritesheet_407
+  - first:
+      213: -931389641827706663
+    second: Golem spritesheet_408
+  - first:
+      213: -1274256632958551867
+    second: Golem spritesheet_409
+  - first:
+      213: -306586461529561418
+    second: Golem spritesheet_410
+  - first:
+      213: 4185550391292752868
+    second: Golem spritesheet_411
+  - first:
+      213: 2178928759645694177
+    second: Golem spritesheet_412
+  - first:
+      213: -8184397140921008824
+    second: Golem spritesheet_413
+  - first:
+      213: 7022909106790023955
+    second: Golem spritesheet_414
+  - first:
+      213: -253198814617189624
+    second: Golem spritesheet_415
+  - first:
+      213: -515715985649637241
+    second: Golem spritesheet_416
+  - first:
+      213: -7191688071733030873
+    second: Golem spritesheet_417
+  - first:
+      213: 3094503603286266743
+    second: Golem spritesheet_418
+  - first:
+      213: 4357924427186652094
+    second: Golem spritesheet_419
+  - first:
+      213: -2542601617701426816
+    second: Golem spritesheet_420
+  - first:
+      213: -4286551908969339477
+    second: Golem spritesheet_421
+  - first:
+      213: -8619001359217302169
+    second: Golem spritesheet_422
+  - first:
+      213: 2467119011098829278
+    second: Golem spritesheet_423
+  - first:
+      213: 7424069269981731300
+    second: Golem spritesheet_424
+  - first:
+      213: 6414009420556303699
+    second: Golem spritesheet_425
+  - first:
+      213: 8701675449426541038
+    second: Golem spritesheet_426
+  - first:
+      213: 7208914261865559221
+    second: Golem spritesheet_427
+  - first:
+      213: 2336622760816045742
+    second: Golem spritesheet_428
+  - first:
+      213: 6991909810523462242
+    second: Golem spritesheet_429
+  - first:
+      213: 3004345128278052261
+    second: Golem spritesheet_430
+  - first:
+      213: 5227390218888467723
+    second: Golem spritesheet_431
+  - first:
+      213: 4858486074421415610
+    second: Golem spritesheet_432
+  - first:
+      213: 4130964505849489236
+    second: Golem spritesheet_433
+  - first:
+      213: -8740028652938574061
+    second: Golem spritesheet_434
+  - first:
+      213: 2004688676403671021
+    second: Golem spritesheet_435
+  - first:
+      213: 861070312424443561
+    second: Golem spritesheet_436
+  - first:
+      213: -8871523962088543567
+    second: Golem spritesheet_437
+  - first:
+      213: -6685247962237772744
+    second: Golem spritesheet_438
+  - first:
+      213: 1507026454583945493
+    second: Golem spritesheet_439
+  - first:
+      213: 3894351907021975990
+    second: Golem spritesheet_440
+  - first:
+      213: -2513479781962790158
+    second: Golem spritesheet_441
+  - first:
+      213: 8107671407434945161
+    second: Golem spritesheet_442
+  - first:
+      213: 2484181789694459564
+    second: Golem spritesheet_443
+  - first:
+      213: -6433522415612616868
+    second: Golem spritesheet_444
+  - first:
+      213: 4256614729477672200
+    second: Golem spritesheet_445
+  - first:
+      213: 525172356912718221
+    second: Golem spritesheet_446
+  - first:
+      213: -6122391087946919666
+    second: Golem spritesheet_447
+  - first:
+      213: 1313140433057896219
+    second: Golem spritesheet_448
+  - first:
+      213: 2053178388341530854
+    second: Golem spritesheet_449
+  - first:
+      213: -3611301546814521460
+    second: Golem spritesheet_450
+  - first:
+      213: 9071182672707710535
+    second: Golem spritesheet_451
+  - first:
+      213: -6703292079738162416
+    second: Golem spritesheet_452
+  - first:
+      213: 9069592627587538195
+    second: Golem spritesheet_453
+  - first:
+      213: -5078356819353052636
+    second: Golem spritesheet_454
+  - first:
+      213: -7018190871543403954
+    second: Golem spritesheet_455
+  - first:
+      213: -2999303817959174716
+    second: Golem spritesheet_456
+  - first:
+      213: 8334224026617341639
+    second: Golem spritesheet_457
+  - first:
+      213: -7494342464548917563
+    second: Golem spritesheet_458
+  - first:
+      213: 7649420478180180957
+    second: Golem spritesheet_459
+  - first:
+      213: -4521066751964550309
+    second: Golem spritesheet_460
+  - first:
+      213: 259641207020672128
+    second: Golem spritesheet_461
+  - first:
+      213: 8824170898385278978
+    second: Golem spritesheet_462
+  - first:
+      213: 1168372814005563612
+    second: Golem spritesheet_463
+  - first:
+      213: 2627564163534108359
+    second: Golem spritesheet_464
+  - first:
+      213: -3054490653184453419
+    second: Golem spritesheet_465
+  - first:
+      213: 6504440093441292421
+    second: Golem spritesheet_466
+  - first:
+      213: 561251580123044747
+    second: Golem spritesheet_467
+  - first:
+      213: -1547113967352296888
+    second: Golem spritesheet_468
+  - first:
+      213: 4813484271689760220
+    second: Golem spritesheet_469
+  - first:
+      213: -4303075832999653698
+    second: Golem spritesheet_470
+  - first:
+      213: 1225810282305886902
+    second: Golem spritesheet_471
+  - first:
+      213: 4478290360025818183
+    second: Golem spritesheet_472
+  - first:
+      213: 2242182358922669930
+    second: Golem spritesheet_473
+  - first:
+      213: 2816008673995850367
+    second: Golem spritesheet_474
+  - first:
+      213: 2195909452742666165
+    second: Golem spritesheet_475
+  - first:
+      213: 7663272549906652342
+    second: Golem spritesheet_476
+  - first:
+      213: 991698559001991089
+    second: Golem spritesheet_477
+  - first:
+      213: 2879237236986594651
+    second: Golem spritesheet_478
+  - first:
+      213: -3228024641086802340
+    second: Golem spritesheet_479
+  - first:
+      213: 8990450799843492908
+    second: Golem spritesheet_480
+  - first:
+      213: 8031343324982023416
+    second: Golem spritesheet_481
+  - first:
+      213: -9178949636148707833
+    second: Golem spritesheet_482
+  - first:
+      213: 8224190552843362357
+    second: Golem spritesheet_483
+  - first:
+      213: -456132936952933317
+    second: Golem spritesheet_484
+  - first:
+      213: -2071956514834897887
+    second: Golem spritesheet_485
+  - first:
+      213: -2324280655331816851
+    second: Golem spritesheet_486
+  - first:
+      213: 1136459625752304197
+    second: Golem spritesheet_487
+  - first:
+      213: 4893102364647288201
+    second: Golem spritesheet_488
+  - first:
+      213: 2957446093799505825
+    second: Golem spritesheet_489
+  - first:
+      213: -9167062288526702536
+    second: Golem spritesheet_490
+  - first:
+      213: -9177280856782979221
+    second: Golem spritesheet_491
+  - first:
+      213: 893272953786450555
+    second: Golem spritesheet_492
+  - first:
+      213: 488359219407207105
+    second: Golem spritesheet_493
+  - first:
+      213: -2765301031429256825
+    second: Golem spritesheet_494
+  - first:
+      213: -4746122848065112447
+    second: Golem spritesheet_495
+  - first:
+      213: 2326805073995026892
+    second: Golem spritesheet_496
+  - first:
+      213: 5047009801122484645
+    second: Golem spritesheet_497
+  - first:
+      213: 7038822513476689812
+    second: Golem spritesheet_498
+  - first:
+      213: -7935261968544568572
+    second: Golem spritesheet_499
+  - first:
+      213: 1453728882011843309
+    second: Golem spritesheet_500
+  - first:
+      213: -6081902843775144867
+    second: Golem spritesheet_501
+  - first:
+      213: 3172034252223356909
+    second: Golem spritesheet_502
+  - first:
+      213: -8174205809252357124
+    second: Golem spritesheet_503
+  - first:
+      213: -1695629429712195034
+    second: Golem spritesheet_504
+  - first:
+      213: -2874517686713127383
+    second: Golem spritesheet_505
+  - first:
+      213: 4272481511420992550
+    second: Golem spritesheet_506
+  - first:
+      213: -830366650682635557
+    second: Golem spritesheet_507
+  - first:
+      213: 8392812241715652226
+    second: Golem spritesheet_508
+  - first:
+      213: 6852945390529569306
+    second: Golem spritesheet_509
+  - first:
+      213: -4588786692697632909
+    second: Golem spritesheet_510
+  - first:
+      213: 5623228430075184652
+    second: Golem spritesheet_511
+  - first:
+      213: 6490804087526084311
+    second: Golem spritesheet_512
+  - first:
+      213: -312198718671127110
+    second: Golem spritesheet_513
+  - first:
+      213: -8833493801399909255
+    second: Golem spritesheet_514
+  - first:
+      213: 8334709922415178833
+    second: Golem spritesheet_515
+  - first:
+      213: 1249664238214617308
+    second: Golem spritesheet_516
+  - first:
+      213: 8539648291558788903
+    second: Golem spritesheet_517
+  - first:
+      213: 3000503942257496539
+    second: Golem spritesheet_518
+  - first:
+      213: 8434737010467997334
+    second: Golem spritesheet_519
+  - first:
+      213: -1838429693515600048
+    second: Golem spritesheet_520
+  - first:
+      213: 5502497050207201298
+    second: Golem spritesheet_521
+  - first:
+      213: -3187878868712472283
+    second: Golem spritesheet_522
+  - first:
+      213: 6618801198533437023
+    second: Golem spritesheet_523
+  - first:
+      213: 1536115975530838234
+    second: Golem spritesheet_524
+  - first:
+      213: 2943492833476700888
+    second: Golem spritesheet_525
+  - first:
+      213: -4966443041382044614
+    second: Golem spritesheet_526
+  - first:
+      213: 2375807639414375497
+    second: Golem spritesheet_527
+  - first:
+      213: 4281565154000141235
+    second: Golem spritesheet_528
+  - first:
+      213: 8842983631520052360
+    second: Golem spritesheet_529
+  - first:
+      213: 4023727466258891372
+    second: Golem spritesheet_530
+  - first:
+      213: -5407536133774092525
+    second: Golem spritesheet_531
+  - first:
+      213: -284164373812429729
+    second: Golem spritesheet_532
+  - first:
+      213: -7885039724063680620
+    second: Golem spritesheet_533
+  - first:
+      213: -5952991846859728719
+    second: Golem spritesheet_534
+  - first:
+      213: -4294083667314544068
+    second: Golem spritesheet_535
+  - first:
+      213: -8307440940996509709
+    second: Golem spritesheet_536
+  - first:
+      213: 9207016666825763564
+    second: Golem spritesheet_537
+  - first:
+      213: -4555879575201324730
+    second: Golem spritesheet_538
+  - first:
+      213: 8277463065990714517
+    second: Golem spritesheet_539
+  - first:
+      213: -4846621337019114871
+    second: Golem spritesheet_540
+  - first:
+      213: 3863641550657704088
+    second: Golem spritesheet_541
+  - first:
+      213: -8431573953102152561
+    second: Golem spritesheet_542
+  - first:
+      213: 5219964498785347500
+    second: Golem spritesheet_543
+  - first:
+      213: -92088188638220313
+    second: Golem spritesheet_544
+  - first:
+      213: -3495077397262578797
+    second: Golem spritesheet_545
+  - first:
+      213: -6119571458217672784
+    second: Golem spritesheet_546
+  - first:
+      213: 5643826865178587733
+    second: Golem spritesheet_547
+  - first:
+      213: 3946129614104585759
+    second: Golem spritesheet_548
+  - first:
+      213: 5804079036862595926
+    second: Golem spritesheet_549
+  - first:
+      213: -7017834164826446374
+    second: Golem spritesheet_550
+  - first:
+      213: -6286895636735162079
+    second: Golem spritesheet_551
+  - first:
+      213: 7147100378643917030
+    second: Golem spritesheet_552
+  - first:
+      213: -2743950844441283679
+    second: Golem spritesheet_553
+  - first:
+      213: -8347010387371614338
+    second: Golem spritesheet_554
+  - first:
+      213: 8184720555089506688
+    second: Golem spritesheet_555
+  - first:
+      213: -2910043871993822231
+    second: Golem spritesheet_556
+  - first:
+      213: 2893211398136091343
+    second: Golem spritesheet_557
+  - first:
+      213: -632973416335762872
+    second: Golem spritesheet_558
+  - first:
+      213: 6282465086244224866
+    second: Golem spritesheet_559
+  - first:
+      213: -6876436638275391260
+    second: Golem spritesheet_560
+  - first:
+      213: 2172111283821636767
+    second: Golem spritesheet_561
+  - first:
+      213: -3151188351732274331
+    second: Golem spritesheet_562
+  - first:
+      213: -6550823138840892450
+    second: Golem spritesheet_563
+  - first:
+      213: 8205265256839751647
+    second: Golem spritesheet_564
+  - first:
+      213: -4217853646984244050
+    second: Golem spritesheet_565
+  - first:
+      213: -4294896306225093530
+    second: Golem spritesheet_566
+  - first:
+      213: 2881958997856059196
+    second: Golem spritesheet_567
+  - first:
+      213: -5036611277970899629
+    second: Golem spritesheet_568
+  - first:
+      213: -2101324089746873414
+    second: Golem spritesheet_569
+  - first:
+      213: -1331353451712855930
+    second: Golem spritesheet_570
+  - first:
+      213: -1552573126006945840
+    second: Golem spritesheet_571
+  - first:
+      213: 474960890533348656
+    second: Golem spritesheet_572
+  - first:
+      213: 6987303344681842890
+    second: Golem spritesheet_573
+  - first:
+      213: 4955577692155377997
+    second: Golem spritesheet_574
+  - first:
+      213: -3106148000586717265
+    second: Golem spritesheet_575
+  - first:
+      213: 3268285332643008165
+    second: Golem spritesheet_576
+  - first:
+      213: 7421211507593131284
+    second: Golem spritesheet_577
+  - first:
+      213: 8219037881269452489
+    second: Golem spritesheet_578
+  - first:
+      213: 4847727208061269058
+    second: Golem spritesheet_579
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Golem spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 832
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 583f6d3432c88d64886b15603181b54d
+      internalID: -2109564199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 832
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c07eef1a137ff8b459fc42d8c5d55dc6
+      internalID: 1981452144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 832
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe07291f3bfafd7458f12fab0b2d8c3d
+      internalID: 1046616929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 832
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a738baca7bfd79f4183e56e814b10609
+      internalID: -227613567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 832
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6afced913b43be942943e43b9f9b3e0d
+      internalID: -293587626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 832
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 102ef9b94dd3d374f9fabbb79a56d9e5
+      internalID: 1971051643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 832
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67f7727f15649ee4e8a14b45a577f427
+      internalID: -1721859885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 832
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edbca75fc3645f64b82601cbb16fd3bf
+      internalID: 1898131710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 832
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ca3330429994824f82e8909693ba374
+      internalID: 1224494651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 832
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3eca3d79be5ab74bb96b2fa81ce96aa
+      internalID: 1206667177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 832
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dbcdd0d6a46d1a4a9b97961b2a4e14a
+      internalID: -931389136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 832
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77a2935b5734cad4cba3de6632731fe9
+      internalID: -268248911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 2496
+        y: 832
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7b6b4d303eb79446b76faf5959babb6
+      internalID: 236801169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 2704
+        y: 832
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fab7292fab3f8e244ba87402be898411
+      internalID: 306203158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 624
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 469a982056c2fe94eb7cea961cda1922
+      internalID: -904471834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 624
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9fe4540d1d362e42b417b742a89cbbd
+      internalID: -1794079263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 624
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d487ca8084f3bc14e92fb7bb8d4d20ca
+      internalID: 568387151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 624
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e90cde34e6820a41a8b3bc5663f9a31
+      internalID: -1614107574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 624
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 049631cd63804394d95326eb985bb28f
+      internalID: -961633010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 624
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fccae7edd5ccc674c981f9fd944d381b
+      internalID: 913898971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 416
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6147b34d9f0dfd04eaa33fda2e49c613
+      internalID: -1436886541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 416
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d5479fbad8bb8945bd68ed0730e57db
+      internalID: 1521548576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 416
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4b56449c4cc30748b5f9f62cce72219
+      internalID: -906567932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 416
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 382879bcca31f0c4f8257fea7c3b1a16
+      internalID: -176756537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 416
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6caa65e993a49b348bfa63984af73fbd
+      internalID: -1810764685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 416
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b07f2be6a71496c4daff6bc94f6a236d
+      internalID: 949687512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 416
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aaebeb4e080737409b803bd382521bf
+      internalID: -419465915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 416
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e3d6aeccc821884798b785c4bd62c2d
+      internalID: -708598413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 416
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32138e649fcf776429953ccb04936b60
+      internalID: -930727452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 416
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3465d14672262824f98e5feffa97212c
+      internalID: 143628028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 416
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8f8d781988454343a0d58f6811169f4
+      internalID: -481574382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 416
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5594e68ad9d94654fa72bc07f8d2b9c0
+      internalID: 1092502232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 208
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a112b3a1e77e8284f9b5a47004350ce4
+      internalID: -81928569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 208
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8266c4982d70cd42bbc856da843e6dc
+      internalID: 1062000319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 208
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e0693e2c882e124eb4c81cfb137c4f8
+      internalID: -1931381439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_35
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 208
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c338581a59ddf749b6ab8c893eaaaea
+      internalID: 170658155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_36
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 208
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22647a7c728e8e642bae4ef3586cdf98
+      internalID: 981756746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_37
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 208
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 099a9b678dce10540b34cee5ebdfb1de
+      internalID: -1776402234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_38
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 208
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8302836424802e24b8022dee85eea775
+      internalID: 1163067485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_39
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 208
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c91a6c7ad8a2b964f8f573a6eb5b7c06
+      internalID: -1995519292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_40
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 208
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 088be7146b551a54d94047e61a467652
+      internalID: -724975386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_41
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 208
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d470b45e7b347c24eb823330d9c79716
+      internalID: 1570145541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_42
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 208
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9737c603c49a5444c97b668f9d18e264
+      internalID: 810322796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_43
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 208
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d4d93206da741948b6afaef6396c2e9
+      internalID: -1884447811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_44
+      rect:
+        serializedVersion: 2
+        x: 2496
+        y: 208
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5706a0a3629badd47b0f1b6ad33480a6
+      internalID: -953001071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_45
+      rect:
+        serializedVersion: 2
+        x: 2704
+        y: 208
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 253086e508e96564d9d8fe4f7f3d7a9e
+      internalID: 228055108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_46
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab61688867b4561468d99d3792539355
+      internalID: 1391641379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_47
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 0
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20bde27e384dce14bbe478822aef0966
+      internalID: 220501060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_48
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 0
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72188d0e2c2366e4ea4513034be0eaf8
+      internalID: 1894705147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_49
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 0
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7378b6c41a5afc04db9a5b23cd98f4fe
+      internalID: 1154692239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_50
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9d90ef971ba8fa45b667c2054143e0b
+      internalID: -283526329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_51
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 0
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 572663e72572eed42b0aa1c811e17e6d
+      internalID: -121487392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_52
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 0
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9ffbd4ac687f7a46afee57d905632d7
+      internalID: 2005856066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_53
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 0
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9bea0f23543c5446a0d11c77f7ff4bc
+      internalID: 1189853251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_54
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 0
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b71d24061df8c9459e6346d71f14118
+      internalID: -14918613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_55
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 0
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97628b8fe54aaf049857746eb75ba169
+      internalID: -393802683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_56
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 0
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 663b05aab6af1334789322b1ef77867d
+      internalID: -644494032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_57
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 0
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c037246fc821a544a9a6eea862f77b6
+      internalID: 603460157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_58
+      rect:
+        serializedVersion: 2
+        x: 2496
+        y: 0
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a4afc7baf46e7c4eb009531d06068e6
+      internalID: 1546507775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem spritesheet_59
+      rect:
+        serializedVersion: 2
+        x: 2704
+        y: 0
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cd2ef52ef37d1f47a1ba42c43f9f6d7
+      internalID: -1817573743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 572ed7277aac23242a1358147cf818cc
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Golem spritesheet_0: -2109564199
+      Golem spritesheet_1: 1981452144
+      Golem spritesheet_10: -931389136
+      Golem spritesheet_11: -268248911
+      Golem spritesheet_12: 236801169
+      Golem spritesheet_13: 306203158
+      Golem spritesheet_14: -904471834
+      Golem spritesheet_15: -1794079263
+      Golem spritesheet_16: 568387151
+      Golem spritesheet_17: -1614107574
+      Golem spritesheet_18: -961633010
+      Golem spritesheet_19: 913898971
+      Golem spritesheet_2: 1046616929
+      Golem spritesheet_20: -1436886541
+      Golem spritesheet_21: 1521548576
+      Golem spritesheet_22: -906567932
+      Golem spritesheet_23: -176756537
+      Golem spritesheet_24: -1810764685
+      Golem spritesheet_25: 949687512
+      Golem spritesheet_26: -419465915
+      Golem spritesheet_27: -708598413
+      Golem spritesheet_28: -930727452
+      Golem spritesheet_29: 143628028
+      Golem spritesheet_3: -227613567
+      Golem spritesheet_30: -481574382
+      Golem spritesheet_31: 1092502232
+      Golem spritesheet_32: -81928569
+      Golem spritesheet_33: 1062000319
+      Golem spritesheet_34: -1931381439
+      Golem spritesheet_35: 170658155
+      Golem spritesheet_36: 981756746
+      Golem spritesheet_37: -1776402234
+      Golem spritesheet_38: 1163067485
+      Golem spritesheet_39: -1995519292
+      Golem spritesheet_4: -293587626
+      Golem spritesheet_40: -724975386
+      Golem spritesheet_41: 1570145541
+      Golem spritesheet_42: 810322796
+      Golem spritesheet_43: -1884447811
+      Golem spritesheet_44: -953001071
+      Golem spritesheet_45: 228055108
+      Golem spritesheet_46: 1391641379
+      Golem spritesheet_47: 220501060
+      Golem spritesheet_48: 1894705147
+      Golem spritesheet_49: 1154692239
+      Golem spritesheet_5: 1971051643
+      Golem spritesheet_50: -283526329
+      Golem spritesheet_51: -121487392
+      Golem spritesheet_52: 2005856066
+      Golem spritesheet_53: 1189853251
+      Golem spritesheet_54: -14918613
+      Golem spritesheet_55: -393802683
+      Golem spritesheet_56: -644494032
+      Golem spritesheet_57: 603460157
+      Golem spritesheet_58: 1546507775
+      Golem spritesheet_59: -1817573743
+      Golem spritesheet_6: -1721859885
+      Golem spritesheet_7: 1898131710
+      Golem spritesheet_8: 1224494651
+      Golem spritesheet_9: 1206667177
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

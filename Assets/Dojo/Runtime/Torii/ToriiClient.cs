@@ -16,13 +16,12 @@ namespace Dojo.Torii
         private dojo.Subscription* entitySubscription;
         private dojo.Subscription* eventMessagesSubscription;
 
-        public ToriiClient(string toriiUrl, string rpcUrl, string relayUrl, FieldElement worldAddress, bool dispatchEventsToMainThread = true)
+        public ToriiClient(string toriiUrl, string relayUrl, FieldElement worldAddress, bool dispatchEventsToMainThread = true)
         {
             CString ctoriiUrl = CString.FromString(toriiUrl);
-            CString crpcUrl = CString.FromString(rpcUrl);
             CString crelayUrl = CString.FromString(relayUrl);
 
-            var result = dojo.client_new(ctoriiUrl, crpcUrl, crelayUrl, worldAddress.Inner);
+            var result = dojo.client_new(ctoriiUrl, crelayUrl, worldAddress.Inner);
             if (result.tag == dojo.ResultToriiClient_Tag.ErrToriiClient)
             {
                 throw new Exception(result.err.message);
@@ -31,8 +30,8 @@ namespace Dojo.Torii
             client = result._ok;
             dojo.client_set_logger(client, new dojo.FnPtr_CString_Void((msg) => Debug.Log(msg)));
 
-            RegisterEntityStateUpdateEvent(new EntityKeysClause[] { }, dispatchEventsToMainThread);
-            RegisterEventMessageUpdateEvent(new EntityKeysClause[] { }, dispatchEventsToMainThread);
+            RegisterEntityStateUpdateEvent(new EntityKeysClause[] { }, dispatchEventsToMainThread); ;
+            RegisterEventMessageUpdateEvent(new EntityKeysClause[] { }, false, dispatchEventsToMainThread);
         }
 
         // We assume the torii client won't be copied around.
@@ -48,9 +47,13 @@ namespace Dojo.Torii
         public dojo.WorldMetadata WorldMetadata()
         {
             // TODO: implement a managed type for WorldMetadata too
-            dojo.WorldMetadata worldMetadata = dojo.client_metadata(client);
+            dojo.ResultWorldMetadata result = dojo.client_metadata(client);
+            if (result.tag == dojo.ResultWorldMetadata_Tag.ErrWorldMetadata)
+            {
+                throw new Exception(result.err.message);
+            }
 
-            return worldMetadata;
+            return result.ok;
         }
 
         // NOT USED? potentially deprecated

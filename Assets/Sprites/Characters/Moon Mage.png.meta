@@ -1,0 +1,1518 @@
+fileFormatVersion: 2
+guid: 6b64ad2389a12b143aa3a48f2e1312b3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7777624132969497184
+    second: Moon Mage spritesheet (1)_0
+  - first:
+      213: 8694571798386094655
+    second: Moon Mage spritesheet (1)_1
+  - first:
+      213: -3891146731967295747
+    second: Moon Mage spritesheet (1)_2
+  - first:
+      213: 7183488121190813227
+    second: Moon Mage spritesheet (1)_3
+  - first:
+      213: -7251001835477069008
+    second: Moon Mage spritesheet (1)_4
+  - first:
+      213: -550080982992692339
+    second: Moon Mage spritesheet (1)_5
+  - first:
+      213: 7298171064160124481
+    second: Moon Mage spritesheet (1)_6
+  - first:
+      213: -5629043935625877188
+    second: Moon Mage spritesheet (1)_7
+  - first:
+      213: -5596996761518842758
+    second: Moon Mage spritesheet (1)_8
+  - first:
+      213: -3670414499122256947
+    second: Moon Mage spritesheet (1)_9
+  - first:
+      213: 7762886054953228136
+    second: Moon Mage spritesheet (1)_10
+  - first:
+      213: 3559300960666255305
+    second: Moon Mage spritesheet (1)_11
+  - first:
+      213: 2149051191818022275
+    second: Moon Mage spritesheet (1)_12
+  - first:
+      213: 3496077242625850126
+    second: Moon Mage spritesheet (1)_13
+  - first:
+      213: 8833884407253369783
+    second: Moon Mage spritesheet (1)_14
+  - first:
+      213: -5317563341268211392
+    second: Moon Mage spritesheet (1)_15
+  - first:
+      213: -3006761011365805673
+    second: Moon Mage spritesheet (1)_16
+  - first:
+      213: 8234133562417467082
+    second: Moon Mage spritesheet (1)_17
+  - first:
+      213: 6800812336866147741
+    second: Moon Mage spritesheet (1)_18
+  - first:
+      213: -1689725359606223508
+    second: Moon Mage spritesheet (1)_19
+  - first:
+      213: 5687966383819004380
+    second: Moon Mage spritesheet (1)_20
+  - first:
+      213: -271152734417800789
+    second: Moon Mage spritesheet (1)_21
+  - first:
+      213: -541213939638000550
+    second: Moon Mage spritesheet (1)_22
+  - first:
+      213: 1908236637810909900
+    second: Moon Mage spritesheet (1)_23
+  - first:
+      213: -886262124174063765
+    second: Moon Mage spritesheet (1)_24
+  - first:
+      213: 6091829263941619023
+    second: Moon Mage spritesheet (1)_25
+  - first:
+      213: -6543120126249639235
+    second: Moon Mage spritesheet (1)_26
+  - first:
+      213: 6244654568807796386
+    second: Moon Mage spritesheet (1)_27
+  - first:
+      213: 4307691732985569291
+    second: Moon Mage spritesheet (1)_28
+  - first:
+      213: 3382770854683340980
+    second: Moon Mage spritesheet (1)_29
+  - first:
+      213: 1526119436793012496
+    second: Moon Mage spritesheet (1)_30
+  - first:
+      213: -5142935346561529204
+    second: Moon Mage spritesheet (1)_31
+  - first:
+      213: -1511942141053378746
+    second: Moon Mage spritesheet (1)_32
+  - first:
+      213: 6677022722085260877
+    second: Moon Mage spritesheet (1)_33
+  - first:
+      213: -5684482156367956648
+    second: Moon Mage spritesheet (1)_34
+  - first:
+      213: -2284995464325065824
+    second: Moon Mage spritesheet (1)_35
+  - first:
+      213: -969619400146134606
+    second: Moon Mage spritesheet (1)_36
+  - first:
+      213: 9184375296810271867
+    second: Moon Mage spritesheet (1)_37
+  - first:
+      213: -2895078879764830948
+    second: Moon Mage spritesheet (1)_38
+  - first:
+      213: 2008425482852113930
+    second: Moon Mage spritesheet (1)_39
+  - first:
+      213: 7855811085136884458
+    second: Moon Mage spritesheet (1)_40
+  - first:
+      213: 7885260029227728399
+    second: Moon Mage spritesheet (1)_41
+  - first:
+      213: 6441794845621983483
+    second: Moon Mage spritesheet (1)_42
+  - first:
+      213: 761896567864088912
+    second: Moon Mage spritesheet (1)_43
+  - first:
+      213: -8758723836089894569
+    second: Moon Mage spritesheet (1)_44
+  - first:
+      213: -2631566987013104332
+    second: Moon Mage spritesheet (1)_45
+  - first:
+      213: 3502540968537204782
+    second: Moon Mage spritesheet (1)_46
+  - first:
+      213: 8996620573711081259
+    second: Moon Mage spritesheet (1)_47
+  - first:
+      213: 65813011012092757
+    second: Moon Mage spritesheet (1)_48
+  - first:
+      213: -6671484595818672976
+    second: Moon Mage spritesheet (1)_49
+  - first:
+      213: -2837063482372651539
+    second: Moon Mage spritesheet (1)_50
+  - first:
+      213: -5159567373748778751
+    second: Moon Mage spritesheet (1)_51
+  - first:
+      213: 8631786448512588769
+    second: Moon Mage spritesheet (1)_52
+  - first:
+      213: -4269071805539560262
+    second: Moon Mage spritesheet (1)_53
+  - first:
+      213: -209974290645234063
+    second: Moon Mage spritesheet (1)_54
+  - first:
+      213: 1202662040336499634
+    second: Moon Mage spritesheet (1)_55
+  - first:
+      213: 939939802722439999
+    second: Moon Mage spritesheet (1)_56
+  - first:
+      213: 852518600903326601
+    second: Moon Mage spritesheet (1)_57
+  - first:
+      213: 5103987357075490031
+    second: Moon Mage spritesheet (1)_58
+  - first:
+      213: -3801464579889237577
+    second: Moon Mage spritesheet (1)_59
+  - first:
+      213: -7767096964362584502
+    second: Moon Mage spritesheet (1)_60
+  - first:
+      213: 1678875520230005996
+    second: Moon Mage spritesheet (1)_61
+  - first:
+      213: -8326069461176401004
+    second: Moon Mage spritesheet (1)_62
+  - first:
+      213: 3325796092739026300
+    second: Moon Mage spritesheet (1)_63
+  - first:
+      213: -2658098776808986562
+    second: Moon Mage spritesheet (1)_64
+  - first:
+      213: 4058243628297579817
+    second: Moon Mage spritesheet (1)_65
+  - first:
+      213: -6238408151434638260
+    second: Moon Mage spritesheet (1)_66
+  - first:
+      213: 2032864586433598753
+    second: Moon Mage spritesheet (1)_67
+  - first:
+      213: 6150912392918069553
+    second: Moon Mage spritesheet (1)_68
+  - first:
+      213: -1887869593217260794
+    second: Moon Mage spritesheet (1)_69
+  - first:
+      213: -2178739269326027358
+    second: Moon Mage spritesheet (1)_70
+  - first:
+      213: -8306896227539640164
+    second: Moon Mage spritesheet (1)_71
+  - first:
+      213: -3994072065151419315
+    second: Moon Mage spritesheet (1)_72
+  - first:
+      213: 1788518872338668716
+    second: Moon Mage spritesheet (1)_73
+  - first:
+      213: -5245240834857999958
+    second: Moon Mage spritesheet (1)_74
+  - first:
+      213: 2047640686661500069
+    second: Moon Mage spritesheet (1)_75
+  - first:
+      213: 1259761105896606960
+    second: Moon Mage spritesheet (1)_76
+  - first:
+      213: -5664072386582521894
+    second: Moon Mage spritesheet (1)_77
+  - first:
+      213: -4672159888062254510
+    second: Moon Mage spritesheet (1)_78
+  - first:
+      213: 5794961081353433597
+    second: Moon Mage spritesheet (1)_79
+  - first:
+      213: -6742888605043443129
+    second: Moon Mage spritesheet (1)_80
+  - first:
+      213: 520920832467884974
+    second: Moon Mage spritesheet (1)_81
+  - first:
+      213: 8638237427617452142
+    second: Moon Mage spritesheet (1)_82
+  - first:
+      213: 6889503733222309010
+    second: Moon Mage spritesheet (1)_83
+  - first:
+      213: -5514701125618385368
+    second: Moon Mage spritesheet (1)_84
+  - first:
+      213: 4943232565103992968
+    second: Moon Mage spritesheet (1)_85
+  - first:
+      213: 1984493093435551114
+    second: Moon Mage spritesheet (1)_86
+  - first:
+      213: 3811850773403697989
+    second: Moon Mage spritesheet (1)_87
+  - first:
+      213: -4796360211612664797
+    second: Moon Mage spritesheet (1)_88
+  - first:
+      213: 5891994353181613316
+    second: Moon Mage spritesheet (1)_89
+  - first:
+      213: -5036142021967864738
+    second: Moon Mage spritesheet (1)_90
+  - first:
+      213: 6991968561441576601
+    second: Moon Mage spritesheet (1)_91
+  - first:
+      213: -2482538243564612151
+    second: Moon Mage spritesheet (1)_92
+  - first:
+      213: 2755673195177137104
+    second: Moon Mage spritesheet (1)_93
+  - first:
+      213: -7896188188809811339
+    second: Moon Mage spritesheet (1)_94
+  - first:
+      213: 2644315288163322450
+    second: Moon Mage spritesheet (1)_95
+  - first:
+      213: -65320184928250542
+    second: Moon Mage spritesheet (1)_96
+  - first:
+      213: -2804686622008831072
+    second: Moon Mage spritesheet (1)_97
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 704
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0adf8d50f04501490800000000000000
+      internalID: -7777624132969497184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_1
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 704
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f32beec1cf259a870800000000000000
+      internalID: 8694571798386094655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_2
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 704
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfeca28d9aedff9c0800000000000000
+      internalID: -3891146731967295747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_3
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 704
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2e01dfe260e0b360800000000000000
+      internalID: 7183488121190813227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_4
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 704
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0331fa28f344f5b90800000000000000
+      internalID: -7251001835477069008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_5
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 704
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8bd50ba248bd58f0800000000000000
+      internalID: -550080982992692339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_6
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 704
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14e7c4d5aef484560800000000000000
+      internalID: 7298171064160124481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_7
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 704
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c39e3ff4d5e91e1b0800000000000000
+      internalID: -5629043935625877188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 528
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7c58ac79197352b0800000000000000
+      internalID: -5596996761518842758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_9
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 528
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc3ef51b571101dc0800000000000000
+      internalID: -3670414499122256947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_10
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 528
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8671259ccbf4bbb60800000000000000
+      internalID: 7762886054953228136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_11
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 528
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cff731ad5d256130800000000000000
+      internalID: 3559300960666255305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_12
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 528
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38d617c3ca6f2dd10800000000000000
+      internalID: 2149051191818022275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_13
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 528
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0b7a0aaabf848030800000000000000
+      internalID: 3496077242625850126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 352
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b303318013489a70800000000000000
+      internalID: 8833884407253369783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_15
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 352
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 049a11590583436b0800000000000000
+      internalID: -5317563341268211392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_16
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 352
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7910c096ac6d546d0800000000000000
+      internalID: -3006761011365805673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_17
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 352
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acec30549d4854270800000000000000
+      internalID: 8234133562417467082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_18
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 352
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9d3003c9c6516e50800000000000000
+      internalID: 6800812336866147741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 176
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6da3bcecb3ec88e0800000000000000
+      internalID: -1689725359606223508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_20
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 176
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd915e93a47bfee40800000000000000
+      internalID: 5687966383819004380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_21
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 176
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba1b621560cac3cf0800000000000000
+      internalID: -271152734417800789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_22
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 176
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5423641ac83d78f0800000000000000
+      internalID: -541213939638000550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_23
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 176
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc2ea10ac1b6b7a10800000000000000
+      internalID: 1908236637810909900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_24
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 176
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b67c8be2b4d53b3f0800000000000000
+      internalID: -886262124174063765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_25
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 176
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4dc19d80768a8450800000000000000
+      internalID: 6091829263941619023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_26
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 176
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db26e2089ea2235a0800000000000000
+      internalID: -6543120126249639235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ae0fc6ae3879a650800000000000000
+      internalID: 6244654568807796386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_28
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b00ed7adecef7cb30800000000000000
+      internalID: 4307691732985569291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_29
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b0f1fd6b2402fe20800000000000000
+      internalID: 3382770854683340980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_30
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 011edd2ca8ddd2510800000000000000
+      internalID: 1526119436793012496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_31
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8a466dfc8f90a8b0800000000000000
+      internalID: -5142935346561529204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_32
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64fd19122a0840be0800000000000000
+      internalID: -1511942141053378746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_33
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4e8a131acc89ac50800000000000000
+      internalID: 6677022722085260877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_34
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85534a1b899ac11b0800000000000000
+      internalID: -5684482156367956648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_35
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a3968b4bb01a40e0800000000000000
+      internalID: -2284995464325065824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_36
+      rect:
+        serializedVersion: 2
+        x: 1584
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b956f6fa483b82f0800000000000000
+      internalID: -969619400146134606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_37
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b74cf3aeba4757f70800000000000000
+      internalID: 9184375296810271867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_38
+      rect:
+        serializedVersion: 2
+        x: 1936
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c15a1eef81d92d7d0800000000000000
+      internalID: -2895078879764830948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_39
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0e1e37e55c5fdb10800000000000000
+      internalID: 2008425482852113930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_40
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae2f8206f82750d60800000000000000
+      internalID: 7855811085136884458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_41
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0e74bbf7321e6d60800000000000000
+      internalID: 7885260029227728399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_42
+      rect:
+        serializedVersion: 2
+        x: 2640
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf89d31384ad56950800000000000000
+      internalID: 6441794845621983483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_43
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 059d02b44ecc29a00800000000000000
+      internalID: 761896567864088912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_44
+      rect:
+        serializedVersion: 2
+        x: 2992
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7597d18a313c27680800000000000000
+      internalID: -8758723836089894569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_45
+      rect:
+        serializedVersion: 2
+        x: 3168
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43d507894cbca7bd0800000000000000
+      internalID: -2631566987013104332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon Mage spritesheet (1)_46
+      rect:
+        serializedVersion: 2
+        x: 3344
+        y: 0
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e28a9e024768b9030800000000000000
+      internalID: 3502540968537204782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: d11032fd1529dc547be350f83a623e77
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Moon Mage spritesheet (1)_0: -7777624132969497184
+      Moon Mage spritesheet (1)_1: 8694571798386094655
+      Moon Mage spritesheet (1)_10: 7762886054953228136
+      Moon Mage spritesheet (1)_11: 3559300960666255305
+      Moon Mage spritesheet (1)_12: 2149051191818022275
+      Moon Mage spritesheet (1)_13: 3496077242625850126
+      Moon Mage spritesheet (1)_14: 8833884407253369783
+      Moon Mage spritesheet (1)_15: -5317563341268211392
+      Moon Mage spritesheet (1)_16: -3006761011365805673
+      Moon Mage spritesheet (1)_17: 8234133562417467082
+      Moon Mage spritesheet (1)_18: 6800812336866147741
+      Moon Mage spritesheet (1)_19: -1689725359606223508
+      Moon Mage spritesheet (1)_2: -3891146731967295747
+      Moon Mage spritesheet (1)_20: 5687966383819004380
+      Moon Mage spritesheet (1)_21: -271152734417800789
+      Moon Mage spritesheet (1)_22: -541213939638000550
+      Moon Mage spritesheet (1)_23: 1908236637810909900
+      Moon Mage spritesheet (1)_24: -886262124174063765
+      Moon Mage spritesheet (1)_25: 6091829263941619023
+      Moon Mage spritesheet (1)_26: -6543120126249639235
+      Moon Mage spritesheet (1)_27: 6244654568807796386
+      Moon Mage spritesheet (1)_28: 4307691732985569291
+      Moon Mage spritesheet (1)_29: 3382770854683340980
+      Moon Mage spritesheet (1)_3: 7183488121190813227
+      Moon Mage spritesheet (1)_30: 1526119436793012496
+      Moon Mage spritesheet (1)_31: -5142935346561529204
+      Moon Mage spritesheet (1)_32: -1511942141053378746
+      Moon Mage spritesheet (1)_33: 6677022722085260877
+      Moon Mage spritesheet (1)_34: -5684482156367956648
+      Moon Mage spritesheet (1)_35: -2284995464325065824
+      Moon Mage spritesheet (1)_36: -969619400146134606
+      Moon Mage spritesheet (1)_37: 9184375296810271867
+      Moon Mage spritesheet (1)_38: -2895078879764830948
+      Moon Mage spritesheet (1)_39: 2008425482852113930
+      Moon Mage spritesheet (1)_4: -7251001835477069008
+      Moon Mage spritesheet (1)_40: 7855811085136884458
+      Moon Mage spritesheet (1)_41: 7885260029227728399
+      Moon Mage spritesheet (1)_42: 6441794845621983483
+      Moon Mage spritesheet (1)_43: 761896567864088912
+      Moon Mage spritesheet (1)_44: -8758723836089894569
+      Moon Mage spritesheet (1)_45: -2631566987013104332
+      Moon Mage spritesheet (1)_46: 3502540968537204782
+      Moon Mage spritesheet (1)_5: -550080982992692339
+      Moon Mage spritesheet (1)_6: 7298171064160124481
+      Moon Mage spritesheet (1)_7: -5629043935625877188
+      Moon Mage spritesheet (1)_8: -5596996761518842758
+      Moon Mage spritesheet (1)_9: -3670414499122256947
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -34,7 +34,7 @@ namespace Dojo.Torii
     {
         // Creates a new client and returns the pointer to it
         [DllImport("__Internal")]
-        public static extern void CreateClient(CString rpcUrl, CString toriiUrl, CString relayUrl, CString worldAddress, Action<IntPtr> cb);
+        public static extern void CreateClient(CString toriiUrl, CString relayUrl, CString worldAddress, Action<IntPtr> cb);
 
         // Returns a dictionary of all of the entities
         [DllImport("__Internal")]
@@ -56,10 +56,10 @@ namespace Dojo.Torii
 
         // Calls the callback at [callbackObjectName].[callbackMethodName] on event mnessage updated
         [DllImport("__Internal")]
-        public static extern void OnEventMessageUpdated(IntPtr clientPtr, CString clauses, Action<string, string> cb, Action<IntPtr> subCb);
+        public static extern void OnEventMessageUpdated(IntPtr clientPtr, CString clauses, bool historical, Action<string, string> cb, Action<IntPtr> subCb);
 
         [DllImport("__Internal")]
-        public static extern void UpdateEventMessageSubscription(IntPtr clientPtr, IntPtr subPtr, CString clauses);
+        public static extern void UpdateEventMessageSubscription(IntPtr clientPtr, IntPtr subPtr, CString clauses, bool historical);
 
         // Add models to sync
         [DllImport("__Internal")]
