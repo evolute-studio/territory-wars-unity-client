@@ -262,20 +262,57 @@ namespace TerritoryWars
         {
             ClashAnimation contestAnimation = CreateContestAnimation();
             Vector2Int coord = OnChainBoardDataConverter.GetPositionByRoot(root);
-            Vector3 position = SessionManager.Instance.Board.GetTileObject(coord.x, coord.y).transform.position;
-            Vector3 offset = new Vector3(0, 0.5f, 0);
-            int winner;
-            if (points[0] > points[1])
-                winner = 0;
-            else if (points[0] < points[1]) 
-                winner = 1;
+            CustomLogger.LogWarning($"ContestAnimation: {coord}, Root: {root}");
+            GameObject tile = SessionManager.Instance.Board.GetTileObject(coord.x, coord.y);
+            if (tile)
+            {
+                Vector3 position = tile.transform.position;
+                Vector3 offset = new Vector3(0, 0.5f, 0);
+                int winner;
+                if (points[0] > points[1])
+                    winner = 0;
+                else if (points[0] < points[1]) 
+                    winner = 1;
+                else
+                    winner = -1;
+                contestAnimation.Initialize(position + offset, winner, points, recoloring);
+            }
             else
-                winner = -1;
-            contestAnimation.Initialize(position + offset, winner, points, recoloring);
+            {
+                Coroutines.StartRoutine(RemoteContestAnimation(coord, points, contestAnimation, recoloring));
+            }
+            
         }
 
         private Dictionary<evolute_duel_CityNode, List<evolute_duel_CityNode>> cities;
         private Dictionary<evolute_duel_RoadNode, List<evolute_duel_RoadNode>> roads;
+
+        private IEnumerator RemoteContestAnimation(Vector2Int coord, ushort[] points, ClashAnimation contestAnimation, Action recoloring)
+        {
+            int i = 0;
+            int maxAttempts = 6;
+            while (i < maxAttempts)
+            {
+                GameObject tile = SessionManager.Instance.Board.GetTileObject(coord.x, coord.y);
+                if(tile){
+                    Vector3 position = tile.transform.position;
+                    Vector3 offset = new Vector3(0, 0.5f, 0);
+                    int winner;
+                    if (points[0] > points[1])
+                        winner = 0;
+                    else if (points[0] < points[1]) 
+                        winner = 1;
+                    else
+                        winner = -1;
+                    contestAnimation.Initialize(position + offset, winner, points, recoloring);
+                    
+                }
+                i++;
+                yield return new WaitForSeconds(0.5f);
+            }
+            
+            
+        }
 
         private void BuildCitySets()
         {
