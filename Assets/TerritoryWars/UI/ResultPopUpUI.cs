@@ -85,9 +85,8 @@ namespace TerritoryWars.UI
 
         public void SetPlayerHeroAnimator(RuntimeAnimatorController localPlayerAnimator, RuntimeAnimatorController remotePlayerAnimator)
         {
-            RuntimeAnimatorController[] playersAnimatorController = SetLocalPlayerData.GetLocalPlayerAnimator(localPlayerAnimator, remotePlayerAnimator);
-            _resultPopupComponents.Player1Animator.runtimeAnimatorController = playersAnimatorController[0];
-            _resultPopupComponents.Player2Animator.runtimeAnimatorController = playersAnimatorController[1];
+            _resultPopupComponents.Player1Animator.runtimeAnimatorController = localPlayerAnimator;
+            _resultPopupComponents.Player2Animator.runtimeAnimatorController = remotePlayerAnimator;
         }
 
         public void SetWinnerText(string winnerText)
