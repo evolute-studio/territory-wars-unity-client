@@ -255,19 +255,28 @@ namespace TerritoryWars.General
             path2[1] = new Vector3(SpawnPoints[1].x + 5, SpawnPoints[1].y + 7, 0);
             path2[2] = SpawnPoints[1];
 
-            GameObject player1 = Instantiate(PrefabsManager.Instance.GetNextPlayer(), path1[0], Quaternion.identity);
-            GameObject player2 = Instantiate(PrefabsManager.Instance.GetNextPlayer(), path2[0], Quaternion.identity);
-
+            
+            
             evolute_duel_Board board = DojoGameManager.Instance.SessionManager.LocalPlayerBoard;
 
+            evolute_duel_Player player1Data = DojoGameManager.Instance.GetPlayerData(board.player1.Item1.Hex());
+            evolute_duel_Player player2Data = DojoGameManager.Instance.GetPlayerData(board.player2.Item1.Hex());
+            
+            
+            
+            GameObject player1 = Instantiate(PrefabsManager.Instance.GetPlayer(player1Data.active_skin), path1[0], Quaternion.identity);
+            GameObject player2 = Instantiate(PrefabsManager.Instance.GetPlayer(player2Data.active_skin), path2[0], Quaternion.identity);
+            
             Players[0] = player1.GetComponent<Character>();
             Players[1] = player2.GetComponent<Character>();
             
             Players[0].Initialize(board.player1.Item1, board.player1.Item2, board.player1.Item3);
             Players[1].Initialize(board.player2.Item1, board.player2.Item2, board.player2.Item3);
             
-            PlayersData[0] = new PlayerData(DojoGameManager.Instance.GetPlayerData(Players[0].Address.Hex()));
-            PlayersData[1] = new PlayerData(DojoGameManager.Instance.GetPlayerData(Players[1].Address.Hex()));
+            PlayersData[0] = new PlayerData(player1Data);
+            PlayersData[1] = new PlayerData(player2Data);
+            
+            
 
 
 
@@ -407,8 +416,21 @@ namespace TerritoryWars.General
 
         private void OnTurnEnding()
         {
-            // Деактивуємо поточного персонажа
-            CurrentTurnPlayer.EndTurn();
+            if (IsLocalPlayerBlue)
+            {
+                CurrentTurnPlayer.EndTurn();
+            }
+            else
+            {
+                if (CurrentTurnPlayer == LocalPlayer)
+                {
+                    RemotePlayer.EndTurn();
+                }
+                else
+                {
+                    LocalPlayer.EndTurn();
+                }
+            }
 
         }
         

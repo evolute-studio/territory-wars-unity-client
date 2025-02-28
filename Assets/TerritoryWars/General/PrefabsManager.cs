@@ -32,6 +32,11 @@ namespace TerritoryWars.General
             return Players[_currentPlayerIndex];
         }
         
+        public GameObject GetPlayer(int index)
+        {
+            return Players[index];
+        }
+        
         public GameObject InstantiateObject(GameObject prefab)
         {
             return Instantiate(prefab);
