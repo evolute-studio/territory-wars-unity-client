@@ -388,8 +388,21 @@ namespace TerritoryWars.General
         private void OnTurnStarted()
         {
             // Активуємо поточного персонажа
-            CurrentTurnPlayer.StartSelecting();
-
+            if (IsLocalPlayerBlue)
+            {
+                CurrentTurnPlayer.StartSelecting();
+            }
+            else
+            {
+                if (CurrentTurnPlayer == LocalPlayer)
+                {
+                    RemotePlayer.StartSelecting();
+                }
+                else
+                {
+                    LocalPlayer.StartSelecting();
+                }
+            }
         }
 
         private void OnTurnEnding()
