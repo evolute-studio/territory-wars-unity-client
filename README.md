@@ -6,6 +6,8 @@ Information about on-chain part can be found here: [territory-wars-dojo](https:/
 
 Play Evolute Kingdom: Mage Duel there: https://mageduel.evolute.network/
 
+Playbook: https://evolute.notion.site/playbook
+
 # **Development Setup**
 
 - [Unity Editor](https://unity.com/releases/editor/whats-new/6000.0.25#notes): Unity 6 6000.0.25f1
