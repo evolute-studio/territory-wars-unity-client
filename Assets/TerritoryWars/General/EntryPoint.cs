@@ -152,7 +152,7 @@ namespace TerritoryWars.General
                 {
                     CustomLogger.LogInfo("Conditions met - loading menu");
                     //LoadMenu();
-                    break;ma
+                    break;
                     if(DojoGameManager.Instance.Synced || Time.time - startConenctionTime > 10 || DojoGameManager.Instance.WorldManager.transform.childCount > 0)
                     {
                         
@@ -165,7 +165,7 @@ namespace TerritoryWars.General
             CustomLogger.LogWarning("TryLoadMenu timed out after 30 attempts");
             
             //DojoGameManager.Instance.OnLocalPlayerSet.AddListener(LoadMenu);
-            StartCoroutine(WaitForAccountAndSync());
+            AfterAccountCreation();
         }
 
         public void LoadMenu()
