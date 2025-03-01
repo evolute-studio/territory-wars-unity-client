@@ -71,19 +71,27 @@ namespace TerritoryWars
             provider = new JsonRpcClient(dojoConfig.rpcUrl);
             masterAccount = new Account(provider, new SigningKey(gameManagerData.masterPrivateKey),
                 new FieldElement(gameManagerData.masterAddress));
-            burnerManager = new BurnerManager(provider, masterAccount);
+            
+            
+            Invoke(nameof(createBurners), 1f);
 
+         
+            //WorldManager.synchronizationMaster.OnModelUpdated.AddListener(ModelUpdated);
+            //SimpleAccountCreation(3);
+            
+        }
+
+        private void createBurners()
+        {
+            burnerManager = new BurnerManager(provider, masterAccount);
+            
+            
             WorldManager.synchronizationMaster.OnEventMessage.AddListener(OnDojoEventReceived);
             WorldManager.synchronizationMaster.OnEventMessage.AddListener(OnEventMessage);
             WorldManager.synchronizationMaster.OnSynchronized.AddListener(OnSynchronized);
             WorldManager.synchronizationMaster.OnEntitySpawned.AddListener(SpawnEntity);
-            //WorldManager.synchronizationMaster.OnModelUpdated.AddListener(ModelUpdated);
             
             TryCreateAccount(3, false);
-            
-            
-            //SimpleAccountCreation(3);
-            
         }
 
         private IEnumerator WaitForAccount()
@@ -344,8 +352,8 @@ namespace TerritoryWars
         
         private void PlayerUsernameChanged(evolute_duel_PlayerUsernameChanged eventMessage)
         {
-            CustomLogger.LogWarning("DANIL1" + LocalBurnerAccount.Address.Hex());
-            CustomLogger.LogWarning("DANIL2" + eventMessage.player_id.Hex());
+            CustomLogger.LogWarning("Burner account address:" + LocalBurnerAccount.Address.Hex());
+            CustomLogger.LogWarning("Real caller address from event: " + eventMessage.player_id.Hex());
             if(LocalBurnerAccount == null || LocalBurnerAccount.Address.Hex() != eventMessage.player_id.Hex()) return;
             MenuUIController.Instance._namePanelController.SetName(CairoFieldsConverter.GetStringFromFieldElement(eventMessage.new_username));
         }
@@ -473,6 +481,8 @@ namespace TerritoryWars
                 FieldElement username = CairoFieldsConverter.GetFieldElementFromString(playerName);
                 var txHash = await PlayerProfileSystem.change_username(LocalBurnerAccount, username);
                 CustomLogger.LogInfo($"Set Player Name: {playerName + "; tx" + txHash.Hex()}");
+                CustomLogger.LogInfo($"Set Player Name, signer address: {LocalBurnerAccount.Address.Hex()}");
+                CustomLogger.LogInfo($"Set Player Name, signer pub key: {LocalBurnerAccount.Signer.PublicKey.Inner.Hex()}");
             }
             catch (Exception e)
             {
@@ -495,6 +505,8 @@ namespace TerritoryWars
             {
                 var txHash = await PlayerProfileSystem.change_username(LocalBurnerAccount, playerName);
                 CustomLogger.LogInfo($"Set Player Name: {playerName + "; tx" + txHash.Hex()}");
+                CustomLogger.LogInfo($"Set Player Name, burner address: {LocalBurnerAccount.Address.Hex()}");
+                CustomLogger.LogInfo($"Set Player Name, signer pub key: {LocalBurnerAccount.Signer.PublicKey.Inner.Hex()}");
             }
             catch (Exception e)
             {
