@@ -1,25 +1,36 @@
-﻿using UnityEngine;
+﻿using TerritoryWars.General;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace TerritoryWars.UI
 {
     public class CancelGamePopup : MonoBehaviour
     {
-        public GameObject CancelGamePopupGO;
-        public Button CancelButton;
+        public GameObject PopUp;
         public Button ConfirmButton;
-
-
+        public Button CancelButton;
         
-        
-        public void Initialization()
+
+        public void Start()
         {
-            
+            ConfirmButton.onClick.AddListener(CancelGame);
+            CancelButton.onClick.AddListener(HidePopUp);
+        }
+
+        private void CancelGame()
+        {
+            DojoGameManager.Instance.CancelGame();
+            CustomSceneManager.Instance.LoadLobby();
         }
         
-        public void SetCancelPopupGameActive(bool active)
+        private void HidePopUp()
         {
-            CancelGamePopupGO.SetActive(active);
+            SetActive(false);
+        }
+        
+        public void SetActive(bool active)
+        {
+            PopUp.SetActive(active);
         }
     }
 }

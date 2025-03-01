@@ -26,6 +26,8 @@ public class SessionUI : MonoBehaviour
     public TextMeshProUGUI DeckCountText; 
     public Button CancelGameButton;
     
+    public CancelGamePopup CancelGamePopUp;
+    
     
     public List<Image> imagePlayers;
 
@@ -54,8 +56,7 @@ public class SessionUI : MonoBehaviour
         }
         CancelGameButton.onClick.AddListener(() =>
         {
-            DojoGameManager.Instance.CancelGame();
-            CustomSceneManager.Instance.LoadLobby();
+            CancelGamePopUp.SetActive(true);
         });
         
         SetPlayersAvatars(charactersObject.GetAvatar(PlayerCharactersManager.GetCurrentCharacterId()), 

@@ -95,6 +95,9 @@ namespace TerritoryWars
                 case evolute_duel_CityContestDraw cityContestDraw:
                     CityContestDraw(cityContestDraw);
                     break;
+                case evolute_duel_GameCanceled gameCanceled:
+                    GameCanceled(gameCanceled);
+                    break;
             }
 
             if (_dojoGameManager.IsTargetModel(modelInstance, nameof(evolute_duel_Moved)))
@@ -248,6 +251,17 @@ namespace TerritoryWars
 
             CustomLogger.LogEvent(
                 $"[CityContestDraw] | BluePoints: {blue_points} | RedPoints: {red_points} | BoardId: {board_id}");
+        }
+        
+        private void GameCanceled(evolute_duel_GameCanceled eventModel)
+        {
+            string hostPlayer = eventModel.host_player.Hex();
+            if(hostPlayer != SessionManager.Instance.LocalPlayer.Address.Hex() &&
+               hostPlayer != SessionManager.Instance.RemotePlayer.Address.Hex()) return;
+            
+            SimpleStorage.ClearCurrentBoardId();
+            CustomSceneManager.Instance.LoadLobby();
+            //GameUI.Instance.ShowResultPopUp();
         }
 
         

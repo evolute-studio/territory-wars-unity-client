@@ -83,14 +83,14 @@ namespace TerritoryWars
             
             
             //SimpleAccountCreation(3);
-            StartCoroutine(WaitForAccount());
+            
         }
 
         private IEnumerator WaitForAccount()
         {
             while (true)
             {
-                if (LocalBurnerAccount != null)
+                if (LocalBurnerAccount != null && Synced)
                 {
                     AfterAccountCreation();
                     break;
@@ -102,10 +102,12 @@ namespace TerritoryWars
         public void AfterAccountCreation()
         {
             string currentBoardId = SimpleStorage.GetCurrentBoardId();
+            CustomLogger.LogInfo($"Current board id: {currentBoardId}");
             if (!String.IsNullOrEmpty(currentBoardId))
             {
                 SessionManager = new DojoSessionManager(this);
-                evolute_duel_Board board = SessionManager.GetBoard(currentBoardId, true);
+                evolute_duel_Board board = SessionManager.GetBoard(LocalBurnerAccount.Address.Hex(), true);
+                CustomLogger.LogInfo($"Board: {board}");
                 if (board == null)
                 {
                     return;
@@ -115,6 +117,7 @@ namespace TerritoryWars
                     GameState.Finished => true,
                     _ => false
                 };
+                CustomLogger.LogInfo($"IsFinished: {isFinished}");
                 if (isFinished)
                 {
                     SimpleStorage.ClearCurrentBoardId();
@@ -123,6 +126,7 @@ namespace TerritoryWars
 
                 CustomSceneManager.Instance.LoadSession();
             } 
+            
 
         }
         
