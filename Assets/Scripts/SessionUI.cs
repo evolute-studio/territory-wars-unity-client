@@ -114,6 +114,16 @@ public class SessionUI : MonoBehaviour
         players[player].jokersImage[players[player].jokerCount].color = JokerNotAvailableColor;
         players[player].jokerCountText.text = players[player].jokerCount.ToString();
     }
+
+    public void UpdateJokerText(int player)
+    {
+        if (!SessionManager.Instance.IsLocalPlayerHost)
+        {
+            player = player == 0 ? 1 : 0;
+        }
+
+        players[player].jokerCountText.text = players[player].jokerCount.ToString();
+    }
     
     public void UpdateDeckCount()
     {
