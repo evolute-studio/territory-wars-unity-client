@@ -95,10 +95,16 @@
             if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
                 const aspectRatio = window.innerWidth / window.innerHeight;
                 const portraitOverlay = document.getElementById('portrait-overlay');
+                const unityContainer = document.getElementById('unity-container');
+                const loadingBar = document.getElementById('unity-loading-bar');
 
                 // Check if device is in portrait orientation or aspect ratio is less than 1.46
                 if (window.innerHeight > window.innerWidth || aspectRatio < 1.46) {
                     portraitOverlay.style.display = 'flex';
+                    // Hide the Unity container and loading bar to prevent game from loading behind overlay
+                    unityContainer.style.display = 'none';
+                    loadingBar.style.display = 'none';
+
                     // If game instance exists, pause the game
                     if (window.gameInstance) {
                         try {
@@ -107,8 +113,22 @@
                             console.log('Could not pause game');
                         }
                     }
+
+                    // Stop loading the Unity instance if we're in portrait mode
+                    if (!window.gameInstance && window.stopUnityLoading) {
+                        window.stopUnityLoading = true;
+                    }
                 } else {
                     portraitOverlay.style.display = 'none';
+                    // Show the Unity container
+                    unityContainer.style.display = 'block';
+
+                    // If game loading was stopped and we still don't have a game instance, reload the page
+                    if (window.stopUnityLoading && !window.gameInstance) {
+                        window.location.reload();
+                        return;
+                    }
+
                     // If game instance exists, resume the game
                     if (window.gameInstance) {
                         try {
@@ -124,7 +144,14 @@
         // Check orientation when page loads and whenever window is resized
         window.addEventListener('load', checkOrientation);
         window.addEventListener('resize', checkOrientation);
-        window.addEventListener('orientationchange', checkOrientation);
+
+        // Reload the page when orientation changes
+        window.addEventListener('orientationchange', function() {
+            // Small delay to allow orientation to fully change before reloading
+            setTimeout(function() {
+                window.location.reload();
+            }, 100);
+        });
     </script>
 </head>
 <body>
@@ -271,29 +298,41 @@
     // document.body.appendChild(starknetScript);
 
     var gameInstance = null;
-    var script = document.createElement("script");
-    script.src = loaderUrl;
-    script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-            progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
-            gameInstance = unityInstance;
-            window.gameInstance = unityInstance; // Make it accessible globally
-            loadingBar.style.display = "none";
-            // Check orientation once the game is loaded
-            checkOrientation();
-            #if SHOW_DIAGNOSTICS
-            diagnostics_icon.onclick = () => {
-                unityDiagnostics.openDiagnosticsDiv(unityInstance.GetMemoryInfo);
-            };
-            #endif
-            fullscreenButton.onclick = () => {
-                unityInstance.SetFullscreen(1);
-            };
-        }).catch((message) => {
-            alert(message);
-        });
-    };
+    // Initialize flag to potentially stop Unity loading
+    window.stopUnityLoading = false;
+
+    // Check orientation before loading Unity
+    checkOrientation();
+
+    // Only load Unity if we're not in portrait mode/incorrect aspect ratio
+    if (!window.stopUnityLoading) {
+        var script = document.createElement("script");
+        script.src = loaderUrl;
+        script.onload = () => {
+            // Check one more time before creating Unity instance
+            if (!window.stopUnityLoading) {
+                createUnityInstance(canvas, config, (progress) => {
+                    progressBarFull.style.width = 100 * progress + "%";
+                }).then((unityInstance) => {
+                    gameInstance = unityInstance;
+                    window.gameInstance = unityInstance; // Make it accessible globally
+                    loadingBar.style.display = "none";
+                    // Check orientation once the game is loaded
+                    checkOrientation();
+                    #if SHOW_DIAGNOSTICS
+                    diagnostics_icon.onclick = () => {
+                        unityDiagnostics.openDiagnosticsDiv(unityInstance.GetMemoryInfo);
+                    };
+                    #endif
+                    fullscreenButton.onclick = () => {
+                        unityInstance.SetFullscreen(1);
+                    };
+                }).catch((message) => {
+                    alert(message);
+                });
+            }
+        };
+    }
 
     document.body.appendChild(script);
 
