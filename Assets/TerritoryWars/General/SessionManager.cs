@@ -346,6 +346,7 @@ namespace TerritoryWars.General
             currentTile.OwnerId = LocalPlayer.LocalId;
             TileSelector.StartTilePlacement(currentTile);
             gameUI.SetActiveDeckContainer(true);
+            gameUI.SessionUI.UpdateJokerText(CurrentTurnPlayer.LocalId);
         }
 
         private void StartRemoteTurn()
@@ -355,6 +356,7 @@ namespace TerritoryWars.General
             gameUI.SetSkipTurnButtonActive(false);
             UpdateTile();
             gameUI.SetActiveDeckContainer(false);
+            gameUI.SessionUI.UpdateJokerText(CurrentTurnPlayer.LocalId);
         }
 
         private void HandleMove(string playerAddress, TileData tile, Vector2Int position, int rotation, bool isJoker)
