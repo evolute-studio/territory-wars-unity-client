@@ -204,9 +204,9 @@ namespace TerritoryWars
                     }
                     else
                     {
-                        CustomLogger.LogInfo("Burner account found. Using last account.");
+                        CustomLogger.LogInfo("Burner account found. Using last account: " + burnerManager.CurrentBurner.Address.Hex());
                         //use last burner account
-                        LocalBurnerAccount = burnerManager.Burners.Last();
+                        LocalBurnerAccount = burnerManager.CurrentBurner;
                     }
                 }
 
@@ -344,6 +344,8 @@ namespace TerritoryWars
         
         private void PlayerUsernameChanged(evolute_duel_PlayerUsernameChanged eventMessage)
         {
+            CustomLogger.LogWarning("DANIL1" + LocalBurnerAccount.Address.Hex());
+            CustomLogger.LogWarning("DANIL2" + eventMessage.player_id.Hex());
             if(LocalBurnerAccount == null || LocalBurnerAccount.Address.Hex() != eventMessage.player_id.Hex()) return;
             MenuUIController.Instance._namePanelController.SetName(CairoFieldsConverter.GetStringFromFieldElement(eventMessage.new_username));
         }
@@ -470,7 +472,7 @@ namespace TerritoryWars
             {
                 FieldElement username = CairoFieldsConverter.GetFieldElementFromString(playerName);
                 var txHash = await PlayerProfileSystem.change_username(LocalBurnerAccount, username);
-                CustomLogger.LogInfo($"Set Player Name: {txHash.Hex()}");
+                CustomLogger.LogInfo($"Set Player Name: {playerName + "; tx" + txHash.Hex()}");
             }
             catch (Exception e)
             {
@@ -492,7 +494,7 @@ namespace TerritoryWars
             try
             {
                 var txHash = await PlayerProfileSystem.change_username(LocalBurnerAccount, playerName);
-                CustomLogger.LogInfo($"Set Player Name: {txHash.Hex()}");
+                CustomLogger.LogInfo($"Set Player Name: {playerName + "; tx" + txHash.Hex()}");
             }
             catch (Exception e)
             {
