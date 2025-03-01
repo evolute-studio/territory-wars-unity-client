@@ -79,8 +79,35 @@ namespace TerritoryWars
             WorldManager.synchronizationMaster.OnEntitySpawned.AddListener(SpawnEntity);
             //WorldManager.synchronizationMaster.OnModelUpdated.AddListener(ModelUpdated);
             
-            //TryCreateAccount(3, true);
-            SimpleAccountCreation(3);
+            TryCreateAccount(3, false);
+            
+            
+            //SimpleAccountCreation(3);
+            StartCoroutine(WaitForAccount());
+        }
+
+        private IEnumerator WaitForAccount()
+        {
+            while (true)
+            {
+                if (LocalBurnerAccount != null)
+                {
+                    AfterAccountCreation();
+                    break;
+                }
+                yield return new WaitForSeconds(1);
+            }
+        }
+
+        public void AfterAccountCreation()
+        {
+            string currentBoardId = SimpleStorage.GetCurrentBoardId();
+            if (!String.IsNullOrEmpty(currentBoardId))
+            {
+                SessionManager = new DojoSessionManager(this);
+                CustomSceneManager.Instance.LoadSession();
+            } 
+
         }
         
         private async void SimpleAccountCreation(int attempts)
@@ -263,7 +290,15 @@ namespace TerritoryWars
             }
             catch (Exception e)
             {
-                CustomLogger.LogError($"Failed to set player skin. {e}");
+                if (e.Message.Contains("ContractNotFound"))
+                {
+                    CustomLogger.LogError("The contract was not found. Maybe a problem in creating an account");
+                    SimpleAccountCreation(3);
+                }
+                else
+                {
+                    CustomLogger.LogError($"Failed to set player skin. {e}");
+                }
             }
         }
         
@@ -419,7 +454,16 @@ namespace TerritoryWars
             }
             catch (Exception e)
             {
-                CustomLogger.LogError($"Failed to set player name. {e}");
+                if (e.Message.Contains("ContractNotFound"))
+                {
+                    CustomLogger.LogError("The contract was not found. Maybe a problem in creating an account");
+                    SimpleAccountCreation(3);
+                }
+                else
+                {
+                    CustomLogger.LogError($"Failed to set player name. {e}");
+                }
+                
             }
         }
         
@@ -432,7 +476,15 @@ namespace TerritoryWars
             }
             catch (Exception e)
             {
-                CustomLogger.LogError($"Failed to set player name. {e}");
+                if (e.Message.Contains("ContractNotFound"))
+                {
+                    CustomLogger.LogError("The contract was not found. Maybe a problem in creating an account");
+                    SimpleAccountCreation(3);
+                }
+                else
+                {
+                    CustomLogger.LogError($"Failed to set player name. {e}");
+                }
             }
         }
         

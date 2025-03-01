@@ -33,8 +33,9 @@ public class NamePanelController : MonoBehaviour
         {
             CustomLogger.LogWarning("profile is null");
             
-            //DojoGameManager.Instance.SetPlayerName(CairoFieldsConverter.GetFieldElementFromString("Default" + UnityEngine.Random.Range(0, 1000)));
-            SetName(DojoGameManager.Instance.LocalBurnerAccount.Address.Hex());
+            string defaultName = DojoGameManager.Instance.LocalBurnerAccount.Address.Hex().Substring(0, 10);
+            DojoGameManager.Instance.SetPlayerName(CairoFieldsConverter.GetFieldElementFromString(defaultName));
+            SetName(defaultName);
             SetEvoluteBalance(0);
             return;
         }

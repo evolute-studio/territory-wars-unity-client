@@ -50,6 +50,11 @@ namespace TerritoryWars.General
                 Debug.LogError("SessionManager already exists. Deleting new instance.");
                 Destroy(gameObject);
             }
+
+            if (!CustomSceneManager.Instance.LoadingScreen.IsLoading)
+            {
+                CustomSceneManager.Instance.LoadingScreen.SetActive(true);
+            }
         }
 
 
@@ -190,6 +195,7 @@ namespace TerritoryWars.General
                 Option<FieldElement>.Some some => some.value,
                 _ => null
             };
+            SimpleStorage.SaveCurrentBoardId(board.id.Hex());
             
             InitializePlayers();
             Board.Initialize();
@@ -473,6 +479,13 @@ namespace TerritoryWars.General
         public void CompleteEndTurn(string lastMovePlayerAddress)
         {
             GameUI.Instance.SessionUI.UpdateDeckCount();
+            
+            evolute_duel_Board board = DojoGameManager.Instance.SessionManager.LocalPlayerBoard;
+            Players[0].UpdateData(board.player1.Item3);
+            Players[1].UpdateData(board.player2.Item3);
+            
+            
+            
             
             bool isLocalPlayer = lastMovePlayerAddress == LocalPlayer.Address.Hex();
             

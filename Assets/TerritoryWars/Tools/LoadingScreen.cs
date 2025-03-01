@@ -7,6 +7,8 @@ namespace TerritoryWars.Tools
 {
     public class LoadingScreen : MonoBehaviour
     {
+        public bool IsLoading => LoadingScreenObject.activeSelf;
+        
         public GameObject LoadingScreenObject;
         public Button CancelButton;
         public TextMeshProUGUI loadingText;

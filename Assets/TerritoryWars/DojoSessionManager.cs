@@ -165,8 +165,8 @@ namespace TerritoryWars
             if (board.id.Hex() == board_id.Hex())
             {
                 CustomLogger.LogEvent($"[GameFinished] | BoardId: {board_id.Hex()}");
+                SimpleStorage.ClearCurrentBoardId();
                 GameUI.Instance.ShowResultPopUp();
-                
             }
         }
 
