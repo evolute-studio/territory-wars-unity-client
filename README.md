@@ -18,7 +18,7 @@ Play Evolute Kingdom - Mage Duel 👉 https://mageduel.evolute.network/
 
 To run the client, follow simple steps:
 
-1. Open the scene `Assets/Scenes/Start.scene`
+1. Open the scene `Assets/Scenes/StartScene.scene`
 2. Find the game object: `WorldManager`.
 3. In the `WorldManager` and `DojoGameManager` components, set the connection configuration in the `Dojo Config` field. An example of configurations can be found here: `Assets/TerritoryWars/DojoConfig/`.
 4. Set the address for the `Game` and `Player_profile_actions` contracts
