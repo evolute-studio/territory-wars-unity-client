@@ -24365,7 +24365,7 @@ MonoBehaviour:
   panSpeed: 1
   zoomSpeed: 20
   minZoom: 2
-  maxZoom: 12
+  maxZoom: 4
 --- !u!114 &815765893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53597,7 +53597,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 146, y: -438.6}
+  m_AnchoredPosition: {x: 146, y: -438.59998}
   m_SizeDelta: {x: 58.42, y: 23.22998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1821238661
