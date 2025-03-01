@@ -485,10 +485,10 @@ namespace TerritoryWars
 
         public evolute_duel_Board GetLocalPlayerBoard(bool isFinished = false)
         {
-            return GetBoard(_dojoGameManager.LocalBurnerAccount.Address, isFinished);
+            return GetBoard(_dojoGameManager.LocalBurnerAccount.Address.Hex(), isFinished);
         }
 
-        private evolute_duel_Board GetBoard(FieldElement player, bool isFinished = false)
+        public evolute_duel_Board GetBoard(string playerAddress, bool isFinished = false)
         {
             GameObject[] boardsGO = _dojoGameManager.WorldManager.Entities<evolute_duel_Board>();
             foreach (var boardGO in boardsGO)
@@ -497,7 +497,7 @@ namespace TerritoryWars
                 {
                     if (board.game_state is GameState.Finished && !isFinished) continue;
                     //public (FieldElement, PlayerSide, byte, bool) player1;
-                    if (board.player1.Item1.Hex() == player.Hex() || board.player2.Item1.Hex() == player.Hex())
+                    if (board.player1.Item1.Hex() == playerAddress|| board.player2.Item1.Hex() == playerAddress)
                     {
                         return board;
                     }
@@ -505,6 +505,7 @@ namespace TerritoryWars
             }
             return null;
         }
+        
         
         public TileData GetTopTile()
         {

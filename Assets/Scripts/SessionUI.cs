@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TerritoryWars;
 using TerritoryWars.General;
 using TerritoryWars.Tile;
 using TerritoryWars.Tools;
@@ -23,6 +24,7 @@ public class SessionUI : MonoBehaviour
     public TextMeshProUGUI LocalPlayerScoreText;
     public TextMeshProUGUI RemotePlayerScoreText;
     public TextMeshProUGUI DeckCountText; 
+    public Button CancelGameButton;
     
     
     public List<Image> imagePlayers;
@@ -50,6 +52,11 @@ public class SessionUI : MonoBehaviour
                 joker.color = JokerAvailableColor;
             }
         }
+        CancelGameButton.onClick.AddListener(() =>
+        {
+            DojoGameManager.Instance.CancelGame();
+            CustomSceneManager.Instance.LoadLobby();
+        });
         
         SetPlayersAvatars(charactersObject.GetAvatar(PlayerCharactersManager.GetCurrentCharacterId()), 
             charactersObject.GetAvatar(PlayerCharactersManager.GetOpponentCurrentCharacterId()));
@@ -100,7 +107,7 @@ public class SessionUI : MonoBehaviour
         RemotePlayerName.text = playerNames[1];
     }
 
-    public void UseJoker(int player) // логіку сюди для відображення корректної кількості джокерів для локал плеєра і спавн персонажів правильний
+    public void UseJoker(int player)
     {
         if (!SessionManager.Instance.IsLocalPlayerHost)
         {

@@ -105,6 +105,22 @@ namespace TerritoryWars
             if (!String.IsNullOrEmpty(currentBoardId))
             {
                 SessionManager = new DojoSessionManager(this);
+                evolute_duel_Board board = SessionManager.GetBoard(currentBoardId, true);
+                if (board == null)
+                {
+                    return;
+                }
+                var isFinished = board.game_state switch
+                {
+                    GameState.Finished => true,
+                    _ => false
+                };
+                if (isFinished)
+                {
+                    SimpleStorage.ClearCurrentBoardId();
+                    return;
+                }
+
                 CustomSceneManager.Instance.LoadSession();
             } 
 
