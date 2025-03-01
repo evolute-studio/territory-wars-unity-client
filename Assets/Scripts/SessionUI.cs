@@ -100,7 +100,7 @@ public class SessionUI : MonoBehaviour
         RemotePlayerName.text = playerNames[1];
     }
 
-    public void UseJoker(int player) // логіку сюди для відображення корректної кількості джокерів для локал плеєра і спавн персонажів правильний
+    public void UseJoker(int player) // logic here for displaying the correct number of jokers for the local player and spawning characters correctly
     {
         if (!SessionManager.Instance.IsLocalPlayerHost)
         {
@@ -112,7 +112,17 @@ public class SessionUI : MonoBehaviour
 
         players[player].jokerCount--;
         players[player].jokersImage[players[player].jokerCount].color = JokerNotAvailableColor;
-        players[player].jokerCountText.text = players[player].jokerCount.ToString();
+        players[player].jokerCountText.text = SessionManager.Instance.Players[player].JokerCount.ToString();
+    }
+
+    public void UpdateJokerText(int player)
+    {
+        if (!SessionManager.Instance.IsLocalPlayerHost)
+        {
+            player = player == 0 ? 1 : 0;
+        }
+
+        players[player].jokerCountText.text = SessionManager.Instance.Players[player].JokerCount.ToString();
     }
     
     public void UpdateDeckCount()
