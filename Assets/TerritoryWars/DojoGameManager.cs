@@ -344,8 +344,6 @@ namespace TerritoryWars
         
         private void PlayerUsernameChanged(evolute_duel_PlayerUsernameChanged eventMessage)
         {
-            CustomLogger.LogWarning("DANIL1" + LocalBurnerAccount.Address.Hex());
-            CustomLogger.LogWarning("DANIL2" + eventMessage.player_id.Hex());
             if(LocalBurnerAccount == null || LocalBurnerAccount.Address.Hex() != eventMessage.player_id.Hex()) return;
             MenuUIController.Instance._namePanelController.SetName(CairoFieldsConverter.GetStringFromFieldElement(eventMessage.new_username));
         }
