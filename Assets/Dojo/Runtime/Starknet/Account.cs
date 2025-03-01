@@ -27,6 +27,9 @@ namespace Dojo.Starknet
         public Account(JsonRpcClient provider, SigningKey privateKey, FieldElement address)
         {
             createAccount(provider, privateKey, address);
+            Debug.Log("Result Account:" + address.Hex());
+            Debug.Log("Result Account priv key:" + privateKey.Inner.Hex());
+            Debug.Log("Result Account public key:" + privateKey.PublicKey.Inner.Hex());
             Address = address;
             Signer = privateKey;
         }
@@ -35,6 +38,8 @@ namespace Dojo.Starknet
         {
             var resultAccount = dojo.account_new(provider.client, privateKey.Inner.Inner,
                 CString.FromString(address.Hex()));
+            
+            Debug.Log("Result Account:" + resultAccount);
             if (resultAccount.tag == dojo.ResultAccount_Tag.ErrAccount)
             {
                 throw new Exception(resultAccount.err.message);

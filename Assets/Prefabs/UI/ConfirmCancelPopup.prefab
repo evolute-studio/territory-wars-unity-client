@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4564151608786886619}
   - component: {fileID: 8693976733468880314}
   - component: {fileID: 4918318697935570008}
+  - component: {fileID: 597995573626080662}
   m_Layer: 5
   m_Name: ConfirmButton
   m_TagString: Untagged
@@ -34,9 +35,9 @@ RectTransform:
   - {fileID: 936153918017439876}
   m_Father: {fileID: 8005526890864759473}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 251.84, y: 38}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -375, y: 38}
   m_SizeDelta: {x: 176, y: 70}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &4564151608786886619
@@ -121,6 +122,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &597995573626080662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3323535683712220273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a43edcbda0334476b440977c0127c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorType: pointer
 --- !u!1 &3627416389113352019
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,8 +169,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 50}
-  m_SizeDelta: {x: -100, y: -200}
+  m_AnchoredPosition: {x: 0, y: 26.699997}
+  m_SizeDelta: {x: -170, y: -200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7760300416950950063
 CanvasRenderer:
@@ -186,7 +200,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You definitely want to cancel the game?
+  m_text: Are you sure you want to exit the game?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 24138cd20de74b549a41ee210f236a43, type: 2}
   m_sharedMaterial: {fileID: 3585466013461026599, guid: 24138cd20de74b549a41ee210f236a43, type: 2}
@@ -220,7 +234,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -369,7 +383,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.2599945, y: 4.0699997}
+  m_AnchoredPosition: {x: 0.26000977, y: 4.0699997}
   m_SizeDelta: {x: -16.28, y: -24.95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1004583989531273807
@@ -400,7 +414,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: CONFIRM
+  m_text: YES
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 24138cd20de74b549a41ee210f236a43, type: 2}
   m_sharedMaterial: {fileID: 3585466013461026599, guid: 24138cd20de74b549a41ee210f236a43, type: 2}
@@ -427,8 +441,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34
-  m_fontSizeBase: 34
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -483,6 +497,7 @@ GameObject:
   - component: {fileID: 1381574840914554752}
   - component: {fileID: 4164209448622518703}
   - component: {fileID: 5337402798922030460}
+  - component: {fileID: 2065422471700579235}
   m_Layer: 5
   m_Name: CancelButton
   m_TagString: Untagged
@@ -507,7 +522,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 583.5, y: 38}
+  m_AnchoredPosition: {x: 551, y: 38}
   m_SizeDelta: {x: 176, y: 70}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &1381574840914554752
@@ -592,6 +607,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2065422471700579235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7543490506263863277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a43edcbda0334476b440977c0127c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorType: pointer
 --- !u!1 &8411925590263782384
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,7 +685,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: CANCEL
+  m_text: NO
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 24138cd20de74b549a41ee210f236a43, type: 2}
   m_sharedMaterial: {fileID: 3585466013461026599, guid: 24138cd20de74b549a41ee210f236a43, type: 2}
@@ -684,8 +712,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34
-  m_fontSizeBase: 34
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -744,7 +772,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8560468876275672868
 RectTransform:
   m_ObjectHideFlags: 0
