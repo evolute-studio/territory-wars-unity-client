@@ -79,7 +79,7 @@
                     // We delete all records that do not end on /Playerprefs
                     keys.forEach(function(key) {
                         if (!key.endsWith('/PlayerPrefs')) {
-                            // objectStore.delete(key);
+                            objectStore.delete(key);
                         }
                     });
                 };
