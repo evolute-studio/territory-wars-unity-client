@@ -19,7 +19,7 @@ MonoBehaviour:
   worldAddress:
     hex: 0x06a4d87ac4a224fbc633b46ec896545f8783cfc6d87ce8a4ef8c5630a3c17711
   query:
-    limit: 1000
+    limit: 10000
     offset: 0
     dont_include_hashed_keys: 0
     order_by: []

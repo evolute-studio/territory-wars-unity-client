@@ -62,7 +62,6 @@ namespace TerritoryWars
         public DojoSessionManager SessionManager;
         
         public UnityEvent OnLocalPlayerSet = new UnityEvent();
-        public UnityEvent OnInitialized = new UnityEvent();
         
         public bool Synced { get; private set; }
 
@@ -76,7 +75,7 @@ namespace TerritoryWars
             
             Invoke(nameof(createBurners), 1f);
 
-         
+            WorldManager.synchronizationMaster.OnSynchronized.AddListener(TurnOffLoading);
             //WorldManager.synchronizationMaster.OnModelUpdated.AddListener(ModelUpdated);
             //SimpleAccountCreation(3);
             
@@ -93,28 +92,19 @@ namespace TerritoryWars
             WorldManager.synchronizationMaster.OnEntitySpawned.AddListener(SpawnEntity);
             
             TryCreateAccount(3, false);
-            
-            Invoke(nameof(Initialized), 1f);
         }
 
-        private void Initialized()
+
+
+        private void TurnOffLoading(List<GameObject> list)
         {
-            OnInitialized?.Invoke();
-        }
+            WorldManager.synchronizationMaster.OnSynchronized.RemoveListener(TurnOffLoading);
+            CustomSceneManager.Instance.LoadingScreen.SetActive(false);
+            AfterAccountCreation();
+            //MenuUIController.Instance._namePanelController.Initialize();
 
-        private IEnumerator WaitForAccount()
-        {
-            while (true)
-            {
-                if (LocalBurnerAccount != null && Synced)
-                {
-                    AfterAccountCreation();
-                    break;
-                }
-                yield return new WaitForSeconds(1);
-            }
         }
-
+        
         public void AfterAccountCreation()
         {
             string currentBoardId = SimpleStorage.GetCurrentBoardId();
@@ -137,12 +127,16 @@ namespace TerritoryWars
                 if (isFinished)
                 {
                     SimpleStorage.ClearCurrentBoardId();
+                    CustomSceneManager.Instance.LoadLobby();
                     return;
                 }
 
                 CustomSceneManager.Instance.LoadSession();
             } 
-            
+            else
+            {
+                CustomSceneManager.Instance.LoadLobby();
+            }
 
         }
         

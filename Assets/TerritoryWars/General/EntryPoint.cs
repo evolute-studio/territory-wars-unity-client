@@ -165,7 +165,6 @@ namespace TerritoryWars.General
             CustomLogger.LogWarning("TryLoadMenu timed out after 30 attempts");
             
             //DojoGameManager.Instance.OnLocalPlayerSet.AddListener(LoadMenu);
-            AfterAccountCreation();
         }
 
         public void LoadMenu()
@@ -175,54 +174,8 @@ namespace TerritoryWars.General
             CustomSceneManager.Instance.LoadLobby();
         }
         
+
         
-        private IEnumerator WaitForAccountAndSync()
-        {
-            while (true)
-            {
-                if (DojoGameManager.LocalBurnerAccount != null && DojoGameManager.Synced)
-                {
-                    AfterAccountCreation();
-                    break;
-                }
-                yield return new WaitForSeconds(1);
-            }
-        }
-
-        public void AfterAccountCreation()
-        {
-            string currentBoardId = SimpleStorage.GetCurrentBoardId();
-            CustomLogger.LogInfo($"Current board id: {currentBoardId}");
-            if (!String.IsNullOrEmpty(currentBoardId))
-            {
-                DojoGameManager.SessionManager = new DojoSessionManager(DojoGameManager);
-                evolute_duel_Board board = DojoGameManager.SessionManager.GetBoard(DojoGameManager.LocalBurnerAccount.Address.Hex(), true);
-                CustomLogger.LogInfo($"Board: {board}");
-                if (board == null)
-                {
-                    return;
-                }
-                var isFinished = board.game_state switch
-                {
-                    GameState.Finished => true,
-                    _ => false
-                };
-                CustomLogger.LogInfo($"IsFinished: {isFinished}");
-                if (isFinished)
-                {
-                    SimpleStorage.ClearCurrentBoardId();
-                    CustomSceneManager.Instance.LoadLobby();
-                    return;
-                }
-
-                CustomSceneManager.Instance.LoadSession();
-            } 
-            else
-            {
-                CustomSceneManager.Instance.LoadLobby();
-            }
-
-        }
         
         private void SceneLoaded(string name)
         {

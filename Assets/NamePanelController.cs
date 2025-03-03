@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using TerritoryWars;
 using TerritoryWars.ModelsDataConverters;
 using TerritoryWars.Tools;
@@ -20,18 +21,20 @@ public class NamePanelController : MonoBehaviour
     
     private bool _isInitialized = false;
 
-    private void Start()
-    {
-        DojoGameManager.Instance.OnInitialized.AddListener(Initialize);
-    }
+    // private void Awake()
+    // {
+    //     DojoGameManager.Instance.WorldManager.synchronizationMaster.OnSynchronized.AddListener(Initialize);
+    // }
+
+    // private void Initialize(List<GameObject> list)
+    // {
+    //     CustomLogger.LogWarning("Initialize NamePanelController after Sync");
+    //     Invoke(nameof(Initialize), 0.1f);
+    // }
     
     public void Initialize()
     {
-        DojoGameManager.Instance.OnInitialized.RemoveListener(Initialize);
-        if (_isInitialized)
-        {
-            return;
-        }
+        CustomLogger.LogWarning("Initialize NamePanelController");
         //ChangeNameButton.onClick.AddListener(CallChangeNamePanel);
 
         evolute_duel_Player profile = DojoGameManager.Instance.GetLocalPlayerData();
@@ -50,6 +53,7 @@ public class NamePanelController : MonoBehaviour
             string name = CairoFieldsConverter.GetStringFromFieldElement(profile.username);
             SetName(name);
             SetEvoluteBalance(profile.balance);
+            //DojoGameManager.Instance.WorldManager.synchronizationMaster.OnSynchronized.RemoveListener(Initialize);
         }
         
     }
