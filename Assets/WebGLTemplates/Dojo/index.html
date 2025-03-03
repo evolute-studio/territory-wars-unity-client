@@ -60,36 +60,6 @@
         }
     </style>
     <script>
-        // We add an event handler at the beginning of the page download
-        window.addEventListener('load', function(e) {
-            const dbName = '/idbfs';
-            const request = window.indexedDB.open(dbName);
-
-            request.onsuccess = function(event) {
-                const db = event.target.result;
-                const transaction = db.transaction(['FILE_DATA'], 'readwrite');
-                const objectStore = transaction.objectStore('FILE_DATA');
-
-                // we get all the keys
-                const getAllKeysRequest = objectStore.getAllKeys();
-
-                getAllKeysRequest.onsuccess = function() {
-                    const keys = getAllKeysRequest.result;
-
-                    // We delete all records that do not end on /Playerprefs
-                    keys.forEach(function(key) {
-                        if (!key.endsWith('/PlayerPrefs')) {
-                            objectStore.delete(key);
-                        }
-                    });
-                };
-
-                transaction.oncomplete = function() {
-                    db.close();
-                };
-            };
-        });
-
         // Function to check if the device is in portrait mode and if aspect ratio is below minimum
         function checkOrientation() {
             if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
