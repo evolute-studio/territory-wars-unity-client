@@ -161,15 +161,6 @@ namespace TerritoryWars
             }
         }
         
-        public void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.K))
-            {
-                SessionManager.UpdateBoardAfterCityContest();
-                SessionManager.UpdateBoardAfterRoadContest();
-            }
-        }
-        
         private async void TryCreateAccount(int attempts, bool createNew)
         {
             try
@@ -303,11 +294,19 @@ namespace TerritoryWars
                 var txHash = await GameSystem.cancel_game(LocalBurnerAccount);
                 CustomLogger.LogInfo($"Cancel Game: {txHash.Hex()}");
                 CustomSceneManager.Instance.LoadingScreen.SetActive(false);
+                if(CustomSceneManager.Instance.CurrentScene != CustomSceneManager.Instance.Menu)
+                {
+                    CustomSceneManager.Instance.LoadLobby();
+                }
             }
             catch (Exception e)
             {
                 CustomSceneManager.Instance.LoadingScreen.SetActive(false);
                 CustomLogger.LogError($"Failed to cancel game. {e}");
+                if(CustomSceneManager.Instance.CurrentScene != CustomSceneManager.Instance.Menu)
+                {
+                    CustomSceneManager.Instance.LoadLobby();
+                }
             }
         }
         
@@ -349,6 +348,9 @@ namespace TerritoryWars
                 case evolute_duel_PlayerUsernameChanged playerUsernameChanged:
                     PlayerUsernameChanged(playerUsernameChanged);
                     break;
+                case evolute_duel_GameCreateFailed gameCreateFailed:
+                    GameCreateFailed(gameCreateFailed);
+                    break;
             }
         }
         
@@ -358,6 +360,14 @@ namespace TerritoryWars
             CustomLogger.LogWarning("Real caller address from event: " + eventMessage.player_id.Hex());
             if(LocalBurnerAccount == null || LocalBurnerAccount.Address.Hex() != eventMessage.player_id.Hex()) return;
             MenuUIController.Instance._namePanelController.SetName(CairoFieldsConverter.GetStringFromFieldElement(eventMessage.new_username));
+        }
+        
+        private void GameCreateFailed(evolute_duel_GameCreateFailed eventMessage)
+        {
+            string hostPlayer = eventMessage.host_player.Hex();
+            if (LocalBurnerAccount.Address.Hex() != hostPlayer) return;
+            CancelGame();
+            Invoke(nameof(CreateGame), 1f);
         }
         
         

@@ -44,7 +44,7 @@ namespace TerritoryWars.General
 
         public void Start()
         {
-            CustomSceneManager.Instance.LoadingScreen.SetActive(true, null, false);
+            CustomSceneManager.Instance.LoadingScreen.SetActive(true);
             StartOnChainMode();
             // CustomSceneManager.Instance.OnLoadScene += SceneLoaded;
             //

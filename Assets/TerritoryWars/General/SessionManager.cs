@@ -53,7 +53,7 @@ namespace TerritoryWars.General
 
             if (!CustomSceneManager.Instance.LoadingScreen.IsLoading)
             {
-                CustomSceneManager.Instance.LoadingScreen.SetActive(true);
+                CustomSceneManager.Instance.LoadingScreen.SetActive(true, DojoGameManager.Instance.CancelGame, CustomSceneManager.Instance.LoadingScreen.connectingText);
             }
         }
 
@@ -375,7 +375,7 @@ namespace TerritoryWars.General
 
         private void StartRemoteTurn()
         {
-            CurrentTurnPlayer.StartSelecting();
+            //CurrentTurnPlayer.StartSelecting();
             evolute_duel_Board board = DojoGameManager.Instance.SessionManager.LocalPlayerBoard;
             Players[0].UpdateData(board.player1.Item3);
             Players[1].UpdateData(board.player2.Item3);
@@ -505,7 +505,7 @@ namespace TerritoryWars.General
 
         public void CompleteEndTurn(string lastMovePlayerAddress)
         {
-            CurrentTurnPlayer.EndTurn();
+            //CurrentTurnPlayer.EndTurn();
             bool isLocalPlayer = lastMovePlayerAddress == LocalPlayer.Address.Hex();
             
             if (isLocalPlayer)

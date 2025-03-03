@@ -13,18 +13,30 @@ namespace TerritoryWars.Tools
         public Button CancelButton;
         public TextMeshProUGUI loadingText;
         public string loadingTextPrefix = "";
+        public string connectingText = "Connecting to the game";
+
+        private string currentText = "";
 
         public void Update()
         {
             if (!LoadingScreenObject.activeSelf) return;
             float time = Time.time * 2;
             int dotsCount = (int)(time % 4); 
-            loadingText.text = loadingTextPrefix + new string('.', dotsCount) + new string(' ', 3 - dotsCount);
+            loadingText.text = currentText + new string('.', dotsCount) + new string(' ', 3 - dotsCount);
         }
         
-        public void SetActive(bool active, Action onCancel = null, bool isTextEnabled = true)
+        public void SetActive(bool active, Action onCancel = null, string text = "")
         {
-            loadingText.gameObject.SetActive(isTextEnabled);
+            if(text != "")
+            {
+                loadingText.gameObject.SetActive(true);
+                currentText = text;
+            }
+            else
+            {
+                loadingText.gameObject.SetActive(false);
+            }
+            
             
             LoadingScreenObject.SetActive(active);
             CancelButton.onClick.RemoveAllListeners();
