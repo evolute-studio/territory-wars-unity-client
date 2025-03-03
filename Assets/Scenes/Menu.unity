@@ -9490,7 +9490,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1087267357218916247, guid: 65eb5865bc41127499cf7f675f07baf2, type: 3}
       propertyPath: m_text
-      value: x 5
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1087267357218916247, guid: 65eb5865bc41127499cf7f675f07baf2, type: 3}
       propertyPath: m_HorizontalAlignment
@@ -9663,6 +9663,10 @@ PrefabInstance:
     - target: {fileID: 6072104669926556560, guid: 65eb5865bc41127499cf7f675f07baf2, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0.79499054
+      objectReference: {fileID: 0}
+    - target: {fileID: 6235361942355450871, guid: 65eb5865bc41127499cf7f675f07baf2, type: 3}
+      propertyPath: m_text
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8427858094989447960, guid: 65eb5865bc41127499cf7f675f07baf2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

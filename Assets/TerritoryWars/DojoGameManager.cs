@@ -62,6 +62,7 @@ namespace TerritoryWars
         public DojoSessionManager SessionManager;
         
         public UnityEvent OnLocalPlayerSet = new UnityEvent();
+        public UnityEvent OnInitialized = new UnityEvent();
         
         public bool Synced { get; private set; }
 
@@ -92,6 +93,13 @@ namespace TerritoryWars
             WorldManager.synchronizationMaster.OnEntitySpawned.AddListener(SpawnEntity);
             
             TryCreateAccount(3, false);
+            
+            Invoke(nameof(Initialized), 1f);
+        }
+
+        private void Initialized()
+        {
+            OnInitialized?.Invoke();
         }
 
         private IEnumerator WaitForAccount()

@@ -19,9 +19,15 @@ public class NamePanelController : MonoBehaviour
     public Button ChangeNameButton;
     
     private bool _isInitialized = false;
+
+    private void Start()
+    {
+        DojoGameManager.Instance.OnInitialized.AddListener(Initialize);
+    }
     
     public void Initialize()
     {
+        DojoGameManager.Instance.OnInitialized.RemoveListener(Initialize);
         if (_isInitialized)
         {
             return;
@@ -68,29 +74,5 @@ public class NamePanelController : MonoBehaviour
     {
         EvoluteBalance = value;
         EvoluteCountText.text = " x " + value.ToString();
-    }
-
-    public void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.X))
-        {
-            ChangeEvoluteBalance(100);
-        }
-        if(Input.GetKeyDown(KeyCode.Z))
-        {
-            ChangeEvoluteBalance(-100);
-        }
-    }
-
-    public void ChangeEvoluteBalance(int value)
-    {
-        int current = EvoluteBalance;
-        if(current < 0)
-        {
-            current = 0;
-        }
-        
-        EvoluteBalance = current + value;
-        EvoluteCountText.text = " x " + (current + value).ToString();
     }
 }
