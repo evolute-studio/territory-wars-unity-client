@@ -1,4 +1,5 @@
-﻿using TerritoryWars.General;
+﻿using TerritoryWars.Dojo;
+using TerritoryWars.General;
 using UnityEngine;
 using UnityEngine.UI;
 

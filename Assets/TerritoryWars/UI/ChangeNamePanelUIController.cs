@@ -1,5 +1,6 @@
 using System;
 using TerritoryWars;
+using TerritoryWars.Dojo;
 using TerritoryWars.ModelsDataConverters;
 using TerritoryWars.Tools;
 using TerritoryWars.UI;

@@ -2,8 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Dojo;
+using Dojo.Starknet;
+using TerritoryWars.Dojo;
 using TerritoryWars.Tools;
 using UnityEngine;
+using System.Threading.Tasks;
 
 namespace TerritoryWars.General
 {
@@ -23,150 +26,83 @@ namespace TerritoryWars.General
 
     public class EntryPoint : MonoBehaviour
     {
-        //public ConnectionType ConnectionType;
-        //public GameMode GameMode;
         public WorldManager WorldManager;
         public DojoGameManager DojoGameManager;
         public DojoGameController DojoGameGUIController;
         public bool UseDojoGUIController = false;
         
-        [Header("Connections")]
-        public WorldManagerData LocalConnection;
-        public WorldManagerData RemoteDevConnection;
-        public WorldManagerData RemoteProdConnection;
-        
-        [Header("Contracts")]
-        public Game GameContract;
-        public Player_profile_actions PlayerProfileContract;
-        
         private float startConenctionTime;
         
 
-        public void Start()
+        public async void Start()
         {
             CustomSceneManager.Instance.LoadingScreen.SetActive(true);
-            StartOnChainMode();
-            // CustomSceneManager.Instance.OnLoadScene += SceneLoaded;
-            //
-            // switch (ConnectionType)
-            // {
-            //     case ConnectionType.Local:
-            //         WorldManager.dojoConfig = LocalConnection;
-            //         DojoGameManager.dojoConfig = LocalConnection;
-            //         break;
-            //     case ConnectionType.RemoteDev:
-            //         WorldManager.dojoConfig = RemoteDevConnection;
-            //         DojoGameManager.dojoConfig = RemoteDevConnection;
-            //         break;
-            //     case ConnectionType.RemoteProd:
-            //         WorldManager.dojoConfig = RemoteProdConnection;
-            //         DojoGameManager.dojoConfig = RemoteProdConnection;
-            //         break;
-            //     case ConnectionType.None:
-            //         break;
-            // }
-            //
-            // //GameContract.contractAddress = WorldManager.dojoConfig.GameContractAddress;
-            // //PlayerProfileContract.contractAddress = WorldManager.dojoConfig.PlayerProfileContractAddress;
-            //
-            // switch (GameMode)
-            // {
-            //     case GameMode.Offline:
-            //         StartOfflineMode();
-            //         break;
-            //     case GameMode.OnChain:
-            //         StartOnChainMode();
-            //         break;
-            // }
-        }
-
-        public void StartOfflineMode()
-        {
-            
+            await InitializeGameAsync();
         }
         
-        public void StartOnChainMode()
+        private async Task InitializeGameAsync()
         {
-            CustomLogger.LogInfo("Starting OnChain mode");
-            
-            if (DojoGameManager == null)
+            try
             {
-                CustomLogger.LogError("DojoGameManager is null!");
-                return;
-            }
-            
-            DojoGameManager.Initialize();
-            DojoGameGUIController.enabled = UseDojoGUIController;
-            
-            CustomLogger.LogInfo("Starting TryLoadMenu coroutine");
-            StartCoroutine(TryLoadMenu());
-            
-            #if UNITY_EDITOR && !UNITY_WEBGL
-            // if (DojoGameManager.Instance.WorldManager.transform.childCount == 0 ||
-            //     DojoGameManager.Instance.LocalBurnerAccount == null)
-            // {
-            //     CustomLogger.LogInfo("Editor mode. Waiting for LocalBurnerAccount and WorldManager");
-            //     DojoGameManager.Instance.WorldManager.synchronizationMaster.OnSynchronized.AddListener(LoadMenu);
-            // }
-            // else
-            // {
-            //     LoadMenu();
-            // }
-            #endif
-            #if UNITY_WEBGL && !UNITY_EDITOR
-
-            // CustomLogger.LogInfo("WebGL mode");
-            // if (DojoGameManager.Instance.LocalBurnerAccount == null)
-            // {
-            //     CustomLogger.LogInfo("LocalBurnerAccount is null");
-            //     DojoGameManager.Instance.OnLocalPlayerSet.AddListener(LoadMenu);
-            // }
-            // else
-            // {
-            //     LoadMenu();
-            // }
-            #endif
-        }
-
-        public IEnumerator TryLoadMenu()
-        {
-            CustomLogger.LogInfo("Starting TryLoadMenu coroutine");
-            int attempts = 0;
-            startConenctionTime = Time.time;
-            
-            while (attempts < 30) 
-            {
-                attempts++;
-                CustomLogger.LogInfo($"Attempt {attempts}: Checking conditions...");
-                CustomLogger.LogInfo($"WorldManager synced: {DojoGameManager.Instance.Synced}");
-                CustomLogger.LogInfo($"LocalBurnerAccount status: {(DojoGameManager.Instance.LocalBurnerAccount != null ? "Present" : "Null")}");
+                CustomLogger.LogDojoLoop("Starting OnChain mode initialization");
                 
-                if (DojoGameManager.Instance.WorldManager == null)
-                {
-                    CustomLogger.LogError("WorldManager is null!");
-                    yield return new WaitForSeconds(1);
-                    continue;
-                }
-
-                if (DojoGameManager.Instance.LocalBurnerAccount != null)
-                {
-                    CustomLogger.LogInfo("Conditions met - loading menu");
-                    //LoadMenu();
-                    break;
-                    if(DojoGameManager.Instance.Synced || Time.time - startConenctionTime > 10 || DojoGameManager.Instance.WorldManager.transform.childCount > 0)
-                    {
-                        
-                    }
-                }
-
-                yield return new WaitForSeconds(1);
+                // 1. Setup Account
+                CustomLogger.LogDojoLoop("Setting up account");
+                await SetupAccountAsync();
+                
+                // 2. Create Burners
+                CustomLogger.LogDojoLoop("Creating burner accounts");
+                await DojoGameManager.CreateBurners();
+                
+                // 3. Sync Initial Models
+                CustomLogger.LogDojoLoop("Syncing initial models");
+                await DojoGameManager.SyncInitialModels();
+                
+                // 4. Load Game
+                CustomLogger.LogDojoLoop("Checking previous game");
+                //DojoGameManager.LoadGame();
+                
+                CustomLogger.LogDojoLoop("Initialization completed successfully");
             }
-            
-            CustomLogger.LogWarning("TryLoadMenu timed out after 30 attempts");
-            
-            //DojoGameManager.Instance.OnLocalPlayerSet.AddListener(LoadMenu);
+            catch (Exception e)
+            {
+                CustomLogger.LogError($"Initialization failed: {e}");
+                // Можливо, тут додати логіку обробки помилок
+            }
         }
 
+        private Task SetupAccountAsync()
+        {
+            var tcs = new TaskCompletionSource<bool>();
+            
+            try {
+                DojoGameManager.SetupAccount(() => tcs.TrySetResult(true));
+                // timeout to avoid hanging
+                StartCoroutine(SetupAccountTimeout(tcs, 30f));
+            }
+            catch (Exception e) {
+                tcs.TrySetException(e);
+            }
+            
+            return tcs.Task;
+        }
+        
+        private IEnumerator SetupAccountTimeout(TaskCompletionSource<bool> tcs, float timeout)
+        {
+            yield return new WaitForSeconds(timeout);
+            tcs.TrySetException(new TimeoutException($"Account setup timed out after {timeout} seconds"));
+        }
+
+        public void SyncInitialModels()
+        {
+            CustomLogger.LogInfo("Syncing initial models");
+            
+        }
+
+        public void CheckPreviousGame()
+        {
+            
+        }
         public void LoadMenu()
         {
             CustomLogger.LogInfo("LoadMenu");

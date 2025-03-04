@@ -3,7 +3,7 @@ using Dojo.Starknet;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace TerritoryWars
+namespace TerritoryWars.Dojo
 {
     public class DojoGameController : MonoBehaviour
     {

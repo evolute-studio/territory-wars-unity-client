@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Dojo;
 using Dojo.Starknet;
 using TerritoryWars;
+using TerritoryWars.Dojo;
 using TerritoryWars.ModelsDataConverters;
 using TerritoryWars.UI;
 using TMPro;

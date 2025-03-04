@@ -23,7 +23,7 @@ namespace System.Runtime.CompilerServices
     internal class IsExternalInit { }
 }
 
-namespace TerritoryWars
+namespace TerritoryWars.Dojo
 {
     public class DojoGameManager : MonoBehaviour
     {
@@ -43,6 +43,7 @@ namespace TerritoryWars
         }
         
         public WorldManager WorldManager;
+        public CustomSynchronizationMaster CustomSynchronizationMaster;
 
         public WorldManagerData dojoConfig;
         [SerializeField] GameManagerData gameManagerData;
@@ -62,37 +63,86 @@ namespace TerritoryWars
         public DojoSessionManager SessionManager;
         
         public UnityEvent OnLocalPlayerSet = new UnityEvent();
-        
-        public bool Synced { get; private set; }
 
 
-        public void Initialize()
+        public void SetupAccount(Action callback)
         {
-            provider = new JsonRpcClient(dojoConfig.rpcUrl);
-            masterAccount = new Account(provider, new SigningKey(gameManagerData.masterPrivateKey),
-                new FieldElement(gameManagerData.masterAddress));
-            
-            
-            Invoke(nameof(createBurners), 1f);
-
-            WorldManager.synchronizationMaster.OnSynchronized.AddListener(TurnOffLoading);
-            //WorldManager.synchronizationMaster.OnModelUpdated.AddListener(ModelUpdated);
-            //SimpleAccountCreation(3);
-            
+            try 
+            {
+                provider = new JsonRpcClient(dojoConfig.rpcUrl);
+                masterAccount = new Account(provider, new SigningKey(gameManagerData.masterPrivateKey),
+                    new FieldElement(gameManagerData.masterAddress), callback);
+            }
+            catch (Exception e)
+            {
+                CustomLogger.LogError($"Failed to setup account: {e}");
+                throw;
+            }
         }
 
-        private void createBurners()
+        public async Task CreateBurners()
         {
+            //masterAccount.AccountCreated.RemoveListener(CreateBurners);
             burnerManager = new BurnerManager(provider, masterAccount);
-            
             
             WorldManager.synchronizationMaster.OnEventMessage.AddListener(OnDojoEventReceived);
             WorldManager.synchronizationMaster.OnEventMessage.AddListener(OnEventMessage);
             WorldManager.synchronizationMaster.OnSynchronized.AddListener(OnSynchronized);
             WorldManager.synchronizationMaster.OnEntitySpawned.AddListener(SpawnEntity);
             
-            TryCreateAccount(3, false);
+            await TryCreateAccount(3, false);
         }
+
+        public async Task SyncInitialModels()
+        {
+            int count = 0;
+            await CustomSynchronizationMaster.SyncGeneralModels();
+            await CustomSynchronizationMaster.SyncPlayer(LocalBurnerAccount.Address);
+            count = await CustomSynchronizationMaster.SyncPlayerInProgressGame(LocalBurnerAccount.Address);
+            // if player has an in progress game, sync the board with dependencies
+            if (count > 0)
+            {
+                GameObject[] boards = WorldManager.Entities<evolute_duel_Game>();
+                if (boards.Length > 0)
+                {
+                    evolute_duel_Game board = boards[0].GetComponent<evolute_duel_Game>();
+                    FieldElement boardId = board.board_id switch
+                    {
+                        Option<FieldElement>.Some some => some.value,
+                        _ => null
+                    };
+                    count = await CustomSynchronizationMaster.SyncBoardWithDependencies(boardId);
+                }
+            }
+        }
+        
+        
+        public async void SyncCreatedGames()
+        {
+            int count = await CustomSynchronizationMaster.SyncCreatedGame();
+            if (count == 0)
+            {
+                CustomLogger.LogInfo("No created games found"); 
+                return;
+            }
+            GameObject[] gameGOs = WorldManager.Entities<evolute_duel_Game>();
+            List<FieldElement> hostPlayersAddresses = new List<FieldElement>();
+            foreach (var gameGO in gameGOs)
+            {
+                if (gameGO.TryGetComponent(out evolute_duel_Game game))
+                {
+                    hostPlayersAddresses.Add(game.player);
+                }
+            }
+            count = await CustomSynchronizationMaster.SyncPlayersArray(hostPlayersAddresses.ToArray());
+            
+        }
+        
+        public async void SyncLocalPlayerSnapshots()
+        {
+            int count = await CustomSynchronizationMaster.SyncOnlyBoard(LocalBurnerAccount.Address);
+        }
+        
 
 
 
@@ -161,7 +211,7 @@ namespace TerritoryWars
             }
         }
         
-        private async void TryCreateAccount(int attempts, bool createNew)
+        private async Task TryCreateAccount(int attempts, bool createNew)
         {
             try
             {
@@ -536,7 +586,6 @@ namespace TerritoryWars
         
         private void OnSynchronized(List<GameObject> synchronizedModels)
         {
-            Synced = true;
             CustomLogger.LogInfo($"Synchronized {synchronizedModels.Count} models");
         }
         
@@ -563,7 +612,7 @@ namespace TerritoryWars
         }
         
         
-        public void TryAgain(Action action, float delay)
+        public void InvokeWithDelay(Action action, float delay)
         {
             StartCoroutine(TryAgainCoroutine(action, delay));
         }

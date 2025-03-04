@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using TerritoryWars;
+using TerritoryWars.Dojo;
 using TerritoryWars.ModelsDataConverters;
 using TerritoryWars.Tools;
 using UnityEngine;

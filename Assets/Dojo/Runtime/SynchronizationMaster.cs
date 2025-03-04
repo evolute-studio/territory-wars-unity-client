@@ -41,12 +41,18 @@ namespace Dojo
         }
 
         // Fetch all entities from the dojo world and spawn them.
-        public async Task<int> SynchronizeEntities()
+        public async Task<int> SynchronizeEntities(Query query = null)
         {
+            if (query == null)
+            {
+                query = worldManager.dojoConfig.query;
+            }
+
+            // Fetch entities from the world
 #if UNITY_WEBGL && !UNITY_EDITOR
-            var entities = await worldManager.wasmClient.Entities(worldManager.dojoConfig.query);
+            var entities = await worldManager.wasmClient.Entities(query);
 #else
-            var entities = await Task.Run(() => worldManager.toriiClient.Entities(worldManager.dojoConfig.query));
+            var entities = await Task.Run(() => worldManager.toriiClient.Entities(query));
 #endif
 
             var entityGameObjects = new List<GameObject>();
@@ -76,6 +82,12 @@ namespace Dojo
                 if (model == null)
                 {
                     Debug.LogWarning($"Model {entityModel.Name} not found");
+                    continue;
+                }
+                
+                // Check if the entity already has the model component
+                if (entityGameObject.GetComponent(model.GetType()) != null)
+                {
                     continue;
                 }
 
@@ -129,7 +141,6 @@ namespace Dojo
 
         private void HandleEventMessage(FieldElement hashedKeys, Model[] entityModels)
         {
-            Debug.Log("!!!!!!!!! Handling event message");
             foreach (var entityModel in entityModels)
             {
                 string[] parts = entityModel.Name.Split('-');

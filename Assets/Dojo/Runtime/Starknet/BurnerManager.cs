@@ -66,10 +66,10 @@ namespace Dojo.Starknet
 
             // Load all burners
             var burnersData = PlayerPrefs.GetString($"burnermanagers.{masterAccount.Address.Hex()}.burners");
-            Debug.Log($"Burners data: {burnersData}");
+            //Debug.Log($"Burners data: {burnersData}");
             if (!string.IsNullOrEmpty(burnersData))
             {
-                Debug.Log($"Loading burners");
+                //Debug.Log($"Loading burners");
                 
                 var burners = JsonConvert.DeserializeObject<List<Dictionary<string, string>>>(burnersData);
                 foreach (var burnerData in burners)
@@ -77,12 +77,12 @@ namespace Dojo.Starknet
                     var address = new FieldElement(burnerData["address"]);
                     var privateKey = burnerData["privateKey"];
                     
-                    Debug.Log("Burner pub key:" + address.Hex());
-                    Debug.Log("Burner private key:" + privateKey);
+                    //Debug.Log("Burner pub key:" + address.Hex());
+                    //Debug.Log("Burner private key:" + privateKey);
                     
                     Burners.Add(new Account(provider, new SigningKey(privateKey), address));
                 }
-                Debug.Log($"Loaded {Burners.Count} burners");
+                //Debug.Log($"Loaded {Burners.Count} burners");
             }
 
             

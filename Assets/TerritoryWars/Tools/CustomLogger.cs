@@ -8,7 +8,8 @@ namespace TerritoryWars.Tools
         Warning,
         Event,
         Error,
-        Important
+        Important,
+        DojoLoop,
     }
     
     public static class CustomLogger
@@ -19,16 +20,18 @@ namespace TerritoryWars.Tools
             {LogType.Warning, "#FFA500"},    
             {LogType.Event, "#32CD32"}, 
             {LogType.Error, "#DC143C"},        
-            {LogType.Important, "#9441e0"}      
+            {LogType.Important, "#9441e0"},
+            {LogType.DojoLoop, "#FFD700"}
         };
         
         public static Dictionary<LogType, bool> LogTypeEnabled = new Dictionary<LogType, bool>
         {
-            {LogType.Info, false},
+            {LogType.Info, true},
             {LogType.Warning, true},
             {LogType.Event, true},
             {LogType.Error, true},
-            {LogType.Important, true}
+            {LogType.Important, true},
+            {LogType.DojoLoop, true}
         };
         
         public static void Log(LogType logType, string message)
@@ -62,6 +65,11 @@ namespace TerritoryWars.Tools
         public static void LogImportant(string message)
         {
             Log(LogType.Important, message);
+        }
+        
+        public static void LogDojoLoop(string message)
+        {
+            Log(LogType.DojoLoop, message);
         }
         
         

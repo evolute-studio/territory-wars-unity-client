@@ -10,7 +10,7 @@ using TerritoryWars.Tools;
 using TerritoryWars.UI;
 using UnityEngine;
 
-namespace TerritoryWars
+namespace TerritoryWars.Dojo
 {
     public class DojoSessionManager
     {

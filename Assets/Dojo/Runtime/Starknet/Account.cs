@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using bottlenoselabs.C2CS.Runtime;
 using dojo_bindings;
+using UnityEngine.Events;
 using Debug = UnityEngine.Debug;
 
 namespace Dojo.Starknet
@@ -19,27 +20,28 @@ namespace Dojo.Starknet
         public SigningKey Signer { get; }
 
 #if UNITY_WEBGL && !UNITY_EDITOR
-        private async void createAccount(JsonRpcClient provider, SigningKey privateKey, FieldElement address)
+        private async void createAccount(JsonRpcClient provider, SigningKey privateKey, FieldElement address, Action OnAccountCreated = null)
         {
-            account.SetResult(await StarknetInterop.NewAccountAsync(provider.client, privateKey, address));
+            var result = await StarknetInterop.NewAccountAsync(provider.client, privateKey, address);
+            account.SetResult(result);
+            OnAccountCreated?.Invoke();
         }
 
-        public Account(JsonRpcClient provider, SigningKey privateKey, FieldElement address)
+        public Account(JsonRpcClient provider, SigningKey privateKey, FieldElement address, Action OnAccountCreated = null)
         {
-            createAccount(provider, privateKey, address);
             Debug.Log("Result Account:" + address.Hex());
             Debug.Log("Result Account priv key:" + privateKey.Inner.Hex());
             Debug.Log("Result Account public key:" + privateKey.PublicKey.Inner.Hex());
             Address = address;
             Signer = privateKey;
+            createAccount(provider, privateKey, address, OnAccountCreated);
         }
 #else
-        public unsafe Account(JsonRpcClient provider, SigningKey privateKey, FieldElement address)
+        public unsafe Account(JsonRpcClient provider, SigningKey privateKey, FieldElement address, Action OnAccountCreated = null)
         {
             var resultAccount = dojo.account_new(provider.client, privateKey.Inner.Inner,
                 CString.FromString(address.Hex()));
             
-            Debug.Log("Result Account:" + resultAccount);
             if (resultAccount.tag == dojo.ResultAccount_Tag.ErrAccount)
             {
                 throw new Exception(resultAccount.err.message);
@@ -48,6 +50,7 @@ namespace Dojo.Starknet
             account = resultAccount._ok;
             Address = address;
             Signer = privateKey;
+            OnAccountCreated?.Invoke();
         }
 #endif
 

@@ -21,8 +21,8 @@ public class evolute_duel_Move : ModelInstance {
         [ModelField("prev_move_id")]
         public Option<FieldElement> prev_move_id;
 
-        [ModelField("next_move_id")]
-        public Option<FieldElement> next_move_id;
+        // [ModelField("next_move_id")]
+        // public Option<FieldElement> next_move_id;
 
         [ModelField("tile")]
         public Option<byte> tile;

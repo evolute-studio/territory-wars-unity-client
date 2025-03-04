@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 209425367}
   - component: {fileID: 209425366}
   - component: {fileID: 209425371}
+  - component: {fileID: 209425372}
   m_Layer: 0
   m_Name: WorldManager
   m_TagString: Untagged
@@ -153,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WorldManager: {fileID: 209425369}
+  CustomSynchronizationMaster: {fileID: 209425372}
   dojoConfig: {fileID: 11400000, guid: cae5977e93d0db70e8a96199bd1ca33a, type: 2}
   gameManagerData: {fileID: 11400000, guid: 291ea469f20a3a04097ffbc7db4f51f5, type: 2}
   GameSystem: {fileID: 209425367}
@@ -242,6 +244,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contractAddress: 0x001e0247a03f1541ea2bcb0061efe2cbe6d904cf57ad026196d76af167a011f5
+--- !u!114 &209425372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209425365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8e8977df1af4fa59d434762e30001dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WorldManager: {fileID: 209425369}
 --- !u!1 &398816327
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,6 +547,7 @@ MonoBehaviour:
   CancelButton: {fileID: 1226731875}
   loadingText: {fileID: 1604953781}
   loadingTextPrefix: Waiting for another player to join
+  connectingText: Connecting to the game
 --- !u!1 &729808245
 GameObject:
   m_ObjectHideFlags: 0
@@ -1561,11 +1577,6 @@ MonoBehaviour:
   DojoGameManager: {fileID: 209425366}
   DojoGameGUIController: {fileID: 1734509912}
   UseDojoGUIController: 0
-  LocalConnection: {fileID: 11400000, guid: 2fcdfc0770a1cc4a0a656cf28c71fc55, type: 2}
-  RemoteDevConnection: {fileID: 11400000, guid: cae5977e93d0db70e8a96199bd1ca33a, type: 2}
-  RemoteProdConnection: {fileID: 11400000, guid: df6c209f9a34120ecb69941c57148899, type: 2}
-  GameContract: {fileID: 209425367}
-  PlayerProfileContract: {fileID: 209425371}
 --- !u!4 &1842911252
 Transform:
   m_ObjectHideFlags: 0
