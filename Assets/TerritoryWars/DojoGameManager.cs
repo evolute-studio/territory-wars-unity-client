@@ -74,8 +74,7 @@ namespace TerritoryWars
             
             
             Invoke(nameof(createBurners), 1f);
-
-            WorldManager.synchronizationMaster.OnSynchronized.AddListener(TurnOffLoading);
+            
             //WorldManager.synchronizationMaster.OnModelUpdated.AddListener(ModelUpdated);
             //SimpleAccountCreation(3);
             
@@ -88,10 +87,11 @@ namespace TerritoryWars
             
             WorldManager.synchronizationMaster.OnEventMessage.AddListener(OnDojoEventReceived);
             WorldManager.synchronizationMaster.OnEventMessage.AddListener(OnEventMessage);
-            WorldManager.synchronizationMaster.OnSynchronized.AddListener(OnSynchronized);
+            //WorldManager.synchronizationMaster.OnSynchronized.AddListener(OnSynchronized);
             WorldManager.synchronizationMaster.OnEntitySpawned.AddListener(SpawnEntity);
             
             TryCreateAccount(3, false);
+            AfterAccountCreation();
         }
 
 
