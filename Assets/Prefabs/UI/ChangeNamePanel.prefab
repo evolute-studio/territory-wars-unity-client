@@ -560,6 +560,7 @@ GameObject:
   - component: {fileID: 5492639037098687740}
   - component: {fileID: 1214316623155817270}
   - component: {fileID: 8792973961268214427}
+  - component: {fileID: 2605604830327072274}
   m_Layer: 5
   m_Name: CancelButton
   m_TagString: Untagged
@@ -669,6 +670,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2605604830327072274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4044016359522158175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a43edcbda0334476b440977c0127c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorType: pointer
 --- !u!1 &4501327320991917805
 GameObject:
   m_ObjectHideFlags: 0
@@ -1112,6 +1126,7 @@ GameObject:
   - component: {fileID: 8332509798210267402}
   - component: {fileID: 8992421184044082411}
   - component: {fileID: 2468464360764703418}
+  - component: {fileID: 6951890114531820998}
   m_Layer: 5
   m_Name: ConfirmButton
   m_TagString: Untagged
@@ -1221,6 +1236,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6951890114531820998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7113160335373491094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a43edcbda0334476b440977c0127c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorType: pointer
 --- !u!1 &7220767402731587284
 GameObject:
   m_ObjectHideFlags: 0

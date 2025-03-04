@@ -50,6 +50,11 @@ namespace TerritoryWars.General
                 Debug.LogError("SessionManager already exists. Deleting new instance.");
                 Destroy(gameObject);
             }
+
+            if (!CustomSceneManager.Instance.LoadingScreen.IsLoading)
+            {
+                CustomSceneManager.Instance.LoadingScreen.SetActive(true, DojoGameManager.Instance.CancelGame, CustomSceneManager.Instance.LoadingScreen.connectingText);
+            }
         }
 
 
@@ -190,6 +195,7 @@ namespace TerritoryWars.General
                 Option<FieldElement>.Some some => some.value,
                 _ => null
             };
+            SimpleStorage.SaveCurrentBoardId(board.id.Hex());
             
             InitializePlayers();
             Board.Initialize();
@@ -206,6 +212,7 @@ namespace TerritoryWars.General
                 CurrentTurnPlayer = Players[playerIndex];
                 List<evolute_duel_Move> moves = DojoGameManager.Instance.GetMoves(new List<evolute_duel_Move>{lastMove});
                 CustomLogger.LogImportant("SessionManager.Initialize() - moves.Count: " + moves.Count);
+                int moveNumber = 0;
                 foreach (var move in moves)
                 {
                     int owner = move.player_side switch
@@ -218,6 +225,13 @@ namespace TerritoryWars.General
                     int rotation = move.rotation;
                     int x = move.col + 1;
                     int y = move.row + 1;
+                    bool isJoker = move.is_joker;
+                    CustomLogger.LogWarning("Move: " + moveNumber + " TilesInDeck: " + TilesInDeck);
+                    if(!isJoker)
+                    {
+                        TilesInDeck--;
+                    }
+
                     tile.Rotate((rotation + 3) % 4);
                     Board.PlaceTile(tile, x, y, owner);
                 }
@@ -228,6 +242,8 @@ namespace TerritoryWars.General
             DojoGameManager.Instance.SessionManager.UpdateBoardAfterCityContest();
             gameUI.Initialize();
             sessionUI.Initialization();
+            sessionUI.UpdateDeckCount();
+            sessionUI.UpdateDeckCount();
             int cityScoreBlue = board.blue_score.Item1;
             int cartScoreBlue = board.blue_score.Item2;
             int cityScoreRed = board.red_score.Item1;
@@ -338,6 +354,15 @@ namespace TerritoryWars.General
 
         private void StartLocalTurn()
         {
+            //CurrentTurnPlayer.StartSelecting();
+            evolute_duel_Board board = DojoGameManager.Instance.SessionManager.LocalPlayerBoard;
+            Players[0].UpdateData(board.player1.Item3);
+            Players[1].UpdateData(board.player2.Item3);
+            gameUI.SessionUI.UpdateJokerText(CurrentTurnPlayer.LocalId);
+            //GameUI.Instance.SessionUI.UpdateJokerText(CurrentTurnPlayer.LocalId, Players[CurrentTurnPlayer.LocalId].JokerCount);
+            //GameUI.Instance.SessionUI.UpdateDeckCount();
+            
+            
             gameUI.SetEndTurnButtonActive(false);
             gameUI.SetRotateButtonActive(false);
             gameUI.SetSkipTurnButtonActive(true);
@@ -350,6 +375,14 @@ namespace TerritoryWars.General
 
         private void StartRemoteTurn()
         {
+            //CurrentTurnPlayer.StartSelecting();
+            evolute_duel_Board board = DojoGameManager.Instance.SessionManager.LocalPlayerBoard;
+            Players[0].UpdateData(board.player1.Item3);
+            Players[1].UpdateData(board.player2.Item3);
+            gameUI.SessionUI.UpdateJokerText(CurrentTurnPlayer.LocalId);
+            //GameUI.Instance.SessionUI.UpdateJokerText(CurrentTurnPlayer.LocalId, Players[CurrentTurnPlayer.LocalId].JokerCount);
+            //GameUI.Instance.SessionUI.UpdateDeckCount();
+            
             gameUI.SetEndTurnButtonActive(false);
             gameUI.SetRotateButtonActive(false);
             gameUI.SetSkipTurnButtonActive(false);
@@ -472,8 +505,7 @@ namespace TerritoryWars.General
 
         public void CompleteEndTurn(string lastMovePlayerAddress)
         {
-            GameUI.Instance.SessionUI.UpdateDeckCount();
-            
+            //CurrentTurnPlayer.EndTurn();
             bool isLocalPlayer = lastMovePlayerAddress == LocalPlayer.Address.Hex();
             
             if (isLocalPlayer)

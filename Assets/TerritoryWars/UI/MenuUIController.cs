@@ -26,11 +26,9 @@ namespace TerritoryWars.UI
 
         public void Start()
         {
-            CustomSceneManager.Instance.LoadingScreen.SetActive(false);
+            
             Initialize();
-            DojoGameManager.Instance.SessionManager = null;
-
-
+            //DojoGameManager.Instance.SessionManager = null;
         }
 
         private void Initialize(List<GameObject> list)

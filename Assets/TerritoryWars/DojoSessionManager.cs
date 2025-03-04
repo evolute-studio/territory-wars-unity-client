@@ -95,6 +95,9 @@ namespace TerritoryWars
                 case evolute_duel_CityContestDraw cityContestDraw:
                     CityContestDraw(cityContestDraw);
                     break;
+                case evolute_duel_GameCanceled gameCanceled:
+                    GameCanceled(gameCanceled);
+                    break;
             }
 
             if (_dojoGameManager.IsTargetModel(modelInstance, nameof(evolute_duel_Moved)))
@@ -165,8 +168,8 @@ namespace TerritoryWars
             if (board.id.Hex() == board_id.Hex())
             {
                 CustomLogger.LogEvent($"[GameFinished] | BoardId: {board_id.Hex()}");
+                SimpleStorage.ClearCurrentBoardId();
                 GameUI.Instance.ShowResultPopUp();
-                
             }
         }
 
@@ -248,6 +251,17 @@ namespace TerritoryWars
 
             CustomLogger.LogEvent(
                 $"[CityContestDraw] | BluePoints: {blue_points} | RedPoints: {red_points} | BoardId: {board_id}");
+        }
+        
+        private void GameCanceled(evolute_duel_GameCanceled eventModel)
+        {
+            string hostPlayer = eventModel.host_player.Hex();
+            if(hostPlayer != SessionManager.Instance.LocalPlayer.Address.Hex() &&
+               hostPlayer != SessionManager.Instance.RemotePlayer.Address.Hex()) return;
+            
+            SimpleStorage.ClearCurrentBoardId();
+            CustomSceneManager.Instance.LoadLobby();
+            //GameUI.Instance.ShowResultPopUp();
         }
 
         
@@ -485,10 +499,10 @@ namespace TerritoryWars
 
         public evolute_duel_Board GetLocalPlayerBoard(bool isFinished = false)
         {
-            return GetBoard(_dojoGameManager.LocalBurnerAccount.Address, isFinished);
+            return GetBoard(_dojoGameManager.LocalBurnerAccount.Address.Hex(), isFinished);
         }
 
-        private evolute_duel_Board GetBoard(FieldElement player, bool isFinished = false)
+        public evolute_duel_Board GetBoard(string playerAddress, bool isFinished = false)
         {
             GameObject[] boardsGO = _dojoGameManager.WorldManager.Entities<evolute_duel_Board>();
             foreach (var boardGO in boardsGO)
@@ -497,7 +511,7 @@ namespace TerritoryWars
                 {
                     if (board.game_state is GameState.Finished && !isFinished) continue;
                     //public (FieldElement, PlayerSide, byte, bool) player1;
-                    if (board.player1.Item1.Hex() == player.Hex() || board.player2.Item1.Hex() == player.Hex())
+                    if (board.player1.Item1.Hex() == playerAddress|| board.player2.Item1.Hex() == playerAddress)
                     {
                         return board;
                     }
@@ -505,6 +519,7 @@ namespace TerritoryWars
             }
             return null;
         }
+        
         
         public TileData GetTopTile()
         {

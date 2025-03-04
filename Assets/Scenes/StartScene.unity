@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb53232f67c4c74a3019b9862a69724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contractAddress: 0x04e1ff35a25cde83e5426de6892e0d6b9ef1de92de9128d57c9201f9d5f33cb6
+  contractAddress: 0x06fb3db4eed5e0f74a2f81a049ec456d3fb443865cc72c7c5c84472758d954ef
 --- !u!114 &209425368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05e6e0e5e92900cb385659b57ed36e8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contractAddress: 0x042e7b65039153ca97a1537052ddab7c9a66c0e577765180a433020ef1f0448b
+  contractAddress: 0x001e0247a03f1541ea2bcb0061efe2cbe6d904cf57ad026196d76af167a011f5
 --- !u!1 &398816327
 GameObject:
   m_ObjectHideFlags: 0
@@ -1629,10 +1629,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

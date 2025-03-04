@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TerritoryWars;
 using TerritoryWars.General;
 using TerritoryWars.Tile;
 using TerritoryWars.Tools;
@@ -23,6 +24,9 @@ public class SessionUI : MonoBehaviour
     public TextMeshProUGUI LocalPlayerScoreText;
     public TextMeshProUGUI RemotePlayerScoreText;
     public TextMeshProUGUI DeckCountText; 
+    public Button CancelGameButton;
+    
+    public CancelGamePopup CancelGamePopUp;
     
     
     public List<Image> imagePlayers;
@@ -50,6 +54,10 @@ public class SessionUI : MonoBehaviour
                 joker.color = JokerAvailableColor;
             }
         }
+        CancelGameButton.onClick.AddListener(() =>
+        {
+            CancelGamePopUp.SetActive(true);
+        });
         
         SetPlayersAvatars(charactersObject.GetAvatar(PlayerCharactersManager.GetCurrentCharacterId()), 
             charactersObject.GetAvatar(PlayerCharactersManager.GetOpponentCurrentCharacterId()));
@@ -100,7 +108,7 @@ public class SessionUI : MonoBehaviour
         RemotePlayerName.text = playerNames[1];
     }
 
-    public void UseJoker(int player) // logic here for displaying the correct number of jokers for the local player and spawning characters correctly
+    public void UseJoker(int player)
     {
         if (!SessionManager.Instance.IsLocalPlayerHost)
         {
@@ -112,7 +120,7 @@ public class SessionUI : MonoBehaviour
 
         players[player].jokerCount--;
         players[player].jokersImage[players[player].jokerCount].color = JokerNotAvailableColor;
-        players[player].jokerCountText.text = SessionManager.Instance.Players[player].JokerCount.ToString();
+        players[player].jokerCountText.text = players[player].jokerCount.ToString();
     }
 
     public void UpdateJokerText(int player)
@@ -122,7 +130,7 @@ public class SessionUI : MonoBehaviour
             player = player == 0 ? 1 : 0;
         }
 
-        players[player].jokerCountText.text = SessionManager.Instance.Players[player].JokerCount.ToString();
+        players[player].jokerCountText.text = players[player].jokerCount.ToString();
     }
     
     public void UpdateDeckCount()

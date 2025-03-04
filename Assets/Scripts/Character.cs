@@ -24,6 +24,11 @@ public class Character : MonoBehaviour
         _animator = GetComponent<Animator>();
         _characterAnimator = new CharacterAnimator(_animator);
     }
+
+    public void UpdateData(int jokerCount)
+    {
+        JokerCount = jokerCount;
+    }
     public void StartSelecting()
     {
         _characterAnimator.PlayCast(true);

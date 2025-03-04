@@ -71,16 +71,73 @@ namespace TerritoryWars
             provider = new JsonRpcClient(dojoConfig.rpcUrl);
             masterAccount = new Account(provider, new SigningKey(gameManagerData.masterPrivateKey),
                 new FieldElement(gameManagerData.masterAddress));
-            burnerManager = new BurnerManager(provider, masterAccount);
+            
+            
+            Invoke(nameof(createBurners), 1f);
 
+            WorldManager.synchronizationMaster.OnSynchronized.AddListener(TurnOffLoading);
+            //WorldManager.synchronizationMaster.OnModelUpdated.AddListener(ModelUpdated);
+            //SimpleAccountCreation(3);
+            
+        }
+
+        private void createBurners()
+        {
+            burnerManager = new BurnerManager(provider, masterAccount);
+            
+            
             WorldManager.synchronizationMaster.OnEventMessage.AddListener(OnDojoEventReceived);
             WorldManager.synchronizationMaster.OnEventMessage.AddListener(OnEventMessage);
             WorldManager.synchronizationMaster.OnSynchronized.AddListener(OnSynchronized);
             WorldManager.synchronizationMaster.OnEntitySpawned.AddListener(SpawnEntity);
-            //WorldManager.synchronizationMaster.OnModelUpdated.AddListener(ModelUpdated);
             
-            //TryCreateAccount(3, true);
-            SimpleAccountCreation(3);
+            TryCreateAccount(3, false);
+        }
+
+
+
+        private void TurnOffLoading(List<GameObject> list)
+        {
+            WorldManager.synchronizationMaster.OnSynchronized.RemoveListener(TurnOffLoading);
+            CustomSceneManager.Instance.LoadingScreen.SetActive(false);
+            AfterAccountCreation();
+            //MenuUIController.Instance._namePanelController.Initialize();
+
+        }
+        
+        public void AfterAccountCreation()
+        {
+            string currentBoardId = SimpleStorage.GetCurrentBoardId();
+            CustomLogger.LogInfo($"Current board id: {currentBoardId}");
+            if (!String.IsNullOrEmpty(currentBoardId))
+            {
+                SessionManager = new DojoSessionManager(this);
+                evolute_duel_Board board = SessionManager.GetBoard(LocalBurnerAccount.Address.Hex(), true);
+                CustomLogger.LogInfo($"Board: {board}");
+                if (board == null)
+                {
+                    return;
+                }
+                var isFinished = board.game_state switch
+                {
+                    GameState.Finished => true,
+                    _ => false
+                };
+                CustomLogger.LogInfo($"IsFinished: {isFinished}");
+                if (isFinished)
+                {
+                    SimpleStorage.ClearCurrentBoardId();
+                    CustomSceneManager.Instance.LoadLobby();
+                    return;
+                }
+
+                CustomSceneManager.Instance.LoadSession();
+            } 
+            else
+            {
+                CustomSceneManager.Instance.LoadLobby();
+            }
+
         }
         
         private async void SimpleAccountCreation(int attempts)
@@ -101,15 +158,6 @@ namespace TerritoryWars
             catch (Exception e)
             {
                 CustomLogger.LogError($"Failed to create burner account. {e}");
-            }
-        }
-        
-        public void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.K))
-            {
-                SessionManager.UpdateBoardAfterCityContest();
-                SessionManager.UpdateBoardAfterRoadContest();
             }
         }
         
@@ -157,9 +205,9 @@ namespace TerritoryWars
                     }
                     else
                     {
-                        CustomLogger.LogInfo("Burner account found. Using last account.");
+                        CustomLogger.LogInfo("Burner account found. Using last account: " + burnerManager.CurrentBurner.Address.Hex());
                         //use last burner account
-                        LocalBurnerAccount = burnerManager.Burners.Last();
+                        LocalBurnerAccount = burnerManager.CurrentBurner;
                     }
                 }
 
@@ -195,7 +243,7 @@ namespace TerritoryWars
         {
             try
             {
-                CustomSceneManager.Instance.LoadingScreen.SetActive(true, CancelGame);
+                CustomSceneManager.Instance.LoadingScreen.SetActive(true, CancelGame, CustomSceneManager.Instance.LoadingScreen.loadingTextPrefix);
                 var txHash = await GameSystem.create_game(LocalBurnerAccount);
                 CustomLogger.LogInfo($"Create Game: {txHash.Hex()}");
             }
@@ -210,7 +258,7 @@ namespace TerritoryWars
         {
             try
             {
-                CustomSceneManager.Instance.LoadingScreen.SetActive(true, CancelGame);
+                CustomSceneManager.Instance.LoadingScreen.SetActive(true, CancelGame, CustomSceneManager.Instance.LoadingScreen.loadingTextPrefix);
                 var txHash = await GameSystem.create_game_from_snapshot(LocalBurnerAccount, snapshotId);
                 CustomLogger.LogInfo($"Create Game from Snapshot: {txHash.Hex()}");
             }
@@ -225,7 +273,7 @@ namespace TerritoryWars
         {
             try
             {
-                CustomSceneManager.Instance.LoadingScreen.SetActive(true);
+                CustomSceneManager.Instance.LoadingScreen.SetActive(true, CancelGame, CustomSceneManager.Instance.LoadingScreen.loadingTextPrefix);
                 var txHash = await GameSystem.join_game(LocalBurnerAccount, hostPlayer);
                 CustomLogger.LogInfo($"Join Game: {txHash.Hex()}");
                 SessionManager = new DojoSessionManager(this);
@@ -246,11 +294,19 @@ namespace TerritoryWars
                 var txHash = await GameSystem.cancel_game(LocalBurnerAccount);
                 CustomLogger.LogInfo($"Cancel Game: {txHash.Hex()}");
                 CustomSceneManager.Instance.LoadingScreen.SetActive(false);
+                if(CustomSceneManager.Instance.CurrentScene != CustomSceneManager.Instance.Menu)
+                {
+                    CustomSceneManager.Instance.LoadLobby();
+                }
             }
             catch (Exception e)
             {
                 CustomSceneManager.Instance.LoadingScreen.SetActive(false);
                 CustomLogger.LogError($"Failed to cancel game. {e}");
+                if(CustomSceneManager.Instance.CurrentScene != CustomSceneManager.Instance.Menu)
+                {
+                    CustomSceneManager.Instance.LoadLobby();
+                }
             }
         }
         
@@ -263,7 +319,15 @@ namespace TerritoryWars
             }
             catch (Exception e)
             {
-                CustomLogger.LogError($"Failed to set player skin. {e}");
+                if (e.Message.Contains("ContractNotFound"))
+                {
+                    CustomLogger.LogError("The contract was not found. Maybe a problem in creating an account");
+                    SimpleAccountCreation(3);
+                }
+                else
+                {
+                    CustomLogger.LogError($"Failed to set player skin. {e}");
+                }
             }
         }
         
@@ -284,13 +348,26 @@ namespace TerritoryWars
                 case evolute_duel_PlayerUsernameChanged playerUsernameChanged:
                     PlayerUsernameChanged(playerUsernameChanged);
                     break;
+                case evolute_duel_GameCreateFailed gameCreateFailed:
+                    GameCreateFailed(gameCreateFailed);
+                    break;
             }
         }
         
         private void PlayerUsernameChanged(evolute_duel_PlayerUsernameChanged eventMessage)
         {
+            CustomLogger.LogWarning("Burner account address:" + LocalBurnerAccount.Address.Hex());
+            CustomLogger.LogWarning("Real caller address from event: " + eventMessage.player_id.Hex());
             if(LocalBurnerAccount == null || LocalBurnerAccount.Address.Hex() != eventMessage.player_id.Hex()) return;
             MenuUIController.Instance._namePanelController.SetName(CairoFieldsConverter.GetStringFromFieldElement(eventMessage.new_username));
+        }
+        
+        private void GameCreateFailed(evolute_duel_GameCreateFailed eventMessage)
+        {
+            string hostPlayer = eventMessage.host_player.Hex();
+            if (LocalBurnerAccount.Address.Hex() != hostPlayer) return;
+            CancelGame();
+            Invoke(nameof(CreateGame), 1f);
         }
         
         
@@ -415,11 +492,22 @@ namespace TerritoryWars
             {
                 FieldElement username = CairoFieldsConverter.GetFieldElementFromString(playerName);
                 var txHash = await PlayerProfileSystem.change_username(LocalBurnerAccount, username);
-                CustomLogger.LogInfo($"Set Player Name: {txHash.Hex()}");
+                CustomLogger.LogInfo($"Set Player Name: {playerName + "; tx" + txHash.Hex()}");
+                CustomLogger.LogInfo($"Set Player Name, signer address: {LocalBurnerAccount.Address.Hex()}");
+                CustomLogger.LogInfo($"Set Player Name, signer pub key: {LocalBurnerAccount.Signer.PublicKey.Inner.Hex()}");
             }
             catch (Exception e)
             {
-                CustomLogger.LogError($"Failed to set player name. {e}");
+                if (e.Message.Contains("ContractNotFound"))
+                {
+                    CustomLogger.LogError("The contract was not found. Maybe a problem in creating an account");
+                    SimpleAccountCreation(3);
+                }
+                else
+                {
+                    CustomLogger.LogError($"Failed to set player name. {e}");
+                }
+                
             }
         }
         
@@ -428,11 +516,21 @@ namespace TerritoryWars
             try
             {
                 var txHash = await PlayerProfileSystem.change_username(LocalBurnerAccount, playerName);
-                CustomLogger.LogInfo($"Set Player Name: {txHash.Hex()}");
+                CustomLogger.LogInfo($"Set Player Name: {playerName + "; tx" + txHash.Hex()}");
+                CustomLogger.LogInfo($"Set Player Name, burner address: {LocalBurnerAccount.Address.Hex()}");
+                CustomLogger.LogInfo($"Set Player Name, signer pub key: {LocalBurnerAccount.Signer.PublicKey.Inner.Hex()}");
             }
             catch (Exception e)
             {
-                CustomLogger.LogError($"Failed to set player name. {e}");
+                if (e.Message.Contains("ContractNotFound"))
+                {
+                    CustomLogger.LogError("The contract was not found. Maybe a problem in creating an account");
+                    SimpleAccountCreation(3);
+                }
+                else
+                {
+                    CustomLogger.LogError($"Failed to set player name. {e}");
+                }
             }
         }
         

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Dojo;
@@ -43,7 +44,7 @@ namespace TerritoryWars.General
 
         public void Start()
         {
-            CustomSceneManager.Instance.LoadingScreen.SetActive(true, null, false);
+            CustomSceneManager.Instance.LoadingScreen.SetActive(true);
             StartOnChainMode();
             // CustomSceneManager.Instance.OnLoadScene += SceneLoaded;
             //
@@ -150,8 +151,8 @@ namespace TerritoryWars.General
                 if (DojoGameManager.Instance.LocalBurnerAccount != null)
                 {
                     CustomLogger.LogInfo("Conditions met - loading menu");
-                    LoadMenu();
-                    yield break;
+                    //LoadMenu();
+                    break;
                     if(DojoGameManager.Instance.Synced || Time.time - startConenctionTime > 10 || DojoGameManager.Instance.WorldManager.transform.childCount > 0)
                     {
                         
@@ -163,7 +164,7 @@ namespace TerritoryWars.General
             
             CustomLogger.LogWarning("TryLoadMenu timed out after 30 attempts");
             
-            DojoGameManager.Instance.OnLocalPlayerSet.AddListener(LoadMenu);
+            //DojoGameManager.Instance.OnLocalPlayerSet.AddListener(LoadMenu);
         }
 
         public void LoadMenu()
@@ -172,6 +173,8 @@ namespace TerritoryWars.General
             CustomSceneManager.Instance.LoadingScreen.SetActive(false);
             CustomSceneManager.Instance.LoadLobby();
         }
+        
+
         
         
         private void SceneLoaded(string name)
