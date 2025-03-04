@@ -12,7 +12,7 @@ namespace TerritoryWars.Tools
         public GameObject LoadingScreenObject;
         public Button CancelButton;
         public TextMeshProUGUI loadingText;
-        public string loadingTextPrefix = "";
+        public string loadingTextPrefix = "Waiting for another player to join";
         public string connectingText = "Connecting to the game";
 
         private string currentText = "";

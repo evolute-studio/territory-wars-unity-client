@@ -243,7 +243,7 @@ namespace TerritoryWars
         {
             try
             {
-                CustomSceneManager.Instance.LoadingScreen.SetActive(true, CancelGame);
+                CustomSceneManager.Instance.LoadingScreen.SetActive(true, CancelGame, CustomSceneManager.Instance.LoadingScreen.loadingTextPrefix);
                 var txHash = await GameSystem.create_game(LocalBurnerAccount);
                 CustomLogger.LogInfo($"Create Game: {txHash.Hex()}");
             }
@@ -258,7 +258,7 @@ namespace TerritoryWars
         {
             try
             {
-                CustomSceneManager.Instance.LoadingScreen.SetActive(true, CancelGame);
+                CustomSceneManager.Instance.LoadingScreen.SetActive(true, CancelGame, CustomSceneManager.Instance.LoadingScreen.loadingTextPrefix);
                 var txHash = await GameSystem.create_game_from_snapshot(LocalBurnerAccount, snapshotId);
                 CustomLogger.LogInfo($"Create Game from Snapshot: {txHash.Hex()}");
             }
@@ -273,7 +273,7 @@ namespace TerritoryWars
         {
             try
             {
-                CustomSceneManager.Instance.LoadingScreen.SetActive(true);
+                CustomSceneManager.Instance.LoadingScreen.SetActive(true, CancelGame, CustomSceneManager.Instance.LoadingScreen.loadingTextPrefix);
                 var txHash = await GameSystem.join_game(LocalBurnerAccount, hostPlayer);
                 CustomLogger.LogInfo($"Join Game: {txHash.Hex()}");
                 SessionManager = new DojoSessionManager(this);
