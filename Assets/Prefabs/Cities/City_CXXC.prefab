@@ -527,8 +527,8 @@ MonoBehaviour:
   duration: 1
   loop: 1
   delay: 0
-  randomizeStart: 0
-  maxRandomDelay: 0.5
+  randomizeStart: 1
+  maxRandomDelay: 0.3
   waitBetweenLoops: 0
   playOnAwake: 1
   _spriteRenderer: {fileID: 0}
@@ -1110,8 +1110,8 @@ MonoBehaviour:
   duration: 1
   loop: 1
   delay: 0
-  randomizeStart: 0
-  maxRandomDelay: 0.5
+  randomizeStart: 1
+  maxRandomDelay: 0.3
   waitBetweenLoops: 0
   playOnAwake: 1
   _spriteRenderer: {fileID: 0}
