@@ -198,6 +198,25 @@ namespace TerritoryWars.Dojo
                 order_by, entity_models, entity_updated_after);
             return query;
         }
+
+        public static Query GetQueryMoveById(FieldElement id)
+        {
+            string[] entity_models = new[]
+            {
+                GetModelName<evolute_duel_Move>(), 
+            };
+            
+            var moveClause = new MemberClause( 
+                GetModelName<evolute_duel_Move>(),
+                "id", 
+                dojo.ComparisonOperator.Eq,
+                new MemberValue(new Primitive { Felt252 = id })
+            );
+            
+            Query query = new Query(limit, offset, moveClause, dont_include_hashed_keys, 
+                order_by, entity_models, entity_updated_after);
+            return query;
+        }
         
         /// <summary>
         /// Gets a query to fetch all games with 'Created' status

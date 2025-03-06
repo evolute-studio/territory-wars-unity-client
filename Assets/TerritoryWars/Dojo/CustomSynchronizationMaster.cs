@@ -67,6 +67,13 @@ namespace TerritoryWars.Dojo
             CustomLogger.LogDojoLoop($"Synced {count} moves with board id {board_id}");
             return count;
         }
+        
+        public async Task<int> SyncMoveById(FieldElement id)
+        {
+            int count = await SyncConstruction(DojoQueries.GetQueryMoveById(id), nameof(SyncMoveById));
+            CustomLogger.LogDojoLoop($"Synced {count} moves with move id {id}");
+            return count;
+        }
 
         public async Task<HashSet<string>> SyncAllMoveByBoardId(FieldElement board_id)
         {
@@ -80,6 +87,23 @@ namespace TerritoryWars.Dojo
             
             var boardsToProcess = new Queue<FieldElement>();
             boardsToProcess.Enqueue(board_id);
+            
+            evolute_duel_Board board = DojoGameManager.Instance.WorldManager.Entities<evolute_duel_Board>()
+                .FirstOrDefault(b => b.GetComponent<evolute_duel_Board>().id == board_id)?
+                .GetComponent<evolute_duel_Board>();
+            if (board == null)
+            {
+                CustomLogger.LogError($"Sync moves. Board with id {board_id} not found");
+                return null;
+            }
+
+            FieldElement lastMoveId = board.last_move_id switch
+            {
+                Option<FieldElement>.Some some => some.value,
+                Option<FieldElement>.None => null,
+                _ => null
+            };
+            await SyncMoveById(lastMoveId);
 
             while (boardsToProcess.Count > 0 && processedBoardIds.Count < 64) // обмеження на кількість дощок
             {

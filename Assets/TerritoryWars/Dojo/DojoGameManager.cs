@@ -105,21 +105,36 @@ namespace TerritoryWars.Dojo
             bool hasGame = await CheckGameInProgress();
             if (hasGame)
             {
-                evolute_duel_Board board = WorldManager.Entities<evolute_duel_Board>().FirstOrDefault()?.GetComponent<evolute_duel_Board>();
-                FieldElement[] players = new FieldElement[] { board?.player1.Item1, board?.player2.Item1 };
-                CustomSynchronizationMaster.SyncPlayersArray(players);
-                var allowedBoards = await CustomSynchronizationMaster.SyncAllMoveByBoardId(board?.id);
-                IncomingModelsFilter.SetSessionAllowedBoards(allowedBoards.ToList());
-                IncomingModelsFilter.SetSessionPlayers(players.Select(p => p.Hex()).ToList());
-                IncomingModelsFilter.SetSessionCurrentBoardId(board?.id.Hex());
+                await SyncEverythingForGame();
                 //RestoreGame(board);
             }
             else
             {
                 //LoadMenu();
             }
-            
-            
+        }
+
+        public async Task SyncEverythingForGame()
+        {
+            CustomLogger.LogDojoLoop("SyncEverythingForGame");
+            await CustomSynchronizationMaster.SyncPlayerInProgressGame(LocalBurnerAccount.Address);
+            evolute_duel_Game game = WorldManager.Entities<evolute_duel_Game>().FirstOrDefault()?.GetComponent<evolute_duel_Game>();
+            FieldElement boardId = game.board_id switch
+            {
+                Option<FieldElement>.Some some => some.value,
+                _ => null
+            };
+            CustomLogger.LogDojoLoop("SyncEverythingForGame. BoardId: " + boardId.Hex());
+            int count = await CustomSynchronizationMaster.SyncBoardWithDependencies(boardId);
+            CustomLogger.LogInfo("Board synced: " + WorldManager.Entities<evolute_duel_Board>().Length);
+            evolute_duel_Board board = WorldManager.Entities<evolute_duel_Board>().FirstOrDefault()?.GetComponent<evolute_duel_Board>();
+            FieldElement[] players = new FieldElement[] { board.player1.Item1, board.player2.Item1 };
+            await CustomSynchronizationMaster.SyncPlayersArray(players);
+            var allowedBoards = await CustomSynchronizationMaster.SyncAllMoveByBoardId(board.id);
+            IncomingModelsFilter.SetSessionAllowedBoards(allowedBoards.ToList());
+            IncomingModelsFilter.SetSessionPlayers(players.Select(p => p.Hex()).ToList());
+            IncomingModelsFilter.SetSessionCurrentBoardId(board?.id.Hex());
+            CustomLogger.LogDojoLoop("SyncEverythingForGame. Synced boards: " + count);
         }
         
         private async Task<bool> CheckGameInProgress()
@@ -215,7 +230,7 @@ namespace TerritoryWars.Dojo
         
         public async Task SyncLocalPlayerSnapshots()
         {
-            int count = await CustomSynchronizationMaster.SyncOnlyBoard(LocalBurnerAccount.Address);
+            int count = await CustomSynchronizationMaster.SyncPlayerSnapshots(LocalBurnerAccount.Address);
         }
         
         #region Account Creation 
@@ -454,7 +469,7 @@ namespace TerritoryWars.Dojo
         }
         
 
-        private void CheckStartSession(ModelInstance eventMessage)
+        private async void CheckStartSession(ModelInstance eventMessage)
         {
             evolute_duel_GameStarted gameStarted = eventMessage as evolute_duel_GameStarted;
             if (gameStarted == null)
@@ -473,6 +488,9 @@ namespace TerritoryWars.Dojo
             {
                 CustomLogger.LogInfo("Start session");
                 // Start session
+                ApplicationState.SetState(ApplicationStates.Initializing);
+                await Task.Delay(3000);
+                await SyncEverythingForGame();
                 SessionManager = new DojoSessionManager(this);
                 CustomSceneManager.Instance.LoadSession();
             }
