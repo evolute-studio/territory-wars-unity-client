@@ -1,10 +1,31 @@
 fileFormatVersion: 2
-guid: b6130747bfb46a2418a64537c9dd7937
+guid: b6190fb827b9f2e488dc49d934b18632
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4143136540010776902
-    second: road_path_no_border_0
+      213: 3884249258629791450
+    second: CAVE_ENTRANCE_0
+  - first:
+      213: -1698623605037013645
+    second: CAVE_ENTRANCE_1
+  - first:
+      213: 2042324154451240407
+    second: CAVE_ENTRANCE_2
+  - first:
+      213: -3904704065962486762
+    second: CAVE_ENTRANCE_3
+  - first:
+      213: -5592624580203536058
+    second: CAVE_ENTRANCE_4
+  - first:
+      213: 4390795692855914480
+    second: CAVE_ENTRANCE_5
+  - first:
+      213: -755187850625507533
+    second: CAVE_ENTRANCE_6
+  - first:
+      213: -6277696501058360328
+    second: CAVE_ENTRANCE_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,23 +160,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: road_path_no_border_0
+      name: CAVE_ENTRANCE_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 46
-        height: 24
+        x: 175
+        y: 149
+        width: 33
+        height: 31
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ab677b4a44f9086c0800000000000000
-      internalID: -4143136540010776902
+      spriteID: 7d5244e6ffac75c10800000000000000
+      internalID: 2042324154451240407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAVE_ENTRANCE_3
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 148
+        width: 33
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 614584b0754bfc9c0800000000000000
+      internalID: -3904704065962486762
       vertices: []
       indices: 
       edges: []
@@ -164,7 +207,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: fc842be2a6bb08348b9cea475c498412
     internalID: 0
     vertices: []
     indices: 
@@ -174,7 +217,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      road_path_no_border_0: -4143136540010776902
+      CAVE_ENTRANCE_0: 3884249258629791450
+      CAVE_ENTRANCE_1: -1698623605037013645
+      CAVE_ENTRANCE_2: 2042324154451240407
+      CAVE_ENTRANCE_3: -3904704065962486762
+      CAVE_ENTRANCE_4: -5592624580203536058
+      CAVE_ENTRANCE_5: 4390795692855914480
+      CAVE_ENTRANCE_6: -755187850625507533
+      CAVE_ENTRANCE_7: -6277696501058360328
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
