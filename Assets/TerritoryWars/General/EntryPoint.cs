@@ -148,10 +148,11 @@ namespace TerritoryWars.General
                     continue;
                 }
 
-                if (DojoGameManager.Instance.LocalBurnerAccount != null)
+                if (DojoGameManager.Instance.LocalBurnerAccount != null && 
+                    (DojoGameManager.Instance.Synced || DojoGameManager.Instance.WorldManager.transform.childCount > 0))
                 {
                     CustomLogger.LogInfo("Conditions met - loading menu");
-                    //LoadMenu();
+                    LoadMenu();
                     break;
                     if(DojoGameManager.Instance.Synced || Time.time - startConenctionTime > 10 || DojoGameManager.Instance.WorldManager.transform.childCount > 0)
                     {

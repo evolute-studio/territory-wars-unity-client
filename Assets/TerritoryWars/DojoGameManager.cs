@@ -87,11 +87,11 @@ namespace TerritoryWars
             
             WorldManager.synchronizationMaster.OnEventMessage.AddListener(OnDojoEventReceived);
             WorldManager.synchronizationMaster.OnEventMessage.AddListener(OnEventMessage);
-            //WorldManager.synchronizationMaster.OnSynchronized.AddListener(OnSynchronized);
+            WorldManager.synchronizationMaster.OnSynchronized.AddListener(OnSynchronized);
             WorldManager.synchronizationMaster.OnEntitySpawned.AddListener(SpawnEntity);
             
             TryCreateAccount(3, false);
-            AfterAccountCreation();
+            //AfterAccountCreation();
         }
 
 
