@@ -33,7 +33,7 @@ namespace TerritoryWars.UI
 
         public void SetupButtons()
         {
-            _resultPopupComponents.FinishButton.onClick.AddListener(() => CustomSceneManager.Instance.LoadLobby(0));
+            _resultPopupComponents.FinishButton.onClick.AddListener(() => CustomSceneManager.Instance.LoadLobby());
         }
         
         public void SetResultPopupActive(bool active)

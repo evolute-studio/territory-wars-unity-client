@@ -524,6 +524,7 @@ namespace TerritoryWars.Dojo
         public TileData GetTopTile()
         {
             if (LocalPlayerBoard == null) return null;
+            CustomLogger.LogInfo("Get top tile. Board id: " + LocalPlayerBoard.id.Hex());
             return new TileData(OnChainBoardDataConverter.GetTopTile(LocalPlayerBoard.top_tile));
         }
 

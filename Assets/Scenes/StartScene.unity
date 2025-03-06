@@ -155,7 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WorldManager: {fileID: 209425369}
   CustomSynchronizationMaster: {fileID: 209425372}
-  dojoConfig: {fileID: 11400000, guid: cae5977e93d0db70e8a96199bd1ca33a, type: 2}
+  dojoConfig: {fileID: 11400000, guid: 2fcdfc0770a1cc4a0a656cf28c71fc55, type: 2}
   gameManagerData: {fileID: 11400000, guid: 291ea469f20a3a04097ffbc7db4f51f5, type: 2}
   GameSystem: {fileID: 209425367}
   PlayerProfileSystem: {fileID: 209425371}
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb53232f67c4c74a3019b9862a69724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contractAddress: 0x06fb3db4eed5e0f74a2f81a049ec456d3fb443865cc72c7c5c84472758d954ef
+  contractAddress: 0x0734383492f1e05353035c86cdba700f5d818ac542b47eb067592b7b226e5635
 --- !u!114 &209425368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   synchronizationMaster: {fileID: 209425368}
-  dojoConfig: {fileID: 11400000, guid: cae5977e93d0db70e8a96199bd1ca33a, type: 2}
+  dojoConfig: {fileID: 11400000, guid: 2fcdfc0770a1cc4a0a656cf28c71fc55, type: 2}
 --- !u!4 &209425370
 Transform:
   m_ObjectHideFlags: 0
@@ -546,8 +546,6 @@ MonoBehaviour:
   LoadingScreenObject: {fileID: 1853912902}
   CancelButton: {fileID: 1226731875}
   loadingText: {fileID: 1604953781}
-  loadingTextPrefix: Waiting for another player to join
-  connectingText: Connecting to the game
 --- !u!1 &729808245
 GameObject:
   m_ObjectHideFlags: 0
@@ -1273,7 +1271,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 122.75, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 808.3883, y: 114.4221}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1604953781
@@ -1330,7 +1328,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using DG.Tweening;
 using Dojo.Starknet;
 using TerritoryWars.Dojo;
@@ -54,7 +55,7 @@ namespace TerritoryWars.General
 
             if (!CustomSceneManager.Instance.LoadingScreen.IsLoading)
             {
-                CustomSceneManager.Instance.LoadingScreen.SetActive(true, DojoGameManager.Instance.CancelGame, CustomSceneManager.Instance.LoadingScreen.connectingText);
+                CustomSceneManager.Instance.LoadingScreen.SetActive(true, DojoGameManager.Instance.CancelGame, LoadingScreen.connectingText);
             }
         }
 
@@ -182,9 +183,32 @@ namespace TerritoryWars.General
             };
         }
 
-        public void Start()
+        public async void Start()
         {
-            Invoke(nameof(Initialize), 5);
+            CustomSceneManager.Instance.LoadingScreen.SetActive(true, DojoGameManager.Instance.CancelGame, LoadingScreen.boardInitializationText);
+            
+            CustomSynchronizationMaster customSynchronizationMaster = DojoGameManager.Instance.CustomSynchronizationMaster;
+            await customSynchronizationMaster.SyncPlayerInProgressGame(DojoGameManager.Instance.LocalBurnerAccount.Address);
+            evolute_duel_Game game = DojoGameManager.Instance.WorldManager.Entities<evolute_duel_Game>().FirstOrDefault()?.GetComponent<evolute_duel_Game>();
+            if (game == null)
+            {
+                CustomLogger.LogError("SessionManager Start - game is null");
+                return;
+            }
+            FieldElement boardId = game.board_id switch
+            {
+                Option<FieldElement>.Some some => some.value,
+                _ => null
+            };
+            IncomingModelsFilter.SetSessionCurrentBoardId(boardId.Hex());
+            await customSynchronizationMaster.SyncBoardWithDependencies(boardId);
+            evolute_duel_Board board = DojoGameManager.Instance.WorldManager.Entities<evolute_duel_Board>().FirstOrDefault()?.GetComponent<evolute_duel_Board>();
+            FieldElement[] players = new FieldElement[] { board?.player1.Item1, board?.player2.Item1 };
+            IncomingModelsFilter.SetSessionPlayers(players.Select(p => p.Hex()).ToList());
+            await customSynchronizationMaster.SyncPlayersArray(players);
+            var allowedBoards = await customSynchronizationMaster.SyncAllMoveByBoardId(board?.id);
+            Initialize();
+            CustomSceneManager.Instance.LoadingScreen.SetActive(false);
         }
 
         public void Initialize()
@@ -356,7 +380,7 @@ namespace TerritoryWars.General
         private void StartLocalTurn()
         {
             //CurrentTurnPlayer.StartSelecting();
-            evolute_duel_Board board = DojoGameManager.Instance.SessionManager.LocalPlayerBoard;
+            evolute_duel_Board board = DojoGameManager.Instance.WorldManager.Entities<evolute_duel_Board>().First().GetComponent<evolute_duel_Board>();
             Players[0].UpdateData(board.player1.Item3);
             Players[1].UpdateData(board.player2.Item3);
             gameUI.SessionUI.UpdateJokerText(CurrentTurnPlayer.LocalId);

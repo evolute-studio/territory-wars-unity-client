@@ -4,7 +4,9 @@ using Dojo;
 using Dojo.Starknet;
 using TerritoryWars;
 using TerritoryWars.Dojo;
+using TerritoryWars.General;
 using TerritoryWars.ModelsDataConverters;
+using TerritoryWars.Tools;
 using TerritoryWars.UI;
 using TMPro;
 using UnityEngine;
@@ -61,7 +63,7 @@ public class SnapshotTabController : MonoBehaviour
             FetchData();
         }
         
-        private void FetchData()
+        private async void FetchData()
         {
             ClearAllListItems();
             GameObject[] snapshots = DojoGameManager.Instance.GetSnapshots();
@@ -71,12 +73,19 @@ public class SnapshotTabController : MonoBehaviour
             {
                 if (!snapshot.TryGetComponent(out evolute_duel_Snapshot snapshotModel)) return;
                 if (!snapshotModel.player.Hex().Equals(DojoGameManager.Instance.LocalBurnerAccount.Address.Hex())) continue;
-                SnapshotListItem snapshotListItem = CreateListItem();
-                evolute_duel_Player player = DojoGameManager.Instance.GetPlayerData(snapshotModel.player.Hex());
+                
+                evolute_duel_Player player = await DojoGameManager.Instance.CustomSynchronizationMaster.WaitForModelByPredicate<evolute_duel_Player>(
+                    p => p.player_id.Hex() == snapshotModel.player.Hex()
+                );
+                if (player == null)
+                {
+                    CustomLogger.LogWarning($"Snapshot: {snapshotModel.snapshot_id.Hex()} has no player model: {snapshotModel.player.Hex()}");
+                    continue;
+                }
                 string playerName = CairoFieldsConverter.GetStringFromFieldElement(player.username);
                 int evoluteBalance = player.balance;
                 int moveNumber = snapshotModel.move_number;
-                
+                SnapshotListItem snapshotListItem = CreateListItem();
                 snapshotListItem.UpdateItem(playerName, evoluteBalance, moveNumber, () =>
                 {
                     SetActivePanel(false);
@@ -88,7 +97,7 @@ public class SnapshotTabController : MonoBehaviour
             SetBackgroundPlaceholder(snapshots.Length == 0);
         }
         
-        public void SetActivePanel(bool isActive)
+        public async void SetActivePanel(bool isActive)
         {
             if (isActive && MenuUIController.Instance._namePanelController.IsDefaultName())
             {
@@ -100,14 +109,16 @@ public class SnapshotTabController : MonoBehaviour
             PanelGameObject.SetActive(isActive);
             if (isActive)
             {
+                ApplicationState.SetState(ApplicationStates.SnapshotTab);
+                await DojoGameManager.Instance.SyncLocalPlayerSnapshots();
                 FetchData();
-                DojoGameManager.Instance.WorldManager.synchronizationMaster.OnEntitySpawned.AddListener(CreatedNewEntity);
-                DojoGameManager.Instance.WorldManager.synchronizationMaster.OnModelUpdated.AddListener(ModelUpdated);
+                IncomingModelsFilter.OnModelPassed.AddListener(ModelUpdated);
             }
             else
             {
-                DojoGameManager.Instance.WorldManager.synchronizationMaster.OnEntitySpawned.RemoveListener(CreatedNewEntity);
-                DojoGameManager.Instance.WorldManager.synchronizationMaster.OnModelUpdated.RemoveListener(ModelUpdated);
+                ApplicationState.SetState(ApplicationStates.Menu);
+                DojoGameManager.Instance.CustomSynchronizationMaster.DestroyAllSnapshots();
+                IncomingModelsFilter.OnModelPassed.RemoveListener(ModelUpdated);
                 ClearAllListItems();
             }
         }

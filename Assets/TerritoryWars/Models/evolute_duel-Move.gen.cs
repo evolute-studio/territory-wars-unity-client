@@ -38,6 +38,9 @@ public class evolute_duel_Move : ModelInstance {
 
         [ModelField("is_joker")]
         public bool is_joker;
+        
+        [ModelField("first_board_id")]
+        public FieldElement first_board_id;
 
     // Start is called before the first frame update
     void Start() {

@@ -36,7 +36,7 @@ namespace TerritoryWars.General
 
         public async void Start()
         {
-            CustomSceneManager.Instance.LoadingScreen.SetActive(true);
+            CustomSceneManager.Instance.LoadingScreen.SetActive(true, null, LoadingScreen.launchGameText);
             await InitializeGameAsync();
         }
         
@@ -60,7 +60,7 @@ namespace TerritoryWars.General
                 
                 // 4. Load Game
                 CustomLogger.LogDojoLoop("Checking previous game");
-                //DojoGameManager.LoadGame();
+                DojoGameManager.LoadGame();
                 
                 CustomLogger.LogDojoLoop("Initialization completed successfully");
             }
@@ -91,23 +91,6 @@ namespace TerritoryWars.General
         {
             yield return new WaitForSeconds(timeout);
             tcs.TrySetException(new TimeoutException($"Account setup timed out after {timeout} seconds"));
-        }
-
-        public void SyncInitialModels()
-        {
-            CustomLogger.LogInfo("Syncing initial models");
-            
-        }
-
-        public void CheckPreviousGame()
-        {
-            
-        }
-        public void LoadMenu()
-        {
-            CustomLogger.LogInfo("LoadMenu");
-            CustomSceneManager.Instance.LoadingScreen.SetActive(false);
-            CustomSceneManager.Instance.LoadLobby();
         }
         
 

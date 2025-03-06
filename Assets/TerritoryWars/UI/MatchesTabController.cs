@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Dojo;
 using Dojo.Starknet;
 using TerritoryWars.Dojo;
+using TerritoryWars.General;
 using TerritoryWars.ModelsDataConverters;
 using TerritoryWars.Tools;
 using TMPro;
@@ -79,12 +81,6 @@ namespace TerritoryWars.UI
         {
             CanceledMatchesText.text = "Canceled games: " + count;
         }
-
-        private void CreatedNewEntity(GameObject newEntity)
-        {
-            if (!newEntity.TryGetComponent(out evolute_duel_Game gameModel)) return;
-            FetchData();
-        }
         
         private void ModelUpdated(ModelInstance modelInstance)
         {
@@ -92,8 +88,9 @@ namespace TerritoryWars.UI
             FetchData();
         }
         
-        private void FetchData()
+        private async void FetchData()
         {
+            await DojoGameManager.Instance.SyncPlayerModelsForGames();
             ClearAllListItems();
             GameObject[] games = DojoGameManager.Instance.GetGames();
             //BackgroundPlaceholderGO.SetActive(games.Length == 0);
@@ -101,7 +98,14 @@ namespace TerritoryWars.UI
             foreach (var game in games)
             {
                 if (!game.TryGetComponent(out evolute_duel_Game gameModel)) return;
-                MatchListItem matchListItem = CreateListItem();
+                // evolute_duel_Player player = await DojoGameManager.Instance.CustomSynchronizationMaster.WaitForModelByPredicate<evolute_duel_Player>(
+                //     p => p.player_id.Hex() == gameModel.player.Hex()
+                // );
+                // if (player == null)
+                // {
+                //     CustomLogger.LogWarning($"Game has no player model: {gameModel.player.Hex()}");
+                //     continue;
+                // }
                 evolute_duel_Player player = DojoGameManager.Instance.GetPlayerData(gameModel.player.Hex());
                 string playerName = CairoFieldsConverter.GetStringFromFieldElement(player.username);
                 int evoluteBalance = player.balance;
@@ -135,6 +139,7 @@ namespace TerritoryWars.UI
                         SetInProgressMatchesText(_inProgressMatchesCount);
                         break;
                 }
+                MatchListItem matchListItem = CreateListItem();
                 if( status == "Created")
                 {
                     matchListItem.UpdateItem(playerName, evoluteBalance, status, moveNumber,() =>
@@ -196,7 +201,7 @@ namespace TerritoryWars.UI
             DojoGameManager.Instance.CreateGame();
         }
         
-        public void SetActivePanel(bool isActive)
+        public async void SetActivePanel(bool isActive)
         {
             if (isActive && MenuUIController.Instance._namePanelController.IsDefaultName())
             {
@@ -208,14 +213,18 @@ namespace TerritoryWars.UI
             PanelGameObject.SetActive(isActive);
             if (isActive)
             {
+                ApplicationState.SetState(ApplicationStates.MatchTab);
+                await DojoGameManager.Instance.SyncCreatedGames();
                 FetchData();
-                DojoGameManager.Instance.WorldManager.synchronizationMaster.OnEntitySpawned.AddListener(CreatedNewEntity);
-                DojoGameManager.Instance.WorldManager.synchronizationMaster.OnModelUpdated.AddListener(ModelUpdated);
+                IncomingModelsFilter.OnModelPassed.AddListener(ModelUpdated);
+                
             }
             else
             {
-                DojoGameManager.Instance.WorldManager.synchronizationMaster.OnEntitySpawned.RemoveListener(CreatedNewEntity);
-                DojoGameManager.Instance.WorldManager.synchronizationMaster.OnModelUpdated.RemoveListener(ModelUpdated);
+                ApplicationState.SetState(ApplicationStates.Menu);
+                DojoGameManager.Instance.CustomSynchronizationMaster.DestroyPlayersExceptLocal(DojoGameManager.Instance.LocalBurnerAccount.Address);
+                DojoGameManager.Instance.CustomSynchronizationMaster.DestroyAllGames();
+                IncomingModelsFilter.OnModelPassed.RemoveListener(ModelUpdated);
                 ClearAllListItems();
             }
         }

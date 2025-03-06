@@ -126,20 +126,19 @@ namespace TerritoryWars.Dojo
         }
         
         /// <summary>
-        /// Gets a query to fetch a game board and all its dependencies (moves, city nodes, road nodes)
+        /// Gets a query to fetch a game board and all its dependencies (city nodes, road nodes)
         /// </summary>
         /// <param name="id">The board ID as FieldElement</param>
         /// <returns>Query object configured to fetch board and related data</returns>
-        public static Query GetQueryOnlyBoardWithDependencies(FieldElement id)
+        public static Query GetQueryBoardWithDependencies(FieldElement id)
         {
             string[] entity_models = new[]
             {
                 GetModelName<evolute_duel_Board>(), 
-                GetModelName<evolute_duel_Move>(),
                 GetModelName<evolute_duel_CityNode>(),
                 GetModelName<evolute_duel_RoadNode>(),
             };
-            var boardClause = new MemberClause(
+            var boardIdClause = new MemberClause(
                 GetModelName<evolute_duel_Board>(),
                 "id",
                 dojo.ComparisonOperator.Eq,
@@ -148,9 +147,9 @@ namespace TerritoryWars.Dojo
             
             var moveClause = new MemberClause( 
                 GetModelName<evolute_duel_Move>(),
-                "is_joker", // TODO: change to board_id
+                "first_board_id", 
                 dojo.ComparisonOperator.Eq,
-                new MemberValue(new Primitive { Bool = false })
+                new MemberValue(new Primitive { Felt252 = id })
             );
             
             var cityNodeClause = new MemberClause(
@@ -169,11 +168,34 @@ namespace TerritoryWars.Dojo
             
             var compositeClause = new CompositeClause(
                 dojo.LogicalOperator.Or,
-                new[] { (Clause)boardClause, moveClause, cityNodeClause, roadNodeClause }
+                new[] { (Clause)boardIdClause, cityNodeClause, roadNodeClause }
             );
             
             Query query = new Query(limit, offset, compositeClause, dont_include_hashed_keys, 
                                     order_by, entity_models, entity_updated_after);
+            return query;
+        }
+        /// <summary>
+        /// Gets a query to fetch a move by its first board ID
+        /// </summary>
+        /// <param name="id">The board ID as FieldElement</param>
+        /// <returns></returns>
+        public static Query GetQueryMoveByFirstBoardId(FieldElement id)
+        {
+            string[] entity_models = new[]
+            {
+                GetModelName<evolute_duel_Move>(), 
+            };
+            
+            var moveClause = new MemberClause( 
+                GetModelName<evolute_duel_Move>(),
+                "first_board_id", 
+                dojo.ComparisonOperator.Eq,
+                new MemberValue(new Primitive { Felt252 = id })
+            );
+            
+            Query query = new Query(limit, offset, moveClause, dont_include_hashed_keys, 
+                order_by, entity_models, entity_updated_after);
             return query;
         }
         

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Threading.Tasks;
 using TerritoryWars.Tools;
@@ -47,31 +48,43 @@ namespace TerritoryWars.General
         public event LoadSceneEvent OnLoadScene;
 
         
-        public void LoadLobby(float wait = 0)
+        public void LoadLobby(Action startAction = null, Action finishAction = null)
         {
             CursorManager.Instance.SetCursor("default");
-            //Game.SetLobbyState();
-            LoadSceneWithDealay(Menu, wait);
+            ApplicationState.SetState(ApplicationStates.Menu);
+            LoadSceneWithDealay(Menu, startAction, finishAction);
         }
 
-        public void LoadSession(float wait = 0)
+        public void LoadSession(Action startAction = null, Action finishAction = null)
         {
             Debug.Log("LoadSession");
-           // Game.SetSessionState();
-            LoadSceneWithDealay(Session, wait);
+            ApplicationState.SetState(ApplicationStates.Session);
+            LoadSceneWithDealay(Session, startAction, finishAction);
+        }
+        
+        public async void LoadSceneWithDealay(string name, Action startAction = null, Action finishAction = null)
+        {
+            if (startAction != null)
+                startAction.Invoke();
+            if (finishAction != null)
+            {
+                OnLoadingFinish += OnFinish;
+                void OnFinish()
+                {
+                    OnLoadingFinish -= OnFinish;
+                    finishAction.Invoke();
+                }
+            }
+            
+            //await Task.Delay((int) (delay * 1000));
+            LoadScene(name);
         }
 
-        public void LoadScene(string name, float wait = 0)
+        public void LoadScene(string name)
         {
             if (_isLoading)
                 return;
-            StartCoroutine(LoadSceneAsync(name, wait));
-        }
-        
-        public async void LoadSceneWithDealay(string name, float delay)
-        {
-            await Task.Delay((int) (delay * 1000));
-            LoadScene(name);
+            StartCoroutine(LoadSceneAsync(name));
         }
         
         public IEnumerator LoadSceneAsync(string sceneName, float wait = 0)

@@ -94,6 +94,7 @@ namespace Dojo
                 // Add the model component to the entity
                 var component = (ModelInstance)entityGameObject.AddComponent(model.GetType());
                 component.Initialize(entityModel);
+                OnModelUpdated?.Invoke(component);
             }
 
             OnEntitySpawned?.Invoke(entityGameObject);
@@ -135,7 +136,7 @@ namespace Dojo
 
                 // update component with new model data
                 ((ModelInstance)component).OnUpdate(entityModel);
-                OnModelUpdated?.Invoke(model);
+                OnModelUpdated?.Invoke((ModelInstance)component);
             }
         }
 
