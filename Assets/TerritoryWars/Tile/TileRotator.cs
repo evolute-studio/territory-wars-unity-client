@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,6 +10,7 @@ namespace TerritoryWars.Tile
         public List<Transform> SimpleRotationObjects = new List<Transform>();
         public List<Transform> MirrorRotationObjects = new List<Transform>();
         public List<LineRenderer> LineRenderers = new List<LineRenderer>();
+        public List<SpriteSwapElement> SpriteSwapElements = new List<SpriteSwapElement>();
 
         public UnityEvent OnRotation;
 
@@ -43,6 +45,11 @@ namespace TerritoryWars.Tile
             foreach (var lineRenderer in LineRenderers)
             {
                 LineRotation(lineRenderer);
+            }
+            
+            foreach (var spriteSwapElement in SpriteSwapElements)
+            {
+                spriteSwapElement.Rotate();
             }
             OnRotation?.Invoke();
         }
@@ -134,5 +141,41 @@ namespace TerritoryWars.Tile
         }
 
        
+    }
+
+    [Serializable]
+    public class SpriteSwapElement
+    {
+        public SpriteRenderer SpriteRenderer;
+        public SpriteSwapRule[] Rules;
+        
+        public int GetCurrentRuleIndex()
+        {
+            for (int i = 0; i < Rules.Length; i++)
+            {
+                if (SpriteRenderer.sprite == Rules[i].Sprite && SpriteRenderer.transform.localScale == Rules[i].Scale)
+                {
+                    return i;
+                }
+            }
+
+            return -1;
+        }
+        
+        public void Rotate(int times = 1)
+        {
+            int currentIndex = GetCurrentRuleIndex();
+            if (currentIndex == -1) return;
+            int newIndex = (currentIndex + times) % Rules.Length;
+            SpriteRenderer.sprite = Rules[newIndex].Sprite;
+            SpriteRenderer.transform.localScale = Rules[newIndex].Scale;
+        }
+    }
+    
+    [Serializable]
+    public class SpriteSwapRule
+    {
+        public Sprite Sprite;
+        public Vector3 Scale;
     }
 }
