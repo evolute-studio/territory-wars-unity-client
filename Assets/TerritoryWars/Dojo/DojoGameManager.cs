@@ -124,16 +124,19 @@ namespace TerritoryWars.Dojo
                 Option<FieldElement>.Some some => some.value,
                 _ => null
             };
+            IncomingModelsFilter.SetSessionCurrentBoardId(boardId.Hex());
             CustomLogger.LogDojoLoop("SyncEverythingForGame. BoardId: " + boardId.Hex());
             int count = await CustomSynchronizationMaster.SyncBoardWithDependencies(boardId);
             CustomLogger.LogInfo("Board synced: " + WorldManager.Entities<evolute_duel_Board>().Length);
             evolute_duel_Board board = WorldManager.Entities<evolute_duel_Board>().FirstOrDefault()?.GetComponent<evolute_duel_Board>();
             FieldElement[] players = new FieldElement[] { board.player1.Item1, board.player2.Item1 };
+            IncomingModelsFilter.SetSessionPlayers(players.Select(p => p.Hex()).ToList());
             await CustomSynchronizationMaster.SyncPlayersArray(players);
             var allowedBoards = await CustomSynchronizationMaster.SyncAllMoveByBoardId(board.id);
-            IncomingModelsFilter.SetSessionAllowedBoards(allowedBoards.ToList());
-            IncomingModelsFilter.SetSessionPlayers(players.Select(p => p.Hex()).ToList());
-            IncomingModelsFilter.SetSessionCurrentBoardId(board?.id.Hex());
+            if (allowedBoards != null)
+                IncomingModelsFilter.SetSessionAllowedBoards(allowedBoards.ToList());
+            
+            
             CustomLogger.LogDojoLoop("SyncEverythingForGame. Synced boards: " + count);
         }
         

@@ -32,6 +32,7 @@ namespace TerritoryWars.UI
         private int _canceledMatchesCount = 0;
         
         private List<MatchListItem> _matchListItems = new List<MatchListItem>();
+        private List<ModelInstance> _games = new List<ModelInstance>();
 
         public void Start() => Initialize();
         
@@ -84,14 +85,18 @@ namespace TerritoryWars.UI
         
         private void ModelUpdated(ModelInstance modelInstance)
         {
-            if (!modelInstance.transform.TryGetComponent(out evolute_duel_Game gameModel)) return;
-            FetchData();
+            if (modelInstance is evolute_duel_Game && !_games.Contains(modelInstance))
+            {
+                FetchData();
+                _games.Add(modelInstance);
+            }
         }
         
         private async void FetchData()
         {
-            await DojoGameManager.Instance.SyncPlayerModelsForGames();
+            
             ClearAllListItems();
+            await DojoGameManager.Instance.SyncCreatedGames();
             GameObject[] games = DojoGameManager.Instance.GetGames();
             //BackgroundPlaceholderGO.SetActive(games.Length == 0);
 
@@ -106,6 +111,7 @@ namespace TerritoryWars.UI
                 //     CustomLogger.LogWarning($"Game has no player model: {gameModel.player.Hex()}");
                 //     continue;
                 // }
+                
                 evolute_duel_Player player = DojoGameManager.Instance.GetPlayerData(gameModel.player.Hex());
                 string playerName = CairoFieldsConverter.GetStringFromFieldElement(player.username);
                 int evoluteBalance = player.balance;
@@ -213,8 +219,8 @@ namespace TerritoryWars.UI
             PanelGameObject.SetActive(isActive);
             if (isActive)
             {
+                _games = new List<ModelInstance>();
                 ApplicationState.SetState(ApplicationStates.MatchTab);
-                await DojoGameManager.Instance.SyncCreatedGames();
                 FetchData();
                 IncomingModelsFilter.OnModelPassed.AddListener(ModelUpdated);
                 

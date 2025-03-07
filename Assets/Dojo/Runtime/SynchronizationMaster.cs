@@ -58,6 +58,14 @@ namespace Dojo
             var entityGameObjects = new List<GameObject>();
             foreach (var entity in entities)
             {
+                var entityModels = entity.Models.Values.ToArray();
+                foreach (var model in entityModels)
+                {
+                    if (model.Name == "evolute_duel_Board" || model.Name == "evolute_duel-Board")
+                    {
+                        Debug.Log("Board model updated");
+                    }
+                }
                 entityGameObjects.Add(SpawnEntity(entity.HashedKeys, entity.Models.Values.ToArray()));
             }
 
@@ -84,16 +92,19 @@ namespace Dojo
                     Debug.LogWarning($"Model {entityModel.Name} not found");
                     continue;
                 }
-                
-                // Check if the entity already has the model component
-                if (entityGameObject.GetComponent(model.GetType()) != null)
-                {
-                    continue;
-                }
 
-                // Add the model component to the entity
-                var component = (ModelInstance)entityGameObject.AddComponent(model.GetType());
-                component.Initialize(entityModel);
+                ModelInstance component = entityGameObject.GetComponent(model.GetType()) as ModelInstance;
+                
+                if (component == null)
+                {
+                    // we dont need to initialize the component
+                    // because it'll get updated
+                    // Add the model component to the entity
+                    component = (ModelInstance)entityGameObject.AddComponent(model.GetType());
+                    component.Initialize(entityModel);
+                    OnModelUpdated?.Invoke(component);
+                }
+                component.OnUpdate(entityModel);
                 OnModelUpdated?.Invoke(component);
             }
 
@@ -104,6 +115,14 @@ namespace Dojo
         // Handles spawning / updating entities as they are updated from the dojo world
         private void HandleEntityUpdate(FieldElement hashedKeys, Model[] entityModels)
         {
+            foreach (var model in entityModels)
+            {
+                if (model.Name == "evolute_duel_Board" || model.Name == "evolute_duel-Board")
+                {
+                    Debug.Log("Board model updated");
+                }
+            }
+            
             // Get the entity game object
             var entity = GameObject.Find(hashedKeys.Hex());
             if (entity == null)

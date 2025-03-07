@@ -39,6 +39,7 @@ namespace TerritoryWars.General
         {
             _mainCamera = Camera.main;
             SetInitialPosition();
+            SetupSortingLayers();
             
             tileGeneratorForUI.gameObject.SetActive(false);
         }
@@ -71,7 +72,7 @@ namespace TerritoryWars.General
             SessionManager.Instance.TileSelector.OnTileSelected += SetPosition;
             SessionManager.Instance.TileSelector.OnTilePlaced.AddListener(ResetPosition);
             GameUI.OnJokerButtonClickedEvent += GenerateFFFFTile;
-            SetupSortingLayers();
+            
         }
 
         private void SetupSortingLayers()

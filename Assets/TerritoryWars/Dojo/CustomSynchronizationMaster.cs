@@ -103,9 +103,30 @@ namespace TerritoryWars.Dojo
                 Option<FieldElement>.None => null,
                 _ => null
             };
+            if (lastMoveId == null)
+            {
+                CustomLogger.LogWarning("Board has no last move id. Snapshot session hasn't any moves");
+                return null;
+            }
             await SyncMoveById(lastMoveId);
+            evolute_duel_Move firstMove = DojoGameManager.Instance.WorldManager.Entities<evolute_duel_Move>()
+                .FirstOrDefault(m => m.GetComponent<evolute_duel_Move>().id.Hex() == lastMoveId.Hex())?
+                .GetComponent<evolute_duel_Move>();
+            FieldElement previousMoveId = firstMove?.prev_move_id switch
+            {
+                Option<FieldElement>.Some some => some.value,
+                Option<FieldElement>.None => null,
+                _ => null
+            };
+            
+            if (previousMoveId == null)
+            {
+                CustomLogger.LogWarning("First move has no previous move id. Snapshot session has only one move");
+            }
+            
+            await SyncMoveById(previousMoveId);
 
-            while (boardsToProcess.Count > 0 && processedBoardIds.Count < 64) // обмеження на кількість дощок
+            while (boardsToProcess.Count > 0 && processedBoardIds.Count < 64)
             {
                 var currentBoardId = boardsToProcess.Dequeue();
                 if (processedBoardIds.Contains(currentBoardId.Hex()))
@@ -114,14 +135,13 @@ namespace TerritoryWars.Dojo
                 processedBoardIds.Add(currentBoardId.Hex());
                 
                 CustomLogger.LogDojoLoop($"Processing board id {currentBoardId.Hex()}");
-                // Синхронізуємо ходи для поточної дошки
+                
                 int count = await SyncConstruction(
                     DojoQueries.GetQueryMoveByFirstBoardId(currentBoardId), 
                     nameof(SyncAllMoveByBoardId)
                 );
                 CustomLogger.LogDojoLoop($"Synced {count} moves with board id {currentBoardId.Hex()}");
                 
-                // Отримуємо нові ходи
                 var moveObjects = WorldManager.Entities<evolute_duel_Move>();
                 foreach (var moveObject in moveObjects)
                 {
@@ -132,7 +152,6 @@ namespace TerritoryWars.Dojo
                     {
                         moves.Add(move);
                         
-                        // Якщо знайдена нова дошка, додаємо її в чергу
                         if (!processedBoardIds.Contains(move.first_board_id.Hex()))
                         {
                             boardsToProcess.Enqueue(move.first_board_id);

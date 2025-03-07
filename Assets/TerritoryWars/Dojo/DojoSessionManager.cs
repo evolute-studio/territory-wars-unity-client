@@ -442,6 +442,9 @@ namespace TerritoryWars.Dojo
                 {
                     s += node.position + " ";
                     (Vector2Int position, Side side) = OnChainBoardDataConverter.GetPositionAndSide(node.position);
+                    CustomLogger.LogInfo($"Board: " + SessionManager.Instance.Board);
+                    CustomLogger.LogInfo($"TileObject: " + SessionManager.Instance.Board.GetTileObject(position.x, position.y));
+                    CustomLogger.LogInfo($"TileGenerator: " + SessionManager.Instance.Board.GetTileObject(position.x, position.y).GetComponent<TileGenerator>());
                     TileGenerator tileGenerator = SessionManager.Instance.Board.GetTileObject(position.x, position.y).GetComponent<TileGenerator>();
                     int playerOwner;
                     if (road.Key.contested)

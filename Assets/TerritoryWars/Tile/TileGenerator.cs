@@ -44,7 +44,7 @@ namespace TerritoryWars.Tile
         public SpriteRenderer[] pinRenderers;
 
 
-        public void Start() => Initialize();
+        public void Awake() => Initialize();
 
         public void Initialize()
         {

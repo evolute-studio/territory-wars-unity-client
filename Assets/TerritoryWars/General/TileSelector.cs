@@ -58,10 +58,6 @@ namespace TerritoryWars.General
             highlightedTiles.transform.parent = transform;
         }
 
-        private void Start()
-        {
-        }
-
         private void Update()
         {
             if (Input.GetMouseButtonDown(0))

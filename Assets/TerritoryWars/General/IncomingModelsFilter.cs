@@ -88,7 +88,8 @@ namespace TerritoryWars.General
         
         private static void DestroyModel(ModelInstance model)
         {
-            CustomLogger.LogInfo($"Filter Mode: [{ApplicationState.CurrentState}] Destroying model. Model type: " + model.GetType().Name);
+            if(model == null || model.gameObject == null) return;
+            CustomLogger.LogInfo($"Filter Mode: [{ApplicationState.CurrentState}] Destroying model. Model type: {model.GetType().Name} GameObject name: {model.gameObject.name}");
             GameObject gameObject = model.gameObject;
             Component[] components = model.gameObject.GetComponents<Component>();
             string s = $"GameObject: {model.gameObject.name} Before: Components in game object: ";
@@ -257,7 +258,10 @@ namespace TerritoryWars.General
                     }
                     CustomLogger.LogInfo($"Checking board {board.id.Hex()}");
                     CustomLogger.LogInfo($"Allowed boards: {AllowedBoards.Count}");
-                    if(AllowedBoards.Contains(board.id.Hex()))
+                    bool isBoardAllowed = AllowedBoards.Contains(board.id.Hex());
+                    bool isBoardHasLocalPlayer = board.player1.Item1.Hex() == LocalPlayerId || board.player2.Item1.Hex() == LocalPlayerId;
+                    if(isBoardHasLocalPlayer) AllowedBoards.Add(board.id.Hex());
+                    if(isBoardAllowed || isBoardHasLocalPlayer)
                         return true;
                     return false;
                 case nameof(evolute_duel_Move):
