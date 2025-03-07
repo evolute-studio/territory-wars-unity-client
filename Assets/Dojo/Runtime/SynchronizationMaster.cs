@@ -129,7 +129,6 @@ namespace Dojo
 
         private void HandleEventMessage(FieldElement hashedKeys, Model[] entityModels)
         {
-            Debug.Log("!!!!!!!!! Handling event message");
             foreach (var entityModel in entityModels)
             {
                 string[] parts = entityModel.Name.Split('-');
@@ -156,7 +155,6 @@ namespace Dojo
         // Register event message callbacks
         public void RegisterEventMessageCallbacks()
         {
-            Debug.Log("Registering event message callbacks");
             ToriiEvents.Instance.OnEventMessageUpdated += HandleEventMessage;
         }
 
