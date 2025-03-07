@@ -28,7 +28,7 @@ namespace Dojo
                 TODO: maybe do in the start function of the SynchronizationMaster?
                 problem is when to start the subscription service
             */
-            //await synchronizationMaster.SynchronizeEntities();
+            await synchronizationMaster.SynchronizeEntities();
 
             // listen for entity updates
             synchronizationMaster.RegisterEntityCallbacks();
