@@ -21,6 +21,8 @@ public class SnapshotTabController : MonoBehaviour
     public GameObject BackgroundPlaceholderGO;
         
     private List<SnapshotListItem> _listItems = new List<SnapshotListItem>();
+    private List<ModelInstance> _models = new List<ModelInstance>();
+    private List<GameObject> _snapshotObjects = new List<GameObject>();
     
     public void Start() => Initialize();
         
@@ -59,18 +61,26 @@ public class SnapshotTabController : MonoBehaviour
         
         private void ModelUpdated(ModelInstance modelInstance)
         {
-            if (!modelInstance.transform.TryGetComponent(out evolute_duel_Snapshot snapshotModel)) return;
-            FetchData();
+            //if (!modelInstance.transform.TryGetComponent(out evolute_duel_Snapshot snapshotModel)) return;
+            if (modelInstance is evolute_duel_Snapshot && !_models.Contains(modelInstance))
+            {
+                FetchData();
+                _models.Add(modelInstance);
+            }
+           
         }
         
         private async void FetchData()
         {
             ClearAllListItems();
+            await DojoGameManager.Instance.SyncLocalPlayerSnapshots();
             GameObject[] snapshots = DojoGameManager.Instance.GetSnapshots();
             //BackgroundPlaceholderGO.SetActive(games.Length == 0);
+            
 
             foreach (var snapshot in snapshots)
             {
+                if (_snapshotObjects.Contains(snapshot)) continue;
                 if (!snapshot.TryGetComponent(out evolute_duel_Snapshot snapshotModel)) return;
                 if (!snapshotModel.player.Hex().Equals(DojoGameManager.Instance.LocalBurnerAccount.Address.Hex())) continue;
                 
@@ -91,6 +101,7 @@ public class SnapshotTabController : MonoBehaviour
                     SetActivePanel(false);
                     DojoGameManager.Instance.CreateGameFromSnapshot(snapshotModel.snapshot_id);
                 });
+                _snapshotObjects.Add(snapshot);
                 
             }
 
@@ -109,8 +120,9 @@ public class SnapshotTabController : MonoBehaviour
             PanelGameObject.SetActive(isActive);
             if (isActive)
             {
+                _models.Clear();
+                _snapshotObjects.Clear();
                 ApplicationState.SetState(ApplicationStates.SnapshotTab);
-                await DojoGameManager.Instance.SyncLocalPlayerSnapshots();
                 FetchData();
                 IncomingModelsFilter.OnModelPassed.AddListener(ModelUpdated);
             }

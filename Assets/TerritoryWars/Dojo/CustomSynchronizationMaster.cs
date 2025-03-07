@@ -200,7 +200,7 @@ namespace TerritoryWars.Dojo
             foreach (GameObject player in players)
             {
                 evolute_duel_Player playerModel = player.GetComponent<evolute_duel_Player>();
-                if (playerModel.player_id != localAddress)
+                if (playerModel.player_id.Hex() != localAddress.Hex())
                 {
                     DestroyImmediate(player);
                     //WorldManager.RemoveEntity(player.name);

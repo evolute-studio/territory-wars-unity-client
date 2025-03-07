@@ -33,6 +33,7 @@ namespace TerritoryWars.UI
         
         private List<MatchListItem> _matchListItems = new List<MatchListItem>();
         private List<ModelInstance> _games = new List<ModelInstance>();
+        private List<GameObject> _gameObjects = new List<GameObject>();
 
         public void Start() => Initialize();
         
@@ -102,6 +103,7 @@ namespace TerritoryWars.UI
 
             foreach (var game in games)
             {
+                if (_gameObjects.Contains(game)) continue;
                 if (!game.TryGetComponent(out evolute_duel_Game gameModel)) return;
                 // evolute_duel_Player player = await DojoGameManager.Instance.CustomSynchronizationMaster.WaitForModelByPredicate<evolute_duel_Player>(
                 //     p => p.player_id.Hex() == gameModel.player.Hex()
@@ -164,6 +166,7 @@ namespace TerritoryWars.UI
                     Destroy(matchListItem.ListItem);
                     _matchListItems.Remove(matchListItem);
                 }
+                _gameObjects.Add(game);
                 
             }
 
@@ -220,6 +223,7 @@ namespace TerritoryWars.UI
             if (isActive)
             {
                 _games = new List<ModelInstance>();
+                _gameObjects = new List<GameObject>();
                 ApplicationState.SetState(ApplicationStates.MatchTab);
                 FetchData();
                 IncomingModelsFilter.OnModelPassed.AddListener(ModelUpdated);
