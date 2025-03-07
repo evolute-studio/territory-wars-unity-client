@@ -164,13 +164,19 @@ namespace TerritoryWars.Dojo
 
         private void GameFinished(FieldElement board_id)
         {
-            evolute_duel_Board board = GetLocalPlayerBoard(true);
+            evolute_duel_Board board = GetLocalPlayerBoard();
             if (board.id.Hex() == board_id.Hex())
             {
                 CustomLogger.LogEvent($"[GameFinished] | BoardId: {board_id.Hex()}");
-                SimpleStorage.ClearCurrentBoardId();
-                GameUI.Instance.ShowResultPopUp();
+                Coroutines.StartRoutine(GameFinishedDelayed());
             }
+        }
+
+        private IEnumerator GameFinishedDelayed()
+        {
+            yield return new WaitForSeconds(2f);
+            SimpleStorage.ClearCurrentBoardId();
+            GameUI.Instance.ShowResultPopUp();
         }
 
         private void RoadContestWon(evolute_duel_RoadContestWon eventModel)
@@ -500,19 +506,18 @@ namespace TerritoryWars.Dojo
             return roadNodes;
         }
 
-        public evolute_duel_Board GetLocalPlayerBoard(bool isFinished = false)
+        public evolute_duel_Board GetLocalPlayerBoard()
         {
-            return GetBoard(_dojoGameManager.LocalBurnerAccount.Address.Hex(), isFinished);
+            return GetBoard(_dojoGameManager.LocalBurnerAccount.Address.Hex());
         }
 
-        public evolute_duel_Board GetBoard(string playerAddress, bool isFinished = false)
+        public evolute_duel_Board GetBoard(string playerAddress)
         {
             GameObject[] boardsGO = _dojoGameManager.WorldManager.Entities<evolute_duel_Board>();
             foreach (var boardGO in boardsGO)
             {
                 if (boardGO.TryGetComponent(out evolute_duel_Board board))
                 {
-                    if (board.game_state is GameState.Finished && !isFinished) continue;
                     //public (FieldElement, PlayerSide, byte, bool) player1;
                     if (board.player1.Item1.Hex() == playerAddress|| board.player2.Item1.Hex() == playerAddress)
                     {
