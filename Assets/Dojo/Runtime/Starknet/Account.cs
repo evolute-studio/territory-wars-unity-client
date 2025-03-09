@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using bottlenoselabs.C2CS.Runtime;
 using dojo_bindings;
+using UnityEngine.Events;
 using Debug = UnityEngine.Debug;
 
 namespace Dojo.Starknet
@@ -28,7 +29,9 @@ namespace Dojo.Starknet
 
         public Account(JsonRpcClient provider, SigningKey privateKey, FieldElement address, Action OnAccountCreated = null)
         {
-            createAccount(provider, privateKey, address);
+            Debug.Log("Result Account:" + address.Hex());
+            Debug.Log("Result Account priv key:" + privateKey.Inner.Hex());
+            Debug.Log("Result Account public key:" + privateKey.PublicKey.Inner.Hex());
             Address = address;
             Signer = privateKey;
             createAccount(provider, privateKey, address, OnAccountCreated);
@@ -38,6 +41,7 @@ namespace Dojo.Starknet
         {
             var resultAccount = dojo.account_new(provider.client, privateKey.Inner.Inner,
                 CString.FromString(address.Hex()));
+            
             if (resultAccount.tag == dojo.ResultAccount_Tag.ErrAccount)
             {
                 throw new Exception(resultAccount.err.message);

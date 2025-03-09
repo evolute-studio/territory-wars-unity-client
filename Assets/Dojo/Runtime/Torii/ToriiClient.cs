@@ -6,7 +6,6 @@ using dojo_bindings;
 using Dojo.Starknet;
 using Newtonsoft.Json;
 using System.Linq;
-
 namespace Dojo.Torii
 {
     public unsafe class ToriiClient
@@ -31,7 +30,7 @@ namespace Dojo.Torii
             client = result._ok;
             dojo.client_set_logger(client, new dojo.FnPtr_CString_Void((msg) => Debug.Log(msg)));
 
-            RegisterEntityStateUpdateEvent(new EntityKeysClause[] { }, dispatchEventsToMainThread);
+            RegisterEntityStateUpdateEvent(new EntityKeysClause[] { }, dispatchEventsToMainThread); ;
             RegisterEventMessageUpdateEvent(new EntityKeysClause[] { }, false, dispatchEventsToMainThread);
         }
 

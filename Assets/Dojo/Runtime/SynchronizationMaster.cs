@@ -50,14 +50,22 @@ namespace Dojo
 
             // Fetch entities from the world
 #if UNITY_WEBGL && !UNITY_EDITOR
-            var entities = await worldManager.wasmClient.Entities(worldManager.dojoConfig.query);
+            var entities = await worldManager.wasmClient.Entities(query);
 #else
-            var entities = await Task.Run(() => worldManager.toriiClient.Entities(worldManager.dojoConfig.query));
+            var entities = await Task.Run(() => worldManager.toriiClient.Entities(query));
 #endif
 
             var entityGameObjects = new List<GameObject>();
             foreach (var entity in entities)
             {
+                var entityModels = entity.Models.Values.ToArray();
+                foreach (var model in entityModels)
+                {
+                    if (model.Name == "evolute_duel_Board" || model.Name == "evolute_duel-Board")
+                    {
+                        Debug.Log("Board model updated");
+                    }
+                }
                 entityGameObjects.Add(SpawnEntity(entity.HashedKeys, entity.Models.Values.ToArray()));
             }
 
@@ -94,7 +102,7 @@ namespace Dojo
                     // Add the model component to the entity
                     component = (ModelInstance)entityGameObject.AddComponent(model.GetType());
                     component.Initialize(entityModel);
-                    //OnModelUpdated?.Invoke(component);
+                    OnModelUpdated?.Invoke(component);
                 }
                 component.OnUpdate(entityModel);
                 OnModelUpdated?.Invoke(component);
@@ -107,6 +115,14 @@ namespace Dojo
         // Handles spawning / updating entities as they are updated from the dojo world
         private void HandleEntityUpdate(FieldElement hashedKeys, Model[] entityModels)
         {
+            foreach (var model in entityModels)
+            {
+                if (model.Name == "evolute_duel_Board" || model.Name == "evolute_duel-Board")
+                {
+                    Debug.Log("Board model updated");
+                }
+            }
+            
             // Get the entity game object
             var entity = GameObject.Find(hashedKeys.Hex());
             if (entity == null)
@@ -171,6 +187,7 @@ namespace Dojo
         // Register event message callbacks
         public void RegisterEventMessageCallbacks()
         {
+            Debug.Log("Registering event message callbacks");
             ToriiEvents.Instance.OnEventMessageUpdated += HandleEventMessage;
         }
 
