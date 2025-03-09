@@ -492,7 +492,6 @@ namespace TerritoryWars.Dojo
                 CustomLogger.LogInfo("Start session");
                 // Start session
                 ApplicationState.SetState(ApplicationStates.Initializing);
-                await Task.Delay(3000);
                 await SyncEverythingForGame();
                 SessionManager = new DojoSessionManager(this);
                 CustomSceneManager.Instance.LoadSession();

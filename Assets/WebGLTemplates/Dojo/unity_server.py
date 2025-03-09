@@ -2,6 +2,7 @@ import http.server
 import socketserver
 import os
 import ssl
+import argparse
 
 class UnityWebGLHandler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
@@ -73,8 +74,12 @@ class UnityWebGLHandler(http.server.SimpleHTTPRequestHandler):
             return 'application/octet-stream'
         return super().guess_type(path)[0]
 
-# Set up the server
-PORT = 8000  # Change back to 8000
+# Замінюємо налаштування порту на використання argparse
+parser = argparse.ArgumentParser(description='Запустити Unity WebGL сервер')
+parser.add_argument('--port', type=int, default=8000, help='Порт для запуску сервера (за замовчуванням: 8000)')
+args = parser.parse_args()
+
+PORT = args.port
 Handler = UnityWebGLHandler
 
 print(f"\nStarting Unity WebGL server on port {PORT}")

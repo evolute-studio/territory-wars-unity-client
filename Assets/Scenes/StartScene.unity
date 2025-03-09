@@ -155,7 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WorldManager: {fileID: 209425369}
   CustomSynchronizationMaster: {fileID: 209425372}
-  dojoConfig: {fileID: 11400000, guid: cae5977e93d0db70e8a96199bd1ca33a, type: 2}
+  dojoConfig: {fileID: 11400000, guid: df6c209f9a34120ecb69941c57148899, type: 2}
   gameManagerData: {fileID: 11400000, guid: 291ea469f20a3a04097ffbc7db4f51f5, type: 2}
   GameSystem: {fileID: 209425367}
   PlayerProfileSystem: {fileID: 209425371}
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb53232f67c4c74a3019b9862a69724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contractAddress: 0x06fb3db4eed5e0f74a2f81a049ec456d3fb443865cc72c7c5c84472758d954ef
+  contractAddress: 0x031f59dd50e44fab3fcc22d6c2109c4ca5fff4c67064f891f18e84ff8b4c1ef0
 --- !u!114 &209425368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   synchronizationMaster: {fileID: 209425368}
-  dojoConfig: {fileID: 11400000, guid: cae5977e93d0db70e8a96199bd1ca33a, type: 2}
+  dojoConfig: {fileID: 11400000, guid: df6c209f9a34120ecb69941c57148899, type: 2}
 --- !u!4 &209425370
 Transform:
   m_ObjectHideFlags: 0
@@ -1402,6 +1402,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472d85357610427ab2d77e6be2a42cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameSystem: {fileID: 0}
+  dojoGameManager: {fileID: 0}
+  SnapshotGameId:
+    hex: 0x0000000000000000000000000000000000000000000000000000000000000000
 --- !u!4 &1734509913
 Transform:
   m_ObjectHideFlags: 0

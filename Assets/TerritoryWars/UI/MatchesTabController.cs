@@ -105,16 +105,14 @@ namespace TerritoryWars.UI
             {
                 if (_gameObjects.Contains(game)) continue;
                 if (!game.TryGetComponent(out evolute_duel_Game gameModel)) return;
-                // evolute_duel_Player player = await DojoGameManager.Instance.CustomSynchronizationMaster.WaitForModelByPredicate<evolute_duel_Player>(
-                //     p => p.player_id.Hex() == gameModel.player.Hex()
-                // );
-                // if (player == null)
-                // {
-                //     CustomLogger.LogWarning($"Game has no player model: {gameModel.player.Hex()}");
-                //     continue;
-                // }
-                
-                evolute_duel_Player player = DojoGameManager.Instance.GetPlayerData(gameModel.player.Hex());
+                evolute_duel_Player player = await DojoGameManager.Instance.CustomSynchronizationMaster.WaitForModelByPredicate<evolute_duel_Player>(
+                    p => p.player_id.Hex() == gameModel.player.Hex()
+                );
+                if (player == null)
+                {
+                    CustomLogger.LogWarning($"Game has no player model: {gameModel.player.Hex()}");
+                    continue;
+                }
                 string playerName = CairoFieldsConverter.GetStringFromFieldElement(player.username);
                 int evoluteBalance = player.balance;
                 string gameId = gameModel.board_id switch
