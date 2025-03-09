@@ -2611,6 +2611,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 241015591820575222}
+  - component: {fileID: 538613372096517436}
   m_Layer: 0
   m_Name: Tile_CCCC
   m_TagString: Untagged
@@ -2641,6 +2642,43 @@ Transform:
   - {fileID: 9180543350028141183}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &538613372096517436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287493218568026045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3de3fd1ff89342b9a822aa086b66c3e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SimpleRotationObjects:
+  - {fileID: 1755888546533813482}
+  - {fileID: 608618023757969183}
+  - {fileID: 4067525337029086013}
+  - {fileID: 9180543350028141183}
+  MirrorRotationObjects: []
+  LineRenderers: []
+  SpriteSwapElements: []
+  OnRotation:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 840167752889725829}
+        m_TargetAssemblyTypeName: TerritoryWars.Tile.TerritoryFiller, Assembly-CSharp
+        m_MethodName: PlaceTerritory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  autoRotate: 0
+  rotateInterval: 1
 --- !u!1 &5444119999231898524
 GameObject:
   m_ObjectHideFlags: 0

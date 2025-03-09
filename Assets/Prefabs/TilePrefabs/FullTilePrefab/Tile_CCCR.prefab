@@ -1275,6 +1275,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 612294766172083682}
+  - component: {fileID: 1824358887480847346}
   m_Layer: 0
   m_Name: Fence
   m_TagString: Untagged
@@ -1303,8 +1304,34 @@ Transform:
   - {fileID: 2004153684801813962}
   - {fileID: 2654445946228807086}
   - {fileID: 5462572950084585443}
+  - {fileID: 14512982334164021}
   m_Father: {fileID: 4145413005052013769}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1824358887480847346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2186270165075082264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0aead369020479db4137f6bc35dd618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pillars:
+  - {fileID: 5161739303363975199}
+  - {fileID: 8986065680153423316}
+  - {fileID: 8445182321508471398}
+  - {fileID: 5606137905942178756}
+  - {fileID: 3311370115583032}
+  - {fileID: 2004153684801813962}
+  - {fileID: 2654445946228807086}
+  - {fileID: 5462572950084585443}
+  fenceYOffset: 0.08
+  lineRenderer: {fileID: 1317122943387150899}
+  skipIndices: 03000000
+  poleYOffset: 0
 --- !u!1 &2238135712741090843
 GameObject:
   m_ObjectHideFlags: 0
@@ -1662,6 +1689,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4145413005052013769}
+  - component: {fileID: 7500076380948259242}
   m_Layer: 0
   m_Name: Tile_CCCR
   m_TagString: Untagged
@@ -1692,9 +1720,78 @@ Transform:
   - {fileID: 484749882885633442}
   - {fileID: 531010208731463413}
   - {fileID: 612294766172083682}
-  - {fileID: 4544749512423012456}
+  - {fileID: 2075907788080212459}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7500076380948259242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2719080738374231564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3de3fd1ff89342b9a822aa086b66c3e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SimpleRotationObjects:
+  - {fileID: 7430644515008606177}
+  - {fileID: 1496476128397334937}
+  - {fileID: 6360195637844680261}
+  - {fileID: 5161739303363975199}
+  - {fileID: 8986065680153423316}
+  - {fileID: 8445182321508471398}
+  - {fileID: 5606137905942178756}
+  - {fileID: 3311370115583032}
+  - {fileID: 2004153684801813962}
+  - {fileID: 2654445946228807086}
+  - {fileID: 5462572950084585443}
+  MirrorRotationObjects:
+  - {fileID: 2075907788080212459}
+  LineRenderers:
+  - {fileID: 6023399835365788269}
+  - {fileID: 1317122943387150899}
+  SpriteSwapElements:
+  - SpriteRenderer: {fileID: 3794959755720858883}
+    Rules:
+    - Sprite: {fileID: -7548079623488695856, guid: 4e4c71bf71e78ee40b1a39b8e62de9b8, type: 3}
+      Scale: {x: 1, y: 1, z: 1}
+    - Sprite: {fileID: -7548079623488695856, guid: 4e4c71bf71e78ee40b1a39b8e62de9b8, type: 3}
+      Scale: {x: 1, y: -1, z: 1}
+    - Sprite: {fileID: -7548079623488695856, guid: 4e4c71bf71e78ee40b1a39b8e62de9b8, type: 3}
+      Scale: {x: -1, y: -1, z: 1}
+    - Sprite: {fileID: -7548079623488695856, guid: 4e4c71bf71e78ee40b1a39b8e62de9b8, type: 3}
+      Scale: {x: -1, y: 1, z: 1}
+  OnRotation:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1824358887480847346}
+        m_TargetAssemblyTypeName: TerritoryWars.Tile.FencePlacer, Assembly-CSharp
+        m_MethodName: PlaceFence
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7799192402812289427}
+        m_TargetAssemblyTypeName: TerritoryWars.Tile.TerritoryFiller, Assembly-CSharp
+        m_MethodName: PlaceTerritory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  autoRotate: 0
+  rotateInterval: 1
 --- !u!1 &2762035153083144961
 GameObject:
   m_ObjectHideFlags: 0
@@ -2735,6 +2832,153 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &4212433141547260985
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 14512982334164021}
+  - component: {fileID: 1317122943387150899}
+  m_Layer: 0
+  m_Name: LineRenderer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &14512982334164021
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4212433141547260985}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 612294766172083682}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!120 &1317122943387150899
+LineRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4212433141547260985}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 8aa79752bd8b74b7b9b1f801d65e0eeb, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 14
+  m_Positions:
+  - {x: -0.63, y: 0.08, z: 0}
+  - {x: -0.46, y: 0.065, z: 0}
+  - {x: -0.315, y: 0.053999998, z: 0}
+  - {x: -0.17500001, y: 0.045999996, z: 0}
+  - {x: -0.17600001, y: 0.045999996, z: -150}
+  - {x: 0.009000001, y: 0.126, z: -150}
+  - {x: 0.008, y: 0.126, z: 0}
+  - {x: 0.063, y: 0.201, z: 0}
+  - {x: 0.039, y: 0.303, z: 0}
+  - {x: 0, y: 0.39499998, z: 0}
+  m_Parameters:
+    serializedVersion: 3
+    widthMultiplier: 1
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.018180847
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_ColorSpace: -1
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 0
+    numCapVertices: 0
+    alignment: 1
+    textureMode: 0
+    textureScale: {x: 1, y: 1}
+    shadowBias: 0.5
+    generateLightingData: 0
+  m_MaskInteraction: 0
+  m_UseWorldSpace: 0
+  m_Loop: 0
+  m_ApplyActiveColorSpace: 1
 --- !u!1 &4422031335467754166
 GameObject:
   m_ObjectHideFlags: 0
@@ -3805,38 +4049,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &6653899928839536333
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4544749512423012456}
-  m_Layer: 0
-  m_Name: Arc
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4544749512423012456
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6653899928839536333}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2075907788080212459}
-  m_Father: {fileID: 4145413005052013769}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6818347917120594438
 GameObject:
   m_ObjectHideFlags: 0
@@ -3862,12 +4074,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6818347917120594438}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.08200001, y: 0.0069999993, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4544749512423012456}
+  m_Father: {fileID: 4145413005052013769}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6150423583160796758
 SpriteRenderer:
