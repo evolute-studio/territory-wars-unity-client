@@ -7,8 +7,11 @@ import argparse
 class UnityWebGLHandler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
         """Handle GET requests with proper headers for .br files"""
-        # Print request details for debugging
+        # Розширений дебаг-вивід
         print(f"\nReceived request for: {self.path}")
+        print(f"Current working directory: {os.getcwd()}")
+        print(f"Translated path: {self.translate_path(self.path)}")
+        print(f"File exists: {os.path.exists(self.translate_path(self.path))}")
         
         # Handle .br files specially
         if self.path.endswith('.br'):
@@ -84,6 +87,7 @@ Handler = UnityWebGLHandler
 
 print(f"\nStarting Unity WebGL server on port {PORT}")
 print(f"Server will handle .br files with proper Content-Encoding")
+print(f"Current working directory: {os.getcwd()}")
 print(f"Open http://localhost:{PORT} in your browser")
 
 # Remove SSL context setup and just use basic server
