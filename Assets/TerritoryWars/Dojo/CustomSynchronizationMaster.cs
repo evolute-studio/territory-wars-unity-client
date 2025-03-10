@@ -192,6 +192,13 @@ namespace TerritoryWars.Dojo
             return count;
         }
         
+        public async Task<int> SyncSnapshotArray(FieldElement[] snapshot_ids)
+        {
+            int count = await SyncConstruction(DojoQueries.GetQuerySnapshotArray(snapshot_ids), nameof(SyncSnapshotArray));
+            CustomLogger.LogDojoLoop($"Synced {count} snapshots in array with snapshot ids count {snapshot_ids.Length}");
+            return count;
+        }
+        
         #endregion
         
         public void DestroyPlayersExceptLocal(FieldElement localAddress)

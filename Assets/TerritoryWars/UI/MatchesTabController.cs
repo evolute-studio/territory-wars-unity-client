@@ -30,10 +30,8 @@ namespace TerritoryWars.UI
         private int _inProgressMatchesCount = 0;
         private int _finishedMatchesCount = 0;
         private int _canceledMatchesCount = 0;
-        
+
         private List<MatchListItem> _matchListItems = new List<MatchListItem>();
-        private List<ModelInstance> _games = new List<ModelInstance>();
-        private List<GameObject> _gameObjects = new List<GameObject>();
 
         public void Start() => Initialize();
         
@@ -84,38 +82,46 @@ namespace TerritoryWars.UI
             CanceledMatchesText.text = "Canceled games: " + count;
         }
         
-        private void ModelUpdated(ModelInstance modelInstance)
+        private void OnEventMessage(ModelInstance modelInstance)
         {
-            if (modelInstance is evolute_duel_Game && !_games.Contains(modelInstance))
+            switch (modelInstance)
             {
-                FetchData();
-                _games.Add(modelInstance);
+                case evolute_duel_GameCreated:
+                    FetchData();
+                    break;
+                case evolute_duel_GameCanceled gameCanceled:
+                    CancelGame(gameCanceled);
+                    break;
+            }
+        }
+        
+        private void CancelGame(evolute_duel_GameCanceled gameCanceled)
+        {
+            foreach (var matchListItem in _matchListItems)
+            {
+                if (matchListItem.HostPlayer  == gameCanceled.host_player.Hex())
+                {
+                    Destroy(matchListItem.ListItem);
+                    _matchListItems.Remove(matchListItem);
+                    break;
+                }
             }
         }
         
         private async void FetchData()
         {
-            
-            ClearAllListItems();
             await DojoGameManager.Instance.SyncCreatedGames();
             GameObject[] games = DojoGameManager.Instance.GetGames();
             //BackgroundPlaceholderGO.SetActive(games.Length == 0);
 
             foreach (var game in games)
             {
-                if (_gameObjects.Contains(game)) continue;
                 if (!game.TryGetComponent(out evolute_duel_Game gameModel)) return;
-                evolute_duel_Player player = await DojoGameManager.Instance.CustomSynchronizationMaster.WaitForModelByPredicate<evolute_duel_Player>(
-                    p => p.player_id.Hex() == gameModel.player.Hex()
-                );
-                if (player == null)
-                {
-                    CustomLogger.LogWarning($"Game has no player model: {gameModel.player.Hex()}");
-                    continue;
-                }
+                evolute_duel_Player player = DojoGameManager.Instance.GetPlayerProfileByAddress(gameModel.player.Hex());
+                if(IsMatchListItemExists(player.player_id.Hex())) continue;
                 string playerName = CairoFieldsConverter.GetStringFromFieldElement(player.username);
                 int evoluteBalance = player.balance;
-                string gameId = gameModel.board_id switch
+                string boardId = gameModel.board_id switch
                 {
                     Option<FieldElement>.Some some => some.value.Hex(),
                     Option<FieldElement>.None => "None"
@@ -148,7 +154,7 @@ namespace TerritoryWars.UI
                 MatchListItem matchListItem = CreateListItem();
                 if( status == "Created")
                 {
-                    matchListItem.UpdateItem(playerName, evoluteBalance, status, moveNumber,() =>
+                    matchListItem.UpdateItem(playerName, evoluteBalance, status, player.player_id.Hex(), moveNumber,() =>
                     {
                         SetActivePanel(false);
                         DojoGameManager.Instance.JoinGame(gameModel.player);
@@ -164,12 +170,23 @@ namespace TerritoryWars.UI
                     Destroy(matchListItem.ListItem);
                     _matchListItems.Remove(matchListItem);
                 }
-                _gameObjects.Add(game);
-                
             }
 
             SetBackgroundPlaceholder(_createdMatchesCount == 0);
             SortByStatus();
+        }
+        
+        private bool IsMatchListItemExists(string hostPlayer)
+        {
+            foreach (var matchListItem in _matchListItems)
+            {
+                if (matchListItem.HostPlayer == hostPlayer)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
         
         private void SortByStatus()
@@ -220,19 +237,16 @@ namespace TerritoryWars.UI
             PanelGameObject.SetActive(isActive);
             if (isActive)
             {
-                _games = new List<ModelInstance>();
-                _gameObjects = new List<GameObject>();
                 ApplicationState.SetState(ApplicationStates.MatchTab);
                 FetchData();
-                IncomingModelsFilter.OnModelPassed.AddListener(ModelUpdated);
-                
+                DojoGameManager.Instance.WorldManager.synchronizationMaster.OnEventMessage.AddListener(OnEventMessage);
             }
             else
             {
                 ApplicationState.SetState(ApplicationStates.Menu);
                 DojoGameManager.Instance.CustomSynchronizationMaster.DestroyPlayersExceptLocal(DojoGameManager.Instance.LocalBurnerAccount.Address);
                 DojoGameManager.Instance.CustomSynchronizationMaster.DestroyAllGames();
-                IncomingModelsFilter.OnModelPassed.RemoveListener(ModelUpdated);
+                DojoGameManager.Instance.WorldManager.synchronizationMaster.OnEventMessage.RemoveListener(OnEventMessage);
                 ClearAllListItems();
             }
         }
@@ -243,7 +257,7 @@ namespace TerritoryWars.UI
         public GameObject ListItem;
         public string PlayerName;
         public int EvoluteCount;
-        public string GameId;
+        public string HostPlayer;
 
         private TextMeshProUGUI _playerNameText;
         //private TextMeshProUGUI _gameIdText;
@@ -265,11 +279,11 @@ namespace TerritoryWars.UI
             _awaitText.gameObject.SetActive(false);
             _awaitText.text = "Await...";
         }
-        public void UpdateItem(string playerName, int evoluteBalance, string status, int moveNumber = 0, UnityAction onJoin = null)
+        public void UpdateItem(string playerName, int evoluteBalance, string status, string hostPlayer, int moveNumber = 0, UnityAction onJoin = null)
         {
             PlayerName = playerName;
             EvoluteCount = evoluteBalance;
-            //GameId = gameId;
+            HostPlayer = hostPlayer;
 
             _playerNameText.text = PlayerName;
             _evoluteCountText.text = " x " + EvoluteCount.ToString();

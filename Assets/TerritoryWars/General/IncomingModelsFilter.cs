@@ -44,6 +44,21 @@ namespace TerritoryWars.General
                 AllowedBoards.Add(boardId);
         }
         
+        public static void AddPlayerToAllowedPlayers(string playerId)
+        {
+            if(!AllowedPlayers.Contains(playerId))
+                AllowedPlayers.Add(playerId);
+        }
+        
+        public static void AddRangePlayersToAllowedPlayers(List<string> playerIds)
+        {
+            foreach (var playerId in playerIds)
+            {
+                if(!AllowedPlayers.Contains(playerId))
+                    AllowedPlayers.Add(playerId);
+            }
+        }
+        
         public static void SetSessionPlayers(List<string> currentPlayersInSession)
         {
             AllowedPlayers = currentPlayersInSession;
@@ -201,7 +216,9 @@ namespace TerritoryWars.General
                     return isCreated;
                 case nameof(evolute_duel_Snapshot): 
                     evolute_duel_Snapshot snapshot = (evolute_duel_Snapshot)model;
-                    if(snapshot.player.Hex() == LocalPlayerId)
+                    bool isLocalPlayer = snapshot.player.Hex() == LocalPlayerId;
+                    bool isAllowedPlayer = AllowedPlayers.Contains(snapshot.player.Hex());
+                    if(isLocalPlayer || isAllowedPlayer)
                         return true;
                     return false;
                 

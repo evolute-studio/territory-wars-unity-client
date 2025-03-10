@@ -218,6 +218,7 @@ namespace TerritoryWars.Dojo
         {
             GameObject[] gameGOs = WorldManager.Entities<evolute_duel_Game>();
             List<FieldElement> hostPlayersAddresses = new List<FieldElement>();
+            List<FieldElement> snapshotIds = new List<FieldElement>();
             foreach (var gameGO in gameGOs)
             {
                 CustomLogger.LogInfo("Game found");
@@ -225,10 +226,23 @@ namespace TerritoryWars.Dojo
                 {
                     CustomLogger.LogInfo("Adding host player to the list. Address: " + game.player.Hex());
                     hostPlayersAddresses.Add(game.player);
+                    var snapshotId = game.snapshot_id switch
+                    {
+                        Option<FieldElement>.Some some => some.value,
+                        _ => null
+                    };
+                    if (snapshotId != null)
+                    {
+                        snapshotIds.Add(snapshotId);
+                    }
                 }
             }
+            IncomingModelsFilter.AddRangePlayersToAllowedPlayers(hostPlayersAddresses.Select(p => p.Hex()).ToList());
             int count = await CustomSynchronizationMaster.SyncPlayersArray(hostPlayersAddresses.ToArray());
             Debug.Log($"Synced {count} players");
+            count = await CustomSynchronizationMaster.SyncSnapshotArray(snapshotIds.ToArray());
+            Debug.Log($"Synced {count} snapshots");
+            
         }
         
         public async Task SyncLocalPlayerSnapshots()

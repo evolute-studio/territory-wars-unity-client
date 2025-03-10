@@ -258,6 +258,26 @@ namespace TerritoryWars.Dojo
                                     order_by, entity_models, entity_updated_after);
             return query;
         }
+        
+        public static Query GetQuerySnapshotArray(FieldElement[] snapshotIds)
+        {
+            string[] entity_models = new[] { GetModelName<evolute_duel_Snapshot>() };
+            
+            var snapshotValues = snapshotIds.Select(id => 
+                new MemberValue(new Primitive { Felt252 = id })
+            ).ToArray();
+            
+            var memberClause = new MemberClause(
+                GetModelName<evolute_duel_Snapshot>(),
+                "snapshot_id",
+                dojo.ComparisonOperator.In, 
+                new MemberValue(snapshotValues) 
+            );
+            
+            Query query = new Query(limit, offset, memberClause, dont_include_hashed_keys, 
+                                    order_by, entity_models, entity_updated_after);
+            return query;
+        }
 
         /// <summary>
         /// Gets the formatted model name for a given type
