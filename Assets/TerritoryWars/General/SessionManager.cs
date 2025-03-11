@@ -183,30 +183,8 @@ namespace TerritoryWars.General
             };
         }
 
-        public async void Start()
+        public void Start()
         {
-            // CustomSceneManager.Instance.LoadingScreen.SetActive(true, DojoGameManager.Instance.CancelGame, LoadingScreen.boardInitializationText);
-            //
-            // CustomSynchronizationMaster customSynchronizationMaster = DojoGameManager.Instance.CustomSynchronizationMaster;
-            // await customSynchronizationMaster.SyncPlayerInProgressGame(DojoGameManager.Instance.LocalBurnerAccount.Address);
-            // evolute_duel_Game game = DojoGameManager.Instance.WorldManager.Entities<evolute_duel_Game>().FirstOrDefault()?.GetComponent<evolute_duel_Game>();
-            // if (game == null)
-            // {
-            //     CustomLogger.LogError("SessionManager Start - game is null");
-            //     return;
-            // }
-            // FieldElement boardId = game.board_id switch
-            // {
-            //     Option<FieldElement>.Some some => some.value,
-            //     _ => null
-            // };
-            // IncomingModelsFilter.SetSessionCurrentBoardId(boardId.Hex());
-            // await customSynchronizationMaster.SyncBoardWithDependencies(boardId);
-            // evolute_duel_Board board = DojoGameManager.Instance.WorldManager.Entities<evolute_duel_Board>().FirstOrDefault()?.GetComponent<evolute_duel_Board>();
-            // FieldElement[] players = new FieldElement[] { board?.player1.Item1, board?.player2.Item1 };
-            // IncomingModelsFilter.SetSessionPlayers(players.Select(p => p.Hex()).ToList());
-            // await customSynchronizationMaster.SyncPlayersArray(players);
-            // var allowedBoards = await customSynchronizationMaster.SyncAllMoveByBoardId(board?.id);
             Initialize();
             CustomSceneManager.Instance.LoadingScreen.SetActive(false);
         }
@@ -285,85 +263,69 @@ namespace TerritoryWars.General
             PlayersData = new PlayerData[2];
 
             
-            Vector3[] path1 = new Vector3[3];
-            path1[0] = new Vector3(SpawnPoints[0].x, SpawnPoints[0].y + 15, 0); 
-            path1[1] = new Vector3(SpawnPoints[0].x - 5, SpawnPoints[0].y + 7, 0); 
-            path1[2] = SpawnPoints[0]; 
+            Vector3[] leftCharacterPath = new Vector3[3];
+            leftCharacterPath[0] = new Vector3(SpawnPoints[0].x, SpawnPoints[0].y + 15, 0); 
+            leftCharacterPath[1] = new Vector3(SpawnPoints[0].x - 5, SpawnPoints[0].y + 7, 0); 
+            leftCharacterPath[2] = SpawnPoints[0]; 
 
             
-            Vector3[] path2 = new Vector3[3];
-            path2[0] = new Vector3(SpawnPoints[1].x, SpawnPoints[1].y + 15, 0);
-            path2[1] = new Vector3(SpawnPoints[1].x + 5, SpawnPoints[1].y + 7, 0);
-            path2[2] = SpawnPoints[1];
+            Vector3[] rightCharacterPath = new Vector3[3];
+            rightCharacterPath[0] = new Vector3(SpawnPoints[1].x, SpawnPoints[1].y + 15, 0);
+            rightCharacterPath[1] = new Vector3(SpawnPoints[1].x + 5, SpawnPoints[1].y + 7, 0);
+            rightCharacterPath[2] = SpawnPoints[1];
 
             
             
             evolute_duel_Board board = DojoGameManager.Instance.SessionManager.LocalPlayerBoard;
 
-            evolute_duel_Player player1Data = DojoGameManager.Instance.GetPlayerData(board.player1.Item1.Hex());
-            evolute_duel_Player player2Data = DojoGameManager.Instance.GetPlayerData(board.player2.Item1.Hex());
+            evolute_duel_Player hostData = DojoGameManager.Instance.GetPlayerData(board.player1.Item1.Hex());
+            evolute_duel_Player guestData = DojoGameManager.Instance.GetPlayerData(board.player2.Item1.Hex()); 
 
-            GameObject prefab1 = PrefabsManager.Instance.GetPlayer(player1Data.active_skin);
-            GameObject prefab2 = PrefabsManager.Instance.GetPlayer(player2Data.active_skin);
-            GameObject player1;
-            GameObject player2;
+            GameObject hostPrefab = PrefabsManager.Instance.GetPlayer(hostData.active_skin); 
+            GameObject guestPrefab = PrefabsManager.Instance.GetPlayer(guestData.active_skin);
+            GameObject hostObject = Instantiate(hostPrefab, Vector3.zero, Quaternion.identity);
+            GameObject guestObject = Instantiate(guestPrefab, Vector3.zero, Quaternion.identity);
             
-            if (board.player1.Item1.Hex() == DojoGameManager.Instance.LocalBurnerAccount.Address.Hex())
-            {
-                player1 = Instantiate(prefab1, path1[0], Quaternion.identity);
-                player2 = Instantiate(prefab2, path2[0], Quaternion.identity);
-            }
-            else
-            {
-                player2 = Instantiate(prefab1, path1[0], Quaternion.identity);
-                player1 = Instantiate(prefab2, path2[0], Quaternion.identity);
-            }
-            
-            Players[0] = player1.GetComponent<Character>();
-            Players[1] = player2.GetComponent<Character>();
+            Players[0] = hostObject.GetComponent<Character>();
+            Players[1] = guestObject.GetComponent<Character>();
             
             Players[0].Initialize(board.player1.Item1, board.player1.Item2, board.player1.Item3);
             Players[1].Initialize(board.player2.Item1, board.player2.Item2, board.player2.Item3);
             
-            PlayersData[0] = new PlayerData(player1Data);
-            PlayersData[1] = new PlayerData(player2Data);
+            PlayersData[0] = new PlayerData(hostData);
+            PlayersData[1] = new PlayerData(guestData);
             
             
-
-
-
-            Players[0].transform.localScale = new Vector3(-0.7f, 0.7f, 1f);
             CurrentTurnPlayer = Players[0];
+            
             LocalPlayer = Players[0].Address.Hex() == DojoGameManager.Instance.LocalBurnerAccount.Address.Hex() 
                 ? Players[0] : Players[1];
             RemotePlayer = LocalPlayer == Players[0] ? Players[1] : Players[0];
+            Players[0].SetAnimatorController(sessionUI.charactersObject.GetAnimatorController(PlayersData[0].skin_id));
+            Players[1].SetAnimatorController(sessionUI.charactersObject.GetAnimatorController(PlayersData[1].skin_id));
 
-            if (IsLocalPlayerHost)
-            {
-                Players[0].SetAnimatorController(sessionUI.charactersObject.GetAnimatorController(PlayersData[0].skin_id));
-                Players[1].SetAnimatorController(sessionUI.charactersObject.GetAnimatorController(PlayersData[1].skin_id));
-            }
-            else
-            {
-                Players[0].SetAnimatorController(sessionUI.charactersObject.GetAnimatorController(PlayersData[1].skin_id));
-                Players[1].SetAnimatorController(sessionUI.charactersObject.GetAnimatorController(PlayersData[0].skin_id));
-            }
+            int hostIndex = SetLocalPlayerData.GetLocalIndex(0);
+            int guestPlayerIndex = SetLocalPlayerData.GetLocalIndex(1);
+            Players[hostIndex].transform.localScale = new Vector3(-0.7f, 0.7f, 1f);
+            Players[hostIndex].transform.position = leftCharacterPath[0];
+            Players[guestPlayerIndex].transform.position = rightCharacterPath[0];
+            Players[hostIndex].transform
+                .DOPath(leftCharacterPath, 2.5f, PathType.CatmullRom)
+                .SetEase(Ease.OutQuad);
+
+            Players[guestPlayerIndex].transform
+                .DOPath(rightCharacterPath, 2.5f, PathType.CatmullRom)
+                .SetEase(Ease.OutQuad);
             
-            Players[0].transform
-                .DOPath(path1, 2.5f, PathType.CatmullRom)
-                .SetEase(Ease.OutQuad);
-
-            Players[1].transform
-                .DOPath(path2, 2.5f, PathType.CatmullRom)
-                .SetEase(Ease.OutQuad);
+            
         }
 
         public void StartGame()
         {
             CustomSceneManager.Instance.LoadingScreen.SetActive(false);
             
-            TileSelector.OnTurnStarted.AddListener(OnTurnStarted);
-            TileSelector.OnTurnEnding.AddListener(OnTurnEnding);
+            //TileSelector.OnTurnStarted.AddListener(OnTurnStarted);
+            //TileSelector.OnTurnEnding.AddListener(OnTurnEnding);
             
             if (CurrentTurnPlayer == LocalPlayer)
             {
@@ -381,7 +343,7 @@ namespace TerritoryWars.General
         private void StartLocalTurn()
         {
             UpdateTile();
-            //CurrentTurnPlayer.StartSelecting();
+            LocalPlayer.StartSelecting();
             evolute_duel_Board board = DojoGameManager.Instance.WorldManager.Entities<evolute_duel_Board>().First().GetComponent<evolute_duel_Board>();
             Players[0].UpdateData(board.player1.Item3);
             Players[1].UpdateData(board.player2.Item3);
@@ -403,7 +365,7 @@ namespace TerritoryWars.General
         private void StartRemoteTurn()
         {
             UpdateTile();
-            //CurrentTurnPlayer.StartSelecting();
+            RemotePlayer.StartSelecting();
             evolute_duel_Board board = DojoGameManager.Instance.SessionManager.LocalPlayerBoard;
             Players[0].UpdateData(board.player1.Item3);
             Players[1].UpdateData(board.player2.Item3);
@@ -436,6 +398,7 @@ namespace TerritoryWars.General
         {
             GameUI.Instance.SetJokerMode(false);
             TileSelector.EndTilePlacement();
+            CurrentTurnPlayer.EndTurn();
             CompleteEndTurn(playerAddress);
         }
 
@@ -450,7 +413,9 @@ namespace TerritoryWars.General
             {
                 Board.PlaceTile(tile, position.x + 1, position.y + 1, RemotePlayer.LocalId);
             });
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.5f);
+            CurrentTurnPlayer.EndTurn();
+            yield return new WaitForSeconds(0.5f);
             TileSelector.tilePreview.ResetPosition();
             if(isJoker) GameUI.Instance.SessionUI.UseJoker(RemotePlayer.LocalId);
             else TilesInDeck--;
@@ -549,7 +514,6 @@ namespace TerritoryWars.General
 
         public void CompleteEndTurn(string lastMovePlayerAddress)
         {
-            //CurrentTurnPlayer.EndTurn();
             bool isLocalPlayer = lastMovePlayerAddress == LocalPlayer.Address.Hex();
             
             if (isLocalPlayer)
@@ -570,8 +534,8 @@ namespace TerritoryWars.General
             
             if (TileSelector != null)
             {
-                TileSelector.OnTurnStarted.RemoveListener(OnTurnStarted);
-                TileSelector.OnTurnEnding.RemoveListener(OnTurnEnding);
+                //TileSelector.OnTurnStarted.RemoveListener(OnTurnStarted);
+                //TileSelector.OnTurnEnding.RemoveListener(OnTurnEnding);
             }
             
             DojoGameManager.Instance.SessionManager.OnMoveReceived -= HandleMove;

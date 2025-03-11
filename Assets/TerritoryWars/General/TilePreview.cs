@@ -208,7 +208,7 @@ namespace TerritoryWars.General
             Vector3 currentPosition = previewTileView.transform.position;
             Vector3 targetPosition = currentPosition;
             targetPosition.y -= tilePreviewSetHeight;
-
+            SessionManager.Instance.CurrentTurnPlayer.EndTurn();
             currentTween = previewTileView.transform
                 .DOMove(targetPosition, moveDuration)
                 .SetEase(moveEase)
