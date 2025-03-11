@@ -277,7 +277,7 @@ namespace TerritoryWars.General
                     CustomLogger.LogInfo($"Allowed boards: {AllowedBoards.Count}");
                     bool isBoardAllowed = AllowedBoards.Contains(board.id.Hex());
                     bool isBoardHasLocalPlayer = board.player1.Item1.Hex() == LocalPlayerId || board.player2.Item1.Hex() == LocalPlayerId;
-                    if(isBoardHasLocalPlayer) AllowedBoards.Add(board.id.Hex());
+                    if(isBoardHasLocalPlayer) AddBoardToAllowedBoards(board.id.Hex());
                     if(isBoardAllowed || isBoardHasLocalPlayer)
                         return true;
                     return false;

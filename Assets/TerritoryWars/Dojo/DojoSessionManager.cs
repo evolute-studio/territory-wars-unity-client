@@ -160,6 +160,14 @@ namespace TerritoryWars.Dojo
             GameUI.Instance.SessionUI.SetCityScores(cityScoreBlue, cityScoreRed);
             GameUI.Instance.SessionUI.SetRoadScores(cartScoreBlue, cartScoreRed);
             GameUI.Instance.SessionUI.SetPlayerScores(cityScoreBlue + cartScoreBlue, cityScoreRed + cartScoreRed);
+            var tileData = eventModel.top_tile switch
+            {
+                Option<byte>.Some topTile => new TileData(OnChainBoardDataConverter.GetTopTile(topTile)),
+                Option<byte>.None => null
+            };
+            CustomLogger.LogImportant($"BoardUpdated. TopTile: {tileData.id}");
+            SessionManager.Instance.SetNextTile(tileData);
+            
         }
 
         private void GameFinished(FieldElement board_id)

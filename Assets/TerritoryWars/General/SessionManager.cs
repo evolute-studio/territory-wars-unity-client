@@ -364,7 +364,7 @@ namespace TerritoryWars.General
             
             TileSelector.OnTurnStarted.AddListener(OnTurnStarted);
             TileSelector.OnTurnEnding.AddListener(OnTurnEnding);
-
+            
             if (CurrentTurnPlayer == LocalPlayer)
             {
                 Invoke(nameof(StartLocalTurn), 2f);
@@ -373,12 +373,14 @@ namespace TerritoryWars.General
             {
                 Invoke(nameof(StartRemoteTurn), 2f);
             }
+            //UpdateTile();
             DojoGameManager.Instance.SessionManager.OnMoveReceived += HandleMove;
             DojoGameManager.Instance.SessionManager.OnSkipMoveReceived += SkipMove;
         }
 
         private void StartLocalTurn()
         {
+            UpdateTile();
             //CurrentTurnPlayer.StartSelecting();
             evolute_duel_Board board = DojoGameManager.Instance.WorldManager.Entities<evolute_duel_Board>().First().GetComponent<evolute_duel_Board>();
             Players[0].UpdateData(board.player1.Item3);
@@ -400,6 +402,7 @@ namespace TerritoryWars.General
 
         private void StartRemoteTurn()
         {
+            UpdateTile();
             //CurrentTurnPlayer.StartSelecting();
             evolute_duel_Board board = DojoGameManager.Instance.SessionManager.LocalPlayerBoard;
             Players[0].UpdateData(board.player1.Item3);
@@ -411,7 +414,6 @@ namespace TerritoryWars.General
             gameUI.SetEndTurnButtonActive(false);
             gameUI.SetRotateButtonActive(false);
             gameUI.SetSkipTurnButtonActive(false);
-            UpdateTile();
             gameUI.SetActiveDeckContainer(false);
         }
 
@@ -456,12 +458,29 @@ namespace TerritoryWars.General
             CompleteEndTurn(playerAddress);
         }
 
-        private void UpdateTile()
+        // private void UpdateTile()
+        // {
+        //     TileData currentTile = DojoGameManager.Instance.SessionManager.GetTopTile();
+        //     currentTile.OwnerId = RemotePlayer.LocalId;
+        //     TileSelector.SetCurrentTile(currentTile);
+        // }
+
+        private TileData _nextTile;
+        public void UpdateTile()
         {
-            TileData currentTile = DojoGameManager.Instance.SessionManager.GetTopTile();
-            currentTile.OwnerId = RemotePlayer.LocalId;
-            TileSelector.SetCurrentTile(currentTile);
+            _nextTile ??= DojoGameManager.Instance.SessionManager.GetTopTile();
+            _nextTile.OwnerId = RemotePlayer.LocalId;
+            TileSelector.SetCurrentTile(_nextTile);
+            CustomLogger.LogImportant("UpdateTile. Tile: " + _nextTile.id);
         }
+
+        public void SetNextTile(TileData tile)
+        {
+            CustomLogger.LogImportant("SetNextTile");
+            _nextTile = tile;
+        }
+        
+        
 
         private void OnTurnStarted()
         {
@@ -536,12 +555,12 @@ namespace TerritoryWars.General
             if (isLocalPlayer)
             {
                 CurrentTurnPlayer = RemotePlayer;
-                StartRemoteTurn();
+                Invoke(nameof(StartRemoteTurn), 1f);
             }
             else
             {
                 CurrentTurnPlayer = LocalPlayer;
-                StartLocalTurn();
+                Invoke(nameof(StartLocalTurn), 1f);
                 gameUI.SetActiveDeckContainer(true);
             }
         }

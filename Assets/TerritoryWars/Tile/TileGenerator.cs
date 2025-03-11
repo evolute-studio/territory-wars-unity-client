@@ -190,7 +190,6 @@ namespace TerritoryWars.Tile
             {
                 points[i] = RoadPath.transform.GetChild(i);
             }
-            CustomLogger.LogInfo("Points count: " + points.Length);
             SpriteRenderer[] pins = new SpriteRenderer[4];
             char[] id = TileConfig.ToCharArray();
             for (int i = 0; i < id.Length; i++)
@@ -198,7 +197,6 @@ namespace TerritoryWars.Tile
                 RoadPath.transform.localScale = RoadPath.transform.parent.localScale;
                 if (id[i] == 'R')
                 {
-                    CustomLogger.LogInfo("Creating pin for road " + i + " parent: " + points[i].name);
                     GameObject pin = Instantiate(PrefabsManager.Instance.PinPrefab, points[i]);
                     SpriteRenderer pinRenderer = pin.GetComponent<SpriteRenderer>();
                     pinRenderers[i] = pinRenderer;
