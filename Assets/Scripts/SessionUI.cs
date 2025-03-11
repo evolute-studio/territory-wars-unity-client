@@ -108,34 +108,58 @@ public class SessionUI : MonoBehaviour
         RemotePlayerName.text = playerNames[1];
     }
 
-    public void UseJoker(int player)
+    // public void UseJoker(int player)
+    // {
+    //     if (!SessionManager.Instance.IsLocalPlayerHost)
+    //     {
+    //         player = player == 0 ? 1 : 0;
+    //     }
+    //     
+    //     if (players[player].jokerCount == 0)
+    //         return;
+    //
+    //     players[player].jokerCount--;
+    //     players[player].jokersImage[players[player].jokerCount].color = JokerNotAvailableColor;
+    //     players[player].jokerCountText.text = players[player].jokerCount.ToString();
+    // }
+
+    // public void UpdateJokerText(int player)
+    // {
+    //     if (!SessionManager.Instance.IsLocalPlayerHost)
+    //     {
+    //         player = player == 0 ? 1 : 0;
+    //     }
+    //
+    //     players[player].jokerCountText.text = players[player].jokerCount.ToString();
+    // }
+
+    public void ShowPlayerJokerCount(int playerId)
     {
         if (!SessionManager.Instance.IsLocalPlayerHost)
         {
-            player = player == 0 ? 1 : 0;
+            playerId = playerId == 0 ? 1 : 0;
         }
         
-        if (players[player].jokerCount == 0)
-            return;
-
-        players[player].jokerCount--;
-        players[player].jokersImage[players[player].jokerCount].color = JokerNotAvailableColor;
-        players[player].jokerCountText.text = players[player].jokerCount.ToString();
+        players[playerId].jokerCountText.text = players[playerId].jokerCount.ToString();
     }
-
-    public void UpdateJokerText(int player)
+    
+    public void SetJokersCount(int player, int count)
     {
         if (!SessionManager.Instance.IsLocalPlayerHost)
         {
             player = player == 0 ? 1 : 0;
         }
 
-        players[player].jokerCountText.text = players[player].jokerCount.ToString();
+        players[player].jokerCount = count;
+        for (int i = 0; i < players[player].jokersImage.Count; i++)
+        {
+            players[player].jokersImage[i].color = i < count ? JokerAvailableColor : JokerNotAvailableColor;
+        }
     }
     
-    public void UpdateDeckCount()
+    public void SetDeckCount(int count)
     {
-        DeckCountText.text = SessionManager.Instance.TilesInDeck.ToString();
+        DeckCountText.text = count.ToString();
     }
 
     [Serializable]

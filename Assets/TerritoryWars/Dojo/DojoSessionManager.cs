@@ -63,6 +63,7 @@ namespace TerritoryWars.Dojo
 
         private void OnEventMessage(ModelInstance modelInstance)
         {
+            if(ApplicationState.CurrentState != ApplicationStates.Session) return;
             switch (modelInstance)
             {
                 case evolute_duel_Moved moved:
@@ -165,9 +166,14 @@ namespace TerritoryWars.Dojo
                 Option<byte>.Some topTile => new TileData(OnChainBoardDataConverter.GetTopTile(topTile)),
                 Option<byte>.None => null
             };
+            var availableTiles = eventModel.available_tiles_in_deck.Length;
+            var hostPlayerJokers = eventModel.player1.Item3;
+            var guestPlayerJokers = eventModel.player2.Item3;
             CustomLogger.LogImportant($"BoardUpdated. TopTile: {tileData.id}");
             SessionManager.Instance.SetNextTile(tileData);
-            
+            SessionManager.Instance.SetTilesInDeck(availableTiles + 1);
+            SessionManager.Instance.SetJokersCount(0, hostPlayerJokers);
+            SessionManager.Instance.SetJokersCount(1, guestPlayerJokers);
         }
 
         private void GameFinished(FieldElement board_id)
@@ -556,7 +562,6 @@ namespace TerritoryWars.Dojo
             {
                 var txHash = await _dojoGameManager.GameSystem.make_move(account, jokerTile, rotation, col, row);
                 CustomLogger.LogEvent($"[Make Move]: Hash {txHash} Account {account.Address.Hex()} made a move at {x}, {y}. Rotation: {rotation}");
-                if(!isJoker) SessionManager.Instance.TilesInDeck--;
             }
             catch (Exception e)
             {

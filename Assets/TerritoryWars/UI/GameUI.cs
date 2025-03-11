@@ -35,11 +35,8 @@ namespace TerritoryWars.UI
         [SerializeField] private Button skipTurnButton;
         [SerializeField] private Button rotateTileButton;
         [SerializeField] private Image currentTilePreview;
-        [SerializeField] private TextMeshProUGUI remainingTilesText;
         [SerializeField] private Button jokerButton;
         [SerializeField] private Button deckButton;
-        [SerializeField] private TextMeshProUGUI player1JokersText;
-        [SerializeField] private TextMeshProUGUI player2JokersText;
         [SerializeField] private GameObject jokerModeIndicator;
         [SerializeField] private Sprite[] _toggleMods;
         [SerializeField] private Image _toggleSpriteRenderer;
@@ -157,26 +154,9 @@ namespace TerritoryWars.UI
 
         public void UpdateUI()
         {
-            
-            if (remainingTilesText != null)
-            {
-                remainingTilesText.text = $"{deckManager.RemainingTiles}";
-            }
-
-            
             if (tilePreview != null)
             {
                 tilePreview.UpdatePreview(_sessionManager.TileSelector.CurrentTile);
-            }
-
-            
-            if (player1JokersText != null)
-            {
-                player1JokersText.text = $"Jokers: {_sessionManager.GetJokerCount(0)}";
-            }
-            if (player2JokersText != null)
-            {
-                player2JokersText.text = $"Jokers: {_sessionManager.GetJokerCount(1)}";
             }
 
        
@@ -231,9 +211,9 @@ namespace TerritoryWars.UI
             _sessionManager.RotateCurrentTile();
         }
 
-        private void OnJokerButtonClicked()
+        private void OnJokerButtonClicked() 
         {
-            if(_isJokerActive) return;
+            if(SessionManager.Instance.CurrentTurnPlayer.JokerCount <= 0 || _isJokerActive) return;
             _isJokerActive = true;
             
             SetJokerMode(true);

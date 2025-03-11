@@ -81,7 +81,6 @@ namespace TerritoryWars.General
         private bool isJokerActive = false;
         
         public bool IsJokerActive => isJokerActive;
-        public int TilesInDeck = 64;
         
         public void ActivateJoker()
         {
@@ -228,12 +227,6 @@ namespace TerritoryWars.General
                     int rotation = move.rotation;
                     int x = move.col + 1;
                     int y = move.row + 1;
-                    bool isJoker = move.is_joker;
-                    CustomLogger.LogWarning("Move: " + moveNumber + " TilesInDeck: " + TilesInDeck);
-                    if(!isJoker)
-                    {
-                        TilesInDeck--;
-                    }
 
                     tile.Rotate((rotation + 3) % 4);
                     Board.PlaceTile(tile, x, y, owner);
@@ -245,8 +238,6 @@ namespace TerritoryWars.General
             DojoGameManager.Instance.SessionManager.UpdateBoardAfterCityContest();
             gameUI.Initialize();
             sessionUI.Initialization();
-            sessionUI.UpdateDeckCount();
-            sessionUI.UpdateDeckCount();
             int cityScoreBlue = board.blue_score.Item1;
             int cartScoreBlue = board.blue_score.Item2;
             int cityScoreRed = board.red_score.Item1;
@@ -254,6 +245,10 @@ namespace TerritoryWars.General
             GameUI.Instance.SessionUI.SetCityScores(cityScoreBlue, cityScoreRed);
             GameUI.Instance.SessionUI.SetRoadScores(cartScoreBlue, cartScoreRed);
             GameUI.Instance.SessionUI.SetPlayerScores(cityScoreBlue + cartScoreBlue, cityScoreRed + cartScoreRed);
+            gameUI.SessionUI.ShowPlayerJokerCount(LocalPlayer.LocalId);
+            SetTilesInDeck(board.available_tiles_in_deck.Length);
+            SetJokersCount(0, board.player1.Item3);
+            SetJokersCount(1, board.player2.Item3);
             StartGame();
         }
 
@@ -347,7 +342,6 @@ namespace TerritoryWars.General
             evolute_duel_Board board = DojoGameManager.Instance.WorldManager.Entities<evolute_duel_Board>().First().GetComponent<evolute_duel_Board>();
             Players[0].UpdateData(board.player1.Item3);
             Players[1].UpdateData(board.player2.Item3);
-            gameUI.SessionUI.UpdateJokerText(CurrentTurnPlayer.LocalId);
             //GameUI.Instance.SessionUI.UpdateJokerText(CurrentTurnPlayer.LocalId, Players[CurrentTurnPlayer.LocalId].JokerCount);
             //GameUI.Instance.SessionUI.UpdateDeckCount();
             
@@ -369,7 +363,6 @@ namespace TerritoryWars.General
             evolute_duel_Board board = DojoGameManager.Instance.SessionManager.LocalPlayerBoard;
             Players[0].UpdateData(board.player1.Item3);
             Players[1].UpdateData(board.player2.Item3);
-            gameUI.SessionUI.UpdateJokerText(CurrentTurnPlayer.LocalId);
             //GameUI.Instance.SessionUI.UpdateJokerText(CurrentTurnPlayer.LocalId, Players[CurrentTurnPlayer.LocalId].JokerCount);
             //GameUI.Instance.SessionUI.UpdateDeckCount();
             
@@ -377,6 +370,7 @@ namespace TerritoryWars.General
             gameUI.SetRotateButtonActive(false);
             gameUI.SetSkipTurnButtonActive(false);
             gameUI.SetActiveDeckContainer(false);
+            //gameUI.SessionUI.ShowPlayerJokerCount(RemotePlayer.LocalId);
         }
 
         private void HandleMove(string playerAddress, TileData tile, Vector2Int position, int rotation, bool isJoker)
@@ -417,8 +411,6 @@ namespace TerritoryWars.General
             CurrentTurnPlayer.EndTurn();
             yield return new WaitForSeconds(0.5f);
             TileSelector.tilePreview.ResetPosition();
-            if(isJoker) GameUI.Instance.SessionUI.UseJoker(RemotePlayer.LocalId);
-            else TilesInDeck--;
             //CompleteEndTurn();
             CompleteEndTurn(playerAddress);
         }
@@ -443,6 +435,17 @@ namespace TerritoryWars.General
         {
             CustomLogger.LogImportant("SetNextTile");
             _nextTile = tile;
+        }
+
+        public void SetTilesInDeck(int count)
+        {
+            gameUI.SessionUI.SetDeckCount(count);
+        }
+        
+        public void SetJokersCount(int playerId, int count)
+        {
+            gameUI.SessionUI.SetJokersCount(playerId, count);
+            gameUI.SessionUI.ShowPlayerJokerCount(LocalPlayer.LocalId);
         }
         
         
@@ -559,7 +562,6 @@ namespace TerritoryWars.General
             isJokerActive = false;
             gameUI.SetJokerMode(false);
             gameUI.UpdateUI();
-            sessionUI.UseJoker(CurrentTurnPlayer.LocalId);
         }
         
         public void CancelJokerPlacement()
