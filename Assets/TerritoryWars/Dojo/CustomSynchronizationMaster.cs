@@ -74,6 +74,20 @@ namespace TerritoryWars.Dojo
             CustomLogger.LogDojoLoop($"Synced {count} moves with move id {id}");
             return count;
         }
+        
+        public async Task<int> SyncMovesByFirstBoardId(FieldElement board_id)
+        {
+            int count = await SyncConstruction(DojoQueries.GetQueryMoveByFirstBoardId(board_id), nameof(SyncMovesByFirstBoardId));
+            CustomLogger.LogDojoLoop($"Synced {count} moves with board id {board_id}");
+            return count;
+        }
+        
+        public async Task<int> SyncMovesArray(FieldElement[] move_ids)
+        {
+            int count = await SyncConstruction(DojoQueries.GetQueryMoveByIdArray(move_ids), nameof(SyncMovesArray));
+            CustomLogger.LogDojoLoop($"Synced {count} moves in array with move ids count {move_ids.Length}");
+            return count;
+        }
 
         public async Task<HashSet<string>> SyncAllMoveByBoardId(FieldElement board_id)
         {
@@ -109,22 +123,6 @@ namespace TerritoryWars.Dojo
                 return null;
             }
             await SyncMoveById(lastMoveId);
-            evolute_duel_Move firstMove = DojoGameManager.Instance.WorldManager.Entities<evolute_duel_Move>()
-                .FirstOrDefault(m => m.GetComponent<evolute_duel_Move>().id.Hex() == lastMoveId.Hex())?
-                .GetComponent<evolute_duel_Move>();
-            FieldElement previousMoveId = firstMove?.prev_move_id switch
-            {
-                Option<FieldElement>.Some some => some.value,
-                Option<FieldElement>.None => null,
-                _ => null
-            };
-            
-            if (previousMoveId == null)
-            {
-                CustomLogger.LogWarning("First move has no previous move id. Snapshot session has only one move");
-            }
-            
-            await SyncMoveById(previousMoveId);
 
             while (boardsToProcess.Count > 0 && processedBoardIds.Count < 64)
             {
@@ -136,13 +134,29 @@ namespace TerritoryWars.Dojo
                 
                 CustomLogger.LogDojoLoop($"Processing board id {currentBoardId.Hex()}");
                 
-                int count = await SyncConstruction(
-                    DojoQueries.GetQueryMoveByFirstBoardId(currentBoardId), 
-                    nameof(SyncAllMoveByBoardId)
-                );
+                int count = await SyncMovesByFirstBoardId(currentBoardId);
                 CustomLogger.LogDojoLoop($"Synced {count} moves with board id {currentBoardId.Hex()}");
                 
                 var moveObjects = WorldManager.Entities<evolute_duel_Move>();
+                List<FieldElement> prevMoveIds = new List<FieldElement>();
+                foreach (var moveObject in moveObjects)
+                {
+                    if (!moveObject.TryGetComponent<evolute_duel_Move>(out var move))
+                        continue;
+
+                    FieldElement prevMoveId = move.prev_move_id switch
+                    {
+                        Option<FieldElement>.Some some => some.value,
+                        Option<FieldElement>.None => null,
+                        _ => null
+                    };
+                    if (prevMoveId == null)
+                        continue;
+                    prevMoveIds.Add(prevMoveId);
+                }
+                count = await SyncMovesArray(prevMoveIds.ToArray());
+                moveObjects = WorldManager.Entities<evolute_duel_Move>();
+                
                 foreach (var moveObject in moveObjects)
                 {
                     if (!moveObject.TryGetComponent<evolute_duel_Move>(out var move))

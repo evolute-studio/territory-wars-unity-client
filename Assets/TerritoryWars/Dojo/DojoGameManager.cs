@@ -562,7 +562,7 @@ namespace TerritoryWars.Dojo
             {
                 allMoveGameObjects = WorldManager.Entities<evolute_duel_Move>();
             }
-            
+
             evolute_duel_Move currentMove = moves.First();
             FieldElement previousMoveId = currentMove.prev_move_id switch
             {

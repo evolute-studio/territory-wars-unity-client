@@ -58,14 +58,6 @@ namespace Dojo
             var entityGameObjects = new List<GameObject>();
             foreach (var entity in entities)
             {
-                var entityModels = entity.Models.Values.ToArray();
-                foreach (var model in entityModels)
-                {
-                    if (model.Name == "evolute_duel_Board" || model.Name == "evolute_duel-Board")
-                    {
-                        Debug.Log("Board model updated");
-                    }
-                }
                 entityGameObjects.Add(SpawnEntity(entity.HashedKeys, entity.Models.Values.ToArray()));
             }
 
@@ -102,7 +94,6 @@ namespace Dojo
                     // Add the model component to the entity
                     component = (ModelInstance)entityGameObject.AddComponent(model.GetType());
                     component.Initialize(entityModel);
-                    OnModelUpdated?.Invoke(component);
                 }
                 component.OnUpdate(entityModel);
                 OnModelUpdated?.Invoke(component);

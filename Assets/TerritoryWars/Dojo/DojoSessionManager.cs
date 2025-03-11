@@ -566,7 +566,8 @@ namespace TerritoryWars.Dojo
         {
             try
             {
-                var txHash = _dojoGameManager.GameSystem.create_snapshot(_localPlayerAccount, LocalPlayerBoard.id, (byte)_moveCount);
+                GameObject[] movesGO = _dojoGameManager.WorldManager.Entities<evolute_duel_Move>();
+                var txHash = _dojoGameManager.GameSystem.create_snapshot(_localPlayerAccount, LocalPlayerBoard.id, (byte)movesGO.Length);
                 CustomLogger.LogEvent($"[Create Snapshot]: Hash {txHash} Account {_localPlayerAccount.Address.Hex()} created a snapshot");
             }
             catch (Exception e)
