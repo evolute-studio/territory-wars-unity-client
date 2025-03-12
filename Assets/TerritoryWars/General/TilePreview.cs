@@ -108,17 +108,18 @@ namespace TerritoryWars.General
                 previewTileView.gameObject.SetActive(true);
                 tileGenerator.Generate(currentTile);
                 tileGeneratorForUI.Generate(currentTile);
-                if (tileGenerator.City != null)
+                if (tileGenerator.CurrentTileGO != null)
                 {
-                    Transform territoryPlacer = tileGenerator.City.transform.Find("TerritoryPlacer");
-                    if (territoryPlacer != null)
+                    if (tileGenerator.CurrentTileGO.GetComponent<TileRenderers>().TileTerritoryFiller != null)
                     {
+                        Transform territoryPlacer = tileGenerator.CurrentTileGO.GetComponent<TileRenderers>()
+                            .TileTerritoryFiller.transform;
                         territoryPlacer.GetComponentInChildren<SpriteMask>().frontSortingLayerID
                             = SortingLayer.NameToID("Preview");
                     }
 
                     _houseSprites.Clear();
-                    SpriteRenderer[] houseRenderers = tileGenerator.City.GetComponentsInChildren<SpriteRenderer>();
+                    SpriteRenderer[] houseRenderers = tileGenerator.CurrentTileGO.GetComponent<TileRenderers>().HouseRenderers.ToArray();
                     foreach (SpriteRenderer houseRenderer in houseRenderers)
                     {
                         houseRenderer.sortingLayerName = "Preview";
@@ -126,7 +127,7 @@ namespace TerritoryWars.General
                     }
                 }
 
-                if (tileGeneratorForUI.City != null)
+                if (tileGeneratorForUI.CurrentTileGO != null)
                 {
                     void SetLayerRecursively(Transform root)
                     {
@@ -137,7 +138,7 @@ namespace TerritoryWars.General
                         }
                     }
                     
-                    SetLayerRecursively(tileGeneratorForUI.City.transform);
+                    SetLayerRecursively(tileGeneratorForUI.CurrentTileGO.transform);
                     
                 }
 

@@ -1682,7 +1682,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
 --- !u!1 &4361277171732905842
@@ -2722,7 +2722,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
 --- !u!1 &5582568510762819838
@@ -2866,7 +2866,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
 --- !u!1 &5606943473359882601
@@ -3984,7 +3984,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
 --- !u!1 &7636757920612991745
@@ -3997,6 +3997,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2092063591518756615}
   - component: {fileID: 8945456665955611905}
+  - component: {fileID: 4742729654170015074}
   m_Layer: 0
   m_Name: Tile_CCCF
   m_TagString: Untagged
@@ -4085,6 +4086,36 @@ MonoBehaviour:
         m_CallState: 2
   autoRotate: 0
   rotateInterval: 1
+--- !u!114 &4742729654170015074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7636757920612991745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f93cb6b76fa445f292bb4c03fdca789a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HouseRenderers:
+  - {fileID: 3074613709435949339}
+  - {fileID: 8376491453014570116}
+  - {fileID: 404361633774935959}
+  ArcRenderers: []
+  TileTerritoryFiller: {fileID: 209659163570961529}
+  TileFencePlacer: {fileID: 8780780960363262699}
+  RoadRenderers: {fileID: 0}
+  Mill: {fileID: 0}
+  CloserToBorderFences:
+  - Side: 0
+    Fence: {fileID: 3922211593555542038}
+  - Side: 1
+    Fence: {fileID: 7246809735462420406}
+  - Side: 2
+    Fence: {fileID: 7362477630398181726}
+  - Side: 3
+    Fence: {fileID: 7334372575706856275}
 --- !u!1 &7775747543690435085
 GameObject:
   m_ObjectHideFlags: 0

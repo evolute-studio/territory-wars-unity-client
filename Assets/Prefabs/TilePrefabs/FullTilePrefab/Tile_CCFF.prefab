@@ -1332,7 +1332,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
 --- !u!1 &1955518642857615932
@@ -1888,7 +1888,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
 --- !u!1 &2844253458016191862
@@ -3227,6 +3227,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5483271558347481440}
   - component: {fileID: 6914984581989646973}
+  - component: {fileID: 2853878047861508604}
   m_Layer: 0
   m_Name: Tile_CCFF
   m_TagString: Untagged
@@ -3271,6 +3272,13 @@ MonoBehaviour:
   SimpleRotationObjects:
   - {fileID: 4272184247904605736}
   - {fileID: 2958019027980281254}
+  - {fileID: 3042844934990972262}
+  - {fileID: 6796906881325387352}
+  - {fileID: 7866468859776372938}
+  - {fileID: 4693378960155102684}
+  - {fileID: 3277919915713856458}
+  - {fileID: 7445135219876619873}
+  - {fileID: 303866840298527754}
   MirrorRotationObjects: []
   LineRenderers:
   - {fileID: 4573377244696553680}
@@ -3305,6 +3313,35 @@ MonoBehaviour:
         m_CallState: 2
   autoRotate: 0
   rotateInterval: 1
+--- !u!114 &2853878047861508604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4918831837962533037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f93cb6b76fa445f292bb4c03fdca789a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HouseRenderers:
+  - {fileID: 4822177558074701506}
+  - {fileID: 3790597508211871421}
+  ArcRenderers: []
+  TileTerritoryFiller: {fileID: 6405970299977370838}
+  TileFencePlacer: {fileID: 6058724543600824181}
+  RoadRenderers: {fileID: 0}
+  Mill: {fileID: 0}
+  CloserToBorderFences:
+  - Side: 0
+    Fence: {fileID: 8514571468403903389}
+  - Side: 1
+    Fence: {fileID: 3680935417259999604}
+  - Side: 2
+    Fence: {fileID: 3885622028993795901}
+  - Side: 3
+    Fence: {fileID: 2432832537959078970}
 --- !u!1 &5400670056302714387
 GameObject:
   m_ObjectHideFlags: 0
@@ -3742,7 +3779,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
 --- !u!1 &6264720459479567047
@@ -4621,7 +4658,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
 --- !u!1 &8726927679997207982

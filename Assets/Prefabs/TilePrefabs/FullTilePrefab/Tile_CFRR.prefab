@@ -837,7 +837,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
 --- !u!1 &1716034838657810899
@@ -849,6 +849,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6942374344798481246}
+  - component: {fileID: 3561881946419266019}
+  - component: {fileID: 7819607367405132936}
   m_Layer: 0
   m_Name: Tile_CFRR
   m_TagString: Untagged
@@ -878,6 +880,100 @@ Transform:
   - {fileID: 7991366228873304609}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3561881946419266019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716034838657810899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f93cb6b76fa445f292bb4c03fdca789a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HouseRenderers:
+  - {fileID: 5004225271585134060}
+  ArcRenderers: []
+  TileTerritoryFiller: {fileID: 1815908644079094954}
+  TileFencePlacer: {fileID: 7449682415242467847}
+  RoadRenderers: {fileID: 6440287691047467344}
+  Mill: {fileID: 0}
+  CloserToBorderFences:
+  - Side: 0
+    Fence: {fileID: 7905930040188838686}
+  - Side: 1
+    Fence: {fileID: 1840864552392414056}
+  - Side: 2
+    Fence: {fileID: 6619236146769490406}
+  - Side: 3
+    Fence: {fileID: 1717712666472551441}
+--- !u!114 &7819607367405132936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716034838657810899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3de3fd1ff89342b9a822aa086b66c3e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SimpleRotationObjects:
+  - {fileID: 8573243125199108896}
+  - {fileID: 8730710770380774000}
+  - {fileID: 509943446839039980}
+  - {fileID: 6852439979798574222}
+  - {fileID: 6376455604230942455}
+  - {fileID: 4775546796039675644}
+  - {fileID: 1023645132781899215}
+  - {fileID: 3284613786227730631}
+  - {fileID: 4054506168553379406}
+  MirrorRotationObjects: []
+  LineRenderers:
+  - {fileID: 5872720024808797974}
+  - {fileID: 4574434758157310904}
+  SpriteSwapElements:
+  - SpriteRenderer: {fileID: 6440287691047467344}
+    Rules:
+    - Sprite: {fileID: 862869666472089368, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
+      Scale: {x: -1, y: 1, z: 1}
+    - Sprite: {fileID: 1542361981, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
+      Scale: {x: 1, y: 1, z: 1}
+    - Sprite: {fileID: 862869666472089368, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
+      Scale: {x: 1, y: 1, z: 1}
+    - Sprite: {fileID: 1542361981, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
+      Scale: {x: 1, y: -1, z: 1}
+  OnRotation:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7449682415242467847}
+        m_TargetAssemblyTypeName: TerritoryWars.Tile.FencePlacer, Assembly-CSharp
+        m_MethodName: PlaceFence
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1815908644079094954}
+        m_TargetAssemblyTypeName: TerritoryWars.Tile.TerritoryFiller, Assembly-CSharp
+        m_MethodName: PlaceTerritory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  autoRotate: 0
+  rotateInterval: 1
 --- !u!1 &1717712666472551441
 GameObject:
   m_ObjectHideFlags: 0
@@ -1648,7 +1744,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
 --- !u!1 &3190918666855109963
@@ -2265,7 +2361,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
 --- !u!1 &4127064803393173743
@@ -3279,7 +3375,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
 --- !u!1 &5692203915234340978
@@ -4217,7 +4313,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
 --- !u!1 &7099367818143368588
@@ -4645,7 +4741,7 @@ Transform:
   m_GameObject: {fileID: 8468833219428021079}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.17160034, y: 0.22069979, z: 0}
+  m_LocalPosition: {x: 0.139, y: 0.197, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

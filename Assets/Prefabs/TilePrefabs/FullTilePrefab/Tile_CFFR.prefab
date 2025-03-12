@@ -556,7 +556,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
 --- !u!1 &1107276003562457471
@@ -1516,7 +1516,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
 --- !u!1 &2735239707815444590
@@ -3521,6 +3521,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1582749191843461503}
+  - component: {fileID: 1784286953516992824}
+  - component: {fileID: 5204196710817190884}
   m_Layer: 0
   m_Name: Tile_CFFR
   m_TagString: Untagged
@@ -3551,6 +3553,102 @@ Transform:
   - {fileID: 4649827428354998454}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1784286953516992824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5584336913415767874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f93cb6b76fa445f292bb4c03fdca789a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HouseRenderers:
+  - {fileID: 2657697107025158393}
+  ArcRenderers:
+  - {fileID: 5661467063552651266}
+  TileTerritoryFiller: {fileID: 6162536736819995530}
+  TileFencePlacer: {fileID: 6452209190513304781}
+  RoadRenderers: {fileID: 7591663624340684554}
+  Mill: {fileID: 0}
+  CloserToBorderFences:
+  - Side: 0
+    Fence: {fileID: 8813241585998489440}
+  - Side: 1
+    Fence: {fileID: 9001182920513645213}
+  - Side: 2
+    Fence: {fileID: 7010212631285614570}
+  - Side: 3
+    Fence: {fileID: 537892926067458563}
+--- !u!114 &5204196710817190884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5584336913415767874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3de3fd1ff89342b9a822aa086b66c3e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SimpleRotationObjects:
+  - {fileID: 8824748722737986762}
+  - {fileID: 4832393063577560896}
+  - {fileID: 5418807675129664111}
+  - {fileID: 6969924851434367885}
+  - {fileID: 1741483538022935983}
+  - {fileID: 7451325505629676593}
+  - {fileID: 2897095165273647395}
+  - {fileID: 1580674642712345266}
+  - {fileID: 1203878515662164981}
+  MirrorRotationObjects:
+  - {fileID: 5524132583944172430}
+  LineRenderers:
+  - {fileID: 7892450300611597868}
+  - {fileID: 6077741297355793679}
+  SpriteSwapElements:
+  - SpriteRenderer: {fileID: 7591663624340684554}
+    Rules:
+    - Sprite: {fileID: 862869666472089368, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
+      Scale: {x: -1, y: 1, z: 1}
+    - Sprite: {fileID: 1542361981, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
+      Scale: {x: 1, y: 1, z: 1}
+    - Sprite: {fileID: 862869666472089368, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
+      Scale: {x: 1, y: 1, z: 1}
+    - Sprite: {fileID: 1542361981, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
+      Scale: {x: 1, y: -1, z: 1}
+  OnRotation:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6452209190513304781}
+        m_TargetAssemblyTypeName: TerritoryWars.Tile.FencePlacer, Assembly-CSharp
+        m_MethodName: PlaceFence
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6162536736819995530}
+        m_TargetAssemblyTypeName: TerritoryWars.Tile.TerritoryFiller, Assembly-CSharp
+        m_MethodName: PlaceTerritory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  autoRotate: 0
+  rotateInterval: 1
 --- !u!1 &5880888949668771480
 GameObject:
   m_ObjectHideFlags: 0
@@ -4226,7 +4324,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
 --- !u!1 &7586724835288633915
@@ -4544,7 +4642,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
 --- !u!1 &8307638741973938511
@@ -4688,7 +4786,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
 --- !u!1 &8442305508830411431

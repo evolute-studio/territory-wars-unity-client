@@ -569,6 +569,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2886838441783223791}
   - component: {fileID: 143025389440277937}
+  - component: {fileID: 4423111135048950740}
   m_Layer: 0
   m_Name: Tile_CCFR
   m_TagString: Untagged
@@ -668,6 +669,36 @@ MonoBehaviour:
         m_CallState: 2
   autoRotate: 0
   rotateInterval: 1
+--- !u!114 &4423111135048950740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552171472038831473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f93cb6b76fa445f292bb4c03fdca789a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HouseRenderers:
+  - {fileID: 1923817216253056904}
+  - {fileID: 9017480345553115993}
+  ArcRenderers:
+  - {fileID: 304079147929855484}
+  TileTerritoryFiller: {fileID: 4339644675898045238}
+  TileFencePlacer: {fileID: 5216595903931430201}
+  RoadRenderers: {fileID: 8278914301424100420}
+  Mill: {fileID: 0}
+  CloserToBorderFences:
+  - Side: 0
+    Fence: {fileID: 7234685139210917254}
+  - Side: 1
+    Fence: {fileID: 8404423290738335341}
+  - Side: 2
+    Fence: {fileID: 158469276944974364}
+  - Side: 3
+    Fence: {fileID: 4469575090369703354}
 --- !u!1 &1691793408602173038
 GameObject:
   m_ObjectHideFlags: 0
@@ -983,7 +1014,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
 --- !u!1 &1958157495247850902
@@ -1830,7 +1861,7 @@ Transform:
   m_GameObject: {fileID: 3721150721191924627}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.004, y: -0.343, z: 0}
+  m_LocalPosition: {x: 0, y: -0.315, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2510,7 +2541,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
 --- !u!1 &5033969359483323320
@@ -3840,7 +3871,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
 --- !u!1 &6864733346435834327
@@ -4642,7 +4673,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
 --- !u!1 &8941501744186928053

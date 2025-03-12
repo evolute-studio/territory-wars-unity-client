@@ -69,7 +69,7 @@ namespace TerritoryWars.General
         
         public void GenerateBorderSide(Vector2Int startPos, Vector2Int endPos, int rotationTimes, char[] border, bool swapOrderLayer = false)
         {
-            string roadTile = "FFFR";
+            string roadTile = "FRFR";
             string cityTile = "FFFC";
             string fieldTile = "FFFF";
             // eg Start (9, 9) end (9, 0)
@@ -180,7 +180,7 @@ namespace TerritoryWars.General
             data.OwnerId = ownerId;
             GameObject tile = Instantiate(tilePrefab, GetTilePosition(x, y), Quaternion.identity, transform);
             tile.name += $"_{x}_{y}";
-            tile.GetComponent<TileGenerator>().Generate(data);
+            tile.GetComponent<TileGenerator>().Generate(data, true, new Vector2Int(x,y));
             tile.GetComponent<TileView>().UpdateView(data);
             tileObjects[x, y] = tile;
             PlacedTiles[new Vector2Int(x, y)] = data;
@@ -231,6 +231,82 @@ namespace TerritoryWars.General
                     }
                 }
             }
+        }
+
+        public List<Side> CheckCityTileSidesToBorder(int x, int y)
+        {
+            // returns list int of sides that are closer to the border 
+            // 0 - TOP
+            // 1 - Right
+            // 2 - Bottom
+            // 3 - Left
+            
+            List<Side> closerSides = new List<Side>();
+            if(IsEdgeTile(x,y)) return closerSides;
+
+            if (IsEdgeTile(x + 1, y) && !GetTileData(x + 1, y).IsCity()) { closerSides.Add(Side.Top); }
+
+            if (IsEdgeTile(x,y - 1) && !GetTileData(x, y - 1).IsCity()) { closerSides.Add(Side.Right); }
+
+            if (IsEdgeTile(x - 1, y) && !GetTileData(x - 1, y).IsCity()) { closerSides.Add(Side.Bottom); }
+
+            if (IsEdgeTile(x, y + 1) && !GetTileData(x, y + 1).IsCity()) { closerSides.Add(Side.Left); }
+
+            return closerSides;
+        }
+        
+        public List<MineTileInfo> CheckRoadTileSidesToBorder(int x, int y)
+        {
+            // returns list int of sides that are closer to the border 
+            // 0 - TOP
+            // 1 - Right
+            // 2 - Bottom
+            // 3 - Left
+            
+            List<MineTileInfo> closerSides = new List<MineTileInfo>();
+            if(IsEdgeTile(x,y)) return closerSides;
+
+            if (IsEdgeTile(x + 1, y) && !GetTileData(x + 1, y).IsRoad())
+            {
+                closerSides.Add(new MineTileInfo
+                {
+                    Tile = GetTileObject(x + 1, y),
+                    Position = GetTilePosition(x + 1, y),
+                    Direction = Side.Top
+                });
+            }
+
+            if (IsEdgeTile(x, y - 1) && !GetTileData(x, y - 1).IsRoad())
+            {
+                closerSides.Add(new MineTileInfo
+                {
+                    Tile = GetTileObject(x, y - 1),
+                    Position = GetTilePosition(x, y - 1),
+                    Direction = Side.Right
+                });
+            }
+
+            if (IsEdgeTile(x - 1, y) && !GetTileData(x - 1, y).IsRoad())
+            {
+                closerSides.Add(new MineTileInfo
+                {
+                    Tile = GetTileObject(x - 1, y),
+                    Position = GetTilePosition(x - 1, y),
+                    Direction = Side.Bottom
+                });
+            }
+
+            if (IsEdgeTile(x, y + 1) && !GetTileData(x, y + 1).IsRoad())
+            {
+                closerSides.Add(new MineTileInfo
+                {
+                    Tile = GetTileObject(x, y + 1),
+                    Position = GetTilePosition(x, y + 1),
+                    Direction = Side.Left
+                });
+            }
+
+            return closerSides;
         }
         
         private bool IsEdgeTile(int x, int y)
@@ -717,6 +793,13 @@ namespace TerritoryWars.General
         {
             public Vector2Int tilePosition;
             public bool[] roadSides = new bool[4];
+        }
+
+        public class MineTileInfo
+        {
+            public GameObject Tile;
+            public Vector3 Position;
+            public Side Direction;
         }
     }
 }

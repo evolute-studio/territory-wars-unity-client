@@ -183,6 +183,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1852579425028392413}
+  - component: {fileID: 1404500931062143574}
+  - component: {fileID: 1543558371760139796}
   m_Layer: 0
   m_Name: Tile_FFRR
   m_TagString: Untagged
@@ -208,6 +210,55 @@ Transform:
   - {fileID: 6455349581735934883}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1404500931062143574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5805092742495682862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f93cb6b76fa445f292bb4c03fdca789a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HouseRenderers: []
+  ArcRenderers: []
+  TileTerritoryFiller: {fileID: 0}
+  TileFencePlacer: {fileID: 0}
+  RoadRenderers: {fileID: 4734293525057027603}
+  Mill: {fileID: 0}
+--- !u!114 &1543558371760139796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5805092742495682862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3de3fd1ff89342b9a822aa086b66c3e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SimpleRotationObjects: []
+  MirrorRotationObjects: []
+  LineRenderers: []
+  SpriteSwapElements:
+  - SpriteRenderer: {fileID: 4734293525057027603}
+    Rules:
+    - Sprite: {fileID: 862869666472089368, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
+      Scale: {x: -1, y: 1, z: 1}
+    - Sprite: {fileID: 1542361981, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
+      Scale: {x: 1, y: 1, z: 1}
+    - Sprite: {fileID: 862869666472089368, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
+      Scale: {x: 1, y: 1, z: 1}
+    - Sprite: {fileID: 1542361981, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
+      Scale: {x: 1, y: -1, z: 1}
+  OnRotation:
+    m_PersistentCalls:
+      m_Calls: []
+  autoRotate: 0
+  rotateInterval: 1
 --- !u!1 &6740360079749023081
 GameObject:
   m_ObjectHideFlags: 0

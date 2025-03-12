@@ -830,7 +830,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
 --- !u!1 &1115482469226134064
@@ -1565,7 +1565,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
 --- !u!1 &2069525681436223816
@@ -1973,7 +1973,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
 --- !u!1 &2289764877986055852
@@ -2204,7 +2204,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
 --- !u!1 &2560342955616883170
@@ -3740,7 +3740,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
 --- !u!1 &6863453346270137440
@@ -3839,6 +3839,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5345087490282181321}
+  - component: {fileID: 2293548843211066712}
+  - component: {fileID: 2867613711001689878}
   m_Layer: 0
   m_Name: Tile_CFRF
   m_TagString: Untagged
@@ -3869,6 +3871,93 @@ Transform:
   - {fileID: 853863800059591078}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2293548843211066712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6967996268440465068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f93cb6b76fa445f292bb4c03fdca789a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HouseRenderers:
+  - {fileID: 8234538060099800284}
+  ArcRenderers:
+  - {fileID: 2671869316593031359}
+  TileTerritoryFiller: {fileID: 216933934633345071}
+  TileFencePlacer: {fileID: 8839554060659092793}
+  RoadRenderers: {fileID: 8188115615395888717}
+  Mill: {fileID: 0}
+  CloserToBorderFences:
+  - Side: 0
+    Fence: {fileID: 1062021624081766474}
+  - Side: 1
+    Fence: {fileID: 516894058747650922}
+  - Side: 2
+    Fence: {fileID: 695417946820373373}
+  - Side: 3
+    Fence: {fileID: 291023778525865223}
+--- !u!114 &2867613711001689878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6967996268440465068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3de3fd1ff89342b9a822aa086b66c3e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SimpleRotationObjects:
+  - {fileID: 8788749345273371167}
+  - {fileID: 7063626068229466279}
+  - {fileID: 8057407797453500084}
+  - {fileID: 3071539594932605450}
+  - {fileID: 9039057802036407537}
+  - {fileID: 1705589353505968040}
+  - {fileID: 2145459150344751503}
+  - {fileID: 3145449359373323621}
+  - {fileID: 2366762028579271415}
+  MirrorRotationObjects:
+  - {fileID: 582912675697585750}
+  - {fileID: 853863800059591078}
+  LineRenderers:
+  - {fileID: 1169730717906593106}
+  - {fileID: 1489091429664085019}
+  SpriteSwapElements: []
+  OnRotation:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8839554060659092793}
+        m_TargetAssemblyTypeName: TerritoryWars.Tile.FencePlacer, Assembly-CSharp
+        m_MethodName: PlaceFence
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 216933934633345071}
+        m_TargetAssemblyTypeName: TerritoryWars.Tile.TerritoryFiller, Assembly-CSharp
+        m_MethodName: PlaceTerritory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  autoRotate: 0
+  rotateInterval: 1
 --- !u!1 &7122042793577663627
 GameObject:
   m_ObjectHideFlags: 0

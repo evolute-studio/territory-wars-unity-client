@@ -114,6 +114,41 @@ namespace TerritoryWars.Tile
             }
         }
 
+        public void RotateTile(int times = 1)
+        {
+            if (SimpleRotationObjects != null)
+            {
+                foreach (var simpleRotationObject in SimpleRotationObjects)
+                {
+                    SimpleRotation(simpleRotationObject, times);
+                }
+            }
+            
+            if(MirrorRotationObjects != null)
+            {
+                foreach (var mirrorRotationObject in MirrorRotationObjects)
+                {
+                    MirrorRotation(mirrorRotationObject, times);
+                }
+            }
+            
+            if(LineRenderers != null)
+            {
+                foreach (var lineRenderer in LineRenderers)
+                {
+                    LineRotation(lineRenderer, times);
+                }
+            }
+
+            if (SpriteSwapElements != null)
+            {
+                foreach (var spriteSwapElement in SpriteSwapElements)
+                {
+                    spriteSwapElement.Rotate(times);
+                }
+            }
+        }
+
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.R))
