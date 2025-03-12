@@ -79,10 +79,10 @@ namespace TerritoryWars.Dojo
                     BoardUpdated(boardUpdated);
                     break;
                 case evolute_duel_GameFinished gameFinished:
-                    GameFinished(gameFinished.board_id);
+                    GameFinished(gameFinished.board_id, gameFinished.host_player);
                     break;
                 case evolute_duel_GameIsAlreadyFinished gameIsAlreadyFinished:
-                    GameFinished(gameIsAlreadyFinished.board_id);
+                    GameFinished(gameIsAlreadyFinished.board_id, gameIsAlreadyFinished.player_id);
                     break;
                 case evolute_duel_RoadContestWon roadContestWon:
                     RoadContestWon(roadContestWon);
@@ -176,12 +176,15 @@ namespace TerritoryWars.Dojo
             SessionManager.Instance.SetJokersCount(1, guestPlayerJokers);
         }
 
-        private void GameFinished(FieldElement board_id)
+        private void GameFinished(FieldElement board_id, FieldElement hostPlayer)
         {
-            evolute_duel_Board board = GetLocalPlayerBoard();
-            if (board.id.Hex() == board_id.Hex())
+            evolute_duel_Board localBoard = GetLocalPlayerBoard();
+            bool isCurrentBoard = localBoard != null && localBoard.id.Hex() == board_id.Hex();
+            bool isHostPlayerInSession = SessionManager.Instance.LocalPlayer.Address.Hex() == hostPlayer.Hex() ||
+                                         SessionManager.Instance.RemotePlayer.Address.Hex() == hostPlayer.Hex();
+            if (isCurrentBoard || isHostPlayerInSession)
             {
-                CustomLogger.LogEvent($"[GameFinished] | BoardId: {board_id.Hex()}");
+                CustomLogger.LogEvent($"[GameFinished]");
                 Coroutines.StartRoutine(GameFinishedDelayed());
             }
         }
