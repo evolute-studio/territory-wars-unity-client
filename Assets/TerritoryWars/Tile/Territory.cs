@@ -65,8 +65,8 @@ namespace TerritoryWars.Tile
             {
                 
                 texturePoints[i] = new Vector2(
-                    (localPoints[i].x - center.x) * (textureSize / maxSize) + (textureSize / 2),
-                    (localPoints[i].y - center.y) * (textureSize / maxSize) + (textureSize / 2)
+                    (localPoints[i].x - center.x) * (textureSize * 0.83f) + (textureSize / 2),
+                    (localPoints[i].y - center.y) * (textureSize * 0.83f) + (textureSize / 2)
                 );
             }
 
@@ -94,14 +94,14 @@ namespace TerritoryWars.Tile
             
             spriteMask.sprite = maskSprite;
             spriteMask.transform.localPosition = bounds.center;
-            spriteMask.transform.localScale = new Vector3(maxSize, maxSize, 1);
+            // spriteMask.transform.localScale = new Vector3(maxSize, maxSize, 1);
 
             
             if (fillTexture != null)
             {
                 fillTexture.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
                 fillTexture.transform.localPosition = bounds.center;
-                fillTexture.transform.localScale = new Vector3(maxSize, maxSize, 1);
+                fillTexture.transform.localScale = new Vector3(1.2f, 1.2f, 1);
                 fillTexture.color = fillColor;
             }
         }
@@ -180,13 +180,19 @@ namespace TerritoryWars.Tile
         private Bounds GetBounds(Vector3[] points)
         {
             if (points == null || points.Length == 0)
+            {
+                Debug.Log("No points to calculate bounds");
                 return new Bounds(Vector3.zero, Vector3.zero);
+            }
 
             Bounds bounds = new Bounds(points[0], Vector3.zero);
             for (int i = 1; i < points.Length; i++)
             {
                 bounds.Encapsulate(points[i]);
+                Debug.Log("Bound point: " + points[i]);
             }
+
+            Debug.Log("Center: " + bounds.center + "Size: " + bounds.size + "Min: " + bounds.min + "Max: " + bounds.max);
             return bounds;
         }
     }
