@@ -241,6 +241,7 @@ MonoBehaviour:
     Fence: {fileID: 6995586148064748684}
   - Side: 3
     Fence: {fileID: 5961120769382285248}
+  PinsPositions: []
 --- !u!114 &4880956322490773315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -990,7 +991,7 @@ Transform:
   m_GameObject: {fileID: 1185875943913889910}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.144, y: 0.205, z: 0}
+  m_LocalPosition: {x: 0.136, y: 0.198, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1067,7 +1068,7 @@ MonoBehaviour:
   duration: 1
   loop: 1
   delay: 0
-  randomizeStart: 1
+  randomizeStart: 0
   maxRandomDelay: 0.3
   waitBetweenLoops: 0
   playOnAwake: 1

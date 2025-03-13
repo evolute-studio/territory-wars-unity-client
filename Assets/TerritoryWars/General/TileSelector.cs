@@ -18,6 +18,7 @@ namespace TerritoryWars.General
         [SerializeField] private LayerMask backgroundLayer;
         [SerializeField] private LayerMask hoverLayer;
         [SerializeField] private Sprite highlightSprite;
+        [SerializeField] private Sprite highlightUpperBorderSprite;
         [SerializeField] public TilePreview tilePreview;
         [SerializeField] private TileJokerAnimator TileJokerAnimator;
         [SerializeField] private TileJokerAnimator TileJokerAnimatorUI;
@@ -162,13 +163,21 @@ namespace TerritoryWars.General
         private void CreateHighlight(int x, int y)
         {
             var highlight = new GameObject($"Highlight_{x}_{y}");
+            var highlightUpperBorder = new GameObject("HighlightUpperBorder");
             highlight.transform.SetParent(highlightedTiles.transform);
+            highlightUpperBorder.transform.SetParent(highlight.transform);
             highlight.transform.position = board.GetTilePosition(x, y) + new Vector3(0f, highlightYOffset, 0f);
+            highlightUpperBorder.transform.position = board.GetTilePosition(x, y) + new Vector3(0f, highlightYOffset, 0f);
+            
 
             var spriteRenderer = highlight.AddComponent<SpriteRenderer>();
+            var highlighUpperBorderSpriteRenderer = highlightUpperBorder.AddComponent<SpriteRenderer>();
             spriteRenderer.sprite = highlightSprite;
             spriteRenderer.material = highlightMaterial;
             spriteRenderer.sortingOrder = 7;
+            highlighUpperBorderSpriteRenderer.sprite = highlightUpperBorderSprite;
+            highlighUpperBorderSpriteRenderer.material = highlightMaterial;
+            highlighUpperBorderSpriteRenderer.sortingOrder = 12;
             if (spriteRenderer.gameObject.layer != LayerMask.NameToLayer("TileHover"))
             {
                 spriteRenderer.gameObject.layer = LayerMask.NameToLayer("TileHover");
@@ -309,6 +318,11 @@ namespace TerritoryWars.General
             foreach (Transform child in highlightedTiles.transform)
             {
                 child.GetComponent<SpriteRenderer>().color =
+                    child.name == $"Highlight_{selectedX}_{selectedY}"
+                        ? selectedHighlightColor
+                        : normalHighlightColor;
+                
+                child.GetChild(0).GetComponent<SpriteRenderer>().color =
                     child.name == $"Highlight_{selectedX}_{selectedY}"
                         ? selectedHighlightColor
                         : normalHighlightColor;
