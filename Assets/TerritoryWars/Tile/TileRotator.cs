@@ -7,10 +7,12 @@ namespace TerritoryWars.Tile
 {
     public class TileRotator : MonoBehaviour
     {
+        private TileRenderers _tileRenderers;
+        
         public List<Transform> SimpleRotationObjects = new List<Transform>();
         public List<Transform> MirrorRotationObjects = new List<Transform>();
         public List<LineRenderer> LineRenderers = new List<LineRenderer>();
-        public List<SpriteSwapElement> SpriteSwapElements = new List<SpriteSwapElement>();
+        public List<RoadSwapElement> SpriteSwapElements = new List<RoadSwapElement>();
 
         public UnityEvent OnRotation;
 
@@ -18,6 +20,12 @@ namespace TerritoryWars.Tile
         [SerializeField] private bool autoRotate = false;
         [SerializeField] private float rotateInterval = 1f;
         private float nextRotateTime;
+
+        
+        public void Awake()
+        {
+            _tileRenderers = GetComponent<TileRenderers>();
+        }
 
         [ContextMenu("Rotate Clockwise")]
         public void RotateClockwise()
@@ -50,6 +58,13 @@ namespace TerritoryWars.Tile
             foreach (var spriteSwapElement in SpriteSwapElements)
             {
                 spriteSwapElement.Rotate();
+                var pinsParent = spriteSwapElement.PinObjects[spriteSwapElement.CurrentIndex];
+                Transform[] pins = new Transform[pinsParent.childCount];
+                for (int i = 0; i < pinsParent.childCount; i++)
+                {
+                    pins[i] = pinsParent.GetChild(i);
+                }
+                _tileRenderers.PinsPositions = pins;
             }
             OnRotation?.Invoke();
         }
@@ -145,6 +160,13 @@ namespace TerritoryWars.Tile
                 foreach (var spriteSwapElement in SpriteSwapElements)
                 {
                     spriteSwapElement.Rotate(times);
+                    var pinsParent = spriteSwapElement.PinObjects[spriteSwapElement.CurrentIndex];
+                    Transform[] pins = new Transform[pinsParent.childCount];
+                    for (int i = 0; i < pinsParent.childCount; i++)
+                    {
+                        pins[i] = pinsParent.GetChild(i);
+                    }
+                    _tileRenderers.PinsPositions = pins;
                 }
             }
         }
@@ -179,10 +201,12 @@ namespace TerritoryWars.Tile
     }
 
     [Serializable]
-    public class SpriteSwapElement
+    public class RoadSwapElement
     {
+        public int CurrentIndex = 0;
         public SpriteRenderer SpriteRenderer;
         public SpriteSwapRule[] Rules;
+        public Transform[] PinObjects;
         
         public int GetCurrentRuleIndex()
         {
@@ -202,8 +226,14 @@ namespace TerritoryWars.Tile
             int currentIndex = GetCurrentRuleIndex();
             if (currentIndex == -1) return;
             int newIndex = (currentIndex + times) % Rules.Length;
+            CurrentIndex = newIndex;
             SpriteRenderer.sprite = Rules[newIndex].Sprite;
             SpriteRenderer.transform.localScale = Rules[newIndex].Scale;
+            foreach (var pinObject in PinObjects)
+            {
+                pinObject.gameObject.SetActive(false);
+            }
+            PinObjects[newIndex].gameObject.SetActive(true);
         }
     }
     

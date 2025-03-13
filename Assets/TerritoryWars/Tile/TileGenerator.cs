@@ -7,6 +7,7 @@ using TerritoryWars.General;
 using TerritoryWars.ModelsDataConverters;
 using TerritoryWars.ScriptablesObjects;
 using TerritoryWars.Tools;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -36,15 +37,13 @@ namespace TerritoryWars.Tile
 
         [HideInInspector] public string TileConfig;
 
-        public GameObject RoadPath;
-
         private int _currentHouseIndex = 0;
 
         public List<SpriteRenderer> AllCityRenderers = new List<SpriteRenderer>();
         public List<LineRenderer> AllCityLineRenderers = new List<LineRenderer>();
         public List<SpriteRenderer> Pins = new List<SpriteRenderer>();
         public List<SpriteRenderer> houseRenderers;
-        public SpriteRenderer[] pinRenderers;
+        public SpriteRenderer[] PinRenderers;
 
         private byte _rotation;
         private bool _isTilePlacing;
@@ -196,38 +195,27 @@ namespace TerritoryWars.Tile
             // GenerateRoadPins();
         }
 
-        private void GenerateRoadPins()
+        private void GenerateRoadPins(Transform[] points)
         {
-            pinRenderers = new SpriteRenderer[4];
+            PinRenderers = new SpriteRenderer[4];
             int playerId = SessionManager.Instance.CurrentTurnPlayer != null
                 ? SessionManager.Instance.CurrentTurnPlayer.LocalId
                 : -1;
-            if (RoadPath == null)
-            {
-                return;
-            }
-            Transform[] points = new Transform[4];
-            for (int i = 0; i < 4; i++)
-            {
-                points[i] = RoadPath.transform.GetChild(i);
-            }
+            
             CustomLogger.LogInfo("Points count: " + points.Length);
+            
             SpriteRenderer[] pins = new SpriteRenderer[4];
             char[] id = TileConfig.ToCharArray();
             for (int i = 0; i < id.Length; i++)
             {
-                RoadPath.transform.localScale = RoadPath.transform.parent.localScale;
                 if (id[i] == 'R')
                 {
                     CustomLogger.LogInfo("Creating pin for road " + i + " parent: " + points[i].name);
                     GameObject pin = Instantiate(PrefabsManager.Instance.PinPrefab, points[i]);
                     SpriteRenderer pinRenderer = pin.GetComponent<SpriteRenderer>();
-                    pinRenderers[i] = pinRenderer;
+                    PinRenderers[i] = pinRenderer;
                     pin.transform.parent = points[i];
-                    // Vector3 scale = pinRenderer.transform.localScale;
-                    // scale.x = pinRenderer.transform.parent.parent.parent.localScale.x;
-                    // scale.y = pinRenderer.transform.parent.parent.parent.localScale.y;
-                    // pinRenderer.transform.localScale = scale;
+                    pin.GetComponentInChildren<TextMeshPro>().text = GetRoadPoints(TileConfig).ToString();
                     pinRenderer.transform.localPosition = Vector3.zero;
                     pin.transform.DOLocalMoveY(0.035f, 2f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutQuad);
                     if (_tileData.OwnerId == -1) playerId = -1;
@@ -238,6 +226,16 @@ namespace TerritoryWars.Tile
             //_tileData.RoadsPin = pins;
             Pins.AddRange(pins);
             
+        }
+
+        private int GetRoadPoints(string config)
+        {
+            int roadCount = TileConfig.Count(c => c == 'R');
+    
+            bool isCRCR = config == "CRCR" || config == "RCRC";
+            if (isCRCR) return 1;
+            if (roadCount == 2) return 2;
+            return 1;
         }
     
 
@@ -297,6 +295,7 @@ namespace TerritoryWars.Tile
             TerritoryFiller territoryFiller = tileRenderers.TileTerritoryFiller;
             FencePlacer fencePlacer = tileRenderers.TileFencePlacer;
             List<Transform> pillars = null;
+            Transform[] pins = tileRenderers.PinsPositions;
             if (fencePlacer != null)
             {
                 pillars = fencePlacer.pillars;
@@ -347,6 +346,11 @@ namespace TerritoryWars.Tile
             if (territoryFiller != null)
             {
                 territoryFiller.PlaceTerritory();
+            }
+            
+            if (pins != null && pins.Length > 0)
+            {
+                GenerateRoadPins(pins);
             }
 
             if (SessionManager.Instance.TileSelector.selectedPosition != null || _isTilePlacing)
@@ -496,11 +500,11 @@ namespace TerritoryWars.Tile
             {
                 return;
             }
-            if (pinRenderers[side] == null)
+            if (PinRenderers[side] == null)
             {
                 return;
             }
-            pinRenderers[side].sprite = TileAssetsObject.GetPinByPlayerId(playerId);
+            PinRenderers[side].sprite = TileAssetsObject.GetPinByPlayerId(playerId);
         }
     }
 

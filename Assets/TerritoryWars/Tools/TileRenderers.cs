@@ -12,6 +12,7 @@ public class TileRenderers : MonoBehaviour
     public SpriteRenderer RoadRenderers;
     public GameObject Mill;
     public List<CloserToBorderFence> CloserToBorderFences;
+    public Transform[] PinsPositions;
 
     [Serializable]
     public class CloserToBorderFence
