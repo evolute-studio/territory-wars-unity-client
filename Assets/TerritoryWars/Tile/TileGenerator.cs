@@ -208,7 +208,9 @@ namespace TerritoryWars.Tile
                     }
 
                     if (_tileData.OwnerId == -1) playerId = -1;
-                    house.gameObject.GetComponent<SpriteAnimator>().ChangeSprites(TileAssetsObject.GetNextHouse(playerId));
+                    int cityCount = TileConfig.Count(c => c == 'C');
+                    house.gameObject.GetComponent<SpriteAnimator>()
+                        .ChangeSprites(TileAssetsObject.GetNextHouse(playerId, cityCount == 1 ? true : false));
                 }
             }
 

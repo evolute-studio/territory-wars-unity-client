@@ -32,17 +32,28 @@ namespace TerritoryWars.ScriptablesObjects
             return randomHouse;
         }
 
-        public Sprite[] GetNextHouse(int playerIndex)
+        public Sprite[] GetNextHouse(int playerIndex, bool chooseHighHouse = false)
         {
             playerIndex = SetLocalPlayerData.GetLocalIndex(playerIndex);
             if (playerIndex == -1)
             {
+                Sprite[] neutralNextHouseSprites;
+                if (chooseHighHouse)
+                {
+                    neutralNextHouseSprites = NeutralHousesAnimated[1].HousesSprites;
+                    return neutralNextHouseSprites;
+                }
                 CurrentHouseIndex = (CurrentHouseIndex + 1) % NeutralHousesAnimated.Count;
-                Sprite[] neutralNextHouseSprites = NeutralHousesAnimated[CurrentHouseIndex].HousesSprites;
+                neutralNextHouseSprites = NeutralHousesAnimated[CurrentHouseIndex].HousesSprites;
                 return neutralNextHouseSprites;
             }
-            
-            
+
+            if (chooseHighHouse)
+            {
+                List<HousesSprite>[] highHouses = { FirstPlayerHousesAnimated, SecondPlayerHousesAnimated };
+                Sprite[] highHouse = highHouses[playerIndex][1].HousesSprites;
+                return highHouse;
+            }
             
             List<HousesSprite>[] Houses = { FirstPlayerHousesAnimated, SecondPlayerHousesAnimated };
             CurrentHouseIndex = (CurrentHouseIndex + 1) % Houses[playerIndex].Count;

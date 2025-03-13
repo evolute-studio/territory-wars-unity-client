@@ -2919,7 +2919,7 @@ MonoBehaviour:
   duration: 1
   loop: 1
   delay: 0
-  randomizeStart: 1
+  randomizeStart: 0
   maxRandomDelay: 0.3
   waitBetweenLoops: 0
   playOnAwake: 1

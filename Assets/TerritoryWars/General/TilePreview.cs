@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using TerritoryWars.Tile;
 using UnityEngine;
@@ -111,13 +112,16 @@ namespace TerritoryWars.General
                 tileGeneratorForUI.Generate(currentTile);
                 if (tileGenerator.CurrentTileGO != null)
                 {
-                    if (tileGenerator.CurrentTileGO.GetComponent<TileRenderers>().TileTerritoryFiller != null)
+                    TileRenderers tileRenderers = tileGenerator.CurrentTileGO.GetComponent<TileRenderers>();
+                    
+                    if (tileRenderers.TileTerritoryFiller != null)
                     {
-                        Transform territoryPlacer = tileGenerator.CurrentTileGO.GetComponent<TileRenderers>()
+                        Transform territoryPlacer = tileRenderers
                             .TileTerritoryFiller.transform;
                         territoryPlacer.GetComponentInChildren<SpriteMask>().frontSortingLayerID
                             = SortingLayer.NameToID("Preview");
                     }
+                    
 
                     _houseSprites.Clear();
                     SpriteRenderer[] houseRenderers = tileGenerator.CurrentTileGO.GetComponent<TileRenderers>().HouseRenderers.ToArray();
@@ -196,13 +200,65 @@ namespace TerritoryWars.General
             previewTileView.transform.DOShakePosition(0.5f, 0.1f, 18, 45, false, true);
 
             yield return new WaitForSeconds(0.5f);
-
+            
             SpriteRenderer[] grounds =
                 previewTileView.transform.Find("Ground").GetComponentsInChildren<SpriteRenderer>();
-            
+
             foreach (SpriteRenderer ground in grounds)
             {
                 ground.sortingLayerName = "Default";
+            }
+            previewTileView.transform.Find("Grass").GetComponent<SpriteRenderer>().sortingLayerName = "Default";
+            
+            if (tileGenerator.CurrentTileGO != null)
+            {
+                TileRenderers tileRenderers = tileGenerator.CurrentTileGO.GetComponent<TileRenderers>();
+                
+                if (tileRenderers.TileFencePlacer != null)
+                {
+                    tileRenderers.TileFencePlacer.GetComponent<FencePlacer>().lineRenderer.GetComponent<LineRenderer>()
+                    .sortingLayerName = "Default";
+                    
+                    var pillars = tileRenderers.TileFencePlacer
+                        .GetComponent<FencePlacer>().pillars;
+                        
+                    foreach (var pillar in pillars)
+                    { 
+                        pillar.GetComponent<SpriteRenderer>().sortingLayerName = "Default";
+                    }
+                }
+            
+                if(tileRenderers.RoadRenderers != null)
+                    tileRenderers.RoadRenderers.sortingLayerName = "Default";
+                
+                if (tileRenderers.TileTerritoryFiller != null)
+                {
+                    Transform territoryPlacer = tileRenderers
+                        .TileTerritoryFiller.transform;
+                    
+                    territoryPlacer.GetComponentInChildren<SpriteMask>().frontSortingLayerID
+                        = SortingLayer.NameToID("Default");
+                    
+                    territoryPlacer.GetComponentInChildren<SpriteRenderer>().sortingLayerName = "Default";
+                }
+
+                List<SpriteRenderer> groundRenderers = new List<SpriteRenderer>();
+                groundRenderers.Add(tileGenerator.CurrentTileGO.transform.Find("Grass").GetComponent<SpriteRenderer>());
+                groundRenderers.AddRange(tileGenerator.CurrentTileGO.transform.Find("Ground")
+                    .GetComponentsInChildren<SpriteRenderer>());
+
+                foreach (var renderers in groundRenderers)
+                {
+                    renderers.sortingLayerName = "Default";
+                }
+
+                _houseSprites.Clear();
+                SpriteRenderer[] houseRenderers = tileGenerator.CurrentTileGO.GetComponent<TileRenderers>().HouseRenderers.ToArray();
+                foreach (SpriteRenderer houseRenderer in houseRenderers)
+                {
+                    houseRenderer.sortingLayerName = "Default";
+                    _houseSprites.Add(houseRenderer.sprite);
+                }
             }
             
             currentTween?.Kill();
