@@ -73,8 +73,8 @@ public class SessionUI : MonoBehaviour
     public void SetCityScores(int localPlayerCityScore, int remotePlayerCityScore)
     {
         int[] playersCityScores = SetLocalPlayerData.GetLocalPlayerInt(localPlayerCityScore, remotePlayerCityScore);
-        cityScoreTextPlayers[0].text = playersCityScores[0].ToString();
-        cityScoreTextPlayers[1].text = playersCityScores[1].ToString();
+        cityScoreTextPlayers[0].text = (playersCityScores[0] / 2).ToString();
+        cityScoreTextPlayers[1].text = (playersCityScores[1] / 2).ToString();
     }
     
     

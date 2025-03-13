@@ -2,9 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
+using NUnit.Framework;
 using TerritoryWars.General;
+using TerritoryWars.ModelsDataConverters;
 using TerritoryWars.ScriptablesObjects;
 using TerritoryWars.Tools;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -26,6 +29,7 @@ namespace TerritoryWars.Tile
 
         private TileData _tileData;
 
+        [Header("Tile Prefabs")] public List<TilePrefab> TilePrefabs;
 
         [Header("Roads")] public List<RoadPair> RoadPairs;
 
@@ -33,15 +37,19 @@ namespace TerritoryWars.Tile
 
         [HideInInspector] public string TileConfig;
 
-        public GameObject RoadPath;
-
         private int _currentHouseIndex = 0;
 
         public List<SpriteRenderer> AllCityRenderers = new List<SpriteRenderer>();
         public List<LineRenderer> AllCityLineRenderers = new List<LineRenderer>();
         public List<SpriteRenderer> Pins = new List<SpriteRenderer>();
         public List<SpriteRenderer> houseRenderers;
-        public SpriteRenderer[] pinRenderers;
+        public SpriteRenderer[] PinRenderers;
+
+        private byte _rotation;
+        private bool _isTilePlacing;
+        private Vector2Int _placingTilePosition;
+
+        public GameObject CurrentTileGO { get; private set; }
 
 
         public void Awake() => Initialize();
@@ -59,33 +67,45 @@ namespace TerritoryWars.Tile
             }
         }
 
-        public void Generate(TileData data)
+        public void Generate(TileData data, bool isTilePlacing = false, Vector2Int placingTilePosition = default)
         {
             TileConfig = data.id;
             _tileData = data;
+            _isTilePlacing = isTilePlacing;
+            _placingTilePosition = placingTilePosition;
             Generate();
         }
 
         public void Generate()
         {
-            Destroy(City);
-            Destroy(Mill);
+            Destroy(CurrentTileGO);
+            CurrentTileGO = null;
+            
             foreach (var pin in Pins)
             {
                 if(pin == null) continue;
                 pin.transform.DOKill();
                 Destroy(pin.gameObject);
             }
-            City = null;
-            Mill = null;
             Pins.Clear();
             AllCityRenderers = new List<SpriteRenderer>();
             AllCityLineRenderers = new List<LineRenderer>();
 
             TileRotator.ClearLists();
 
-            GenerateRoad();
-            GenerateCity();
+            var tileConfig = OnChainBoardDataConverter.GetTypeAndRotation(TileConfig);
+            string id = OnChainBoardDataConverter.TileTypes[tileConfig.Item1];
+            _rotation = (byte)((tileConfig.Item2 + 1) % 4);
+            
+            foreach (var tile in TilePrefabs)
+            {
+                if (tile.Config == id)
+                {
+                    CurrentTileGO = Instantiate(tile.TilePrefabGO, transform);
+                    InitializeTile();
+                    break;
+                }
+            }
         }
 
         public void Rotate()
@@ -95,116 +115,31 @@ namespace TerritoryWars.Tile
             s += " Rotated config: " + TileConfig;
             Debug.Log(s);
             SetConnectorTypes();
-
-            GenerateRoad();
-            GenerateCity();
-        }
-
-        public void GenerateRoad()
-        {
-            string id = TileConfig;
-
-            if (string.IsNullOrEmpty(id) || !id.Contains('R'))
-            {
-                RoadRenderer.sprite = null;
-                return;
-            }
-
-            int roadCount = id.Count(c => c == 'R');
-            int cityCount = id.Count(c => c == 'C');
-
-            if (roadCount == 1)
-            {
-                for (int i = 0; i < id.Length; i++)
-                {
-                    char[] idReplace = id.ToCharArray();
-                    if (id[i] == 'C')
-                    {
-                        idReplace[i] = 'R';
-                        id = new string(idReplace);
-                        break;
-                    }
-                }
-
-                roadCount = 2;
-            }
-
-
-            id = id.Replace('C', 'X');
-            id = id.Replace('F', 'X');
-            RoadRenderer.transform.localScale = Vector3.one;
             
-            if(RoadPath != null)
-                Destroy(RoadPath);
-
-            foreach (var roadPair in RoadPairs)
-            {
-                if (roadPair.MainConfig == id)
-                {
-                    RoadRenderer.sprite = roadPair.Sprite;
-                    RoadPath = Instantiate(roadPair.RoadPath, RoadRenderer.transform);
-                    break;
-                }
-
-                if (roadPair.MirroredConfig == id)
-                {
-                    RoadRenderer.sprite = roadPair.Sprite;
-                    Vector3 scale = RoadRenderer.transform.localScale;
-                    if (roadPair.FlipX) scale.x = -scale.x;
-                    if (roadPair.FlipY) scale.y = -scale.y;
-                    RoadRenderer.transform.localScale = scale;
-
-                    RoadPath = Instantiate(roadPair.RoadPath, RoadRenderer.transform);
-                    break;
-                }
-            }
-
-            if (roadCount >= 3 && cityCount == 0)
-            {
-                if (Mill != null)
-                    Destroy(Mill);
-                Mill = Instantiate(PrefabsManager.Instance.MillPrefab, transform);
-                Mill.transform.localPosition = Vector3.zero;
-            }
-            else
-            {
-                if (Mill != null)
-                    Destroy(Mill);
-            }
-
-            GenerateRoadPins();
+            InitializeTile();
+            
         }
 
-        private void GenerateRoadPins()
+        private void GenerateRoadPins(Transform[] points)
         {
-            pinRenderers = new SpriteRenderer[4];
+            PinRenderers = new SpriteRenderer[4];
             int playerId = SessionManager.Instance.CurrentTurnPlayer != null
                 ? SessionManager.Instance.CurrentTurnPlayer.LocalId
                 : -1;
-            if (RoadPath == null)
-            {
-                return;
-            }
-            Transform[] points = new Transform[4];
-            for (int i = 0; i < 4; i++)
-            {
-                points[i] = RoadPath.transform.GetChild(i);
-            }
+            
+            CustomLogger.LogInfo("Points count: " + points.Length);
+            
             SpriteRenderer[] pins = new SpriteRenderer[4];
             char[] id = TileConfig.ToCharArray();
             for (int i = 0; i < id.Length; i++)
             {
-                RoadPath.transform.localScale = RoadPath.transform.parent.localScale;
                 if (id[i] == 'R')
                 {
                     GameObject pin = Instantiate(PrefabsManager.Instance.PinPrefab, points[i]);
                     SpriteRenderer pinRenderer = pin.GetComponent<SpriteRenderer>();
-                    pinRenderers[i] = pinRenderer;
+                    PinRenderers[i] = pinRenderer;
                     pin.transform.parent = points[i];
-                    // Vector3 scale = pinRenderer.transform.localScale;
-                    // scale.x = pinRenderer.transform.parent.parent.parent.localScale.x;
-                    // scale.y = pinRenderer.transform.parent.parent.parent.localScale.y;
-                    // pinRenderer.transform.localScale = scale;
+                    pin.GetComponentInChildren<TextMeshPro>().text = GetRoadPoints(TileConfig).ToString();
                     pinRenderer.transform.localPosition = Vector3.zero;
                     pin.transform.DOLocalMoveY(0.035f, 2f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutQuad);
                     if (_tileData.OwnerId == -1) playerId = -1;
@@ -216,44 +151,100 @@ namespace TerritoryWars.Tile
             Pins.AddRange(pins);
             
         }
-    
 
-    public void GenerateCity()
+        private int GetRoadPoints(string config)
         {
-            string id = TileConfig;
-            int cityCount = id.Count(c => c == 'C');
-            int roadCount = id.Count(c => c == 'R');
-
-            if (cityCount == 1 && roadCount == 3) { }
-
-            else if(cityCount == 3 && roadCount == 1) { }
-            else
+            int roadCount = TileConfig.Count(c => c == 'R');
+    
+            bool isCRCR = config == "CRCR" || config == "RCRC";
+            if (isCRCR) return 1;
+            if (roadCount == 2) return 2;
+            return 1;
+        }
+        
+        public void InitializeTile()
+        {
+            TileRenderers tileRenderers = CurrentTileGO.GetComponent<TileRenderers>();
+            
+            var tileConfig = OnChainBoardDataConverter.GetTypeAndRotation(TileConfig);
+            string id = OnChainBoardDataConverter.TileTypes[tileConfig.Item1];
+            _rotation = (byte)((tileConfig.Item2 + 1) % 4);
+            CurrentTileGO.GetComponent<TileRotator>().RotateTile((_rotation + 3) % 4);
+            
+            AllCityRenderers = new List<SpriteRenderer>();
+            AllCityLineRenderers = new List<LineRenderer>();
+            
+            houseRenderers = tileRenderers.HouseRenderers;
+            List<SpriteRenderer> arcRenderers = tileRenderers.ArcRenderers;
+            TerritoryFiller territoryFiller = tileRenderers.TileTerritoryFiller;
+            FencePlacer fencePlacer = tileRenderers.TileFencePlacer;
+            List<Transform> pillars = null;
+            Transform[] pins = tileRenderers.PinsPositions;
+            if (fencePlacer != null)
             {
-                if (string.IsNullOrEmpty(id) || !id.Contains('C')) 
-                {
-                    return;
-                }
-                
-                id = id.Replace('R', 'X');
-                id = id.Replace('F', 'X');
-                
+                pillars = fencePlacer.pillars;
             }
 
-
-            if (City != null)
+            if (pillars != null)
             {
-                return;
+                List<SpriteRenderer> pillarsRenderers = pillars.Select(x => x.GetComponent<SpriteRenderer>()).ToList();
+                AllCityRenderers.AddRange(pillarsRenderers);
             }
 
-            foreach (var cityData in CityData)
-            {
-                if (cityData.Config == id)
+            if (houseRenderers != null)
+            { 
+                AllCityRenderers.AddRange(houseRenderers);
+                TileAssetsObject.BackIndex(houseRenderers.Count);
+                
+                foreach (var house in houseRenderers)
                 {
-                    City = Instantiate(cityData.CityPrefab, transform);
-                    InitCity(City, cityData.Rotation);
+                    int playerId = 0;
+                    General.SessionManager sessionManager = General.SessionManager.Instance;
+                    if (sessionManager == null || sessionManager.CurrentTurnPlayer == null)
+                    {
+                        playerId = Random.Range(0, 2);
+                    }
+                    else
+                    {
+                        playerId = sessionManager.CurrentTurnPlayer.LocalId;
+                    }
 
-                    return;
+                    if (_tileData.OwnerId == -1) playerId = -1;
+                    house.gameObject.GetComponent<SpriteAnimator>().ChangeSprites(TileAssetsObject.GetNextHouse(playerId));
                 }
+            }
+
+            if (arcRenderers != null)
+            {
+                AllCityRenderers.AddRange(arcRenderers);
+            }
+
+            
+            if (fencePlacer != null)
+            {
+                AllCityLineRenderers.Add(fencePlacer.lineRenderer);
+                fencePlacer.PlaceFence();
+            }
+
+            
+            if (territoryFiller != null)
+            {
+                territoryFiller.PlaceTerritory();
+            }
+            
+            if (pins != null && pins.Length > 0)
+            {
+                GenerateRoadPins(pins);
+            }
+
+            if (SessionManager.Instance.TileSelector.selectedPosition != null || _isTilePlacing)
+            {
+                FencePlacerForCloserToBorderCity(SessionManager.Instance.Board.CheckCityTileSidesToBorder(
+                    _placingTilePosition.x,
+                    _placingTilePosition.y), tileRenderers);
+                
+                MinePlaceForCloserToBorderRoad(SessionManager.Instance.Board.CheckRoadTileSidesToBorder(_placingTilePosition.x,
+                    _placingTilePosition.y));
             }
         }
 
@@ -328,16 +319,49 @@ namespace TerritoryWars.Tile
         
         public void RecolorHouses(int playerId)
         {
-            if (City == null)
+            if (CurrentTileGO.GetComponent<TileRenderers>().HouseRenderers == null)
             {
                 return;
             }
             Debug.Log("Recoloring houses. PlayerId: " + playerId);
-            houseRenderers = City.GetComponentsInChildren<SpriteRenderer>()
+            houseRenderers = CurrentTileGO.GetComponentsInChildren<SpriteRenderer>()
                 .ToList().Where(x => x.name == "House").ToList();
             for (int i = 0; i < houseRenderers.Count; i++)
             {
                 houseRenderers[i].gameObject.GetComponent<SpriteAnimator>().ChangeSprites(TileAssetsObject.GetHouseByReference(houseRenderers[i].gameObject.GetComponent<SpriteAnimator>().sprites, playerId));
+            }
+        }
+
+        public void FencePlacerForCloserToBorderCity(List<Side> closerSides, TileRenderers tileRenderers)
+        {
+            if (closerSides == null || tileRenderers.HouseRenderers == null) return;
+
+            foreach (var side in closerSides)
+            {
+                if(_tileData.GetSide(side) != LandscapeType.City) continue;
+                
+                GameObject fence = tileRenderers.CloserToBorderFences.Find(x => x.Side == side).Fence;
+                fence.SetActive(true);
+                fence.GetComponent<FencePlacer>().PlaceFence();
+            }
+        }
+
+        public void MinePlaceForCloserToBorderRoad(List<Board.MineTileInfo> closerSides)
+        {
+            if (closerSides == null || !_tileData.IsRoad()) return;
+
+            foreach (var side in closerSides)
+            {
+                if(_tileData.GetSide(side.Direction) != LandscapeType.Road) continue;
+
+                foreach (var prefab in PrefabsManager.Instance.MineEnviromentTiles)
+                {
+                    if (prefab.Direction == side.Direction)
+                    {
+                        GameObject mine = Instantiate(prefab.MineTile, side.Position, Quaternion.identity);
+                        side.Tile.SetActive(false);
+                    }
+                }
             }
         }
         
@@ -360,17 +384,12 @@ namespace TerritoryWars.Tile
             {
                 return;
             }
-            if (pinRenderers[side] == null)
+            if (PinRenderers[side] == null)
             {
                 return;
             }
-            pinRenderers[side].sprite = TileAssetsObject.GetPinByPlayerId(playerId);
+            PinRenderers[side].sprite = TileAssetsObject.GetPinByPlayerId(playerId);
         }
-
-        
-
-
-
     }
 
     [Serializable]
@@ -390,5 +409,12 @@ namespace TerritoryWars.Tile
         public string Config;
         public int Rotation;
         public GameObject CityPrefab;
+    }
+
+    [Serializable]
+    public class TilePrefab
+    {
+        public string Config;
+        public GameObject TilePrefabGO;
     }
 }

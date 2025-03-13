@@ -82,7 +82,6 @@ namespace TerritoryWars.Dojo
 
         public async Task CreateBurners()
         {
-            //masterAccount.AccountCreated.RemoveListener(CreateBurners);
             burnerManager = new BurnerManager(provider, masterAccount);
             
             WorldManager.synchronizationMaster.OnEventMessage.AddListener(OnEventMessage);
@@ -694,73 +693,6 @@ namespace TerritoryWars.Dojo
             yield return new WaitForSeconds(delay);
             action();
         }
-        
-        // private T GetFieldValue<T>(ModelInstance eventMessage, string fieldName)
-        // {
-        //     if (eventMessage.Model.Members.TryGetValue(fieldName, out var value))
-        //     {
-        //         if (value is T typedValue)
-        //         {
-        //             return typedValue;
-        //         }
-        //         return (T)Convert.ChangeType(value, typeof(T));
-        //     }
-        //     throw new KeyNotFoundException($"Field {fieldName} not found in event {eventMessage.Model.Name}");
-        // }
-        //
-        // private void HandleGameCreated(ModelInstance eventMessage)
-        // {
-        //     var hostPlayer = GetFieldValue<FieldElement>(eventMessage, "host_player");
-        //     var status = GetFieldValue<byte>(eventMessage, "status");
-        //     Debug.Log($"Game Created by {hostPlayer} with status {status}");
-        // }
-        //
-        // private void HandleGameStarted(ModelInstance eventMessage)
-        // {
-        //     var hostPlayer = GetFieldValue<FieldElement>(eventMessage, "host_player");
-        //     var guestPlayer = GetFieldValue<FieldElement>(eventMessage, "guest_player");
-        //     var boardId = GetFieldValue<FieldElement>(eventMessage, "board_id");
-        //     Debug.Log($"Game Started between {hostPlayer} and {guestPlayer} on board {boardId}");
-        // }
-        //
-        // private void HandleGameFinished(ModelInstance eventMessage)
-        // {
-        //     var hostPlayer = GetFieldValue<FieldElement>(eventMessage, "host_player");
-        //     var boardId = GetFieldValue<FieldElement>(eventMessage, "board_id");
-        //     Debug.Log($"Game Finished for host {hostPlayer} on board {boardId}");
-        // }
-        //
-        // private void HandleMoved(ModelInstance eventMessage)
-        // {
-        //     var moveId = GetFieldValue<FieldElement>(eventMessage, "move_id");
-        //     var player = GetFieldValue<FieldElement>(eventMessage, "player");
-        //     var tile = GetFieldValue<byte?>(eventMessage, "tile");
-        //     var rotation = GetFieldValue<byte?>(eventMessage, "rotation");
-        //     var isJoker = GetFieldValue<bool>(eventMessage, "is_joker");
-        //     Debug.Log($"Move made by {player}: Tile={tile}, Rotation={rotation}, IsJoker={isJoker}");
-        // }
-        //
-        // private void HandleInvalidMove(ModelInstance eventMessage)
-        // {
-        //     var moveId = GetFieldValue<FieldElement>(eventMessage, "move_id");
-        //     var player = GetFieldValue<FieldElement>(eventMessage, "player");
-        //     Debug.Log($"Invalid move by {player}");
-        // }
-        //
-        // private void HandleGameCanceled(ModelInstance eventMessage)
-        // {
-        //     var hostPlayer = GetFieldValue<FieldElement>(eventMessage, "host_player");
-        //     var status = GetFieldValue<byte>(eventMessage, "status");
-        //     Debug.Log($"Game Canceled by {hostPlayer} with status {status}");
-        // }
-        //
-        // private void HandleBoardCreated(ModelInstance eventMessage)
-        // {
-        //     var boardId = GetFieldValue<FieldElement>(eventMessage, "board_id");
-        //     var player1 = GetFieldValue<FieldElement>(eventMessage, "player1");
-        //     var player2 = GetFieldValue<FieldElement>(eventMessage, "player2");
-        //     Debug.Log($"Board Created: ID={boardId}, Player1={player1}, Player2={player2}");
-        // }
         
         void OnDestroy()
         {

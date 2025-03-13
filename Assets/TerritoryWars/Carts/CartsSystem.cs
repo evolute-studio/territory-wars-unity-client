@@ -60,7 +60,8 @@ namespace TerritoryWars.Carts
             }
 
             GameObject tileObject = board.GetTileObject(x, y);
-            Transform cartsPath = tileObject.GetComponent<TileGenerator>().RoadPath.transform;
+            //Transform cartsPath = tileObject.GetComponent<TileGenerator>().RoadPath.transform; // TileGenerator is not have RoadPath 
+            Transform cartsPath = tileObject.transform;
             int playerId = General.SessionManager.Instance.CurrentTurnPlayer.LocalId;
             RoadTile roadTile = new RoadTile(playerId, tileObject, tileData, cartsPath);
             

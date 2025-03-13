@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -6,9 +7,12 @@ namespace TerritoryWars.Tile
 {
     public class TileRotator : MonoBehaviour
     {
+        private TileRenderers _tileRenderers;
+        
         public List<Transform> SimpleRotationObjects = new List<Transform>();
         public List<Transform> MirrorRotationObjects = new List<Transform>();
         public List<LineRenderer> LineRenderers = new List<LineRenderer>();
+        public List<RoadSwapElement> SpriteSwapElements = new List<RoadSwapElement>();
 
         public UnityEvent OnRotation;
 
@@ -16,6 +20,12 @@ namespace TerritoryWars.Tile
         [SerializeField] private bool autoRotate = false;
         [SerializeField] private float rotateInterval = 1f;
         private float nextRotateTime;
+
+        
+        public void Awake()
+        {
+            _tileRenderers = GetComponent<TileRenderers>();
+        }
 
         [ContextMenu("Rotate Clockwise")]
         public void RotateClockwise()
@@ -43,6 +53,18 @@ namespace TerritoryWars.Tile
             foreach (var lineRenderer in LineRenderers)
             {
                 LineRotation(lineRenderer);
+            }
+            
+            foreach (var spriteSwapElement in SpriteSwapElements)
+            {
+                spriteSwapElement.Rotate();
+                var pinsParent = spriteSwapElement.PinObjects[spriteSwapElement.CurrentIndex];
+                Transform[] pins = new Transform[pinsParent.childCount];
+                for (int i = 0; i < pinsParent.childCount; i++)
+                {
+                    pins[i] = pinsParent.GetChild(i);
+                }
+                _tileRenderers.PinsPositions = pins;
             }
             OnRotation?.Invoke();
         }
@@ -107,6 +129,48 @@ namespace TerritoryWars.Tile
             }
         }
 
+        public void RotateTile(int times = 1)
+        {
+            if (SimpleRotationObjects != null)
+            {
+                foreach (var simpleRotationObject in SimpleRotationObjects)
+                {
+                    SimpleRotation(simpleRotationObject, times);
+                }
+            }
+            
+            if(MirrorRotationObjects != null)
+            {
+                foreach (var mirrorRotationObject in MirrorRotationObjects)
+                {
+                    MirrorRotation(mirrorRotationObject, times);
+                }
+            }
+            
+            if(LineRenderers != null)
+            {
+                foreach (var lineRenderer in LineRenderers)
+                {
+                    LineRotation(lineRenderer, times);
+                }
+            }
+
+            if (SpriteSwapElements != null)
+            {
+                foreach (var spriteSwapElement in SpriteSwapElements)
+                {
+                    spriteSwapElement.Rotate(times);
+                    var pinsParent = spriteSwapElement.PinObjects[spriteSwapElement.CurrentIndex];
+                    Transform[] pins = new Transform[pinsParent.childCount];
+                    for (int i = 0; i < pinsParent.childCount; i++)
+                    {
+                        pins[i] = pinsParent.GetChild(i);
+                    }
+                    _tileRenderers.PinsPositions = pins;
+                }
+            }
+        }
+
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.R))
@@ -134,5 +198,49 @@ namespace TerritoryWars.Tile
         }
 
        
+    }
+
+    [Serializable]
+    public class RoadSwapElement
+    {
+        public int CurrentIndex = 0;
+        public SpriteRenderer SpriteRenderer;
+        public SpriteSwapRule[] Rules;
+        public Transform[] PinObjects;
+        
+        public int GetCurrentRuleIndex()
+        {
+            for (int i = 0; i < Rules.Length; i++)
+            {
+                if (SpriteRenderer.sprite == Rules[i].Sprite && SpriteRenderer.transform.localScale == Rules[i].Scale)
+                {
+                    return i;
+                }
+            }
+
+            return -1;
+        }
+        
+        public void Rotate(int times = 1)
+        {
+            int currentIndex = GetCurrentRuleIndex();
+            if (currentIndex == -1) return;
+            int newIndex = (currentIndex + times) % Rules.Length;
+            CurrentIndex = newIndex;
+            SpriteRenderer.sprite = Rules[newIndex].Sprite;
+            SpriteRenderer.transform.localScale = Rules[newIndex].Scale;
+            foreach (var pinObject in PinObjects)
+            {
+                pinObject.gameObject.SetActive(false);
+            }
+            PinObjects[newIndex].gameObject.SetActive(true);
+        }
+    }
+    
+    [Serializable]
+    public class SpriteSwapRule
+    {
+        public Sprite Sprite;
+        public Vector3 Scale;
     }
 }

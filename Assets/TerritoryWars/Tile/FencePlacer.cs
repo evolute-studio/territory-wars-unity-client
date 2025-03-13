@@ -7,7 +7,7 @@ namespace TerritoryWars.Tile
     public class FencePlacer : MonoBehaviour
     {
         public List<Transform> pillars;
-        public float fenceYOffset;
+        public float fenceYOffset = 0.08f;
         public LineRenderer lineRenderer;
         public int[] skipIndices;
         public float poleYOffset = 0f;

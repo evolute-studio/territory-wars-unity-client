@@ -165,7 +165,7 @@ namespace TerritoryWars.General
             var spriteRenderer = highlight.AddComponent<SpriteRenderer>();
             spriteRenderer.sprite = highlightSprite;
             spriteRenderer.material = highlightMaterial;
-            spriteRenderer.sortingOrder = 9;
+            spriteRenderer.sortingOrder = 7;
             if (spriteRenderer.gameObject.layer != LayerMask.NameToLayer("TileHover"))
             {
                 spriteRenderer.gameObject.layer = LayerMask.NameToLayer("TileHover");
@@ -558,6 +558,7 @@ namespace TerritoryWars.General
             }
             catch (System.Exception e)
             {
+                Debug.LogError(currentTile);
                 Debug.LogError($"Error in StartJokerTilePlacement: {e}");
             }
         }

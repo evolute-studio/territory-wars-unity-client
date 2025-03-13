@@ -580,7 +580,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5208646215543139108
 Transform:
   m_ObjectHideFlags: 0
@@ -889,6 +889,55 @@ MonoBehaviour:
   TileAssetsObject: {fileID: 11400000, guid: 19b0530eb84214bbf973b9dbeb4e18b4, type: 2}
   TileJokerAnimator: {fileID: 2839269062795135008}
   TileRotator: {fileID: 2757118565399566220}
+  TilePrefabs:
+  - Config: CCCC
+    TilePrefabGO: {fileID: 5287493218568026045, guid: a7521adeb78a4c34bb65be0e906382ca, type: 3}
+  - Config: CCCF
+    TilePrefabGO: {fileID: 7636757920612991745, guid: d575c4b0360b14b40945abbb3be0eee7, type: 3}
+  - Config: CCCR
+    TilePrefabGO: {fileID: 2719080738374231564, guid: 93b5797d0c6ccf444a6da2ce80442070, type: 3}
+  - Config: CCFF
+    TilePrefabGO: {fileID: 4918831837962533037, guid: 9c82efd446d145246825aac141284e22, type: 3}
+  - Config: CCFR
+    TilePrefabGO: {fileID: 1552171472038831473, guid: 2d6f7a589f42ac2469de42b7c6cce456, type: 3}
+  - Config: CCRF
+    TilePrefabGO: {fileID: 1835158301997728398, guid: c355db21fec7be44a986d7eca3c9990a, type: 3}
+  - Config: CCRR
+    TilePrefabGO: {fileID: 9013169095503610417, guid: 773dcfc390372a04c803a7ba0f14f169, type: 3}
+  - Config: CFCF
+    TilePrefabGO: {fileID: 66606259541803571, guid: 4cdb08006c495864e8bb65bcd0be7a65, type: 3}
+  - Config: CFCR
+    TilePrefabGO: {fileID: 6909584031026689758, guid: fc49a628ace668744a93e71dfe96dbf1, type: 3}
+  - Config: CFFF
+    TilePrefabGO: {fileID: 120191892156503874, guid: 0fa023ea8d3f56445b46144aa06ff0a6, type: 3}
+  - Config: CFFR
+    TilePrefabGO: {fileID: 5584336913415767874, guid: 5b4bfcd6d27ceb1468c42e63d611fc03, type: 3}
+  - Config: CFRF
+    TilePrefabGO: {fileID: 6967996268440465068, guid: 5f76789476703fd47b125609170c2416, type: 3}
+  - Config: CFRR
+    TilePrefabGO: {fileID: 1716034838657810899, guid: 2c095f99a9e3f824195f9cb3d018e964, type: 3}
+  - Config: CRCR
+    TilePrefabGO: {fileID: 8357790790167823946, guid: 466792a5d8854994aa11fd60849727e4, type: 3}
+  - Config: CRFF
+    TilePrefabGO: {fileID: 1812178803273371392, guid: f277fc4bd15a5a34dadf960f7dbec35e, type: 3}
+  - Config: CRFR
+    TilePrefabGO: {fileID: 3084096278345085470, guid: 2c01cc074faa0fe42a04fd45c6a25dc5, type: 3}
+  - Config: CRRF
+    TilePrefabGO: {fileID: 1056750335102474074, guid: f66c6643ef5a67248871d49d7a9b49fb, type: 3}
+  - Config: CRRR
+    TilePrefabGO: {fileID: 7868316550017258042, guid: 5a3be95cedcd2a14b803da8e349d6bee, type: 3}
+  - Config: FFFF
+    TilePrefabGO: {fileID: 2533244107909109970, guid: 3a3f9a08a0623864896c7450757c880b, type: 3}
+  - Config: FFFR
+    TilePrefabGO: {fileID: 7602615242923125134, guid: f2ad1f8597ffcad4cb02a3ba6adec9fb, type: 3}
+  - Config: FFRR
+    TilePrefabGO: {fileID: 5805092742495682862, guid: 54414598faa6a0e46a631f43a06a91de, type: 3}
+  - Config: FRFR
+    TilePrefabGO: {fileID: 671506964566264104, guid: 5abf9c7a8532c774aa47256599690bfd, type: 3}
+  - Config: FRRR
+    TilePrefabGO: {fileID: 6209944088153924894, guid: 266fa7116bf648f42a687327e3fc56ef, type: 3}
+  - Config: RRRR
+    TilePrefabGO: {fileID: 6785861255988744736, guid: 6ca34b0390e22ae438d734cc4d4d72a6, type: 3}
   RoadPairs:
   - MainConfig: XRXR
     MirroredConfig: RXRX
@@ -1048,6 +1097,7 @@ MonoBehaviour:
   SimpleRotationObjects: []
   MirrorRotationObjects: []
   LineRenderers: []
+  SpriteSwapElements: []
   OnRotation:
     m_PersistentCalls:
       m_Calls: []
@@ -1612,7 +1662,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4107008919531359422
 Transform:
   m_ObjectHideFlags: 0
@@ -3992,7 +4042,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 11
-  m_Sprite: {fileID: 8044837882678929092, guid: cf52b3cb60cc649e5a8c0b561bbcc154, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4000,7 +4050,7 @@ SpriteRenderer:
   m_Size: {x: 1.3, y: 0.65}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &6899816465124146733

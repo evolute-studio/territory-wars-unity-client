@@ -284,6 +284,7 @@ namespace TerritoryWars.Dojo
             
             SimpleStorage.ClearCurrentBoardId();
             CustomSceneManager.Instance.LoadLobby();
+            // AlertPopupUI.IsGameCanceled = true;
             //GameUI.Instance.ShowResultPopUp();
         }
 

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace TerritoryWars.General
@@ -24,6 +25,7 @@ namespace TerritoryWars.General
         public GameObject MillPrefab;
         public GameObject ClashAnimationPrefab;
         public GameObject PinPrefab;
+        public List<MineEnviromentTile> MineEnviromentTiles;
         private int _currentPlayerIndex = 0;
         
         public GameObject GetNextPlayer()
