@@ -41,9 +41,10 @@ namespace TerritoryWars.Tile
 
         public List<SpriteRenderer> AllCityRenderers = new List<SpriteRenderer>();
         public List<LineRenderer> AllCityLineRenderers = new List<LineRenderer>();
-        public List<SpriteRenderer> Pins = new List<SpriteRenderer>();
+        
         public List<SpriteRenderer> houseRenderers;
-        public SpriteRenderer[] PinRenderers;
+        public List<RoadPin> Pins = new List<RoadPin>();
+        
 
         private byte _rotation;
         private bool _isTilePlacing;
@@ -122,32 +123,29 @@ namespace TerritoryWars.Tile
 
         private void GenerateRoadPins(Transform[] points)
         {
-            PinRenderers = new SpriteRenderer[4];
             int playerId = SessionManager.Instance.CurrentTurnPlayer != null
                 ? SessionManager.Instance.CurrentTurnPlayer.LocalId
                 : -1;
             
             CustomLogger.LogInfo("Points count: " + points.Length);
             
-            SpriteRenderer[] pins = new SpriteRenderer[4];
+            RoadPin[] pins = new RoadPin[4];
             char[] id = TileConfig.ToCharArray();
             for (int i = 0; i < id.Length; i++)
             {
                 if (id[i] == 'R')
                 {
                     GameObject pin = Instantiate(PrefabsManager.Instance.PinPrefab, points[i]);
-                    SpriteRenderer pinRenderer = pin.GetComponent<SpriteRenderer>();
-                    PinRenderers[i] = pinRenderer;
-                    pin.transform.parent = points[i];
-                    pin.GetComponentInChildren<TextMeshPro>().text = GetRoadPoints(TileConfig).ToString();
-                    pinRenderer.transform.localPosition = Vector3.zero;
-                    pin.transform.DOLocalMoveY(0.035f, 2f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutQuad);
+                    RoadPin roadPin = pin.GetComponent<RoadPin>();
                     if (_tileData.OwnerId == -1) playerId = -1;
-                    pinRenderer.sprite = TileAssetsObject.GetPinByPlayerId(playerId);
-                    pins[i] = pinRenderer;
+                    int score = GetRoadPoints(TileConfig);
+                    roadPin.Initialize(playerId, score);
+                    pin.transform.parent = points[i];
+                    roadPin.transform.localPosition = Vector3.zero;
+                    pin.transform.DOLocalMoveY(0.035f, 2f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutQuad);
+                    pins[i] = roadPin;
                 }
             }
-            //_tileData.RoadsPin = pins;
             Pins.AddRange(pins);
             
         }
@@ -374,7 +372,7 @@ namespace TerritoryWars.Tile
             foreach (var pin in Pins)
             {
                 if (pin == null) continue;
-                pin.sprite = TileAssetsObject.GetPinByPlayerId(playerId);
+                pin.SetPin(playerId);
             }
         }
         
@@ -384,11 +382,11 @@ namespace TerritoryWars.Tile
             {
                 return;
             }
-            if (PinRenderers[side] == null)
+            if (Pins[side] == null)
             {
                 return;
             }
-            PinRenderers[side].sprite = TileAssetsObject.GetPinByPlayerId(playerId);
+            Pins[side].SetPin(playerId);
         }
     }
 

@@ -225,10 +225,10 @@ namespace TerritoryWars.General
                         tileGenerator.RecolorHouses(owner);
                     }
 
-                    foreach (var pin in tileGenerator.PinRenderers)
+                    foreach (var pin in tileGenerator.Pins)
                     {
                         if (pin == null) continue;
-                        pin.sprite = tileAssets.GetPinByPlayerId(owner);
+                        pin.SetPin(owner);
                     }
                 }
             }
@@ -694,10 +694,10 @@ namespace TerritoryWars.General
                     {
                         if (roadStructure.roadSides[i])
                         {
-                            if (tileGenerator.PinRenderers[i] == null) continue;
-                            pinsPositions.Add(tileGenerator.PinRenderers[i].transform.position);    
+                            if (tileGenerator.Pins[i] == null) continue;
+                            pinsPositions.Add(tileGenerator.Pins[i].transform.position);    
                             
-                            tileGenerator.PinRenderers[i].sprite = tileAssets.GetPinByPlayerId(winnerId);
+                            tileGenerator.Pins[i].SetPin(winnerId);
                             //tileGenerator.pinRenderers[i].transform.DOKill();
                             //Destroy(tileGenerator.pinRenderers[i].gameObject);
                         }

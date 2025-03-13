@@ -17,7 +17,9 @@ namespace TerritoryWars.ScriptablesObjects
         public Sprite[] Mountains;
         public GameObject ForestPrefab;
 
-        public Sprite[] Pins; // 0 - neutral, 1 - first player, 2 - second player
+        // 0 - neutral, 1 - first player, 2 - second player
+        // 3 - neutral two points, 4 - first player two points, 5 - second player two points
+        public Sprite[] Pins; 
 
         public int CurrentIndex { get; private set; } = 0;
         public int CurrentHouseIndex { get; private set; } = 0;
