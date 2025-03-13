@@ -211,9 +211,9 @@ namespace TerritoryWars.UI
             _sessionManager.RotateCurrentTile();
         }
 
-        private void OnJokerButtonClicked() 
+        public void OnJokerButtonClicked() 
         {
-            if(SessionManager.Instance.CurrentTurnPlayer.JokerCount <= 0 || _isJokerActive) return;
+            if(SessionManager.Instance.CurrentTurnPlayer.JokerCount <= 0 || _isJokerActive || !SessionManager.Instance.IsLocalPlayerTurn) return;
             _isJokerActive = true;
             
             SetJokerMode(true);

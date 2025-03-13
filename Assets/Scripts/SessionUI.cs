@@ -153,7 +153,13 @@ public class SessionUI : MonoBehaviour
         players[player].jokerCount = count;
         for (int i = 0; i < players[player].jokersImage.Count; i++)
         {
-            players[player].jokersImage[i].color = i < count ? JokerAvailableColor : JokerNotAvailableColor;
+            //players[player].jokersImage[i].color = i < count ? JokerAvailableColor : JokerNotAvailableColor;
+            players[player].jokersImage[i].GetComponent<Button>().interactable = i < count;
+            if (players[player].jokersImage[i].TryGetComponent<CursorOnHover>(out var hover))
+            {
+                hover.enabled = i < count;
+            }
+            
         }
     }
     
