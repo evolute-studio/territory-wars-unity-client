@@ -165,6 +165,13 @@ namespace TerritoryWars.General
                     tileObjects[availablePositions[i].x, availablePositions[i].y].transform.Find("BorderArc").gameObject.SetActive(true);
                     Transform borderArc = tileObjects[availablePositions[i].x, availablePositions[i].y].transform.Find("BorderArc");
                     TileRotator.GetMirrorRotationStatic(borderArc, rotationTimes);
+                    var pins = tileObjects[availablePositions[i].x, availablePositions[i].y]
+                        .GetComponent<TileGenerator>().Pins;
+                    foreach (var pin in pins)
+                    {
+                        if (pin == null) continue;
+                        pin.Initialize(-1, 1);
+                    }
                 }
             }
         }
