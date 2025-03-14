@@ -6,6 +6,7 @@
     <title>Evolute Kingdom: Mage Duel</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+    <link rel="manifest" href="manifest.json">
     #if SHOW_DIAGNOSTICS
     <link rel="stylesheet" href="<<<TemplateData/diagnostics.css>>>">
     <script src="<<<TemplateData/diagnostics.js>>>"></script>
@@ -156,6 +157,11 @@
 </div>
 
 <script>
+    window.addEventListener("load", function () {
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("ServiceWorker.js");
+        }
+    });
 
     var container = document.querySelector("#unity-container");
     var canvas = document.querySelector("#unity-canvas");
@@ -210,9 +216,9 @@
         #endif
         streamingAssetsUrl: "StreamingAssets",
         companyName: {{{ JSON.stringify(COMPANY_NAME) }}},
-    productName: {{{ JSON.stringify(PRODUCT_NAME) }}},
-    productVersion: {{{ JSON.stringify(PRODUCT_VERSION) }}},
-    showBanner: unityShowBanner,
+        productName: {{{ JSON.stringify(PRODUCT_NAME) }}},
+        productVersion: {{{ JSON.stringify(PRODUCT_VERSION) }}},
+        showBanner: unityShowBanner,
     };
 
     // By default, Unity keeps WebGL canvas render target size matched with
