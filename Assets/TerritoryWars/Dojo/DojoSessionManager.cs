@@ -446,6 +446,7 @@ namespace TerritoryWars.Dojo
                         playerOwner = OnChainBoardDataConverter.WhoPlaceTile(LocalPlayerBoard, position);
                     }
                     tileGenerator.RecolorHouses(playerOwner);
+                    SessionManager.Instance.Board.CheckAndConnectEdgeStructure(playerOwner, position.x, position.y);
                 }
                 
                 
@@ -484,6 +485,7 @@ namespace TerritoryWars.Dojo
                         playerOwner = OnChainBoardDataConverter.WhoPlaceTile(LocalPlayerBoard, position);
                     }
                     tileGenerator.RecolorPinOnSide(playerOwner, (int)side);
+                    SessionManager.Instance.Board.CheckAndConnectEdgeStructure(playerOwner, position.x, position.y);
                 }
                 
             }

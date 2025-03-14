@@ -196,27 +196,39 @@ namespace TerritoryWars.General
             return true;
         }
 
+        public void CheckAndConnectEdgeStructure(int ownerId, int x, int y)
+        {
+            if( (x == 1 || x == width - 2 || y == 1 || y == height - 2) && !IsEdgeTile(x, y))
+            {
+                TryConnectEdgeStructure(ownerId, x, y);
+            }
+        }
+
         private void TryConnectEdgeStructure(int owner, int x, int y)
         {
             CustomLogger.LogInfo($"TryConnectEdgeStructure at {x}, {y}");
             GameObject[] neighborsGO = new GameObject[4];
             TileData[] neighborsData = new TileData[4];
-            int[,] positions = new int[4, 2] { {1, 0}, {0, -1}, {-1, 0}, {0, 1} };
-            int[,] tilePositions = new int[4, 2];
-            
+            int[][] positions = new[] { new int[] {1, 0}, new int[] {0, -1}, new int[] {-1, 0}, new int[] {0, 1} };
+            int[][] tilePositions = new int[4][];
+            for (int index = 0; index < 4; index++)
+            {
+                tilePositions[index] = new int[2];
+            }
+
             for (int i = 0; i < 4; i++)
             {
-                int newX = x + positions[i, 0];
-                int newY = y + positions[i, 1];
-                tilePositions[i, 0] = newX;
-                tilePositions[i, 1] = newY;
+                int newX = x + positions[i][0];
+                int newY = y + positions[i][1];
+                tilePositions[i][0] = newX;
+                tilePositions[i][1] = newY;
                 neighborsGO[i] = tileObjects[newX, newY];
                 neighborsData[i] = tileData[newX, newY];
             }
             
             for( int i = 0; i < 4; i++)
             {
-                if(IsEdgeTile(tilePositions[i, 0], tilePositions[i, 1]) && neighborsGO[i] != null)
+                if(IsEdgeTile(tilePositions[i][0], tilePositions[i][1]) && neighborsGO[i] != null)
                 {
                     TileGenerator tileGenerator = neighborsGO[i].GetComponent<TileGenerator>();
                     foreach (var renderer in tileGenerator.houseRenderers)
