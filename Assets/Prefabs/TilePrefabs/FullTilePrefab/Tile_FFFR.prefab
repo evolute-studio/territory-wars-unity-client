@@ -564,10 +564,10 @@ MonoBehaviour:
     Rules:
     - Sprite: {fileID: -7548079623488695856, guid: 4e4c71bf71e78ee40b1a39b8e62de9b8, type: 3}
       Scale: {x: 1, y: 1, z: 1}
-    - Sprite: {fileID: -7548079623488695856, guid: 4e4c71bf71e78ee40b1a39b8e62de9b8, type: 3}
-      Scale: {x: 1, y: -1, z: 1}
-    - Sprite: {fileID: -7548079623488695856, guid: 4e4c71bf71e78ee40b1a39b8e62de9b8, type: 3}
-      Scale: {x: -1, y: -1, z: 1}
+    - Sprite: {fileID: -9191693705732988644, guid: 4e4c71bf71e78ee40b1a39b8e62de9b8, type: 3}
+      Scale: {x: -1, y: 1, z: 1}
+    - Sprite: {fileID: -9191693705732988644, guid: 4e4c71bf71e78ee40b1a39b8e62de9b8, type: 3}
+      Scale: {x: 1, y: 1, z: 1}
     - Sprite: {fileID: -7548079623488695856, guid: 4e4c71bf71e78ee40b1a39b8e62de9b8, type: 3}
       Scale: {x: -1, y: 1, z: 1}
     PinObjects:

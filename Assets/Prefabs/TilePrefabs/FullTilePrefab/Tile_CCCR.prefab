@@ -1004,9 +1004,10 @@ LineRenderer:
   - {x: 0.6054573, y: -0.008664131, z: 0}
   - {x: 0.004508972, y: -0.3142891, z: 0}
   - {x: -0.6072932, y: 0.008915164, z: 0}
-  - {x: -0.13806605, y: 0.02438419, z: 0}
-  - {x: -0.0019386113, y: 0.052228402, z: 0}
-  - {x: 0.044468492, y: 0.11926086, z: 0}
+  - {x: -0.32091096, y: -0.011168923, z: 0}
+  - {x: -0.17463502, y: -0.030469153, z: 0}
+  - {x: 0.006187886, y: 0.03699134, z: 0}
+  - {x: 0.07189515, y: 0.13145049, z: 0}
   - {x: -0.0013373196, y: 0.32583612, z: 0}
   - {x: 0.5917206, y: -0.0052301884, z: 0}
   m_Parameters:
@@ -1822,10 +1823,10 @@ MonoBehaviour:
     Rules:
     - Sprite: {fileID: -7548079623488695856, guid: 4e4c71bf71e78ee40b1a39b8e62de9b8, type: 3}
       Scale: {x: 1, y: 1, z: 1}
-    - Sprite: {fileID: -7548079623488695856, guid: 4e4c71bf71e78ee40b1a39b8e62de9b8, type: 3}
-      Scale: {x: 1, y: -1, z: 1}
-    - Sprite: {fileID: -7548079623488695856, guid: 4e4c71bf71e78ee40b1a39b8e62de9b8, type: 3}
-      Scale: {x: -1, y: -1, z: 1}
+    - Sprite: {fileID: -9191693705732988644, guid: 4e4c71bf71e78ee40b1a39b8e62de9b8, type: 3}
+      Scale: {x: -1, y: 1, z: 1}
+    - Sprite: {fileID: -9191693705732988644, guid: 4e4c71bf71e78ee40b1a39b8e62de9b8, type: 3}
+      Scale: {x: 1, y: 1, z: 1}
     - Sprite: {fileID: -7548079623488695856, guid: 4e4c71bf71e78ee40b1a39b8e62de9b8, type: 3}
       Scale: {x: -1, y: 1, z: 1}
     PinObjects:
