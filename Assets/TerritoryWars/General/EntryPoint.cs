@@ -67,7 +67,6 @@ namespace TerritoryWars.General
             catch (Exception e)
             {
                 CustomLogger.LogError($"Initialization failed: {e}");
-                // Можливо, тут додати логіку обробки помилок
             }
         }
 

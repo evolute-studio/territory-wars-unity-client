@@ -146,8 +146,6 @@ namespace TerritoryWars.Dojo
             if (games.Length > 0)
             {
                 evolute_duel_Game game = games[0].GetComponent<evolute_duel_Game>();
-                
-                // Чекаємо на завантаження Player моделі
                 var player = await CustomSynchronizationMaster.WaitForModelByPredicate<evolute_duel_Player>(
                     p => p.player_id.Hex() == game.player.Hex()
                 );

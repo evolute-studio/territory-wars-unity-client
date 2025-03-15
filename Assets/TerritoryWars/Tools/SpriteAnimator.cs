@@ -17,6 +17,7 @@ namespace TerritoryWars.Tools
         public float waitBetweenLoops = 0f;
         public bool playOnAwake = true;
         public Action OnAnimationEnd;
+        public Action OnCompleteAction;
 
         [SerializeField] private SpriteRenderer _spriteRenderer;
         private Image _image;
@@ -64,11 +65,18 @@ namespace TerritoryWars.Tools
             StartCoroutine(Animate());
         }
 
-        public void Play(Sprite[] animation)
+        public SpriteAnimator Play(Sprite[] animation)
         {
             sprites = animation;
             Play();
+            return this;
         }
+        
+        public void OnComplete(Action action)
+        {
+            OnAnimationEnd = action;
+        }
+        
 
         public void Stop()
         {
@@ -107,6 +115,11 @@ namespace TerritoryWars.Tools
                 }
                 
                 OnAnimationEnd?.Invoke();
+                if (OnCompleteAction != null)
+                {
+                    OnCompleteAction.Invoke();
+                    OnCompleteAction = null;
+                }
 
                 if (!loop)
                 {

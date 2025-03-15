@@ -12,6 +12,8 @@ using UnityEngine.Serialization;
 
 public class SessionUI : MonoBehaviour
 {
+    public SessionTimerUI SessionTimerUI;
+    
     public Color JokerNotAvailableColor;
     public Color JokerAvailableColor;
     public List<TextMeshProUGUI> cityScoreTextPlayers;
@@ -27,9 +29,6 @@ public class SessionUI : MonoBehaviour
     public Button CancelGameButton;
     
     public CancelGamePopup CancelGamePopUp;
-    
-    
-    public List<Image> imagePlayers;
 
     [Header("Players")]
     public List<PlayerInfo> players;
@@ -91,15 +90,6 @@ public class SessionUI : MonoBehaviour
         LocalPlayerScoreText.text = playersScores[0].ToString();
         RemotePlayerScoreText.text = playersScores[1].ToString();
     }
-
-    // public void UpdateTime()
-    // {
-    //     int currentCharacter = TerritoryWars.General.SessionManager.Instance.GetCurrentCharacter();
-    //     players[currentCharacter].UpdateTimer();
-    //     timeTextPlayers[currentCharacter].text = string.Format("{0:00}:{1:00}",
-    //         Mathf.Floor(players[currentCharacter].time / 60),
-    //         Mathf.Floor(players[currentCharacter].time % 60));
-    // }
     
     public void SetNames(string localPlayerName, string remotePlayerName)
     {
@@ -107,31 +97,6 @@ public class SessionUI : MonoBehaviour
         LocalPlayerName.text = playerNames[0];
         RemotePlayerName.text = playerNames[1];
     }
-
-    // public void UseJoker(int player)
-    // {
-    //     if (!SessionManager.Instance.IsLocalPlayerHost)
-    //     {
-    //         player = player == 0 ? 1 : 0;
-    //     }
-    //     
-    //     if (players[player].jokerCount == 0)
-    //         return;
-    //
-    //     players[player].jokerCount--;
-    //     players[player].jokersImage[players[player].jokerCount].color = JokerNotAvailableColor;
-    //     players[player].jokerCountText.text = players[player].jokerCount.ToString();
-    // }
-
-    // public void UpdateJokerText(int player)
-    // {
-    //     if (!SessionManager.Instance.IsLocalPlayerHost)
-    //     {
-    //         player = player == 0 ? 1 : 0;
-    //     }
-    //
-    //     players[player].jokerCountText.text = players[player].jokerCount.ToString();
-    // }
 
     public void ShowPlayerJokerCount(int playerId)
     {

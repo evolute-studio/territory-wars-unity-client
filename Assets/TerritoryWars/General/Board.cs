@@ -188,6 +188,7 @@ namespace TerritoryWars.General
             data.OwnerId = ownerId;
             GameObject tile = Instantiate(tilePrefab, GetTilePosition(x, y), Quaternion.identity, transform);
             tile.name += $"_{x}_{y}";
+            CustomLogger.LogImportant("Spawned tile config: " + data.id);
             tile.GetComponent<TileGenerator>().Generate(data, true, new Vector2Int(x,y));
             tile.GetComponent<TileView>().UpdateView(data);
             tileObjects[x, y] = tile;

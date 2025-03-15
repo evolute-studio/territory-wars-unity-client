@@ -294,7 +294,7 @@ namespace TerritoryWars.Dojo
                 if (completedTask == timeoutTask)
                 {
                     CustomLogger.LogError($"Sync {type} operation timed out after 30 seconds");
-                    return -2; // спеціальний код помилки для таймауту
+                    return -2; 
                 }
                 
                 return await syncTask;
